@@ -1,5 +1,3 @@
-# $Id: xmlbuilder.py 2399 2006-12-13 15:45:24Z wrm2110 $
-
 import datetime, os, re, string, sys, time, types
 from cStringIO import StringIO
 from cElementTree import ElementTree, Element, SubElement, parse
@@ -31,12 +29,11 @@ def build():
 
     # write the XML to disk
     print ' - Writing xml data to %s' % profile.output_xml_path
-    outfile = file(profile.output_xml_path, 'w')
-    doc.write(outfile, encoding='utf-8')
+    xmlutils.write_xml(doc, profile.output_xml_path)
 
     print 'Finished.\n'
 
-    # return the DOM object we just created
+    # return the ElementTree (like a DOM object) we just created
     return doc
 
 def build_divisions(parent, row):
@@ -152,12 +149,6 @@ def create_class_element(parent, row):
     element = xmlutils.add_element(parent, 'class', attrs)
 
     return element
-
-def reformat_date(date):
-    month, day, year = date.split('/')
-    date = '%s/%s' % (month.lstrip('0'), day.lstrip('0'))
-    return date
-
 
 def add_description_element(parent, tagname, description):
     if not description or not description.strip():

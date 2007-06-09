@@ -56,7 +56,6 @@ class CCEFormatter(Formatter):
         # AP formatting says that any leading zeros should be removed.
         date = '%s/%s' % (month.lstrip('0'), day.lstrip('0'))
         return date
-    
     format_start_date = format_date
     format_end_date = format_date
 
@@ -70,9 +69,6 @@ class CCEFormatter(Formatter):
         """Converts an integer input into a string.  Returns the
         string '0' if an error occurs."""
         return u'%d' % data
-
-    # each of these are formatted identically, so they share a generic
-    # formatting function
     format_session = format_int
     format_hours = format_int
     format_catalog_sort_order = format_int
