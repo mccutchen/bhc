@@ -1,28 +1,53 @@
 import inspect, sys
 
-def get_valid_profiles(objectdict, base, required_attrs):
-    # put each valid profile into a dictionary keyed
-    # on its name
+def get_profile(objectdict, base, validator=lambda x: True):
+    """Given a dict of objects (as returned from `globals()`) and a
+    base class that all profiles must inherit from, this function will
+    try to get a profile name from the command line or, failing that,
+    by prompting the user.
+    
+    If the validator function is given, it will be called on the
+    chosen profile, and may raise exceptions explaining the problem
+    with the profile."""
+    profiles = get_profiles(objectdict, base)
+    try:
+        profilename = sys.argv[1]
+        profile = find_profile(profilename, profiles)
+        
+        # invalid profile name given at the command line, so inform
+        # the user of their error and prompt for another name
+        if profile is None:
+            profile = choose_profile(profiles, invalid=True, given=sys.argv[1])
+        
+    except IndexError:
+        # We didn't get a profile name at the command line, so
+        # we just prompt for one
+        profile = choose_profile(profiles)
+    
+    # run the validator function on the chosen profile
+    validator(profile)
+    
+    # we've got a valid profile, let's use it!
+    print 'Using profile %s' % profile
+    return profile
+
+def get_profiles(objectdict, base):
+    """Returns a list of the objects in objectdict which are
+    subclasses of the given base class.  Should be a list of
+    profile classes, given an appropriate base class."""
     return dict(
         [(key, value)
          for key,value in objectdict.items()
-         if is_valid_profile(value, base, required_attrs)]
+         if is_profile(value, base)]
     )
 
-def is_valid_profile(obj, base, required_attrs):
+def is_profile(obj, base):
     """Is this a valid profile?"""
-    try:
-        assert inspect.isclass(obj) and issubclass(obj, base)
-        for attr in required_attrs:
-            assert hasattr(obj, attr), 'Valid profiles must have the `%s` attribute set' % attr
-            assert getattr(obj, attr, None) is not None, 'Valid profiles cannot have the `%s` attribute == None' % attr
-    except AssertionError:
-        return False
-
-    # all tests passed
-    return True
+    return inspect.isclass(obj) and issubclass(obj, base)
 
 def find_profile(name, profiles):
+    """Does a case-insensitive search of the given list of
+    profiles for one that matches the given name."""
     name = name.lower()
     for key in profiles:
         if key.lower() == name:
@@ -30,6 +55,8 @@ def find_profile(name, profiles):
     return None
 
 def choose_profile(profiles, invalid=False, given=''):
+    """Prompts the user to choose a profile at the command
+    line.  Will optionally display a list of available profiles."""
     try:
         message = '\nType "?" to see a list of profiles or "exit" to exit.\n\nProfile to run: '
         if invalid:
@@ -49,7 +76,7 @@ def choose_profile(profiles, invalid=False, given=''):
         real_profile = find_profile(profile, profiles)
 
         if real_profile is None:
-            choose_profile(profiles, True, raw_profile)
+            return choose_profile(profiles, True, raw_profile)
         else:
             return real_profile
 
@@ -58,20 +85,9 @@ def choose_profile(profiles, invalid=False, given=''):
         sys.exit(1)
 
 def list_profiles(profiles):
+    """Prints a list of available profiles."""
     names = profiles.keys()
     names.sort()
     print 'Valid profiles:'
     print ' ',
     print '\n  '.join(names)
-
-def get_profile(profiles):
-    try:
-        profilename = sys.argv[1]
-        profile = find_profile(profilename, profiles)
-        if profile is None:
-            return choose_profile(profiles, True, sys.argv[1])
-        else:
-            print 'Using profile %s' % profile
-            return profile
-    except IndexError:
-        return choose_profile(profiles)
