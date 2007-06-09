@@ -9,8 +9,7 @@ and RoomCoordinator profiles may be subclassed
 to provide semester- or term-specific profiles."""
 
 import datetime, glob, inspect, os, sys
-import wrm.profile
-from wrm.profile import BaseProfile, ProfileError
+from wrm.profile import BaseProfile, ProfileError, get_profile
 
 
 
@@ -481,7 +480,7 @@ def validate_profile(profile):
 # ===================================================================
 # The actual profile to use
 # ===================================================================
-profile = wrm.profile.get_profile(globals(), validate_profile)
+profile = get_profile(globals(), validate_profile)
 
 
 
