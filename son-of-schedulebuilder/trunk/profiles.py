@@ -16,11 +16,11 @@ to provide semester- or term-specific profiles."""
 
 import datetime, glob, inspect, os, sys
 import wrm.profile
+from wrm.profile import BaseProfile, ProfileError
 
-class ProfileError(Exception):
-    pass
 
-class BaseProfile:
+
+class CreditProfile(BaseProfile):
     """
     Base profile class, which contains all of
     the settings a profile needs.
@@ -151,7 +151,7 @@ class BaseProfile:
     saxon_params = ''
 
 
-class FullProfile(BaseProfile):
+class FullProfile(CreditProfile):
     output_xml_path = 'schedule.xml'
     regroupings = True
     special_sections = True
@@ -183,7 +183,7 @@ class Web(FullProfile):
     template = 'xsl/web.xsl'
     output_dir = 'web-output'
 
-class RoomCoordinator(BaseProfile):
+class RoomCoordinator(CreditProfile):
     template = 'xsl/room-coordinator.xsl'
     output_dir = 'room-coordinator-output'
     skip_topic_codes = []
@@ -438,12 +438,20 @@ class Fall07Enrolling(Enrolling, Fall07, Fall07Web):
 
 
 
+# ===================================================================
+# Profile validator
+# ===================================================================
+
 # what attribute are required for this to be a valid profile?
 REQUIRED_ATTRS = 'input template output_dir output_xml_path mappings_dir'.split()
 
 def validate_profile(profile):
     """Tests the given profile to see that it meets a minimum set of
-    requirements."""
+    requirements.
+    
+    Side effects:  This will make sure that the given profile's input
+    attribute is a list of input paths, even if only one input file is
+    given."""
     
     name = profile.__name__
     
@@ -469,8 +477,18 @@ def validate_profile(profile):
     for path in profile.input:
         if not os.path.exists(path):
             raise ProfileError('Input Colleague Download File not found: %s' % path)
+    
+    # make sure we can find Saxon
+    if not os.path.exists(profile.saxon_path):
+        raise ProfileError('Cannot find the Saxon XSLT processor at the specified path: %s' % profile.saxon_path)
 
-profile = wrm.profile.get_profile(globals(), BaseProfile, validate_profile)
+
+
+# ===================================================================
+# The actual profile to use
+# ===================================================================
+profile = wrm.profile.get_profile(globals(), validate_profile)
+
 
 
 if __name__ == '__main__':

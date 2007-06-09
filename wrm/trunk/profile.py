@@ -1,6 +1,14 @@
 import inspect, sys
 
-def get_profile(objectdict, base, validator=lambda x: True):
+class ProfileError(Exception):
+    pass
+
+class BaseProfile:
+    """A generic base profile class.  Any profiles you define must
+    inherit from this class (or a subclass of this class)."""
+    pass
+
+def get_profile(objectdict, validator=lambda x: True):
     """Given a dict of objects (as returned from `globals()`) and a
     base class that all profiles must inherit from, this function will
     try to get a profile name from the command line or, failing that,
@@ -9,7 +17,7 @@ def get_profile(objectdict, base, validator=lambda x: True):
     If the validator function is given, it will be called on the
     chosen profile, and may raise exceptions explaining the problem
     with the profile."""
-    profiles = get_profiles(objectdict, base)
+    profiles = get_profiles(objectdict)
     try:
         profilename = sys.argv[1]
         profile = find_profile(profilename, profiles)
@@ -25,25 +33,30 @@ def get_profile(objectdict, base, validator=lambda x: True):
         profile = choose_profile(profiles)
     
     # run the validator function on the chosen profile
-    validator(profile)
+    try:
+        validator(profile)
+    except ProfileError, e:
+        print '\nThere is an error in the chosen profile: %s.' % profile.__name__
+        print 'Error message:\n    %s\n' % e
+        sys.exit(1)
     
     # we've got a valid profile, let's use it!
     print 'Using profile %s' % profile
     return profile
 
-def get_profiles(objectdict, base):
+def get_profiles(objectdict):
     """Returns a list of the objects in objectdict which are
     subclasses of the given base class.  Should be a list of
     profile classes, given an appropriate base class."""
     return dict(
         [(key, value)
          for key,value in objectdict.items()
-         if is_profile(value, base)]
+         if is_profile(value)]
     )
 
-def is_profile(obj, base):
+def is_profile(obj):
     """Is this a valid profile?"""
-    return inspect.isclass(obj) and issubclass(obj, base)
+    return inspect.isclass(obj) and issubclass(obj, BaseProfile)
 
 def find_profile(name, profiles):
     """Does a case-insensitive search of the given list of
