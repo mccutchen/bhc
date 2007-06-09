@@ -75,7 +75,7 @@ Default = Web
 ## Custom profiles for particular terms ##
 ##########################################
 class Spring2006Print(Print):
-    database_path = 'data\2006-spring-print.mdb'
+    database_path = 'data/2006-spring-print.mdb'
 
 
 ##########################
