@@ -1,14 +1,11 @@
+import atexit
 from decorators import cachedmethod
 
 class SimpleDatabaseWrapper:
-    """
-    A simple wrapper around a DB-API 2.0 compliant
-    database.  Provides SQL logging and a few
-    convenience functions.
+    """A simple wrapper around a DB-API 2.0 compliant database.  Provides
+    SQL logging and a few convenience functions.
     
-    Only useful if you're working with one table
-    in one database.
-    """
+    Only useful if you're working with one table in one database."""
     def __init__(self, connection, tablename):
         self.connection = connection
         self.cursor = self.connection.cursor()
@@ -18,21 +15,16 @@ class SimpleDatabaseWrapper:
         self.columns = self.get_columns()
     
     def execute(self, sql, params = ()):
-        """
-        execute(sql, [params = ()]) -> None
+        """Takes an SQL statement and runs it against the database, inserting
+        parameters, if provided.
             
-            Takes an SQL statement and runs it
-            against the database, inserting parameters,
-            if provided.
-            
-            The SQL statement can have two keywords which
-            will be automatically replaced:
+        The SQL statement can have two keywords which will be
+        automatically replaced:
                 
-                $table$ - replaced by actual table name
+            $table$ - replaced by actual table name
                 
-                $columns$ - replaced by a comma-separated
-                string of the column names in this table.
-        """
+            $columns$ - replaced by a comma-separated string of the
+            column names in this table."""
         keywords = {
             'table': self.tablename,
             'columns': self.get_columns_for_select(),
@@ -54,39 +46,32 @@ class SimpleDatabaseWrapper:
             sys.exit()
     
     def results(self):
-        """
-        results() -> generator
-            
-            Generator function which will iterate over
-            the cursor's result set
-        """
+        """Generator function which will iterate over the cursor's result
+        set."""
         while 1:
             row = self.cursor.fetchone()
             if not row: break
             yield row
     
     def get_unique_values(self, column):
-        """
-        get_unique_values(column) -> tuple of unique values
-        
-            Returns a tuple containing all of the unique
-            values in the specified column of the database
-        """
+        """Returns a tuple containing all of the unique values in the
+        specified column of the database"""
         sql = 'select distinct %s from $table$' % column
         self.execute(sql)
         return tuple([row[0] for row in self.results()])
     
     @cachedmethod
     def get_columns(self):
-        """Returns a tuple of the column names found in the
-        underlying table."""
+        """Returns a tuple of the column names found in the underlying
+        table."""
         sql = 'select * from %s' % self.tablename
         self.cursor.execute(sql)
         columns = tuple([column[0] for column in self.cursor.description])
         return columns
     
     def get_columns_for_select(self):
-        """Convenience function which returns a SQL-ready list of the column names."""
+        """Convenience function which returns a SQL-ready list of the column
+	names."""
         return ', '.join(self.columns)
     
     def all(self):
@@ -94,39 +79,22 @@ class SimpleDatabaseWrapper:
         return self.results()
     
     def commit(self):
-        """
-        commit() -> None
-        
-            Commits any pending operations to
-            the underlying database
-        """ 
+        """Commits any pending operations to the underlying database""" 
         self.connection.commit()
     
     def close(self):
-        """
-        close() -> None
-        
-            Closes connection to underlying
-            database, committing any pending
-            changes in the process
-        """
+        """Closes the connection to the underlying database, committing any
+	pending changes in the process"""
         self.commit()
         self.cursor.close()
         self.connection.close()
 
 
 def AccessTable(path, tablename):
-    """
-    AccessTable(path, tablename) -> SimpleDatabaseWrapper
-    
-        Returns a SimpleDatabaseWrapper which
-        wraps the Access database found at the
-        given path
+    """Returns a SimpleDatabaseWrapper which wraps the Access database
+    found at the given path
         
-        Requires either mx.ODBC.Windows module or
-        win32 dbi and odbc modules.  Prefers mx
-        over win32.
-    """
+    Requires either mx.ODBC.Windows module."""
     try:
         # requires mx.ODBC.Windows module
         import mx.ODBC.Windows
@@ -140,23 +108,29 @@ def AccessTable(path, tablename):
         connection.encoding = 'utf-8'
         connection.stringformat = mx.ODBC.Windows.NATIVE_UNICODE_STRINGFORMAT
         
-        return SimpleDatabaseWrapper(connection, tablename)
+        wrapper = SimpleDatabaseWrapper(connection, tablename)  
+        atexit.register(close_on_exit, wrapper)
+        return wrapper
 
     except ImportError:
         raise ImportError, "wrappers.AccessTable requires mx.ODBC.Windows module"
 
 
 def SQLiteTable(path, tablename):
-    """
-    SQLiteTable(path, tablename) -> SimpleDatabaseWrapper
+    """Returns a SimpleDatabaseWrapper which wraps the SQLite database
+    found at the given path.
     
-        Returns a SimpleDatabaseWrapper which wraps
-        the SQLite database found at the given path.
-        
-        Requires sqlite module.
-    """
+    Requires sqlite module."""
     try:
         import sqlite
     except ImportError:
         raise ImportError, "Wrappers.SQLiteTable requires sqlite module"
-    return SimpleDatabaseWrapper(sqlite.connect(path), tablename)
+    wrapper = SimpleDatabaseWrapper(sqlite.connect(path), tablename)
+    atexit.register(close_on_exit, wrapper)
+    return wrapper
+
+
+def close_on_exit(db):
+    """Should be registered as an exit handler and passed a
+    SimpleDatabaseWrapper whose connection should be closed."""
+    db.close()
