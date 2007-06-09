@@ -11,15 +11,6 @@ def parse_classes():
     """Parses each line of the input file according to the
     schema defined in schemas.schema."""
 
-    assert isinstance(profile.input, (basestring, list, tuple)), \
-        'profile.input must be a string or a list of strings representing paths to input files.'
-
-    if isinstance(profile.input, basestring):
-        profile.input = [profile.input]
-
-    for path in profile.input:
-        assert os.path.exists(path), 'Input file not found: %s' % path
-
     print 'Parsing data from %s ...' % ', '.join(profile.input)
 
     classes = []

@@ -1,5 +1,4 @@
-"""
-$Id: profiles.py 2425 2006-12-15 18:39:34Z wrm2110 $
+"""profiles.py
 
 Provides a set of configuration classes which
 control the execution of son-of-schedulebuilder.
@@ -13,8 +12,7 @@ is raised.
 BaseProfile should be subclassed to produce a
 valid, working profile.  The generic Print, Web
 and RoomCoordinator profiles may be subclassed
-to provide semester- or term-specific profiles.
-"""
+to provide semester- or term-specific profiles."""
 
 import datetime, glob, inspect, os, sys
 from wrm import profileutils
@@ -443,9 +441,36 @@ class Fall07Enrolling(Enrolling, Fall07, Fall07Web):
 # what attribute are required for this to be a valid profile?
 REQUIRED_ATTRS = 'input template output_dir output_xml_path mappings_dir'.split()
 
+def validate_profile(profile):
+    """Tests the given profile to see that it meets a minimum set of
+    requirements."""
+    
+    name = profile.__name__
+    
+    for attr in REQUIRED_ATTRS:
+        # does the required attribute exist?
+        if not hasattr(profile, attr):
+            raise ProfileError('Required profile setting is missing: %s' % attr)
+        # is it set to a non-None value?
+        if getattr(profile, attr) is None:
+            raise ProfileError('Required profile setting cannot be None: %s' % attr)
+    
+    # is profile.input in the correct format?
+    if not isinstance(profile.input, (basestring, list, tuple)):
+        raise ProfileError('The input setting must be a string or a list \
+            of strings representing the path(s) to the Colleague Download\
+            File(s) to use.  Given: %r' % profile.input)
+    else:
+        # fix the input setting so that it is always a list of input paths
+        if isinstance(profile.input, basestring):
+            profile.input = [profile.input]
+    
+    # make sure the specified input files exist
+    for path in profile.input:
+        if not os.path.exists(path):
+            raise ProfileError('Input Colleague Download File not found: %s' % path)
 
-valid_profiles = profileutils.get_valid_profiles(globals(), BaseProfile, REQUIRED_ATTRS)
-profile = profileutils.get_profile(valid_profiles)
+profile = profileutils.get_profile(globals(), BaseProfile, validate_profile)
 
 
 if __name__ == '__main__':
