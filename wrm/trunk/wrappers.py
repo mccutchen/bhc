@@ -25,6 +25,8 @@ class SimpleDatabaseWrapper:
                 
             $columns$ - replaced by a comma-separated string of the
             column names in this table."""
+        
+        # keywords to replace and their replacement values
         keywords = {
             'table': self.tablename,
             'columns': self.get_columns_for_select(),
@@ -71,7 +73,7 @@ class SimpleDatabaseWrapper:
     
     def get_columns_for_select(self):
         """Convenience function which returns a SQL-ready list of the column
-	names."""
+        names."""
         return ', '.join(self.columns)
     
     def all(self):
@@ -84,7 +86,7 @@ class SimpleDatabaseWrapper:
     
     def close(self):
         """Closes the connection to the underlying database, committing any
-	pending changes in the process"""
+        pending changes in the process"""
         self.commit()
         self.cursor.close()
         self.connection.close()
