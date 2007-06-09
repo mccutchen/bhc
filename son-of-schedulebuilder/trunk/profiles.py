@@ -3,13 +3,7 @@
 Provides a set of configuration classes which
 control the execution of son-of-schedulebuilder.
 
-When loaded, this module looks for a profile name
-as the first argument given to the program (which
-is sys.argv[1]).  If no argument is given, or if
-an invalid profile name is given, a ProfileError
-is raised.
-
-BaseProfile should be subclassed to produce a
+CreditProfile should be subclassed to produce a
 valid, working profile.  The generic Print, Web
 and RoomCoordinator profiles may be subclassed
 to provide semester- or term-specific profiles."""
