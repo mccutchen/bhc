@@ -15,7 +15,7 @@ and RoomCoordinator profiles may be subclassed
 to provide semester- or term-specific profiles."""
 
 import datetime, glob, inspect, os, sys
-from wrm import profileutils
+import wrm.profile
 
 class ProfileError(Exception):
     pass
@@ -470,7 +470,7 @@ def validate_profile(profile):
         if not os.path.exists(path):
             raise ProfileError('Input Colleague Download File not found: %s' % path)
 
-profile = profileutils.get_profile(globals(), BaseProfile, validate_profile)
+profile = wrm.profile.get_profile(globals(), BaseProfile, validate_profile)
 
 
 if __name__ == '__main__':
