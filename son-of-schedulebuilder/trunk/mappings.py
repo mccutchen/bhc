@@ -245,13 +245,14 @@ def init(path):
 
 
 def build_caches():
-
+    """Builds a set of mappings caches based on the Colleague download
+    files for the current profile.  This cuts down on the run time of
+    the program by eliminating the need for searching through the
+    mappings for every course as it's parsed."""
+    
     # a list of all the records, to be extracted from the current
     # profile's input file(s)
     records = []
-
-    if isinstance(profile.input, basestring):
-        profile.input = [profile.input]
 
     for line in files(*profile.input):
         # the offsets are hard-coded
