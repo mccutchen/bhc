@@ -1,4 +1,4 @@
-# $Id: decorators.py 2132 2006-07-19 21:22:01Z wrm2110 $
+# $Id: decorators.py 2407 2006-12-13 17:40:04Z wrm2110 $
 
 import sys, types
 
@@ -21,19 +21,17 @@ def hashargs(*args, **kwds):
     decorators.  TODO: This could be dramatically improved."""
     return str(args) + str(kwds)
 
-class cached:
+def cached(func):
     """Memoization decorator.  Caches the return value of the given
     function with specific arguments and uses that value on subsequent
     calls."""
-    def __init__(self, func):
-        self.cache = {}
-        self.func = func
-
-    def __call__(self, *args, **kwds):
+    cache = {}
+    def cachedfunc(*args, **kwds):
         key = hashargs(*args, **kwds)
-        if key not in self.cache:
-            self.cache[key] = self.func(*args, **kwds)
-        return self.cache[key]
+        if key not in cache:
+            cache[key] = func(*args, **kwds)
+        return cache[key]
+    return cachedfunc
 
 def cachedmethod(function):
     """Memoizes a class method, using the same rules as the cached

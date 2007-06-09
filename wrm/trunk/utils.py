@@ -1,5 +1,5 @@
 # utils.py
-# $Id: utils.py 2132 2006-07-19 21:22:01Z wrm2110 $
+# $Id: utils.py 2341 2006-10-27 18:03:35Z wrm2110 $
 
 import datetime, glob, os, re, shutil, sys, time
 import decorators
@@ -15,6 +15,18 @@ def every(sequence, test=lambda x:x):
         if not test(item):
             return False
     return True
+
+def files(*paths):
+    """Utility for iterating through the lines of multiple
+    files as if they were one file.
+
+    Usage:
+        for line in files('a.txt', 'b.txt', 'c.txt.'):
+            print line
+    """
+    for path in paths:
+        for line in file(path):
+            yield line
 
 
 def unicodeize(data):
@@ -105,11 +117,17 @@ def get_machine_name(name, prefix='', suffix=''):
     return name
 
 
-def apdate():
-    """Returns today's date as an appropriately-formatted date"""
-    format = '%b. $day, %Y'
-    today = time.localtime()
-    return time.strftime(format, today).replace('$day', str(today[2]))
+def apdate(date=datetime.date.today(), include_year=True):
+    """Returns the given date as a string formatted in AP
+    style.  Defaults to today's date.  By default, the year
+    is included in the output, but this can be controlled
+    with the include_year argument."""
+    months = ('Jan.', 'Feb.', 'March', 'April', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.')
+    month = months[date.month-1]
+    return include_year and \
+        '%s %d, %d' % (month, date.day, date.year) or \
+        '%s %d' % (month, date.day)
+
 
 @decorators.cached
 def parsedate(datestring, format='%m/%d/%Y'):

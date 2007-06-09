@@ -1,7 +1,12 @@
 # $Id: xmlutils.py 2224 2006-09-22 21:32:30Z wrm2110 $
 
 import re
-from cElementTree import ElementTree, Element, SubElement, iselement, tostring, fromstring
+
+try:
+    from xml.etree.cElementTree import ElementTree, Element, SubElement, iselement, tostring, fromstring
+except ImportError:
+    from cElementTree import ElementTree, Element, SubElement, iselement, tostring, fromstring
+
 import wrm.decorators
 from wrm.utils import exclude
 
