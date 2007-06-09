@@ -1,4 +1,4 @@
-from wrm.formatter2 import *
+from wrm.formatter import *
 from wrm.decorators import *
 from wrm.utils import *
 from wrm import xmlutils

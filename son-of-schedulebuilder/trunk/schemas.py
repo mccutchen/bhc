@@ -1,4 +1,4 @@
-from wrm.schema2 import *
+from wrm.schema import *
 from formatters import *
 
 
