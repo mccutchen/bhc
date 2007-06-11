@@ -38,7 +38,7 @@ def build(classes=None):
             get_weekend(term, class_data)
 
     print 'Writing xml data to %s ...' % profile.output_xml_path
-    xmlutils.write_xml(tree, profile.output_xml_path, profile.output_xml_encoding)
+    xmlutils.write_xml(tree, profile.output_xml_path)
     print
 
     # post_process the output

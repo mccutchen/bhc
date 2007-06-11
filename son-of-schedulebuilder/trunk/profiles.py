@@ -33,9 +33,6 @@ class CreditProfile(BaseProfile):
     # the filename of the XML output to produce
     output_xml_path = 'base-schedule.xml'
 
-    # the encoding of the XML output
-    output_xml_encoding = 'utf-8'
-
     # the path to an XML file which will supply any
     # additional mappings needed for this profile
     mappings_dir = 'mappings/'
