@@ -13,7 +13,7 @@ except ImportError:
     import cElementTree as ElementTree
     
 from wrm import decorators, xmlutils
-from wrm.utils import filterdict, unicodeize, get_machine_name, splits
+from wrm.utils import get_machine_name
 
 import classparser
 from profiles import profile
@@ -95,8 +95,6 @@ def get_subject_element(parent, data, returnself=False, notype=False):
     attrs = dict(name=name, machine_name=machine_name)
     children = dict(comments=subject_comments)
 
-    attrs = unicodeize(attrs)
-    children = unicodeize(children)
     el = xmlutils.add_element(parent, 'subject', attrs, children)
 
     if returnself:
@@ -116,9 +114,6 @@ def get_topic_element(parent, data, returnself=False, notype=False):
         attrs = dict(name=name, machine_name=machine_name, sortkey=data['topic-sortkey'])
         children = dict(comments=topic_comments)
 
-        attrs = unicodeize(attrs)
-        children = unicodeize(children)
-
         el = xmlutils.add_element(parent, 'topic', attrs, children)
     else:
         el = parent
@@ -136,9 +131,6 @@ def get_subtopic_element(parent, data, returnself=False, notype=False):
         machine_name = get_machine_name(name)
         attrs = dict(name=name, machine_name=machine_name, sortkey=data['subtopic-sortkey'])
         children = dict(comments=subtopic_comments)
-
-        attrs = unicodeize(attrs)
-        children = unicodeize(children)
 
         el = xmlutils.add_element(parent, 'subtopic', attrs, children)
     else:
