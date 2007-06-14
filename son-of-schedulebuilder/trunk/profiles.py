@@ -392,7 +392,7 @@ class Summer07FullProof(Summer07, FullProof):
 
 class Summer07Web(Summer07, Web):
     output_dir = 'summer07-web'
-    saxon_params = 'schedule-title="Summer 2006 Credit"'
+    saxon_params = 'schedule-title="Summer 2007 Credit"'
 
 class Summer07Enrolling(Enrolling, Summer07, Summer07Web):
     output_dir = 'summer07-enrolling'
@@ -425,6 +425,46 @@ class Fall07Web(Fall07, Web):
 
 class Fall07Enrolling(Enrolling, Fall07, Fall07Web):
     output_dir = 'fall07-enrolling'
+
+# ===================================================================
+# Spring 2008 profiles
+# ===================================================================
+class Spring08(Spring):
+    input = 'data\\2008-spring\\BH2008SP.TXT'
+    ap_term_dates = {
+        'Spring': '',
+    }
+
+class Spring08Proof(Spring08, Proof):
+    output_dir = 'spring08-proof'
+
+class Spring08FullProof(Spring08, FullProof):
+    output_dir = 'spring08-full-proof'
+
+class Spring08Rooms(Spring08, RoomCoordinator):
+    output_dir = 'spring08-rooms'
+
+class Spring08Print(Spring08, Print):
+    output_dir = 'spring08-print'
+
+class Spring08Web(Spring08, Web):
+    output_dir = 'spring08-web'
+    saxon_params = 'schedule-title="Spring 2008 Credit"'
+
+class Spring08Enrolling(Enrolling, Spring08, Spring08Web):
+    output_dir = 'spring08-enrolling'
+
+class Spring08CorePrint(CoreOnly, Spring08Print):
+    output_dir = 'spring08-core-print'
+
+class Spring08CoreProof(CoreOnly, Spring08FullProof):
+    output_dir = 'spring08-core-proof'
+
+class Spring08NonCorePrint(NonCore, Spring08Print):
+    output_dir = 'spring08-noncore-print'
+
+class Spring08NonCoreProof(NonCore, Spring08Proof):
+    output_dir = 'spring08-noncore-proof'
 
 
 
