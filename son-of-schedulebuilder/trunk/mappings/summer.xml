@@ -256,6 +256,7 @@
 			<topic name="Musicianship">
 				<pattern match="MUSI 1116-2200" />
                 <pattern match="MUSI 1117-2200" />
+				<pattern match="MUSI 2116-2200" />
             </topic>
             <!-- Summer 2007 -->
             <topic name="Chorus">
