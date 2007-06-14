@@ -814,7 +814,6 @@
                 <p>NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road.</p>
                 <p>NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. </p>
             </comments>
-				<pattern match="EMSP 2260-2218" />
 				<pattern match="EMSP 2332-2204" /><!-- Added 4/26 - she wants this in two places, which I can't do -->
             <topic name="Emergency Medical Services, Basic">
             	<pattern match="EMSP 1501-2220" />
@@ -880,6 +879,8 @@
 					<pattern match="EMSP 2444-2208" />
 					<pattern match="EMSP 2444-2209" />
 					<pattern match="EMSP 2260-2718" /><!-- Added 4/26 -->
+					<pattern match="EMSP 2260-2218" /><!-- Added 5/25 -->
+
                 </subtopic>
 				<subtopic name="Paramedic Class #19, Evenings"><!-- Added a lot of these 4/26 -->
 					<pattern match="EMSP 1438-2719" />
