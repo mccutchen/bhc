@@ -7,10 +7,10 @@ try:
 except ImportError:
     from cElementTree import ElementTree, Element, SubElement, iselement, tostring, fromstring
 
-import wrm.decorators
-from wrm.utils import exclude
+import decorators
+from utils import exclude
 
-@wrm.decorators.cached
+@decorators.cached
 def add_element(parent, tagname, attrs={}, children={}, text=None):
     """Returns an ElementTree.Element object which is guaranteed to be unique,
     based on the given arguments."""
