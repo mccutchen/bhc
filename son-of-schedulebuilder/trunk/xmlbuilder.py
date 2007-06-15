@@ -1,9 +1,7 @@
 #!/usr/bin/env python
 
-"""
-Builds and returns an ElementTree object from the given
-input file(s)
-"""
+"""Builds and returns an ElementTree object from the given input
+file(s)"""
 
 import copy, datetime, os, re, sys
 
@@ -143,33 +141,20 @@ def get_subtopic_element(parent, data, returnself=False, notype=False):
 
 
 def get_course_element(parent, data, returnself=False):
-    """
-    Returns a course element that is said to be
-    unique based on the hash of the course title
-    and the course comments
-    """
-    title = data['title']
-    rubrik = data['rubrik']
-    number = data['number']
-    comments = data['comments']
-    course_type = data['type']
-    cross_listings = data['group']
-    core_component = data['core-component']
-    machine_name = get_machine_name(title)
-    credit_hours = data['credit-hours']
-
+    """Returns a course element that is said to be unique based on the
+    hash of the course title and the course comments"""
     attrs = {
-        'title':title,
-        'machine_name': machine_name,
-        'rubrik': rubrik,
-        'number': number,
-        'type': course_type,
-        'core-component': core_component,
-        'cross-listings': cross_listings,
-        'credit-hours': credit_hours,
+        'title':          data['title'],
+        'machine_name':   get_machine_name(data['title']),
+        'rubrik':         data['rubrik'],
+        'number':         data['number'],
+        'type':           data['type'],
+        'core-component': data['core-component'],
+        'cross-listings': data['group'],
+        'credit-hours':   data['credit-hours'],
     }
     children = {
-        'comments': comments,
+        'comments': data['comments'],
     }
     el = xmlutils.add_element(parent, 'course', attrs, children)
 
@@ -178,30 +163,24 @@ def get_course_element(parent, data, returnself=False):
     return get_class_element(el, data)
 
 def get_class_element(parent, data, returnself=False):
-    """
-    Returns a class element, including any extra
-    meetings (like labs or extra lectures) as
-    children
-    """
-
-    def copyvalue(to_dict, from_dict, to_key, from_key=None, default=None):
-        from_key = from_key or to_key
-        to_dict[to_key] = from_dict.get(from_key, default)
+    """Returns a class element, including any extra meetings (like labs or
+    extra lectures) as children"""
 
     # set up the attributes
-    attrs = {}
-    copyvalue(attrs, data, 'class-number')
-    copyvalue(attrs, data, 'classroom-sessions')
-    copyvalue(attrs, data, 'end-date')
-    copyvalue(attrs, data, 'formatted-dates')
-    copyvalue(attrs, data, 'section')
-    copyvalue(attrs, data, 'section-capacity')
-    copyvalue(attrs, data, 'start-date')
-    copyvalue(attrs, data, 'synonym')
-    copyvalue(attrs, data, 'sortkey', 'class-sortkey')
-    copyvalue(attrs, data, 'sortkey-date', 'class-sortkey-date')
-    copyvalue(attrs, data, 'sortkey-time', 'class-sortkey-time')
-    copyvalue(attrs, data, 'weeks')
+    attrs = {
+        'class-number':       data['class-number'],
+        'classroom-sessions': data['classroom-sessions'],
+        'end-date':           data['end-date'],
+        'formatted-dates':    data['formatted-dates'],
+        'section':            data['section'],
+        'section-capacity':   data['section-capacity'],
+        'start-date':         data['start-date'],
+        'synonym':            data['synonym'],
+        'sortkey':            data['class-sortkey'],
+        'sortkey-date':       data['class-sortkey-date'],
+        'sortkey-time':       data['class-sortkey-time'],
+        'weeks':              data['weeks'],
+    }
 
     # add in the meeting time, days, etc., info from the session
     attrs.update(data['session'])
