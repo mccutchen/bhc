@@ -6,7 +6,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
     exclude-result-prefixes="xs utils">
-
+	
     <xsl:function name="utils:sort-order" as="xs:integer">
         <xsl:param name="needle" />
         <xsl:param name="haystack" />
@@ -24,6 +24,51 @@
         <!-- inline styles in Quark Xpress Tags look like <@stylename>content<@$p> -->
         <xsl:value-of select="concat('&lt;@', $style-name, '&gt;', $content, '&lt;@$p&gt;')" />
     </xsl:function>
+
+	<xsl:function name="utils:urlify" as="xs:string">
+		<!-- translates an input string into something suitable for URLs or
+			 filenames, mostly by replacing spaces with underscores, etc. -->
+		<xsl:param name="s" as="xs:string" />
+		
+		<xsl:variable name="replacements">
+			<!-- chars which should be replaced with an underscore -->
+			<rule pattern="[\s\\/&amp;\-]" replacement="_" />
+			<!-- n with tilde -->
+			<rule pattern="&#241;" replacement="n" />
+			<!-- blacklisted chars, which must be replaced after all the other
+				 patterns -->
+			<rule pattern="[^A-z0-9_]" replacement="" />
+		</xsl:variable>
+		
+		<xsl:variable name="result" select="utils:urlify-helper(lower-case($s), $replacements/rule)" />
+		<!-- <xsl:message>urlify(<xsl:value-of select="$s" />) = <xsl:value-of select="$result" /></xsl:message> -->
+		<xsl:value-of select="$result" />
+	</xsl:function>
+	
+	<xsl:function name="utils:urlify-helper" as="xs:string">
+		<xsl:param name="s" as="xs:string" />
+		<xsl:param name="rules" />
+		
+		<xsl:variable name="rule" select="$rules[1]" />
+		<xsl:variable name="pattern" select="$rule/@pattern" />
+		<xsl:variable name="replacement" select="$rule/@replacement" />
+		
+		<xsl:choose>
+			<!-- no rules left (this shouldn't happen) -->
+			<xsl:when test="count($rules) = 0">
+				<xsl:value-of select="$s" />
+			</xsl:when>
+			<!-- one rule left, so we just apply it and return the results -->
+			<xsl:when test="count($rules) = 1">
+				<xsl:value-of select="replace($s, $pattern, $replacement)" />
+			</xsl:when>
+			<!-- apply the first rule and then recursively apply the rest of
+				 the rules -->
+			<xsl:otherwise>
+				<xsl:value-of select="utils:urlify-helper(replace($s, $pattern, $replacement), subsequence($rules, 2))" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
 
     <xsl:function name="utils:senior-adult-days" as="xs:string">
         <xsl:param name="input" as="xs:string" />
