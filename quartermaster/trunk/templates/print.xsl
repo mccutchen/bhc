@@ -31,7 +31,6 @@
 
         <!-- output each division to its respective <schedule-type> folder -->
         <xsl:for-each select="schedule/division">
-            <xsl:message>Creating <xsl:value-of select="@name" /> division...</xsl:message>
             <xsl:result-document href="{$output-directory}/divisions/{@machine_name}{$output-extension}">
                 <xsl:call-template name="quark-preamble" />
                 <xsl:apply-templates select="." />
