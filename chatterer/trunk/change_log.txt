@@ -1,0 +1,11 @@
+Intro:
+Moving from 2.0 to 2.1, I should probably start keeping a changelog now.
+
+2.0 -> 2.1
+Fixed:
+ - major bug; <intro>s were not being output most of the time.
+ - minor bug; ids for div elements were being stripped of numbers, which isn't a problem on the user end, but was not the desired behavior. Added a 'and (not character.isdigit())' to the test for invalid chars.
+ - minor bug; if the title in articles.txt had html tags, it would break the xsl translations. Now the tags are removed in processing.
+
+Modified:
+ - modified the directory structure slightly; instead of having a top-level index.html, shoved the index down one level. This allows for a little more automation on the web end. This may change back at some point, depending on how the final layout of the web-version directory structure goes.
