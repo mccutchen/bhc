@@ -6,6 +6,22 @@ class CCEFormatter(Formatter):
     """Performs custom-formatting of schedule data as it is parsed
     from the database results, including date and time formatting and
     money formatting."""
+    
+    def post_formatter(self, value):
+        """Attempts to intelligently do some post-processing on
+        the values emitted by the formatters.  If the value is None, it is
+        returned unchanged.
+
+        If the value is a bool, it is converted into either 'true'
+        or None, depending on its boolean value.
+
+        Otherwise, the value is converted into a unicode string
+        and strip()ped."""
+        if value is None:
+            return value
+        if isinstance(value, bool):
+            return value and 'true' or None
+        return unicode(value).strip()
 
     @excepting(AttributeError, u'')
     @stripped
@@ -81,11 +97,11 @@ class CCEFormatter(Formatter):
         d = u'$%1.2f' % data
         return d.replace('.00','')
 
-    @excepting(AttributeError, None)
+    @excepting(AttributeError, False)
     def format_field_with_flag(self, data):
         """In the input database, boolean sorts of fields just contain
         an asterisk to indicate truth and are empty to indicate false."""
-        return (data.strip() == '*') and True or None
+        return data.strip() == '*'
     format_Financial_Aid = format_field_with_flag
     format_Concurrent = format_field_with_flag
     
@@ -99,17 +115,14 @@ class CCEFormatter(Formatter):
         textbooks = ', '.join([self.input['textbook%s'%i] for i in range(1,4) if self.input.get('textbook%s'%i)])
         return textbooks
     
-    @excepting(AttributeError, None)
+    @excepting(AttributeError, False)
     def format_spanish(self, data):
         """Attempts to guess whether or not this is a Spanish course based
         on the course title.  TODO:  This should be a dedicated field in the
         database, not this UGLY HACK."""
-        if self.input['title'].lower().find(u'en espa\xf1ol') != -1:
-            return 'true'
-        else:
-            return None
+        return self.input['title'].lower().find(u'en espa\xf1ol') != -1
     
-    @excepting(AttributeError, None)
+    @excepting(AttributeError, False)
     def format_evening(self, data):
         """Determine whether this is a night class."""
         start_time = self.input['start_time'] # should be a datetime.datetime object
@@ -119,8 +132,7 @@ class CCEFormatter(Formatter):
         # it's an evening class
         threshold = profile.evening_threshold
         if threshold < 12: threshold += 12
-        if start_time.hour >= threshold and suffix == 'PM':
-            return 'True'
+        return start_time.hour >= threshold and suffix == 'PM'
     
     @excepting(AttributeError, None)
     def format_time_sortkey(self, data):
