@@ -8,20 +8,12 @@ class CCEFormatter(Formatter):
     money formatting."""
     
     def post_formatter(self, value):
-        """Attempts to intelligently do some post-processing on
-        the values emitted by the formatters.  If the value is None, it is
-        returned unchanged.
-
-        If the value is a bool, it is converted into either 'true'
-        or None, depending on its boolean value.
-
-        Otherwise, the value is converted into a unicode string
-        and strip()ped."""
-        if value is None:
-            return value
+        """Attempts to intelligently do some post-processing on the values
+        emitted by the formatters.  If the value is a bool, it is converted
+        into either 'true' or None, depending on its boolean value."""
         if isinstance(value, bool):
             return value and 'true' or None
-        return unicode(value).strip()
+        return value
 
     @excepting(AttributeError, u'')
     @stripped
@@ -66,12 +58,7 @@ class CCEFormatter(Formatter):
         """If the date is given, it is a datetime.datetime object.  It
         is AP formatted and returned.  If the date is not given, None
         is returned."""
-        day = data.strftime('%d')
-        month = data.strftime('%m')
-
-        # AP formatting says that any leading zeros should be removed.
-        date = '%s/%s' % (month.lstrip('0'), day.lstrip('0'))
-        return date
+        return '%s/%s' % (data.month, data.day)
     format_start_date = format_date
     format_end_date = format_date
 
@@ -120,27 +107,20 @@ class CCEFormatter(Formatter):
         """Attempts to guess whether or not this is a Spanish course based
         on the course title.  TODO:  This should be a dedicated field in the
         database, not this UGLY HACK."""
-        return self.input['title'].lower().find(u'en espa\xf1ol') != -1
+        return u'en espa\xf1ol' in self.input['title'].lower()
     
     @excepting(AttributeError, False)
     def format_evening(self, data):
         """Determine whether this is a night class."""
-        start_time = self.input['start_time'] # should be a datetime.datetime object
-        suffix = start_time.strftime('%p') # get the AM or PM suffix for the given time
-
-        # if the class starts after the 'evening threshold' and has a PM suffix,
-        # it's an evening class
-        threshold = profile.evening_threshold
-        if threshold < 12: threshold += 12
-        return start_time.hour >= threshold and suffix == 'PM'
+        return (self.input['start_time'].hour - 12) >= profile.evening_threshold
     
     @excepting(AttributeError, None)
     def format_time_sortkey(self, data):
         """Create a sortkey based on the 24 hour version of this class's
         start time."""
-        return self.input['start_time'].strftime('%H%M').lstrip('0')
+        return self.input['start_time'].time().strftime('%H%M').lstrip('0')
     
     @excepting(AttributeError, u'')
     def format_date_sortkey(self, data):
         """Creates a sortkey based on this class's start date."""
-        return self.input['start_date'].strftime('%Y%m%d')
+        return self.input['start_date'].date().strftime('%Y%m%d')
