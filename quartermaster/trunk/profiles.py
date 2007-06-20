@@ -34,6 +34,9 @@ class BaseProfile:
     database_path = 'data/CE Web Data.mdb'
     database_table = None
     
+    # the character encoding used by the database
+    database_encoding = 'windows-1252'
+    
     # the location of the template to be used to
     # transform the XML output
     template = None
