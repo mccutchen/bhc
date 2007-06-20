@@ -58,24 +58,6 @@ def xml_escape(text):
 
     return re.sub(chars_to_escape, escape_entities, text).encode("ascii")
 
-def get_unique_element(root, tagname, attrs={}, children={}):
-    """Returns the first element in root whose attributes match those given in
-    the attrs dictionary."""
-    candidates = root.findall(tagname)
-    for candidate in candidates:
-        badflag = 0
-        for attr, value in attrs.items():
-            if candidate.attrib.get(attr) != value:
-                badflag = 1
-                break
-        if not badflag:
-            return candidate
-
-    el = ET.SubElement(root, tagname, **attrs)
-    for childname, value in children.items():
-        ET.SubElement(el, childname).text = value
-    return el
-
 def write_xml(tree, outputpath, encoding='utf-8'):
     assert isinstance(tree, ET.ElementTree), 'xmlutils.write_xml() requires an \
         instance of ElementTree to write to disk.'
