@@ -1,0 +1,159 @@
+div#channel-header { background-color: #993333; }
+
+body, td, th {
+	font: 11px Verdana, Arial, sans-serif;
+	line-height: 14px;
+	margin: 0;
+	padding: 0;
+}
+th { font-weight: bold; }
+
+
+.cluster {
+    margin: 0;
+}
+.cluster h2 { margin: 0 -10px;
+    padding-top: 8px; }
+
+.catalog-prefix, .catalog-page-header, .suffix-description {
+	margin: 0;
+	padding-top: 0;
+    font-size: 11px;
+}
+.suffix-description {
+    font-size: 11px;
+}
+
+
+div.course {
+	margin: 0;
+    margin-bottom: 15px;
+}
+div.course h3 {
+	font-size: 12px;
+    margin: 10px 0 3px;
+}
+.course p {
+	margin: 0;
+	margin-bottom: 8px;
+}
+.course .course-description, .course .textbooks {
+	font-size: 11px;
+}
+.course p.prerequisites { font-style: italic; }
+
+
+.course table {
+	border: none;
+	border-right: 1px solid #ccc;
+	margin: 0;
+	width: 100%;
+}
+.course th, .course td {
+	background-color: #fff;
+	text-align: left;
+	vertical-align: top;
+	font-size: 11px;
+	font-family: Arial, sans-serif;
+	padding: 2px 5px;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+}
+.course th { border-top:  1px solid #ccc; }
+.course p.back-to-top {
+	font-size: 10px;
+	line-height: 11px;
+	margin: 0;
+	margin-top: 10px;
+}
+
+/* make evening courses bold */
+.course tr.evening td { font-weight: bold; }
+
+/* Extra information about the course is put in <span> elements
+inside the course's title <h3> element. */
+.course h3 span {
+    font-weight: normal;
+    font-size: 11px;
+}
+
+/* highlight financial aid-eligible courses */
+#page-header p.financial-aid,
+.course tr.financial-aid td {
+    background-color: #F5FFDF;
+}
+#page-header p.financial-aid {
+    padding: 5px 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.course h3 span.financial-aid {
+    color: #4B6809;
+}
+
+/* highlight concurrent courses */
+.course h3 span.concurrent {
+    color: #0060AF;
+}
+.course h3 span.concurrent a {
+    color: #0060AF;
+}
+
+
+td#sidebar-in-table { padding: 10px; }
+div#sidebar { width: 175px; }
+div#sidebar h3 {
+    margin: 0;
+    padding: 0;
+}
+
+div#sidebar ul { margin-bottom: 10px; }
+div#sidebar table { margin-bottom: 10px; }
+div#sidebar th { text-align: right; }
+div#sidebar td { text-align: left; }
+div#sidebar td strong {
+	display: block;
+	text-align: center;
+}
+
+
+
+div#index a, div#index a:link { text-decoration: none; }
+div#index a:hover { text-decoration: underline; }
+
+div#index h2 {
+    background: none;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+    font-weight: normal;
+}
+div#index table td {
+	vertical-align: top;
+	width: 50%;
+}
+div#index ul {
+	list-style-type: none;
+	padding: 0;
+	margin-left: 10px;
+}
+div#index ul li {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 10px;
+}
+div#index ul li ul li {
+	font: 11px Verdana, Arial, sanserif;
+	padding: 0;
+}
+
+
+
+div#index div.index { padding: 10px; }
+div#index div.index div {
+	padding: 6px;
+	background-color: #eee;
+	border: 1px solid #ccc;
+}
+div#index div.index span { color: #999; }
