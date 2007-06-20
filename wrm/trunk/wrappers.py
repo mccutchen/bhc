@@ -6,10 +6,11 @@ class SimpleDatabaseWrapper:
     SQL logging and a few convenience functions.
     
     Only useful if you're working with one table in one database."""
-    def __init__(self, connection, tablename):
+    def __init__(self, connection, tablename, encoding=None):
         self.connection = connection
         self.cursor = self.connection.cursor()
         self.tablename = tablename
+        self.encoding = encoding
         
         # autodiscover the columns in this table
         self.columns = self.get_columns()
@@ -53,7 +54,12 @@ class SimpleDatabaseWrapper:
         while 1:
             row = self.cursor.fetchone()
             if not row: break
-            yield row
+            yield self.decode_row(row)
+    
+    def decode_row(self, row):
+        """Should be overridden by inheriting classes to provide db-specific
+        decoding behavior."""
+        return row
     
     def get_unique_values(self, column):
         """Returns a tuple containing all of the unique values in the
@@ -92,42 +98,38 @@ class SimpleDatabaseWrapper:
         self.connection.close()
 
 
-def AccessTable(path, tablename):
+def AccessTable(path, tablename, encoding=None):
     """Returns a SimpleDatabaseWrapper which wraps the Access database
-    found at the given path
+    found at the given path."""
+    import pyodbc
         
-    Requires either mx.ODBC.Windows module."""
-    try:
-        # requires mx.ODBC.Windows module
-        import mx.ODBC.Windows
-        
-        # use DSN-less connection string to make connection
-        connectionstring = 'DRIVER={Microsoft Access Driver (*.mdb)};DBQ=%s' % path
-        connection = mx.ODBC.Windows.DriverConnect(connectionstring)
-        
-        # we only want to get unicode strings from the database, so we hope that
-        # its encoding is utf-8 and let the driver do the conversion for us
-        connection.encoding = 'utf-8'
-        connection.stringformat = mx.ODBC.Windows.NATIVE_UNICODE_STRINGFORMAT
-        
-        wrapper = SimpleDatabaseWrapper(connection, tablename)  
-        atexit.register(close_on_exit, wrapper)
-        return wrapper
-
-    except ImportError:
-        raise ImportError, "wrappers.AccessTable requires mx.ODBC.Windows module"
-
-
-def SQLiteTable(path, tablename):
-    """Returns a SimpleDatabaseWrapper which wraps the SQLite database
-    found at the given path.
+    # use DSN-less connection string to make connection
+    connectionstring = 'DRIVER={Microsoft Access Driver (*.mdb)};DBQ=%s' % path
+    connection = pyodbc.connect(connectionstring)
     
-    Requires sqlite module."""
-    try:
-        import sqlite
-    except ImportError:
-        raise ImportError, "Wrappers.SQLiteTable requires sqlite module"
-    wrapper = SimpleDatabaseWrapper(sqlite.connect(path), tablename)
+    wrapper = SimpleDatabaseWrapper(connection, tablename, encoding)  
+    atexit.register(close_on_exit, wrapper)
+    
+    # add in pyodbc-specific decode_row method
+    def decode_row(self, row):
+        """If self.encoding is not None, decodes any string objects found
+        in the given row into unicode objects according to self.encoding."""
+        if not self.encoding:
+            return row
+        for i, value in enumerate(row):
+            if isinstance(value, str):
+                row[i] = value.decode(self.encoding)
+        return row
+    SimpleDatabaseWrapper.decode_row = decode_row
+    
+    return wrapper
+
+
+def SQLiteTable(path, tablename, encoding=None):
+    """Returns a SimpleDatabaseWrapper which wraps the SQLite database
+    found at the given path."""
+    import sqlite
+    wrapper = SimpleDatabaseWrapper(sqlite.connect(path), tablename, encoding)
     atexit.register(close_on_exit, wrapper)
     return wrapper
 
