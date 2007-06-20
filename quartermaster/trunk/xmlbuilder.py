@@ -1,6 +1,10 @@
 import datetime, os, re, string, sys, time, types
 from cStringIO import StringIO
-from cElementTree import ElementTree, Element, SubElement, parse
+
+try:
+    from xml.etree import cElementTree as ElementTree
+except ImportError:
+    import cElementTree as ElementTree
 
 from wrm import xmlutils
 from wrm import decorators
@@ -15,8 +19,8 @@ def build():
     print 'Building XML document from %s...' % profile.database_path
 
     # create the root element and a tree around it
-    root = Element('schedule')
-    doc = ElementTree(root)
+    root = ElementTree.Element('schedule')
+    doc = ElementTree.ElementTree(root)
 
     print ' - Extracting data from database.'
     
@@ -208,7 +212,7 @@ def post_process(tree):
 
     # give an ElementTree object back
     buf = StringIO(data)
-    return parse(buf)
+    return ElementTree.parse(buf)
 
 
 
