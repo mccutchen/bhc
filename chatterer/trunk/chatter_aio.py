@@ -28,9 +28,9 @@
 import glob, os, sys
 
 # variables to change per-issue
-month            = "June" # <-- SET ONE MONTH AHEAD: this is for the birthdays
-date_short       = "0523"
-date_long        = "May 23, 2007"
+month            = "July" # <-- SET ONE MONTH AHEAD: this is for the birthdays
+date_short       = "0620"
+date_long        = "June 20, 2007"
 
 # file locations:
 dir_input        = "source\\"
