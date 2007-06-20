@@ -85,8 +85,6 @@ class excepting:
                 if callable(self.default):
                     return self.default(*args, **kwds)
                 return self.default
-            except Exception, e:
-                raise Exception, e
         return decorated_excepting
 
 
