@@ -111,7 +111,8 @@ def AccessTable(path, tablename, encoding=None):
     atexit.register(close_on_exit, wrapper)
     
     # add in pyodbc-specific decode_row method
-    def decode_row(self, row):
+    self = wrapper
+    def decode_row(row):
         """If self.encoding is not None, decodes any string objects found
         in the given row into unicode objects according to self.encoding."""
         if not self.encoding:
@@ -120,7 +121,7 @@ def AccessTable(path, tablename, encoding=None):
             if isinstance(value, str):
                 row[i] = value.decode(self.encoding)
         return row
-    SimpleDatabaseWrapper.decode_row = decode_row
+    wrapper.decode_row = decode_row
     
     return wrapper
 
