@@ -3,9 +3,9 @@
 import re
 
 try:
-    from xml.etree.cElementTree import ElementTree, Element, SubElement, iselement, tostring, fromstring
+    from xml.etree import cElementTree as ET
 except ImportError:
-    from cElementTree import ElementTree, Element, SubElement, iselement, tostring, fromstring
+    import cElementTree as ET
 
 import decorators
 from utils import exclude
@@ -19,7 +19,7 @@ def add_element(parent, tagname, attrs={}, children={}, text=None):
     attrs = exclude(attrs, values=forbiddenvalues)
     children = exclude(children, values=forbiddenvalues)
 
-    el = SubElement(parent, tagname, **attrs)
+    el = ET.SubElement(parent, tagname, **attrs)
 
     if text and not attrs and not children:
         el.text = text
@@ -28,10 +28,10 @@ def add_element(parent, tagname, attrs={}, children={}, text=None):
         if is_xml_fragment(value) and not value.startswith('<%s' % childname):
             # create a valid xml fragment
             value = '<%s>%s</%s>' % (childname, value, childname)
-            child = fromstring(value)
+            child = ET.fromstring(value)
             el.append(child)
         else:
-            SubElement(el, childname).text = value
+            ET.SubElement(el, childname).text = value
 
     return el
 
@@ -71,13 +71,13 @@ def get_unique_element(root, tagname, attrs={}, children={}):
         if not badflag:
             return candidate
 
-    el = SubElement(root, tagname, **attrs)
+    el = ET.SubElement(root, tagname, **attrs)
     for childname, value in children.items():
-        SubElement(el, childname).text = value
+        ET.SubElement(el, childname).text = value
     return el
 
 def write_xml(tree, outputpath, encoding='utf-8'):
-    assert isinstance(tree, ElementTree), 'xmlutils.write_xml() requires an \
+    assert isinstance(tree, ET.ElementTree), 'xmlutils.write_xml() requires an \
         instance of ElementTree to write to disk.'
     
     # add indentation to the given element
