@@ -2,8 +2,8 @@
 # Section: Brookhaven MPI
 # e-mail: thaapala@dcccd.edu
 # extention: x4104
-# Creation Date: 27 Apr 07
-# Last Modified: 22 May 07
+# Creation Date: 27 Apr  07
+# Last Modified: 20 June 07
 
 # Acknowledgements: Will McCutchen wrote the original chatterer. Most of
 #   v2.0 is a direct copy-paste from his program. The update was undertaken
@@ -14,8 +14,9 @@
 #               please send me an email if you find any bugs
 
 # NOTE:
-# For each issue, modify the first section of variables to ensure proper dates
-#   in the final output
+# when the batch file is run, you will be prompted for a date unless you provide a
+#   'source\issue-date.txt' file with a valid date.
+# date format is: mmddyy
 
 # Usage:
 # Place all input files (text files) into the source/ directory.
@@ -25,17 +26,18 @@
 
 
 # we'll need these for working with files
-import glob, os, sys
+import glob, os, sys, datetime
 
-# variables to change per-issue
-month            = "July" # <-- SET ONE MONTH AHEAD: this is for the birthdays
-date_short       = "0620"
-date_long        = "June 20, 2007"
+# issue variables
+month            = ''
+date_short       = ''
+date_long        = ''
 
 # file locations:
-dir_input        = "source\\"
-dir_output       = "source\\"
-file_output      = "chatter.raw.xml"
+dir_input        = 'source\\'
+date_file        = 'issue-date.txt'
+dir_output       = 'source\\'
+file_output      = 'chatter.raw.xml'
 filenames_list   = []
 # Note: filenames_list indices (each is a string):
 id_announcements = 0
@@ -45,7 +47,67 @@ id_hails         = 3
 id_articles      = 4
 id_bodies        = 5  # <-- a list of strings
 
-# Def: set filenames
+
+# Def set dates
+def SetDates():
+    # what we're looking for
+    date = None;
+    global month;
+    global date_short;
+    global date_long;
+    
+    # first, see if there's a file called 'issue-date.txt' in the dir_input directory
+    if (os.path.exists(dir_input + date_file) and os.path.isfile(dir_input + date_file)):
+        fin = open(dir_input + date_file);
+        date_in = fin.readline();
+        fin.close();
+        date = ParseDate(date_in);
+
+    # if that didn't work, prompt user until they get it right
+    while (not date):
+        date_in = raw_input('Enter the issue date (mmddyy): ');
+        date = ParseDate(date_in);
+
+        if (not date):
+            print 'Invalid date. Please try again.';
+
+    # now make use of the date 
+    if (date):
+        # store short / long formates
+        date_short = date.strftime('%m%d');
+        date_long  = date.strftime('%B %d, %Y');
+
+        # store next month
+        month = datetime.date(date.year, (date.month) % 12 + 1, 1).strftime('%B');
+
+        # we're done
+        valid = True;
+
+    # DEBUG:
+    print 'month: ' + month;
+    print 'short: ' + date_short;
+    print 'long:  ' + date_long;
+    
+    return True;
+
+# def ParseDate
+def ParseDate(date_in):
+    if (type(date_in) != str): return None;
+    if (len(date_in) < 6): return None;
+    if (not date_in.isdigit()): return None;
+    try:
+        if (len(date_in) == 6):
+            d = datetime.date(2000+int(date_in[4:]), int(date_in[:2]), int(date_in[2:4]))
+        elif (len(date_in) == 8):
+            d = datetime.date(int(date_in[4:]), int(date_in[:2]), int(date_in[2:4]))
+        else:
+            return None;
+    except:
+        return None;
+    else:
+        return d;
+
+# Def: get filenames
 def GetFilenames(dir_in):
     f_list = ['','','','','',[]]
     for f in glob.glob(dir_in + '*.txt'):
@@ -525,55 +587,60 @@ def WriteFeatures(indent, lvl, announcement_list, event_list, birthday_list, hai
     out_str = out_str + indent*(lvl) + '</features>\n'
     return out_str
 
-#start main
-# verify we have input
-if not (os.path.exists(dir_input)):
-    print "No input files!"
-    exit
-# create output directory if not already present
-if (not os.path.exists(dir_output)):
-    os.mkdir(dir_output)
+# main
+if (__name__ == '__main__'):
+    # verify we have input
+    if not (os.path.exists(dir_input)):
+        print "No input files!"
+        sys.exit(0)
+    # create output directory if not already present
+    if (not os.path.exists(dir_output)):
+        os.mkdir(dir_output)
 
-# get our list of files we'll be working with
-filenames_list = GetFilenames(dir_input)
+    # get our list of files we'll be working with
+    filenames_list = GetFilenames(dir_input)
 
-# verify that the non-optional portions exist
-if not ((len(filenames_list[id_articles]) > 0)
-        and (len(filenames_list[id_bodies]) > 0)):
-    print "No articles!"
-    exit
+    # verify that the non-optional portions exist
+    if not ((len(filenames_list[id_articles]) > 0)
+            and (len(filenames_list[id_bodies]) > 0)):
+        print "No articles!"
+        sys.exit(0);
 
-# read in optional files
-if (len(filenames_list[id_announcements]) > 0):
-    list_announcements = ReadAnnouncements(filenames_list[id_announcements])
-else:
-    list_announcements = []
-if (len(filenames_list[id_events]) > 0):
-    list_events = ReadEvents(filenames_list[id_events])
-else:
-    list_events = []
-if (len(filenames_list[id_birthdays]) > 0):
-    list_birthdays = ReadBirthdays(filenames_list[id_birthdays])
-else:
-    list_birthdays = []
-if (len(filenames_list[id_hails]) > 0):
-    list_hails = ReadHails(filenames_list[id_hails])
-else:
-    list_hails = []
+    # set the date vars
+    if (not SetDates()):
+        sys.exit(0);
 
-# read in articles
-list_articles = ReadArticles(filenames_list[id_articles], filenames_list[id_bodies])
+    # read in optional files
+    if (len(filenames_list[id_announcements]) > 0):
+        list_announcements = ReadAnnouncements(filenames_list[id_announcements])
+    else:
+        list_announcements = []
+    if (len(filenames_list[id_events]) > 0):
+        list_events = ReadEvents(filenames_list[id_events])
+    else:
+        list_events = []
+    if (len(filenames_list[id_birthdays]) > 0):
+        list_birthdays = ReadBirthdays(filenames_list[id_birthdays])
+    else:
+        list_birthdays = []
+    if (len(filenames_list[id_hails]) > 0):
+        list_hails = ReadHails(filenames_list[id_hails])
+    else:
+        list_hails = []
 
-# Ok, we have all the information now, let's put it into the xml_string
-# xml string - we'll add to this as we go
-xml_string = '<?xml version="1.0" encoding="utf-8"?>\n<chatter>\n    <issue date="' + date_long + '" url="' + date_short + '">\n'
-xml_string = xml_string + WriteArticles("    ", 2, list_articles)
-xml_string = xml_string + WriteFeatures("    ", 2, list_announcements, list_events, list_birthdays, list_hails)
-xml_string = xml_string + """    </issue>\n</chatter>"""
+    # read in articles
+    list_articles = ReadArticles(filenames_list[id_articles], filenames_list[id_bodies])
 
-# print out the xml
-f_out = open(dir_output + file_output, "w")
-print >> f_out, xml_string
-f_out.close()
+    # Ok, we have all the information now, let's put it into the xml_string
+    # xml string - we'll add to this as we go
+    xml_string = '<?xml version="1.0" encoding="utf-8"?>\n<chatter>\n    <issue date="' + date_long + '" url="' + date_short + '">\n'
+    xml_string = xml_string + WriteArticles("    ", 2, list_articles)
+    xml_string = xml_string + WriteFeatures("    ", 2, list_announcements, list_events, list_birthdays, list_hails)
+    xml_string = xml_string + """    </issue>\n</chatter>"""
 
-# We're done.
+    # print out the xml
+    f_out = open(dir_output + file_output, "w")
+    print >> f_out, xml_string
+    f_out.close()
+
+    # We're done.
