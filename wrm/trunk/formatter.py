@@ -15,7 +15,7 @@ class Formatter:
     @cachedmethod
     def __get_format_func(self, field):
         return 'format_%s' % re.sub(self.re_dash, self.re_underscore, field)
-
+    
     def format(self, input):
         """Formats the given input according to the formatting
         function defined in this instance.  Stores the original input
@@ -32,14 +32,7 @@ class Formatter:
         for field, value in input.items():
             func = getattr(self, self.__get_format_func(field), self.default_formatter)
             results[field] = self.post_formatter(func(value))
-            
-            # if 'division' in field:
-                # print 'Formatted %s field:' % field
-                #                 print 'Input:  %s (%s)' % (value, type(value))
-                #                 print 'Output: %s (%s)' % (results[field], type(results[field]))
-                #                 #print 'XXX:    %s (%s)' % (func(value), type(func(value)))
-                #                 print
-
+        
         # reset self.input for the next go-round
         self.input = None
 
