@@ -7,111 +7,74 @@
     exclude-result-prefixes="xs">
 
     <xsl:template name="page-template">
-        <xsl:param name="page-title" select="$default-page-title" as="xs:string" />
-        <xsl:param name="url-prefix" select="$default-url-prefix" as="xs:string" tunnel="yes" />
-        <xsl:variable name="this-issue" select="ancestor-or-self::issue" as="element()" />
+        <xsl:param    name="page-title" select="$default-page-title"     as="xs:string"              />
+        <xsl:param    name="url-prefix" select="$default-url-prefix"     as="xs:string" tunnel="yes" />
+        <xsl:variable name="this-issue" select="ancestor-or-self::issue" as="element()"              />
+        
+        <div class="asp">%@ Register tagprefix="bhc" Tagname="meta" src="~/includes/meta.ascx"                 </div>
+        <xsl:choose>
+        <xsl:when test="self::issue">
+        <div class="asp">%@ Register tagprefix="bhc" Tagname="header" src="/chatter/includes/header_index.ascx"</div>
+        </xsl:when>
+        <xsl:otherwise>
+        <div class="asp">%@ Register tagprefix="bhc" Tagname="header" src="/chatter/includes/header_story.ascx"</div>
+        </xsl:otherwise>
+        </xsl:choose>
+        <div class="asp">%@ Register tagprefix="bhc" Tagname="sidebar" src="sidebar.ascx"                      </div>
+        <div class="asp">%@ Register tagprefix="bhc" Tagname="footer" src="<xsl:value-of select="$url-prefix" />footer.ascx"</div>
 
         <html>
             <head>
-                <title>Courtyard Chatter<xsl:if test="$page-title">: <xsl:value-of select="$page-title" /></xsl:if></title>
-                <meta http-equiv="imagetoolbar" content="no" />
-                <meta http-equiv="Pragma" content="no-cache" />
-                <link rel="stylesheet" type="text/css" href="/chatter/css/base.css" />
+                <xsl:choose>
+                <xsl:when test="$page-title">
+                <div class="asp-bhc">:meta title="Courtyard Chatter: <xsl:value-of select="$page-title" />" runat="server"</div>
+                </xsl:when>
+                <xsl:otherwise>
+                <div class="asp-bhc">:meta title="Courtyard Chatter" runat="server"</div>
+                </xsl:otherwise>
+                </xsl:choose>
+                <link rel="stylesheet" type="text/css" href="/chatter/css/base.css"          />
                 <link rel="stylesheet" type="text/css" href="/chatter/css/header-footer.css" />
-                <link rel="stylesheet" type="text/css" href="/chatter/css/chatter.css" />
+                <link rel="stylesheet" type="text/css" href="/chatter/css/chatter.css"       />
+                <script language="c#" src="/chatter/includes/chatter.cs" runat="server" type="text/cs"></script>
             </head>
 
             <body class="with-sidebar">
+				<!-- for tables and other iteration tasks -->
+				<div class="asp">% int i = 0;</div>
+			
                 <!-- the sitewide header -->
-                <div id="sitewide-header">
-                    <a name="top" id="top"></a>
-                    <h1><a href="http://www.BrookhavenCollege.edu/"><img src="/images/bhc/logos/bhc-logo-2004-trimmed.gif" alt="Brookhaven College" border="0" width="227" height="37" /></a></h1>
-                </div>
-                <hr />
-
-                <!-- the navigation -->
-                <div id="sitewide-nav">
-                <a href="http://intranet.bhc.dcccd.edu/intranet/dcccd/bhc/mission.html">Mission</a>&#160;&#160;|&#160;
-                <a href="http://intranet.bhc.dcccd.edu/intranet/dcccd/bhc/cal.html">Calendars</a>&#160;&#160;|&#160;
-                <a href="http://intranet.bhc.dcccd.edu/intranet/dcccd/bhc/onepg04intro.html">Planning</a>&#160;&#160;|&#160;
-                <a href="/chatter/">Courtyard&#160;Chatter</a>&#160;&#160;|&#160;
-                <a href="http://intranet.bhc.dcccd.edu/intranet/dcccd/bhc/resource/reso.html">Resources</a>&#160;&#160;|&#160;
-                <a href="http://intranet.bhc.dcccd.edu/intranet/bhc/sdir/sdir.html">Directories</a>&#160;&#160;|&#160;
-                <a href="http://intranet.bhc.dcccd.edu/intranet/dcccd/bhc/emp_inclementweather.html">Emergencies&#160;&amp;&#160;Bad&#160;Weather</a>&#160;&#160;|&#160;
-                <a href="http://dsc3.dcccd.edu/intranet/dcccd/" target="_blank">DCCCD&#160;Intranet</a>
-                </div>
-                <hr />
-
-                <!-- if we're on the index page, insert the masthead -->
-                <xsl:if test="self::issue">
-                    <div id="channel-header">
-                        <h1><img src="/images/bhc/chatter/masthead-gray.gif" alt="Courtyard Chatter" width="374" height="72" border="0" /></h1>
-                    </div>
-                </xsl:if>
-
+                <div class="asp-bhc">:header runat="server"</div>
+                
+               
                 <!-- the dateline -->
-                <div id="sitewide-subnav">Brookhaven College employee newsletter: <xsl:value-of select="if ($this-issue/@day) then $this-issue/@day else $default-day" />, <xsl:value-of select="$this-issue/@date" /></div>
+                <div id="sitewide-subnav">
+                    Brookhaven College employee newsletter: <xsl:value-of select="if ($this-issue/@day) then $this-issue/@day else $default-day" />, <xsl:value-of select="$this-issue/@date" />
+                </div>
                 <hr />
-
+                
                 <!-- page content -->
                 <div id="page-container">
                     <!-- only output a page-header if we're not on an index page -->
                     <xsl:if test="not(self::issue)">
-                        <div id="page-header">
-                            <h1>Courtyard Chatter</h1>
-                        </div>
+                    <div id="page-header">
+                        <h1>Courtyard Chatter</h1>
+                    </div>
                     </xsl:if>
-
+                    
                     <div id="page-content">
                         <!-- apply-templates to the element that called this template -->
                         <xsl:apply-templates select="." />
                     </div>
                 </div>
                 <hr />
-
-                <!-- sidebar -->
-                <div id="sidebar">
-                    <h3>Regular Features</h3>
-                    <ul>
-                        <xsl:apply-templates select="$this-issue/features/feature" mode="sidebar">
-                            <!-- <xsl:sort select="@id" /> -->
-                            <!-- <li><a href="{$url-prefix}{@id}{$output-extension}"><xsl:value-of select="title" /></a></li> -->
-                        </xsl:apply-templates>
-                    </ul>
-
-                    <h3>This Issue</h3>
-                    <ul>
-                        <li>
-                            <xsl:variable name="index-url">
-                                <xsl:choose> 
-                                    <xsl:when test="self::issue and $url-prefix != ''"><xsl:value-of select="$url-prefix" /></xsl:when>
-                                    <xsl:otherwise>./</xsl:otherwise>
-                                </xsl:choose>
-                            </xsl:variable>
-                            <a href="{$index-url}">Front Page</a>
-                        </li>
-                        <xsl:apply-templates select="$this-issue/articles/article" mode="sidebar" />
-                    </ul>
-
-                    <h3>Archive</h3>
-                    <ul>
-                        <li><a href="/chatter/">Courtyard Chatter Archive</a></li>
-                    </ul>
-                </div>
-
-                <!-- sitewide footer -->
-                <hr />
-                <div id="sitewide-footer">
-                    <p>Page modified <xsl:value-of select="$this-issue/@date" />.</p>
-                    <p>Published biweekly by the Marketing and Public Information Office. Previous issues of the Courtyard Chatter are available in the <a href="/chatter/">Chatter Archive</a>.</p>
-                    <p>E-mail your comments, suggestions, story ideas, news tips and other submissions for the <i>Courtyard Chatter</i> to the Marketing and Public Information Office:</p>            
-                    <ul>
-                        <li>editor, <i>Courtyard Chatter</i>, <a href="mailto:bhcChatter@dcccd.edu">bhcChatter@dcccd.edu</a>, or</li>
-                        <li>director, Marketing and Public Information, <a href="mailto:bhcInfo@dcccd.edu">bhcInfo@dcccd.edu</a>.</li>
-                    </ul>
-                    <p>Deadline for submissions is 3 p.m. the Thursday before publication.</p>
-                    <p>Please report technical difficulties to <a href="mailto:bhcWebmaster@dcccd.edu">bhcWebmaster@dcccd.edu</a>.</p>
-                </div>
+                
+                <!-- the sitewide sidebar -->
+                <div class="asp-bhc">:sidebar runat="server" </div>
+                
+                <!-- the sitewide footer -->
+                <div class="asp-bhc">:footer runat="server" </div>
+                
             </body>
         </html>
     </xsl:template>
