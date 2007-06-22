@@ -62,39 +62,37 @@ def build_xml(root, data):
     return get_term_element(root, data)
 
 def get_term_element(parent, data, returnself=False):
-    name = data['term']
-    machine_name=get_machine_name(name)
-    dates = data['term-dates']
-    year = data['year']
-    sortkey = data['term-sortkey']
-    attrs = dict(name=name, machine_name=machine_name, sortkey=sortkey, dates=dates, year=year)
+    attrs = {
+        'name':         data['term'],
+        'machine_name': get_machine_name(data['term']),
+        'dates':        data['term-dates'],
+        'year':         data['year'],
+        'sortkey':      data['term-sortkey'],
+    }
     el = xmlutils.add_element(parent, 'term', attrs)
-
     if returnself:
         return el
     return get_division_element(el, data)
 
 def get_division_element(parent, data, returnself=False):
-    name = data['division']
-    machine_name = get_machine_name(name)
-    attrs = dict(name=name, machine_name=machine_name)
+    attrs = {
+        'name':         data['division'],
+        'machine_name': get_machine_name(data['division']),
+    }
     el = xmlutils.add_element(parent, 'division', attrs)
-
     if returnself:
         return el
     return get_subject_element(el, data)
 
 def get_subject_element(parent, data, returnself=False, notype=False):
-    subject = data['subject-name']
-    subject_comments = data['subject-comments']
-
-    name = subject
-    machine_name = get_machine_name(name)
-    attrs = dict(name=name, machine_name=machine_name)
-    children = dict(comments=subject_comments)
-
+    attrs = {
+        'name':         data['subject-name'],
+        'machine_name': get_machine_name(data['subject-name']),
+    }
+    children = {
+        'comments': data['subject-comments'],
+    }
     el = xmlutils.add_element(parent, 'subject', attrs, children)
-
     if returnself:
         return el
     return get_topic_element(el, data, notype=notype)
