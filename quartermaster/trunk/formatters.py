@@ -22,6 +22,7 @@ class CCEFormatter(Formatter):
         trailing whitespace."""
         return data
 
+
     @excepting(AttributeError, u'')
     @stripped
     @uppercased
@@ -36,9 +37,6 @@ class CCEFormatter(Formatter):
         """The division names are uppercased and stripped of
         whitespace."""
         return data
-
-    # all of the division names are formatted identically, so they
-    # share a generic formatting function
     format_major_division = format_division
     format_minor_division = format_division
     format_other_division = format_division
@@ -93,9 +91,12 @@ class CCEFormatter(Formatter):
     format_Concurrent = format_field_with_flag
     
     
+    #=========================================================================
     # Virtual fields
+    #
     # These formatting functions don't correspond to fields in the database,
     # their return values are taken from other fields (using self.input)    
+    #=========================================================================
     def format_textbooks(self, data):
         """Joins any textbooks found in the three separate textbook fields
         into a comma-separated list of titles."""
