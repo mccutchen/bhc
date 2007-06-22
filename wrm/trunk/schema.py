@@ -61,8 +61,11 @@ class DatabaseSchema(Schema):
         self.db = db
         self.fields = db.get_columns()
         
-        if filter(lambda vf: vf in self.fields, virtual_fields):
-            raise SchemaError, 'Virtual field %s clashes with a preexisting field in the database.' % vf
+        # ensure that virtual field names don't clash with fields in the
+        # database
+        for vf in virtual_fields:
+            if vf in self.fields:
+                raise SchemaError, 'Virtual field %s clashes with a preexisting field in the database.' % vf
         self.virtual_fields = virtual_fields
     
     def extract(self, row):
