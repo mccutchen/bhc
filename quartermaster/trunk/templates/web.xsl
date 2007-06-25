@@ -340,51 +340,34 @@
     </xsl:template>
 
 
-    <!-- Spanish translations
-         TODO:  This is a mess, figure out a nicer way to do this.
-    -->
-    <xsl:template match="prerequisites">
-        <xsl:call-template name="preq-supplies-textbooks">
-            <xsl:with-param name="class-name" select="local-name()" />
-            <xsl:with-param name="label">
-                <xsl:choose>
-                    <xsl:when test="not(ancestor::course/@spanish)">Prerequisites</xsl:when>
-                    <xsl:when test="ancestor::course/@spanish">Requisitos</xsl:when>
-                </xsl:choose>
-            </xsl:with-param>
-        </xsl:call-template>
-    </xsl:template>
+    <!-- =====================================================================
+		Spanish translations
+		
+        The prerequisites, supplies and textbooks elements need to be output
+		with a label which may or may not need to be in Spanish.  The
+		following templates output the label in English by default, with
+		specialized templates to provide the label in Spanish where needed.
+    ====================================================================== -->
+	<xsl:template match="prerequisites | supplies | textbooks">
+		<!-- by default, the label is the same as the element name, with the
+		     first letter uppercased -->
+		<xsl:param name="label" select="concat(upper-case(substring(local-name(), 1, 1)), substring(local-name(), 2))" />
+		<p class="{local-name()}"><xsl:value-of select="$label" />: <xsl:apply-templates /></p>
+	</xsl:template>
+	
+	<!-- the following templates only match for courses that are in Spanish
+		 and override the label with a Spanish translation -->
+	<xsl:template match="prerequisites[ancestor::course/@spanish]">
+		<xsl:next-match><xsl:with-param name="label">Requisitos</xsl:with-param></xsl:next-match>
+	</xsl:template>
+	
+	<xsl:template match="supplies[ancestor::course/@spanish]">
+		<xsl:next-match><xsl:with-param name="label">&#218;tiles escolares</xsl:with-param></xsl:next-match>
+	</xsl:template>
 
-    <xsl:template match="supplies">
-        <xsl:call-template name="preq-supplies-textbooks">
-            <xsl:with-param name="class-name" select="local-name()" />
-            <xsl:with-param name="label">
-                <xsl:choose>
-                    <xsl:when test="not(ancestor::course/@spanish)">Supplies</xsl:when>
-                    <xsl:when test="ancestor::course/@spanish">&#218;tiles escolares</xsl:when>
-                </xsl:choose>
-            </xsl:with-param>
-        </xsl:call-template>
-    </xsl:template>
-
-    <xsl:template match="textbooks">
-        <xsl:call-template name="preq-supplies-textbooks">
-            <xsl:with-param name="class-name" select="local-name()" />
-            <xsl:with-param name="label">
-                <xsl:choose>
-                    <xsl:when test="not(ancestor::course/@spanish)">Textbooks</xsl:when>
-                    <xsl:when test="ancestor::course/@spanish">Libros de texto</xsl:when>
-                </xsl:choose>
-            </xsl:with-param>
-        </xsl:call-template>
-    </xsl:template>
-
-    <xsl:template name="preq-supplies-textbooks">
-        <xsl:param name="class-name" />
-        <xsl:param name="label" />
-        <p class="{$class-name}"><xsl:value-of select="$label" />: <xsl:apply-templates /></p>
-    </xsl:template>
-
+	<xsl:template match="textbooks[ancestor::course/@spanish]">
+		<xsl:next-match><xsl:with-param name="label">Libros de texto</xsl:with-param></xsl:next-match>
+	</xsl:template>
 
 
     <xsl:template match="catalog_page_header | catalog_prefix | course_description | suffix_description">
