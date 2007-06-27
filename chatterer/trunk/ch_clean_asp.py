@@ -20,7 +20,7 @@
 import sys, glob, os
 
 # some helpful functions
-import util_lib
+import ch_util_lib
 
 # struct Tag
 class Tag:
@@ -63,12 +63,12 @@ def GetFilenames(dir_in):
     path_list = [];
 
     # clean dir_in
-    dir_in = util_lib.CleanPath(dir_in);
+    dir_in = ch_util_lib.CleanPath(dir_in);
 
     # find the paths
     for f in glob.glob(dir_in + '*'):
         if (os.path.isfile(f)):
-            if (util_lib.GetExt(f) in ext_list):
+            if (ch_util_lib.GetExt(f) in ext_list):
                 path_list.append(f);
         elif (os.path.isdir(f)):
             path_list = path_list + GetFilenames(f);
@@ -164,7 +164,7 @@ def WriteString(path_in, str_in):
         return False;
 
     # verify this is safe
-    if (not util_lib.SafeSave(path_in)):
+    if (not ch_util_lib.SafeSave(path_in)):
         return False;
 
     # open the file for writing
