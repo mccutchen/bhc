@@ -99,7 +99,6 @@
         </subject>
         <subject name="Child Development">
             <comments>NOTE: All students enrolling in child development courses must submit to a criminal background check. For additional information call Dr. Jane Rowe at 972-860-4144 or Johnny Castro at 972-860-4136.</comments>
-            <pattern match="EDUC" priority="0" unsorted="true" />
             <pattern match="EDTC" priority="0" unsorted="true" />
             <pattern match="CDEC" priority="0" unsorted="true" />
             <pattern match="TECA" priority="0" unsorted="true" />
@@ -145,6 +144,9 @@
                 <p>The orientation for the concurrent ECON 1303 is part of the orientation for the ECON 2301 course carrying the same section number. If there are any questions, please come by the ECON HelpLab, Room M130, call 972-860-4169 or 972-860-4164, or e-mail Gus Herring at gHerring@dcccd.edu with a copy to Bob Smith at bSmith1@dcccd.edu.</p>
             </comments>
             <pattern match="ECON" priority="0" unsorted="true" />
+        </subject>
+        <subject name="Education">
+            <pattern match="EDUC" priority="0" unsorted="true" />
         </subject>
         <subject name="Emergency Medical Services - Unsorted">
             <pattern match="EMSP" priority="0" unsorted="true" />
