@@ -1,6 +1,6 @@
 # $Id$
 
-import re, sys, UserDict
+import re, sys
 
 try:
     from xml.etree import cElementTree as ElementTree
@@ -48,7 +48,7 @@ RUBRIK_MAPPING_CACHE = None
 FULL_MAPPING_CACHE = None
 
 
-class Pattern:
+class Pattern(object):
     """Encapsulates a compiled regular expression and keeps
     track of its own priority.  Used as a key in the mappings."""
     def __init__(self, pattern, priority, key=None, flags=0):
@@ -77,7 +77,7 @@ class Pattern:
     def __repr__(self):
         return str(self)
 
-class Mapping(UserDict.UserDict):
+class Mapping(dict):
     """A specialized dictionary object that is used to
     store the actual mapping information and the calculated
     sortkey for a specific MappingPattern used in the
@@ -202,11 +202,9 @@ def init(path):
             pattern = el.attrib.get('match')
 
             # report any duplicate patterns
-            if pattern in seen_patterns[typename]:
-                if DEBUG: print >> sys.stderr, ' * Duplicate pattern found in %s mappings: %s' % (typename, pattern)
-                pass
-            else:
-                seen_patterns[typename].append(pattern)
+            if pattern in seen_patterns[typename] and DEBUG:
+                print >> sys.stderr, ' * Duplicate pattern found in %s mappings: %s' % (typename, pattern)
+            seen_patterns[typename].append(pattern)
 
             # build the regrouping for this pattern, which consists
             # of a tuple for each parent, containing its name, comments
@@ -220,13 +218,10 @@ def init(path):
                     if len(comments) == 0:
                         # plain text comment, so we simply extract the text
                         comments = comments.text
-                    elif len(comments) > 0:
+                    else:
                         # "rich" comment, containing HTML, so we generate a string representation
                         # of the HTML
                         comments = ''.join(ElementTree.tostring(el).strip() for el in comments.getchildren())
-                    else:
-                        # something screwy happened
-                        raise
                 sortkey = getsortkey(ancestor)
                 mapping[ancestor.tag] = (name, comments, sortkey)
 
