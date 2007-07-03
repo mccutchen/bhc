@@ -1,0 +1,2 @@
+@python -m multiscan
+@PAUSE

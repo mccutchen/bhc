@@ -1,0 +1,72 @@
+body#scan
+{
+	background-color: #FFFFFF;
+}
+body#scan div
+{
+	margin-left:      25px;
+	border-left:      1px solid #000000;
+	font-size:        12pt;
+}
+body#scan div.title
+{
+	margin-left:      0px;
+	border-left:      0px;
+	border-bottom:    1px solid #000000;
+	padding-left:     7px;
+	font-weight:      bold;
+	font-size:        14pt;
+}
+
+body#scan div#page-container
+{
+	background-color: #EEEEEE;
+	margin-left:      0px;
+	border:           0px;
+	padding:          15px 15px 15px 15px;
+}
+body#scan div.results
+{
+	margin-left:      0px;
+	border:           1px solid #000000;
+	padding-left:     0px;
+}
+body#scan div.results_title
+{
+	background-color: #FFCCCC;
+}
+body#scan div.node
+{
+	border-top:       1px solid #000000;
+}
+body#scan div.node_first
+{
+	border-top:       0px;
+}
+body#scan div.node_title
+{
+	background-color: #CCFFCC;
+}
+body#scan div.loc
+{
+	border-bottom:    1px solid #000000;
+}
+body#scan div_loc_last
+{
+	border-bottom:    0px;
+}
+body#scan div.loc_title
+{
+	border-bottom:    0px;
+	background-color: #FFFFCC;
+}
+body#scan div.line
+{
+	border-left:     0px;
+}
+body#scan span.str
+{
+	font-weight:     bold;
+	text-decoration: underline;
+	font-size:       150%;
+}

@@ -1,0 +1,43 @@
+// batch file for link_scanner.py
+// holds details of a scan or set of scans
+//
+// types of entries that can be included are:
+//   - Strings:    strings to scan for (put ' or " on each end of char group - this allows for searching of whitespace, but be aware that tabs and spaces are not the same thing), semicolon, name of file to which results shall be saved
+//   - Paths:      scans within each directory listed
+//     - '-r'         recurse (default)
+//     - '-n'         no-recursion
+//   - Skip:       skips these directories
+//   - FileTypes:  list of file types to be scanned
+
+Strings:
+ 'star'
+
+Output:
+ results_test.html
+
+Paths:
+ .\ -r
+
+FileTypes:
+ .htm
+ .html
+ .xhtml
+ .css
+ .xml
+ .xsl
+ .asp
+ .aspx
+ .ascx
+ .js
+ .cs
+ .vb
+ .py
+
+Skip:
+ b:\.bzr\
+ b:\_archive!\
+ b:\_index back\
+ b:\_tools\
+ b:\course-schedules\
+ b:\images\
+ b:\pdf\
