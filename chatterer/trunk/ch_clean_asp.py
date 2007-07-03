@@ -2,27 +2,45 @@
 # Section:   Brookhaven MPI
 # e-mail:    thaapala@dcccd.edu
 # extention: x4104
-# Created:   04 May 07
-# Modified:  20 June 07
+# Created:   04 May  2007
+# Modified:  03 July 2007
+
+# Utility Script: This script is included in many projects.
+# PLEASE NOTE: the versions are *NOT* interchangeable. This script grows
+#   with each project and its implementation may change. Updating this
+#   script could break your project if it is based on an older version.
+#   In addition, some clean_asp scripts are specialized for the project
+#   into which they are imported and could have /very bad/ effects on
+#   other projects.
+# So, DON'T update this lib unless you are going to edit the code in place.
 
 # Cleans up .aspx, .ascx files in the target directory
 # Converts:
 #   - '<div class="asp">' to '<%' and the VERY NEXT '</div>' to '%>'
 #   - '<div class="asp:bhc">' to '<bhc:' and the VERY NEXT '</div>' to ' />'
 #   Iff the following are between '<div class="asp">' tags:
-#          'and'       to '&&'
-#         '&amp;&amp;' to '&&'
-#          'or'        to  ||
-#          '&lt;'      to  <
-#          '&gt;'      to  >
+#          'and'  to  '&&'
+#          'or'   to  '||'
+#          '&lt;' to  '<'
+#          '&gt;' to  '>'
+
+# UGLINESS: this script is not very advanced. You *MUST* update the globals
+#   in order to specify /where/ the files to be cleaned are. Please do not
+#   include the complete path. Place any files to be modified within the
+#   script's working directory to prevent overwritting something important.
+
+# NOTE: util_lib may need to be modified depending on what the local copy
+#   of the util_lib is named. The 'as util_lib' will prevent the script
+#   from breaking when you specify the local file.
 
 # we'll need these for working with files and sending exit value
 import sys, glob, os
 
 # some helpful functions
-import ch_util_lib
+import ch_util_lib as util_lib
 
-# struct Tag
+
+# Tag
 class Tag:
     open  = '';
     close = '';
@@ -34,7 +52,9 @@ class Tag:
     def __str__(self):
         return 'open:  \'' + str(self.open)  + '\'\nclose: \'' + str(self.close) + '\''
 
-# check files in:
+
+# globals
+max_read  = 1000000; # a meg should be enuf. That's *HUGE* for a text file.
 dir_in    = 'chatter-output\\';
 ext_list  = ['.aspx', '.ascx'];
 tag_map   = {
@@ -43,11 +63,10 @@ tag_map   = {
     'asp:%'                : [Tag('asp:%'                ,'%'     ), Tag('<%'   , '%>' )],
     'asp-char:%'           : [Tag('asp-char:%'           ,'%'     ), Tag('&'    , ';'  )]}
 intag_map = {
-    'and' : '&&',
-    'or'  : '||',
-    '&lt;': '<' ,
-    '&gt;': '>' };
-
+    ' and ' : '&&',
+    ' or '  : '||',
+    '&lt;'  : '<' ,
+    '&gt;'  : '>' };
 
 
 # Def: GetFilenames()
@@ -63,12 +82,12 @@ def GetFilenames(dir_in):
     path_list = [];
 
     # clean dir_in
-    dir_in = ch_util_lib.CleanPath(dir_in);
+    dir_in = util_lib.CleanPath(dir_in);
 
     # find the paths
     for f in glob.glob(dir_in + '*'):
         if (os.path.isfile(f)):
-            if (ch_util_lib.GetExt(f) in ext_list):
+            if (util_lib.GetExt(f) in ext_list):
                 path_list.append(f);
         elif (os.path.isdir(f)):
             path_list = path_list + GetFilenames(f);
@@ -89,7 +108,7 @@ def ReadFile(path_in):
 
     # open, read, and close the file
     in_file = open(path_in, 'r');
-    input_str = in_file.read();
+    input_str = in_file.read(max_read);
     in_file.close();
 
     # we're done
@@ -164,7 +183,7 @@ def WriteString(path_in, str_in):
         return False;
 
     # verify this is safe
-    if (not ch_util_lib.SafeSave(path_in)):
+    if (not util_lib.SafeSave(path_in)):
         return False;
 
     # open the file for writing
