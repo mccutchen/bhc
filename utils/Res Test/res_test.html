@@ -2,24 +2,24 @@
 	<head>
 		<title>Res Test</title>
 		<script type="text/javascript">
-			var popwindow = Array();
-			function PopRes(id,title,width,height)
+			var popwindow;
+			function PopRes(title,width,height)
 			{
 				var url = '';
 				if (document.res.resurl.value) { url=document.res.resurl.value; }
 				var opts = 'width=' + width + ',height=' + height + ',resizable=no,scrollbars=yes,toolbar=yes,menubar=yes,location=yes,status=yes';
-				popwindow[id] = window.open(url,title,opts);
-				if (window.focus) { popwindow[id].focus(); }
+				popwindow = window.open(url,title,opts);
+				if (window.focus) { popwindow.focus(); }
 			}
 		</script>
 	</head>
 	<body>
 	
-		<form name="res">
+		<form name="res" onSubmit="javascript:PopRes('restest800x600',800,600)">
 			<lable>Enter a url to open (or just paste it into popup):</label><br />
 			<input name="resurl"    type="text"   tabindex="1" width="600" /><br />
-			<input name="800x600"   type="button" tabindex="2" onClick="javascript:PopRes(0,'restext800x600',800,600)"     value="[ 800 x 600 ]"   />
-			<input name="1280x1024" type="button" tabindex="3" onClick="javascript:PopRes(1,'restest1280x1024',1280,1024)" value="[ 1280 x 1024 ]" />
+			<input name="800x600"   type="button" tabindex="2" onClick="javascript:PopRes('restest800x600',800,600)"     value="[ 800 x 600 ]"   />
+			<input name="1280x1024" type="button" tabindex="3" onClick="javascript:PopRes('restest1280x1024',1280,1024)" value="[ 1280 x 1024 ]" />
 		</form>
 
 	</body>
