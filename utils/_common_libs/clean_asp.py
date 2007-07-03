@@ -39,21 +39,6 @@ import sys, glob, os
 # some helpful functions
 import util_lib as util_lib
 
-# globals
-max_read  = 1000000; # a meg should be enuf. That's *HUGE* for a text file.
-dir_in    = 'chatter-output\\';
-ext_list  = ['.aspx', '.ascx'];
-tag_map   = {
-    '<div class="asp">'    : [Tag('<div class="asp">'    ,'</div>'), Tag('<'    , ' %>')],
-    '<div class="asp-bhc">': [Tag('<div class="asp-bhc">','</div>'), Tag('<bhc' , ' />')],
-    'asp:%'                : [Tag('asp:%'                ,'%'     ), Tag('<%'   , '%>' )],
-    'asp-char:%'           : [Tag('asp-char:%'           ,'%'     ), Tag('&'    , ';'  )]}
-intag_map = {
-    'and' : '&&',
-    'or'  : '||',
-    '&lt;': '<' ,
-    '&gt;': '>' };
-
 
 # Tag
 class Tag:
@@ -66,6 +51,22 @@ class Tag:
         self.close = c_in;
     def __str__(self):
         return 'open:  \'' + str(self.open)  + '\'\nclose: \'' + str(self.close) + '\''
+
+
+# globals
+max_read  = 1000000; # a meg should be enuf. That's *HUGE* for a text file.
+dir_in    = 'chatter-output\\';
+ext_list  = ['.aspx', '.ascx'];
+tag_map   = {
+    '<div class="asp">'    : [Tag('<div class="asp">'    ,'</div>'), Tag('<'    , ' %>')],
+    '<div class="asp-bhc">': [Tag('<div class="asp-bhc">','</div>'), Tag('<bhc' , ' />')],
+    'asp:%'                : [Tag('asp:%'                ,'%'     ), Tag('<%'   , '%>' )],
+    'asp-char:%'           : [Tag('asp-char:%'           ,'%'     ), Tag('&'    , ';'  )]}
+intag_map = {
+    ' and ' : '&&',
+    ' or '  : '||',
+    '&lt;'  : '<' ,
+    '&gt;'  : '>' };
 
 
 # Def: GetFilenames()
