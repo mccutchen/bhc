@@ -561,7 +561,7 @@ class BatchData(object):
                 
                 # if we should skip, skip
                 if (f in self.skip_list):
-                    print 'Skipping: -' + path;
+                    print 'Skipping: -' + f;
                     continue;
 
                 # otherwise, store it

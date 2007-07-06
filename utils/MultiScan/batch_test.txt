@@ -11,6 +11,7 @@
 
 Strings:
  'star'
+ 'start'
 
 Output:
  results_test.html
@@ -41,3 +42,4 @@ Skip:
  b:\course-schedules\
  b:\images\
  b:\pdf\
+ .\results_test.html
