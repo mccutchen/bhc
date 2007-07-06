@@ -854,6 +854,7 @@
 					<pattern match="EMSP 2143-2216" />
 					<pattern match="EMSP 2143-2201" />
 					<pattern match="EMSP 2463-2216" />
+					<pattern match="EMSP 2332-2005" /><!-- Added 07/06/2007 -->
                 </subtopic>
                 <subtopic name="Paramedic Class #17, B Shift">
                     <pattern match="EMSP 1355-2217" />
@@ -864,6 +865,7 @@
 					<pattern match="EMSP 2430-2217" />
 					<pattern match="EMSP 2430-2204" />
 					<pattern match="EMSP 2430-2205" />
+					<pattern match="EMSP 2260-2619" /><!-- Added 07/06/2007 -->
                 </subtopic>
                 <subtopic name="Paramedic Class #18, C Shift">
 					<pattern match="EMSP 1438-2218" />
@@ -880,6 +882,7 @@
 					<pattern match="EMSP 2444-2209" />
 					<pattern match="EMSP 2260-2718" /><!-- Added 4/26 -->
 					<pattern match="EMSP 2260-2218" /><!-- Added 5/25 -->
+					<pattern match="EMSP 2261-2216" /><!-- Added 07/06/2007 -->
 
                 </subtopic>
 				<subtopic name="Paramedic Class #19, Evenings"><!-- Added a lot of these 4/26 -->
