@@ -1,6 +1,8 @@
-from wrm.formatter import *
-from wrm.decorators import *
-from wrm.utils import *
+import datetime, re
+
+from wrm.formatter import Formatter
+from wrm.decorators import cached
+from wrm import utils
 from wrm import xmlutils
 
 import mappings
@@ -68,7 +70,7 @@ class CreditFormatter(BaseFormatter):
 
     def format_class_sortkey_date(self, value):
         """Returns the ordinal value of the given class's start date."""
-        startdate = wrm.utils.parsedate(self.input['start-date'])
+        startdate = utils.parsedate(self.input['start-date'])
         return str(startdate.toordinal())
     
     count = 0
@@ -84,7 +86,7 @@ class CreditFormatter(BaseFormatter):
         except ValueError:
             return '2400'
 
-    @cachedmethod
+    @cached
     def format_date(self, value):
         """Returns a string representing the same date with any
         leading zeros and the year removed.
@@ -146,11 +148,11 @@ class CreditFormatter(BaseFormatter):
         giventerm = value.strip()
         newterm = None
         if profile.term_dates:
-            begins = parsedate(self.input['start-date'])
+            begins = utils.parsedate(self.input['start-date'])
             earliest = None
             latest = None
             for term, dates in profile.term_dates.items():
-                termstart, termend = map(parsedate, dates.split('-'))
+                termstart, termend = map(utils.parsedate, dates.split('-'))
                 if termstart <= begins and termend > begins:
                     newterm = term
                     break
@@ -176,7 +178,7 @@ class CreditFormatter(BaseFormatter):
         """Only returns the cross-listings if the given class info does not match
         any pattern in the current profile's skip_crosslistings dict."""
         for key, patterns in profile.skip_crosslistings.items():
-            if key in self.input and any(patterns, lambda p: re.match(p, self.input[key])):
+            if key in self.input and utils.any(patterns, lambda p: re.match(p, self.input[key])):
                 return None
             elif key not in self.input:
                 print 'Invalid key in profile.skip_crosslistings: %s (%s)' % (key, repr(profile.skip_crosslistings))
@@ -235,7 +237,7 @@ class CreditFormatter(BaseFormatter):
         of the given class."""
         if FormatUtils.is_minimester(self.input):
             # we've got a minimester!
-            startdate = parsedate(self.input['start-date'])
+            startdate = utils.parsedate(self.input['start-date'])
             minimester = startdate.strftime('%B')
             return minimester
         return ''
@@ -253,7 +255,7 @@ class CreditFormatter(BaseFormatter):
         for each unique start date, which is bad."""
         if FormatUtils.is_minimester(self.input):
             # normalize the start date
-            startdate = parsedate(self.input['start-date']).replace(day=1)
+            startdate = utils.parsedate(self.input['start-date']).replace(day=1)
             # return its ordinal value
             return str(startdate.toordinal())
         return ''
@@ -261,7 +263,7 @@ class CreditFormatter(BaseFormatter):
     def format_class_sortkey_date(self, value):
         """Generates an integer sortkey based on the start date of the
         given class."""
-        startdate = parsedate(self.input['start-date'])
+        startdate = utils.parsedate(self.input['start-date'])
         return str(startdate.toordinal())
 
     def format_core_component(self, value):
@@ -430,7 +432,7 @@ class FormatUtils:
                 # if this class matches any of the patterns in
                 # profile.skip_minimesters, return False
                 for key, patterns in profile.skip_minimesters.items():
-                    if key in classdata and any(patterns, lambda p: re.match(p, classdata[key])):
+                    if key in classdata and utils.any(patterns, lambda p: re.match(p, classdata[key])):
                         return False
                     elif key not in classdata:
                         print 'Inavlid key in skip_minimesters: %s' % repr(key)
@@ -461,10 +463,9 @@ class FormatUtils:
         Colleague sees the May semester as just a part of Summer I,
         but we treat them separately."""
 
-        start_date = parsedate(start_date)
-        end_date = parsedate(end_date)
+        start_date = utils.parsedate(start_date)
+        end_date = utils.parsedate(end_date)
 
-        import datetime
         standard_start_date = datetime.date(2007, 8, 27)
         standard_end_date = datetime.date(2007, 12, 13)
         one_week = datetime.timedelta(7)
