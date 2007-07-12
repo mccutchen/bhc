@@ -4,11 +4,12 @@ rem ===================================================================
 rem Settings
 rem ===================================================================
 
-rem The list of preprocessors to run
-set PREPROCESSORS=(remove-locations divisions-1 divisions-2 subjects-1 subjects-2 types-1 types-2 consolidate-descriptions)
-
 rem Where are the preprocessors located (no trailing slash)
 set PREPROCESSOR_PATH=preprocessors
+
+rem Where to find the list of preprocessors to run (this should be a
+rem file with one preprocessor name per line)
+set PREPROCESSOR_ORDER=%PREPROCESSOR_PATH%\ORDER.txt
 
 rem Where is Saxon located?
 set SAXON_PATH=C:\saxon\saxon8.jar
@@ -32,9 +33,10 @@ echo Copying input...
 copy %INPUT_PATH% %SCHEDULE_FILE% > garbage.txt && del garbage.txt
 echo.
 
-rem Loop through each of the %PREPROCESSORS%
+rem Loop through each of the preprocessors defined in the file found
+rem at %PREPROCESSOR_ORDER%
 echo Running preprocessors...
-for %%P in %PREPROCESSORS% do echo - %%P.xsl && java -jar %SAXON_PATH% -o %SCHEDULE_FILE% %SCHEDULE_FILE% %PREPROCESSOR_PATH%/%%P.xsl
+for /F %%P in (%PREPROCESSOR_ORDER%) do echo - %%P.xsl && java -jar %SAXON_PATH% -o %SCHEDULE_FILE% %SCHEDULE_FILE% %PREPROCESSOR_PATH%/%%P.xsl
 echo Finished.
 echo.
 
