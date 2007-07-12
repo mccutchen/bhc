@@ -1,0 +1,181 @@
+<!-- Updated 7/5/2006 by Rik Jones to include course.core-code also fixed minor requirment errors -->
+<!ELEMENT schedule              (term|grouping|course)+>
+<!ELEMENT term                  (description*,alt-description*,(grouping|course|location)+)>
+<!ELEMENT grouping              (description*,alt-description*,(term|grouping|location|course)+)>
+<!ELEMENT location              (description*,alt-description*,(grouping|course)+)>
+<!ELEMENT course                (description*,alt-description*,award*,(class)+)>
+<!ELEMENT class                 (description*,alt-description*,charge*,meeting*,xlisting*,corequisite-section*,corequisite-course*)>
+<!ELEMENT xlisting              (description*,alt-description*,meeting*)> <!-- Represents another class -->
+<!ELEMENT corequisite-section   (description*,alt-description*,meeting*)> <!-- Represents another class -->
+<!ELEMENT corequisite-course    (description*,alt-description*,meeting*)> <!-- Represents another course -->
+<!ELEMENT meeting               (description*,alt-description*,faculty*)>
+<!ELEMENT description           (#PCDATA)>
+<!ELEMENT alt-description       (#PCDATA)>
+<!ELEMENT faculty               EMPTY>
+
+<!ELEMENT charge    EMPTY>
+<!ELEMENT award     EMPTY>
+
+<!ATTLIST schedule
+    xmlns           CDATA #REQUIRED
+    date-created    CDATA #IMPLIED
+    time-created    CDATA #IMPLIED>
+
+<!ATTLIST term
+    name            CDATA #REQUIRED
+    uri             CDATA #IMPLIED
+    sortkey         CDATA #IMPLIED
+    year            CDATA #IMPLIED
+    start-date      CDATA #IMPLIED
+    end-date        CDATA #IMPLIED
+    academic-level  CDATA #IMPLIED>
+
+<!ATTLIST location
+    name    CDATA #REQUIRED
+    uri     CDATA #IMPLIED
+    sortkey CDATA #IMPLIED>
+
+<!ATTLIST grouping
+    name    CDATA #REQUIRED
+    type    CDATA #REQUIRED
+    uri     CDATA #IMPLIED
+    sortkey CDATA #IMPLIED>
+
+<!ATTLIST course
+    title           CDATA #REQUIRED
+    long-title      CDATA #IMPLIED
+    uri             CDATA #IMPLIED
+    rubric          CDATA #REQUIRED
+    number          CDATA #REQUIRED
+    course          CDATA #REQUIRED
+    sortkey         CDATA #IMPLIED
+    wecm-title      CDATA #IMPLIED
+    CEUs            CDATA #IMPLIED
+    credit-hours    CDATA #IMPLIED
+    core-code       CDATA #IMPLIED>
+
+<!ATTLIST class
+    title               CDATA #REQUIRED
+    uri                 CDATA #IMPLIED
+    sortkey             CDATA #IMPLIED
+    rubric              CDATA #REQUIRED
+    number              CDATA #REQUIRED
+    section             CDATA #REQUIRED
+    synonym             CDATA #REQUIRED
+    course-section      CDATA #REQUIRED
+    location            CDATA #IMPLIED
+    location-code       CDATA #IMPLIED
+    start-date          CDATA #REQUIRED
+    end-date            CDATA #REQUIRED
+    credit-type         CDATA #REQUIRED
+    sessions            CDATA #IMPLIED
+    CEUs                CDATA #IMPLIED
+    schedule-type       CDATA #IMPLIED
+    status              CDATA #IMPLIED
+    capacity            CDATA #IMPLIED
+    seats-avialable     CDATA #IMPLIED
+    weeks               CDATA #IMPLIED
+    dates               CDATA #IMPLIED
+    topic-code          CDATA #IMPLIED
+    tuition             CDATA #IMPLIED
+    xlist-capacity      CDATA #IMPLIED
+    wecm-title          CDATA #IMPLIED
+    at-night            (true|false) "false"
+    weekend             (true|false) "false"
+    minimester          (true|false) "false"
+    full-term           (true|false) "true"
+    flex-term           (true|false) "false"
+    self-paced          (true|false) "false"
+    dual-credit         (true|false) "false"
+    jail                (true|false) "false"
+    off-campus          (true|false) "false"
+    out-of-county       (true|false) "false"
+    out-of-system       (true|false) "false"
+    distance-learning   (true|false) "false"
+    online              (true|false) "false"
+    fast-track          (true|false) "false"
+    fast-track-term     CDATA #IMPLIED
+    flex-term-month     CDATA #IMPLIED
+    start-month         CDATA #IMPLIED>
+
+<!ATTLIST meeting
+    uri         CDATA #IMPLIED
+    sortkey     CDATA #IMPLIED
+    days        CDATA #REQUIRED
+    method      CDATA #REQUIRED
+    building    CDATA #REQUIRED
+    room        CDATA #REQUIRED
+    start-time  CDATA #REQUIRED
+    end-time    CDATA #REQUIRED
+    times       CDATA #IMPLIED>
+
+<!ATTLIST faculty
+    uri         CDATA #IMPLIED
+    sortkey     CDATA #IMPLIED
+    first-name  CDATA #IMPLIED
+    last-name   CDATA #IMPLIED
+    middle-name CDATA #IMPLIED
+    email       CDATA #IMPLIED
+    phone       CDATA #IMPLIED
+    class-load  CDATA #IMPLIED>
+
+<!ATTLIST charge
+    uri     CDATA #IMPLIED
+    sortkey CDATA #IMPLIED
+    type    CDATA #IMPLIED
+    amount  CDATA #IMPLIED>
+
+<!ATTLIST xlisting
+    title           CDATA #IMPLIED
+    uri             CDATA #IMPLIED
+    sortkey         CDATA #IMPLIED
+    rubric          CDATA #REQUIRED
+    number          CDATA #REQUIRED
+    section         CDATA #REQUIRED
+    course-sec      CDATA #IMPLIED
+    course-section  CDATA #IMPLIED
+    synonym         CDATA #REQUIRED
+    schedule-type   CDATA #IMPLIED
+    capacity        CDATA #IMPLIED
+    weeks           CDATA #IMPLIED
+    dates           CDATA #IMPLIED
+    times           CDATA #IMPLIED
+    credit-type     CDATA #IMPLIED>
+
+<!ATTLIST corequisite-section
+    title           CDATA #IMPLIED
+    uri             CDATA #IMPLIED
+    sortkey         CDATA #IMPLIED
+    rubric          CDATA #REQUIRED
+    number          CDATA #REQUIRED
+    section         CDATA #REQUIRED
+    course-sec      CDATA #REQUIRED
+    synonym         CDATA #REQUIRED
+    schedule-type   CDATA #IMPLIED
+    capacity        CDATA #IMPLIED
+    weeks           CDATA #IMPLIED
+    dates           CDATA #IMPLIED
+    times           CDATA #IMPLIED>
+
+<!ATTLIST corequisite-course
+    title           CDATA #IMPLIED
+    uri             CDATA #IMPLIED
+    sortkey         CDATA #IMPLIED
+    rubric          CDATA #REQUIRED
+    number          CDATA #REQUIRED
+    course          CDATA #REQUIRED
+    synonym         CDATA #REQUIRED
+    schedule-type   CDATA #IMPLIED
+    capacity        CDATA #IMPLIED
+    weeks           CDATA #IMPLIED
+    dates           CDATA #IMPLIED
+    times           CDATA #IMPLIED>
+
+<!ATTLIST award
+    code        CDATA #REQUIRED
+    catalog     CDATA #REQUIRED
+    locations   CDATA #REQUIRED
+    title       CDATA #IMPLIED
+    degree      CDATA #IMPLIED>
+
+

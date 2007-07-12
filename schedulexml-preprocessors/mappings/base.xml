@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<mappings>
+    <!-- ***********************************************************************
+         Day sort orders
+         *********************************************************************** -->
+    <mapping type="days-sort-order">
+        <day id="M" />
+        <day id="MW" />
+        <day id="MWR" />
+        <day id="MWF" />
+        <day id="MTW" />
+        <day id="MTR" />
+        <day id="MWR" />
+        <day id="MTWR" />
+        <day id="MWRF" />
+        <day id="MTWRF" />
+        <day id="MTWRFS" />
+        <day id="T" />
+        <day id="TW" />
+        <day id="TR" />
+        <day id="TWR" />
+        <day id="TWRF" />
+        <day id="W" />
+        <day id="WR" />
+        <day id="R" />
+        <day id="F" />
+        <day id="S" />
+    </mapping>
+    
+
+    <!-- ***********************************************************************
+         Method sort orders
+         *********************************************************************** -->
+    <mapping type="method-sort-order">
+        <method id="LEC" />
+        <method id="" />
+        <method id="LAB" />
+    </mapping>
+
+
+    <!-- ***********************************************************************
+         Contact info
+         *********************************************************************** -->
+    <mapping type="contact-info">
+        <!--
+            maps division or subject names to various contact information
+            (e.g. email addresses, phone number, room numbers). The division
+            contact information may be overridden by specific subject
+            contact information on a subject by subject basis.
+        -->
+        <division name="Business Studies" ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu" />
+        <division name="Communications" ext="4555" room="L367" email="XX-MISSING" />
+        <division name="Health and Human Services" ext="4239" room="A219" email="bhcHHServices@dcccd.edu" />
+        <division name="Mathematics and Science" ext="4750" room="K224" email="XX-MISSING" />
+        <division name="Physical Education, Athletics and Nutrition" ext="4120" room="T315" email="bhcPhysicalEd@dcccd.edu" />
+        <division name="School of the Arts" ext="4730" room="D123" email="BCSA@dcccd.edu" />
+        <division name="Senior Adult Education Office" ext="4807" room="M211A" extra-room="M203" email="bhcSeniorAdultEducation@dcccd.edu" />
+        <division name="Social Science" ext="4130" room="K240" email="bhcSocialScience@dcccd.edu" />
+        <division name="World Languages" ext="4770" room="L420" email="bhcWorldLanguages@dcccd.edu" />
+
+        <!-- Business Studies division -->
+        <subject name="Automotive Technology" ext="4189" room="Q100" email="bhcAutomotive@dcccd.edu" />
+        <subject name="Computer Information Technology" email="bhcCIT@dcccd.edu" />
+        <subject name="Computer Science" email="bhcCIT@dcccd.edu" />
+        <subject name="Computer Studies - Business Computer Information Systems" email="bhcCIT@dcccd.edu" />
+        <subject name="Business Office Systems and Support" email="bhcBOSS@dcccd.edu" />
+        <subject name="Visual Communications" email="bhcVCOM@dcccd.edu" />
+
+        <!-- Communications division -->
+        <subject name="Developmental Reading" email="bhcReadingWriting@dcccd.edu" />
+        <subject name="Developmental Writing" email="bhcReadingWriting@dcccd.edu" />
+        <subject name="English" email="bhcEnglish@dcccd.edu" />
+        <subject name="Photography" email="bhcPhotography@dcccd.edu" />
+        <subject name="Speech" email="bhcSpeech@dcccd.edu" />
+
+        <!-- Health and Human Services Division -->
+        <subject name="Child Development" ext="4144" room="K211" email="bhcChildDevelop@dcccd.edu" />
+        <subject name="Emergency Medical Services" ext="7879" location="East Center #2" email="bhcEMS@dcccd.edu" />
+        <subject name="Nursing" ext="4754" room="K224" email="bhcNursing@dcccd.edu" />
+        <subject name="Radiologic Sciences" ext="4264" room="L107" email="bhcRadTech@dcccd.edu" />
+
+        <!-- Mathematics and Science Division -->
+        <subject name="Astronomy" email="bhcScience@dcccd.edu" />
+        <subject name="Biology" email="bhcScience@dcccd.edu" />
+        <subject name="Chemistry" email="bhcScience@dcccd.edu" />
+        <subject name="Developmental Mathematics" email="bhcMath@dcccd.edu" />
+        <subject name="Geology" email="bhcScience@dcccd.edu" />
+        <subject name="Geospatial Technology" email="bhcGeospatialTech@dcccd.edu" ext="4362" />
+        <subject name="Mathematics" email="bhcMath@dcccd.edu" />
+        <subject name="Physical Science" email="bhcScience@dcccd.edu" />
+        <subject name="Physics" email="bhcScience@dcccd.edu" />
+
+        <!-- School of the Arts division -->
+        <subject name="Art" room="T129" email="bhcArt@dcccd.edu" />
+        <subject name="Cultural Studies" email="bhcCulturalStudies@dcccd.edu" />
+        <subject name="Dance" ext="4122" room="T129" email="bhcDance@dcccd.edu" />
+        <subject name="Humanities" email="bhcHumanities@dcccd.edu" />
+        <subject name="Music" email="bhcMusic@dcccd.edu" />
+    </mapping>
+
+
+    <!-- ***********************************************************************
+         Core Curriculum
+         *********************************************************************** -->
+    <mapping type="core">
+        <component name="Natural Sciences">
+            <pattern match="BIOL 140[6-9]" />
+            <pattern match="CHEM 14(05|07|11|12)" />
+            <pattern match="GEOL 14(01|03|04|45)" />
+            <pattern match="PHYS 14(01|02|05|07|11|12|15|17)" />
+            <pattern match="PHYS 242[56]" />
+        </component>
+        <component name="Humanities and Visual and Performing Arts">
+            <pattern match="ARTS 130[134]" />
+            <pattern match="DANC 2303" />
+            <pattern match="DRAM (1310|2366)" />
+            <pattern match="HUMA 1315" />
+            <pattern match="MUSI 130[689]" />
+            <pattern match="ENGL 23(2[123678]|3[123])" />
+            <pattern match="CUST 2370" />
+            <pattern match="HIST 23(21|22|80|81)" />
+            <pattern match="PHIL (1301|2306|2307|2316|2317)" />
+            <pattern match="RELI 1304" />
+        </component>
+        <component name="Communications">
+            <pattern match="ENGL 130[12]" />
+            <pattern match="SPCH 131[15]" />
+            <pattern match="(SGNL|ARAB|CHER|CHIN|CHOC|FARS|FREN|GERM|GREE|HEBR|HIND|ITAL|JAPN|KORE|LATI|PORT|RUSS|SPAN|SWAH|VIET) \d\d[1-9][1-9]" />
+        </component>
+        <component name="Other">
+            <pattern match="PHED 1164" />
+            <pattern match="COSC 1300" />
+        </component>
+        <component name="Mathematics">
+            <pattern match="MATH (1314|1324|1332|1333|1348|1414|2342|2412|2442)" />
+        </component>
+        <component name="Social and Behavioral Sciences">
+            <pattern match="HIST 130[12]" />
+            <pattern match="GOVT 230[12]" />
+            <pattern match="ANTH 23(46|51)" />
+            <pattern match="ECON (1303|2301|2302|2311)" />
+            <pattern match="PSYC 23(01|14|16)" />
+            <pattern match="SOCI (1301|1306|2319)" />
+        </component>
+    </mapping>
+</mappings>
