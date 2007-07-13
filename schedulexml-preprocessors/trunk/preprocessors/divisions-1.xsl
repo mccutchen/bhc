@@ -25,7 +25,7 @@ DIVISIONS-2 MUST BE RUN IMMEDIATELY AFTER THIS PREPROCESSOR.
     <xsl:include href="base.xsl" />
 
     <!-- get the mapping into a variable -->
-    <xsl:variable name="patterns" select="document('../mappings/divisions.xml')//division/pattepreprocessorrn" />
+    <xsl:variable name="patterns" select="document('../mappings/divisions.xml')//division/pattern" />
 
     <xsl:template match="grouping[@type='rubric']">
         <xsl:variable name="rubric" select="@name" />
