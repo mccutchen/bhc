@@ -10,7 +10,12 @@ This can leave duplicate subject groupings when two
 or more rubrics map to the same subject (e.g. ACCT, ACNT),
 so subjects-2 should be run directly after this one.
 
+This can also leave duplicate <description> elements in each new subject
+grouping if the subject has <comments> in the mappings.  This is taken care
+of by the consolidate-descriptions preprocessor.
+
 SUBJECTS-2 MUST BE RUN IMMEDIATELY AFTER THIS PREPROCESSOR.
+CONSOLIDATE-DESCRIPTIONS MUST BE RUN SOME TIME AFTER THIS PREPROCESSOR.
 
 -->
 
