@@ -132,7 +132,7 @@
 
 
     <xsl:template match="course">
-        <xsl:variable name="extra-class" select="if (@core-component and @core-component != '') then ' core' else ''" />
+        <xsl:variable name="extra-class" select="if (@core-code and @core-code != '') then ' core' else ''" />
         <div class="course-section{$extra-class}">
             <xsl:apply-templates select="@sortkey | @default-sortkey" />
             <table>
@@ -329,24 +329,22 @@
     <!-- the next two templates create the list of Core Curriculum courses
          at the top of each subject -->
     <xsl:template name="make-core-list">
-        <xsl:variable name="core-courses" select="descendant::course[@core-component and @core-component != '']" />
+        <xsl:variable name="core-courses" select="descendant::course[@core-code and @core-code != '']" />
         <xsl:if test="$core-courses and not(ancestor::special-section)">
-            <xsl:variable name="core-component" select="lower-case((descendant::course/@core-component)[1])" />
+            <xsl:variable name="core-code" select="lower-case((descendant::course/@core-code)[1])" />
             <div class="core-list">
                 <h2>
-                    The following courses
-                    <xsl:if test="$core-component = 'other'">in this subject</xsl:if>
-                    are part of the
-                    <xsl:if test="$core-component != 'other'"><xsl:value-of select="$core-component" /> component of the</xsl:if>
+                    The following courses are part of the 
+                    <xsl:value-of select="$core-code" /> component of the
                     Core Curriculum:
                 </h2>
                 <p>
-                    <xsl:for-each-group select="$core-courses" group-by="@rubrik">
-                        <xsl:sort select="@rubrik" />
+                    <xsl:for-each-group select="$core-courses" group-by="@rubric">
+                        <xsl:sort select="@rubric" />
 
                         <xsl:for-each-group select="current-group()" group-by="@number">
                             <xsl:sort select="@number" />
-                            <xsl:value-of select="concat(@rubrik, ' ', @number)" />
+                            <xsl:value-of select="concat(@rubric, ' ', @number)" />
 
                             <xsl:if test="position() != last()">
                                 <xsl:value-of select="', '" />

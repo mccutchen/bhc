@@ -5,4 +5,5 @@ subjects-1
 subjects-2
 types-1
 types-2
+core
 consolidate-descriptions
