@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="us-ascii"?>
+<!-- =========================================================================
+     base.xml
+     
+     This mappings file is really just an archive of all the left-over
+     mappings from Son of ScheduleBuilder which have not been separated out
+     into individual mappings files.
+     
+     When it comes time to write a preprocessor that uses these mappings (for
+     example, one to add day-sort-orders to classes), it would probably be
+     good to separate them out into their own files.
+     
+     The subject, division and course type mappings have already been
+     separated out.
+========================================================================== -->
+
 <mappings>
     <!-- ***********************************************************************
          Day sort orders
