@@ -95,7 +95,7 @@
             <!-- print the division info -->
             <xsl:call-template name="division-info" />
 
-            <xsl:apply-templates select="comments" />
+            <xsl:apply-templates select="description" />
 
             <!-- insert a list of the Core courses -->
             <xsl:call-template name="make-core-list" />

@@ -5,6 +5,9 @@
 	elements which all have identical <description> elements.  If it finds
 	one, it promotes that <description> up to be a child of the <course> and
 	removes the <description> elements from each of the classes.
+	
+	It also trims duplicate <description> elements from "subject" elements,
+	which can result from the subject-* preprocessors.
 -->
 
 <xsl:stylesheet
@@ -15,11 +18,7 @@
 
     <xsl:include href="base.xsl" />
 
-    <xsl:template match="/">
-        <xsl:apply-templates />
-    </xsl:template>
-
-    <!-- we only need to match courses with contain classes with
+    <!-- we only need to match courses which contain classes with
          descriptions -->
     <xsl:template match="course[class/description]">
 		<xsl:variable name="first-description-el" select="(class/description)[1]" />
@@ -55,5 +54,12 @@
         <xsl:copy>
             <xsl:apply-templates select="@* | *[not(self::description)]" />
         </xsl:copy>
+    </xsl:template>
+    
+    
+    <!-- trim extra <descriptions> in subjects -->
+    <xsl:template match="grouping[@type='subject']/description[preceding-sibling::description]">
+        <!-- doing nothing here removes the matching element from the result
+             document -->
     </xsl:template>
 </xsl:stylesheet>

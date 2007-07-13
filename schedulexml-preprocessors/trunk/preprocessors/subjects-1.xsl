@@ -48,12 +48,29 @@ SUBJECTS-2 MUST BE RUN IMMEDIATELY AFTER THIS PREPROCESSOR.
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+        
+        <!-- if we found a matching pattern in the mappings, put any <comments>
+             in the matching subject in a variable -->
+        <xsl:variable name="subject-comments"
+                      select="if (count($matching-patterns) &gt; 1)
+                              then $matching-patterns[@priority = max($matching-patterns/@priority)]/parent::subject/comments
+                              else $matching-patterns[1]/parent::subject/comments" />
 
         <!-- create the actual <grouping> element with the subject name we
              found above. -->
         <grouping type="subject" name="{$subject-name}">
+            <!-- include any comments found in the mappings -->
+            <xsl:apply-templates select="$subject-comments" />
+            <!-- include everything else -->
             <xsl:apply-templates />
         </grouping>
     </xsl:template>
-
+    
+    <xsl:template match="subject/comments">
+        <!-- turn any <comments> elements into <description> elements to match
+             the ScheduleXML spec -->
+        <description>
+            <xsl:apply-templates select="*" />
+        </description>
+    </xsl:template>
 </xsl:stylesheet>
