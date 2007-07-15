@@ -1,3 +1,6 @@
+<!-- 
+    This data was taken from Loc.Schedule.xslt in Rik Jones' SXML distribution
+-->
 <core-components>
     <component code="010" name="Communications" />
     <component code="020" name="Mathematics" />
