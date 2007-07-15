@@ -49,6 +49,10 @@ CONSOLIDATE-DESCRIPTIONS MUST BE RUN SOME TIME AFTER THIS PREPROCESSOR.
                 <xsl:otherwise>
                     <!-- We didn't find a match, so we just use the rubric
                          itself as the subject name. -->
+                     <xsl:message>
+                         WARNING: No subject found for rubric "<xsl:value-of select="$rubric" />"
+                         in the subjects mapping file.
+                     </xsl:message>
                     <xsl:value-of select="$rubric" />
                 </xsl:otherwise>
             </xsl:choose>
