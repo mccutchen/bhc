@@ -13,16 +13,16 @@
     version="2.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <!-- this is the <xsl:output> statement that will
-         control all of the other post-processors'
-         output. -->
+    <!-- This <xsl:output> element will control the output of every other
+         preprocessor. -->
     <xsl:output
         method="xml"
         encoding="us-ascii"
         indent="yes"
         omit-xml-declaration="no" />
 
-    <!-- identity template -->
+    <!-- The "identity" template
+         (see: http://www.dpawson.co.uk/xsl/sect2/identity.html) -->
     <xsl:template match="@* | node()" mode="#all">
         <xsl:copy>
             <xsl:apply-templates select="@* | node()" mode="#current" />
