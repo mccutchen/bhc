@@ -43,6 +43,9 @@ def test(a, b):
         b_els = b.findall(xpath)
 
         assert len(a_els) == len(b_els), 'Element <%s> does not appear the same number of times (%d vs. %d).' % (tag, len(a_els), len(b_els))
+    
+    # all tests passed
+    return True
 
 if __name__ == '__main__':
     import sys
