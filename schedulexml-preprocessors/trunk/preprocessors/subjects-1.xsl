@@ -76,7 +76,7 @@ CONSOLIDATE-DESCRIPTIONS MUST BE RUN SOME TIME AFTER THIS PREPROCESSOR.
         <!-- turn any <comments> elements into <description> elements to match
              the ScheduleXML spec -->
         <description>
-            <xsl:apply-templates select="*" />
+            <xsl:apply-templates />
         </description>
     </xsl:template>
 </xsl:stylesheet>
