@@ -41,10 +41,7 @@ DIVISIONS-2 MUST BE RUN IMMEDIATELY AFTER THIS PREPROCESSOR.
                                           else $matching-patterns[1]/parent::division/@name" />
                 </xsl:when>
                 <xsl:otherwise>
-                    <xsl:message>
-                        WARNING: No division found for rubric "<xsl:value-of select="$rubric" />"
-                        in the divisions mapping file.
-                    </xsl:message>
+                    <xsl:message>WARNING: No division found for rubric "<xsl:value-of select="$rubric" />" in the divisions mapping file.</xsl:message>
                     <xsl:value-of select="concat('Unknown Division: ', $rubric)" />
                 </xsl:otherwise>
             </xsl:choose>
