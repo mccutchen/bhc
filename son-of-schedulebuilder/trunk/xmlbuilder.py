@@ -19,9 +19,12 @@ from profiles import profile
 def build(classes=None):
     if not classes:
         classes = classparser.parse_classes()
+    
+    # get a timestamp to add to the root element
+    timestamp = datetime.datetime.now().isoformat()
 
     # create the root element and a tree around it
-    root = ElementTree.Element('schedule')
+    root = ElementTree.Element('schedule', timestamp=timestamp)
     tree = ElementTree.ElementTree(root)
 
     for class_data in classes:
