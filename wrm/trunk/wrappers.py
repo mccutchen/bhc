@@ -1,5 +1,5 @@
 import atexit
-from decorators import cachedmethod
+from decorators import cached
 
 class SimpleDatabaseWrapper:
     """A simple wrapper around a DB-API 2.0 compliant database.  Provides
@@ -68,7 +68,7 @@ class SimpleDatabaseWrapper:
         self.execute(sql)
         return tuple([row[0] for row in self.results()])
     
-    @cachedmethod
+    @cached
     def get_columns(self):
         """Returns a tuple of the column names found in the underlying
         table."""
