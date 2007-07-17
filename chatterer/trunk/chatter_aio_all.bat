@@ -10,7 +10,7 @@
 @ECHO Finished.
 
 @ECHO Cleaning up...
-@python -m clean_asp
+@python -m ch_clean_asp
 @ECHO Finished.
 
 @PAUSE
