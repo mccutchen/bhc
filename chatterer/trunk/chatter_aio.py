@@ -136,7 +136,13 @@ def Format(line_in, replace = True):
         148: '&#8221;', # right double quote
         150: '&#8211;', # dash
         151: '&#8212;', # long dash
+        188: '&#188;',  # 1/4
+        189: '&#189;',  # 1/2
+        190: '&#190;',  # 3/4
+        232: '&#232;',  # lowercase e (accent: grave)
         233: '&#233;',  # lowercase e (accent: acute)
+        236: '&#236;',  # lowercase i (accent: grave)
+        237: '&#237;',  # lowercase i (accent: acute)
         }
     char_list = list(line_in.strip())
     out_list  = []
