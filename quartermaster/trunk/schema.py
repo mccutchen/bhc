@@ -11,9 +11,11 @@ schema = DatabaseSchema(
     
     # virtual fields, which are not actually in the database
     # (these will be populated by the CCEFormatter)
-    'textbooks',
-    'spanish',
-    'evening',
-    'time_sortkey',
-    'date_sortkey',
+    virtual_fields = [
+        'textbooks',
+        'spanish',
+        'evening',
+        'time_sortkey',
+        'date_sortkey',
+    ]
 )

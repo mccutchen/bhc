@@ -53,7 +53,7 @@ class DatabaseSchema(Schema):
     """Defines a set of fields to be extracted from a database.  The fields
     in the database are automatically discovered."""
     
-    def __init__(self, formatter, db, *virtual_fields):
+    def __init__(self, formatter, db, virtual_fields=[]):
         assert isinstance(formatter, Formatter) or formatter is None
         assert isinstance(db, SimpleDatabaseWrapper)
         
