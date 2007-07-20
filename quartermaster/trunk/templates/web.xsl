@@ -242,15 +242,7 @@
 
         <div class="course">
             <a name="{@machine_name}" />
-            <h3>
-                <xsl:value-of select="@title"/>
-                <xsl:if test="@concurrent">
-                    <span class="concurrent"> &#8226; <a href="/course-schedules/non-credit/concurrent/">Concurrent course</a></span>
-                </xsl:if>
-                <xsl:if test="@financial_aid">
-                    <span class="financial-aid"> &#8226; Eligible for <a href="http://www.dcccd.edu/Continuing+Education/Paying+for+College/Financial+Aid/" target="_blank">Financial Aid</a></span>
-                </xsl:if>
-            </h3>
+            <xsl:apply-templates select="@title" />
 
             <!-- print any prereqs, description, textbooks, etc -->
             <xsl:apply-templates select="prerequisites" />
@@ -308,6 +300,21 @@
                 </p>
             </xsl:if>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="course/@title">
+        <!-- Outputs the course title along with bulleted items indicating
+             that the course is a concurrent course or is eligible for
+             financial aid, if applicable. -->
+        <h3>
+            <xsl:value-of select="." />
+            <xsl:if test="../@concurrent">
+                <span class="concurrent"> &#8226; <a href="/course-schedules/non-credit/concurrent/">Concurrent course</a></span>
+            </xsl:if>
+            <xsl:if test="../@financial_aid">
+                <span class="financial-aid"> &#8226; Eligible for <a href="http://www.dcccd.edu/Continuing+Education/Paying+for+College/Financial+Aid/" target="_blank">Financial Aid</a></span>
+            </xsl:if>
+        </h3>
     </xsl:template>
 
     <xsl:template match="class">
