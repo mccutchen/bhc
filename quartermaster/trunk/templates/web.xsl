@@ -242,7 +242,9 @@
 
         <div class="course">
             <a name="{@machine_name}" />
-            <xsl:apply-templates select="@title" />
+            <h3>
+                <xsl:apply-templates select="@title" />
+            </h3>
 
             <!-- print any prereqs, description, textbooks, etc -->
             <xsl:apply-templates select="prerequisites" />
@@ -257,6 +259,9 @@
                 <table border="1" cellpadding="10" cellspacing="0">
                     <tr>
                         <xsl:choose>
+                            <!-- Optional Spanish translation of the table
+                                 headings for class listings.  TODO: Find a
+                                 better way to do this. -->
                             <xsl:when test="not(@spanish)">
                                 <xsl:if test="$with-number = 'true'">
                                     <th>Course Number</th>
@@ -303,19 +308,23 @@
     </xsl:template>
     
     <xsl:template match="course/@title">
-        <!-- Outputs the course title along with bulleted items indicating
-             that the course is a concurrent course or is eligible for
-             financial aid, if applicable. -->
-        <h3>
-            <xsl:value-of select="." />
-            <xsl:if test="../@concurrent">
-                <span class="concurrent"> &#8226; <a href="/course-schedules/non-credit/concurrent/">Concurrent course</a></span>
-            </xsl:if>
-            <xsl:if test="../@financial_aid">
-                <span class="financial-aid"> &#8226; Eligible for <a href="http://www.dcccd.edu/Continuing+Education/Paying+for+College/Financial+Aid/" target="_blank">Financial Aid</a></span>
-            </xsl:if>
-        </h3>
+        <xsl:value-of select="." />
     </xsl:template>
+    
+    <xsl:template match="course[@concurrent]/@title" priority="1">
+        <!-- Append a bullet point to the end of the course title of
+             concurrent courses. -->
+        <xsl:next-match />
+        <span class="concurrent"> &#8226; <a href="/course-schedules/non-credit/concurrent/">Concurrent course</a></span>
+    </xsl:template>
+    
+    <xsl:template match="course[@financial_aid]/@title" priority="2">
+        <!-- Append a bullet point to the end of the course title of courses
+             eligible for financial aid. -->
+        <xsl:next-match />
+        <span class="financial-aid"> &#8226; Eligible for <a href="http://www.dcccd.edu/Continuing+Education/Paying+for+College/Financial+Aid/" target="_blank">Financial Aid</a></span>
+    </xsl:template>
+    
 
     <xsl:template match="class">
         <xsl:param name="with-number">true</xsl:param>
