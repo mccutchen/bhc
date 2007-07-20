@@ -311,14 +311,14 @@
         <xsl:value-of select="." />
     </xsl:template>
     
-    <xsl:template match="course[@concurrent]/@title" priority="1">
+    <xsl:template match="course[@concurrent]/@title" priority="9">
         <!-- Append a bullet point to the end of the course title of
              concurrent courses. -->
         <xsl:next-match />
         <span class="concurrent"> &#8226; <a href="/course-schedules/non-credit/concurrent/">Concurrent course</a></span>
     </xsl:template>
     
-    <xsl:template match="course[@financial_aid]/@title" priority="2">
+    <xsl:template match="course[@financial_aid]/@title" priority="10">
         <!-- Append a bullet point to the end of the course title of courses
              eligible for financial aid. -->
         <xsl:next-match />
