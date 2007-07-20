@@ -25,7 +25,6 @@
     <xsl:strip-space elements="*" />
 
 
-
     <!-- ===================================== -->
     <!-- STAGE 1:                              -->
     <!-- Set up the different result documents -->
@@ -54,7 +53,6 @@
             </xsl:with-param>
         </xsl:call-template>
     </xsl:template>
-
 
 
 
@@ -185,15 +183,8 @@
     <!-- Build each division page -->
     <!-- ======================== -->
     <xsl:template match="division">
-        <!-- if there's a catalog header, print it -->
-        <xsl:apply-templates select="catalog_page_header">
-            <xsl:with-param name="class-name">catalog-page-header</xsl:with-param>
-        </xsl:apply-templates>
-
-        <!-- if there's a catalog prefix, print it -->
-        <xsl:apply-templates select="catalog_prefix">
-            <xsl:with-param name="class-name">catalog-prefix</xsl:with-param>
-        </xsl:apply-templates>
+        <xsl:apply-templates select="catalog_page_header" />
+        <xsl:apply-templates select="catalog_prefix" />
 
         <xsl:apply-templates select="course">
             <xsl:sort data-type="number" select="@cluster_sort_order" order="ascending" />
@@ -211,55 +202,46 @@
             <a name="{@machine_name}" />
             <h2><xsl:value-of select="@name" /></h2>
 
-            <!-- if there's a catalog header, print it -->
-            <xsl:apply-templates select="catalog_page_header">
-                <xsl:with-param name="class-name">catalog-page-header</xsl:with-param>
-            </xsl:apply-templates>
-
-            <!-- if there's a catalog prefix, print it -->
-            <xsl:apply-templates select="catalog_prefix">
-                <xsl:with-param name="class-name">catalog-prefix</xsl:with-param>
-            </xsl:apply-templates>
+            <xsl:apply-templates select="catalog_page_header" />
+            <xsl:apply-templates select="catalog_prefix" />
 
             <xsl:apply-templates select="course">
                 <xsl:sort data-type="number" select="@cluster_sort_order" order="ascending" />
                 <xsl:sort select="@course_number" />
             </xsl:apply-templates>
 
-            <xsl:apply-templates select="suffix_description">
-                <xsl:with-param name="class-name">suffix-description</xsl:with-param>
-            </xsl:apply-templates>
+            <xsl:apply-templates select="suffix_description" />
         </div>
     </xsl:template>
 
     <xsl:template match="course">
-        <xsl:variable name="with-number">
-            <xsl:choose>
-                <xsl:when test="not(class/@class_number) or ancestor::minor_division/@name = 'Arts Academy'">false</xsl:when>
-                <xsl:otherwise>true</xsl:otherwise>
-            </xsl:choose>
-        </xsl:variable>
-
         <div class="course">
             <a name="{@machine_name}" />
             <h3>
                 <xsl:apply-templates select="@title" />
             </h3>
 
-            <!-- print any prereqs, description, textbooks, etc -->
             <xsl:apply-templates select="prerequisites" />
-            <xsl:apply-templates select="course_description">
-                <xsl:with-param name="class-name">course-description</xsl:with-param>
-            </xsl:apply-templates>
+            <xsl:apply-templates select="course_description" />
             <xsl:apply-templates select="supplies" />
             <xsl:apply-templates select="textbooks" />
+            
+            <!-- Do we need to include the class number column in the table?
+                 We skip the class number for Arts Academy classes and for 
+                 classes which don't have a number. -->
+            <xsl:variable name="with-number">
+                <xsl:choose>
+                    <xsl:when test="not(class/@class_number) or ancestor::minor_division/@name = 'Arts Academy'">false</xsl:when>
+                    <xsl:otherwise>true</xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
 
             <!-- If there are classes to print, build the table structure to hold them -->
             <xsl:if test="class">
                 <table border="1" cellpadding="10" cellspacing="0">
                     <tr>
                         <xsl:choose>
-                            <!-- Optional Spanish translation of the table
+                            <!-- Conditional Spanish translation of the table
                                  headings for class listings.  TODO: Find a
                                  better way to do this. -->
                             <xsl:when test="not(@spanish)">
@@ -387,7 +369,9 @@
 
 
     <xsl:template match="catalog_page_header | catalog_prefix | course_description | suffix_description">
-        <xsl:param name="class-name" select="translate(local-name(), '_', '-')" />
+        <!-- Automatically get the CSS class name from the name of the given
+             element by replacing underscores with dashes. -->
+        <xsl:variable name="class-name" select="translate(local-name(), '_', '-')" />
         <div class="{$class-name}">
             <xsl:apply-templates select="p" />
         </div>
