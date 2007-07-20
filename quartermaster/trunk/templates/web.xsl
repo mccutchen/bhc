@@ -11,31 +11,42 @@
         omit-xml-declaration="yes"
         doctype-public="-//W3C//DTD HTML 4.01//EN"
         doctype-system="http://www.w3.org/TR/html4/strict.dtd" />
+    
+    <xsl:strip-space elements="*" />
 
-    <!-- include the page template and the character map -->
-    <xsl:include href="web-page-template.xsl" />
-
+    
+    <!-- =====================================================================
+         Parameters
+    ====================================================================== -->
     <xsl:param name="output-directory">web-output</xsl:param>
     <xsl:param name="output-extension">.aspx</xsl:param>
 
-    <!-- the title to put in the #channel-header -->
+    <!-- the title to put in the div#channel-header in each output file -->
     <xsl:param name="channel-title">Corporate and Continuing Education Course Schedule</xsl:param>
+    
+    
+    <!-- =====================================================================
+         Includes
+    ====================================================================== -->
+    <xsl:include href="web-page-template.xsl" />
+    
 
-    <!-- we don't need no stinking whitespace -->
-    <xsl:strip-space elements="*" />
-
-
-    <!-- ===================================== -->
-    <!-- STAGE 1:                              -->
-    <!-- Set up the different result documents -->
-    <!-- ===================================== -->
+    <!-- =====================================================================
+         Stage 1:  Set up the result documents
+         
+         The first template below creates result documents for each page in
+         the schedule.  Then, each template with a mode of "init" inserts the
+         web page template into its result document.  After that, the normal
+         templates are applied, which inserts the actual content into the
+         placeholder in the web page template.
+    ====================================================================== -->
     <xsl:template match="/">
-        <!-- Create the result document for the index (matches /schedule) -->
+        <!-- Create the result document for the index -->
         <xsl:result-document href="{$output-directory}/index{$output-extension}">
             <xsl:apply-templates select="schedule" mode="init" />
         </xsl:result-document>
 
-        <!-- Create a result document for each division (matches /schedule/division) -->
+        <!-- Create a result document for each division -->
         <xsl:for-each select="schedule/division">
             <xsl:result-document href="{$output-directory}/{@machine_name}{$output-extension}">
                 <xsl:apply-templates select="." mode="init" />
@@ -43,6 +54,9 @@
         </xsl:for-each>
     </xsl:template>
 
+    <!-- Insert the web page template into the result document created above,
+         by calling the named "page-template" which was imported from the file
+         "web-page-template.xsl". -->
     <xsl:template match="schedule | division" mode="init">
         <xsl:call-template name="page-template">
             <xsl:with-param name="page-title">
@@ -55,11 +69,12 @@
     </xsl:template>
 
 
-
-    <!-- ================ -->
-    <!-- STAGE 2:         -->
-    <!-- Create the index -->
-    <!-- ================ -->
+    <!-- =====================================================================
+         Stage 2:  Create the index
+         
+         This stage creates the alphabetical index for the schedule.  See the
+         "make-index" named template below for more information.
+    ====================================================================== -->
     <xsl:template match="schedule">
         <div id="index">
 
@@ -84,28 +99,30 @@
     </xsl:template>
 
     <xsl:template name="make-index">
-        <!--
-            This template is pretty complicated in its operation.  It was constructed with
-            the help of David Carlisle in this xsl-list thread:
-            - http://biglist.com/lists/xsl-list/archives/200506/msg01159.html
+        <!-- This template is pretty complicated in its operation.  It was 
+             constructed with the help of David Carlisle in this xsl-list
+             thread:
+             - http://biglist.com/lists/xsl-list/archives/200506/msg01159.html
+             
+             Basically, what it does is:
+             - Build the entire index structure into one long <ul> inside the 
+               $entire-index variable.  (My problem was that I could build the
+               list but not split it evenly, David Carlisle suggested that I 
+               build the entire list into a variable and then select into that 
+               to split it, which never would have occurred to me.)
+               
+            - Count how many items are in $entire-index (plus a manual offset 
+              to ensure even columns) and divide that by two, to get a 
+              $midpoint-index.
 
-            Basically, what it does is:
-            - Build the entire index structure into one long <ul> inside the $entire-index
-              variable.  (My problem was that I could build the list but not split it evenly,
-              David Carlisle suggested that I build the entire list into a variable and then
-              select into that to split it, which never would have occurred to me.)
+            - Select the top-level $entire-index element which contains the 
+              element at $midpoint-index into the variable $midpoint-element.
 
-            - Count how many items are in $entire-index (plus a manual offset to ensure even
-              columns) and divide that by two, to get a $midpoint-index.
+            - Put $midpoint-element and all of its preceding siblings into one 
+              column, and put all of its following sibling into the next 
+              column.
 
-            - Select the top-level $entire-index element which contains the element at
-              $midpoint-index into the variable $midpoint-element.
-
-            - Put $midpoint-element and all of its preceding siblings into one column, and put
-              all of its following sibling into the next column.
-
-            See?  Complicated.
-          -->
+            See?  Complicated. -->
 
         <!-- store the entire index in sorted form in $entire-index -->
         <xsl:variable name="entire-index">
@@ -131,26 +148,30 @@
         <!-- $midpoint-offset is used to hand-tweak the columns a little bit -->
         <xsl:variable name="midpoint-offset" select="8" />
 
-        <!-- figure out how many total items are in the index, to help determine which one is the midpoint -->
+        <!-- figure out how many total items are in the index, to help 
+             determine which one is the midpoint -->
         <xsl:variable name="midpoint-index" select="round(count($entire-index//li) div 2) + $midpoint-offset" />
 
-        <!-- the midpoint element should be whichever "top-level" (the ones representing each letter of the
-             alphabet) contains the <li> at $midpoint-index.  The top-level <li> elements are easily identified
-             by the presence of a named anchor -->
+        <!-- the midpoint element should be whichever "top-level" (the ones 
+             representing each letter of the alphabet) contains the <li> at 
+             $midpoint-index.  The top-level <li> elements are easily 
+             identified by the presence of a named anchor -->
         <xsl:variable name="midpoint-element" select="$entire-index/descendant::li[$midpoint-index]/ancestor-or-self::li[@class='letter']" />
 
         <!-- set up the column structure -->
         <div class="fifty-fifty columns">
             <div class="left column">
                 <ul>
-                    <!-- put the $midpoint-element and everything before it into the first column -->
+                    <!-- put the $midpoint-element and everything before it 
+                         into the first column -->
                     <xsl:copy-of select="$midpoint-element | $midpoint-element/preceding-sibling::li" />
                 </ul>
             </div>
 
             <div class="right column">
                 <ul>
-                    <!-- put everything after $midpoint-element into the second column -->
+                    <!-- put everything after $midpoint-element into the 
+                         second column -->
                     <xsl:copy-of select="$midpoint-element/following-sibling::li" />
                 </ul>
             </div>
@@ -160,7 +181,9 @@
     <xsl:template match="division" mode="index">
         <li>
             <a name="{@machine_name}" id="{@machine_name}" />
-            <a href="{@machine_name}{$output-extension}"><xsl:value-of select="@name" /></a>
+            <a href="{@machine_name}{$output-extension}">
+                <xsl:value-of select="@name" />
+            </a>
             <xsl:if test="cluster">
                 <ul>
                     <xsl:apply-templates select="cluster" mode="index">
@@ -172,16 +195,20 @@
     </xsl:template>
 
     <xsl:template match="cluster" mode="index">
-        <li><a href="{parent::division/@machine_name}{$output-extension}#{@machine_name}"><xsl:value-of select="@name" /></a></li>
+        <li>
+            <a href="{parent::division/@machine_name}{$output-extension}#{@machine_name}">
+                <xsl:value-of select="@name" />
+            </a>
+        </li>
     </xsl:template>
 
 
-
-
-    <!-- ======================== -->
-    <!-- STAGE 3:                 -->
-    <!-- Build each division page -->
-    <!-- ======================== -->
+    <!-- =====================================================================
+         Stage 3:  Create each division page
+         
+         These are the "normal" templates that insert the actual content into
+         each division page in the schedule output.
+    ====================================================================== -->
     <xsl:template match="division">
         <xsl:apply-templates select="catalog_page_header" />
         <xsl:apply-templates select="catalog_prefix" />
