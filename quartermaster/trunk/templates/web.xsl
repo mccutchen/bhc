@@ -2,7 +2,10 @@
 
 <xsl:stylesheet
     version="2.0"
-    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
+    exclude-result-prefixes="xs utils">
 
     <xsl:output
         method="html"
@@ -29,6 +32,7 @@
          Includes
     ====================================================================== -->
     <xsl:include href="web-page-template.xsl" />
+    <xsl:include href="utils.xsl" />
     
 
     <!-- =====================================================================
@@ -343,25 +347,24 @@
 
         <tr class="{$evening} {$financial-aid}">
             <xsl:if test="$with-number = 'true'">
-                <td><xsl:value-of select="@class_number"/></td>
+                <td><xsl:apply-templates select="@class_number" /></td>
             </xsl:if>
-            <td><xsl:value-of select="@start_date"/> - <xsl:value-of select="@end_date"/></td>
-            <td><xsl:value-of select="@hours"/> hrs / <xsl:value-of select="@session"/></td>
-            <td><xsl:value-of select="@time_formatted"/></td>
-            <td><xsl:value-of select="@location"/>-<xsl:value-of select="@room"/></td>
-            <td>
-                <xsl:choose>
-                    <xsl:when test="ancestor::division[@machine_name='senior_adult_courses']">
-                        <xsl:call-template name="senior-adult-days">
-                            <xsl:with-param name="input" select="@days" />
-                        </xsl:call-template>
-                    </xsl:when>
-                    <xsl:otherwise><xsl:value-of select="@days" /></xsl:otherwise>
-                </xsl:choose>
-            </td>
-            <td><xsl:value-of select="@faculty"/></td>
-            <td class="last"><xsl:value-of select="@tuition"/></td>
+            <td><xsl:apply-templates select="@start_date"/> - <xsl:apply-templates select="@end_date"/></td>
+            <td><xsl:apply-templates select="@hours"/> hrs / <xsl:apply-templates select="@session"/></td>
+            <td><xsl:apply-templates select="@time_formatted"/></td>
+            <td><xsl:apply-templates select="@location"/>-<xsl:apply-templates select="@room"/></td>
+            <td><xsl:apply-templates select="@days" /></td>
+            <td><xsl:apply-templates select="@faculty"/></td>
+            <td class="last"><xsl:apply-templates select="@tuition"/></td>
         </tr>
+    </xsl:template>
+    
+    <xsl:template match="class/@days">
+        <xsl:value-of select="." />
+    </xsl:template>
+    
+    <xsl:template match="class[ancestor::division/@machine_name='senior_adult_courses']/@days" priority="2">
+        <xsl:value-of select="utils:senior-adult-days(.)" />
     </xsl:template>
 
 
@@ -426,63 +429,5 @@
 
     <xsl:template match="email">
         <a href="mailto:{current()}"><xsl:value-of select="." /></a>
-    </xsl:template>
-
-
-    <xsl:variable name="day-map">
-        <day char="U" full="Sunday" abbrev="Sun." />
-        <day char="M" full="Monday" abbrev="Mon." />
-        <day char="T" full="Tuesday" abbrev="Tues." />
-        <day char="W" full="Wednesday" abbrev="Wed." />
-        <day char="R" full="Thursday" abbrev="Thurs." />
-        <day char="F" full="Friday" abbrev="Fri." />
-        <day char="S" full="Saturday" abbrev="Sat." />
-    </xsl:variable>
-
-    <xsl:template name="senior-adult-days">
-        <xsl:param name="input" select="''" />
-        <xsl:param name="output" select="''" />
-        <xsl:param name="passes" select="0" />
-        <xsl:param name="separator" select="' &amp; '" />
-
-        <xsl:variable name="first" select="substring($input,1,1)" />
-        <xsl:variable name="rest" select="substring($input,2)" />
-
-
-        <xsl:choose>
-            <!-- only one day given, so output the full day name -->
-            <xsl:when test="string-length($input) = 1 and string-length($output) = 0">
-                <xsl:value-of select="$day-map/day[@char = $input]/@full" />
-            </xsl:when>
-
-            <!-- only one day left in the input, so append it to the output and return -->
-            <xsl:when test="string-length($input) = 1 and string-length($output) &gt; 0">
-                <xsl:value-of select="concat($output, $separator, $day-map/day[@char=$input]/@abbrev)" />
-            </xsl:when>
-
-            <xsl:when test="string-length($input) = 2 and string-length($output) = 0">
-                <xsl:call-template name="senior-adult-days">
-                    <xsl:with-param name="input" select="$rest" />
-                    <xsl:with-param name="output" select="$day-map/day[@char=$first]/@abbrev" />
-                    <xsl:with-param name="separator" select="' &amp; '" />
-                </xsl:call-template>
-            </xsl:when>
-
-            <xsl:when test="string-length($input) &gt; 2 and string-length($output) = 0">
-                <xsl:call-template name="senior-adult-days">
-                    <xsl:with-param name="input" select="$rest" />
-                    <xsl:with-param name="output" select="$day-map/day[@char=$first]/@abbrev" />
-                    <xsl:with-param name="separator" select="', '" />
-                </xsl:call-template>
-            </xsl:when>
-
-            <xsl:otherwise>
-                <xsl:call-template name="senior-adult-days">
-                    <xsl:with-param name="input" select="$rest" />
-                    <xsl:with-param name="output" select="concat($output, $separator, $day-map/day[@char=$first]/@abbrev)" />
-                    <xsl:with-param name="separator" select="', '" />
-                </xsl:call-template>
-            </xsl:otherwise>
-        </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
