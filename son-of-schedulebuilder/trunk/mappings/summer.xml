@@ -421,6 +421,7 @@
                     <pattern match="EMSP 1501-2202" />
                     <pattern match="EMSP 1501-2203" />
                     <pattern match="EMSP 1160-2239" />
+					<pattern match="EMSP 1160-2200" /> <!-- added July 20, 2007 -->
                 </subtopic>
             </topic>
             <topic name="Emergency Medical Services, Paramedicine">
