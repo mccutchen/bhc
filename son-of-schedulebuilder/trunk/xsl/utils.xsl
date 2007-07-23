@@ -7,12 +7,13 @@
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
     exclude-result-prefixes="xs utils">
 
-    <xsl:function name="utils:sort-order" as="xs:integer">
-        <xsl:param name="needle" />
-        <xsl:param name="haystack" />
-        <xsl:number value="index-of($haystack, $needle)[1]" />
-    </xsl:function>
 
+    <!-- =====================================================================
+         Quark XPress Tags functions
+         
+         These functions are useful for inserting special Quark XPress Tags
+         markers into the output.
+    ====================================================================== -->
     <xsl:function name="utils:xtag" as="xs:string">
         <xsl:param name="style-name" as="xs:string" />
         <xsl:value-of select="concat('@', normalize-space($style-name), ':')" />
@@ -21,13 +22,32 @@
     <xsl:function name="utils:xtag-inline" as="xs:string">
         <xsl:param name="style-name" as="xs:string" />
         <xsl:param name="content" as="xs:string" />
-        <!-- inline styles in Quark Xpress Tags look like <@stylename>content<@$p> -->
-        <xsl:value-of select="concat('&lt;@', $style-name, '&gt;', $content, '&lt;@$p&gt;')" />
+        <!-- Quark Xpress Tags for inline or "character" styles look like so:
+             <@stylename>content<@$p> -->
+        <xsl:value-of select="concat('&lt;@', normalize-space($style-name), '&gt;', $content, '&lt;@$p&gt;')" />
     </xsl:function>
 
+
+    <!-- =====================================================================
+         senior-adult-days(days)
+         
+         Takes input string 'days' as a sequence of one letter abbreviations
+         for the meeting days of a class (e.g. 'MWF' for a class meeting on
+         Monday, Wednesday and Friday) and returns a more human-friendly
+         representation of the days of the week.
+         
+         If only one day is given as input, that day's full name is returned.  
+         If more than one day is given as input, abbreviated versions of the
+         days are returned.
+          
+         Examples:
+          - utils:senior-adult-days('M') => 'Monday'
+          - utils:senior-adult-days('TR') => 'Tues. & Thurs.'
+          - utils:senior-adult-days('MWF') => 'Mon., Wed., Fri.'
+    ====================================================================== -->
     <xsl:function name="utils:senior-adult-days" as="xs:string">
-        <xsl:param name="input" as="xs:string" />
-        <xsl:value-of select="utils:senior-adult-days-helper($input, '', ' &amp; ')" />
+        <xsl:param name="days" as="xs:string" />
+        <xsl:value-of select="utils:senior-adult-days-helper($days, '', ' &amp; ')" />
     </xsl:function>
 
     <xsl:function name="utils:senior-adult-days-helper" as="xs:string">
