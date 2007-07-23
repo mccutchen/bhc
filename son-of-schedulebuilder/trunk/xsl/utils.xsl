@@ -29,6 +29,56 @@
 
 
     <!-- =====================================================================
+         urlify(s)
+         
+         Transforms input string 's' into a string suitable for use in URLs or
+         filenames, mostly by replacing spaces with underscores.  Works by
+         running 's' through a series of regular expressions, defined in the
+         variable $replacements below.
+    ====================================================================== -->
+    <xsl:function name="utils:urlify" as="xs:string">
+        <xsl:param name="s" as="xs:string" />
+        
+        <xsl:variable name="replacements">
+            <!-- chars which should be replaced with an underscore -->
+            <rule pattern="[\s\\/&amp;\-]" replacement="_" />
+            <!-- n with tilde -->
+            <rule pattern="&#241;" replacement="n" />
+            <!-- blacklisted chars, which must be replaced after all the other
+                 patterns -->
+            <rule pattern="[^A-z0-9_]" replacement="" />
+        </xsl:variable>
+        
+        <xsl:value-of select="utils:urlify-helper(lower-case($s), $replacements/rule)" />
+    </xsl:function>
+    
+    <xsl:function name="utils:urlify-helper" as="xs:string">
+        <xsl:param name="s" as="xs:string" />
+        <xsl:param name="rules" />
+        
+        <xsl:variable name="rule" select="$rules[1]" />
+        <xsl:variable name="pattern" select="$rule/@pattern" />
+        <xsl:variable name="replacement" select="$rule/@replacement" />
+        
+        <xsl:choose>
+            <!-- no rules left (this shouldn't happen) -->
+            <xsl:when test="count($rules) = 0">
+                <xsl:value-of select="$s" />
+            </xsl:when>
+            <!-- one rule left, so we just apply it and return the results -->
+            <xsl:when test="count($rules) = 1">
+                <xsl:value-of select="replace($s, $pattern, $replacement)" />
+            </xsl:when>
+            <!-- apply the first rule and then recursively apply the rest of
+                 the rules -->
+            <xsl:otherwise>
+                <xsl:value-of select="utils:urlify-helper(replace($s, $pattern, $replacement), subsequence($rules, 2))" />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+
+
+    <!-- =====================================================================
          senior-adult-days(days)
          
          Takes input string 'days' as a sequence of one letter abbreviations
