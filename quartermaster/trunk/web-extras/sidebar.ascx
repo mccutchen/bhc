@@ -36,7 +36,7 @@
         <tr><th>BHC</th><td>=</td><td>Brookhaven College main campus</td></tr>
         <tr><th>BHEC</th><td>=</td><td>East Center 1</td></tr>
         <tr><th>BHE2</th><td>=</td><td>East Center 2</td></tr>
-        <tr><th>RLT</th><td>=</td><td>R.L. Turner High School</td></tr>
+        <tr><th>ORLT</th><td>=</td><td>R.L. Turner High School</td></tr>
         <tr><td colspan="3"><strong>Evening Classes in Bold</strong></td></tr>
     </table>
 
