@@ -1,0 +1,105 @@
+<divisions>
+    <division name="Business Studies">
+        <pattern match="ACCT" />
+        <pattern match="ACNT" />
+        <pattern match="ARTC" />
+        <pattern match="ARTV" />
+        <pattern match="AUMT" />
+        <pattern match="BCIS" />
+        <pattern match="BMGT" />
+        <pattern match="BUSG" />
+        <pattern match="BUSI" />
+        <pattern match="COSC" />
+        <pattern match="ECON" />
+        <pattern match="GRPH" />
+        <pattern match="HRPO" />
+        <pattern match="IBUS" />
+        <pattern match="IMED" />
+        <pattern match="INEW" />
+        <pattern match="ITMC" />
+        <pattern match="ITNW" />
+        <pattern match="ITSC" />
+        <pattern match="ITSE" />
+        <pattern match="ITSW" />
+        <pattern match="ITSY" />
+        <pattern match="JOUR" />
+        <pattern match="MRKG" />
+        <pattern match="POFI" />
+        <pattern match="POFT" />
+        <pattern match="SPNL" />
+    </division>
+    <division name="Communications">
+        <pattern match="DCLS" />
+        <pattern match="DREA" />
+        <pattern match="DWRI" />
+        <pattern match="ENGL" />
+        <pattern match="PHOT" />
+        <pattern match="SPCH" />
+    </division>
+    <division name="Health and Human Services">
+        <pattern match="CDEC" />
+        <pattern match="EDUC" />
+        <pattern match="EMSP" />
+        <pattern match="HPRS" />
+        <pattern match="RADR" />
+        <pattern match="RNSG" />
+        <pattern match="TECA" />
+    </division>
+    <division name="Mathematics and Science">
+        <pattern match="BIOL" />
+        <pattern match="CHEM" />
+        <pattern match="CRTG" />
+        <pattern match="DIRS" />
+        <pattern match="DMAT" />
+        <pattern match="GEOG" />
+        <pattern match="GEOL" />
+        <pattern match="MATH" />
+        <pattern match="PHYS" />
+        <pattern match="SCIT" />
+    </division>
+    <division name="Physical Education, Athletics and Nutrition">
+        <pattern match="NUTR" />
+        <pattern match="PHED" />
+    </division>
+    <division name="School of the Arts">
+        <pattern match="ARTS" />
+        <pattern match="CUST" />
+        <pattern match="DANC" />
+        <pattern match="DRAM" />
+        <pattern match="HUMA" />
+        <pattern match="MUAP" />
+        <pattern match="MUEN" />
+        <pattern match="MUSI" />
+    </division>
+    <division name="Social Science">
+        <pattern match="ALCE" />
+        <pattern match="ANTH" />
+        <pattern match="GOVT" />
+        <pattern match="HDEV" />
+        <pattern match="HIST" />
+        <pattern match="PHIL" />
+        <pattern match="PSYC" />
+        <pattern match="RELI" />
+        <pattern match="SOCI" />
+    </division>
+    <division name="World Languages">
+        <pattern match="ARAB" />
+        <pattern match="CHIN" />
+        <pattern match="ESOL" />
+        <pattern match="FARS" />
+        <pattern match="FREN" />
+        <pattern match="GERM" />
+        <pattern match="GREE" />
+        <pattern match="HEBR" />
+        <pattern match="HIND" />
+        <pattern match="ITAL" />
+        <pattern match="JAPN" />
+        <pattern match="KORE" />
+        <pattern match="LATI" />
+        <pattern match="PORT" />
+        <pattern match="RUSS" />
+        <pattern match="SGNL" />
+        <pattern match="SPAN" />
+        <pattern match="VIET" />
+    </division>
+</divisions>

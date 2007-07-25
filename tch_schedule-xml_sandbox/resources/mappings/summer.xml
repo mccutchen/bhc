@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<mappings>
+    <mapping type="subject">
+        <!-- =======================================================================
+             World Languages (Joe Monroy)
+             ======================================================================== -->
+        <subject name="English for Speakers of Other Languages">
+            <topic name="Listening/Speaking">
+                <pattern match="ESOL 003[1234]" />
+            </topic>
+            <topic name="Accent Reduction">
+                <!-- this pattern needs to override the previous one, so it gets
+                     a priority of 2 -->
+                <pattern match="ESOL 0034-2020" priority="2" />
+            </topic>
+
+            <!-- for Summer, which doesn't have enough classes to warrant dividing
+                 these courses into different levels -->
+            <topic name="Reading">
+                <pattern match="ESOL 004[1-4]" />
+            </topic>
+            <topic name="Writing and Grammar">
+                <pattern match="ESOL 00[56][1-4]" />
+            </topic>
+
+            <topic name="Level One Intensive English Program">
+                <pattern match="ESOL 0036" />
+            </topic>
+            <topic name="Level Two Intensive English Program">
+                <pattern match="ESOL 0066" />
+            </topic>
+            <topic name="Level Three Intensive English Program">
+                <pattern match="ESOL 0056" />
+            </topic>
+            <topic name="Level Four Intensive English Program">
+                <pattern match="ESOL 0046" />
+            </topic>
+        </subject>
+
+
+        <!-- =======================================================================
+             School of the Arts (Fran Rhodes & Jill Williams)
+             ======================================================================== -->
+        <subject name="Art">
+            <!-- these two patterns should stay the same from semester to semester -->
+            <topic name="Art Appreciation">
+                <pattern match="ARTS 1301"/>
+            </topic>
+            <topic name="Art History">
+                <pattern match="ARTS 130[34]"/>
+                <pattern match="ARTS 2373-2501"/>
+            </topic>
+
+            <!-- Summer 2006 regroupings -->
+            <topic name="Art Metals">
+                <pattern match="ARTS 2341-2225" />
+                <pattern match="ARTS 2342-2225" />
+                <pattern match="ARTS 2311-2225" />
+                <pattern match="ARTS 2312-2225" />
+                <pattern match="ARTS 2341-2001" />
+                <pattern match="ARTS 2342-2001" />
+                <pattern match="ARTS 2311-2003" />
+                <pattern match="ARTS 2312-2003" />
+            </topic>
+            <topic name="Ceramics">
+                <pattern match="ARTS 2346-2001" />
+                <pattern match="ARTS 2347-2001" />
+                <pattern match="ARTS 2311-2008" />
+                <pattern match="ARTS 2312-2006" />
+				<pattern match="ARTS 2346-2225" />
+                <pattern match="ARTS 2347-2225" />
+                <pattern match="ARTS 2311-2229" />
+                <pattern match="ARTS 2312-2228" />
+                <pattern match="ARTS 2346-2701" />
+                <pattern match="ARTS 2347-2701" />
+                <pattern match="ARTS 2311-2702" />
+                <pattern match="ARTS 2312-2702" />
+            </topic>
+            <topic name="Design">
+                <!-- added this topic and pattern manually, since it wasn't in Jill's requested regroupings -->
+                <pattern match="ARTS 1311-2001" />
+				<pattern match="ARTS 1312-2001" />
+            </topic>
+            <topic name="Drawing">
+                <pattern match="ARTS 1316-2001" />
+                <pattern match="ARTS 1317-2001" />
+                <pattern match="ARTS 2311-2005" />
+                <pattern match="ARTS 2312-2005" />
+				<pattern match="ARTS 2311-2006" />
+				<pattern match="ARTS 1316-2501" />
+                <pattern match="ARTS 1317-2501" />
+                <pattern match="ARTS 2311-2501" />
+                <pattern match="ARTS 2312-2501" />
+                <pattern match="ARTS 2311-2505" />
+                <pattern match="ARTS 2312-2505" />
+				<pattern match="ARTS 1316-2502" />
+                <pattern match="ARTS 1317-2502" />
+                <pattern match="ARTS 2312-2503" />
+            </topic>
+            <topic name="Painting">
+                <comments>NOTE:  A live model may be used for some portions of these painting classes.</comments>
+                <pattern match="ARTS 2316-2001" />
+				<pattern match="ARTS 2317-2001" />
+                <pattern match="ARTS 2311-2002" />
+                <pattern match="ARTS 2312-2002" />
+				<pattern match="ARTS 2316-2200" />
+				<pattern match="ARTS 2317-2200" />
+                <pattern match="ARTS 2311-2200" />
+                <pattern match="ARTS 2312-2200" />
+				<pattern match="ARTS 2316-2501" />
+                <pattern match="ARTS 2317-2501" />
+                <pattern match="ARTS 2311-2502" />
+                <pattern match="ARTS 2311-2502" />
+                <pattern match="ARTS 2312-2502" />
+                <pattern match="ARTS 2316-2225" />
+                <pattern match="ARTS 2317-2225" />
+                <pattern match="ARTS 2311-2230" />
+                <pattern match="ARTS 2312-2229" />
+            </topic>
+            <topic name="Photography">
+                <pattern match="ARTS 2356-2001" />
+                <pattern match="ARTS 2357-2001" />
+                <pattern match="ARTS 2311-2004"/>
+                <pattern match="ARTS 2312-2004" />
+            </topic>
+            <topic name="Arts and Computers">
+                <pattern match="ARTS 2348-2225"/>
+                <pattern match="ARTS 2349-2225"/>
+                <pattern match="ARTS 2311-2226"/>
+                <pattern match="ARTS 2312-2226"/>
+                <pattern match="ARTS 2313-2001"/>
+                <pattern match="ARTS 2314-2001"/>
+                <pattern match="ARTS 2311-2009"/>
+            </topic>
+            <topic name="Printmaking">
+                <pattern match="ARTS 2333-2225" />
+                <pattern match="ARTS 2334-2225" />
+				<pattern match="ARTS 2333-2226" />
+                <pattern match="ARTS 2334-2226" />
+                <pattern match="ARTS 2311-2231" />
+                <pattern match="ARTS 2312-2230" />
+                <pattern match="ARTS 2311-2227" />
+                <pattern match="ARTS 2312-2227" />
+				<pattern match="ARTS 2333-2701" />
+                <pattern match="ARTS 2334-2701" />
+                <pattern match="ARTS 2311-2703" />
+                <pattern match="ARTS 2312-2703" />
+            </topic>
+            <topic name="Sculpture">
+                <pattern match="ARTS 2326-2701" />
+                <pattern match="ARTS 2327-2701" />
+                <pattern match="ARTS 2311-2701" />
+                <pattern match="ARTS 2312-2701" />
+                <pattern match="ARTS 2326-2001" />
+                <pattern match="ARTS 2327-2001" />
+                <pattern match="ARTS 2311-2007" />
+            </topic>
+        </subject>
+
+        <subject name="Dance">
+            <comments>NOTE:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  Please call the department for placement counseling if you plan to enroll in courses above the beginning level.</comments>
+            <topic name="Dance Appreciation">
+                <pattern match="DANC 2303" />
+            </topic>
+
+            <!-- Summer 2006 -->
+            <topic name="Ballet">
+                <pattern match="DANC 1342-2201" />
+				<pattern match="DANC 1342-2202" />
+                <pattern match="DANC 2341-2201" />
+				<pattern match="DANC 2341-2202" />
+                <pattern match="DANC 2342-2201" />
+				<pattern match="DANC 2342-2202" />
+                <pattern match="DANC 1341-2701" />
+                <pattern match="DANC 1342-2701" />
+                <pattern match="DANC 2341-2701" />
+                <pattern match="DANC 2342-2701" />
+                <pattern match="DANC 2142-2702" />
+                
+            </topic>
+            <topic name="Ballet Techniques">
+                <pattern match="DANC 2141-2201" />
+                <pattern match="DANC 2142-2701" /> 
+            </topic>
+            <topic name="Dance Performance">
+                <pattern match="DANC 1351-2225" />
+                <pattern match="DANC 1352-2225" />
+                <pattern match="DANC 2351-2225" />
+                <pattern match="DANC 2352-2225" />
+            </topic>
+            <topic name="Hip Hop">
+                <pattern match="DANC 1147-2201" />
+                <pattern match="DANC 1148-2201" />
+                <pattern match="DANC 1148-2501" />
+                <pattern match="DANC 2147-2501" />
+                <pattern match="DANC 2148-250" />
+            </topic>
+            <topic name="Jazz">
+                <pattern match="DANC 1248-2201" />
+                <pattern match="DANC 2247-2201" />
+                <pattern match="DANC 2248-2201" />
+                <pattern match="DANC 2247-2701" />
+                <pattern match="DANC 2248-2701" />
+            </topic>
+            <topic name="Modern">
+                <comments>Students must have had one semester of dance training for the following classes.</comments>
+                <pattern match="DANC 1245-2201" />
+				<pattern match="DANC 1246-2702" />
+                <pattern match="DANC 1246-2201" />
+                <pattern match="DANC 2245-2201" />
+				<pattern match="DANC 2245-2702" />
+                <pattern match="DANC 2246-2201" />
+                <pattern match="DANC 1245-2701" />
+                <pattern match="DANC 1246-2701" />
+                <pattern match="DANC 2245-2701" />
+                <pattern match="DANC 2246-2701" />
+				<pattern match="DANC 2246-2702" />
+            </topic>
+        </subject>
+
+        <subject name="Drama">
+            <topic name="Introduction to Theatre">
+                <pattern match="DRAM 1310" unsorted="true" />
+            </topic>
+            <topic name="Film Appreciation">
+                <pattern match="DRAM 2366" unsorted="true" />
+            </topic>
+            <topic name="Theater Workshop">
+                <pattern match="DRAM 1323" unsorted="true" />
+            </topic>
+            <topic name="Theater Practicum">
+                <pattern match="DRAM 1[12]20" unsorted="true" />
+            </topic>
+            <topic name="Stagecraft">
+                <pattern match="DRAM [12]33[01]" unsorted="true" />
+            </topic>
+            <topic name="Acting">
+                <pattern match="DRAM [12]35[12]" unsorted="true" />
+            </topic>
+            <topic name="Rehearsal">
+                <subtopic name="FIRST PLAY, SPRING 2006">
+                    <pattern match="DRAM 1221-2735" unsorted="true" />
+                </subtopic>
+                <subtopic name="SECOND PLAY, SPRING 2006">
+                    <pattern match="DRAM 1221-2736" unsorted="true" />
+                </subtopic>
+            </topic>
+        </subject>
+
+        <subject name="Music">
+            <topic name="Music Appreciation">
+                <pattern match="MUSI 1306" />
+            </topic>
+            <topic name="Digital">
+                <pattern match="MUSI 1390-2201" />
+                <pattern match="MUSI 1390-2200" />
+            </topic>
+            <topic name="Theory">
+				<pattern match="MUSI 1311-2200" />
+                <pattern match="MUSI 1312-2200" />
+            </topic>
+			<topic name="Musicianship">
+				<pattern match="MUSI 1116-2200" />
+                <pattern match="MUSI 1117-2200" />
+				<pattern match="MUSI 2116-2200" />
+            </topic>
+            <!-- Summer 2007 -->
+            <topic name="Chorus">
+                <pattern match="MUEN 2141-2725" />
+            </topic>
+            <topic name="Ensembles">
+                <subtopic name="Chamber">
+                    <pattern match="MUEN 1152-2200" />
+                    <pattern match="MUEN 1152-2201" />
+                    <pattern match="MUEN 1152-2701" />
+                </subtopic>
+                <subtopic name="Flute">
+                    <pattern match="MUEN 1132-2201" />
+                </subtopic>
+                <subtopic name="Guitar">
+                    <pattern match="MUEN 1134-2201" />
+                </subtopic>
+				<subtopic name="Handbells">
+                    <pattern match="MUEN 1135-2201" />
+                </subtopic>
+                <subtopic name="Keyboard">
+                    <pattern match="MUEN 1131-2201" />
+                    <pattern match="MUEN 1131-2202" />
+                </subtopic>
+                <subtopic name="Lab Band">
+                    <pattern match="MUEN 2123-2700" />
+                </subtopic>
+                <subtopic name="Madrigal Singers">
+                    <pattern match="MUEN 1153-2250" />
+                </subtopic>
+                <subtopic name="Vocal Jazz">
+                    <pattern match="MUEN 1151-2250" />
+                </subtopic>
+            </topic>
+            <topic name="Piano">
+                <pattern match="MUSI 1181-2700" />
+            </topic>
+            <topic name="Private Lessons">
+                <comments>NOTE:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
+                <pattern match="MUAP" />
+            </topic>
+        </subject>
+
+
+        <!-- =======================================================================
+             CIT (Bill Hammerschlag)
+             ======================================================================== -->
+        <subject name="Computer Information Technology">
+            <topic name="Introduction To Computing">
+                <comments>NOTE:  ITSC 1401 is a technical/occupational course required for certain certificate and associate degree plans.  It will not meet the Brookhaven College Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and is not for transfer to a four-year school.</comments>
+                <pattern match="ITSC 1401-2426" />
+                <pattern match="ITSC 1401-2300" />
+                <pattern match="ITSC 1401-2426" />
+                <pattern match="ITSC 1401-2300" />  
+            </topic>
+            <topic name="CIT Core">
+                <pattern match="ITNW 1421-2426" />
+                <pattern match="ITNW 1425-2426" />
+                <pattern match="ITSC 1405-2426" />    
+            </topic>
+            <topic name="Programming">
+                <pattern match="ITSE 1346-2701" />
+                <pattern match="ITSE 1407-2701" />
+                <pattern match="ITSE 1431-2701" />
+                <pattern match="ITSE 1422-2501" />
+                <pattern match="ITSE 2417-2501" />
+                <pattern match="INEW 2438-2501" />
+                <pattern match="ITSE 2455-2501" />
+            </topic>
+            <topic name="Microsoft Academy">
+                <pattern match="ITMC 1458-2501" />
+                <pattern match="ITMC 1419-2501" />
+            </topic>
+            <topic name="Unix">
+                <pattern match="ITSC 1407-2426" />
+            </topic>
+            <topic name="Information Security">
+                <pattern match="ITSY 1400-2426" />
+                <pattern match="ITSY 1442-2426" />
+            </topic>
+            <topic name="WWW and E-Commerce">
+                <pattern match="IMED 1416-2426" />
+                <pattern match="ITNW 1437-2426" />
+            </topic>
+            <topic name="Application Software">
+                <pattern match="ITSC 1191-2200" />
+                <pattern match="ITSC 1191-2700" />
+                <pattern match="ITSC 1409-2500" />
+                <pattern match="ITSC 1191-2426" />
+                <pattern match="ITSC 1291-2426" />
+                <pattern match="ITSC 1409-2426" />
+                <pattern match="ITSC 1491-2426" />
+                <pattern match="ITSC 1491-2427" />
+                <pattern match="ITSC 2431-2426" />
+                <pattern match="ITSC 2431-2427" />
+                <pattern match="ITSW 1401-2426" />
+                <pattern match="ITSW 1404-2426" />
+                <pattern match="ITSW 1407-2426" />
+                <pattern match="ITSW 1410-2426" />   
+            </topic>
+        </subject>
+        <subject name="Computer Science">
+            <topic name="Computer Literacy">
+                <comments>NOTE:  COSC 1300 will meet the Brookhaven College Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and may be used for transfer to a four-year school.</comments>
+                <pattern match="COSC (1300|1401)" />
+                <pattern match="COSC 1300-2421" />
+                <pattern match="COSC 1300-2422" />
+                <pattern match="COSC 1401-2421" />
+                <pattern match="COSC 1300-2301" />
+                <pattern match="COSC 1300-2501" />
+                <pattern match="COSC 1300-2426" />
+                <pattern match="COSC 1300-2427" />
+                <pattern match="COSC 1401-2426" />
+                <pattern match="COSC 1300-2300" />
+                <pattern match="COSC 1401-2300" />
+                <pattern match="COSC 1300-2001" />
+                <pattern match="COSC 1300-2427" />
+                <pattern match="COSC 1401-2426" />
+                <pattern match="COSC 1300-2300" />   
+            </topic>
+            <topic name="Programming">
+                <pattern match="COSC 1415-2701" />
+                <pattern match="COSC 1436-2701" />
+                <pattern match="COSC 1430-2501" />
+                <pattern match="COSC 1437-2501" />
+                <pattern match="COSC 2430-2501" />
+                <pattern match="COSC 2436-2501" />     
+            </topic>
+        </subject>
+        <subject name="Computer Studies - Business Computer Information Systems">
+            <comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
+            <topic name="Business Computer Applications">
+                <pattern match="BCIS 1405-2421" />
+                <pattern match="BCIS 1405-2426" />
+                <pattern match="BCIS 1405-2300" />
+                <pattern match="BCIS 1405-2426" />
+                <pattern match="BCIS 1405-2300" />    
+            </topic>
+            <topic name="Programming">
+                <pattern match="BCIS 1431-2701" />
+            </topic>
+        </subject>
+
+
+
+        <!-- =======================================================================
+             EMS (Cletha Silas)
+             ======================================================================== -->
+        <subject name="Emergency Medical Services">
+            <comments>NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road.  Note:  If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.</comments>
+            <topic name="Emergency Medical Services, Basic">
+                <subtopic name="EMT Basic Class #39">
+                   <!-- <comments>Note: EMSP 1160 will be offered in Summer Term 2.</comments> -->
+                    <pattern match="EMSP 1501-2239" />
+                    <pattern match="EMSP 1501-2201" />
+                    <pattern match="EMSP 1501-2202" />
+                    <pattern match="EMSP 1501-2203" />
+                    <pattern match="EMSP 1160-2239" />
+                </subtopic>
+            </topic>
+            <topic name="Emergency Medical Services, Paramedicine">
+                <subtopic name="Paramedic Class #15, C Shift">
+                    <pattern match="EMSP 2143-2215" />
+                    <pattern match="EMSP 2143-2206" />
+                    <pattern match="EMSP 2463-2215" />
+                </subtopic>
+                <subtopic name="Paramedic Class #16, A Shift">
+                    <pattern match="EMSP 2260-2266" />
+                    <pattern match="EMSP 2434-2216" />
+                    <pattern match="EMSP 2434-2201" />
+                    <pattern match="EMSP 1355-2216" />
+                    <pattern match="EMSP 1355-2201" />
+                </subtopic>
+                <subtopic name="Paramedic Class #17,  B shift">
+                    <pattern match="EMSP 1356-2217" />
+                    <pattern match="EMSP 1356-2204" />
+                    <pattern match="EMSP 2444-2217" />
+                    <pattern match="EMSP 2444-2204" />
+					<pattern match="EMSP 2260-2267" />
+                    <pattern match="EMSP 2260-2277" />
+                    <pattern match="EMSP 2434-2217" />
+                    <pattern match="EMSP 2434-2204" />
+                </subtopic>
+            </topic>
+        </subject>
+
+
+        <!-- =======================================================================
+             Radiologic Sciences (not sure who)
+             ======================================================================== -->
+        <subject name="Radiologic Sciences">
+        	<pattern match="RADR 1201" />
+            <topic name="Second semester Program Students">
+               <comments>NOTE: These courses are restricted to students who have been accepted into the Radiologic Technology Program.  For more information call 972-860-4264.</comments>
+                <pattern match="RADR 1313-2201" />
+                <pattern match="RADR 1313-2202" />
+                <pattern match="RADR 1313-2203" />
+                <pattern match="RADR 1313-2204" />
+                <pattern match="RADR 1313-2205" />
+                <pattern match="RADR 2301-2201" />
+                <pattern match="RADR 2301-2202" />
+                <pattern match="RADR 2301-2203" />
+                <pattern match="RADR 2301-2204" />
+                <pattern match="RADR 2301-2205" />
+                <pattern match="RADR 2213-2201" />
+            </topic>
+            <topic name="Fifth Semester Program Students">
+                <comments>NOTE: The following courses are for students in the fifth semester of the Radiological Technology program.  Acceptance into this program is REQUIRED.  For more information call Christi Carter at 972-860-4264.</comments>
+                <pattern match="RADR 2266-2201" />
+                <pattern match="RADR 2266-2202" />
+                <pattern match="RADR 2233-2201" />
+                <pattern match="RADR 2233-2202" />
+				<pattern match="RADR 2266-2601" />
+				
+            </topic>
+        </subject>
+    </mapping>
+</mappings>    
