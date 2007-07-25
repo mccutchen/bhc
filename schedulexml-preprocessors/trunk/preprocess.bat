@@ -17,8 +17,11 @@ set SAXON_PATH=C:\saxon\saxon8.jar
 rem Where should the output go?
 set SCHEDULE_FILE=schedule.xml
 
-rem Where is Rik's input file?
+rem Set the default input path
 set INPUT_PATH=input\schedule-200-2007SP.xml
+
+rem If an input path was given on the command line, use it
+if exist %1 set INPUT_PATH=%1
 
 
 rem ===================================================================
@@ -29,7 +32,7 @@ echo Preprocessing Rik's ScheduleXML...
 echo.
 
 rem First, copy Rik's original schedule to a new location
-echo Copying input...
+echo Copying input file %INPUT_PATH%...
 copy %INPUT_PATH% %SCHEDULE_FILE% > garbage.txt && del garbage.txt
 echo.
 
