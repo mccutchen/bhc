@@ -61,7 +61,7 @@
 			<topic name="Level Three Intensive English Program">
 				<pattern match="ESOL 0056" />
 				<subtopic name="ESOL Writing for ENGL 1301">
-					<pattern match="ESOL 0056-2028" />
+					<pattern match="ESOL 0056-2028" priority="2" />
 				</subtopic> 
 			</topic>
 			<topic name="Level Four Intensive English Program">
@@ -713,7 +713,6 @@
 				<pattern match="EMSP 2260-2619" /><!-- Added 07/06/2007 -->
 
 				<subtopic name="EMT-Basic Class #40, Evenings">
-					<pattern match="EMSP 1501-2540" />
 					<pattern match="EMSP 1501-2500" />
 					<pattern match="EMSP 1501-2501" />
 					<pattern match="EMSP 1501-2502" /><!--  This may or may not be in the right place, see Cletha's 4/11/07 e-mail -->	
@@ -778,7 +777,6 @@
 					<pattern match="EMSP 1438-2500" />
 					<pattern match="EMSP 1438-2501" />
 					<pattern match="EMSP 1438-2502" />
-					<pattern match="EMSP 2444-2719" />
 					<pattern match="EMSP 1356-2719" />
 					<pattern match="EMSP 1356-2700" />
 					<pattern match="EMSP 1356-2701" />
