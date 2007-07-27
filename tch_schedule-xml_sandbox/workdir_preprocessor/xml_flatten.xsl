@@ -15,7 +15,6 @@
 	  
 	<!-- some global vars -->
 	<xsl:variable name="doc-special"   select="document('special-sorting.xml')/mappings" />
-	<xsl:variable name="doc-subjects"  select="document('subjects.xml')/subjects"   />
 	<xsl:variable name="doc-divisions" select="document('divisions.xml')/divisions" />
 	<!-- something for sorting into minimesters -->
 	
@@ -31,7 +30,7 @@
 		 realize such a thing could even exist.
 		 Basically, what this Frankenstein transform does is the logical equivalent of dropping an
 		 elephant on DSC XML, over and over again, until it's flat enough to see through. 
-		 That's it, really. I'm not proud of this code, but it works, and for the record, XSL sucks. -->
+		 That's it, really. I'm not proud of this code, but it works - and for the record, XSL sucks. -->
 	
 	
 	<!-- start the madness -->
@@ -66,10 +65,10 @@
 		</xsl:element>
 	</xsl:template>
 	
-	<!-- this is where the elephant hits the first time. we are going to super-saturate the class element with data 
+	<!-- this is where the elephant hits. we are going to super-saturate the class element with data 
 		 (which will be expanded later 'cause it's messy) -->
 	<xsl:template match="class">
-		<xsl:variable name="class-id" select="concat(@rubric, ' ', @number, '-', @section)" />
+		<xsl:variable name="class-id" select="concat(@rubric, ' ', @number, '-', @section)" as="xs:string" />
 		
 		<!-- now write the class with the sorting info in it -->
 		<xsl:element name="class">
@@ -90,7 +89,7 @@
 
 			<!-- now just stuff it with sorting info -->
 			<xsl:choose>
-				<!-- Emeritus = Senior Adult -->
+				<!-- Special type (off topic-code): Emeritus = Senior Adult -->
 				<xsl:when test="(@topic-code = 'E') or (@topic-code = 'EG') or (@topic-code = 'EMBLG')">
 					<xsl:call-template name="apply-sorting-node">
 						<xsl:with-param name="match-node" select="$doc-divisions//subject[@name = 'Senior Adult Education Program']" />
@@ -139,6 +138,7 @@
 			<xsl:apply-templates select="meeting" />
 			<xsl:apply-templates select="xlisting" />
 			<xsl:apply-templates select="corequisite-section" />
+			<!-- there are additional items listed in the district dtd, but I haven't seen them yet. -->
 			
 		<!-- we're done. Let the poor XML heal -->
 		</xsl:element>
@@ -157,11 +157,12 @@
 			<!-- multiple matches -->
 			<xsl:when test="count($match-node) &gt; 1">
 				<xsl:variable name="max-node" select="$match-node[@priority = max($match-node/@priority)]" as="element()*" />
-				<!-- still multiple matches -->
 				<xsl:choose>
+					<!-- still multiple matches -->
 					<xsl:when test="count($max-node) &lt; 1">
 						<xsl:message>!Warning! unable to resolve multiple match results for <xsl:value-of select="$class-id" /></xsl:message>
 					</xsl:when>
+					<!-- pared down to single match -->
 					<xsl:otherwise>
 						<xsl:apply-templates select="$max-node/parent::node()" />
 					</xsl:otherwise>
@@ -183,6 +184,8 @@
 		<xsl:attribute name="name-of-subject" select="@name" />
 		<xsl:apply-templates select="parent::division" />
 	</xsl:template>
+	<!-- topic has to do a little extra work, since we're switching over from the subtopic-topic-subject chain
+		 to the subject-division chain. -->
 	<xsl:template match="topic">
 		<xsl:attribute name="name-of-topic" select="@name" />
 		<xsl:variable name="subject-name" select="parent::subject/@name" />
