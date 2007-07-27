@@ -254,6 +254,7 @@
             <pattern match="POFT" priority="0" unsorted="true" />
             <pattern match="POFI" priority="0" unsorted="true" />
 			<pattern match="POFM" priority="0" unsorted="true" />
+			<pattern match="MDCA" priority="0" unsorted="true" />  <!-- added 07/27/2007 -->
         </subject>
         <subject name="Philosophy">
             <pattern match="PHIL" priority="0" unsorted="true" />
