@@ -6,17 +6,18 @@
 	
 	<!-- utility functions -->
 	<xsl:include
-		href="utils.xsl" />
+		href="libs/utils.xsl" />
 	
 	<xsl:output
 		method="xml"
 		encoding="iso-8859-1"
-		indent="yes" />
+		indent="yes"
+		exclude-result-prefixes="utils" />
 	
 	<!-- some global vars -->
-	<xsl:variable name="doc-special"   select="document('special-sorting.xml')/mappings" />
-	<xsl:variable name="doc-divisions" select="document('divisions.xml')/divisions"      />
-	<xsl:variable name="doc-types"     select="document('types.xml')/types"              />
+	<xsl:variable name="doc-special"   select="document('mappings/special-sorting.xml')/mappings" />
+	<xsl:variable name="doc-divisions" select="document('mappings/divisions.xml')/divisions"      />
+	<xsl:variable name="doc-types"     select="document('mappings/types.xml')/types"              />
 	
 	<!-- for debugging purposes -->
 	<xsl:variable name="release-type" select="'debug-templates'" />
@@ -87,7 +88,7 @@
 				
 				<!-- write subject info -->
 				<xsl:attribute name="name" select="$name" />
-				<xsl:copy-of select="$subject/contact" />
+				<xsl:copy-of select="$subject/contact"  />
 				<xsl:copy-of select="$subject/comments" />
 				
 				<!-- proceed to types -->
@@ -103,7 +104,7 @@
 		
 		<xsl:for-each-group select="$classes" group-by="@type-schedule">
 			<xsl:element name="type">
-				<xsl:variable name="id" select="@type-schedule"></xsl:variable>
+				<xsl:variable name="id" select="@type-schedule" />
 				<xsl:variable name="name" select="$doc-types/type[@id = $id]/@name" />
 				
 				<!-- write type info -->
@@ -111,7 +112,7 @@
 				
 				<!-- proceed to courses -->
 				<xsl:call-template name="create-courses">
-					<xsl:with-param name="classes" select="$classes[@type-sched = $id]" />
+					<xsl:with-param name="classes" select="$classes[@type-schedule = $id]" />
 				</xsl:call-template>
 			</xsl:element>
 		</xsl:for-each-group>
@@ -121,12 +122,44 @@
 		<xsl:param name="classes" />
 		
 		<xsl:for-each-group select="$classes" group-by="@rubric and @number">
-			
+			<xsl:element name="course">
+				<!-- write class info -->
+				<xsl:attribute name="rubric" select="@rubric"             />
+				<xsl:attribute name="number" select="@number"             />
+				<xsl:attribute name="title-short" select="@title-short"   />
+				<xsl:attribute name="title-long" select="@title-long"     />
+				<xsl:attribute name="credit-hours" select="@credit-hours" />
+				
+				<!-- copy description -->
+				<xsl:apply-templates select="desc-course" />
+				
+				<!-- proceed to classes -->
+				<xsl:apply-templates select="$classes" />
+			</xsl:element>
 		</xsl:for-each-group>
 	</xsl:template>
 	
+	<xsl:template match="desc-course">
+		<xsl:element name="desc">
+			<xsl:copy-of select="*" />
+		</xsl:element>
+	</xsl:template>
+	
 	<xsl:template match="class">
-		
+		<xsl:element name="class">
+			<xsl:attribute name="section"       select="@section"       />
+			<xsl:attribute name="synonym"       select="@synonym"       />
+			<xsl:attribute name="type-credit"   select="@type-credit"   />  <!-- I don't know if this is useful for anything, so I'll keep it -->
+			<xsl:attribute name="type-schedule" select="@type-schedule" />
+			<xsl:attribute name="topic-code"    select="@topic-code"    />
+			<xsl:attribute name="weeks"         select="@weeks"         />
+			<xsl:attribute name="date-start"    select="@date-start"    />
+			<xsl:attribute name="date-end"      select="@date-end"      />
+			
+			<!-- copy sub-elements -->
+			<xsl:copy-of select="desc|meeting|xlisting|corequisite-section"/>
+			
+		</xsl:element>
 	</xsl:template>
 	
 </xsl:stylesheet>
