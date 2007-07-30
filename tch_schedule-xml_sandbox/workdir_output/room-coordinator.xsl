@@ -144,14 +144,23 @@
                     
                     <!-- if there's more than one, try to find a main/extra relationship -->
                     <xsl:choose>
-                        <xsl:when test="count($meeting-set) > 1 and count($meeting-set[@method = 'LEC']) = 1">
-                            <xsl:apply-templates select="$meeting-set[@method = 'LEC']" mode="main" />
-                            <xsl:apply-templates select="$meeting-set[@method != 'LEC']" mode="extra" />
+                        <xsl:when test="count($meeting-set) &gt; 1 and count($meeting-set[@method = 'LEC' or @method = 'INET']) = 1">
+                            <xsl:apply-templates select="$meeting-set[@method = 'LEC' or @method = 'INET']" mode="main" />
+                            <xsl:apply-templates select="$meeting-set[@method != 'LEC' and @method != 'INET']" mode="extra" />
+                        </xsl:when>
+                        <xsl:when test="count($meeting-set) &lt; 1">
+                            <xsl:variable name="class-id"><xsl:value-of select="$rubric" /> <xsl:value-of select="$number" />-<xsl:value-of select="$section" /></xsl:variable>
+                            <xsl:message>!Warning! no meetings listed for course <xsl:value-of select="$class-id" />: <xsl:value-of select="$meeting-set/@synonym" /></xsl:message>
                         </xsl:when>
                         <xsl:otherwise>
                             <xsl:apply-templates select="$meeting-set" mode="main" />
                         </xsl:otherwise>
                     </xsl:choose>
+                    
+                    <!-- comments will only appear if it's a distance learning class -->
+                    <xsl:if test="$meeting-set/@method = $special-methods or $meeting-set/ancestor::course/@type-id = $special-types">
+                        <xsl:apply-templates select="$meeting-set/ancestor::course/description" />
+                    </xsl:if>
                 </xsl:for-each-group>
             </xsl:for-each-group>
         </xsl:for-each-group>
@@ -166,8 +175,16 @@
         <tr class="{$course/@type-id}">
             <td><xsl:value-of select="$course/@rubric" />&#160;<xsl:value-of select="$course/@number" />-<xsl:value-of select="$class/@section" />&#160;</td>
             <th><xsl:value-of select="$course/@title" />&#160;</th>
-            <td><xsl:value-of select="@days" />&#160;</td>
-            <td><xsl:value-of select="utils:format-times(@start-time, @end-time)" />&#160;</td>
+            <xsl:choose>
+                <xsl:when test="@method = 'INET' or @room = 'INET'">
+                    <td>NA&#160;</td>
+                    <td>NA&#160;</td>
+                </xsl:when>
+                <xsl:otherwise>
+                    <td><xsl:value-of select="@days" />&#160;</td>
+                    <td><xsl:value-of select="utils:format-times(@start-time, @end-time)" />&#160;</td>
+                </xsl:otherwise>
+            </xsl:choose>
             <td><xsl:value-of select="utils:format-dates($class/@start-date, $class/@end-date)" />&#160;</td>
             <td><xsl:value-of select="if (not($faculty-name)) then 'Staff' else $faculty-name" />&#160;</td>
             <td><xsl:value-of select="@room" />&#160;</td>
@@ -176,10 +193,10 @@
             <td><xsl:value-of select="$class/@capacity" />&#160;</td>
         </tr>
         
-        <!-- comments will only appear if it's a distance learning class -->
+        <!-- comments will only appear if it's a distance learning class
         <xsl:if test="@method = $special-methods or $course/@type-id = $special-types">
             <xsl:apply-templates select="$course/description" />
-        </xsl:if>
+        </xsl:if> -->
     </xsl:template>
     
     <xsl:template match="meeting" mode="extra">
