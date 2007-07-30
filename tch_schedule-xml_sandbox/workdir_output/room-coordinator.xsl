@@ -25,7 +25,7 @@
         classes from a certain division or rubric by setting either
         or both of the parameters below, as strings. -->
     <xsl:variable name="division-filter" select="()" />
-    <xsl:variable name="rubrik-filter" select="()" />
+    <xsl:variable name="rubric-filter" select="()" />
     
     <!-- NOTE: it seems that the logical choice for units here has changed from classes to meetings. -->
     
@@ -65,12 +65,12 @@
                     </h1>
                     
                     <xsl:variable name="possible-meetings"
-                        select="if (empty($division-filter) and empty($rubrik-filter))
+                        select="if (empty($division-filter) and empty($rubric-filter))
                         then
                         descendant::meeting
                         else
                         descendant::grouping[@type = 'division' and @name = $division-filter]/descendant::meeting |
-                        descendant::course[@rubrik = $rubrik-filter]/descendant::meeting" />
+                        descendant::course[@rubric = $rubric-filter]/descendant::meeting" />
                     
                     <xsl:call-template name="make-table">
                         <xsl:with-param name="title">Normal Courses</xsl:with-param>
@@ -108,19 +108,14 @@
             <xsl:call-template name="pre-format">
                 <xsl:with-param name="meetings" select="$meetings" />
             </xsl:call-template>
-            
-<!--            <xsl:apply-templates select="$meetings">
-                <xsl:sort select="../@rubrik" />
-                <xsl:sort select="../@number" />
-                <xsl:sort select="@section" />
-            </xsl:apply-templates> -->
         </table>
     </xsl:template>
     
     <!-- ok, so the sorting is all messed up and there is no longer an easy 'extra' element for
          lec/lab pairing, coop's, ect. So, we're going to filter this a bit more than in the
          previous version. I'm going to make a guess and say that 'extra' courses were always
-         non-LEC courses with identical 'rubric number-section' identifiers as a LEC course. -->
+         non-LEC meetings with identical 'rubric number-section' identifiers as a LEC meeting. -->
+    <!-- Ah, INET meetings can also have 'extra' LAB meetings -->
     
     <xsl:template name="pre-format">
         <xsl:param name="meetings" />
