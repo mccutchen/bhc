@@ -1,4 +1,4 @@
-<!-- $Id$ -->
+<?xml version="1.0" ?>
 
 <xsl:stylesheet
     version="2.0"
@@ -136,10 +136,11 @@
             <th><em><xsl:value-of select="@method" /></em></th>
             <td><xsl:value-of select="@days" />&#160;</td>
             <td><xsl:value-of select="@formatted-times" />&#160;</td>
-            <td><xsl:value-of select="@formatted-dates" />&#160;</td>
+            <td>&#160;</td><!-- no dates -->
             <td><xsl:value-of select="@faculty-name" />&#160;</td>
             <td><xsl:value-of select="@room" />&#160;</td>
             <td><xsl:value-of select="@method" />&#160;</td>
+            <td>&#160;</td><!-- no course type -->
             <td><xsl:value-of select="@section-capacity" />&#160;</td>
         </tr>
     </xsl:template>
