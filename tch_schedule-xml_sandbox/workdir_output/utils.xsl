@@ -21,6 +21,12 @@
         <xsl:number value="index-of($haystack, $needle)[1]" />
     </xsl:function>
     
+    <xsl:function name="utils:get-machine-name">
+        <xsl:param name="name" />
+        
+        <xsl:value-of select="lower-case(replace(replace($name, '[^A-Za-z0-9]', '_'), '__', '_'))"></xsl:value-of>
+    </xsl:function>
+    
     
     <!-- =====================================================================
          Quark XPress Tag functions
