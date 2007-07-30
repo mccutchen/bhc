@@ -1,0 +1,3 @@
+@ECHO Testing output...
+@python -m class-compare data/schedule-200-2007FA.xml output/tidy_FA.xml
+@PAUSE
