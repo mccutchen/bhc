@@ -12,29 +12,29 @@
 		method="xml"
 		encoding="iso-8859-1"
 		indent="yes"
-		exclude-result-prefixes="utils" />
+		exclude-result-prefixes="xs utils" />
 	  
 	<!-- some global vars -->
-	<xsl:variable name="doc-special"   select="document('mappings/special-sorting.xml')/mappings" />
-	<xsl:variable name="doc-divisions" select="document('mappings/divisions.xml')/divisions" />
+	<xsl:variable name="doc-special"   select="document('mappings/special-sorting.xml')/mappings" as="element()*" />
+	<xsl:variable name="doc-divisions" select="document('mappings/divisions.xml')/divisions"      as="element()*" />
 	<!-- something for sorting into minimesters -->
 	
 	<!-- for debugging purposes -->
-	<xsl:variable name="release-type" select="'debug-templates'" />
+	<xsl:variable name="release-type" select="'debug-templates'" as="xs:string" />
 	<!--
 	<xsl:variable name="release-type" select="'final'" />
 	<xsl:variable name="release-type" select="'debug-functions'" />
 	-->
 	
-	<!-- HUGE DISCLAIMER: this code is not elegant. In fact, from where it's sitting (off in some
-	     dark corner, crying softly to itself) it can't even see elegant. It probably doesn't 
-		 realize such a thing could even exist.
-		 Basically, what this Frankenstein transform does is the logical equivalent of dropping an
-		 elephant on DSC XML, over and over again, until it's flat enough to see through. 
-		 That's it, really. I'm not proud of this code, but it works - and for the record, XSL sucks. -->
+	<!-- 
+		This is the first step in creating a fairly neat and tidy xml document containing the useful information
+		from DSC XML. This transform merely flattens the XML, exposing the data elements needed for tidy_xml.xsl.
+		I originally found this code to be inelegant, however, I now believe it to be a good method for creating
+		an organized structure, considering the amount of work needed to produce halfway-decent xml.
+	-->
 	
 	
-	<!-- start the madness -->
+	<!-- start (mostly for setting up debugging info) -->
 	<xsl:template match="/">
 
 		<!-- copy over some of the pertinant info -->
@@ -62,12 +62,15 @@
 			<xsl:attribute name="date-end"   select="utils:convert-date-std(@end-date)"   />
 			
 			<!-- we're only going to process Brookhaven classes --> 
-			<xsl:apply-templates select="location[@name='200']//descendant::class" />
+			<xsl:apply-templates select="location[@name='200']//descendant::class">
+				<xsl:sort select="ancestor::course/@rubric" data-type="text"   />
+				<xsl:sort select="ancestor::course/@number" data-type="number" />
+				<xsl:sort select="@section"                 data-type="number" />
+			</xsl:apply-templates>
 		</xsl:element>
 	</xsl:template>
 	
-	<!-- this is where the elephant hits. we are going to super-saturate the class element with data 
-		 (which will be expanded later 'cause it's messy) -->
+	<!-- begin flattening the xml -->
 	<xsl:template match="class">
 		<xsl:variable name="class-id" select="concat(@rubric, ' ', @number, '-', @section)" as="xs:string" />
 		
@@ -82,6 +85,7 @@
 			<xsl:attribute name="type-schedule" select="@schedule-type"                      />
 			<xsl:attribute name="topic-code"    select="@topic-code"                         />
 			<xsl:attribute name="credits"       select="ancestor::course/@credit-hours"      />
+			<xsl:attribute name="core-code"     select="ancestor::course/@core-code"         />
 			<xsl:attribute name="weeks"         select="@weeks"                              />
 			<xsl:attribute name="date-start"    select="utils:convert-date-std(@start-date)" />
 			<xsl:attribute name="date-end"      select="utils:convert-date-std(@end-date)"   />
@@ -90,11 +94,12 @@
 
 			<!-- now just stuff it with sorting info -->
 			<xsl:choose>
-				<!-- Special type (off topic-code): Emeritus = Senior Adult -->
+				<!-- Special type (by topic-code): Emeritus = Senior Adult -->
 				<xsl:when test="(@topic-code = 'E') or (@topic-code = 'EG') or (@topic-code = 'EMBLG')">
+					<xsl:variable name="match-node" select="$doc-divisions//subject[@name = 'Senior Adult Education Program']" />
 					<xsl:call-template name="apply-sorting-node">
-						<xsl:with-param name="match-node" select="$doc-divisions//subject[@name = 'Senior Adult Education Program']" />
-						<xsl:with-param name="class-id"   select="$class-id" />
+						<xsl:with-param name="match-node" select="$match-node" />
+						<xsl:with-param name="class-id"   select="$class-id"           />
 					</xsl:call-template>
 				</xsl:when>
 				<!-- if it's not a special type, do regular processing -->
@@ -139,7 +144,7 @@
 			<xsl:apply-templates select="meeting|xlisting|corequisite-section" />
 			<!-- there are additional items listed in the district dtd, but I haven't seen them yet. -->
 			
-		<!-- we're done. Let the poor XML heal -->
+		<!-- we're done. -->
 		</xsl:element>
 	</xsl:template>
 	
@@ -163,25 +168,46 @@
 					</xsl:when>
 					<!-- pared down to single match -->
 					<xsl:otherwise>
-						<xsl:apply-templates select="$max-node/parent::node()" />
+						<xsl:apply-templates select="$max-node" />
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:when>
 			<!-- single match -->
 			<xsl:otherwise>
-				<xsl:apply-templates select="$match-node/parent::node()" />
+				<xsl:apply-templates select="$match-node" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
-	<!-- ok, so the types of matches we can get off the preceeding 'code' are: subtopic, topic, or subject.
+	<!-- ok, so the types of matches we can get off the preceeding code are: subtopic, topic, or subject.
 		 Each of the preceeding elements will be nested inside those elements that follow it. -->
 	<xsl:template match="division">
 		<xsl:attribute name="name-of-division" select="@name" />
 	</xsl:template>
+	<!-- to catch those match nodes that are a subject on the special sorting doc, we have to test for
+		 a parent division node and resolve if necessary -->
 	<xsl:template match="subject">
 		<xsl:attribute name="name-of-subject" select="@name" />
-		<xsl:apply-templates select="parent::division" />
+		
+		<xsl:choose>
+			<!-- if found, good. Nothing special to do -->
+			<xsl:when test="count(parent::division) = 1">
+				<xsl:apply-templates select="parent::division" />
+			</xsl:when>
+			<!-- otherwise, find the matching subject and errorcheck -->
+			<xsl:otherwise>
+				<xsl:variable name="name" select="@name" as="xs:string" />
+				<xsl:variable name="division" select="$doc-divisions/descendant::subject[@name = $name]/parent::division" />
+				<xsl:choose>
+					<xsl:when test="not($division)">
+						<xsl:message>!Warning! Unable to find division for <xsl:value-of select="$name" /></xsl:message>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:apply-templates select="$division" />
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	<!-- topic has to do a little extra work, since we're switching over from the subtopic-topic-subject chain
 		 to the subject-division chain. -->
@@ -189,21 +215,27 @@
 		<xsl:attribute name="name-of-topic" select="@name" />
 		<xsl:variable name="subject-name" select="parent::subject/@name" />
 		<xsl:variable name="subject"      select="$doc-divisions/descendant::subject[@name = $subject-name]" />
+		
 		<xsl:choose>
 			<xsl:when test="count($subject) = 1">
 				<xsl:apply-templates select="$subject" />
 			</xsl:when>
 			<xsl:when test="count($subject) &gt; 1">
-				<xsl:message><xsl:text>Multiple subject matches when resolving sort order for </xsl:text><xsl:value-of select="@subject-name" /></xsl:message>
+				<xsl:message><xsl:text>!Warning! Multiple subject matches when resolving sort order for </xsl:text><xsl:value-of select="@subject-name" />.</xsl:message>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:message><xsl:text>No subject match when resolving sort order for </xsl:text><xsl:value-of select="@subject-name" /></xsl:message>
+				<xsl:message><xsl:text>!Warning! No subject match when resolving sort order for </xsl:text><xsl:value-of select="@subject-name" />.</xsl:message>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	<xsl:template match="subtopic">
 		<xsl:attribute name="name-of-subtopic" select="@name" />
+		<xsl:if test="not(parent::topic)"><xsl:message>!Warning! Unable to resolve topic for <xsl:value-of select="@name" />.</xsl:message></xsl:if>
 		<xsl:apply-templates select="parent::topic" />
+	</xsl:template>
+	<!-- this just catches patterns and bumps it back up to the lowest level of organization -->
+	<xsl:template match="pattern">
+		<xsl:apply-templates select="parent::node()" />
 	</xsl:template>
 	
 	<!-- and just to pretty up the meeting, xlisting, faculty, and corequisite-course/class elements... -->

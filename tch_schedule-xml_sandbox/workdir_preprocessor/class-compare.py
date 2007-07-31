@@ -11,12 +11,13 @@ except ImportError:
 if __name__ == '__main__':
     # get filenames to work with
     import sys;
-    assert len(sys.argv) == 3, 'path and file name for DSC XML and BHC XML, respectively.';
-    dsc_path, bhc_path = sys.argv[1:];
+    assert len(sys.argv) == 4, 'path and file name for DSC XML, flat XML, and tidy XML, respectively.';
+    dsc_path, flat_path, tidy_path = sys.argv[1:];
 
     # get xml
-    dsc_xml = ET.ElementTree(file=dsc_path).findall('//class');
-    bhc_xml = ET.ElementTree(file=bhc_path).findall('//course');
+    dsc_xml  = ET.ElementTree(file=dsc_path).findall('//class');
+    flat_xml = ET.ElementTree(file=flat_path).findall('//class');
+    tidy_xml = ET.ElementTree(file=tidy_path).findall('//course');
 
     # build class list for dsc
     dsc_classes = {};
@@ -26,39 +27,76 @@ if __name__ == '__main__':
         if (dsc_classes.has_key(syn)): dsc_repeats.append(syn);
         else: dsc_classes[syn] = e.get('rubric') + ' ' + e.get('number') + '-' + e.get('section');
 
-    # build class list for bhc
-    bhc_classes = {};
-    bhc_repeats = [];
-    for course in bhc_xml:
+    # build class list for flat
+    flat_classes = {};
+    flat_repeats = [];
+    for e in flat_xml:
+        syn = e.get('synonym');
+        if (flat_classes.has_key(syn)): flat_repeats.append(syn);
+        else: flat_classes[syn] = e.get('rubric') + ' ' + e.get('number') + '-' + e.get('section');
+        
+    # build class list for tidy
+    tidy_classes = {};
+    tidy_repeats = [];
+    for course in tidy_xml:
         cid = course.get('rubric') + ' ' + course.get('number') + '-';
         for e in course.findall('class'):
             syn = e.get('synonym');
-            if (bhc_classes.has_key(syn)): bhc_repeates.append(syn);
-            else: bhc_classes[syn] = cid + e.get('section');
+            if (tidy_classes.has_key(syn)): tidy_repeats.append(syn);
+            else: tidy_classes[syn] = cid + e.get('section');
 
     # start comparison
-    dsc_only = [];
-    bhc_only = [];
+    # first, flat is compared to dsc
+    # then,  tidy is compared to flat
+    # this allows me to see if any information is lost along the way, and at which step.
+    dsc_only  = [];
+    flat_only = [];
+    tidy_only = [];
     for k in dsc_classes.keys():
-        if (not bhc_classes.has_key(k)): dsc_only.append(k);
-    for k in bhc_classes.keys():
-        if (not dsc_classes.has_key(k)): bhc_only.append(k);
+        if (not flat_classes.has_key(k)): dsc_only.append(k);
+    for k in flat_classes.keys():
+        if (not tidy_classes.has_key(k)): flat_only.append(k);
+    # and just in case something weird happens:
+    for k in tidy_classes.keys():
+        if (not dsc_classes.has_key(k)): tidy_only.append(k);
 
     # now output
     fout = file('class-compare.txt', 'w');
+    print 'DSC  ',
     if (len(dsc_repeats) > 0):
-        print 'DSC: ', len(dsc_repeats), ' repeats.';
-        print >> fout, len(dsc_repeats), ' repeated classes in dsc xml:';
-        for k in dsc_repeats: print >> fout, dsc_classes[k], ' : ', k;
-    if (len(dsc_only) > 0):
-        print 'DSC: ', len(dsc_only), ' onlys.';
-        print >> fout, len(dsc_only), ' classes found only in dsc xml:';
-        for k in dsc_only: print >> fout, dsc_classes[k], ' : ', k;
-    if (len(bhc_repeats) > 0):
-        print 'BHC: ', len(bhc_repeats), ' repeats.';
-        print >> fout, len(bhc_repeats), ' repeated classes in bhc xml:';
-        for k in bhc_repeats: print >> fout, bhc_classes[k], ' : ', k;
-    if (len(bhc_only) > 0):
-        print 'BHC: ', len(bhc_only), ' onlys.';
-        print >> fout, len(bhc_only), ' classes found only in bhc xml:';
-        for k in bhc_only: print >> fout, bhc_classes[k], ' : ', k;
+        print 'contains errors:';
+        if (len(dsc_repeats) > 0):
+            print '  ', len(dsc_repeats), ' repeats.';
+            print >> fout, len(dsc_repeats), ' repeated classes in dsc xml:';
+            for k in dsc_repeats: print >> fout, dsc_classes[k], ' : ', k;
+    else: print 'is ok.';
+    
+    print 'flat ',
+    if ((len(flat_repeats) > 0) or (len(dsc_only) > 0)):
+        print 'contains errors:';
+        if (len(flat_repeats) > 0):
+            print '  ', len(flat_repeats), ' repeats.';
+            print >> fout, len(flat_repeats), ' repeated classes in flat xml:';
+            for k in flat_repeats: print >> fout, flat_classes[k], ' : ', k;
+        if (len(dsc_only) > 0):
+            print '  ', len(dsc_only), ' missing.';
+            print >> fout, len(dsc_only), ' classes not copied from dsc xml:';
+            for k in dsc_only: print >> fout, dsc_classes[k], ' : ', k;
+    else: print 'is ok.';
+
+    print 'tidy ',
+    if ((len(tidy_repeats) > 0) or (len(flat_only) > 0) or (len(tidy_only) > 0)):
+        print 'contains errors:';
+        if (len(tidy_repeats) > 0):
+            print '  ', len(tidy_repeats), ' repeats.',;
+            print >> fout, len(tidy_repeats), ' repeated classes in tidy xml:';
+            for k in tidy_repeats: print >> fout, tidy_classes[k], ' : ', k;
+        if (len(flat_only) > 0):
+            print '  ', len(flat_only), ' missing.',;
+            print >> fout, len(flat_only), ' classes not copied from flat xml:';
+            for k in flat_only: print >> fout, flat_classes[k], ' : ', k;
+        if (len(tidy_only) > 0):
+            print '  ', len(tidy_only), ' imaginary classes.',;
+            print >> fout, len(tidy_only), ' imaginary classes found only in tidy xml:';
+            for k in tidy_only: print >> fout, tidy_classes[k], ' : ', k;
+    else: print 'is ok.';

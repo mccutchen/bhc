@@ -1,11 +1,11 @@
 <divisions>
 	<division name="Business Studies">
 		<contact ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu" />
-		<subject name="Automotive Technology" sorted="true">
+		<subject name="Automotive Technology">
 			<contact ext="4189" room="Q100" email="bhcAutomotive@dcccd.edu" />
 			<pattern match="AUMT" />
 		</subject>
-		<subject name="Accounting" sorted="true">
+		<subject name="Accounting">
 			<pattern match="ACNT" />
 			<pattern match="ACCT" />
 			<comments>
@@ -46,17 +46,17 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Business Office Systems and Support" sorted="true">
+		<subject name="Business Office Systems and Support">
 			<contact email="bhcBOSS@dcccd.edu" />
 			<pattern match="POFT" />
 			<pattern match="POFI" />
 			<pattern match="POFM" />
 		</subject>
-		<subject name="Business" sorted="true">
+		<subject name="Business">
 			<pattern match="BUSI" />
 			<pattern match="IBUS" />
 		</subject>
-		<subject name="Computer Information Technology" sorted="false">
+		<subject name="Computer Information Technology">
 			<contact email="bhcCIT@dcccd.edu" />
 			<pattern match="GAME" />
 			<!-- also has IMED, but most of them are in Vis Com -->
@@ -70,15 +70,15 @@
 			<pattern match="ITMC" />
 			<pattern match="ITMT" />
 		</subject>
-		<subject name="Computer Science" sorted="false">
+		<subject name="Computer Science">
 			<contact email="bhcCIT@dcccd.edu" />
 			<pattern match="COSC" />
 		</subject>
-		<subject name="Computer Studies - Business Computer Information Systems" sorted="false">
+		<subject name="Computer Studies - Business Computer Information Systems">
 			<contact email="bhcCIT@dcccd.edu" />
 			<pattern match="BCIS" />
 		</subject>
-		<subject name="Economics" sorted="true">
+		<subject name="Economics">
 			<pattern match="ECON" />
 			<comments>
 				<p>
@@ -110,7 +110,7 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Journalism" sorted="true">
+		<subject name="Journalism">
 			<pattern match="JOUR" />
 			<comments>
 				<p>
@@ -120,15 +120,15 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Management" sorted="true">
+		<subject name="Management">
 			<pattern match="HRPO" />
 			<pattern match="BMGT" />
 			<pattern match="BUSG" />
 		</subject>
-		<subject name="Management Program" sorted="false">
+		<subject name="Management Program">
 			<!-- Not sure how to handle this yet - HRPO and BMGT are in this category as well as regular Managment -->
 		</subject>
-		<subject name="Marketing" sorted="true">
+		<subject name="Marketing">
 			<pattern match="MRKG" />
 			<pattern match="FSHD" />
 			<pattern match="FSHN" />
@@ -137,7 +137,7 @@
 		<subject name="Spanish Language">
 			<pattern match="SPNL" />
 		</subject> -->
-		<subject name="Visual Communications" email="bhcVCOM@dcccd.edu" sorted="true">
+		<subject name="Visual Communications" email="bhcVCOM@dcccd.edu">
 			<pattern match="ARTC" />
 			<pattern match="ARTV" />
 			<pattern match="GRPH" />
@@ -147,23 +147,23 @@
 	</division>
 	<division name="Communications">
 		<contact ext="4555" room="L367" email="XX-MISSING" />
-		<subject name="Developmental Reading" sorted="true">
+		<subject name="Developmental Reading">
 			<contact email="bhcReadingWriting@dcccd.edu" />
 			<pattern match="DREA" />
 		</subject>
-		<subject name="Developmental Writing" sorted="true">
+		<subject name="Developmental Writing">
 			<contact email="bhcReadingWriting@dcccd.edu" />
 			<pattern match="DWRI" />
 		</subject>
-		<subject name="English" sorted="false">
+		<subject name="English">
 			<contact email="bhcEnglish@dcccd.edu" />
 			<pattern match="ENGL" />
 		</subject>
-		<subject name="Photography" sorted="true">
+		<subject name="Photography">
 			<contact email="bhcPhotography@dcccd.edu" />
 			<pattern match="PHOT" />
 		</subject>
-		<subject name="Speech" sorted="false">
+		<subject name="Speech">
 			<contact email="bhcSpeech@dcccd.edu" />
 			<pattern match="SPCH" />
 		</subject>
@@ -172,7 +172,7 @@
 	</division>
 	<division name="Health and Human Services">
 		<contact ext="4239" room="A219" email="bhcHHServices@dcccd.edu" />
-		<subject name="Child Development" sorted="true">
+		<subject name="Child Development">
 			<contact ext="4144" room="K211" email="bhcChildDevelop@dcccd.edu" />
 			<pattern match="EDTC" />
 			<pattern match="CDEC" />
@@ -185,14 +185,14 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Education" sorted="true">
+		<subject name="Education">
 			<pattern match="EDUC" />
 		</subject>
-		<subject name="Emergency Medical Services" sorted="false">
+		<subject name="Emergency Medical Services">
 			<contact ext="7879" location="East Center #2" email="bhcEMS@dcccd.edu" />
 			<pattern match="EMSP" />
 		</subject>
-		<subject name="Nursing" sorted="true">
+		<subject name="Nursing">
 			<contact ext="4754" room="K224" email="bhcNursing@dcccd.edu" />
 			<pattern match="HPRS" />
 			<pattern match="RNSG" />
@@ -207,18 +207,18 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Radiologic Sciences" sorted="false">
+		<subject name="Radiologic Sciences">
 			<contact ext="4264" room="L107" email="bhcRadTech@dcccd.edu" />
 			<pattern match="RADR" />
 		</subject>
 	</division>
 	<division name="Mathematics and Science">
 		<contact ext="4750" room="K224" email="XX-MISSING" />
-		<subject name="Astronomy" sorted="true">
+		<subject name="Astronomy">
 			<contact email="bhcScience@dcccd.edu" />
 			<pattern match="PHYS 141[12]" />
 		</subject>
-		<subject name="Biology" sorted="true">
+		<subject name="Biology">
 			<contact email="bhcScience@dcccd.edu" />
 			<topic name="Directed Studies">
 				<pattern match="DIRS" />
@@ -293,7 +293,7 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Chemistry" sorted="true">
+		<subject name="Chemistry">
 			<contact email="bhcScience@dcccd.edu" />
 			<pattern match="CHEM" />
 			<comments>
@@ -309,14 +309,14 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Developmental Mathematics" sorted="true">
+		<subject name="Developmental Mathematics">
 			<contact email="bhcMath@dcccd.edu" />
 			<pattern match="DMAT" />
 		</subject>
-		<subject name="Geography" sorted="true">
+		<subject name="Geography">
 			<pattern match="GEOG" />
 		</subject>
-		<subject name="Geology" sorted="true">
+		<subject name="Geology">
 			<contact  email="bhcScience@dcccd.edu" />
 			<pattern match="GEOL" />
 			<comments>
@@ -328,13 +328,13 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Geospatial Technology" sorted="true">
+		<subject name="Geospatial Technology">
 			<contact email="bhcGeospatialTech@dcccd.edu" ext="4362" />
 			<pattern match="CRTG" />
 			<pattern match="GISC" />
 			<pattern match="SRVY" />
 		</subject>
-		<subject name="Mathematics" sorted="true">
+		<subject name="Mathematics">
 			<contact email="bhcMath@dcccd.edu" />
 			<pattern match="MATH" />
 			<pattern match="TECM" />
@@ -346,47 +346,47 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Physical Science" sorted="true">
+		<subject name="Physical Science">
 			<contact email="bhcScience@dcccd.edu" />
 			<pattern match="PHYS 1415" />
 			<pattern match="PHYS 1417" />
 		</subject>
-		<subject name="Physics" sorted="true">
+		<subject name="Physics">
 			<contact email="bhcScience@dcccd.edu" />
 			<pattern match="PHYS [12]4[02][1256]" />
 		</subject>
 	</division>
 	<division name="Physical Education, Athletics and Nutrition">
 		<contact ext="4120" room="T315" email="bhcPhysicalEd@dcccd.edu" />
-		<subject name="Nutrition" sorted="true">
+		<subject name="Nutrition">
 			<pattern match="NUTR" />
 		</subject>
-		<subject name="Physical Education" sorted="true">
+		<subject name="Physical Education">
 			<pattern match="PHED" />
 		</subject>
 	</division>
 	<division name="School of the Arts">
 		<contact ext="4730" room="D123" email="BCSA@dcccd.edu" />
-		<subject name="Art" sorted="false">
+		<subject name="Art">
 			<contact room="T129" email="bhcArt@dcccd.edu" />
 			<pattern match="ARTS" />
 		</subject>
-		<subject name="Cultural Studies" sorted="false">
+		<subject name="Cultural Studies">
 			<contact email="bhcCulturalStudies@dcccd.edu" />
 			<pattern match="CUST" />
 		</subject>
-		<subject name="Dance" sorted="false">
+		<subject name="Dance">
 			<contact ext="4122" room="T129" email="bhcDance@dcccd.edu" />
 			<pattern match="DANC" />
 		</subject>
-		<subject name="Drama" sorted="true">
+		<subject name="Drama">
 			<pattern match="DRAM" />
 		</subject>
-		<subject name="Humanities" sorted="true">
+		<subject name="Humanities">
 			<contact email="bhcHumanities@dcccd.edu" />
 			<pattern match="HUMA" />
 		</subject>
-		<subject name="Music" sorted="false">
+		<subject name="Music">
 			<contact email="bhcMusic@dcccd.edu" />
 			<pattern match="MUSI" />
 			<pattern match="MUEN" />
@@ -400,40 +400,40 @@
 	</division>
 	<division name="Social Science">
 		<contact ext="4130" room="K240" email="bhcSocialScience@dcccd.edu" />
-		<subject name="Anthropology" sorted="true">
+		<subject name="Anthropology">
 			<pattern match="ANTH" />
 		</subject>
-		<subject name="Coordinated Studies" sorted="true">
+		<subject name="Coordinated Studies">
 			<pattern match="ALCE" />
 		</subject>
-		<subject name="Government" sorted="false">
+		<subject name="Government">
 			<pattern match="GOVT" />
 		</subject>
-		<subject name="History" sorted="false">
+		<subject name="History">
 			<pattern match="HIST" />
 		</subject>
-		<subject name="Human Development" sorted="true">
+		<subject name="Human Development">
 			<pattern match="HDEV" />
 		</subject>
-		<subject name="Philosophy" sorted="false">
+		<subject name="Philosophy">
 			<pattern match="PHIL" />
 		</subject>
-		<subject name="Psychology" sorted="true">
+		<subject name="Psychology">
 			<pattern match="PSYC" />
 		</subject>
-		<subject name="Religion" sorted="true">
+		<subject name="Religion">
 			<pattern match="RELI" />
 		</subject>
-		<subject name="Sociology" sorted="true">
+		<subject name="Sociology">
 			<pattern match="SOCI" />
 		</subject>
 	</division>
 	<division name="World Languages">
 		<contact ext="4770" room="L420" email="bhcWorldLanguages@dcccd.edu" />
-		<subject name="English for Speakers of Other Languages" sorted="false">
+		<subject name="English for Speakers of Other Languages">
 			<pattern match="ESOL" />
 		</subject>
-		<subject name="Languages" sorted="true">
+		<subject name="Languages">
 			<topic name="American Sign Language">
 				<pattern match="SGNL"/>
 			</topic>
