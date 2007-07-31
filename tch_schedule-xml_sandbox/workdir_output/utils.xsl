@@ -20,11 +20,28 @@
         <xsl:param name="haystack" />
         <xsl:number value="index-of($haystack, $needle)[1]" />
     </xsl:function>
-    
-    <xsl:function name="utils:get-machine-name">
-        <xsl:param name="name" />
         
-        <xsl:value-of select="lower-case(replace(replace($name, '[^A-Za-z0-9]', '_'), '__', '_'))"></xsl:value-of>
+    <!-- strip-semester
+        takes the repetative and also redundant 2007FA/SP/S1/S2 (year is included as a seperate attribute)
+        returns a user-friendly Fall/Spring/Summer text string -->
+    <xsl:function name="utils:strip-semester">
+        <xsl:param name="str_in" />
+        <xsl:variable name="sm_abbr" select="upper-case(substring($str_in, 5))" />
+        
+        <xsl:choose>
+            <xsl:when test="compare($sm_abbr,'FA') = 0">
+                <xsl:value-of select="'Fall'" />
+            </xsl:when>
+            <xsl:when test="compare($sm_abbr,'SP') = 0">
+                <xsl:value-of select="'Spring'" />
+            </xsl:when>
+            <xsl:when test="(compare($sm_abbr, 'S1') = 0) or (compare($sm_abbr, 'S2') = 0)">
+                <xsl:value-of select="'Summer'" />
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="'invalid semester'" />
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:function>
     
     
