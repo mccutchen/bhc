@@ -25,7 +25,7 @@
     <xsl:param name="output-extension">.aspx</xsl:param>
 
     <!-- the title to put in the div#channel-header in each output file -->
-    <xsl:param name="channel-title">Corporate and Continuing Education Course Schedule</xsl:param>
+    <xsl:param name="channel-title">Workforce and Continuing Education Course Schedule</xsl:param>
     
     
     <!-- =====================================================================
