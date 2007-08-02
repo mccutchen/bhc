@@ -63,7 +63,7 @@
                     <a href="/course-schedules/non-credit/" class="selected">Corporate &amp; Continuing Education</a>
                 </xsl:when>
                 <xsl:otherwise>
-                    <a href="/course-schedules/non-credit/">Corporate &amp; Continuing Education</a>&#160;&#160;&#187;&#160;
+                    <a href="/course-schedules/non-credit/">Workforce &amp; Continuing Education</a>&#160;&#160;&#187;&#160;
                     <a href="{@machine_name}.aspx" class="selected"><xsl:value-of select="@name" /></a>
                 </xsl:otherwise>
             </xsl:choose>
