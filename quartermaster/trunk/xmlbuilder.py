@@ -190,7 +190,7 @@ def post_process(tree):
 
     regexes = [
         [   # urls
-            r'((http://|www\.)+(www\.)?[A-Za-z0-9\.\-]+\.{1}[A-Za-z]{3}[A-Za-z0-9\.\-\_/]*)\b',
+            r'((https?://|www\.)+(www\.)?[A-Za-z0-9\.\-]+\.{1}[A-Za-z]{3}[A-Za-z0-9\.\-\_/]*)\b',
             r'<url>\1</url>'],
         [   # emails
             r'([A-Za-z0-9\.\_\-]+@[A-Za-z0-9\.\-]+\.{1}[A-Za-z]{3})\b',

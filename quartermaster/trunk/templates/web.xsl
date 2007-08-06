@@ -420,10 +420,10 @@
     </xsl:template>
 
     <xsl:template match="url">
-        <xsl:variable name="address">
-            <xsl:if test="substring(current(), 1, 7) != 'http://'">http://</xsl:if>
-            <xsl:value-of select="current()" />
-        </xsl:variable>
+		<xsl:variable name="address">
+     		<xsl:if test="not(starts-with(current(), 'http://')) and not(starts-with(current(), 'https://'))">http://</xsl:if>
+	       <xsl:value-of select="current()" />
+		</xsl:variable>
         <a href="{$address}" target="_blank"><xsl:value-of select="." /></a>
     </xsl:template>
 
