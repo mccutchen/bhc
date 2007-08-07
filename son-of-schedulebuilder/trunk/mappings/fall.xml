@@ -711,6 +711,8 @@
 		        <pattern match="ITSW 1410-2426" />
 		        <pattern match="ITSW 1410-2427" />
 		        <pattern match="ITSW 1410-2428" /><!-- Added 4/25, Moved 4/26 -->
+		    	<pattern match="INEW 1440-2501" /><!-- Added 8/3/07 -->
+		    	<pattern match="INEW 1440-2426" /><!-- Added 8/3/07 -->
 		    </topic>
 		    <topic name="Application Software Courses">
 		        <pattern match="ITSC 1409-2001" />
