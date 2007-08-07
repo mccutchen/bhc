@@ -49,31 +49,39 @@ if __name__ == '__main__':
     # first, flat is compared to dsc
     # then,  tidy is compared to flat
     # this allows me to see if any information is lost along the way, and at which step.
-    dsc_only  = [];
-    flat_only = [];
-    tidy_only = [];
+    dsc_only   = [];
+    flat_extra = [];
+    flat_only  = [];
+    tidy_extra = [];
+    tidy_only  = [];
+    
     for k in dsc_classes.keys():
         if (not flat_classes.has_key(k)): dsc_only.append(k);
     for k in flat_classes.keys():
+        if (not dsc_classes.has_key(k)): flat_extra.append(k);
+
+    for k in flat_classes.keys():
         if (not tidy_classes.has_key(k)): flat_only.append(k);
+    for k in tidy_classes.keys():
+        if (not flat_classes.has_key(k)): tidy_extra.append(k);
     # and just in case something weird happens:
     for k in tidy_classes.keys():
         if (not dsc_classes.has_key(k)): tidy_only.append(k);
 
     # now output
     fout = file('class-compare.txt', 'w');
-    print 'DSC  ',
+    print 'DSC  ', len(dsc_classes), 'courses',
     if (len(dsc_repeats) > 0):
-        print 'contains errors:';
+        print 'with errors:';
         if (len(dsc_repeats) > 0):
             print '  ', len(dsc_repeats), ' repeats.';
             print >> fout, len(dsc_repeats), ' repeated classes in dsc xml:';
             for k in dsc_repeats: print >> fout, dsc_classes[k], ' : ', k;
-    else: print 'is ok.';
+    else: print 'ok.';
     
-    print 'flat ',
-    if ((len(flat_repeats) > 0) or (len(dsc_only) > 0)):
-        print 'contains errors:';
+    print 'flat ', len(flat_classes), 'courses',
+    if ((len(flat_repeats) > 0) or (len(flat_extra) > 0) or (len(dsc_only) > 0)):
+        print 'with errors:';
         if (len(flat_repeats) > 0):
             print '  ', len(flat_repeats), ' repeats.';
             print >> fout, len(flat_repeats), ' repeated classes in flat xml:';
@@ -82,11 +90,15 @@ if __name__ == '__main__':
             print '  ', len(dsc_only), ' missing.';
             print >> fout, len(dsc_only), ' classes not copied from dsc xml:';
             for k in dsc_only: print >> fout, dsc_classes[k], ' : ', k;
-    else: print 'is ok.';
+        if (len(flat_extra) > 0):
+            print '  ', len(flat_extra), ' extra classes.';
+            print >> fout, len(flat_extra), ' extra classes created by flat xml:';
+            for k in flat_extra: print >> fout, flat_extra[k], ' : ', k;
+    else: print 'ok.';
 
-    print 'tidy ',
+    print 'tidy ', len(tidy_classes), 'courses',
     if ((len(tidy_repeats) > 0) or (len(flat_only) > 0) or (len(tidy_only) > 0)):
-        print 'contains errors:';
+        print 'with errors:';
         if (len(tidy_repeats) > 0):
             print '  ', len(tidy_repeats), ' repeats.',;
             print >> fout, len(tidy_repeats), ' repeated classes in tidy xml:';
@@ -95,8 +107,12 @@ if __name__ == '__main__':
             print '  ', len(flat_only), ' missing.',;
             print >> fout, len(flat_only), ' classes not copied from flat xml:';
             for k in flat_only: print >> fout, flat_classes[k], ' : ', k;
+        if (len(tidy_extra) > 0):
+            print '  ', len(tidy_extra), ' extra classes.';
+            print >> fout, len(tidy_extra), ' extra classes created by tidy xml:';
+            for k in tidy_extra: print >> fout, tidy_extra[k], ' : ', k;
         if (len(tidy_only) > 0):
             print '  ', len(tidy_only), ' imaginary classes.',;
             print >> fout, len(tidy_only), ' imaginary classes found only in tidy xml:';
             for k in tidy_only: print >> fout, tidy_classes[k], ' : ', k;
-    else: print 'is ok.';
+    else: print 'ok.';

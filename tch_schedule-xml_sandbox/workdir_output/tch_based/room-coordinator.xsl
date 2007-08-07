@@ -1,10 +1,9 @@
-<!-- $Id$ -->
-
 <xsl:stylesheet
     version="2.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-    exclude-result-prefixes="utils">
+    exclude-result-prefixes="xs utils">
     
     <!-- utility functions -->
     <xsl:include href="utils.xsl" />
@@ -17,20 +16,22 @@
         doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
         doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
     
-    
+    <!-- parameters -->
     <xsl:param name="page-title">Room Coordinator Report</xsl:param>
     <xsl:param name="output-directory">room-coordinator</xsl:param>
+    <xsl:param name="output-extension">.html</xsl:param>
     
-    <!-- The room coordinator report can be filtered to only include
+    <!-- options -->
+    <!-- filters
+        The room coordinator report can be filtered to only include
         classes from a certain division or rubric by setting either
-        or both of the parameters below, as strings. -->
+        or both of the parameters below, as strings.
+    -->
     <xsl:variable name="division-filter" select="()" />
     <xsl:variable name="rubric-filter" select="()" />
     
-    <!-- NOTE: it seems that the logical choice for units here has changed from classes to meetings. -->
-    
-    
-    <!-- The room coordinator wants "normal" classes to come out ahead
+    <!-- processing variables
+        The room coordinator wants "normal" classes to come out ahead
         of "special" classes.  Normal classes do not include their
         annotations, but special classes do.
         
@@ -39,7 +40,8 @@
         their teaching method (e.g. Lecture, Lab, Internet, TV).
         
         The following variables define the normal and special course
-        types and teaching methods.  -->
+        types and teaching methods. 
+    -->
     <xsl:variable name="normal-types" select="('D','N','W', 'FD', 'FN')" />
     <xsl:variable name="special-types" select="('DL','SP', 'FTD', 'FTN')" />
     <xsl:variable name="normal-methods" select="('LEC', 'LAB', 'CLIN', 'PRVT', 'PRAC', 'COOP', 'INT')" />
@@ -51,7 +53,7 @@
     </xsl:template>
     
     <xsl:template match="term">
-        <xsl:result-document href="{$output-directory}/room-coordinator-{utils:get-machine-name(@name)}.html">
+        <xsl:result-document href="{$output-directory}/room-coordinator-{utils:urlify(@name)}.html">
             <html>
                 <head>
                     <title><xsl:value-of select="$page-title" /></title>

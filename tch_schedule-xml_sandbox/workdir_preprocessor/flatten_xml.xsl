@@ -2,7 +2,8 @@
 	version="2.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:utils="http://www.brookhavencollege.edu/xml/utils">
+	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
+	xmlns:fn="http://www.brookhavencollege.edu/xml/fn">
 
 	<!-- utility functions -->
 	<xsl:include
@@ -12,11 +13,20 @@
 		method="xml"
 		encoding="iso-8859-1"
 		indent="yes"
-		exclude-result-prefixes="xs utils" />
+		exclude-result-prefixes="xs utils fn" />
+	
+	<!-- command line parameters -->
+	<xsl:param name="semester" as="xs:string" />
+	<xsl:param name="year"     as="xs:string" />
 	  
+	<!-- save some typing on edit -->
+	<xsl:variable name="dir-mappings"  select="'mappings/'"                                                 as="xs:string"  />
+	<xsl:variable name="file-sorting"  select="concat($year, '-', lower-case($semester), '.xml')"           as="xs:string"  />
+	
 	<!-- some global vars -->
-	<xsl:variable name="doc-special"   select="document('mappings/special-sorting.xml')/mappings" as="element()*" />
-	<xsl:variable name="doc-divisions" select="document('mappings/divisions.xml')/divisions"      as="element()*" />
+	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, 'divisions.xml'))/divisions"  as="element()*" />
+	<xsl:variable name="doc-sorting"   select="document(concat($dir-mappings, $file-sorting))/mappings"     as="element()*" />
+	<xsl:variable name="doc-core"      select="document(concat($dir-mappings, 'core.xml'))/core-components" as="element()*" />
 	<!-- something for sorting into minimesters -->
 	
 	<!-- for debugging purposes -->
@@ -36,10 +46,10 @@
 	
 	<!-- start (mostly for setting up debugging info) -->
 	<xsl:template match="/">
-
-		<!-- copy over some of the pertinant info -->
-		<xsl:if test="$release-type = 'final' or $release-type = 'debug-templates'">
-		<xsl:apply-templates select="schedule" />
+		<!-- ensure the parameters got passed -->
+		<xsl:if test="fn:is-valid-params() = 'yes'">
+			<!-- copy over some of the pertinant info -->
+			<xsl:apply-templates select="schedule" />
 		</xsl:if>
 	</xsl:template>
 		
@@ -86,6 +96,7 @@
 			<xsl:attribute name="topic-code"    select="@topic-code"                         />
 			<xsl:attribute name="credits"       select="ancestor::course/@credit-hours"      />
 			<xsl:attribute name="core-code"     select="ancestor::course/@core-code"         />
+			<xsl:apply-templates select="ancestor::course/@core-code" />
 			<xsl:attribute name="weeks"         select="@weeks"                              />
 			<xsl:attribute name="date-start"    select="utils:convert-date-std(@start-date)" />
 			<xsl:attribute name="date-end"      select="utils:convert-date-std(@end-date)"   />
@@ -99,28 +110,25 @@
 					<xsl:variable name="match-node" select="$doc-divisions//subject[@name = 'Senior Adult Education Program']" />
 					<xsl:call-template name="apply-sorting-node">
 						<xsl:with-param name="match-node" select="$match-node" />
-						<xsl:with-param name="class-id"   select="$class-id"           />
+						<xsl:with-param name="class-id"   select="$class-id"   />
 					</xsl:call-template>
 				</xsl:when>
-				<!-- if it's not a special type, do regular processing -->
+				<!-- special sorting (topics/subtopics, etc) -->
 				<xsl:otherwise>
-					<!-- get special sorting, if it exists -->
-					<xsl:variable name="match-node-special" select="$doc-special/descendant::pattern[matches($class-id, @match)]" />
+					<xsl:variable name="match-node-special" select="$doc-sorting/descendant::pattern[matches($class-id, @match)]" />
 					<xsl:choose>
-						<!-- special sorting -->
 						<xsl:when test="count($match-node-special) &gt; 0">
 							<xsl:call-template name="apply-sorting-node">
 								<xsl:with-param name="match-node" select="$match-node-special" />
 								<xsl:with-param name="class-id"   select="$class-id"           />
 							</xsl:call-template>
 						</xsl:when>
-						<!-- no special sorting -->
+						<!-- normal sorting (by division/subject) -->
 						<xsl:otherwise>
-							<!-- get non-special sorting -->
-							<xsl:variable name="match-node-normal"  select="$doc-divisions/descendant::pattern[matches($class-id, @match)]" />
+							<xsl:variable name="match-node-normal" select="$doc-divisions/descendant::pattern[matches($class-id, @match)]" />
 							<xsl:call-template name="apply-sorting-node">
-								<xsl:with-param name="match-node" select="$match-node-normal" />
-								<xsl:with-param name="class-id"   select="$class-id"          />
+								<xsl:with-param name="match-node" select="$match-node-normal"  />
+								<xsl:with-param name="class-id"   select="$class-id"           />
 							</xsl:call-template>
 						</xsl:otherwise>
 					</xsl:choose>
@@ -148,14 +156,25 @@
 		</xsl:element>
 	</xsl:template>
 	
-	<!-- some quick error checks on the sorting node -->
+	<!-- copying the core code involves a look-up -->
+	<xsl:template match="@core-code">
+		<xsl:variable name="code" select="." />
+		<xsl:variable name="name" select="$doc-core/component[@code = $code]/@name" as="xs:string" />
+		<xsl:attribute name="core-name" select="$name" />
+		<xsl:if test="not($name)">
+			<xsl:message>!Warning! No core course name for <xsl:value-of select="$code" />.</xsl:message>
+		</xsl:if>
+	</xsl:template>
+	
+	<!-- error-check the match node -->
 	<xsl:template name="apply-sorting-node">
 		<xsl:param name="match-node" as="element()*" />
 		<xsl:param name="class-id"   as="xs:string"  />
-				
+		
 		<xsl:choose>
 			<!-- no matches -->
 			<xsl:when test="count($match-node) &lt; 1">
+				<xsl:value-of select="$match-node/@name" />
 				<xsl:message><xsl:text>!Warning! no matches found for </xsl:text><xsl:value-of select="$class-id" /></xsl:message>
 			</xsl:when>
 			<!-- multiple matches -->
@@ -163,76 +182,89 @@
 				<xsl:variable name="max-node" select="$match-node[@priority = max($match-node/@priority)]" as="element()*" />
 				<xsl:choose>
 					<!-- still multiple matches -->
-					<xsl:when test="count($max-node) &lt; 1">
+					<xsl:when test="count($max-node) != 1">
 						<xsl:message>!Warning! unable to resolve multiple match results for <xsl:value-of select="$class-id" /></xsl:message>
 					</xsl:when>
 					<!-- pared down to single match -->
 					<xsl:otherwise>
-						<xsl:apply-templates select="$max-node" />
+						<xsl:apply-templates select="$max-node">
+							<xsl:with-param name="class-id" select="$class-id" tunnel="yes" as="xs:string" />
+						</xsl:apply-templates>
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:when>
 			<!-- single match -->
 			<xsl:otherwise>
-				<xsl:apply-templates select="$match-node" />
+				<xsl:apply-templates select="$match-node">
+					<xsl:with-param name="class-id" select="$class-id" tunnel="yes" as="xs:string" />
+				</xsl:apply-templates>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+	
 	
 	<!-- ok, so the types of matches we can get off the preceeding code are: subtopic, topic, or subject.
 		 Each of the preceeding elements will be nested inside those elements that follow it. -->
 	<xsl:template match="division">
 		<xsl:attribute name="name-of-division" select="@name" />
 	</xsl:template>
-	<!-- to catch those match nodes that are a subject on the special sorting doc, we have to test for
-		 a parent division node and resolve if necessary -->
+	
 	<xsl:template match="subject">
+		<xsl:param name="class-id" tunnel="yes" as="xs:string" />
+		
 		<xsl:attribute name="name-of-subject" select="@name" />
 		
+		<!-- switch over to doc-divisions, if necessary -->
 		<xsl:choose>
-			<!-- if found, good. Nothing special to do -->
-			<xsl:when test="count(parent::division) = 1">
-				<xsl:apply-templates select="parent::division" />
-			</xsl:when>
-			<!-- otherwise, find the matching subject and errorcheck -->
-			<xsl:otherwise>
-				<xsl:variable name="name" select="@name" as="xs:string" />
-				<xsl:variable name="division" select="$doc-divisions/descendant::subject[@name = $name]/parent::division" />
+			<xsl:when test="count(parent::division) = 0">
+				<xsl:variable name="name"   select="@name" as="xs:string" />
+				<xsl:variable name="parent" select="$doc-divisions/descendant::subject[compare(@name, $name) = 0]/parent::node()" />
 				<xsl:choose>
-					<xsl:when test="not($division)">
-						<xsl:message>!Warning! Unable to find division for <xsl:value-of select="$name" /></xsl:message>
+					<xsl:when test="count($parent) = 0">
+						<xsl:message>!Warning! Unable to resolve subject <xsl:value-of select="$name"/> to a single division</xsl:message>
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:apply-templates select="$division" />
+						<xsl:apply-templates select="$parent" />
 					</xsl:otherwise>
 				</xsl:choose>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates select="parent::division" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-	<!-- topic has to do a little extra work, since we're switching over from the subtopic-topic-subject chain
-		 to the subject-division chain. -->
+
 	<xsl:template match="topic">
-		<xsl:attribute name="name-of-topic" select="@name" />
-		<xsl:variable name="subject-name" select="parent::subject/@name" />
-		<xsl:variable name="subject"      select="$doc-divisions/descendant::subject[@name = $subject-name]" />
+		<xsl:param name="class-id" tunnel="yes" as="xs:string" />
 		
+		<xsl:attribute name="name-of-topic" select="@name" />
+		
+		<xsl:variable name="parent" select="parent::subject" />
 		<xsl:choose>
-			<xsl:when test="count($subject) = 1">
-				<xsl:apply-templates select="$subject" />
-			</xsl:when>
-			<xsl:when test="count($subject) &gt; 1">
-				<xsl:message><xsl:text>!Warning! Multiple subject matches when resolving sort order for </xsl:text><xsl:value-of select="@subject-name" />.</xsl:message>
+			<xsl:when test="count($parent) != 1">
+				<xsl:message>!Warning! Unable to resolve division for <xsl:value-of select="$class-id" />.</xsl:message>
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:message><xsl:text>!Warning! No subject match when resolving sort order for </xsl:text><xsl:value-of select="@subject-name" />.</xsl:message>
+				<xsl:apply-templates select="$parent" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	<xsl:template match="subtopic">
+		<xsl:param name="class-id" tunnel="yes" as="xs:string" />
+		
 		<xsl:attribute name="name-of-subtopic" select="@name" />
-		<xsl:if test="not(parent::topic)"><xsl:message>!Warning! Unable to resolve topic for <xsl:value-of select="@name" />.</xsl:message></xsl:if>
-		<xsl:apply-templates select="parent::topic" />
+		
+		<xsl:variable name="parent" select="parent::topic" />
+		<xsl:choose>
+			<xsl:when test="count($parent) != 1">
+				<xsl:message>!Warning! Unable to resolve division for <xsl:value-of select="$class-id" />.</xsl:message>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates select="$parent" />
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
+	
 	<!-- this just catches patterns and bumps it back up to the lowest level of organization -->
 	<xsl:template match="pattern">
 		<xsl:apply-templates select="parent::node()" />
@@ -285,6 +317,40 @@
 			<xsl:attribute name="section" select="section"  />
 		</xsl:element>
 	</xsl:template>
-	
+
+	<!-- functions -->
+	<xsl:function name="fn:is-valid-params">
+		<xsl:choose>
+			<xsl:when test="(fn:is-valid-semester() != 'yes') or (fn:is-valid-year() != 'yes')">
+				<xsl:if test="fn:is-valid-semester() != 'yes'"><xsl:message>!Warning! Invalid semester passed: semester(<xsl:value-of select="$semester" />).</xsl:message></xsl:if>
+				<xsl:if test="fn:is-valid-year() != 'yes'"><xsl:message>!Warning! Invalid year passed: year(<xsl:value-of select="$year" />).</xsl:message></xsl:if>
+			</xsl:when>
+			<xsl:when test="count($doc-sorting) = 0">
+				<xsl:message>!Warning! couldn't load special sorting for: semester(<xsl:value-of select="$semester" />), year(<xsl:value-of select="$year" />).</xsl:message>
+			</xsl:when>
+			<xsl:when test="count($doc-core) = 0">
+				<xsl:message>!Warning! couldn't load core info.</xsl:message>
+			</xsl:when>
+			<xsl:when test="count($doc-divisions) = 0">
+				<xsl:message>!Warning! couldn't load division info.</xsl:message>
+			</xsl:when>
+			<xsl:otherwise>yes</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	<xsl:function name="fn:is-valid-semester">
+		<xsl:choose>
+			<xsl:when test="$semester = 'Fall'">yes</xsl:when>
+			<xsl:when test="$semester = 'Summer'">yes</xsl:when>
+			<xsl:when test="$semester = 'Spring'">yes</xsl:when>
+			<xsl:otherwise>no</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	<xsl:function name="fn:is-valid-year">
+		<xsl:choose>
+			<!-- I know this looks stupid, but it's just testing that year is a number -->
+			<xsl:when test="number($year) = number($year)">yes</xsl:when>
+			<xsl:otherwise>no</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
 		
 </xsl:stylesheet>

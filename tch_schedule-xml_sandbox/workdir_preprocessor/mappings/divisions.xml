@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="us-ascii"?>
 <divisions>
 	<division name="Business Studies">
 		<contact ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu" />
@@ -46,7 +47,7 @@
 				</p>
 			</comments>
 		</subject>
-		<subject name="Business Office Systems and Support">
+		<subject name="Business Office Systems and Support" sorted="true">
 			<contact email="bhcBOSS@dcccd.edu" />
 			<pattern match="POFT" />
 			<pattern match="POFI" />

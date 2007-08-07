@@ -29,8 +29,7 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-
-
+	
 	<!-- ok, so dates and times in DSC XML are all over the place. Unfortunately, the xs:date doesn't help at all, because it expects the
 	     innitialization string to be in yyyy-mm-dd format. Which is dumb. If I know the format, it's easier for me to pull the data out
 		 myself! What good is it having a date data type that doesn't do anything? So I don't use it. It's also lovely how xsl will gladly
