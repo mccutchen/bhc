@@ -144,6 +144,14 @@ def get_subtopic_element(parent, data, returnself=False, notype=False):
 def get_course_element(parent, data, returnself=False):
     """Returns a course element that is said to be unique based on the
     hash of the course title and the course comments"""
+
+    # If this course has "special" cross-listings, they take precedence over
+    # cross-listings from Colleague.  Note that the "groups.xsl" XSLT
+    # post-processor is what actually creates the <group> elements based on
+    # each course's cross-listings.
+    cross_listings = data.get('special-cross-listings') or \
+                     ''.join(data.get('cross-listings'))
+
     attrs = {
         'title':          data['title'],
         'machine_name':   get_machine_name(data['title']),
@@ -151,7 +159,7 @@ def get_course_element(parent, data, returnself=False):
         'number':         data['number'],
         'type':           data['type'],
         'core-component': data['core-component'],
-        'cross-listings': data['group'],
+        'cross-listings': cross_listings,
         'credit-hours':   data['credit-hours'],
     }
     children = {

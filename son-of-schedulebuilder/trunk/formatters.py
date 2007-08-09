@@ -175,27 +175,39 @@ class CreditFormatter(BaseFormatter):
         profile.ap_term_dates and profile.ap_term_dates.get(term, None) or None
 
     def format_cross_listings(self, value):
-        """Only returns the cross-listings if the given class info does not match
-        any pattern in the current profile's skip_crosslistings dict."""
+        """Returns a list of cross-listings for the current class.  In some
+        cases, returns an empty list, even if the class is cross-listed in
+        Colleague."""
+        
+        # If the current profile wants us to skip the cross-listings for this
+        # class, return an empty list.
         for key, patterns in profile.skip_crosslistings.items():
-            if key in self.input and utils.any(patterns, lambda p: re.match(p, self.input[key])):
-                return None
-            elif key not in self.input:
-                print 'Invalid key in profile.skip_crosslistings: %s (%s)' % (key, repr(profile.skip_crosslistings))
+            assert key in self.input, 'Invalid key in profile.skip_crosslistings: %s (%s)' % (key, repr(profile.skip_crosslistings))
+            for pattern in patterns:
+                if re.match(pattern, self.input[key]):
+                    return []
+
+        # Make sure each cross-listing has the same rubrik as the current
+        # class.  If not, return an empty list.  Otherwise, classes in one 
+        # rubrik that are cross-listed with classes from another rubrik will
+        # be needlessly separated and could appear out of order.
+        rubrik = self.input.get('rubrik')
+        for class_number in value:
+            if class_number[:4] != rubrik:
+                print '%s not in %s' % (rubrik, class_number)
+                return []
+        
+        # Hopefully, we have a valid cross-listing
         return value
 
-    def format_group(self, value):
-        """Courses are mainly grouped based on their cross-listings.  If
-        a course has cross-listings and every cross-listing shares a rubrik,
-        those courses are grouped together.
+    def format_special_cross_listings(self, value):
+        """Provides the ability to generate custom cross-listing values to
+        include certain classes in <group> elements despite their lack of
+        cross-listings in Colleague.  Returns a string.
 
         A special case is provided for certain ESOL courses which need to be
         specially-grouped together.  Luckily they follow a pattern and are
-        easy to handle.
-
-        Most of the actual grouping work is done by the groups.xsl
-        post-processor.  The results of this formatter are simply added
-        to the course element."""
+        easy to handle."""
 
         # Special case for ESOL courses, at the request of Joe Monroy.
         if self.input.get('rubrik') == 'ESOL':
@@ -215,22 +227,8 @@ class CreditFormatter(BaseFormatter):
                     section = self.input.get('section')
                     return 'ESOL-%s-%sESOL-%s-%s' % (pairs[0], section, pairs[1], section)
 
-        # Check to see if every cross-listed course has the
-        # same rubrik as this one.  If not, we don't add the
-        # cross-listings attribute.  (This fixes the problem
-        # where some courses would come out separate because
-        # they were cross-listed with various other courses
-        # nowhere near themselves.)
-        rubrik = self.input.get('rubrik')
-        cross_listings = self.input.get('cross-listings')
-        if cross_listings:
-            for class_number in cross_listings:
-                if class_number[:4] != rubrik:
-                    return ''
-            return ''.join(cross_listings)
-
         # we should not group this course
-        return ''
+        return None
 
     def format_minimester(self, value):
         """Generates a minimester name based on the month of the start-date
