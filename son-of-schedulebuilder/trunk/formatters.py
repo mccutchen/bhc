@@ -181,8 +181,8 @@ class CreditFormatter(BaseFormatter):
         
         # If the current profile wants us to skip the cross-listings for this
         # class, return an empty list.
-        for key, patterns in profile.skip_crosslistings.items():
-            assert key in self.input, 'Invalid key in profile.skip_crosslistings: %s (%s)' % (key, repr(profile.skip_crosslistings))
+        for key, patterns in profile.skip_cross_listings.items():
+            assert key in self.input, 'Invalid key in profile.skip_cross_listings: %s (%s)' % (key, repr(profile.skip_cross_listings))
             for pattern in patterns:
                 if re.match(pattern, self.input[key]):
                     return []

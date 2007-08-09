@@ -84,7 +84,7 @@ class CreditProfile(BaseProfile):
         'rubrik': ['EMSP', 'RADR', 'RNSG', 'HPRS'],
         'topic-code': ['^E$'],
     }
-    skip_crosslistings = {
+    skip_cross_listings = {
         'rubrik': [],
     }
 
