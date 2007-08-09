@@ -431,7 +431,7 @@ class Fall07Enrolling(Enrolling, Fall07, Fall07Web):
 # Spring 2008 profiles
 # ===================================================================
 class Spring08(Spring):
-    input = 'data\\2008-spring\\BH2008SP.TXT'
+    input = 'data/2008-spring/BH2008SP.TXT'
     ap_term_dates = {
         'Spring': '',
     }
