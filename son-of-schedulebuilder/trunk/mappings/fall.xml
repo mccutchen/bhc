@@ -570,6 +570,7 @@
 		    <topic name="Piano for Non Music Majors">
 		        <pattern match="MUSI 1181-2001" />
 		        <pattern match="MUSI 1181-2501" />
+		        <pattern match="MUSI 1182-2501" />
 		    </topic>
 		    <topic name="Guitar">
 		        <pattern match="MUSI 1192-2001" />
