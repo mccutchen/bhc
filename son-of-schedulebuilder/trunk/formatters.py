@@ -194,7 +194,6 @@ class CreditFormatter(BaseFormatter):
         rubrik = self.input.get('rubrik')
         for class_number in value:
             if class_number[:4] != rubrik:
-                print '%s not in %s' % (rubrik, class_number)
                 return []
         
         # Hopefully, we have a valid cross-listing
