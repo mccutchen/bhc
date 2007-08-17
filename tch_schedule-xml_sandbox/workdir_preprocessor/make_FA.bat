@@ -5,6 +5,6 @@
 @ECHO Finished.
 
 @ECHO Tidying Fall...
-@ECHO java -jar C:\saxon\saxon8.jar -o output\tidy_FA.xml output\flat_FA.xml tidy_xml.xsl
+@java -jar C:\saxon\saxon8.jar -o output\tidy_FA.xml output\flat_FA.xml tidy_xml.xsl semester=Fall year=2007
 @ECHO Finished.
 @PAUSE

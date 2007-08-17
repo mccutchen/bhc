@@ -397,7 +397,17 @@
 	<!-- senior adult doesn't match on rubric/course/section, it matches off the topic code -->
 	<division name="Senior Adult Education Office">
 		<contact ext="4807" room="M211A" extra-room="M203" email="bhcSeniorAdultEducation@dcccd.edu" />
-		<subject name="Senior Adult Education Program" />
+		<subject name="Senior Adult Education Program">
+			<comments>
+				<p>All courses listed under Senior Adult Education Program have been planned for adults who 
+					are 50 years or older. For information and personal assistance with registration, please 
+					call DeBorah Whaley- Stephenson at 972-860-4807 or Janice Groeneman at 972-860-4698. The 
+					Senior Adult Education offices are located in Building M, in rooms M203 and M211A. Are 
+					you eligible for FREE tuition? If you are 65 years or older and reside in Dallas County 
+					(or own property in Dallas County subject to ad valorem taxation), tuition for credit 
+					classes is waived for up to six credit hours per semester.</p>
+			</comments>
+		</subject>
 	</division>
 	<division name="Social Science">
 		<contact ext="4130" room="K240" email="bhcSocialScience@dcccd.edu" />

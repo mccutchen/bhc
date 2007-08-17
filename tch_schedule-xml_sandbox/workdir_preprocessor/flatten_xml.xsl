@@ -21,11 +21,11 @@
 	  
 	<!-- save some typing on edit -->
 	<xsl:variable name="dir-mappings"  select="'mappings/'"                                                 as="xs:string"  />
-	<xsl:variable name="file-sorting"  select="concat($year, '-', lower-case($semester), '.xml')"           as="xs:string"  />
+	<xsl:variable name="file-semester" select="concat($year, '-', lower-case($semester), '.xml')"           as="xs:string"  />
 	
 	<!-- some global vars -->
 	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, 'divisions.xml'))/divisions"  as="element()*" />
-	<xsl:variable name="doc-sorting"   select="document(concat($dir-mappings, $file-sorting))/mappings"     as="element()*" />
+	<xsl:variable name="doc-semester"  select="document(concat($dir-mappings, $file-semester))/mappings"    as="element()*" />
 	<xsl:variable name="doc-core"      select="document(concat($dir-mappings, 'core.xml'))/core-components" as="element()*" />
 	<!-- something for sorting into minimesters -->
 	
@@ -94,8 +94,7 @@
 			<xsl:attribute name="type-credit"   select="@credit-type"                        />  <!-- I don't know if this is useful for anything, so I'll keep it -->
 			<xsl:attribute name="type-schedule" select="@schedule-type"                      />
 			<xsl:attribute name="topic-code"    select="@topic-code"                         />
-			<xsl:attribute name="credits"       select="ancestor::course/@credit-hours"      />
-			<xsl:attribute name="core-code"     select="ancestor::course/@core-code"         />
+			<xsl:attribute name="credit-hours"  select="ancestor::course/@credit-hours"      />
 			<xsl:apply-templates select="ancestor::course/@core-code" />
 			<xsl:attribute name="weeks"         select="@weeks"                              />
 			<xsl:attribute name="date-start"    select="utils:convert-date-std(@start-date)" />
@@ -115,7 +114,7 @@
 				</xsl:when>
 				<!-- special sorting (topics/subtopics, etc) -->
 				<xsl:otherwise>
-					<xsl:variable name="match-node-special" select="$doc-sorting/descendant::pattern[matches($class-id, @match)]" />
+					<xsl:variable name="match-node-special" select="$doc-semester/descendant::pattern[matches($class-id, @match)]" />
 					<xsl:choose>
 						<xsl:when test="count($match-node-special) &gt; 0">
 							<xsl:call-template name="apply-sorting-node">
@@ -137,12 +136,12 @@
 			
 			<!-- copy descriptions -->
 			<xsl:if test="ancestor::course/description">
-				<xsl:element name="desc-course">
+				<xsl:element name="comments-course">
 					<xsl:value-of select="ancestor::course/description" />
 				</xsl:element>
 			</xsl:if>
 			<xsl:if test="description">
-				<xsl:element name="desc">
+				<xsl:element name="comments">
 					<xsl:value-of select="description" />
 				</xsl:element>
 			</xsl:if>
@@ -160,7 +159,10 @@
 	<xsl:template match="@core-code">
 		<xsl:variable name="code" select="." />
 		<xsl:variable name="name" select="$doc-core/component[@code = $code]/@name" as="xs:string" />
-		<xsl:attribute name="core-name" select="$name" />
+		<xsl:if test="$name">
+			<xsl:attribute name="core-code" select="."     />
+			<xsl:attribute name="core-name" select="$name" />
+		</xsl:if>
 		<xsl:if test="not($name)">
 			<xsl:message>!Warning! No core course name for <xsl:value-of select="$code" />.</xsl:message>
 		</xsl:if>
@@ -325,7 +327,7 @@
 				<xsl:if test="fn:is-valid-semester() != 'yes'"><xsl:message>!Warning! Invalid semester passed: semester(<xsl:value-of select="$semester" />).</xsl:message></xsl:if>
 				<xsl:if test="fn:is-valid-year() != 'yes'"><xsl:message>!Warning! Invalid year passed: year(<xsl:value-of select="$year" />).</xsl:message></xsl:if>
 			</xsl:when>
-			<xsl:when test="count($doc-sorting) = 0">
+			<xsl:when test="count($doc-semester) = 0">
 				<xsl:message>!Warning! couldn't load special sorting for: semester(<xsl:value-of select="$semester" />), year(<xsl:value-of select="$year" />).</xsl:message>
 			</xsl:when>
 			<xsl:when test="count($doc-core) = 0">

@@ -263,6 +263,458 @@
                 <pattern match="BCIS 2390-2426" />
             </topic>
         </subject>
+        
+        
+        <!-- =======================================================================
+            School of the Arts (Fran Rhodes & Jill Williams)
+            ======================================================================== -->
+        <subject name="Art">
+            <topic name="Art Appreciation">
+                <pattern match="ARTS 1301-2001" />
+                <pattern match="ARTS 1301-2002" />
+                <pattern match="ARTS 1301-2003" />
+                <pattern match="ARTS 1301-2004" />
+                <pattern match="ARTS 1301-2005" />
+                <pattern match="ARTS 1301-2006" />
+                <pattern match="ARTS 1301-2007" />
+                <pattern match="ARTS 1301-2008" />
+                <pattern match="ARTS 1301-2009" />
+                <pattern match="ARTS 1301-2501" />
+                <pattern match="ARTS 1301-2502" />
+                <pattern match="ARTS 1301-2503" />
+                <pattern match="ARTS 1301-2250" />
+                <pattern match="ARTS 1301-2420" />
+            </topic>
+            <topic name="Art History">
+                <pattern match="ARTS 1303-2001" />
+                <pattern match="ARTS 1303-2002" />
+                <pattern match="ARTS 1304-2001" />
+                <pattern match="ARTS 2373-2001" />
+                <pattern match="ARTS 1304-2501" />
+            </topic>
+            <topic name="Art and Computers">
+                <pattern match="ARTS 2313-2001" />
+                <pattern match="ARTS 2314-2001" />
+                <pattern match="ARTS 2311-2017" />
+                <pattern match="ARTS 2348-2001" />
+                <pattern match="ARTS 2349-2001" />
+                <pattern match="ARTS 2311-2010" />
+                <pattern match="ARTS 2348-2002" />
+                <pattern match="ARTS 2349-2002" />
+                <pattern match="ARTS 2311-2012" />
+            </topic>
+            <topic name="Art Metals">
+                <pattern match="ARTS 2341-2001" />
+                <pattern match="ARTS 2342-2001" />
+                <pattern match="ARTS 2311-2013" />
+                <pattern match="ARTS 2312-2008" />
+                <pattern match="ARTS 2341-2501" />
+                <pattern match="ARTS 2342-2501" />
+                <pattern match="ARTS 2311-2510" />
+                <pattern match="ARTS 2312-2509" />
+            </topic>
+            <topic name="Ceramics">
+                <pattern match="ARTS 2346-2001" />
+                <pattern match="ARTS 2311-2011" />
+                <pattern match="ARTS 2312-2011" />
+                <pattern match="ARTS 2347-2001" />
+                <pattern match="ARTS 2311-2020" />
+                <pattern match="ARTS 2312-2016" />
+                <pattern match="ARTS 2311-2005" />
+                <pattern match="ARTS 2312-2009" />
+                <pattern match="ARTS 2346-2501" />
+                <pattern match="ARTS 2347-2501" />
+                <pattern match="ARTS 2311-2506" />
+                <pattern match="ARTS 2312-2507" />
+                <pattern match="ARTS 2346-2502" />
+                <pattern match="ARTS 2347-2502" />
+                <pattern match="ARTS 2311-2509" />
+                <pattern match="ARTS 2312-2508" />
+                <pattern match="ARTS 2346-2250" />
+                <pattern match="ARTS 2347-2250" />
+                <pattern match="ARTS 2311-2252" />
+                <pattern match="ARTS 2312-2252" />
+            </topic>
+            <topic name="Design">
+                <pattern match="ARTS 1311-2001" />
+                <pattern match="ARTS 1311-2002" />
+                <pattern match="ARTS 1312-2001" />
+                <pattern match="ARTS 2311-2019" />
+                <pattern match="ARTS 2311-2014" />
+                <pattern match="ARTS 2311-2004" />
+                <pattern match="ARTS 2312-2010" />
+                <pattern match="ARTS 1311-2501" />
+                <pattern match="ARTS 1312-2501" />
+            </topic>
+            <topic name="Drawing">
+                <pattern match="ARTS 1316-2001" />
+                <pattern match="ARTS 1316-2003" />
+                <pattern match="ARTS 1316-2002" />
+                <pattern match="ARTS 1317-2001" />
+                <pattern match="ARTS 2311-2002" />
+                <pattern match="ARTS 2312-2002" />
+                <pattern match="ARTS 2323-2001" />
+                <pattern match="ARTS 2324-2001" />
+                <pattern match="ARTS 2311-2008" />
+                <pattern match="ARTS 2312-2003" />
+                <pattern match="ARTS 1316-2501" />
+                <pattern match="ARTS 1317-2501" />
+                <pattern match="ARTS 2311-2502" />
+                <pattern match="ARTS 2312-2502" />
+                <pattern match="ARTS 2323-2506" />
+                <pattern match="ARTS 2324-2506" />
+                <pattern match="ARTS 2311-2512" />
+                <pattern match="ARTS 2312-2512" />
+                <pattern match="ARTS 1316-2250" />
+                <pattern match="ARTS 1317-2250" />
+                <pattern match="ARTS 2311-2250" />
+                <pattern match="ARTS 2312-2250" />
+            </topic>
+            <topic name="Painting">
+                <pattern match="ARTS 2316-2001" />
+                <pattern match="ARTS 2317-2001" />
+                <pattern match="ARTS 2311-2006" />
+                <pattern match="ARTS 2312-2005" />
+                <pattern match="ARTS 2316-2002" />
+                <pattern match="ARTS 2317-2002" />
+                <pattern match="ARTS 2311-2018" />
+                <pattern match="ARTS 2312-2012" />
+                <pattern match="ARTS 2316-2003" />
+                <pattern match="ARTS 2317-2003" />
+                <pattern match="ARTS 2311-2016" />
+                <pattern match="ARTS 2312-2015" />
+                <pattern match="ARTS 2316-2004" />
+                <pattern match="ARTS 2317-2004" />
+                <pattern match="ARTS 2311-2007" />
+                <pattern match="ARTS 2312-2006" />
+                <pattern match="ARTS 2316-2501" />
+                <pattern match="ARTS 2317-2501" />
+                <pattern match="ARTS 2311-2504" />
+                <pattern match="ARTS 2312-2505" />
+                <pattern match="ARTS 2316-2250" />
+                <pattern match="ARTS 2317-2250" />
+                <pattern match="ARTS 2311-2251" />
+                <pattern match="ARTS 2312-2251" />
+            </topic>
+            <topic name="Photography">
+                <pattern match="ARTS 2356-2001" />
+                <pattern match="ARTS 2357-2001" />
+                <pattern match="ARTS 2311-2003" />
+                <pattern match="ARTS 2312-2004" />
+                <pattern match="ARTS 2356-2501" />
+                <pattern match="ARTS 2357-2501" />
+                <pattern match="ARTS 2311-2503" />
+                <pattern match="ARTS 2312-2504" />
+            </topic>
+            <topic name="Printmaking">
+                <pattern match="ARTS 2333-2001" />
+                <pattern match="ARTS 2334-2001" />
+                <pattern match="ARTS 2311-2009" />
+                <pattern match="ARTS 2312-2007" />
+                <pattern match="ARTS 2333-2501" />
+                <pattern match="ARTS 2334-2501" />
+                <pattern match="ARTS 2311-2505" />
+                <pattern match="ARTS 2312-2506" />
+            </topic>
+            <topic name="Sculpture">
+                <pattern match="ARTS 2326-2001" />
+                <pattern match="ARTS 2327-2001" />
+                <pattern match="ARTS 2311-2001" />
+                <pattern match="ARTS 2312-2001" />
+                <pattern match="ARTS 2326-2501" />
+                <pattern match="ARTS 2327-2501" />
+                <pattern match="ARTS 2311-2501" />
+                <pattern match="ARTS 2312-2501" />
+            </topic>
+            <topic name="Watercolor">
+                <pattern match="ARTS 2366-2001" />
+                <pattern match="ARTS 2367-2001" />
+                <pattern match="ARTS 2311-2021" />
+                <pattern match="ARTS 2312-2014" />
+            </topic>
+            <topic name="December Winter Flex Term Printmaking Workshop">
+                <pattern match="ARTS 2333-2200" />
+                <pattern match="ARTS 2334-2200" />
+                <pattern match="ARTS 2311-2200" />
+                <pattern match="ARTS 2312-2200" />
+            </topic>
+        </subject>
+        
+        <subject name="Music">
+            <topic name="Music Appreciation">
+                <pattern match="MUSI 1306-2001" />
+                <pattern match="MUSI 1306-2002" />
+                <pattern match="MUSI 1306-2003" />
+                <pattern match="MUSI 1306-2004" />
+                <pattern match="MUSI 1306-2005" />
+                <pattern match="MUSI 1306-2006" />
+                <pattern match="MUSI 1306-2501" />
+                <pattern match="MUSI 1306-2427" />
+                <pattern match="MUSI 1306-2429" />
+                <pattern match="MUSI 1306-2434" />
+                <pattern match="MUSI 1306-2432" />
+                <pattern match="MUSI 1306-2433" />
+                <pattern match="MUSI 1306-2300" />
+            </topic>
+            <topic name="Music Theory">
+                <pattern match="MUSI 1311-2001" />
+                <pattern match="MUSI 1312-2001" />
+                <pattern match="MUSI 2312-2001" />
+            </topic>
+            <topic name="Musicianship">
+                <pattern match="MUSI 1116-2001" />
+                <pattern match="MUSI 1117-2001" />
+                <pattern match="MUSI 2117-2001" />
+            </topic>
+            <topic name="Music Literature">
+                <pattern match="MUSI 1308-2300" />
+                <pattern match="MUSI 1309-2300" />
+            </topic>
+            <topic name="Foundation Of Music">
+                <pattern match="MUSI 1304-2001" />
+                <pattern match="MUSI 1300-2300" />
+            </topic>
+            <topic name="Composition">
+                <pattern match="MUSI 1386-2501" />
+                <pattern match="MUSI 1386-2300" />
+            </topic>
+            <topic name="Recital">
+                <pattern match="MUSI 9176-2001" />
+                <pattern match="MUSI 9176-2002" />
+            </topic>
+            <topic name="Digital">
+                <pattern match="MUSI 1390-2001" />
+                <pattern match="MUSI 1391-2001" />
+            </topic>
+            <topic name="Piano For Music Majors">
+                <pattern match="MUSI 1181-2004" />
+                <pattern match="MUSI 1182-2005" />
+                <pattern match="MUSI 1181-2002" />
+                <pattern match="MUSI 1182-2002" />
+                <pattern match="MUSI 2181-2001" />
+                <pattern match="MUSI 2182-2001" />
+            </topic>
+            <topic name="Piano For Non Music Majors">
+                <pattern match="MUSI 1181-2001" />
+                <pattern match="MUSI 1181-2501" />
+                <pattern match="MUSI 1181-2502" />
+            </topic>
+            <topic name="Guitar">
+                <pattern match="MUSI 1192-2001" />
+                <pattern match="MUSI 1192-2002" />
+            </topic>
+            <topic name="Voice">
+                <pattern match="MUSI 1183-2001" />
+                <pattern match="MUSI 1183-2501" />
+                <pattern match="MUSI 1183-2502" />
+            </topic>
+            <topic name="Music Ensembles">
+                <subtopic name="Flute Ensemble">
+                    <pattern match="MUEN 1132-2001" />
+                </subtopic>
+                <subtopic name="Chamber Ensemble">
+                    <pattern match="MUEN 1152-2500" />
+                    <pattern match="MUEN 1152-2501" />
+                    <pattern match="MUEN 1152-2750" />
+                </subtopic>
+                <subtopic name="Guitar Ensemble">
+                    <pattern match="MUEN 1134-2001" />
+                    <pattern match="MUEN 1134-2500" />
+                </subtopic>
+                <subtopic name="Keyboard Ensemble">
+                    <pattern match="MUEN 1131-2001" />
+                    <pattern match="MUEN 1131-2002" />
+                </subtopic>
+                <subtopic name="Handbell Ensemble">
+                    <pattern match="MUEN 1135-2500" />
+                    <pattern match="MUEN 1135-2250" />
+                </subtopic>
+                <subtopic name="String Ensemble">
+                    <pattern match="MUEN 1136-2001" />
+                    <pattern match="MUEN 1136-2002" />
+                </subtopic>
+                <subtopic name="Vocal Jazz / Lab Band">
+                    <pattern match="MUEN 1151-2001" />
+                    <pattern match="MUEN 2123-2001" />
+                    <pattern match="MUEN 2123-2002" />
+                    <pattern match="MUEN 2123-2501" />
+                </subtopic>
+                <subtopic name="Women's Chorus">
+                    <pattern match="MUEN 1151-2002" />
+                </subtopic>
+                <subtopic name="Windsong Vocal Ensemble">
+                    <pattern match="MUEN 1153-2250" />
+                </subtopic>
+                <subtopic name="Brookhaven Choral Society">
+                    <pattern match="MUEN 2141-2501" />
+                </subtopic>
+            </topic>
+            <topic name="Music - Private Lessons">
+                <subtopic name="Beginning">
+                    <comments>NOTE:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
+                    <pattern match="MUAP 1101-2001" />
+                    <pattern match="MUAP 1105-2001" />
+                    <pattern match="MUAP 1109-2001" />
+                    <pattern match="MUAP 1109-2202" />
+                    <pattern match="MUAP 1113-2001" />
+                    <pattern match="MUAP 1117-2001" />
+                    <pattern match="MUAP 1121-2001" />
+                    <pattern match="MUAP 1125-2001" />
+                    <pattern match="MUAP 1125-2002" />
+                    <pattern match="MUAP 1129-2001" />
+                    <pattern match="MUAP 1129-2002" />
+                    <pattern match="MUAP 1133-2001" />
+                    <pattern match="MUAP 1133-2002" />
+                    <pattern match="MUAP 1137-2001" />
+                    <pattern match="MUAP 1141-2001" />
+                    <pattern match="MUAP 1141-2002" />
+                    <pattern match="MUAP 1145-2001" />
+                    <pattern match="MUAP 1145-2002" />
+                    <pattern match="MUAP 1153-2001" />
+                    <pattern match="MUAP 1157-2001" />
+                    <pattern match="MUAP 1157-2003" />
+                    <pattern match="MUAP 1157-2004" />
+                    <pattern match="MUAP 1157-2005" />
+                    <pattern match="MUAP 1161-2001" />
+                    <pattern match="MUAP 1161-2002" />
+                    <pattern match="MUAP 1161-2003" />
+                    <pattern match="MUAP 1161-2004" />
+                    <pattern match="MUAP 1169-2001" />
+                    <pattern match="MUAP 1169-2002" />
+                    <pattern match="MUAP 1169-2005" />
+                    <pattern match="MUAP 1169-2006" />
+                    <pattern match="MUAP 1181-2001" />
+                    <pattern match="MUAP 1181-2003" />
+                    <pattern match="MUAP 1181-2004" />
+                    <pattern match="MUAP 1181-2005" />
+                    <pattern match="MUAP 1181-2007" />
+                </subtopic>
+                <subtopic name="Intermediate">
+                    <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) are mandatory for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
+                    <pattern match="MUAP 2201-2001" />
+                    <pattern match="MUAP 2209-2001" />
+                    <pattern match="MUAP 2209-2002" />
+                    <pattern match="MUAP 2233-2001" />
+                    <pattern match="MUAP 2237-2001" />
+                    <pattern match="MUAP 2257-2002" />
+                    <pattern match="MUAP 2261-2001" />
+                    <pattern match="MUAP 2261-2002" />
+                    <pattern match="MUAP 2261-2003" />
+                    <pattern match="MUAP 2261-2004" />
+                    <pattern match="MUAP 2269-2001" />
+                    <pattern match="MUAP 2269-2004" />
+                    <pattern match="MUAP 2281-2001" />
+                    <pattern match="MUAP 2281-2002" />
+                </subtopic>
+            </topic>
+        </subject>
+        
+        <subject name="Dance">
+            <comments>NOTE:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
+            <topic name="Dance Appreciation">
+                <pattern match="DANC 2303-2001" />
+                <pattern match="DANC 2303-2002" />
+                <pattern match="DANC 2303-2501" />
+            </topic>
+            <topic name="Body Conditioning">
+                <pattern match="DANC 1141-2001" />
+                <pattern match="DANC 1142-2001" />
+            </topic>
+            <topic name="Tap">
+                <pattern match="DANC 1110-2001" />
+                <pattern match="DANC 1111-2001" />
+                <pattern match="DANC 2110-2001" />
+                <pattern match="DANC 2111-2001" />
+            </topic>
+            <topic name="Dance Practicum">
+                <pattern match="DANC 1351-2235" />
+                <pattern match="DANC 1351-2736" />
+                <pattern match="DANC 1352-2235" />
+                <pattern match="DANC 1352-2736" />
+                <pattern match="DANC 2351-2235" />
+                <pattern match="DANC 2351-2736" />
+                <pattern match="DANC 2352-2235" />
+                <pattern match="DANC 2352-2736" />
+            </topic>
+            <topic name="Hip Hop">
+                <pattern match="DANC 1222-2001" />
+                <pattern match="DANC 1223-2001" />
+                <pattern match="DANC 1222-2501" />
+                <pattern match="DANC 1223-2501" />
+                <pattern match="DANC 2222-2501" />
+                <pattern match="DANC 2223-2501" />
+            </topic>
+            <topic name="Ballet">
+                <pattern match="DANC 1341-2001" />
+                <pattern match="DANC 1342-2001" />
+                <pattern match="DANC 2341-2001" />
+                <pattern match="DANC 2342-2001" />
+                <pattern match="DANC 1341-2501" />
+                <pattern match="DANC 1342-2501" />
+                <pattern match="DANC 2341-2501" />
+                <pattern match="DANC 2342-2501" />
+            </topic>
+            <topic name="Ballet Technique">
+                <pattern match="DANC 2141-2001" />
+                <pattern match="DANC 2142-2250" />
+            </topic>
+            <topic name="Modern Dance">
+                <comments>Students must have had one semester of dance training for the following classes.</comments>
+                <pattern match="DANC 1245-2001" />
+                <pattern match="DANC 1246-2501" />
+                <pattern match="DANC 2245-2001" />
+                <pattern match="DANC 2246-2001" />
+                <pattern match="DANC 1245-2501" />
+                <pattern match="DANC 1246-2501" />
+                <pattern match="DANC 2245-2501" />
+                <pattern match="DANC 2246-2501" />
+            </topic>
+        </subject>
+        
+        <subject name="Drama">
+            <topic name="Introduction to Theatre">
+                <pattern match="DRAM 1310-2002" />
+                <pattern match="DRAM 1310-2001" />
+                <pattern match="DRAM 1310-2501" />
+            </topic>
+            <topic name="Film Appreciation">
+                <pattern match="DRAM 2366-2002" />
+                <pattern match="DRAM 2366-2004" />
+                <pattern match="DRAM 2366-2501" />
+                <pattern match="DRAM 2366-2420" />
+                <pattern match="DRAM 2366-2421" />
+            </topic>
+            <topic name="Theatre Workshop">
+                <pattern match="DRAM 1323-2001" />
+            </topic>
+            <topic name="Stagecraft">
+                <pattern match="DRAM 1330-2001" />
+                <pattern match="DRAM 2331-2001" />
+            </topic>
+            <topic name="Acting">
+                <pattern match="DRAM 1351-2001" />
+                <pattern match="DRAM 1351-2002" />
+                <pattern match="DRAM 1352-2001" />
+                <pattern match="DRAM 1352-2002" />
+                <pattern match="DRAM 2351-2001" />
+                <pattern match="DRAM 2351-2002" />
+                <pattern match="DRAM 2352-2001" />
+                <pattern match="DRAM 2352-2002" />
+                <pattern match="DRAM 1351-2501" />
+                <pattern match="DRAM 1352-2501" />
+                <pattern match="DRAM 2351-2501" />
+                <pattern match="DRAM 2352-2501" />
+            </topic>
+            <topic name="Rehearsal">
+                <subtopic name="First Play, Spring 2008">
+                    <pattern match="DRAM 1221-2735" />
+                </subtopic>
+                <subtopic name="Second Play, Spring 2008">
+                    <pattern match="DRAM 1221-2736" />
+                </subtopic>
+            </topic>
+        </subject>
+    
     </mapping>
 </mappings>
 

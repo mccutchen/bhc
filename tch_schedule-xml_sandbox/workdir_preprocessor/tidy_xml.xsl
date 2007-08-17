@@ -24,8 +24,8 @@
 	
 	<!-- some global vars -->
 	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, 'divisions.xml'))/divisions"  as="element()*" />
-	<xsl:variable name="doc-sorting"   select="document(concat($dir-mappings, $file-sorting))/mappings"     as="element()*" />
-	<xsl:variable name="doc-types"     select="document('mappings/types.xml')/types"                        as="element()*" />
+	<xsl:variable name="doc-semester"  select="document(concat($dir-mappings, $file-sorting))/mappings"     as="element()*" />
+	<xsl:variable name="doc-sortkeys"  select="document('mappings/sortkeys.xml')/sortkeys"                  as="element()*" />
 	<!-- something for sorting into minimesters -->
 
 	<!-- for debugging purposes -->
@@ -98,13 +98,13 @@
 		<xsl:for-each-group select="$classes" group-by="@name-of-subject">
 			<xsl:element name="subject">
 				<xsl:variable name="name"            select="@name-of-subject"                                              as="xs:string"  />
-				<xsl:variable name="subject-special" select="$doc-sorting/descendant::subject[compare(@name, $name) = 0]"   as="element()*" />
+				<xsl:variable name="subject-special" select="$doc-semester/descendant::subject[compare(@name, $name) = 0]"  as="element()*" />
 				<xsl:variable name="subject-normal"  select="$doc-divisions/descendant::subject[compare(@name, $name) = 0]" as="element()*" />
 				
 				<!-- write subject info -->
 				<xsl:attribute name="name" select="$name" />
-				<xsl:copy-of select="$subject-normal/contact" />
-				<xsl:copy-of select="$subject-normal/desc"    />
+				<xsl:copy-of select="$subject-normal/contact"  />
+				<xsl:copy-of select="$subject-normal/comments" />
 				
 				<!-- send those with topics to create-topics, those without to create-types -->
 				<xsl:variable name="courses-topic" select="current-group()[@name-of-topic]" as="element()*" />
@@ -147,7 +147,7 @@
 				<!-- special topic name 'none' just means "group, but don't display topic name" -->
 				<xsl:when test="compare(@name-of-topic, 'none') = 0">
 					<xsl:element name="topic">
-						<xsl:attribute name="none" />
+						<xsl:attribute name="name" select="none" />
 						
 						<xsl:call-template name="create-types">
 							<xsl:with-param name="classes" select="current-group()" />
@@ -256,7 +256,7 @@
 		</xsl:for-each-group>
 	</xsl:template>
 	
-	<!-- create type groupings -->
+	<!-- create types -->
 	<xsl:template name="create-types">
 		<xsl:param name="classes" as="element()*" />
 		
@@ -265,8 +265,11 @@
 				<xsl:variable name="id" select="@type-schedule" as="xs:string" />
 				
 				<!-- write type info -->
-				<xsl:attribute name="name" select="$doc-types/type[@id = $id]/@name" />
-				<xsl:attribute name="id"   select="@type-schedule"                   />
+				<xsl:attribute name="name" select="$doc-sortkeys/sortkey[@type = 'type']/type[@id = $id]/@name" />
+				<xsl:attribute name="id"   select="@type-schedule"                                              />
+				
+				<!-- write sortkey-type -->
+				<xsl:attribute name="sortkey-type" select="index-of($doc-sortkeys/sortkey[@type = 'type']/type/@id, current-grouping-key())" />
 				
 				<!-- proceed to courses -->
 				<xsl:call-template name="create-courses">
@@ -281,26 +284,32 @@
 		<xsl:param name="classes" as="element()*" />
 		
 		<!-- since the xml is pre-sorted by flatten_xml.xsl, we can just group-adjacent -->
-		<xsl:for-each-group select="$classes" group-adjacent="@rubric and @number">
-			<xsl:element name="course">
-				<!-- write class info -->
-				<xsl:attribute name="rubric"       select="@rubric"       />
-				<xsl:attribute name="number"       select="@number"       />
-				<xsl:attribute name="title-short"  select="@title-short"  />
-				<xsl:attribute name="title-long"   select="@title-long"   />
-				<xsl:attribute name="credit-hours" select="@credit-hours" />
-				
-				<!-- copy description -->
-				<xsl:apply-templates select="desc-course" />
-				
-				<!-- proceed to classes -->
-				<xsl:apply-templates select="current-group()" />
-			</xsl:element>
+		<xsl:for-each-group select="$classes" group-adjacent="@rubric">
+			<xsl:for-each-group select="current-group()" group-adjacent="@number">
+				<xsl:element name="course">
+					<!-- write class info -->
+					<xsl:copy-of select="@rubric|@number|@title-short|@title-long|@credit-hours|@core-code|@core-name" />
+					<!--
+					<xsl:attribute name="rubric"       select="@rubric"       />
+					<xsl:attribute name="number"       select="@number"       />
+					<xsl:attribute name="title-short"  select="@title-short"  />
+					<xsl:attribute name="title-long"   select="@title-long"   />
+					<xsl:attribute name="credit-hours" select="@credit-hours" />
+					<xsl:attribute name="core-code"    select="@core-code"    />
+					<xsl:attribute name="core-name"    select="@core-name"    />-->
+					
+					<!-- copy comments -->
+					<xsl:apply-templates select="comments-course" />
+					
+					<!-- proceed to classes -->
+					<xsl:apply-templates select="current-group()" />
+				</xsl:element>
+			</xsl:for-each-group>
 		</xsl:for-each-group>
 	</xsl:template>
 	
-	<xsl:template match="desc-course">
-		<xsl:element name="desc">
+	<xsl:template match="comments-course">
+		<xsl:element name="comments">
 			<xsl:copy-of select="*" />
 		</xsl:element>
 	</xsl:template>
@@ -315,9 +324,30 @@
 			<xsl:attribute name="date-start"    select="@date-start"    />
 			<xsl:attribute name="date-end"      select="@date-end"      />
 			
-			<!-- copy sub-elements -->
-			<xsl:copy-of select="desc|meeting|xlisting|corequisite-section"/>
+			<!-- copy meeting (with a few changes) -->
+			<xsl:apply-templates select="meeting" />
 			
+			<!-- copy sub-elements -->
+			<xsl:copy-of select="comments|xlisting|corequisite-section"/>
+			
+		</xsl:element>
+	</xsl:template>
+	
+	<xsl:template match="meeting">
+		<xsl:element name="meeting">
+			<!-- copy attributes -->
+			<xsl:copy-of select="attribute()" />
+			
+			<!-- write sortkey-days -->
+			<xsl:variable name="days" select="@days" />
+			<xsl:attribute name="sortkey-days" select="index-of($doc-sortkeys/sortkey[@type = 'days']/days/@id, $days)" />
+			
+			<!-- write sortkey-method -->
+			<xsl:variable name="method" select="@method" />
+			<xsl:attribute name="sortkey-method" select="index-of($doc-sortkeys/sortkey[@type = 'method']/method/@id, $method)" />
+			
+			<!-- copy the rest of the element's sub-elements -->
+			<xsl:copy-of select="*" />
 		</xsl:element>
 	</xsl:template>
 	
@@ -328,10 +358,10 @@
 				<xsl:if test="fn:is-valid-semester() != 'yes'"><xsl:message>!Warning! Invalid semester passed: semester(<xsl:value-of select="$semester" />).</xsl:message></xsl:if>
 				<xsl:if test="fn:is-valid-year() != 'yes'"><xsl:message>!Warning! Invalid year passed: year(<xsl:value-of select="$year" />).</xsl:message></xsl:if>
 			</xsl:when>
-			<xsl:when test="count($doc-sorting) = 0">
+			<xsl:when test="count($doc-semester) = 0">
 				<xsl:message>!Warning! couldn't load special sorting for: semester(<xsl:value-of select="$semester" />), year(<xsl:value-of select="$year" />).</xsl:message>
 			</xsl:when>
-			<xsl:when test="count($doc-types) = 0">
+			<xsl:when test="count($doc-sortkeys) = 0">
 				<xsl:message>!Warning! couldn't load type info.</xsl:message>
 			</xsl:when>
 			<xsl:when test="count($doc-divisions) = 0">
