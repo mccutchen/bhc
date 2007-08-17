@@ -671,6 +671,50 @@
             </topic>
         </subject>
         
+        <subject name="Drama">
+            <topic name="Introduction to Theatre">
+                <pattern match="DRAM 1310-2002" />
+                <pattern match="DRAM 1310-2001" />
+                <pattern match="DRAM 1310-2501" />
+            </topic>
+            <topic name="Film Appreciation">
+                <pattern match="DRAM 2366-2002" />
+                <pattern match="DRAM 2366-2004" />
+                <pattern match="DRAM 2366-2501" />
+                <pattern match="DRAM 2366-2420" />
+                <pattern match="DRAM 2366-2421" />
+            </topic>
+            <topic name="Theatre Workshop">
+                <pattern match="DRAM 1323-2001" />
+            </topic>
+            <topic name="Stagecraft">
+                <pattern match="DRAM 1330-2001" />
+                <pattern match="DRAM 2331-2001" />
+            </topic>
+            <topic name="Acting">
+                <pattern match="DRAM 1351-2001" />
+                <pattern match="DRAM 1351-2002" />
+                <pattern match="DRAM 1352-2001" />
+                <pattern match="DRAM 1352-2002" />
+                <pattern match="DRAM 2351-2001" />
+                <pattern match="DRAM 2351-2002" />
+                <pattern match="DRAM 2352-2001" />
+                <pattern match="DRAM 2352-2002" />
+                <pattern match="DRAM 1351-2501" />
+                <pattern match="DRAM 1352-2501" />
+                <pattern match="DRAM 2351-2501" />
+                <pattern match="DRAM 2352-2501" />
+            </topic>
+            <topic name="Rehearsal">
+                <subtopic name="First Play, Spring 2008">
+                    <pattern match="DRAM 1221-2735" />
+                </subtopic>
+                <subtopic name="Second Play, Spring 2008">
+                    <pattern match="DRAM 1221-2736" />
+                </subtopic>
+            </topic>
+        </subject>
+    
     </mapping>
 </mappings>
 
