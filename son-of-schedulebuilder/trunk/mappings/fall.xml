@@ -467,6 +467,8 @@
 			<topic name="Modern Dance">
 				<comments>Students must have had one semester of dance training for the following classes.</comments>
 				<pattern match="DANC 1245-2001"/>
+				<pattern match="DANC 1245-2002"/> <!-- added 2007-08-17 -->
+				<pattern match="DANC 1245-2003"/> <!-- added 2007-08-17 -->
 				<pattern match="DANC 1246-2001"/>
 				<pattern match="DANC 2245-2001"/>
 				<pattern match="DANC 2246-2001"/>
@@ -599,6 +601,9 @@
 		            <pattern match="MUEN 1131-2001" />
 		            <pattern match="MUEN 1131-2002" />
 		        </subtopic>
+		    	<subtopic name="Percussion Ensemble">  <!-- Added 2007-08-17 -->
+		    		<pattern match="MUEN 1135-2201" /> <!-- Added 2007-08-17 -->
+		    	</subtopic>
 		        <subtopic name="Handbell Ensemble">
 		            <pattern match="MUEN 1135-2700" />
 		            <pattern match="MUEN 1135-2501" />
