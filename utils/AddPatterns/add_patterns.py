@@ -56,12 +56,14 @@ def read_file(filename):
 
     fin.close();
 
-no_caps = ['of', 'the', 'and', 'or', 'for'];
+no_caps = ['of', 'the', 'and', 'or', 'for', 'to'];
 def fix_caps(name):
-    words = (name.replace('/', ' / ')).split(' ');
+    words = ((name.replace('/', ' / ')).lower()).split(' ');
     out_str = '';
     for word in words:
-        if (not(word in no_caps)):
+        if (word in no_caps):
+            out_str = out_str + word.lower() + ' ';
+        else:
             out_str = out_str + word[:1].upper() + word[1:].lower() + ' ';
     return out_str.strip();
 
@@ -183,7 +185,6 @@ if (__name__ == '__main__'):
         print 'cancelled.';
         sys.exit(0);
     else:
-        print type(selection);
         assert(type(selection) == int);
         filename = file_list[selection - 1];
         # load and use file
