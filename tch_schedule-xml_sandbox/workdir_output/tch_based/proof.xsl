@@ -89,46 +89,71 @@
             <!-- print the division info -->
             <xsl:call-template name="division-info" />
 
-            <xsl:apply-templates select="descr" />
+            <xsl:apply-templates select="comments" />
 
             <!-- insert a list of the Core courses -->
             <xsl:call-template name="make-core-list" />
             
-            <!-- start on the topics -->
-            <xsl:apply-templates select="topic">
-                <!-- <xsl:sort select="@sortkey" /> -->
-            </xsl:apply-templates>
+            <!-- decide whether to sort by topic or type -->
+            <xsl:choose>
+                <!-- if there are topics, do that -->
+                <xsl:when test="count(topic) &gt; 0">
+                    <xsl:apply-templates select="topic" />
+                </xsl:when>
+                <!-- if there are types, do that -->
+                <xsl:when test="count(type) &gt; 0">
+                    <xsl:apply-templates select="type">
+                        <xsl:sort select="@sortkey-type" />
+                    </xsl:apply-templates>
+                </xsl:when>
+            </xsl:choose>
         </div>
     </xsl:template>
     
     <xsl:template match="topic">
         <div class="topic-section">
-            <h2 class="topic-header"><xsl:value-of select="@"></xsl:value-of>
+            <h2 class="topic-header"><xsl:value-of select="@name" /></h2>
+            
+            <!-- decide whether to sort by subtopic or type -->
+            <xsl:choose>
+                <!-- if there are topics, do that -->
+                <xsl:when test="count(topic) &gt; 0">
+                    <xsl:apply-templates select="topic" />
+                </xsl:when>
+                <!-- if there are types, do that -->
+                <xsl:when test="count(type) &gt; 0">
+                    <xsl:apply-templates select="type">
+                        <xsl:sort select="@sortkey-type" />
+                    </xsl:apply-templates>
+                </xsl:when>
+            </xsl:choose>
+       </div>
     </xsl:template>
     
     <xsl:template match="subtopic">
-        <!-- blah -->
+        <div class="subtopic-section">
+            <h3 class="subtopic-header"><xsl:value-of select="@name" /></h3>
+            
+            <xsl:apply-templates select="type">
+                <xsl:sort select="@sortkey-type" />
+            </xsl:apply-templates>
+            
+        </div>
     </xsl:template>
 
 
     <xsl:template match="type">
         <div class="type-section {@id}">
-            <!-- <xsl:apply-templates select="@sortkey" /> -->
-            <xsl:apply-templates select="@name" />
+            <h4 class="type-header"><xsl:value-of select="@name" /> Courses</h4>
+                
+                <xsl:apply-templates select="course" />
 
-            <xsl:apply-templates select="course">
-                <!--<xsl:sort select="@sortkey" data-type="number" />
+            <!--<xsl:apply-templates select="course">
+                <xsl:sort select="@sortkey" data-type="number" />
                 <xsl:sort select="@default-sortkey" />
-                <xsl:sort select="min(descendant::class/@section)" />-->
-            </xsl:apply-templates>
+                <xsl:sort select="min(descendant::class/@section)" />
+            </xsl:apply-templates>-->
         </div>
-    </xsl:template>
-
-    <xsl:template match="type/@name">
-        <!-- only output the type header if we're not in a special-section with the same name -->
-        <xsl:if test="count(ancestor::subject/topic) &gt; 0">
-            <h4 class="type-header"><xsl:value-of select="." /> Courses</h4>
-        </xsl:if>
     </xsl:template>
 
 
@@ -144,7 +169,7 @@
                     <xsl:sort select="@section" />
                 </xsl:apply-templates>
             </table>
-            <xsl:apply-templates select="desc" />
+            <xsl:apply-templates select="comments" />
         </div>
     </xsl:template>
 
@@ -153,12 +178,12 @@
         <tr>
             <!-- <xsl:apply-templates select="@sortkey | @default-sortkey" /> -->
             <td class="number">
-                <!-- the class number is a composite of the course's @rubrik and @number and the class's @section -->
+                <!-- the class number is a composite of the course's @rubric and @number and the class's @section -->
                 <xsl:value-of select="../@rubric" /><xsl:text> </xsl:text>
                 <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
                 <xsl:value-of select="@section" />
             </td>
-            <td class="title"><xsl:value-of select="../@title-long" /></td>
+            <td class="title"><xsl:value-of select="../@title-short" /></td>
             <td class="synonym"><xsl:value-of select="@synonym" /></td>
             <td class="credit_hours"><xsl:value-of select="../@credit-hours" /></td>
             <td class="dates"><xsl:value-of select="utils:format-dates(@date-start, @date-end)" />&#160;<xsl:apply-templates select="@weeks" /></td>
@@ -169,7 +194,7 @@
 
         <tr>
             <td class="class-comments" colspan="10">
-                <xsl:apply-templates select="desc" />
+                <xsl:apply-templates select="comments" />
             </td>
         </tr>
     </xsl:template>
@@ -194,7 +219,7 @@
             <td class="days"><xsl:value-of select="@days" /></td>
             <td class="times"><xsl:value-of select="utils:format-times(@time-start, @time-end)" />&#160;/&#160;<xsl:value-of select="@method" /></td>
             <td class="room"><xsl:value-of select="@room" /></td>
-            <td class="faculty" colspan="2"><xsl:apply-templates select="faculty" /></td>
+            <td class="faculty" colspan="2"><xsl:if test="not(faculty)">Staff</xsl:if><xsl:apply-templates select="faculty" /></td>
         </tr>
     </xsl:template>
 
@@ -204,7 +229,7 @@
             <td class="times"><xsl:value-of select="utils:format-times(@time-start, @time-end)" /></td>
             <td class="days"><xsl:value-of select="@days" /></td>
             <td class="room"><xsl:value-of select="@room" /></td>
-            <td class="faculty" colspan="2"><xsl:apply-templates select="faculty" /></td>
+            <td class="faculty" colspan="2"><xsl:if test="not(faculty)">Staff</xsl:if><xsl:apply-templates select="faculty" /></td>
         </tr>
     </xsl:template>
 
@@ -223,7 +248,7 @@
 
          h1, p, b, i, table, tr, td
     ====================================================================== -->
-    <xsl:template match="desc">
+    <xsl:template match="comments">
         <div class="comments">
             <xsl:choose>
                 <xsl:when test="not(p)">
@@ -237,15 +262,15 @@
     </xsl:template>
 
     <!-- skip any comments inside of <special-section>s -->
-    <!--<xsl:template match="description[ancestor::special-section]" />-->
+    <!--<xsl:template match="comments[ancestor::special-section]" />-->
 
-    <xsl:template match="desc//h1 | desc//p | desc//b | desc//i | desc//table | desc//tr | desc//td | desc//@*">
+    <xsl:template match="comments//h1 | comments//p | comments//b | comments//i | comments//table | comments//tr | comments//td | comments//@*">
         <xsl:copy>
             <xsl:apply-templates select="node()|@*" />
         </xsl:copy>
     </xsl:template>
 
-    <xsl:template match="desc//h1" priority="1">
+    <xsl:template match="comments//h1" priority="1">
         <h4><xsl:apply-templates /></h4>
     </xsl:template>
 
@@ -276,10 +301,10 @@
          for each page.
     ====================================================================== -->
     <xsl:template name="division-info">
+        <!-- get a pointer to the division node -->
+        <xsl:variable name="division" select="ancestor::division" />
+        
         <p class="division-info">
-            <!-- get a pointer to the division node -->
-            <xsl:variable name="division" select="ancestor::division" />
-            
             <xsl:choose>
                 <!-- if we're inside a division, print the full division contact info -->
                 <xsl:when test="ancestor::division">
@@ -291,7 +316,7 @@
                     <xsl:variable name="email" select="if (contact/@email) then contact/@email else $division/contact/@email" />
 
                     <!-- division name -->
-                    <xsl:value-of select="$division/@name" /><xsl:text>&#160;&#160;|&#160;&#160;</xsl:text>
+                    <xsl:value-of select="upper-case($division/@name)" /><xsl:text>&#160;&#160;|&#160;&#160;</xsl:text>
 
                     <!-- phone number plus extension -->
                     <xsl:text>972-860-</xsl:text><xsl:value-of select="$ext" /><xsl:text>&#160;&#160;|&#160;&#160;</xsl:text>
@@ -314,7 +339,7 @@
                             </xsl:if>-->
                         </xsl:otherwise>
                     </xsl:choose>
-                    <br />
+                    <xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
 
                     <!-- email address -->
                     <xsl:text>E-MAIL:  </xsl:text><xsl:value-of select="$email" />
@@ -324,6 +349,9 @@
                 <xsl:otherwise><xsl:value-of select="if ($division/@name) then upper-case($division/@name) else 'UNKNOWN DIVISION'" /></xsl:otherwise>
             </xsl:choose>
         </p>
+        
+        <!-- print out the division comments -->
+        <xsl:value-of select="$division/comments" />
     </xsl:template>
 
 

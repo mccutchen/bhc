@@ -20,29 +20,6 @@
         <xsl:param name="haystack" />
         <xsl:number value="index-of($haystack, $needle)[1]" />
     </xsl:function>
-        
-    <!-- strip-semester
-        takes the repetative and also redundant 2007FA/SP/S1/S2 (year is included as a seperate attribute)
-        returns a user-friendly Fall/Spring/Summer text string -->
-    <xsl:function name="utils:strip-semester">
-        <xsl:param name="str_in" />
-        <xsl:variable name="sm_abbr" select="upper-case(substring($str_in, 5))" />
-        
-        <xsl:choose>
-            <xsl:when test="compare($sm_abbr,'FA') = 0">
-                <xsl:value-of select="'Fall'" />
-            </xsl:when>
-            <xsl:when test="compare($sm_abbr,'SP') = 0">
-                <xsl:value-of select="'Spring'" />
-            </xsl:when>
-            <xsl:when test="(compare($sm_abbr, 'S1') = 0) or (compare($sm_abbr, 'S2') = 0)">
-                <xsl:value-of select="'Summer'" />
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="'invalid semester'" />
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
     
     
     <!-- =====================================================================
@@ -200,14 +177,14 @@
              value to make sure it's in the expected format and also
              remove any unnecessary leading '0' or trailing ':00' to
              bring the time value closer to AP style -->
-        <xsl:variable name="time-pattern">0?(\d+(:[1-9][0-9])?)(:00)? (AM|PM)</xsl:variable>
+        <xsl:variable name="time-pattern">0?(\d+(:[1-9][0-9])?)(:00)? (AM|PM|a.m.|p.m.)</xsl:variable>
         <xsl:variable name="time-replace">$1 $4</xsl:variable>
 
         <!-- patterns to replace 'AM' with 'a.m.' and 'PM' with 'p.m.'
              according to AP style -->
-        <xsl:variable name="am-pattern">(.*) AM$</xsl:variable>
+        <xsl:variable name="am-pattern">(.*) (AM|a.m.)$</xsl:variable>
         <xsl:variable name="am-replace">$1 a.m.</xsl:variable>
-        <xsl:variable name="pm-pattern">(.*) PM$</xsl:variable>
+        <xsl:variable name="pm-pattern">(.*) (PM|p.m.)$</xsl:variable>
         <xsl:variable name="pm-replace">$1 p.m.</xsl:variable>
 
         <!-- AP style calls for 12:00 p.m. to be replaced with the
