@@ -3,7 +3,7 @@
 """Builds and returns an ElementTree object from the given input
 file(s)"""
 
-import copy, datetime, os, re, sys
+import datetime, os, re, sys
 
 try:
     from xml.etree import cElementTree as ElementTree
