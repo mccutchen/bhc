@@ -572,6 +572,7 @@
 		    <topic name="Piano for Non Music Majors">
 		        <pattern match="MUSI 1181-2001" />
 		        <pattern match="MUSI 1181-2501" />
+				<pattern match="MUSI 1181-2502" /> <!-- added 2007-08-24 -->
 		        <pattern match="MUSI 1182-2501" />
 		    </topic>
 		    <topic name="Guitar">
@@ -614,6 +615,7 @@
 		        </subtopic>
 		        <subtopic name="Vocal Jazz/Lab Band">
 		            <pattern match="MUEN 1151-2001" />
+					<pattern match="MUEN 1151-2201" /> <!-- added 2007-08-24 -->
 		            <pattern match="MUEN 2123-2001" />
 		            <pattern match="MUEN 2123-2002" />
 		            <pattern match="MUEN 2123-2501" />
@@ -865,6 +867,7 @@
 					<pattern match="EMSP 2143-2201" />
 					<pattern match="EMSP 2463-2216" />
 					<pattern match="EMSP 2332-2005" /><!-- Added 07/06/2007 -->
+					<pattern match="EMSP 2332-2205" /><!-- added 2007-08-24 -->
                 </subtopic>
                 <subtopic name="Paramedic Class #17, B Shift">
                     <pattern match="EMSP 1355-2217" />
