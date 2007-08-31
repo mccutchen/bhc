@@ -650,6 +650,10 @@
                 <pattern match="DANC 2222-2501" />
                 <pattern match="DANC 2223-2501" />
             </topic>
+			<topic name="Jazz">
+				<pattern match="DANC 1247-2501" />
+				<pattern match="DANC 1248-2501" />
+			</topic>
             <topic name="Ballet">
                 <pattern match="DANC 1341-2001" />
                 <pattern match="DANC 1342-2001" />
