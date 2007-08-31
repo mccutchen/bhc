@@ -93,20 +93,22 @@
                 <pattern match="INEW 2438-2502" />
                 <pattern match="ITSE 1407-2501" />
                 <pattern match="ITSE 1430-2502" />
+                <pattern match="ITSE 1432-2501" />
+                <pattern match="ITSE 1432-2502" />
                 <pattern match="ITSE 2417-2501" />
-                <pattern match="ITSE 2430-2501" />
+                <pattern match="ITSE 2453-2501" />
                 <pattern match="ITSE 2431-2501" />
-                <pattern match="ITSE 2449-2501" />
-                <pattern match="ITSE 2449-2502" />
             </topic>
             <topic name="Microsoft Academy Courses">
                 <comments>NOTE:  Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for a Microsoft Certified Systems Administrator, MCSA; a Microsoft Certified Systems Engineer, MCSE; and a Microsoft Certified Database Administrator, MCDBA.  For additional information, call 972-860-4176.</comments>
                 <pattern match="ITMC 2437-2501" />
-                <pattern match="ITMT 1400-2501" />
-                <pattern match="ITMT 1440-2501" />
                 <pattern match="ITMT 1450-2501" />
+                <pattern match="ITMT 2300-2501" />
+                <pattern match="ITMT 2403-2501" />
+                <pattern match="ITMT 1440-2250" />
             </topic>
             <topic name="UNIX">
+                <pattern match="ITSC 1407-2501" />
                 <pattern match="ITSC 2437-2501" />
                 <pattern match="ITSC 1458-2501" />
             </topic>
@@ -124,14 +126,18 @@
                 <pattern match="ITSE 1411-2002" />
                 <pattern match="IMED 2409-2501" />
                 <pattern match="IMED 2415-2502" />
+                <pattern match="INEW 1440-2501" />
                 <pattern match="INEW 2434-2501" />
+                <pattern match="ITSE 2402-2501" />
+                <pattern match="ITSE 2409-2501" />
                 <pattern match="ITSW 1410-2500" />
                 <pattern match="IMED-1416-2426" />
                 <pattern match="IMED-2409-2426" />
                 <pattern match="IMED 2415-2426" />
+                <pattern match="INEW 1440-2426" />
                 <pattern match="INEW 2434-2426" />
                 <pattern match="ITNW 1437-2426" />
-                <pattern match="ITSE 1411-426"  />
+                <pattern match="ITSE 1411-2426"  />
                 <pattern match="ITSE 2402-2426" />
                 <pattern match="ITSE 2409-2426" />
             </topic>
@@ -256,8 +262,8 @@
                 <pattern match="BCIS 1405-2422" />
             </topic>
             <topic name="Programming">
-                <pattern match="BCIS 1231-2501" />
-                <pattern match="BCIS 2431-2502" />
+                <pattern match="BCIS 1431-2501" />
+                <pattern match="BCIS 1431-2502" />
             </topic>
             <topic name="General Electives">
                 <pattern match="BCIS 2390-2426" />
