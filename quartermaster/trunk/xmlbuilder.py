@@ -145,6 +145,7 @@ def create_class_element(parent, row):
         'time_formatted',
         'time_sortkey',
         'tuition',
+        'reg_num',
         'evening',
         'time_sortkey',
         'date_sortkey',])

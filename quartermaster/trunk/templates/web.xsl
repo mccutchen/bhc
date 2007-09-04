@@ -279,6 +279,7 @@
                                 <xsl:if test="$with-number = 'true'">
                                     <th>Course Number</th>
                                 </xsl:if>
+								<th>Reg #</th>
                                 <th>Dates</th>
                                 <th>Hours / # Meetings</th>
                                 <th>Class Times</th>
@@ -291,6 +292,7 @@
                                 <xsl:if test="$with-number = 'true'">
                                     <th>Numero del Curso</th>
                                 </xsl:if>
+								<th># de Reg</th>
                                 <th>Fechas</th>
                                 <th># de creditos / # de reuniones</th>
                                 <th>Tiempo de clase</th>
@@ -349,6 +351,7 @@
             <xsl:if test="$with-number = 'true'">
                 <td><xsl:apply-templates select="@class_number" /></td>
             </xsl:if>
+			<td><xsl:apply-templates select="@reg_num"/></td>
             <td><xsl:apply-templates select="@start_date"/> - <xsl:apply-templates select="@end_date"/></td>
             <td><xsl:apply-templates select="@hours"/> hrs / <xsl:apply-templates select="@session"/></td>
             <td><xsl:apply-templates select="@time_formatted"/></td>
