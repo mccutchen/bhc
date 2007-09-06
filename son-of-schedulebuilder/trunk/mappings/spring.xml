@@ -786,6 +786,16 @@
                 <pattern match="RADR 2233-2002" />
             </topic>
         </subject>
+		
+		<subject name="Humanities"> 
+             <topic name="None"> 
+                 <pattern match="HUMA" priority="1" /> 
+             </topic> 
+             <topic name="Humanities December Winter Term Courses"> 
+                 <pattern match="HUMA 1315-2202" priority="2" /> 
+                 <pattern match="HUMA 1315-2203" priority="2" /> 
+             </topic> 
+         </subject> 
 
 
 
