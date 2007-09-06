@@ -342,6 +342,11 @@
                 <pattern match="ARTS 2312-2252" />
             </topic>
             <topic name="Design">
+				<comments>NOTE: Certain sections of Two-Dimensional Design and Three-Dimensional Design will be offered in collaboration. 
+					Students will work on the elements and principles of design through a coordinated series of assignments that transition 
+					from illusionary space (2D) to physical space (3D). These coordinated sections are highly recommended for art majors. 
+					Register for two of the following courses: ARTS 1311-2001, 2D Design, or ARTS 1311-2002, 2D Design, and ARTS 1312-2001, 
+					3D Design. For additional information, call Rick Maxwell, 972-860-4722.</comments>
                 <pattern match="ARTS 1311-2001" />
                 <pattern match="ARTS 1311-2002" />
                 <pattern match="ARTS 1312-2001" />
@@ -746,6 +751,43 @@
 				<pattern match="RNSG 2461" />
 			</topic>
 		</subject>
+		
+		<subject name="Radiologic Sciences">
+            <comments>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+            <topic name="none">
+				<comments>NOTE: The following course is available to anyone interested in the Radiology Technology program.  Acceptance into the program is NOT REQUIRED. For more information call 972-860-4264.</comments>
+				<pattern match="RADR 1201-2002" />
+				<pattern match="RADR 1201-2003" />
+            </topic>
+            <topic name="First Semester Program Students">
+                <comments>NOTE: The following courses are for students in the first semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RADR 1201-2001" />
+                <pattern match="RADR 1411-2001" />
+                <pattern match="RADR 1411-2002" />
+                <pattern match="RADR 1411-2003" />
+                <pattern match="RADR 1411-2004" />
+                <pattern match="RADR 1411-2005" />
+                <pattern match="RADR 2309-2001" />
+                <pattern match="RADR 1203-2001" />
+                <pattern match="RADR 1203-2002" />
+                <pattern match="RADR 1203-2003" />
+                <pattern match="RADR 1203-2004" />
+            </topic>
+            <topic name="Fourth Semester Program Students">
+                <comments>NOTE: The following courses are for students in the fourth semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RADR 1266-2201" />
+                <pattern match="RADR 1266-2202" />
+                <pattern match="RADR 1266-2203" />
+                <pattern match="RADR 1267-2201" />
+                <pattern match="RADR 1267-2202" />
+                <pattern match="RADR 1267-2203" />
+                <pattern match="RADR 2240-2001" />
+                <pattern match="RADR 2233-2001" />
+                <pattern match="RADR 2233-2002" />
+            </topic>
+        </subject>
+
+
 
 		<!-- New spring mappings will go here when we get them. -->    
     </mapping>
