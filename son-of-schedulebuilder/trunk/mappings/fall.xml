@@ -527,6 +527,7 @@
 					<pattern match="MUEN 1151-2201" /> <!-- added 2007-08-24 -->
 		            <pattern match="MUEN 2123-2001" />
 		            <pattern match="MUEN 2123-2002" />
+					<pattern match="MUEN 2123-2200" /> <!-- added 2007-09-07: Lab Band -->
 		            <pattern match="MUEN 2123-2501" />
 		        </subtopic>
 				<subtopic name="Women's Chorus">
@@ -539,6 +540,7 @@
 		            <pattern match="MUEN 1153-2200" />
 		        </subtopic>
 		        <subtopic name="Brookhaven Choral Society">
+					<pattern match="MUEN 2141-2200" /> <!-- added 2007-09-07: Chorus -->
 		            <pattern match="MUEN 2141-2501" />
 		            <pattern match="MUEN 2141-2701" />
 		        </subtopic>
