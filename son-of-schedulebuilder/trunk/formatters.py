@@ -276,13 +276,13 @@ class CreditFormatter(BaseFormatter):
         """Some post-processing is required for the session field, which
         has already been processed by its SessionFormatter."""
         assert isinstance(value, dict)
-        return FormatUtils.add_session_defaults(value)
+        return SessionFormatter.add_defaults(value)
 
     def format_extra_sessions(self, value):
         """Some post-processing is required for the extra-sessions field,
         which has already been processed by its SessionFormatter."""
         assert type(value) in (list, tuple)
-        return map(FormatUtils.add_session_defaults, value)
+        return map(SessionFormatter.add_defaults, value)
 
 
     ############################################################################
@@ -404,7 +404,58 @@ class SessionFormatter(BaseFormatter):
             return '%s-%s' % (start, end)
         except IndexError:
             return ''
+    
+    @classmethod
+    def add_defaults(self, session_data):
+        """Adds default values to the given session_data dict.  Has special-case
+        logic for certain fields that the normal SessionFormatter formatting
+        functions cannot implement.  Always returns a dict."""
+        assert isinstance(session_data, dict)
 
+        # special case for certain values of 'days'
+        if session_data.get('days','') in ('UMTWRFS','MTWRFSU',):
+            session_data['days'] = profile.defaults['days']
+
+        # special case for formatted-times
+        if session_data.get('start-time') in ('TBA',) or session_data.get('end-time') in ('TBA',):
+            session_data['formatted-times'] = profile.defaults['time']
+
+        def add_default(session, session_key, defaults_key=None):
+            """Intelligently adds a value from the profile.defaults dict to
+            the given session dict if that value is not already present."""
+            defaults_key = defaults_key or session_key
+            if not session.get(session_key):
+                session[session_key] = profile.defaults[defaults_key]
+
+        # intelligently add default values
+        add_default(session_data, 'faculty-name', 'faculty')
+        add_default(session_data, 'start-time', 'time')
+        add_default(session_data, 'end-time', 'time')
+        add_default(session_data, 'formatted-times', 'time')
+        add_default(session_data, 'days')
+        add_default(session_data, 'room')
+
+        # Special case for non-lecture and non-lab courses:  The formatted-times and
+        # room should be 'NA' rather than 'TBA', which is the default for other
+        # course types.
+        if session_data.get('method', '') not in ('LEC', 'LAB'):
+            defaults = ['TBA', '', None]
+            default_times = defaults + [profile.defaults.get('time')]
+            default_days = defaults + [profile.defaults.get('days')]
+            default_rooms = defaults + [profile.defaults.get('room')]
+
+            if session_data.get('start-time') in default_times and session_data.get('end-time') in default_times:
+                session_data['start-time'] = 'NA'
+                session_data['end-time'] = 'NA'
+                session_data['formatted-times'] = 'NA'
+
+            if session_data.get('days') in default_days:
+                session_data['days'] = 'NA'
+
+            if session_data.get('room') in default_rooms:
+                session_data['room'] = 'NA'
+
+        return session_data
 
 
 class FormatUtils:
@@ -477,60 +528,6 @@ class FormatUtils:
         # standard start and end dates for this term, so it belongs in
         # the "flex" section
         return True
-
-
-    @classmethod
-    def add_session_defaults(self, session_data):
-        """Adds default values to the given session_data dict.  Has special-case
-        logic for certain fields that the SessionFormatter formatting functions
-        cannot implement.  Always returns a dict."""
-        assert isinstance(session_data, dict)
-
-        # special case for certain values of 'days'
-        if session_data.get('days','') in ('UMTWRFS','MTWRFSU',):
-            session_data['days'] = profile.defaults['days']
-
-        # special case for formatted-times
-        if session_data.get('start-time') in ('TBA',) or session_data.get('end-time') in ('TBA',):
-            session_data['formatted-times'] = profile.defaults['time']
-
-        def add_default(session, session_key, defaults_key=None):
-            """Intelligently adds a value from the profile.defaults dict to
-            the given session dict if that value is not already present."""
-            defaults_key = defaults_key or session_key
-            if not session.get(session_key):
-                session[session_key] = profile.defaults[defaults_key]
-
-        # intelligently add default values
-        add_default(session_data, 'faculty-name', 'faculty')
-        add_default(session_data, 'start-time', 'time')
-        add_default(session_data, 'end-time', 'time')
-        add_default(session_data, 'formatted-times', 'time')
-        add_default(session_data, 'days')
-        add_default(session_data, 'room')
-
-        # Special case for non-lecture and non-lab courses:  The formatted-times and
-        # room should be 'NA' rather than 'TBA', which is the default for other
-        # course types.
-        if session_data.get('method', '') not in ('LEC', 'LAB'):
-            defaults = ['TBA', '', None]
-            default_times = defaults + [profile.defaults.get('time')]
-            default_days = defaults + [profile.defaults.get('days')]
-            default_rooms = defaults + [profile.defaults.get('room')]
-
-            if session_data.get('start-time') in default_times and session_data.get('end-time') in default_times:
-                session_data['start-time'] = 'NA'
-                session_data['end-time'] = 'NA'
-                session_data['formatted-times'] = 'NA'
-
-            if session_data.get('days') in default_days:
-                session_data['days'] = 'NA'
-
-            if session_data.get('room') in default_rooms:
-                session_data['room'] = 'NA'
-
-        return session_data
-
 
     @classmethod
     def get_name_for(self, search_key, regrouping_type):
