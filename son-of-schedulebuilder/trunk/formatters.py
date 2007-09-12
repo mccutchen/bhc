@@ -276,14 +276,14 @@ class CreditFormatter(BaseFormatter):
         """Some post-processing is required for the session field, which
         has already been processed by its SessionFormatter."""
         assert isinstance(value, dict)
+        value = SessionFormatter.handle_new_topic_codes(value, self.input.get('topic-code',''))
         return SessionFormatter.add_defaults(value)
 
     def format_extra_sessions(self, value):
         """Some post-processing is required for the extra-sessions field,
         which has already been processed by its SessionFormatter."""
         assert type(value) in (list, tuple)
-        return map(SessionFormatter.add_defaults, value)
-
+        return map(self.format_session, value)
 
     ############################################################################
     # Subject, topic and subtopic formatters
@@ -404,6 +404,38 @@ class SessionFormatter(BaseFormatter):
             return '%s-%s' % (start, end)
         except IndexError:
             return ''
+    
+    @classmethod
+    def handle_new_topic_codes(self, session_data, topic_code):
+        """There are new topic codes defined for online and video-based
+        classes that should supercede some of the teaching methods given in
+        Colleague.  This is an UGLY HACK on the Colleague side and in this
+        software.  Rules:
+        
+            * If a class has a teaching method of INET:
+                a) If its topic code is one of OL, OLC or OLP:
+                    replace the teaching method with the topic code
+                b) Else:
+                    replace the teaching method with a default of OL
+            
+            * If a class has a teaching method of TV, TVP or IDL:
+                replace its teaching method with VB
+        """
+        method = session_data.get('method','')
+        
+        if method == 'INET':
+            if topic_code in ('OL','OLC','OLP'):
+                # If we have a valid replacement topic code, use it.
+                session_data['method'] = topic_code
+            else:
+                # Otherwise, default to 'OL'
+                session_data['method'] = 'OL'
+        
+        elif method in ('TV', 'TVP', 'IDL'):
+            # All TV courses are given a teaching method of 'VB'
+            session_data['method'] = 'VB'
+
+        return session_data
     
     @classmethod
     def add_defaults(self, session_data):
