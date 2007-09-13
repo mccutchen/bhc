@@ -797,9 +797,22 @@
              </topic> 
          </subject> 
 
+   <!-- =======================================================================
+            Management Program (Mary Lou Avera)
+        ======================================================================== -->
+        <subject name="Management Program">
+            <comments>NOTE:  Earn six credit hours, but attend class only one night per week for three hours.  For advisement, call the faculty members: Mary Lou Avera, 972-860-4179, marylou@dcccd.edu;  or Marisa Walsdorf, 972-860-4186, marisa_walsdorf@dcccd.edu.  Minimum requirements for enrollment:  a student must be currently employed in an appropriate job and meet the TSI requirements in reading and writing.  Credits are earned in a traditional on-campus course and in an on-the-job, cooperative education training course.  There are no course prerequisites, but students may enroll in only one co-op ed course per semester.  It is strongly recommended that interested students contact a faculty member before classes begin.  Visit us online at www.BrookhavenCollege.edu   then click on "M" for Management in the A-Z index.</comments>
+            <topic name="none">
+                <pattern match="HRPO 2307-2501"/>
+                <pattern match="BMGT 2382-2501"/>
+            </topic>
+            <topic name="none">
+                <pattern match="BMGT 2303-2502"/>
+                <pattern match="BMGT 2383-2502"/>
+            </topic>
+        </subject>
 
 
-		<!-- New spring mappings will go here when we get them. -->    
     </mapping>
 </mappings>
 
