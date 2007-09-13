@@ -103,7 +103,7 @@
                 <comments>NOTE:  Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for a Microsoft Certified Systems Administrator, MCSA; a Microsoft Certified Systems Engineer, MCSE; and a Microsoft Certified Database Administrator, MCDBA.  For additional information, call 972-860-4176.</comments>
                 <pattern match="ITMC 2437-2501" />
                 <pattern match="ITMT 1450-2501" />
-                <pattern match="ITMT 2300-2501" />
+                <pattern match="ITMT 2400-2501" />
                 <pattern match="ITMT 2403-2501" />
                 <pattern match="ITMT 1440-2250" />
             </topic>
