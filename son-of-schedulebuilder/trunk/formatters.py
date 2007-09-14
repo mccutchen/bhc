@@ -1,7 +1,7 @@
 import datetime, re
 
 from wrm.formatter import Formatter
-from wrm.decorators import cached
+from wrm.decorators import cached, excepting
 from wrm import utils
 from wrm import xmlutils
 
@@ -68,10 +68,10 @@ class CreditFormatter(BaseFormatter):
         
         return FormatUtils.post_process_comments(comments)
 
+    @excepting(ValueError, '9999')
     def format_class_sortkey_date(self, value):
         """Returns the ordinal value of the given class's start date."""
-        startdate = utils.parsedate(self.input['start-date'])
-        return str(startdate.toordinal())
+        return utils.parsedate(self.input['start-date']).toordinal()
     
     count = 0
     def format_class_sortkey_time(self, value):
@@ -256,12 +256,6 @@ class CreditFormatter(BaseFormatter):
             # return its ordinal value
             return str(startdate.toordinal())
         return ''
-
-    def format_class_sortkey_date(self, value):
-        """Generates an integer sortkey based on the start date of the
-        given class."""
-        startdate = utils.parsedate(self.input['start-date'])
-        return str(startdate.toordinal())
 
     def format_core_component(self, value):
         """Checks the rubrik and number of the given course against the
