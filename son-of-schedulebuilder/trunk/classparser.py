@@ -57,6 +57,12 @@ def include_class(input):
     # 'core' classes
     if profile.non_core_schedule and input['core-component']:
         return False
+    
+    # filter out junk lines, which won't start with a valid year
+    try:
+        assert int(input['year']) >= 1900
+    except (ValueError, AssertionError):
+        return False
 
     # go ahead and include this class
     return True
