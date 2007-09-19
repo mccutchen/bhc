@@ -730,6 +730,8 @@
             </topic>
         </subject>
 		
+		
+		
 		<subject name="Nursing">
             <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
 			<topic name="none">
@@ -752,6 +754,10 @@
 			</topic>
 		</subject>
 		
+		
+   <!-- =======================================================================
+            Health and Human Services
+        ======================================================================== -->
 		<subject name="Radiologic Sciences">
             <comments>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
             <topic name="none">
@@ -795,7 +801,84 @@
                  <pattern match="HUMA 1315-2202" priority="2" /> 
                  <pattern match="HUMA 1315-2203" priority="2" /> 
              </topic> 
-         </subject> 
+         </subject>
+		 
+   <!-- =======================================================================
+            Emergency Medical Services (Cletha Silas)
+        ======================================================================== -->
+		 <subject name="Emergency Medical Services">
+		 	<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http:www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's  health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcmMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.
+			</comments>
+		 	<topic name="Emergency Medical Services, Basic">
+				<subtopic name="EMT Class #40">
+					<pattern match="EMSP 1160-2640" />
+				</subtopic>
+				<subtopic name="EMT Class #41">
+					<pattern match="EMSP 1160-2641" />
+				</subtopic>
+				<subtopic name="EMT Class #43, B-Shift Days">
+					<comments>This class will follow the traditional Fire Department B-shift schedule. This class will be meeting on the following Saturdays from 8 a.m. - 5 p.m.: Jan. 19, Feb. 9, Mar. 13 and Apr. 12. A mandatory orientation will be held on Wednesday, Jan 16 from 8 a.m. - 5 p.m.</comments>
+					
+					<pattern match="EMSP 1501-2043" />
+					<pattern match="EMSP 1501-2001" />
+					<pattern match="EMSP 1501-2002" />
+					<pattern match="EMSP 1160-2643" />
+				</subtopic>
+				<subtopic name="EMT Class #44, C-Shift Days">
+					<comments>This class will follow the traditional Fire Department C-shift schedule. A mandatory orientation will be held on Jan 17  from 8am - 5pm.</comments>
+					<pattern match="EMSP 1501-2044" />
+					<pattern match="EMSP 1501-2003" />
+					<pattern match="EMSP 1501-2004" />
+				</subtopic>
+				<subtopic name="EMT-Basic Class #42, Flex - Night Class">
+					<comments>A Mandatory orientation will be held on Jan 14 from 6pm - 10pm.</comments>
+					<pattern match="EMSP 1501-2542" />
+					<pattern match="EMSP 1501-2500" />
+					<pattern match="EMSP 1501-2501" />
+					<pattern match="EMSP 1160-2642" />
+				</subtopic>
+			</topic>
+			<topic name="Emergency Medical Services, Paramedic">
+				<pattern match="EMSP 2332-2206" />
+				<subtopic name="Paramedic Class #17, B-Shift">
+					<pattern match="EMSP 2338-2217" />
+					<pattern match="EMSP 2338-2204" />
+					<pattern match="EMSP 2338-2205" />
+					<pattern match="EMSP 2143-2217" />
+					<pattern match="EMSP 2143-2204" />
+					<pattern match="EMSP 2143-2205" />
+					<pattern match="EMSP 2463-2217" />
+				</subtopic>
+				<subtopic name="Paramedic Class #18, C-Shift">
+					<pattern match="EMSP 2434-2218" />
+					<pattern match="EMSP 2434-2207" />
+					<pattern match="EMSP 1355-2218" />
+					<pattern match="EMSP 1355-2207" />
+					<pattern match="EMSP 2430-2218" />
+					<pattern match="EMSP 2430-2207" />
+					<pattern match="EMSP 2338-2218" />
+					<pattern match="EMSP 2338-2207" />
+					<pattern match="EMSP 2261-2218" />
+				</subtopic>
+				<subtopic name="Paramedic Class #19, Flex - Night Class">
+					<pattern match="EMSP 2434-2719" />
+					<pattern match="EMSP 2434-2700" />
+					<pattern match="EMSP 1355-2719" />
+					<pattern match="EMSP 1355-2700" />
+					<pattern match="EMSP 2430-2719" />
+					<pattern match="EMSP 2430-2700" />
+					<pattern match="EMSP 2338-2719" />
+					<pattern match="EMSP 2338-2700" />
+				</subtopic>
+				<subtopic name="Paramedic Class #20, B-Shift">
+					<pattern match="EMSP 1438-2220" />
+					<pattern match="EMSP 1438-2222" />
+					<pattern match="EMSP 1438-2223" />
+					<pattern match="EMSP 2261-2619" />
+				</subtopic>
+			</topic>
+		</subject>
+
 
    <!-- =======================================================================
             Management Program (Mary Lou Avera)
