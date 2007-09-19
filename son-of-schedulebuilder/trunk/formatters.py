@@ -480,6 +480,11 @@ class SessionFormatter(BaseFormatter):
 
             if session_data.get('room') in default_rooms:
                 session_data['room'] = 'NA'
+        
+        # Special case for classes with rooms set as INET, which should now
+        # be changed to OL
+        if session_data['room'] == 'INET':
+            session_data['room'] = 'OL'
 
         return session_data
 
