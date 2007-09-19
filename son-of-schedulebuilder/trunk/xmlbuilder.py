@@ -37,6 +37,7 @@ def build(classes=None):
             get_minimester(term, class_data)
             get_distance_learning(term, class_data)
             get_weekend(term, class_data)
+            get_weekend(term, class_data, name='Weekend College', core_only=True)
 
     print 'Writing xml data to %s ...' % profile.output_xml_path
     xmlutils.write_xml(tree, profile.output_xml_path)
@@ -204,7 +205,7 @@ def get_class_element(parent, data, returnself=False):
     return el
 
 
-# WARNING: UGLY HACK
+# WARNING: UGLY HACKS
 # these create the "special" sections of the schedule
 def get_minimester(parent, data):
     if not data['minimester']:
@@ -236,13 +237,22 @@ def get_distance_learning(parent, data):
     el = xmlutils.add_element(parent, 'special-section', attrs)
     return get_subject_element(el, data, notype=True)
 
-def get_weekend(parent, data):
+def get_weekend(parent, data, name='Weekend', core_only=False):
+    """Creates the <special-section> for Weekend courses.  Will optionally
+    include only Weekend courses that are part of the Core Curriculum."""
+    
+    # If we don't have a weekend course, bail
     if data['type'] != 'W':
         return None
-
-    name = 'Weekend'
-    machine_name = get_machine_name(name)
-    attrs = dict(name=name, machine_name=machine_name)
+    
+    # If we only want Core Curriculum courses and don't have one, bail
+    if core_only and not data['core-component']:
+        return None
+    
+    attrs = {
+        'name': name,
+        'machine_name': get_machine_name(name),
+    }
     el = xmlutils.add_element(parent, 'special-section', attrs)
     return get_subject_element(el, data, notype=True)
 
