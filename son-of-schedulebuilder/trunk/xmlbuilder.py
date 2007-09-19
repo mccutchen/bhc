@@ -37,7 +37,7 @@ def build(classes=None):
             get_minimester(term, class_data)
             get_distance_learning(term, class_data)
             get_weekend(term, class_data)
-            get_weekend(term, class_data, name='Weekend College', core_only=True)
+            get_weekend(term, class_data, name='Weekend Core Curriculum', core_only=True)
 
     print 'Writing xml data to %s ...' % profile.output_xml_path
     xmlutils.write_xml(tree, profile.output_xml_path)
