@@ -114,6 +114,14 @@ class CreditProfile(BaseProfile):
         'days': 'TBA',
         'room': 'TBA',
     }
+    
+    # Maps given rooms to what they should be replaced with.  Used to handle
+    # the transition to the new topic codes for online and video-based courses
+    room_map = {
+        'INET': 'OL',
+        'TV': 'VB',
+        'TVP': 'VB',
+    }
 
     ###########################################
     # Generally static settings which you may #

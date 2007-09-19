@@ -481,10 +481,10 @@ class SessionFormatter(BaseFormatter):
             if session_data.get('room') in default_rooms:
                 session_data['room'] = 'NA'
         
-        # Special case for classes with rooms set as INET, which should now
-        # be changed to OL
-        if session_data['room'] == 'INET':
-            session_data['room'] = 'OL'
+        # See if we need to map the given room to a different value, according
+        # to profile.room_map
+        if session_data['room'] in profile.room_map:
+            session_data['room'] = profile.room_map[session_data['room']]
 
         return session_data
 
