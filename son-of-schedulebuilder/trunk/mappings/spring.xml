@@ -601,7 +601,7 @@
                     <pattern match="MUAP 1181-2007" />
                 </subtopic>
                 <subtopic name="Intermediate">
-                    <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) are mandatory for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
+                    <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
                     <pattern match="MUAP 2201-2001" />
                     <pattern match="MUAP 2209-2001" />
                     <pattern match="MUAP 2209-2002" />
