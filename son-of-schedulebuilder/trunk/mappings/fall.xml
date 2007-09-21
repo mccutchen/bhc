@@ -353,6 +353,7 @@
 				<pattern match="DANC 1222-2001"/>
 				<pattern match="DANC 1222-2501"/>
 				<pattern match="DANC 1223-2501"/>
+				<pattern match="DANC 1223-2700"/> <!-- added 2007-09-17: Hip Hop II -->
 				<pattern match="DANC 2222-2501"/>
 				<pattern match="DANC 2223-2501"/>
 			</topic>
@@ -563,6 +564,8 @@
              CIT (Bill Hammerschlag)
              ======================================================================== -->
         <subject name="Computer Information Technology">
+			<pattern match="ITSC 1191-2781" /> <!-- Added 2007-09-17: Spc Tpc/Cmptr/Info Science,  - in the absence of any info from Bill Hammerschlag ("we're working on it") -->
+			<pattern match="ITSC 1291-2780" /> <!-- Added 2007-09-17: Spc Tpc/Cmptr/Info Science,  - in the absence of any info from Bill Hammerschlag ("we're working on it") -->
             <topic name="Introduction To Computing">
                 <comments>NOTE:  ITSC 1401 is a technical/occupational course required for certain certificate and associate degree plans.  It will not meet the Brookhaven College Core Curriculum and/or Associate in Arts or Associate in Science requirement, and is not for transfer to a four-year school.</comments>
                 <pattern match="ITSC 1401"/>
@@ -609,6 +612,7 @@
 		    </topic>
 		    <topic name="Information Security and LAN">
 		        <pattern match="ITCC 1400-2501" />
+				<pattern match="ITCC 1400-2700" /> <!-- added 2007-09-17: Router & Routing Basics -->
 		        <pattern match="ITNW 1451-2426" />
 		        <pattern match="ITSY 1400-2426" />
 		        <pattern match="ITSY 2400-2426" />
@@ -737,6 +741,10 @@
                 <p>NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. </p>
             </comments>
 				<pattern match="EMSP 2332-2204" /><!-- Added 4/26 - she wants this in two places, which I can't do -->
+				<!-- these two were RLC courses, incorrectly coded in colleague.
+				<pattern match="EMSP 1501-2280" /> -- added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (3 hours ago)) --
+				<pattern match="EMSP 1501-2281" /> -- added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (3 hours ago)) --
+				-->
             <topic name="Emergency Medical Services, Basic">
             	<pattern match="EMSP 1501-2220" />
 				<pattern match="EMSP 1501-2201" />
