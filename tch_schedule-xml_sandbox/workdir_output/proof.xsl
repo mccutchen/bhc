@@ -7,7 +7,7 @@
 
     <!-- include some handy utility functions -->
     <xsl:include href="utils.xsl" />
-
+    
     <xsl:output
         method="xhtml"
         encoding="us-ascii"
@@ -18,7 +18,7 @@
     
     <!-- parameters -->
     <xsl:param name="page-title"       as="xs:string" select="'Proof Report'" />
-    <xsl:param name="output-directory" as="xs:string" select="'proof-output'" />
+    <xsl:param name="output-directory" as="xs:string" select="'output/proof'" />
     <xsl:param name="output-extension" as="xs:string" select="'.html'"        />
 
     <!-- options -->
@@ -37,6 +37,9 @@
     -->
     <xsl:param name="for-secretaries" select="'true'" />
 
+
+    <!-- grab the stylesheet to use -->
+    <xsl:variable name="doc-css" select="document('css/proof-css.xml')/styles" as="node()*" />
 
 
     <!-- =====================================================================
@@ -83,98 +86,133 @@
 
 
     <xsl:template match="subject">
-        <div class="subject-section">
-            <h1 class="subject-header"><xsl:value-of select="upper-case(@name)" /></h1>
-
-            <!-- print the division info -->
-            <xsl:call-template name="division-info" />
-
-            <xsl:apply-templates select="comments" />
-
-            <!-- insert a list of the Core courses -->
-            <xsl:call-template name="make-core-list" />
+        <!-- if there are courses to display -->
+        <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
             
-            <!-- decide whether to sort by topic or type -->
-            <xsl:choose>
-                <!-- if there are topics, do that -->
-                <xsl:when test="count(topic) &gt; 0">
-                    <xsl:apply-templates select="topic" />
-                </xsl:when>
-                <!-- if there are types, do that -->
-                <xsl:when test="count(type) &gt; 0">
-                    <xsl:apply-templates select="type">
-                        <xsl:sort select="@sortkey-type" />
-                    </xsl:apply-templates>
-                </xsl:when>
-            </xsl:choose>
-        </div>
+            <!-- start div -->
+            <div class="subject-section">
+                <h1 class="subject-header"><xsl:value-of select="upper-case(@name)" /></h1>
+    
+                <!-- print the division info -->
+                <xsl:call-template name="division-info" />
+                
+                <!-- paste in comments -->
+                <xsl:apply-templates select="comments" />
+    
+                <!-- insert a list of the Core courses -->
+                <xsl:call-template name="make-core-list" />
+                
+                <!-- decide whether to sort by topic or type -->
+                <xsl:choose>
+                    <!-- if there are topics, do that -->
+                    <xsl:when test="count(topic) &gt; 0">
+                        <xsl:apply-templates select="topic">
+                            <xsl:sort select="@sortkey" data-type="number" />
+                        </xsl:apply-templates>
+                    </xsl:when>
+                    <!-- if there are types, do that -->
+                    <xsl:when test="count(type) &gt; 0">
+                        <xsl:apply-templates select="type">
+                            <xsl:sort select="@sortkey-type" data-type="number" />
+                        </xsl:apply-templates>
+                    </xsl:when>
+                </xsl:choose>
+            </div>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="topic">
-        <div class="topic-section">
-            <h2 class="topic-header"><xsl:value-of select="@name" /></h2>
+        <!-- if there are courses to display -->
+        <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
             
-            <!-- decide whether to sort by subtopic or type -->
-            <xsl:choose>
-                <!-- if there are topics, do that -->
-                <xsl:when test="count(topic) &gt; 0">
-                    <xsl:apply-templates select="topic" />
-                </xsl:when>
-                <!-- if there are types, do that -->
-                <xsl:when test="count(type) &gt; 0">
-                    <xsl:apply-templates select="type">
-                        <xsl:sort select="@sortkey-type" />
-                    </xsl:apply-templates>
-                </xsl:when>
-            </xsl:choose>
-       </div>
+            <!-- start div -->
+            <div class="topic-section">
+                <h2 class="topic-header"><xsl:value-of select="@name" /></h2>
+                
+                <!-- paste in comments -->
+                <xsl:apply-templates select="comments" />
+                
+                <!-- decide whether to sort by subtopic or type -->
+                <xsl:choose>
+                    <!-- if there are subtopics, do that -->
+                    <xsl:when test="count(subtopic) &gt; 0">
+                        <xsl:apply-templates select="subtopic">
+                            <xsl:sort select="@sortkey" data-type="number" />
+                        </xsl:apply-templates>
+                    </xsl:when>
+                    <!-- if there are types, do that -->
+                    <xsl:when test="count(type) &gt; 0">
+                        <xsl:apply-templates select="type">
+                            <xsl:sort select="@sortkey-type" data-type="number" />
+                        </xsl:apply-templates>
+                    </xsl:when>
+                </xsl:choose>
+            </div>
+       </xsl:if>
     </xsl:template>
     
     <xsl:template match="subtopic">
-        <div class="subtopic-section">
-            <h3 class="subtopic-header"><xsl:value-of select="@name" /></h3>
+        <!-- if there are courses to display -->
+        <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
             
-            <xsl:apply-templates select="type">
-                <xsl:sort select="@sortkey-type" />
-            </xsl:apply-templates>
-            
-        </div>
+            <!-- start div -->
+            <div class="subtopic-section">
+                <h3 class="subtopic-header"><xsl:value-of select="@name" /></h3>
+                
+                <xsl:apply-templates select="type">
+                    <xsl:sort select="@sortkey-type" data-type="number" />
+                </xsl:apply-templates>
+                
+            </div>
+        </xsl:if>
     </xsl:template>
 
 
     <xsl:template match="type">
-        <div class="type-section {@id}">
-            <h4 class="type-header"><xsl:value-of select="@name" /> Courses</h4>
-                
-                <xsl:apply-templates select="course" />
-
-            <!--<xsl:apply-templates select="course">
-                <xsl:sort select="@sortkey" data-type="number" />
-                <xsl:sort select="@default-sortkey" />
-                <xsl:sort select="min(descendant::class/@section)" />
-            </xsl:apply-templates>-->
-        </div>
+        <!-- if there are courses to display -->
+        <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
+            
+            <!-- start div -->
+            <div class="type-section {@id}">
+                <h4 class="type-header"><xsl:value-of select="@name" /> Courses</h4>
+                    
+                    <xsl:apply-templates select="course" />
+    
+                <!--<xsl:apply-templates select="course">
+                    <xsl:sort select="@sortkey" data-type="number" />
+                    <xsl:sort select="@default-sortkey" />
+                    <xsl:sort select="min(descendant::class/@section)" />
+                </xsl:apply-templates>-->
+            </div>
+        </xsl:if>
     </xsl:template>
 
 
     <xsl:template match="course">
-        <xsl:variable name="core-class" select="if (@core-code) then ' core' else ''" />
-        <div class="course-section{$core-class}">
-            <!-- <xsl:apply-templates select="@sortkey | @default-sortkey" /> -->
-            <table>
-                <xsl:apply-templates select="class">
-                    <!--<xsl:sort select="@sortkey" data-type="number" />
-                    <xsl:sort select="@sortkey-days" data-type="number" />
-                    <xsl:sort select="@sortkey-date" data-type="number" />-->
-                    <xsl:sort select="@section" />
-                </xsl:apply-templates>
-            </table>
-            <xsl:apply-templates select="comments" />
-        </div>
+        <!-- if there are courses to display -->
+        <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
+            
+            <!-- start div -->
+            <xsl:variable name="core-class" select="if (@core-code) then ' core' else ''" />
+            <div class="course-section{$core-class}">
+                <!-- <xsl:apply-templates select="@sortkey | @default-sortkey" /> -->
+                <table>
+                    <xsl:apply-templates select="class">
+                        <!--<xsl:sort select="@sortkey" data-type="number" />-->
+                        <xsl:sort select="@sortkey-days"  data-type="number" />
+                        <xsl:sort select="@sortkey-times" data-type="number" />
+                        <xsl:sort select="@sortkey-date"  data-type="number" />
+                        <xsl:sort select="@section"       data-type="number" />
+                    </xsl:apply-templates>
+                </table>
+                <xsl:apply-templates select="comments" />
+            </div>
+        </xsl:if>
     </xsl:template>
 
-
-    <xsl:template match="class">
+    <!-- if there are classes with XX or ZZ for a topic code, skip 'em -->
+    <xsl:template match="class" />
+    <xsl:template match="class[@topic-code != 'XX' and @topic-code != 'ZZ']">
         <tr>
             <!-- <xsl:apply-templates select="@sortkey | @default-sortkey" /> -->
             <td class="number">
@@ -189,14 +227,12 @@
             <td class="dates"><xsl:value-of select="utils:format-dates(@date-start, @date-end)" />&#160;<xsl:apply-templates select="@weeks" /></td>
         </tr>
         <xsl:apply-templates select="meeting">
-            <!-- <xsl:sort select="@sortkey" /> -->
+            <xsl:sort select="@sortkey-method" data-type="number" />
+            <xsl:sort select="@sortkey-days"   data-type="number" />
+            <xsl:sort select="@sortkey-times"  data-type="number" />
         </xsl:apply-templates>
-
-        <tr>
-            <td class="class-comments" colspan="10">
-                <xsl:apply-templates select="comments" />
-            </td>
-        </tr>
+        
+        <xsl:apply-templates select="comments" />
     </xsl:template>
 
     <xsl:template match="class/@weeks">
@@ -249,16 +285,21 @@
          h1, p, b, i, table, tr, td
     ====================================================================== -->
     <xsl:template match="comments">
-        <div class="comments">
-            <xsl:choose>
-                <xsl:when test="not(p)">
-                    <p><xsl:apply-templates /></p>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates />
-                </xsl:otherwise>
-            </xsl:choose>
-        </div>
+        <!-- only include a row for comments if comments exist -->
+        <tr>
+            <td class="class-comments" colspan="10">
+                <div class="comments">
+                    <xsl:choose>
+                        <xsl:when test="not(p)">
+                            <p><xsl:apply-templates /></p>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:apply-templates />
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </div>
+            </td>
+        </tr>
     </xsl:template>
 
     <!-- skip any comments inside of <special-section>s -->
@@ -316,10 +357,10 @@
                     <xsl:variable name="email" select="if (contact/@email) then contact/@email else $division/contact/@email" />
 
                     <!-- division name -->
-                    <xsl:value-of select="upper-case($division/@name)" /><xsl:text>&#160;&#160;|&#160;&#160;</xsl:text>
+                    <xsl:value-of select="upper-case($division/@name)" /><xsl:text>&#160;|&#160;</xsl:text>
 
                     <!-- phone number plus extension -->
-                    <xsl:text>972-860-</xsl:text><xsl:value-of select="$ext" /><xsl:text>&#160;&#160;|&#160;&#160;</xsl:text>
+                    <xsl:text>972-860-</xsl:text><xsl:value-of select="$ext" /><xsl:text>&#160;|&#160;</xsl:text>
 
                     <!-- either room or rooms or location -->
                     <xsl:choose>
@@ -358,7 +399,7 @@
     <!-- the next two templates create the list of Core Curriculum courses
          at the top of each subject -->
     <xsl:template name="make-core-list">
-        <xsl:variable name="core-courses" select="descendant::course[@core-code]" />
+        <xsl:variable name="core-courses" select="descendant::course[@core-code and @core-code != '']" />
         <xsl:variable name="core-name"    select="$core-courses[1]/@core-name"    />
         <xsl:if test="$core-courses">
             <!--<xsl:variable name="core-code" select="lower-case((descendant::course/@core-code)[1])" />-->
@@ -373,7 +414,7 @@
                         <xsl:sort select="@rubric" />
 
                         <xsl:for-each-group select="current-group()" group-by="@number">
-                            <xsl:sort select="@number" />
+                            <xsl:sort select="@number" data-type="number" />
                             <xsl:value-of select="concat(@rubric, ' ', @number)" />
 
                             <xsl:if test="position() != last()">
@@ -396,145 +437,12 @@
         <html>
             <head>
                 <title>Proof of <xsl:value-of select="$page-title" /></title>
+                
+                <!-- paste in the css -->
                 <style type="text/css">
-                    <![CDATA[
-                             body {
-                             margin: .25in;
-                             padding: 0;
-                             }
-                             body, td, th {
-                             font-family: "Times New Roman", Times, serif;
-                             font-size: 8pt;
-                             }
-                             p {
-                             margin: 0;
-                             }
-                             .comments {
-                             text-indent: 1em;
-                             }
-
-
-
-h1, h2, h3, h4, h5, p.division-info {
-font-family: Arial, Verdana, sans-serif;
-font-weight: bold;
-margin: 0;
-}
-h1 { font-size: 18pt; }
-h2 { font-size: 12pt; }
-h3 { font-size: 10pt; }
-h4 { font-size: 10pt; }
-
-h1 span, h2 span, h3 span, h4 span, h5 span {
-display: block;
-font-size: 9pt;
-font-weight: normal;
-}
-
-h1, h2, h3 {
-border-bottom: 1px solid #999;
-}
-h2, h3 {
-font-style: italic;
-}
-
-
-div.subject-section {
-margin-bottom: 4em;
-}
-p.division-info {
-margin-bottom: .5em;
-font-weight: normal;
-font-size: 10pt;
-}
-
-div.core-list {
-margin-bottom: 1em;
-}
-div.core-list h2 {
-font-size: 10pt;
-font-weight: bold;
-font-style: normal;
-border: none;
-}
-
-
-.special-subject-header {
-font-size: 14pt;
-color: #030;
-}
-.minimester-header {
-font-size: 16pt;
-font-style: italic;
-}
-
-.topic-header {
-color: #360;
-}
-
-
-div.type-section {
-margin-bottom: 2em;
-}
-.type-header {
-text-decoration: underline;
-}
-
-
-
-div.group-section {
-margin-bottom: 1em;
-}
-div.group-section div.course-section {
-margin-bottom: 0;
-}
-
-
-div.course-section {
-margin-bottom: 1em;
-}
-td {
-padding: 0;
-padding-right: 1em;
-}
-td.dates, td.faculty {
-padding-right: 0;
-text-align: right;
-}
-td.method {
-padding-left: 1em;
-}
-tr.extra-meeting td {
-color: #693;
-}
-div.course-section p.comments {
-margin-top: -.4em;
-}
-
-div.course-section div.comments {
-background-color: #ffbfbf;
-}
-
-td.class-comments {
-background-color: #dff4ff;
-}
-td.class-comments div.comments {
-background-color: transparent;
-}
-
-div.N td {
-font-weight: bold;
-}
-div.DL td {
-text-decoration: underline;
-}
-                    ]]>
+                    <xsl:value-of select="$doc-css/text()" disable-output-escaping="yes" />
                     <xsl:if test="$with-highlighted-groups = 'true'">
-                        <![CDATA[
-                                 div.group-section {
-                                 background-color: #eee;
-                                 }
-                        ]]>
+                        <xsl:value-of select="$doc-css/conditional[@name = 'with-highlighted-groups']" disable-output-escaping="yes" />
                     </xsl:if>
                 </style>
             </head>

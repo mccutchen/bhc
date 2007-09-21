@@ -18,7 +18,7 @@
     
     <!-- parameters -->
     <xsl:param name="page-title">Room Coordinator Report</xsl:param>
-    <xsl:param name="output-directory">room-coordinator</xsl:param>
+    <xsl:param name="output-directory">output/room-coordinator</xsl:param>
     <xsl:param name="output-extension">.html</xsl:param>
     
     <!-- options -->
@@ -53,7 +53,7 @@
     </xsl:template>
     
     <xsl:template match="term">
-        <xsl:result-document href="{$output-directory}/room-coordinator-{utils:urlify(@name)}.html">
+        <xsl:result-document href="{$output-directory}/{utils:urlify(@year)}-{utils:urlify(@semester)}_room-coordinator.html">
             <html>
                 <head>
                     <title><xsl:value-of select="$page-title" /></title>
@@ -179,10 +179,10 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <td><xsl:value-of select="@days" />&#160;</td>
-                    <td><xsl:value-of select="utils:format-times(@start-time, @end-time)" />&#160;</td>
+                    <td><xsl:value-of select="utils:format-times(@time-start, @time-end)" />&#160;</td>
                 </xsl:otherwise>
             </xsl:choose>
-            <td><xsl:value-of select="utils:format-dates($class/@start-date, $class/@end-date)" />&#160;</td>
+            <td><xsl:value-of select="utils:format-dates($class/@date-start, $class/@date-end)" />&#160;</td>
             <td><xsl:value-of select="if (not($faculty-name)) then 'Staff' else $faculty-name" />&#160;</td>
             <td><xsl:value-of select="@room" />&#160;</td>
             <td><xsl:value-of select="@method" />&#160;</td>
@@ -206,8 +206,8 @@
             <td>&#160;</td>
             <th><em><xsl:value-of select="@method" /></em></th>
             <td><xsl:value-of select="@days" />&#160;</td>
-            <td><xsl:value-of select="utils:format-times(@start-time, @end-time)" />&#160;</td>
-            <td><xsl:value-of select="utils:format-dates($class/@start-date, $class/@end-date)" />&#160;</td>
+            <td><xsl:value-of select="utils:format-times(@time-start, @time-end)" />&#160;</td>
+            <td><xsl:value-of select="utils:format-dates($class/@date-start, $class/@date-end)" />&#160;</td>
             <td><xsl:value-of select="if (not($faculty-name)) then 'Staff' else $faculty-name" />&#160;</td>
             <td><xsl:value-of select="@room" />&#160;</td>
             <td><xsl:value-of select="@method" />&#160;</td>

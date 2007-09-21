@@ -1,64 +1,45 @@
-<!-- $Id: web.xsl 2336 2006-10-26 19:16:09Z wrm2110 $ -->
-
 <xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils" exclude-result-prefixes="xs utils">
-
-    <!-- include some handy utility functions -->
-    <xsl:include href="utils.xsl"/>
 
     <xsl:output method="xhtml" encoding="us-ascii" indent="yes" omit-xml-declaration="yes"
         doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
         doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
 
+    <!-- include some handy utility functions -->
+    <xsl:include href="utils.xsl"/>
 
-
-    <!-- ==========================================================================
-         Parameters:
-
-         Used to control the generated output
-         =========================================================================== -->
+    <!-- Parameters -->
     <!-- is this an "enrolling now" schedule? -->
     <xsl:param name="enrolling-now"/>
-
+    
+    <!-- Global Variables -->
     <!-- the schedule title -->
-    <xsl:param name="schedule-title"><xsl:value-of select="utils:strip-semester(//term[1]/@name)"/>
-        <xsl:value-of select="//term[1]/@year"/> Credit</xsl:param>
-
-    <!-- the "real" schedule title (this is an ugly hack to be able to insert "Enrolling Now" into the schedule title if I need to) -->
-    <xsl:param name="real-schedule-title">
-        <xsl:if test="$enrolling-now">Enrolling Now&#8212;</xsl:if>
-        <xsl:value-of select="$schedule-title"/>
-    </xsl:param>
+    <xsl:variable name="schedule-name"  select="concat(//term[1]/@semester, ' ', //term[1]/@year, ' Credit')" />
+    <xsl:variable name="schedule-title" select="if($enrolling-now and string-length($enrolling-now) &gt; 0) then concat('Enrolling Now&#8212;', $schedule-name) else $schedule-name" />
 
     <!-- the text for the channel-header on each schedule page -->
-    <xsl:param name="channel-header"><xsl:value-of select="$real-schedule-title"/> Course Schedule</xsl:param>
+    <xsl:variable name="channel-header" select="concat($schedule-title, ' Course Schedule')" />
 
-    <!-- output file parameters -->
-    <xsl:param name="output-directory">web-output</xsl:param>
-    <xsl:param name="output-extension">.aspx</xsl:param>
+    <!-- output file specifications -->
+    <xsl:variable name="output-directory" select="'output/web'" />
+    <xsl:variable name="output-extension" select="'.aspx'"      />
+    
+    <!-- multiple terms? -->
+    <xsl:variable name="multiple-terms" select="count(//term) &gt; 1" />
 
-    <xsl:variable name="multiple-terms" select="count(//term) &gt; 1"/>
-
-
-
-    <!-- ==========================================================================
-         Includes:
-
-         Include other required stylesheets
-         =========================================================================== -->
-    <xsl:include href="web/page-template.xsl"/>
-    <xsl:include href="web/indexer.xsl"/>
+    <!-- Include other required stylesheets -->
+    <xsl:include href="web/page-template.xsl" />
+    <xsl:include href="web/indexer.xsl"       />
 
 
 
 
-    <!-- ==========================================================================
-         Initialization:
-
-         This section creates all of the result documents for this schedule
-         by using the xsl:result-document facility.
-         =========================================================================== -->
+    <!-- ========================================================================== -->
+    <!-- Initialization:                                                            -->
+    <!-- This section creates all of the result documents for this schedule by      -->
+    <!--    using the xsl:result-document facility.                                 -->
+    <!-- ========================================================================== -->
     <xsl:template match="/">
         <xsl:apply-templates select="schedule" mode="init"/>
     </xsl:template>
@@ -67,28 +48,27 @@
         <!-- full schedule index -->
         <xsl:result-document href="{$output-directory}/index{$output-extension}">
             <xsl:call-template name="page-template">
-                <xsl:with-param name="page-title"><xsl:value-of select="$real-schedule-title"/>
-                    Course Index</xsl:with-param>
+                <xsl:with-param name="page-title" select="concat($schedule-title, ' Course Index')" />
             </xsl:call-template>
         </xsl:result-document>
 
         <xsl:apply-templates select="term" mode="init">
-            <xsl:with-param name="page-type" tunnel="yes">subindex</xsl:with-param>
+            <xsl:with-param name="page-type" select="'subindex'" tunnel="yes" />
         </xsl:apply-templates>
     </xsl:template>
 
     <xsl:template match="term" mode="init">
-        <xsl:param name="term-name" select="utils:strip-semester(@name)" />
+        <xsl:param name="term-name" select="concat(@year, ' ', @semester)" />
         
-        <xsl:if test="count(//term) &gt; 1">
+        <!-- ideally, this won't mattter
+        <xsl:if test="count(//term) &gt; 1"> -->
             <xsl:result-document
-                href="{$output-directory}/{utils:urlify($term-name)}/index{$output-extension}">
+                href="{$output-directory}/{utils:urlify(@semester)}/index{$output-extension}">
                 <xsl:call-template name="page-template">
-                    <xsl:with-param name="page-title"><xsl:value-of select="$term-name"/> Course
-                    Index</xsl:with-param>
+                    <xsl:with-param name="page-title" select="concat(@semester, ' Course Index')" />
                 </xsl:call-template>
             </xsl:result-document>
-        </xsl:if>
+        <!-- </xsl:if> -->
 
         <!-- special sections no longer exist -->
         <!-- special-section indexes
@@ -97,7 +77,7 @@
         </xsl:apply-templates> -->
 
         <!-- subject pages -->
-        <xsl:apply-templates select="descendant::grouping[@type = 'subject']" mode="init">
+        <xsl:apply-templates select="descendant::subject" mode="init">
             <xsl:with-param name="term-name" select="$term-name" />
         </xsl:apply-templates>
     </xsl:template>
@@ -121,14 +101,15 @@
         </xsl:result-document>
     </xsl:template> -->
 
-    <xsl:template match="grouping[@type = 'subject']" mode="init">
+    <xsl:template match="subject" mode="init">
         <xsl:param name="term-name" />
         
         <xsl:variable name="path-root">
             <xsl:value-of select="''"/>
-            <xsl:if test="$multiple-terms">
-                <xsl:value-of select="concat(utils:urlify($term-name), '/')"/>
-            </xsl:if>
+            <!-- ideally, this won't matter
+           <xsl:if test="$multiple-terms"> -->
+                <xsl:value-of select="concat(utils:urlify(ancestor::term/@semester), '/')"/>
+            <!-- </xsl:if> -->
             <xsl:choose>
                 <!-- special sections don't exist
                 <xsl:when test="ancestor::special-section and not(ancestor::minimester)">
@@ -161,9 +142,9 @@
          These templates are responsible for building the subject page content. The
          index pages are built by the included indexer.xsl.
          =========================================================================== -->
-    <xsl:template match="grouping[@type = 'subject']">
+    <xsl:template match="subject">
         <div class="subject">
-            <xsl:apply-templates select="description"/>
+            <xsl:apply-templates select="comments"/>
             <xsl:call-template name="subject-summary"/>
 
             <!-- insert a list of the Core courses -->
@@ -174,23 +155,25 @@
                  have courses that aren't in a subgroup (topic, etc.)
                  and courses that are in a subgroup.  See, e.g. EMS
                  courses. -->
-            <xsl:apply-templates select="grouping[@type = 'type']">
-                <xsl:sort select="@sortkey" data-type="number"/>
+            <xsl:apply-templates select="type">
+                <xsl:sort select="@sortkey-type" data-type="number"/>
             </xsl:apply-templates>
 
             <xsl:apply-templates select="topic">
-                <xsl:sort select="@sortkey" data-type="number"/>
+                <!-- I don't know of a topic sort order
+                    <xsl:sort select="@sortkey" data-type="number"/> -->
                 <xsl:sort select="@name"/>
             </xsl:apply-templates>
-
+            
+            <!-- special-sections no longer exist -->
             <!-- the type-specific special sections (like Distance
                  Learning) don't have <type> elements, so this will
-                 apply to their courses. -->
+                 apply to their courses.
             <xsl:apply-templates select="group | course">
                 <xsl:sort select="@sortkey" data-type="number"/>
                 <xsl:sort select="@default-sortkey"/>
                 <xsl:sort select="min(descendant::class/@section)"/>
-            </xsl:apply-templates>
+            </xsl:apply-templates> -->
 
             <xsl:if test="count(//term) &gt; 1">
                 <!-- link to the other terms at the bottom of the page -->
@@ -209,21 +192,23 @@
 
             <!-- output any stand-alone types before topics or subtopics -->
             <xsl:apply-templates select="type">
-                <xsl:sort select="@sortkey" data-type="number"/>
+                <xsl:sort select="@sortkey-type" data-type="number"/>
             </xsl:apply-templates>
 
             <xsl:apply-templates select="subtopic">
-                <xsl:sort select="@sortkey" data-type="number"/>
+                <!-- I don't know of a subtopic sort order
+                    <xsl:sort select="@sortkey" data-type="number"/> -->
                 <xsl:sort select="@name"/>
             </xsl:apply-templates>
 
+            <!-- special-sections no longer exist -->
             <!-- the type-specific special sections (like Distance Learning) don't have
-                 <type> elements, so this will apply to their courses. -->
+                 <type> elements, so this will apply to their courses.
             <xsl:apply-templates select="group | course">
                 <xsl:sort select="@sortkey" data-type="number"/>
                 <xsl:sort select="@default-sortkey"/>
                 <xsl:sort select="min(descendant::class/@section)"/>
-            </xsl:apply-templates>
+            </xsl:apply-templates> -->
         </div>
         <hr/>
     </xsl:template>
@@ -233,15 +218,20 @@
         <div class="schedule-type-section {utils:urlify(@name)}">
             <h2 class="schedule-type"><xsl:value-of select="@name"/> Courses</h2>
 
-            <xsl:apply-templates select="group | course">
-                <xsl:sort select="@sortkey" data-type="number"/>
-                <xsl:sort select="@default-sortkey"/>
+            <!-- no group elements
+            <xsl:apply-templates select="group | course">-->
+            <xsl:apply-templates select="course">
+                <!-- I don't know of a course sort order
+                    <xsl:sort select="@sortkey" data-type="number"/> -->
+                <xsl:sort select="@rubric" />
+                <xsl:sort select="@number" />
                 <xsl:sort select="min(descendant::class/@section)"/>
             </xsl:apply-templates>
         </div>
         <hr/>
     </xsl:template>
 
+    <!-- no group elements
     <xsl:template match="group">
         <div class="group">
             <xsl:apply-templates select="course">
@@ -250,9 +240,9 @@
                 <xsl:sort select="min(descendant::class/@section)"/>
             </xsl:apply-templates>
         </div>
-    </xsl:template>
+    </xsl:template> -->
 
-    <xsl:template match="course[@core-component and @core-component != '']">
+    <xsl:template match="course[@core-name and @core-name != '']">
         <div class="core-course">
             <xsl:next-match/>
         </div>
@@ -260,11 +250,11 @@
 
     <xsl:template match="course">
         <div class="course-section">
-            <a name="{@rubrik}-{@number}-{min(class/@section)}"/>
-            <a name="{@rubrik}-{@number}-{min(class/@section)}-{utils:urlify(@name)}"/>
+            <a name="{@rubric}-{@number}-{min(class/@section)}"/>
+            <a name="{@rubric}-{@number}-{min(class/@section)}-{utils:urlify(@title-long)}"/>
             <h3>
-                <xsl:value-of select="@title"/>
-                <xsl:if test="@core-component and @core-component != ''">
+                <xsl:value-of select="@title-long"/>
+                <xsl:if test="@core-name and @core-name != ''">
                     <span class="core">&#160;&#8226;&#160;Core Curriculum</span>
                 </xsl:if>
             </h3>
@@ -281,14 +271,16 @@
                     <th class="instructor">Instructor</th>
                 </tr>
                 <xsl:apply-templates select="class">
-                    <xsl:sort select="@sortkey" data-type="number"/>
-                    <xsl:sort select="@sortkey-days" data-type="number"/>
+                    <xsl:sort select="ancestor::course/@rubric" data-type="number" />
+                    <xsl:sort select="ancestor::course/@number" data-type="number" />
+                    <xsl:sort select="@sortkey-days"            data-type="number" />
+                    <!-- I haven't ported these yet
                     <xsl:sort select="@sortkey-date" data-type="number"/>
-                    <xsl:sort select="@sortkey-time" data-type="number" order="ascending"/>
-                    <xsl:sort select="@section"/>
+                    <xsl:sort select="@sortkey-time" data-type="number" order="ascending"/> -->
+                    <xsl:sort select="@section" />
                 </xsl:apply-templates>
             </table>
-            <xsl:apply-templates select="comments"/>
+            <xsl:apply-templates select="comments" />
             <p class="back-to-top">
                 <a href="#top">Back to the top</a>
             </p>
@@ -304,15 +296,16 @@
                 <xsl:value-of select="@synonym"/>
             </td>
             <td class="credit-hours">
-                <xsl:value-of select="../@credit-hours"/>
+                <xsl:value-of select="ancestor::course/@credit-hours"/>
             </td>
             <td class="dates">
-                <xsl:value-of select="@formatted-dates"/>
+                <xsl:value-of select="utils:format-dates(@date-start, @date-end)" />
                 <xsl:apply-templates select="@weeks"/>
             </td>
             <td class="days">
                 <xsl:apply-templates select="@days"/>
             </td>
+            <!-- um... from here down, the data is stored in <meeting>s, not <course>s.
             <td class="times">
                 <xsl:value-of select="@formatted-times"/>
             </td>
@@ -324,21 +317,22 @@
             </td>
             <td class="faculty">
                 <xsl:value-of select="@faculty-name"/>
-            </td>
+            </td> -->
         </tr>
+        <!-- no such thing as extra any more
         <xsl:apply-templates select="extra">
             <xsl:sort select="@sortkey"/>
-        </xsl:apply-templates>
+        </xsl:apply-templates>-->
     </xsl:template>
 
     <xsl:template name="class-number">
-        <xsl:if test="ancestor::course/@core-component and ancestor::course/@core-component != ''">
+        <xsl:if test="ancestor::course/@core-name and ancestor::course/@core-name != ''">
             <span>+&#160;</span>
         </xsl:if>
         <a
-            href="https://www1.dcccd.edu/catalog/coursedescriptions/detail.cfm?course={../@rubrik}&amp;number={../@number}&amp;loc=2"
+            href="https://www1.dcccd.edu/catalog/coursedescriptions/detail.cfm?course={../@rubric}&amp;number={../@number}&amp;loc=2"
             target="_blank">
-            <xsl:value-of select="../@rubrik"/>
+            <xsl:value-of select="../@rubric"/>
             <xsl:text>&#160;</xsl:text>
             <xsl:value-of select="../@number"/>
             <xsl:text>-</xsl:text>
@@ -534,13 +528,13 @@
                     subject</xsl:if> are part of the <xsl:if test="$core-component != 'other'"
                             ><xsl:value-of select="$core-component"/> component of the </xsl:if>
                     <a href="/course-schedules/credit/core/">Core Curriculum</a>: <br/>
-                    <xsl:for-each-group select="$core-courses" group-by="@rubrik">
-                        <xsl:sort select="@rubrik"/>
+                    <xsl:for-each-group select="$core-courses" group-by="@rubric">
+                        <xsl:sort select="@rubric"/>
 
                         <xsl:for-each-group select="current-group()" group-by="@number">
                             <xsl:sort select="@number"/>
-                            <a href="#{@rubrik}-{@number}-{class[1]/@section}">
-                                <xsl:value-of select="concat(@rubrik, ' ', @number)"/>
+                            <a href="#{@rubric}-{@number}-{class[1]/@section}">
+                                <xsl:value-of select="concat(@rubric, ' ', @number)"/>
                             </a>
 
                             <xsl:if test="position() != last()">
