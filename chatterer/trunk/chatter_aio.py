@@ -121,6 +121,8 @@ def GetFilenames(dir_in):
             f_list[id_hails] = f
         elif (f.lower().find('articles.txt') >= 0):
             f_list[id_articles] = f
+        elif (f.lower().find('issue-date.txt') >= 0):
+            continue;
         else:
             f_list[5].append(f)
     return f_list
@@ -134,6 +136,7 @@ def Format(line_in, replace = True):
         146: '&#8217;', # right single quote
         147: '&#8220;', # left double quote
         148: '&#8221;', # right double quote
+        133: '&#8230;', # elipsis
         150: '&#8211;', # dash
         151: '&#8212;', # long dash
         188: '&#188;',  # 1/4
@@ -555,6 +558,9 @@ def WriteFeatures(indent, lvl, announcement_list, event_list, birthday_list, hai
                 out_str = out_str + indent*(lvl+3) + '<event>\n'
                 out_str = out_str + indent*(lvl+4) + '<title>' + event[0] + '</title>\n'
                 for index in [1,2,3,4,5]:
+                    # hack
+                    if (index >= len(event)): continue;
+                    
                     item = 1
                     while item < len(event[index]):
                         tag_o = '<' + event[index][0] + '>'
