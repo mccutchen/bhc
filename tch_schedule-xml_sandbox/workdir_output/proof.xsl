@@ -55,7 +55,11 @@
     </xsl:template>
 
     <xsl:template match="subject" mode="init">
-        <xsl:variable name="output-path" select="concat(utils:urlify($output-directory), '/', utils:urlify(parent::division/@name), '/', utils:urlify(@name), $output-extension)" as="xs:string" />
+        <xsl:variable name="output-path" select="concat($output-directory, '/', utils:urlify(parent::division/@name), '/', utils:urlify(@name), $output-extension)" as="xs:string" />
+        <!-- debug -->
+        <xsl:if test="not($output-path)">
+            <xsl:message>$output-path does not exist</xsl:message>
+        </xsl:if>
         <xsl:result-document href="{$output-path}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name" />
