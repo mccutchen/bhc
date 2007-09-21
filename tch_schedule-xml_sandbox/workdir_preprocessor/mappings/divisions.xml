@@ -7,8 +7,6 @@
 			<pattern match="AUMT" />
 		</subject>
 		<subject name="Accounting">
-			<pattern match="ACNT" />
-			<pattern match="ACCT" />
 			<comments>
 				<p>
 					<b>NOTE:</b> If you are working toward obtaining the Accounting Clerk Certificate 
@@ -46,6 +44,8 @@
 					a Business/Technical elective.
 				</p>
 			</comments>
+			<pattern match="ACNT" />
+			<pattern match="ACCT" />
 		</subject>
 		<subject name="Business Office Systems and Support" sorted="true">
 			<contact email="bhcBOSS@dcccd.edu" />

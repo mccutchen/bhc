@@ -11,8 +11,8 @@ except ImportError:
 if __name__ == '__main__':
     # get filenames to work with
     import sys;
-    assert len(sys.argv) == 4, 'path and file name for DSC XML, flat XML, and tidy XML, respectively.';
-    dsc_path, flat_path, tidy_path = sys.argv[1:];
+    assert len(sys.argv) == 6, 'path and file name for DSC XML, flat XML, and tidy XML, respectively.';
+    dsc_path, flat_path, tidy_path, semester, year = sys.argv[1:];
 
     # get xml
     dsc_xml  = ET.ElementTree(file=dsc_path).findall('//class');
@@ -69,7 +69,7 @@ if __name__ == '__main__':
         if (not dsc_classes.has_key(k)): tidy_only.append(k);
 
     # now output
-    fout = file('class-compare.txt', 'w');
+    fout = file('output/' + year + '-' + semester + '_class-compare.txt', 'w');
     print 'DSC  ', len(dsc_classes), 'courses',
     if (len(dsc_repeats) > 0):
         print 'with errors:';

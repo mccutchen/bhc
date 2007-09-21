@@ -1,0 +1,3 @@
+@ECHO Testing output...
+@python -m class-compare data/schedule-200-2008SP.xml output/2008-Spring_flat.xml output/2008-Spring_tidy.xml Spring 2008
+@PAUSE

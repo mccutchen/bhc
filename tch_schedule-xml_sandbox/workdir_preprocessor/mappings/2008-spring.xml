@@ -93,20 +93,22 @@
                 <pattern match="INEW 2438-2502" />
                 <pattern match="ITSE 1407-2501" />
                 <pattern match="ITSE 1430-2502" />
+                <pattern match="ITSE 1432-2501" />
+                <pattern match="ITSE 1432-2502" />
                 <pattern match="ITSE 2417-2501" />
-                <pattern match="ITSE 2430-2501" />
+                <pattern match="ITSE 2453-2501" />
                 <pattern match="ITSE 2431-2501" />
-                <pattern match="ITSE 2449-2501" />
-                <pattern match="ITSE 2449-2502" />
             </topic>
             <topic name="Microsoft Academy Courses">
                 <comments>NOTE:  Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for a Microsoft Certified Systems Administrator, MCSA; a Microsoft Certified Systems Engineer, MCSE; and a Microsoft Certified Database Administrator, MCDBA.  For additional information, call 972-860-4176.</comments>
                 <pattern match="ITMC 2437-2501" />
-                <pattern match="ITMT 1400-2501" />
-                <pattern match="ITMT 1440-2501" />
                 <pattern match="ITMT 1450-2501" />
+                <pattern match="ITMT 2400-2501" />
+                <pattern match="ITMT 2403-2501" />
+                <pattern match="ITMT 1440-2250" />
             </topic>
             <topic name="UNIX">
+                <pattern match="ITSC 1407-2501" />
                 <pattern match="ITSC 2437-2501" />
                 <pattern match="ITSC 1458-2501" />
             </topic>
@@ -124,14 +126,18 @@
                 <pattern match="ITSE 1411-2002" />
                 <pattern match="IMED 2409-2501" />
                 <pattern match="IMED 2415-2502" />
+                <pattern match="INEW 1440-2501" />
                 <pattern match="INEW 2434-2501" />
+                <pattern match="ITSE 2402-2501" />
+                <pattern match="ITSE 2409-2501" />
                 <pattern match="ITSW 1410-2500" />
                 <pattern match="IMED-1416-2426" />
                 <pattern match="IMED-2409-2426" />
                 <pattern match="IMED 2415-2426" />
+                <pattern match="INEW 1440-2426" />
                 <pattern match="INEW 2434-2426" />
                 <pattern match="ITNW 1437-2426" />
-                <pattern match="ITSE 1411-426"  />
+                <pattern match="ITSE 1411-2426"  />
                 <pattern match="ITSE 2402-2426" />
                 <pattern match="ITSE 2409-2426" />
             </topic>
@@ -256,8 +262,8 @@
                 <pattern match="BCIS 1405-2422" />
             </topic>
             <topic name="Programming">
-                <pattern match="BCIS 1231-2501" />
-                <pattern match="BCIS 2431-2502" />
+                <pattern match="BCIS 1431-2501" />
+                <pattern match="BCIS 1431-2502" />
             </topic>
             <topic name="General Electives">
                 <pattern match="BCIS 2390-2426" />
@@ -336,6 +342,11 @@
                 <pattern match="ARTS 2312-2252" />
             </topic>
             <topic name="Design">
+				<comments>NOTE: Certain sections of Two-Dimensional Design and Three-Dimensional Design will be offered in collaboration. 
+					Students will work on the elements and principles of design through a coordinated series of assignments that transition 
+					from illusionary space (2D) to physical space (3D). These coordinated sections are highly recommended for art majors. 
+					Register for two of the following courses: ARTS 1311-2001, 2D Design, or ARTS 1311-2002, 2D Design, and ARTS 1312-2001, 
+					3D Design. For additional information, call Rick Maxwell, 972-860-4722.</comments>
                 <pattern match="ARTS 1311-2001" />
                 <pattern match="ARTS 1311-2002" />
                 <pattern match="ARTS 1312-2001" />
@@ -644,6 +655,10 @@
                 <pattern match="DANC 2222-2501" />
                 <pattern match="DANC 2223-2501" />
             </topic>
+			<topic name="Jazz">
+				<pattern match="DANC 1247-2501" />
+				<pattern match="DANC 1248-2501" />
+			</topic>
             <topic name="Ballet">
                 <pattern match="DANC 1341-2001" />
                 <pattern match="DANC 1342-2001" />
@@ -661,7 +676,7 @@
             <topic name="Modern Dance">
                 <comments>Students must have had one semester of dance training for the following classes.</comments>
                 <pattern match="DANC 1245-2001" />
-                <pattern match="DANC 1246-2501" />
+                <pattern match="DANC 1246-2001" /> <!-- modified 08/23/2007 from -2501 -->
                 <pattern match="DANC 2245-2001" />
                 <pattern match="DANC 2246-2001" />
                 <pattern match="DANC 1245-2501" />
@@ -714,8 +729,173 @@
                 </subtopic>
             </topic>
         </subject>
-    
+		
+		
+		
+		<subject name="Nursing">
+            <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+			<topic name="none">
+				<comments>NOTE: The following courses are available to anyone interested in the Nursing program. Acceptance into the program is NOT REQUIRED. For more information call 972-860-4754.</comments>
+				<pattern match="HPRS 1203" />
+				<pattern match="RNSG 1211" />
+				<pattern match="RNSG 1301" />
+				<pattern match="RNSG 1108" />
+			</topic>
+			<topic name="First Semester Program Students">
+				<comments>NOTE: The following courses are for students in the first semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+				<pattern match="RNSG 1105" />
+				<pattern match="RNSG 1413" />
+				<pattern match="RNSG 1360" />
+			</topic>
+			<topic name="Third Semester Program Students">
+				<comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+				<pattern match="RNSG 1443" />
+				<pattern match="RNSG 2461" />
+			</topic>
+		</subject>
+		
+		
+   <!-- =======================================================================
+            Health and Human Services
+        ======================================================================== -->
+		<subject name="Radiologic Sciences">
+            <comments>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+            <topic name="none">
+				<comments>NOTE: The following course is available to anyone interested in the Radiology Technology program.  Acceptance into the program is NOT REQUIRED. For more information call 972-860-4264.</comments>
+				<pattern match="RADR 1201-2002" />
+				<pattern match="RADR 1201-2003" />
+            </topic>
+            <topic name="First Semester Program Students">
+                <comments>NOTE: The following courses are for students in the first semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RADR 1201-2001" />
+                <pattern match="RADR 1411-2001" />
+                <pattern match="RADR 1411-2002" />
+                <pattern match="RADR 1411-2003" />
+                <pattern match="RADR 1411-2004" />
+                <pattern match="RADR 1411-2005" />
+                <pattern match="RADR 2309-2001" />
+                <pattern match="RADR 1203-2001" />
+                <pattern match="RADR 1203-2002" />
+                <pattern match="RADR 1203-2003" />
+                <pattern match="RADR 1203-2004" />
+            </topic>
+            <topic name="Fourth Semester Program Students">
+                <comments>NOTE: The following courses are for students in the fourth semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RADR 1266-2201" />
+                <pattern match="RADR 1266-2202" />
+                <pattern match="RADR 1266-2203" />
+                <pattern match="RADR 1267-2201" />
+                <pattern match="RADR 1267-2202" />
+                <pattern match="RADR 1267-2203" />
+                <pattern match="RADR 2240-2001" />
+                <pattern match="RADR 2233-2001" />
+                <pattern match="RADR 2233-2002" />
+            </topic>
+        </subject>
+		
+		<subject name="Humanities"> 
+             <topic name="None"> 
+                 <pattern match="HUMA" priority="1" /> 
+             </topic> 
+             <topic name="Humanities December Winter Term Courses"> 
+                 <pattern match="HUMA 1315-2202" priority="2" /> 
+                 <pattern match="HUMA 1315-2203" priority="2" /> 
+             </topic> 
+         </subject>
+		 
+   <!-- =======================================================================
+            Emergency Medical Services (Cletha Silas)
+        ======================================================================== -->
+		 <subject name="Emergency Medical Services">
+		 	<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http:www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's  health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcmMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.
+			</comments>
+		 	<topic name="Emergency Medical Services, Basic">
+				<subtopic name="EMT Class #40">
+					<pattern match="EMSP 1160-2640" />
+				</subtopic>
+				<subtopic name="EMT Class #41">
+					<pattern match="EMSP 1160-2641" />
+				</subtopic>
+				<subtopic name="EMT Class #43, B-Shift Days">
+					<comments>This class will follow the traditional Fire Department B-shift schedule. This class will be meeting on the following Saturdays from 8 a.m. - 5 p.m.: Jan. 19, Feb. 9, Mar. 13 and Apr. 12. A mandatory orientation will be held on Wednesday, Jan 16 from 8 a.m. - 5 p.m.</comments>
+					
+					<pattern match="EMSP 1501-2043" />
+					<pattern match="EMSP 1501-2001" />
+					<pattern match="EMSP 1501-2002" />
+					<pattern match="EMSP 1160-2643" />
+				</subtopic>
+				<subtopic name="EMT Class #44, C-Shift Days">
+					<comments>This class will follow the traditional Fire Department C-shift schedule. A mandatory orientation will be held on Jan 17  from 8am - 5pm.</comments>
+					<pattern match="EMSP 1501-2044" />
+					<pattern match="EMSP 1501-2003" />
+					<pattern match="EMSP 1501-2004" />
+				</subtopic>
+				<subtopic name="EMT-Basic Class #42, Flex - Night Class">
+					<comments>A Mandatory orientation will be held on Jan 14 from 6pm - 10pm.</comments>
+					<pattern match="EMSP 1501-2542" />
+					<pattern match="EMSP 1501-2500" />
+					<pattern match="EMSP 1501-2501" />
+					<pattern match="EMSP 1160-2642" />
+				</subtopic>
+			</topic>
+			<topic name="Emergency Medical Services, Paramedic">
+				<pattern match="EMSP 2332-2206" />
+				<subtopic name="Paramedic Class #17, B-Shift">
+					<pattern match="EMSP 2338-2217" />
+					<pattern match="EMSP 2338-2204" />
+					<pattern match="EMSP 2338-2205" />
+					<pattern match="EMSP 2143-2217" />
+					<pattern match="EMSP 2143-2204" />
+					<pattern match="EMSP 2143-2205" />
+					<pattern match="EMSP 2463-2217" />
+				</subtopic>
+				<subtopic name="Paramedic Class #18, C-Shift">
+					<pattern match="EMSP 2434-2218" />
+					<pattern match="EMSP 2434-2207" />
+					<pattern match="EMSP 1355-2218" />
+					<pattern match="EMSP 1355-2207" />
+					<pattern match="EMSP 2430-2218" />
+					<pattern match="EMSP 2430-2207" />
+					<pattern match="EMSP 2338-2218" />
+					<pattern match="EMSP 2338-2207" />
+					<pattern match="EMSP 2261-2218" />
+				</subtopic>
+				<subtopic name="Paramedic Class #19, Flex - Night Class">
+					<pattern match="EMSP 2434-2719" />
+					<pattern match="EMSP 2434-2700" />
+					<pattern match="EMSP 1355-2719" />
+					<pattern match="EMSP 1355-2700" />
+					<pattern match="EMSP 2430-2719" />
+					<pattern match="EMSP 2430-2700" />
+					<pattern match="EMSP 2338-2719" />
+					<pattern match="EMSP 2338-2700" />
+				</subtopic>
+				<subtopic name="Paramedic Class #20, B-Shift">
+					<pattern match="EMSP 1438-2220" />
+					<pattern match="EMSP 1438-2222" />
+					<pattern match="EMSP 1438-2223" />
+					<pattern match="EMSP 2261-2619" />
+				</subtopic>
+			</topic>
+		</subject>
+
+
+   <!-- =======================================================================
+            Management Program (Mary Lou Avera)
+        ======================================================================== -->
+        <subject name="Management Program">
+            <comments>NOTE:  Earn six credit hours, but attend class only one night per week for three hours.  For advisement, call the faculty members: Mary Lou Avera, 972-860-4179, marylou@dcccd.edu;  or Marisa Walsdorf, 972-860-4186, marisa_walsdorf@dcccd.edu.  Minimum requirements for enrollment:  a student must be currently employed in an appropriate job and meet the TSI requirements in reading and writing.  Credits are earned in a traditional on-campus course and in an on-the-job, cooperative education training course.  There are no course prerequisites, but students may enroll in only one co-op ed course per semester.  It is strongly recommended that interested students contact a faculty member before classes begin.  Visit us online at www.BrookhavenCollege.edu   then click on "M" for Management in the A-Z index.</comments>
+            <topic name="none">
+                <pattern match="HRPO 2307-2501"/>
+                <pattern match="BMGT 2382-2501"/>
+            </topic>
+            <topic name="none">
+                <pattern match="BMGT 2303-2502"/>
+                <pattern match="BMGT 2383-2502"/>
+            </topic>
+        </subject>
+
+
     </mapping>
 </mappings>
 
-<!-- New spring mappings will go here when we get them. -->

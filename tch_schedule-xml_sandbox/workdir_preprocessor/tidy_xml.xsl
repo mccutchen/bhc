@@ -147,7 +147,7 @@
 				<!-- special topic name 'none' just means "group, but don't display topic name" -->
 				<xsl:when test="compare(@name-of-topic, 'none') = 0">
 					<xsl:element name="topic">
-						<xsl:attribute name="name" select="none" />
+						<xsl:attribute name="name" select="'none'" />
 						
 						<xsl:call-template name="create-types">
 							<xsl:with-param name="classes" select="current-group()" />
@@ -156,7 +156,11 @@
 				</xsl:when>
 				<xsl:when test="count($topic-special) = 1">
 					<xsl:element name="topic">
-						<xsl:attribute name="name" select="current-grouping-key()" />
+						<xsl:attribute name="name"    select="current-grouping-key()"                        />
+						<xsl:attribute name="sortkey" select="index-of($subject-special/topic/@name, $name)" />
+						
+						<!-- copy comments, if they exist -->
+						<xsl:copy-of select="$topic-special/comments" />
 						
 						<!-- send those with topics to create-topics, those without to create-types -->
 						<xsl:variable name="courses-subtopic" select="current-group()[@name-of-subtopic]" as="element()*" />
@@ -182,7 +186,11 @@
 					<xsl:choose>
 						<xsl:when test="count($topic-normal) = 1">
 							<xsl:element name="topic">
-								<xsl:attribute name="name" select="current-grouping-key()" />
+								<xsl:attribute name="name"    select="current-grouping-key()"                       />
+								<xsl:attribute name="sortkey" select="index-of($subject-normal/topic/@name, $name)" />
+								
+								<!-- copy comments, if they exist -->
+								<xsl:copy-of select="$topic-normal/comments" />
 								
 								<!-- send those with topics to create-topics, those without to create-types -->
 								<xsl:variable name="courses-subtopic" select="current-group()[@name-of-subtopic]" as="element()*" />
@@ -226,7 +234,8 @@
 			<xsl:choose>
 				<xsl:when test="count($subtopic-special) = 1">
 					<xsl:element name="subtopic">
-						<xsl:attribute name="name" select="current-grouping-key()" />
+						<xsl:attribute name="name"    select="current-grouping-key()"                         />
+						<xsl:attribute name="sortkey" select="index-of($topic-special/subtopic/@name, $name)" />
 						
 						<xsl:call-template name="create-types">
 							<xsl:with-param name="classes" select="current-group()" />
@@ -240,7 +249,8 @@
 					<xsl:choose>
 						<xsl:when test="count($topic-normal) = 1">
 							<xsl:element name="topic">
-								<xsl:attribute name="name" select="current-grouping-key()" />
+								<xsl:attribute name="name"    select="current-grouping-key()"                        />
+								<xsl:attribute name="sortkey" select="index-of($topic-normal/subtopic/@name, $name)" />
 								
 								<xsl:call-template name="create-types">
 									<xsl:with-param name="classes" select="current-group()" />
@@ -265,8 +275,8 @@
 				<xsl:variable name="id" select="@type-schedule" as="xs:string" />
 				
 				<!-- write type info -->
-				<xsl:attribute name="name" select="$doc-sortkeys/sortkey[@type = 'type']/type[@id = $id]/@name" />
 				<xsl:attribute name="id"   select="@type-schedule"                                              />
+				<xsl:attribute name="name" select="$doc-sortkeys/sortkey[@type = 'type']/type[@id = $id]/@name" />
 				
 				<!-- write sortkey-type -->
 				<xsl:attribute name="sortkey-type" select="index-of($doc-sortkeys/sortkey[@type = 'type']/type/@id, current-grouping-key())" />
@@ -289,14 +299,6 @@
 				<xsl:element name="course">
 					<!-- write class info -->
 					<xsl:copy-of select="@rubric|@number|@title-short|@title-long|@credit-hours|@core-code|@core-name" />
-					<!--
-					<xsl:attribute name="rubric"       select="@rubric"       />
-					<xsl:attribute name="number"       select="@number"       />
-					<xsl:attribute name="title-short"  select="@title-short"  />
-					<xsl:attribute name="title-long"   select="@title-long"   />
-					<xsl:attribute name="credit-hours" select="@credit-hours" />
-					<xsl:attribute name="core-code"    select="@core-code"    />
-					<xsl:attribute name="core-name"    select="@core-name"    />-->
 					
 					<!-- copy comments -->
 					<xsl:apply-templates select="comments-course" />
@@ -316,14 +318,12 @@
 	
 	<xsl:template match="class">
 		<xsl:element name="class">
-			<xsl:attribute name="section"       select="@section"       />
-			<xsl:attribute name="synonym"       select="@synonym"       />
-			<xsl:attribute name="type-credit"   select="@type-credit"   />  <!-- I don't know if this is useful for anything, so I'll keep it -->
-			<xsl:attribute name="topic-code"    select="@topic-code"    />
-			<xsl:attribute name="weeks"         select="@weeks"         />
-			<xsl:attribute name="date-start"    select="@date-start"    />
-			<xsl:attribute name="date-end"      select="@date-end"      />
+			<xsl:copy-of select="@section|@synonym|@type-credit|@topic-code|@weeks|@date-start|@date-end" />
 			
+			<!-- for sorting purposes -->
+			<xsl:attribute name="sortkey-days"  select="fn:safe-min(meeting/@sortkey-days)"  />
+			<xsl:attribute name="sortkey-times" select="fn:safe-min(meeting/@sortkey-times)" />
+
 			<!-- copy meeting (with a few changes) -->
 			<xsl:apply-templates select="meeting" />
 			
@@ -337,14 +337,6 @@
 		<xsl:element name="meeting">
 			<!-- copy attributes -->
 			<xsl:copy-of select="attribute()" />
-			
-			<!-- write sortkey-days -->
-			<xsl:variable name="days" select="@days" />
-			<xsl:attribute name="sortkey-days" select="index-of($doc-sortkeys/sortkey[@type = 'days']/days/@id, $days)" />
-			
-			<!-- write sortkey-method -->
-			<xsl:variable name="method" select="@method" />
-			<xsl:attribute name="sortkey-method" select="index-of($doc-sortkeys/sortkey[@type = 'method']/method/@id, $method)" />
 			
 			<!-- copy the rest of the element's sub-elements -->
 			<xsl:copy-of select="*" />
@@ -384,6 +376,18 @@
 			<xsl:when test="number($year) = number($year)">yes</xsl:when>
 			<xsl:otherwise>no</xsl:otherwise>
 		</xsl:choose>
+	</xsl:function>
+	
+	<xsl:function name="fn:safe-min">
+		<xsl:param name="set_str" as="xs:string*" />
+		
+		<!-- And why, exactly, can't a null string be converted to an int? Who knows?
+			 Every other language I've used says an empty string evaluates to zero. -->
+		<xsl:variable name="set_non-empty" select="$set_str[string-length() &gt; 0]" as="xs:string*" />
+		
+		<xsl:if test="count($set_non-empty)">
+			<xsl:value-of select="min($set_non-empty)" />
+		</xsl:if>
 	</xsl:function>
 
 </xsl:stylesheet>

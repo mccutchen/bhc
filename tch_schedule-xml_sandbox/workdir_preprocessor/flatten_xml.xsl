@@ -26,6 +26,7 @@
 	<!-- some global vars -->
 	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, 'divisions.xml'))/divisions"  as="element()*" />
 	<xsl:variable name="doc-semester"  select="document(concat($dir-mappings, $file-semester))/mappings"    as="element()*" />
+	<xsl:variable name="doc-sortkeys"  select="document('mappings/sortkeys.xml')/sortkeys"                  as="element()*" />
 	<xsl:variable name="doc-core"      select="document(concat($dir-mappings, 'core.xml'))/core-components" as="element()*" />
 	<!-- something for sorting into minimesters -->
 	
@@ -94,8 +95,8 @@
 			<xsl:attribute name="type-credit"   select="@credit-type"                        />  <!-- I don't know if this is useful for anything, so I'll keep it -->
 			<xsl:attribute name="type-schedule" select="@schedule-type"                      />
 			<xsl:attribute name="topic-code"    select="@topic-code"                         />
-			<xsl:attribute name="credit-hours"  select="ancestor::course/@credit-hours"      />
-			<xsl:apply-templates select="ancestor::course/@core-code" />
+			<xsl:apply-templates select="ancestor::course/@credit-hours" />
+			<xsl:apply-templates select="ancestor::course/@core-code"    />
 			<xsl:attribute name="weeks"         select="@weeks"                              />
 			<xsl:attribute name="date-start"    select="utils:convert-date-std(@start-date)" />
 			<xsl:attribute name="date-end"      select="utils:convert-date-std(@end-date)"   />
@@ -153,6 +154,11 @@
 			
 		<!-- we're done. -->
 		</xsl:element>
+	</xsl:template>
+	
+	<!-- when copying the credit hours, strip off the .00 -->
+	<xsl:template match="@credit-hours">
+		<xsl:attribute name="credit-hours"  select="replace(., '.00', '')" />
 	</xsl:template>
 	
 	<!-- copying the core code involves a look-up -->
@@ -282,6 +288,18 @@
 			<xsl:attribute name="time-start" select="utils:convert-time-std(@start-time)" />
 			<xsl:attribute name="time-end"   select="utils:convert-time-std(@end-time)"   />
 			
+			<!-- insert sortkeys -->
+			<!-- write sortkey-days -->
+			<xsl:variable name="days" select="@days" />
+			<xsl:attribute name="sortkey-days" select="index-of($doc-sortkeys/sortkey[@type = 'days']/days/@id, $days)" />
+			
+			<!-- write sortkey-times -->
+			<xsl:attribute name="sortkey-times" select="fn:build-sortkey-times(@start-time)" />
+			
+			<!-- write sortkey-method -->
+			<xsl:variable name="method" select="@method" />
+			<xsl:attribute name="sortkey-method" select="index-of($doc-sortkeys/sortkey[@type = 'method']/method/@id, $method)" />
+			
 			<!-- for faculty elements -->
 			<xsl:apply-templates select="./*" />
 		</xsl:element>
@@ -354,5 +372,43 @@
 			<xsl:otherwise>no</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
+	
+	<!-- build sortkey-times -->
+	<xsl:function name="fn:build-sortkey-times">
+		<xsl:param name="time" as="xs:string" />
 		
+		<!-- ok, I'm going to cheat a bit here. Since there are only so many times available, we'll just convert to an int -->
+		<xsl:variable name="hour" select="substring-before($time, ':')"                 as="xs:string" />
+		<xsl:variable name="mins" select="substring(substring-after($time, ':'), 1, 2)" as="xs:string" />
+		
+		<xsl:choose>
+			<!-- pm -->
+			<xsl:when test="matches($time, '.*[pP].*')">
+				<xsl:choose>
+					<!-- if it's not 12pm, add 12 to it -->
+					<xsl:when test="$hour != '12'">
+						<xsl:value-of select="xs:string(xs:integer($hour) + 12)" /><xsl:value-of select="$mins" />
+					</xsl:when>
+					<!-- if it is 12pm, leave as-is. -->
+					<xsl:when test="$hour = '12'">
+						<xsl:value-of select="$hour" /><xsl:value-of select="$mins" />
+					</xsl:when>
+				</xsl:choose>
+			</xsl:when>
+			<!-- am -->
+			<xsl:when test="matches($time, '.*[aA].*')">
+				<xsl:choose>
+					<!-- if it's not 12am, leave as-is -->
+					<xsl:when test="$hour != '12'">
+						<xsl:value-of select="$hour" /><xsl:value-of select="$mins" />
+					</xsl:when>
+					<!-- if it is 12am, it's really 0am -->
+					<xsl:when test="$hour = '12'">
+						<xsl:value-of select="'00'" /><xsl:value-of select="$mins" />
+					</xsl:when>
+				</xsl:choose>
+			</xsl:when>
+		</xsl:choose>
+	</xsl:function>
+	
 </xsl:stylesheet>

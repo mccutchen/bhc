@@ -162,46 +162,35 @@
         <subject name="Art">
 
             <topic name="Art Appreciation">
-
                 <pattern match="ARTS 1301"/>
-
             </topic>
 
             <topic name="Art History">
-
                 <pattern match="ARTS 130[34]"/>
-
                 <pattern match="ARTS 2373-2001" />
-
             </topic>
+			
 			<topic name="Art and Computers">
-
 		        <pattern match="ARTS 2313-2001" />
 				<pattern match="ARTS 2314-2001" />
 				<pattern match="ARTS 2311-2004" />
 				<pattern match="ARTS 2348-2001" />
+				<pattern match="ARTS 2348-2201" /> <!-- added 2007-08-31: Digital Art I: New Genres -->
 				<pattern match="ARTS 2349-2001" />
+				<pattern match="ARTS 2349-2201" /> <!-- added 2007-08-31: Digital Art II: New Genres -->
 				<pattern match="ARTS 2311-2017" />
+				<pattern match="ARTS 2311-2201" /> <!-- added 2007-08-31: Adv Digitalart I: New Genres -->
 			</topic>
 
             <topic name="Art Metals">
-
 		        <pattern match="ARTS 2341-2001" />
-
 		        <pattern match="ARTS 2342-2001" />
-
 		        <pattern match="ARTS 2311-2013" />
-
 		        <pattern match="ARTS 2312-2007" />
-
 		        <pattern match="ARTS 2341-2501" />
-
 		        <pattern match="ARTS 2342-2501" />
-
 		        <pattern match="ARTS 2311-2507" />
-
 		        <pattern match="ARTS 2312-2507" />
-
 		    </topic>
 
 		    <topic name="Ceramics">
@@ -216,40 +205,24 @@
 				<pattern match="ARTS 2311-2018" />
 				<pattern match="ARTS 2312-2018" />
 				<pattern match="ARTS 2346-2501" />
-
 		        <pattern match="ARTS 2347-2501" />
-
 		        <pattern match="ARTS 2311-2506" />
-
 		        <pattern match="ARTS 2312-2505" />
-
 		        <pattern match="ARTS 2346-2502" />
-
 		        <pattern match="ARTS 2347-2502" />
-
 		        <pattern match="ARTS 2311-2509" />
-
 		        <pattern match="ARTS 2312-2509" />
-
 		        <pattern match="ARTS 2346-2250" />
-
 		        <pattern match="ARTS 2347-2250" />
-
 		        <pattern match="ARTS 2311-2252" />
-
 		        <pattern match="ARTS 2312-2252" />
-
 		    </topic>
 
 		    <topic name="Design">
 				<pattern match="ARTS 1311-2001" />
-
 		        <pattern match="ARTS 1311-2002" />
-
 		        <pattern match="ARTS 1312-2001" /><!-- moving 5/1 -->
-
 		        <pattern match="ARTS 1311-2003" />
-
 		        <pattern match="ARTS 1312-2002" />
 				<pattern match="ARTS 1311-2501" />
 				<pattern match="ARTS 1312-2501" />
@@ -267,151 +240,84 @@
 				<pattern match="ARTS 2311-2008" />
 				<pattern match="ARTS 2312-2002" />
 				<pattern match="ARTS 1316-2501" />
-
 		        <pattern match="ARTS 1317-2501" />
-
 		        <pattern match="ARTS 2311-2502" />
-
 		        <pattern match="ARTS 2312-2506" />
-
 		        <pattern match="ARTS 2323-2501" />
-
 		        <pattern match="ARTS 2324-2501" />
-
 		        <pattern match="ARTS 2311-2508" />
-
 		        <pattern match="ARTS 2312-2502" />
-
 		        <pattern match="ARTS 1316-2250" />
-
 		        <pattern match="ARTS 1317-2250" />
-
 		        <pattern match="ARTS 2311-2250" />
-
 		        <pattern match="ARTS 2312-2250" />
 			</topic>		
 
 		    <topic name="Painting">
-
 		        <pattern match="ARTS 2316-2001" />
-
 		        <pattern match="ARTS 2317-2001" />
-
 		        <pattern match="ARTS 2311-2006" />
-
 		        <pattern match="ARTS 2312-2004" />
-
 		        <pattern match="ARTS 2316-2002" />
-
 		        <pattern match="ARTS 2317-2002" />
-
 		        <pattern match="ARTS 2311-2015" />
-
 		        <pattern match="ARTS 2312-2015" />
-
 		        <pattern match="ARTS 2316-2003" />
-
 		        <pattern match="ARTS 2317-2003" />
-
 		        <pattern match="ARTS 2311-2012" />
-
 		        <pattern match="ARTS 2312-2005" />
-
 		        <pattern match="ARTS 2316-2004" />
-
 		        <pattern match="ARTS 2317-2004" />
-
 		        <pattern match="ARTS 2311-2007" />
-
 		        <pattern match="ARTS 2312-2017" />
-
 		        <pattern match="ARTS 2316-2501" />
-
 		        <pattern match="ARTS 2317-2501" />
-
 		        <pattern match="ARTS 2311-2504" />
-
 		        <pattern match="ARTS 2312-2510" />
-
 		        <pattern match="ARTS 2316-2250" />
-
 		        <pattern match="ARTS 2317-2250" />
-
 		        <pattern match="ARTS 2311-2251" />
-
 		        <pattern match="ARTS 2312-2251" />
-
 		    </topic>
 
 		    <topic name="Photography">
-
 		        <pattern match="ARTS 2356-2001" />
-
 		        <pattern match="ARTS 2357-2001" />
-
 		        <pattern match="ARTS 2311-2003" />
-
 		        <pattern match="ARTS 2312-2003" />
-
 		        <pattern match="ARTS 2356-2501" />
-
 		        <pattern match="ARTS 2357-2501" />
-
 		        <pattern match="ARTS 2311-2503" />
-
 		        <pattern match="ARTS 2312-2503" />
-
 		    </topic>
 
 		    <topic name="Printmaking">
-
 		        <pattern match="ARTS 2333-2001" />
-
 		        <pattern match="ARTS 2334-2001" />
-
 		        <pattern match="ARTS 2311-2009" />
-
 		        <pattern match="ARTS 2312-2006" />
-
 		        <pattern match="ARTS 2333-2501" />
-
 		        <pattern match="ARTS 2334-2501" />
-
 		        <pattern match="ARTS 2311-2505" />
-
 		        <pattern match="ARTS 2312-2504" />
-
 		    </topic>
 
 		    <topic name="Sculpture">
 			 	<pattern match="ARTS 2326-2001" />
-
 		        <pattern match="ARTS 2327-2001" />
-
 		        <pattern match="ARTS 2311-2001" />
-
 		        <pattern match="ARTS 2312-2001" />
-
 		        <pattern match="ARTS 2326-2501" />
-
 		        <pattern match="ARTS 2327-2501" />
-
 		        <pattern match="ARTS 2311-2501" />
-
 		        <pattern match="ARTS 2312-2501" />
-
 		    </topic>
 
 		    <topic name="Watercolor">
-
 		        <pattern match="ARTS 2366-2001" />
-
 		        <pattern match="ARTS 2367-2001" />
-
 		        <pattern match="ARTS 2311-2016" />
-
 		        <pattern match="ARTS 2312-2016" />
-
             </topic>
 		</subject>
 		
@@ -447,6 +353,7 @@
 				<pattern match="DANC 1222-2001"/>
 				<pattern match="DANC 1222-2501"/>
 				<pattern match="DANC 1223-2501"/>
+				<pattern match="DANC 1223-2700"/> <!-- added 2007-09-17: Hip Hop II -->
 				<pattern match="DANC 2222-2501"/>
 				<pattern match="DANC 2223-2501"/>
 			</topic>
@@ -467,6 +374,8 @@
 			<topic name="Modern Dance">
 				<comments>Students must have had one semester of dance training for the following classes.</comments>
 				<pattern match="DANC 1245-2001"/>
+				<pattern match="DANC 1245-2002"/> <!-- added 2007-08-17 -->
+				<pattern match="DANC 1245-2003"/> <!-- added 2007-08-17 -->
 				<pattern match="DANC 1246-2001"/>
 				<pattern match="DANC 2245-2001"/>
 				<pattern match="DANC 2246-2001"/>
@@ -492,12 +401,14 @@
 				<pattern match="DRAM 2366-2004" />
 				<pattern match="DRAM 2366-2420" />
 				<pattern match="DRAM 2366-2421" />
+				<pattern match="DRAM 2366-2200" /> <!-- added 2007-8-31: Film Appreciation I -->
 			</topic>
 			<topic name="Stage Movement">
 				<pattern match="DRAM 1322-2001" />
 			</topic>
 			<topic name="Stagecraft">
 				<pattern match="DRAM 1330-2001" />
+				<pattern match="DRAM 1330-2200" /> <!-- added 2007-08-31: Stagecraft I -->
 				<pattern match="DRAM 2331-2001" />
 			</topic>
 			<topic name="Acting">
@@ -509,6 +420,7 @@
 				<pattern match="DRAM 2351-2002" />
 				<pattern match="DRAM 2352-2001" />
 				<pattern match="DRAM 2352-2002" />
+				<pattern match="DRAM 2352-2200" /> <!-- added 2007-08-31: Acting IV -->
 				<pattern match="DRAM 1351-2501" />
 				<pattern match="DRAM 1352-2501" />
 				<pattern match="DRAM 2351-2501" />
@@ -570,6 +482,7 @@
 		    <topic name="Piano for Non Music Majors">
 		        <pattern match="MUSI 1181-2001" />
 		        <pattern match="MUSI 1181-2501" />
+				<pattern match="MUSI 1181-2502" /> <!-- added 2007-08-24 -->
 		        <pattern match="MUSI 1182-2501" />
 		    </topic>
 		    <topic name="Guitar">
@@ -599,6 +512,9 @@
 		            <pattern match="MUEN 1131-2001" />
 		            <pattern match="MUEN 1131-2002" />
 		        </subtopic>
+		    	<subtopic name="Percussion Ensemble">  <!-- Added 2007-08-17 -->
+		    		<pattern match="MUEN 1135-2201" /> <!-- Added 2007-08-17 -->
+		    	</subtopic>
 		        <subtopic name="Handbell Ensemble">
 		            <pattern match="MUEN 1135-2700" />
 		            <pattern match="MUEN 1135-2501" />
@@ -609,12 +525,15 @@
 		        </subtopic>
 		        <subtopic name="Vocal Jazz/Lab Band">
 		            <pattern match="MUEN 1151-2001" />
+					<pattern match="MUEN 1151-2201" /> <!-- added 2007-08-24 -->
 		            <pattern match="MUEN 2123-2001" />
 		            <pattern match="MUEN 2123-2002" />
+					<pattern match="MUEN 2123-2200" /> <!-- added 2007-09-07: Lab Band -->
 		            <pattern match="MUEN 2123-2501" />
 		        </subtopic>
 				<subtopic name="Women's Chorus">
 					<pattern match="MUEN 1151-2002" />
+					<pattern match="MUEN 1151-2202" /> <!-- added 2007-08-31: Vocal Ensemble -->
 				</subtopic>
 		        <subtopic name="Windsong Vocal Ensemble">
 		            <pattern match="MUEN 1153-2250" />
@@ -622,6 +541,7 @@
 		            <pattern match="MUEN 1153-2200" />
 		        </subtopic>
 		        <subtopic name="Brookhaven Choral Society">
+					<pattern match="MUEN 2141-2200" /> <!-- added 2007-09-07: Chorus -->
 		            <pattern match="MUEN 2141-2501" />
 		            <pattern match="MUEN 2141-2701" />
 		        </subtopic>
@@ -644,6 +564,8 @@
              CIT (Bill Hammerschlag)
              ======================================================================== -->
         <subject name="Computer Information Technology">
+			<pattern match="ITSC 1191-2781" /> <!-- Added 2007-09-17: Spc Tpc/Cmptr/Info Science,  - in the absence of any info from Bill Hammerschlag ("we're working on it") -->
+			<pattern match="ITSC 1291-2780" /> <!-- Added 2007-09-17: Spc Tpc/Cmptr/Info Science,  - in the absence of any info from Bill Hammerschlag ("we're working on it") -->
             <topic name="Introduction To Computing">
                 <comments>NOTE:  ITSC 1401 is a technical/occupational course required for certain certificate and associate degree plans.  It will not meet the Brookhaven College Core Curriculum and/or Associate in Arts or Associate in Science requirement, and is not for transfer to a four-year school.</comments>
                 <pattern match="ITSC 1401"/>
@@ -690,6 +612,7 @@
 		    </topic>
 		    <topic name="Information Security and LAN">
 		        <pattern match="ITCC 1400-2501" />
+				<pattern match="ITCC 1400-2700" /> <!-- added 2007-09-17: Router & Routing Basics -->
 		        <pattern match="ITNW 1451-2426" />
 		        <pattern match="ITSY 1400-2426" />
 		        <pattern match="ITSY 2400-2426" />
@@ -818,6 +741,10 @@
                 <p>NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. </p>
             </comments>
 				<pattern match="EMSP 2332-2204" /><!-- Added 4/26 - she wants this in two places, which I can't do -->
+				<!-- these two were RLC courses, incorrectly coded in colleague.
+				<pattern match="EMSP 1501-2280" /> - added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (yesterday))
+				<pattern match="EMSP 1501-2281" /> - added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (yesterday))
+				-->
             <topic name="Emergency Medical Services, Basic">
             	<pattern match="EMSP 1501-2220" />
 				<pattern match="EMSP 1501-2201" />
@@ -860,6 +787,7 @@
 					<pattern match="EMSP 2143-2201" />
 					<pattern match="EMSP 2463-2216" />
 					<pattern match="EMSP 2332-2005" /><!-- Added 07/06/2007 -->
+					<pattern match="EMSP 2332-2205" /><!-- added 2007-08-24 -->
                 </subtopic>
                 <subtopic name="Paramedic Class #17, B Shift">
                     <pattern match="EMSP 1355-2217" />
@@ -961,5 +889,14 @@
                 <pattern match="BMGT 2382-2502"/>
             </topic>
         </subject>
+		
+		
+		<!-- THIS IS A TEMPORARY FIX -->
+		<subject name="Nursing">
+            <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+            <pattern match="HPRS" />
+            <pattern match="RNSG" />
+		</subject>
+
     </mapping>
 </mappings>
