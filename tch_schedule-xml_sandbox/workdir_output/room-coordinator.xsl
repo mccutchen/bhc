@@ -125,6 +125,8 @@
         <!-- just call them by the unique 'rubric number section' sets -->
         <xsl:for-each-group select="$meetings" group-by="ancestor::course/@rubric"> <!-- and ancestor::course/@number and ancestor::class/@section"> -->
             <xsl:sort select="ancestor::course/@rubric" />
+            <xsl:sort select="ancestor::course/@number" />
+            <xsl:sort select="ancestor::class/@section" />
             
             <xsl:variable name="rubric" select="ancestor::course/@rubric" />
             <xsl:variable name="rubric-set" select="$meetings[ancestor::course/@rubric = $rubric]" />
@@ -164,14 +166,14 @@
     </xsl:template>
     
     <xsl:template match="meeting" mode="main">
-        <xsl:variable name="type" select="ancestor::grouping[@type = 'type']" />
+        <xsl:variable name="type-id" select="ancestor::type/@id" />
         <xsl:variable name="course" select="ancestor::course" />
         <xsl:variable name="class" select="parent::class" />
-        <xsl:variable name="faculty-name" select="descendant::faculty/@last-name" />
+        <xsl:variable name="faculty-name" select="descendant::faculty/@name-last" />
         
         <tr class="{$course/@type-id}">
             <td><xsl:value-of select="$course/@rubric" />&#160;<xsl:value-of select="$course/@number" />-<xsl:value-of select="$class/@section" />&#160;</td>
-            <th><xsl:value-of select="$course/@title" />&#160;</th>
+            <th><xsl:value-of select="$course/@title-long" />&#160;</th>
             <xsl:choose>
                 <xsl:when test="@method = 'INET' or @room = 'INET'">
                     <td>NA&#160;</td>
@@ -186,7 +188,7 @@
             <td><xsl:value-of select="if (not($faculty-name)) then 'Staff' else $faculty-name" />&#160;</td>
             <td><xsl:value-of select="@room" />&#160;</td>
             <td><xsl:value-of select="@method" />&#160;</td>
-            <td><xsl:value-of select="$course/@type-id" />&#160;</td>
+            <td><xsl:value-of select="$type-id" />&#160;</td>
             <td><xsl:value-of select="$class/@capacity" />&#160;</td>
         </tr>
         
@@ -207,12 +209,14 @@
             <th><em><xsl:value-of select="@method" /></em></th>
             <td><xsl:value-of select="@days" />&#160;</td>
             <td><xsl:value-of select="utils:format-times(@time-start, @time-end)" />&#160;</td>
-            <td><xsl:value-of select="utils:format-dates($class/@date-start, $class/@date-end)" />&#160;</td>
+            <td>&#160;</td><!-- no dates
+            <td><xsl:value-of select="utils:format-dates($class/@date-start, $class/@date-end)" />&#160;</td> -->
             <td><xsl:value-of select="if (not($faculty-name)) then 'Staff' else $faculty-name" />&#160;</td>
             <td><xsl:value-of select="@room" />&#160;</td>
             <td><xsl:value-of select="@method" />&#160;</td>
-            <td><xsl:text> </xsl:text>&#160;</td>
-            <td><xsl:text> </xsl:text>&#160;</td>
+            <td>&#160;</td><!-- no course type
+            <td><xsl:text> </xsl:text>&#160;</td> -->
+            <td><xsl:value-of select="@section-capacity" />&#160;</td>
         </tr>
     </xsl:template>
     

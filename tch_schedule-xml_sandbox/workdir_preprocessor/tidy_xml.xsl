@@ -318,7 +318,7 @@
 	
 	<xsl:template match="class">
 		<xsl:element name="class">
-			<xsl:copy-of select="@section|@synonym|@type-credit|@topic-code|@weeks|@date-start|@date-end" />
+			<xsl:copy-of select="@section|@synonym|@type-credit|@topic-code|@capacity|@weeks|@date-start|@date-end" />
 			
 			<!-- for sorting purposes -->
 			<xsl:attribute name="sortkey-days"  select="fn:safe-min(meeting/@sortkey-days)"  />

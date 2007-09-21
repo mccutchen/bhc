@@ -97,6 +97,7 @@
 			<xsl:attribute name="topic-code"    select="@topic-code"                         />
 			<xsl:apply-templates select="ancestor::course/@credit-hours" />
 			<xsl:apply-templates select="ancestor::course/@core-code"    />
+			<xsl:attribute name="capacity"      select="@capacity"                           />
 			<xsl:attribute name="weeks"         select="@weeks"                              />
 			<xsl:attribute name="date-start"    select="utils:convert-date-std(@start-date)" />
 			<xsl:attribute name="date-end"      select="utils:convert-date-std(@end-date)"   />
