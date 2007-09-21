@@ -742,8 +742,8 @@
             </comments>
 				<pattern match="EMSP 2332-2204" /><!-- Added 4/26 - she wants this in two places, which I can't do -->
 				<!-- these two were RLC courses, incorrectly coded in colleague.
-				<pattern match="EMSP 1501-2280" /> -- added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (3 hours ago)) --
-				<pattern match="EMSP 1501-2281" /> -- added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (3 hours ago)) --
+				<pattern match="EMSP 1501-2280" /> - added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (3 hours ago)) -
+				<pattern match="EMSP 1501-2281" /> - added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (3 hours ago)) -
 				-->
             <topic name="Emergency Medical Services, Basic">
             	<pattern match="EMSP 1501-2220" />
