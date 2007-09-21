@@ -75,6 +75,9 @@
         <subject name="CIT - ITSC - Unsorted">
             <pattern match="ITSC" priority="0" unsorted="true" />
         </subject>
+		<subject name="CIT - ITCC - Unsorted">							<!-- added 2007-09-17: new rubric? -->
+			<pattern match="ITCC" priority="0" unsorted="true" />
+		</subject>
         <subject name="CIT - ITSE - Unsorted">
             <pattern match="ITSE" priority="0" unsorted="true" />
         </subject>
