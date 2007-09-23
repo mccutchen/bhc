@@ -131,18 +131,20 @@
                 <pattern match="ITSE 2402-2501" />
                 <pattern match="ITSE 2409-2501" />
                 <pattern match="ITSW 1410-2500" />
-                <pattern match="IMED-1416-2426" />
-                <pattern match="IMED-2409-2426" />
+                <pattern match="IMED 1416-2426" />
+                <pattern match="IMED 2409-2426" />
                 <pattern match="IMED 2415-2426" />
                 <pattern match="INEW 1440-2426" />
                 <pattern match="INEW 2434-2426" />
                 <pattern match="ITNW 1437-2426" />
-                <pattern match="ITSE 1411-2426"  />
+                <pattern match="ITSE 1411-2426" />
                 <pattern match="ITSE 2402-2426" />
                 <pattern match="ITSE 2409-2426" />
             </topic>
             <topic name="Application Software Courses">
                 <pattern match="ITSC 1409-2001" />
+                <pattern match="ITSC 1409-2501" /> <!-- added 9/23 per P. Byars -->
+                <pattern match="ITSC 1409-2250" /> <!-- added 9/23 per P. Byars, replacement for some ITSC 2431 -->
                 <pattern match="ITSC 2431-2300" />
                 <pattern match="ITSW 1404-2001" />
                 <pattern match="ITSW 1407-2001" />
@@ -150,6 +152,8 @@
                 <pattern match="ITSC 1191-2250" />
                 <pattern match="ITSC 1191-2201" />
                 <pattern match="ITSC 1191-2202" />
+                <pattern match="ITSC 1191-2203" /> <!-- added 9/23 per P. Byars -->
+                <pattern match="ITSC 1191-2703" /> <!-- added 9/23 per P. Byars -->
                 <pattern match="ITSC 1291-2200" />
                 <pattern match="ITSW 1401-2200" />
                 <pattern match="ITSC 1409-2500" />
