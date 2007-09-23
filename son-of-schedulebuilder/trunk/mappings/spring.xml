@@ -452,6 +452,10 @@
         </subject>
         
         <subject name="Music">
+            <topic name="Music - Piano for Senior Adults">
+                <pattern match="MUSI 1181-2006" />
+                <pattern match="MUSI 1182-2007" />
+            </topic>
             <topic name="Music Appreciation">
                 <pattern match="MUSI 1306-2001" />
                 <pattern match="MUSI 1306-2002" />
@@ -466,6 +470,9 @@
                 <pattern match="MUSI 1306-2432" />
                 <pattern match="MUSI 1306-2433" />
                 <pattern match="MUSI 1306-2300" />
+                <pattern match="MUSI 1306-2250" />
+                <pattern match="MUSI 1306-2251" />
+                <pattern match="MUSI 1306-2700" />
             </topic>
             <topic name="Music Theory">
                 <pattern match="MUSI 1311-2001" />
@@ -507,8 +514,10 @@
             </topic>
             <topic name="Piano For Non Music Majors">
                 <pattern match="MUSI 1181-2001" />
+                <pattern match="MUSI 1181-2003" />
                 <pattern match="MUSI 1181-2501" />
                 <pattern match="MUSI 1181-2502" />
+                <pattern match="MUSI 1182-2501" />
             </topic>
             <topic name="Guitar">
                 <pattern match="MUSI 1192-2001" />
@@ -567,8 +576,10 @@
                     <pattern match="MUAP 1105-2001" />
                     <pattern match="MUAP 1109-2001" />
                     <pattern match="MUAP 1109-2202" />
+                    <pattern match="MUAP 1109-2002" />
                     <pattern match="MUAP 1113-2001" />
                     <pattern match="MUAP 1117-2001" />
+                    <pattern match="MUAP 1117-2002" />
                     <pattern match="MUAP 1121-2001" />
                     <pattern match="MUAP 1125-2001" />
                     <pattern match="MUAP 1125-2002" />
@@ -577,6 +588,7 @@
                     <pattern match="MUAP 1133-2001" />
                     <pattern match="MUAP 1133-2002" />
                     <pattern match="MUAP 1137-2001" />
+                    <pattern match="MUAP 1137-2002" />
                     <pattern match="MUAP 1141-2001" />
                     <pattern match="MUAP 1141-2002" />
                     <pattern match="MUAP 1145-2001" />
@@ -598,6 +610,7 @@
                     <pattern match="MUAP 1181-2003" />
                     <pattern match="MUAP 1181-2004" />
                     <pattern match="MUAP 1181-2005" />
+                    <pattern match="MUAP 1181-2006" />
                     <pattern match="MUAP 1181-2007" />
                 </subtopic>
                 <subtopic name="Intermediate">
@@ -616,6 +629,8 @@
                     <pattern match="MUAP 2269-2004" />
                     <pattern match="MUAP 2281-2001" />
                     <pattern match="MUAP 2281-2002" />
+                    <pattern match="MUAP 2217-2001" />
+                    <pattern match="MUAP 2229-2001" />
                 </subtopic>
             </topic>
         </subject>
@@ -730,8 +745,17 @@
             </topic>
         </subject>
 		
-		
-		
+		<subject name="Humanities"> 
+             <topic name="None"> 
+                 <pattern match="HUMA" priority="1" /> 
+             </topic> 
+            <topic name="December Winter Flex Term">
+                 <pattern match="HUMA 1315-2202" priority="2" /> 
+                 <pattern match="HUMA 1315-2203" priority="2" /> 
+             </topic> 
+         </subject>
+         
+         
 		<subject name="Nursing">
             <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
 			<topic name="none">
@@ -793,15 +817,7 @@
             </topic>
         </subject>
 		
-		<subject name="Humanities"> 
-             <topic name="None"> 
-                 <pattern match="HUMA" priority="1" /> 
-             </topic> 
-             <topic name="Humanities December Winter Term Courses"> 
-                 <pattern match="HUMA 1315-2202" priority="2" /> 
-                 <pattern match="HUMA 1315-2203" priority="2" /> 
-             </topic> 
-         </subject>
+
 		 
    <!-- =======================================================================
             Emergency Medical Services (Cletha Silas)
