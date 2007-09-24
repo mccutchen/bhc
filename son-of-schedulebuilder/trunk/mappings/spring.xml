@@ -61,7 +61,94 @@
             </topic>
         </subject>
 
-    
+  <!-- =======================================================================
+            Coordinated Studies (Resi Douglas)
+        ======================================================================== -->
+        <subject name="Coordinated Studies">
+            <comments>
+                <h1>AMERICA AT THE CROSSROADS</h1>
+                <p>The coordinated studies courses meet Monday through Thursday from 9-11:50 a.m. in Room T303</p>
+                <p>The program is a 12-credit-hour block of choices from <b>CORE CURRICULUM COURSES</b>, interrelated by the theme <b>"America at the Crossroads."</b>  </p>
+                <p>Students will hear diverse perspectives related to their course work from four different instructors. This learning community emphasizes interactive learning activities, community building and team work.  Through coordinating ideas students will develop critical thinking skills.  This program includes readings from popular sources.  The four program professors together meet with the entire group daily, so student-teacher interaction is enhanced. </p>
+                <p>Enrollment is limited to 90 students, so a true learning community is formed.  </p>
+                <p><b>To register for the Coordinated Studies Program, see an advisor in the Brookhaven College Advising and Counseling Center, Bldg. S, Room S113.</b></p>
+                <p><b>Choose four courses from the following list:</b></p>
+                <table margin="5" border="0" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td>Cultural Studies</td>
+                        <td>CUST 2370</td>
+                    </tr>                    <tr>
+                        <td>English Composition I OR II</td>
+                        <td>ENGL 1301 OR ENGL 1302</td>
+                        <td>Students will need to choose between ENGL 1311 and 1302 as per prerequisites.</td>
+                    </tr>
+                    <tr>
+                        <td>American Government</td>
+                        <td>GOVT 2301</td>
+                    </tr>
+  					<tr>
+                        <td>Introduction to Comparative Politics</td>
+                        <td>GOVT 2371</td>
+                    </tr>                    <tr>
+                        <td>History of the U.S.</td>
+                        <td>HIST 1302</td>
+                    </tr>
+                    <tr>
+                        <td>Ethics</td>
+                        <td>PHIL 2306</td>
+                    </tr>      
+                    <tr>
+                        <td>Introduction to Speech OR Fundamentals of Public Speaking</td>
+                        <td>SPCH 1311 OR SPCH 1315</td></tr>
+                        <tr>
+                        <td>Students should be advised to choose between SPCH 1311 and 1315 based on their degree requirement.</td>
+                    </tr> 
+				</table>                    
+                <p>Students should take their paid registration summary to the first day of class. For more information, please contact Delryn Fleming at 972-860-4772 or e-mail Delryn@dcccd.edu.</p>
+            </comments>
+            <pattern match="ALCE" />
+        </subject>
+
+        <!-- These are the courses that should have coordinated studies subheads.  They are sloppily out of any kind of order, but I don't think it matters. -->
+        <subject name="English">
+            <topic name="Coordinated Studies">
+                <pattern match="ENGL 1301-2050" />
+                <pattern match="ENGL 1302-2050" />
+            </topic>
+        </subject>
+        
+        <subject name="Speech">
+            <topic name="Coordinated Studies">
+                <pattern match="SPCH 1311-2050" />
+                <pattern match="SPCH 1315-2050" />
+            </topic>
+        </subject>
+        
+        <subject name="Government">
+            <topic name="Coordinated Studies">
+                <pattern match="GOVT 2301-2050" />
+                <pattern match="GOVT 2371-2050" />
+            </topic>
+		</subject>
+		
+        <subject name="Philosophy">
+            <topic name="Coordinated Studies">
+                <pattern match="PHIL 2306-2050" />
+            </topic>
+		</subject>
+		
+        <subject name="Cultural Studies">
+            <topic name="Coordinated Studies">
+                <pattern match="CUST 2370-2050" />
+            </topic>
+		</subject>
+            
+        <subject name="History">
+            <topic name="Coordinated Studies">
+                <pattern match="HIST 1302-2050" />
+            </topic>
+		</subject>
+
     
         <!-- =======================================================================
             CIT (Bill Hammerschlag)
