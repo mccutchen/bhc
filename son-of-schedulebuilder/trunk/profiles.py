@@ -85,7 +85,7 @@ class CreditProfile(BaseProfile):
         'topic-code': ['^E$'],
     }
     skip_cross_listings = {
-        'rubrik': [],
+        'rubrik': ['EMSP'],
     }
 
     # a list of topic codes to skip
