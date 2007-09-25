@@ -930,21 +930,18 @@
 					<pattern match="EMSP 1160-2641" />
 				</subtopic>
 		 	    <subtopic name="EMT-Basic Class #42">
-		 	        <comments>A Mandatory orientation will be held on Jan 14 from 6pm - 10pm.</comments>
 		 	        <pattern match="EMSP 1501-2542" />
 		 	        <pattern match="EMSP 1501-2500" />
 		 	        <pattern match="EMSP 1501-2501" />
 		 	        <pattern match="EMSP 1160-2642" />
 		 	    </subtopic>
 		 	    <subtopic name="EMT Class #43, B-Shift">
-		 	        <comments>This class will follow the traditional Fire Department B-shift schedule. This class will be meeting on the following Saturdays from 8 a.m. - 5 p.m.: Jan. 19, Feb. 9, Mar. 13 and Apr. 12. A mandatory orientation will be held on Jan 16 from 8 a.m. - 5 p.m.</comments>
 					<pattern match="EMSP 1501-2243" />
 					<pattern match="EMSP 1501-2201" />
 					<pattern match="EMSP 1501-2202" />
 					<pattern match="EMSP 1160-2643" />
 				</subtopic>
 				<subtopic name="EMT Class #44, C-Shift">
-				    <comments>This class will follow the traditional Fire Department C-shift schedule.  A mandatory orientation will be held on Jan 17 from 8 a.m. - 5 p.m.</comments>
 					<pattern match="EMSP 1501-2244" />
 					<pattern match="EMSP 1501-2203" />
 					<pattern match="EMSP 1501-2204" />
