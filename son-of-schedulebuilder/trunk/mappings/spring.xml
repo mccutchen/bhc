@@ -266,7 +266,9 @@
                 <pattern match="ITSC 2431-2427" />
                 <pattern match="ITSC 2431-2428" />
                 <pattern match="ITSC 2431-2429" />
-                <pattern match="ITSW 1401-2426" />
+                <pattern match="ITSC 1315-2426" />
+                <pattern match="ITSC 1315-2427" />                
+				<pattern match="ITSW 1401-2426" />
                 <pattern match="ITSW 1401-2427" />
                 <pattern match="ITSW 1401-2428" />
                 <pattern match="ITSW 1401-2429" />
