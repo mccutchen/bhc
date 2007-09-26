@@ -372,6 +372,7 @@
                 <pattern match="ARTS 1301-2001" />
                 <pattern match="ARTS 1301-2002" />
                 <pattern match="ARTS 1301-2003" />
+                <pattern match="ARTS 1301-2010" />
                 <pattern match="ARTS 1301-2004" />
                 <pattern match="ARTS 1301-2005" />
                 <pattern match="ARTS 1301-2006" />
@@ -383,7 +384,6 @@
                 <pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2250" />
                 <pattern match="ARTS 1301-2420" />
-                <pattern match="ARTS 1301-2010" />
                 <pattern match="ARTS 1301-2251" />
                 <pattern match="ARTS 1301-2421" />
             </topic>
@@ -715,6 +715,8 @@
                     <pattern match="MUAP 2201-2001" />
                     <pattern match="MUAP 2209-2001" />
                     <pattern match="MUAP 2209-2002" />
+                    <pattern match="MUAP 2217-2001" />
+                    <pattern match="MUAP 2229-2001" />
                     <pattern match="MUAP 2233-2001" />
                     <pattern match="MUAP 2237-2001" />
                     <pattern match="MUAP 2257-2002" />
@@ -726,8 +728,6 @@
                     <pattern match="MUAP 2269-2004" />
                     <pattern match="MUAP 2281-2001" />
                     <pattern match="MUAP 2281-2002" />
-                    <pattern match="MUAP 2217-2001" />
-                    <pattern match="MUAP 2229-2001" />
                 </subtopic>
             </topic>
         </subject>
