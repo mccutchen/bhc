@@ -56,9 +56,12 @@
             <pattern match="SCIT" priority="0" unsorted="true" />
         </subject>
         <subject name="Business">
-            <pattern match="BUSI" priority="0" unsorted="true" />
-            <pattern match="BCIS" priority="0" unsorted="true" />
-            <pattern match="IBUS" priority="0" unsorted="true" />
+            <!-- Ok, I'm going to try this. Basically, IBUS 1305 should follow BUSI 1305 -->
+            <pattern match="BCIS" priority="0" />
+            <pattern match="BUSI 130[0-5]" priority="1" />
+            <pattern match="IBUS 1305" priority="1" />
+            <pattern match="BUSI" priority="0" />
+            <pattern match="IBUS" priority="0" />
         </subject>
         <subject name="CIT - COSC - Unsorted">
             <pattern match="COSC" priority="0" unsorted="true" />
