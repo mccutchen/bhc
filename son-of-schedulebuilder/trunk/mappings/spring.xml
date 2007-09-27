@@ -926,28 +926,28 @@
 		    <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http:www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcmMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.  NOTE: REQUIRED:  Current CPR AHA Healthcare Provider or equivalent certification.</comments>
 		 	<topic name="Emergency Medical Services, Basic">
 				<subtopic name="EMT Class #40">
-					<pattern match="EMSP 1160-2640" />
+					<pattern match="EMSP 1160-2240" />
 				</subtopic>
 				<subtopic name="EMT Class #41">
-					<pattern match="EMSP 1160-2641" />
+					<pattern match="EMSP 1160-2241" />
 				</subtopic>
 		 	    <subtopic name="EMT-Basic Class #42">
 		 	        <pattern match="EMSP 1501-2542" />
 		 	        <pattern match="EMSP 1501-2500" />
 		 	        <pattern match="EMSP 1501-2501" />
-		 	        <pattern match="EMSP 1160-2642" />
+		 	        <pattern match="EMSP 1160-2242" />
 		 	    </subtopic>
 		 	    <subtopic name="EMT Class #43, B-Shift">
 					<pattern match="EMSP 1501-2243" />
 					<pattern match="EMSP 1501-2201" />
 					<pattern match="EMSP 1501-2202" />
-					<pattern match="EMSP 1160-2643" />
+					<pattern match="EMSP 1160-2243" />
 				</subtopic>
 				<subtopic name="EMT Class #44, C-Shift">
 					<pattern match="EMSP 1501-2244" />
 					<pattern match="EMSP 1501-2203" />
 					<pattern match="EMSP 1501-2204" />
-				    <pattern match="EMSP 1160-2644" />
+				    <pattern match="EMSP 1160-2244" />
 				</subtopic>
 			</topic>
 			<topic name="Emergency Medical Services, Paramedic">
@@ -980,7 +980,7 @@
 					<pattern match="EMSP 2430-2700" />
 					<pattern match="EMSP 2338-2719" />
 					<pattern match="EMSP 2338-2700" />
-				    <pattern match="EMSP 2261-2619" />
+				    <pattern match="EMSP 2261-2219" />
 				</subtopic>
 				<subtopic name="Paramedic Class #20, B-Shift">
 					<pattern match="EMSP 1438-2220" />
