@@ -429,6 +429,8 @@
 			<topic name="Rehearsal">
                 <subtopic name="First Play, Fall 2007">
                     <pattern match="DRAM 1221-2735" />
+                	<pattern match="DRAM 1221-2737" /> <!-- added 2007-09-28: Theater Practicum II -->
+                	<pattern match="DRAM 1221-2739" /> <!-- added 2007-09-28: Theater Practicum II -->
                 </subtopic>
                 <subtopic name="Second Play, Fall 2007">
                     <pattern match="DRAM 1221-2736" />
