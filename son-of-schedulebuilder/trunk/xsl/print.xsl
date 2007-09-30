@@ -458,14 +458,14 @@
 
     <xsl:template match="comments//tr">
         <xsl:if test="not(count(td) = (1, 2))">
-            <xsl:message>Error in Comments: Tables must have either one or two columns</xsl:message>
+            <xsl:message>Error in <xsl:value-of select="ancestor::comments/parent::element()/@name" /> comments (from the custom mappings files): Tables must have either one or two columns</xsl:message>
         </xsl:if>
 
         <xsl:choose>
             <xsl:when test="count(td) = 2">
                 <!-- The following line sets the tabs for these two
                      columns to be positioned at 125 pts, aligned
-                     lef, and filled with blank spaces ("1 ") -->
+                     left, and filled with blank spaces ("1 ") -->
                 <xsl:text>&lt;*t(125.0,0,"1 ")&gt;</xsl:text>
                 <xsl:apply-templates select="td[1]" />
                 <xsl:call-template name="sep" />
