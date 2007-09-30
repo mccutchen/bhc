@@ -545,8 +545,8 @@ class FormatUtils:
         start_date = utils.parsedate(start_date)
         end_date = utils.parsedate(end_date)
 
-        standard_start_date = datetime.date(2007, 8, 27)
-        standard_end_date = datetime.date(2007, 12, 13)
+        standard_start_date = datetime.date(2008, 1, 14)
+        standard_end_date = datetime.date(2008, 5, 8)
         one_week = datetime.timedelta(7)
 
         if standard_start_date <= start_date <= (standard_start_date + one_week) and \
