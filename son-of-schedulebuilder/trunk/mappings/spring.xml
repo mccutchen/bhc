@@ -73,11 +73,12 @@
                 <p>Enrollment is limited to 90 students, so a true learning community is formed.  </p>
                 <p><b>To register for the Coordinated Studies Program, see an advisor in the Brookhaven College Advising and Counseling Center, Bldg. S, Room S113.</b></p>
                 <p><b>Choose four courses from the following list:</b></p>
-                <table margin="5" border="0" cellpadding="10" cellspacing="0">
+                <table margin="5" border="2" cellpadding="10" cellspacing="0">
                     <tr>
                         <td>Cultural Studies</td>
                         <td>CUST 2370</td>
-                    </tr>                    <tr>
+                    </tr>
+                    <tr>
                         <td>English Composition I OR II</td>
                         <td>ENGL 1301 OR ENGL 1302</td>
                         <td>Students will need to choose between ENGL 1311 and 1302 as per prerequisites.</td>
@@ -89,7 +90,8 @@
   					<tr>
                         <td>Introduction to Comparative Politics</td>
                         <td>GOVT 2371</td>
-                    </tr>                    <tr>
+                    </tr>
+                    <tr>
                         <td>History of the U.S.</td>
                         <td>HIST 1302</td>
                     </tr>
@@ -99,8 +101,9 @@
                     </tr>      
                     <tr>
                         <td>Introduction to Speech OR Fundamentals of Public Speaking</td>
-                        <td>SPCH 1311 OR SPCH 1315</td></tr>
-                        <tr>
+                        <td>SPCH 1311 OR SPCH 1315</td>
+                    </tr>
+                    <tr>
                         <td>Students should be advised to choose between SPCH 1311 and 1315 based on their degree requirement.</td>
                     </tr> 
 				</table>                    
