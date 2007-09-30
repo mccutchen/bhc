@@ -235,8 +235,8 @@ class CreditFormatter(BaseFormatter):
         if FormatUtils.is_minimester(self.input):
             # we've got a minimester!
             startdate = utils.parsedate(self.input['start-date'])
-            minimester = startdate.strftime('%B')
-            return minimester
+            # return the month in which this class starts
+            return startdate.strftime('%B')
         return ''
 
     def format_minimester_sortkey(self, value):
@@ -501,12 +501,13 @@ class FormatUtils:
         conditions are met:
             - The class is a "Flex Day" or "Flex Night" class OR
             - The class lasts less than profile.minimester_threshold weeks AND
-            - the class does not match any of the patterns in profile.skip_minimesters"""
+              the class does not match any of the patterns in
+              profile.skip_minimesters"""
         try:
             # does this class meet the minimum criteria?
             if classdata['type'] in ('FD', 'FN') or \
-                   int(classdata['weeks'].strip()) < profile.minimester_threshold \
-                   or FormatUtils.is_flex_hack(classdata['start-date'], classdata['end-date']): # UGLY, TEMPORARY HACK!
+                   int(classdata['weeks'].strip()) < profile.minimester_threshold or \
+                   FormatUtils.is_flex_hack(classdata['start-date'], classdata['end-date']): # UGLY, TEMPORARY HACK!
 
                 # if this class matches any of the patterns in
                 # profile.skip_minimesters, return False
@@ -536,7 +537,7 @@ class FormatUtils:
 
         We need to include more classes in the special minimester or
         flex section of the schedule, which do not meet the criteria
-        outlined above in __is_minimester.  To do this, we need to
+        outlined above in is_minimester.  To do this, we need to
         know the exact start date and time for the term this class is
         in, which is complicated in the Summer schedule, since
         Colleague sees the May semester as just a part of Summer I,
@@ -551,7 +552,7 @@ class FormatUtils:
 
         if standard_start_date <= start_date <= (standard_start_date + one_week) and \
            standard_end_date >= end_date >= (standard_end_date - one_week):
-            # we are dealing with a "standard-length" course, which does
+            # we are dealing with a "standard-length" course, which does not
             # belong in the "flex" section
             return False
 
