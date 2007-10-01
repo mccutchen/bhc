@@ -80,11 +80,7 @@
                     </tr>
                     <tr>
                         <td>English Composition I OR II</td>
-                        <td>ENGL 1301 OR ENGL 1302</td>
-                    </tr>
-                    <tr>
-                        <td>Students will need to choose between ENGL 1311 and 1302 as per prerequisites.</td>
-                        <td></td>
+                        <td>ENGL 1301 OR ENGL 1302*</td>
                     </tr>
                     <tr>
                         <td>American Government</td>
@@ -104,13 +100,11 @@
                     </tr>      
                     <tr>
                         <td>Introduction to Speech OR Fundamentals of Public Speaking</td>
-                        <td>SPCH 1311 OR SPCH 1315</td>
+                        <td>SPCH 1311 OR SPCH 1315**</td>
                     </tr>
-                    <tr>
-                        <td>Students should be advised to choose between SPCH 1311 and 1315 based on their degree requirement.</td>
-                        <td></td>
-                    </tr> 
-				</table>                    
+                </table>
+                <p>*Students will need to choose between ENGL 1311 and 1302 as per prerequisites.</p>
+                <p>** Students should be advised to choose between SPCH 1311 and 1315 based on their degree requirement.</p>
                 <p>Students should take their paid registration summary to the first day of class. For more information, please contact Delryn Fleming at 972-860-4772 or e-mail Delryn@dcccd.edu.</p>
             </comments>
             <pattern match="ALCE" />
