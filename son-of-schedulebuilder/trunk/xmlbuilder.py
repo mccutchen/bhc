@@ -31,10 +31,19 @@ def build(classes=None):
         # build the elements to support this class
         build_xml(root, class_data)
 
+        # build any 'special' sections
         if profile.special_sections:
-            # get any 'extra' elements
+            
+            # this will be a cached copy of the term element built by
+            # build_xml, used by the functions below
             term = get_term_element(root, class_data, True)
-            get_minimester(term, class_data)
+            
+            # only make a minimester section if we have a valid minimester
+            # threshold set in the profile
+            if profile.minimester_threshold is not None:
+                get_minimester(term, class_data)
+            
+            # build the rest of the special sections
             get_distance_learning(term, class_data)
             get_weekend(term, class_data)
             get_weekend(term, class_data, name='Weekend Core Curriculum', core_only=True)
