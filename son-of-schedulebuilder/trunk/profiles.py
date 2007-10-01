@@ -378,7 +378,7 @@ class Spring07NonCoreProof(NonCore, Spring07Proof):
 class Summer07(Summer):
     input = ('data/2007-summer/bh2007s1.txt', 'data/2007-summer/bh2007s2.txt')
     term_dates = {
-        'Summer I/May Term': '5/14/2006-6/1/2006',
+        'Summer I/May Term': '5/14/2007-6/2/2007',
     }
     ap_term_dates = {
         'Summer I/May Term': 'May 14-June 2',
