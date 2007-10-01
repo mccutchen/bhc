@@ -133,46 +133,24 @@ class CreditFormatter(BaseFormatter):
         return value
 
     def format_term(self, value):
-        """The term name is a complicated item to calculate.
-
-        If custom term dates are given in the profile (e.g. for the Summer
-        terms), we iterate through the profile's term dates until we find
-        a set that contains the start date of the current class.  If we
-        find a match, we return that term name.
-
-        Otherwise, we try to look the term name up in the term_names dict on
-        the current profile.
-
-        Failing that, we just return the given value as-is."""
-
-        giventerm = value.strip()
-        newterm = None
-        if profile.term_dates:
-            begins = utils.parsedate(self.input['start-date'])
-            earliest = None
-            latest = None
-            for term, dates in profile.term_dates.items():
-                termstart, termend = map(utils.parsedate, dates.split('-'))
-                if termstart <= begins and termend > begins:
-                    newterm = term
-                    break
-
-        if newterm is not None:
-            return newterm
-        else:
-            return profile.term_names and profile.term_names.get(giventerm, None) or giventerm
+        """Returns the name of the term for this class, based on this class's
+        start date and the terms in the current profile.  Uses
+        FormatUtils.get_term to do the actual work."""
+        return FormatUtils.get_term(value.strip(), self.input['start-date'])
 
     def format_term_sortkey(self, value):
-        """Attempts to find the sort key for this term in the current profile's
-        term_sort_keys dict."""
-        term = self.input.get('term','')
-        return profile.term_sort_keys and profile.term_sort_keys.get(term, 0) or 0
+        """Finds the term containing this class and uses its start date to
+        create a sortkey."""
+        term = FormatUtils.get_term(self.input['term'], self.input['start-date'])
+        term_start, term_end = FormatUtils.get_term_dates(term)
+        return str(term_start.toordinal())
 
     def format_term_dates(self, value):
-        """Attempts to find the AP-formatted dates for the given term in the
-        current profile's ap_term_dates dict."""
-        term = self.input.get('term','')
-        profile.ap_term_dates and profile.ap_term_dates.get(term, None) or None
+        """Returns the AP-formatted versions of the term's start and end
+        dates."""
+        term = FormatUtils.get_term(self.input['term'], self.input['start-date'])
+        start, end = FormatUtils.get_term_dates(term)
+        return '%s-%s' % (utils.apdate(start, False), utils.apdate(end, False))
 
     def format_cross_listings(self, value):
         """Returns a list of cross-listings for the current class.  In some
@@ -504,10 +482,18 @@ class FormatUtils:
               the class does not match any of the patterns in
               profile.skip_minimesters"""
         try:
+            # collect the data we need to determine whether this is a
+            # minimester class
+            classtype = classdata['type']
+            weeks = int(classdata['weeks'].strip())
+            start_date = classdata['start-date']
+            end_date = classdata['end-date']
+            term = FormatUtils.get_term(classdata['term'], start_date)
+            
             # does this class meet the minimum criteria?
-            if classdata['type'] in ('FD', 'FN') or \
-                   int(classdata['weeks'].strip()) < profile.minimester_threshold or \
-                   FormatUtils.is_flex_hack(classdata['start-date'], classdata['end-date']): # UGLY, TEMPORARY HACK!
+            if classtype in ('FD', 'FN') or \
+                weeks < profile.minimester_threshold or \
+                FormatUtils.is_flex_hack(start_date, end_date, term): # UGLY, TEMPORARY HACK!
 
                 # if this class matches any of the patterns in
                 # profile.skip_minimesters, return False
@@ -530,7 +516,7 @@ class FormatUtils:
 
     @classmethod
     @cached
-    def is_flex_hack(self, start_date, end_date):
+    def is_flex_hack(self, start_date, end_date, term):
         """UGLY HACK!  A hack to include more classes in the Flex
         section of the Spring schedule.  Here is the crux of the
         problem:
@@ -546,12 +532,11 @@ class FormatUtils:
         start_date = utils.parsedate(start_date)
         end_date = utils.parsedate(end_date)
 
-        standard_start_date = datetime.date(2008, 1, 14)
-        standard_end_date = datetime.date(2008, 5, 8)
+        term_start, term_end = FormatUtils.get_term_dates(term)
         one_week = datetime.timedelta(7)
 
-        if standard_start_date <= start_date <= (standard_start_date + one_week) and \
-           standard_end_date >= end_date >= (standard_end_date - one_week):
+        if term_start <= start_date <= (term_start + one_week) and \
+           term_end >= end_date >= (term_end - one_week):
             # we are dealing with a "standard-length" course, which does not
             # belong in the "flex" section
             return False
@@ -560,6 +545,94 @@ class FormatUtils:
         # standard start and end dates for this term, so it belongs in
         # the "flex" section
         return True
+    
+    @classmethod
+    @cached
+    def get_term(self, term_id, class_start):
+        """Determines the term for a class that starts on the given start
+        date.  This method is in FormatUtils because it needs to be used
+        in multiple formatters and thus should have its results cached.
+
+        If more than one term is given in the current profile's terms dict,
+        we loop through each term to see if one has start and end dates which
+        contain the given class start date.  If we find a match, we return
+        that term.  If we do not find a match, we return the given term_id.
+        
+        Otherwise, we just use the one term named in the current profile's
+        terms dict."""
+
+        # If we have more than one term in this profile, we have to check each
+        # term's start and end dates to see which term contains this class.
+        if len(profile.terms) > 1:
+            # make sure we have a date
+            if not isinstance(class_start, datetime.date):
+                class_start = utils.parsedate(class_start)
+
+            earliest = None
+            latest = None
+            
+            # Loop through the terms in this profile, checking their start
+            # and end dates with the start date of this class.
+            for term, (term_start, term_end) in profile.terms.items():
+                
+                # keep track of the earliest and latest term dates, in case
+                # we don't find a term to match this class
+                if earliest is None or term_start < earliest:
+                    earliest = term_start
+                if latest is None or term_end > latest:
+                    latest = term_end
+                
+                # if this class starts between the start and end date of the
+                # term we're looking at, return that term
+                if term_start <= class_start < term_end:
+                    return term
+
+            # We didn't find a matching term, so we stuff this class in the
+            # earliest or latest term we can find.
+            else:
+                print 'Class start date %s is not in any of the terms in this profile.' % class_start
+
+                def find_term(start_or_end, target_date):
+                    """Search through the profile's terms to find one that
+                    contains the given target date as either its start or end
+                    date.  Parameter start_or_end must be either 0 or 1."""
+                    for term, dates in profile.terms.items():
+                        if dates[start_or_end] == target_date:
+                            return term
+                    raise AssertionError('Target date %s not found in the current profile\'s terms.' % target_date)
+                
+                # Figure out if we should put this class in the earliest or
+                # latest term.
+                if class_start < earliest:
+                    return find_term(0, earliest)
+                elif class_start > latest:
+                    return find_term(1, latest)
+                
+                # Something is wrong here.
+                else:
+                    raise AssertionError(
+                        'Class starting on %s falls between the earliest ' +
+                        'and latest term dates but is not contained in any ' +
+                        'the current profile\'s terms.  This is probably a ' +
+                        'problem in the current profile\'s term dates.'
+                    )
+        
+        # Otherwise, we only have one term in the profile, so we just return
+        # its name, regardless of any dates.
+        else:
+            return profile.terms.keys()[0]
+
+    @classmethod
+    @cached
+    def get_term_dates(self, term):
+        """Gets the start and end dates for the given term from the current
+        profile's terms dict.  If the given term is not a key in the
+        terms dict, the term name is looked up in the term_names dict
+        first."""
+        assert term in profile.terms, \
+            'Term %s not found in current profile\'s term dict.  Valid term names: %s' % (term, ', '.join(profile.terms.keys()))
+        start, end = profile.terms[term]
+        return start, end
 
     @classmethod
     def get_name_for(self, search_key, regrouping_type):

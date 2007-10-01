@@ -8,7 +8,8 @@ valid, working profile.  The generic Print, Web
 and RoomCoordinator profiles may be subclassed
 to provide semester- or term-specific profiles."""
 
-import datetime, glob, inspect, os, sys
+import glob, inspect, os, sys
+from datetime import date
 from wrm.profile import BaseProfile, ProfileError, get_profile
 
 
@@ -38,29 +39,12 @@ class CreditProfile(BaseProfile):
     mappings_dir = 'mappings/'
     additional_mappings = None
 
-    # dictionary mapping Colleague's term abbreviations
-    # to full term names
-    term_names = {
-        'S1': 'Summer I',
-        'S2': 'Summer II',
-        'FA': 'Fall',
-        'SP': 'Spring',
-    }
-
-    # dictionary keyed on term name, used to override the
-    # above term names.  For example:
-    # term_dates = {
-    #   'Summer I/May Term', '05/15/2006-06/02/2006',
+    # A dict mapping term names to term dates; values must two date objects
+    # for the start and end dates.  Example:
+    # terms = {
+    #     'Spring': (date(2005,12,1), date(2006,5,15)),
     # }
-    term_dates = {}
-
-    # dictionary keyed on term name, used to get the
-    # "print-ready" term dates
-    ap_term_dates = {}
-
-    # dictionary which maps term names to their sort keys,
-    # used to arrange terms if there are more than one.
-    term_sort_keys = {}
+    terms = {}
 
     # whether or not to do any of the fancy regrouping
     # work required for a complete schedule
@@ -197,15 +181,10 @@ class Spring:
     additional_mappings = 'spring.xml'
 class Summer:
     additional_mappings = 'summer.xml'
-    term_sort_keys = {
-        'Summer I/May Term': 0,
-        'Summer I': 1,
-        'Summer II': 2,
-    }
     minimester_threshold = None # Summer terms are too short to have minimesters
 
 # Base classes for certain specialty output types
-class Enrolling: include_classes_after = datetime.date.today()
+class Enrolling: include_classes_after = date.today()
 class CoreOnly: core_only_schedule = True
 class NonCore: non_core_schedule = True
 
@@ -220,6 +199,9 @@ Default = BaseProfile
 # ===================================================================
 class Fall05(Fall):
     input = 'data/2005-fall/latest.txt'
+    terms = {
+        'Fall': (),
+    }
 
 class Fall05Proof(Fall05, Proof):
     output_dir = 'fall05-proof'
@@ -233,7 +215,7 @@ class Fall05Proof(Fall05, Proof):
 class Spring06(Spring):
     input = 'data/2006-spring/latest.txt'
     terms = {
-        'Spring': '12/1/2005-05/15/2006',
+        'Spring': (date(2005,12,1), date(2006,5,15)),
     }
 
 class Spring06Proof(Spring06, Proof):
@@ -256,15 +238,11 @@ class Spring06Enrolling(Spring06, Spring06Web, Enrolling):
 # ===================================================================
 class Summer06(Summer):
     input = 'data/2006-summer/latest.txt'
-    term_dates = {
-        'Summer I/May Term': '05/1/2006-06/2/2006',
+    terms = {
+        'Summer I/May Term': (date(2006,5,15), date(2006,6,2)),
+        'Summer I': (date(2006,6,5), date(2006,7,6)),
+        'Summer II': (date(2006,7,12), date(2006,8,10)),
     }
-    ap_term_dates = {
-        'Summer I/May Term': 'May 15-June 2',
-        'Summer I': 'June 5-July 6',
-        'Summer II': 'July 12-Aug. 10',
-    }
-    minimester_threshold = None
 
 class Summer06Proof(Summer06, Proof):
     output_dir = 'summer06-proof'
@@ -291,8 +269,8 @@ class Summer06Enrolling(Enrolling, Summer06, Summer06Web):
 # ===================================================================
 class Fall06(Fall):
     input = 'data/2006-fall/BH2006FA.TXT'
-    ap_term_dates = {
-        'Fall': '',
+    terms = {
+        'Fall': (),
     }
 
 class Fall06Proof(Fall06, Proof):
@@ -327,7 +305,7 @@ class Fall06NonCoreProof(NonCore, Fall06Proof):
     output_dir = 'fall06-noncore-proof'
 
 class Fall06ForSpring07(Fall06Print):
-    include_classes_after = datetime.date(2006, 11, 1)
+    include_classes_after = date(2006, 11, 1)
     output_dir = 'fall06-for-spring07'
 
 
@@ -336,8 +314,8 @@ class Fall06ForSpring07(Fall06Print):
 # ===================================================================
 class Spring07(Spring):
     input = 'data/2007-spring/BH2007SP.TXT'
-    ap_term_dates = {
-        'Spring': '',
+    terms = {
+        'Spring': (),
     }
 
 class Spring07Proof(Spring07, Proof):
@@ -377,15 +355,11 @@ class Spring07NonCoreProof(NonCore, Spring07Proof):
 # ===================================================================
 class Summer07(Summer):
     input = ('data/2007-summer/bh2007s1.txt', 'data/2007-summer/bh2007s2.txt')
-    term_dates = {
-        'Summer I/May Term': '5/14/2007-6/2/2007',
+    terms = {
+        'Summer I/May Term': (date(2007, 5, 14), date(2007, 6, 1)),
+        'Summer I':  (date(2007, 6, 4), date(2007, 7, 3)),
+        'Summer II':  (date(2007, 7, 9), date(2007, 8, 9)),
     }
-    ap_term_dates = {
-        'Summer I/May Term': 'May 14-June 2',
-        'Summer I': 'June 4-July 3',
-        'Summer II': 'July 9-Aug. 9',
-    }
-    minimester_threshold = None
 
 class Summer07Proof(Summer07, Proof):
     output_dir = 'summer07-proof'
@@ -412,8 +386,8 @@ class Summer07Enrolling(Enrolling, Summer07, Summer07Web):
 # ===================================================================
 class Fall07(Fall):
     input = 'data/2007-fall/BH2007FA.TXT'
-    ap_term_dates = {
-        'Fall': '',
+    terms = {
+        'Fall': (),
     }
 
 class Fall07Proof(Fall07, Proof):
@@ -440,8 +414,8 @@ class Fall07Enrolling(Enrolling, Fall07, Fall07Web):
 # ===================================================================
 class Spring08(Spring):
     input = 'data/2008-spring/BH2008SP.TXT'
-    ap_term_dates = {
-        'Spring': '',
+    terms = {
+        'Spring': (date(2008, 1, 14), date(2008, 5, 8)),
     }
 
 class Spring08Proof(Spring08, Proof):
@@ -482,7 +456,7 @@ class Spring08NonCoreProof(NonCore, Spring08Proof):
 # ===================================================================
 
 # what attribute are required for this to be a valid profile?
-REQUIRED_ATTRS = 'input template output_dir output_xml_path mappings_dir'.split()
+REQUIRED_ATTRS = 'input template output_dir output_xml_path mappings_dir terms'.split()
 
 def validate_profile(profile):
     """Tests the given profile to see that it meets a minimum set of
@@ -520,6 +494,16 @@ def validate_profile(profile):
     # make sure we can find Saxon
     if not os.path.exists(profile.saxon_path):
         raise ProfileError('Cannot find the Saxon XSLT processor at the specified path: %s' % profile.saxon_path)
+    
+    # make sure the terms dict is properly formatted
+    try:
+        for term, (start, end) in profile.terms.items():
+            if not isinstance(start, date) or not isinstance(end, date):
+                raise ProfileError('Start and end dates in terms setting must be datetime.date objects.  Given %s and %s' % (type(start), type(end)))
+    except (TypeError, ValueError):
+        raise ProfileError('Values in terms dict must be two datetime.date objects.')
+    except AttributeError:
+        raise ProfileError('Each profile\'s terms setting must be a dict object.  Given %s' % type(profile.terms))
 
 
 
