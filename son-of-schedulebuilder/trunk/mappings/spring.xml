@@ -127,7 +127,7 @@
         
         <subject name="Government">
             <topic name="Coordinated Studies">
-                <pattern match="GOVT 2301-2050" />
+                <pattern match="GOVT 2302-2050" /> <!-- fixed 10/2 - said 2301 -->
                 <pattern match="GOVT 2371-2050" />
             </topic>
 		</subject>
