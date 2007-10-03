@@ -81,7 +81,7 @@
 
     <xsl:template match="term" mode="init">
         <xsl:if test="count(//term) &gt; 1">
-            <xsl:result-document href="{$output-directory}/{@machine_name}/index{$output-extension}">
+            <xsl:result-document href="{$output-directory}/{utils:urlify(@name)}/index{$output-extension}">
                 <xsl:call-template name="page-template">
                     <xsl:with-param name="page-title"><xsl:value-of select="@name" /> Course Index</xsl:with-param>
                 </xsl:call-template>
@@ -100,8 +100,8 @@
     <xsl:template match="special-section | minimester" mode="init">
         <xsl:variable name="path-root">
             <xsl:value-of select="concat($output-directory, '/')" />
-            <xsl:if test="$multiple-terms"><xsl:value-of select="concat(ancestor::term/@machine_name, '/')" /></xsl:if>
-            <xsl:value-of select="concat(@machine_name, '/')" />
+            <xsl:if test="$multiple-terms"><xsl:value-of select="concat(utils:urlify(ancestor::term/@name), '/')" /></xsl:if>
+            <xsl:value-of select="concat(utils:urlify(@name), '/')" />
         </xsl:variable>
 
         <xsl:result-document href="{$path-root}index{$output-extension}">
@@ -116,18 +116,18 @@
     <xsl:template match="subject" mode="init">
         <xsl:variable name="path-root">
             <xsl:value-of select="''" />
-            <xsl:if test="$multiple-terms"><xsl:value-of select="concat(ancestor::term/@machine_name, '/')" /></xsl:if>
+            <xsl:if test="$multiple-terms"><xsl:value-of select="concat(utils:urlify(ancestor::term/@name), '/')" /></xsl:if>
             <xsl:choose>
                 <xsl:when test="ancestor::special-section and not(ancestor::minimester)">
-                    <xsl:value-of select="concat(ancestor::special-section/@machine_name, '/')" />
+                    <xsl:value-of select="concat(utils:urlify(ancestor::special-section/@name), '/')" />
                 </xsl:when>
                 <xsl:when test="ancestor::minimester">
-                    <xsl:value-of select="concat(ancestor::minimester/@machine_name, '/')" />
+                    <xsl:value-of select="concat(utils:urlify(ancestor::minimester/@name), '/')" />
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
 
-        <xsl:result-document href="{$output-directory}/{$path-root}{@machine_name}{$output-extension}">
+        <xsl:result-document href="{$output-directory}/{$path-root}{utils:urlify(@name)}{$output-extension}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name" />
                 <xsl:with-param name="path-root" select="$path-root" tunnel="yes" />
@@ -184,7 +184,7 @@
 
     <xsl:template match="topic | subtopic">
         <div class="{name()}">
-            <a name="{@machine_name}" />
+            <a name="{utils:urlify(@name)}" />
             <h1 class="{name()}"><xsl:value-of select="@name" /></h1>
             <xsl:apply-templates select="comments" />
 
@@ -210,8 +210,8 @@
     </xsl:template>
 
     <xsl:template match="type">
-        <a name="{@machine_name}" />
-        <div class="schedule-type-section {@machine_name}">
+        <a name="{utils:urlify(@name)}" />
+        <div class="schedule-type-section {utils:urlify(@name)}">
             <h2 class="schedule-type"><xsl:value-of select="@name" /> Courses</h2>
 
             <xsl:apply-templates select="group | course">
@@ -242,7 +242,7 @@
     <xsl:template match="course">
         <div class="course-section">
             <a name="{@rubrik}-{@number}-{min(class/@section)}" />
-            <a name="{@rubrik}-{@number}-{min(class/@section)}-{@machine_name}" />
+            <a name="{@rubrik}-{@number}-{min(class/@section)}-{utils:urlify(@title)}" />
             <h3>
                 <xsl:value-of select="@title" />
                 <xsl:if test="@core-component and @core-component != ''">
@@ -405,7 +405,7 @@
                         <ul>
                             <xsl:for-each select="topic">
                                 <xsl:sort select="@name" />
-                                <li><a href="#{@machine_name}"><xsl:value-of select="@name" /></a></li>
+                                <li><a href="#{utils:urlify(@name)}"><xsl:value-of select="@name" /></a></li>
                             </xsl:for-each>
                         </ul>
                     </xsl:when>
@@ -414,7 +414,7 @@
                         <ul>
                             <xsl:for-each select="type">
                                 <xsl:sort select="@sortkey" />
-                                <li><a href="#{@machine_name}"><xsl:value-of select="@name" /></a></li>
+                                <li><a href="#{utils:urlify(@name)}"><xsl:value-of select="@name" /></a></li>
                             </xsl:for-each>
                         </ul>
                     </xsl:when>

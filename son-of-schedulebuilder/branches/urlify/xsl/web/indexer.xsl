@@ -9,6 +9,9 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
     version="2.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+    <!-- include some handy utility functions -->
+    <xsl:include href="../utils.xsl" />
+
     <xsl:variable name="index-type">
         <xsl:choose>
             <xsl:when test="/term">term</xsl:when>
@@ -32,11 +35,11 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
 
     <xsl:template match="term" mode="index">
         <div class="term-section">
-            <a name="{@machine_name}" />
+            <a name="{utils:urlify(@name)}" />
             <h2>
                 <xsl:choose>
                     <xsl:when test="count(//term) &gt; 1">
-                        <a href="{@machine_name}/"><xsl:value-of select="@name" /></a>
+                        <a href="{utils:urlify(@name)}/"><xsl:value-of select="@name" /></a>
                         <xsl:if test="@dates">
                             &#160;&#8226;&#160;<span><xsl:value-of select="@dates" /></span>
                         </xsl:if>
@@ -80,7 +83,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
         <xsl:param name="page-type" tunnel="yes" />
 
         <div class="special-section">
-            <a name="{@machine_name}" />
+            <a name="{utils:urlify(@name)}" />
 
             <xsl:choose>
                 <xsl:when test="$page-type = 'subindex'">
@@ -134,15 +137,15 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
 
         <xsl:variable name="url">
             <xsl:if test="$multiple-terms and $page-type != 'subindex'">
-                <xsl:value-of select="concat(ancestor::term/@machine_name, '/')" />
+                <xsl:value-of select="concat(utils:urlify(ancestor::term/@name), '/')" />
             </xsl:if>
             <xsl:if test="ancestor::special-section and not(ancestor::minimester) and $page-type != 'subindex'">
-                <xsl:value-of select="concat(ancestor::special-section/@machine_name, '/')" />
+                <xsl:value-of select="concat(utils:urlify(ancestor::special-section/@name), '/')" />
             </xsl:if>
             <xsl:if test="ancestor::minimester and $page-type != 'subindex'">
-                <xsl:value-of select="concat(ancestor::minimester/@machine_name, '/')" />
+                <xsl:value-of select="concat(utils:urlify(ancestor::minimester/@name), '/')" />
             </xsl:if>
-            <xsl:value-of select="concat(@machine_name, $output-extension)" />
+            <xsl:value-of select="concat(utils:urlify(@name), $output-extension)" />
         </xsl:variable>
 
         <li>
@@ -176,7 +179,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
                     <a href="#minimester">Flex Term Courses</a>
                 </xsl:when>
                 <xsl:otherwise>
-                    <a href="#{@machine_name}"><xsl:value-of select="@name" /> Courses</a>
+                    <a href="#{utils:urlify(@name)}"><xsl:value-of select="@name" /> Courses</a>
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:if test="position() != last()"><xsl:text>&#160;&#160;|&#160;&#160;</xsl:text></xsl:if>

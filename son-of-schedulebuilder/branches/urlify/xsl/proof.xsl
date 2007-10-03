@@ -37,7 +37,6 @@
     </xsl:param>
 
 
-
 <!-- ==========================================================================
      Output document initialization
 
@@ -57,7 +56,7 @@
     </xsl:template>
 
     <xsl:template match="term" mode="init">
-        <xsl:result-document href="{$output-directory}/{@machine_name}{$output-extension}">
+        <xsl:result-document href="{$output-directory}/{utils:urlify(@name)}{$output-extension}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name" />
             </xsl:call-template>
@@ -65,7 +64,7 @@
     </xsl:template>
 
     <xsl:template match="division" mode="init">
-        <xsl:result-document href="{$output-directory}/{ancestor::term/@machine_name}/{@machine_name}{$output-extension}">
+        <xsl:result-document href="{$output-directory}/{utils:urlify(ancestor::term/@name)}/{utils:urlify(@name)}{$output-extension}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name" />
             </xsl:call-template>
@@ -73,7 +72,7 @@
     </xsl:template>
 
     <xsl:template match="subject" mode="init">
-        <xsl:result-document href="{$output-directory}/{ancestor::term/@machine_name}/{ancestor::division/@machine_name}/{@machine_name}{$output-extension}">
+        <xsl:result-document href="{$output-directory}/{utils:urlify(ancestor::term/@name)}/{utils:urlify(ancestor::division/@name)}/{utils:urlify(@name)}{$output-extension}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name" />
             </xsl:call-template>
@@ -81,7 +80,7 @@
     </xsl:template>
 
     <xsl:template match="special-section" mode="init">
-        <xsl:result-document href="{$output-directory}/{ancestor::term/@machine_name}/{@machine_name}{$output-extension}">
+        <xsl:result-document href="{$output-directory}/{utils:urlify(ancestor::term/@name)}/{utils:urlify(@name)}{$output-extension}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name" />
             </xsl:call-template>

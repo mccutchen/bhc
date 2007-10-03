@@ -6,13 +6,14 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
     exclude-result-prefixes="xs utils">
-	
-    <xsl:function name="utils:sort-order" as="xs:integer">
-        <xsl:param name="needle" />
-        <xsl:param name="haystack" />
-        <xsl:number value="index-of($haystack, $needle)[1]" />
-    </xsl:function>
 
+
+    <!-- =====================================================================
+         Quark XPress Tags functions
+         
+         These functions are useful for inserting special Quark XPress Tags
+         markers into the output.
+    ====================================================================== -->
     <xsl:function name="utils:xtag" as="xs:string">
         <xsl:param name="style-name" as="xs:string" />
         <xsl:value-of select="concat('@', normalize-space($style-name), ':')" />
@@ -21,58 +22,82 @@
     <xsl:function name="utils:xtag-inline" as="xs:string">
         <xsl:param name="style-name" as="xs:string" />
         <xsl:param name="content" as="xs:string" />
-        <!-- inline styles in Quark Xpress Tags look like <@stylename>content<@$p> -->
-        <xsl:value-of select="concat('&lt;@', $style-name, '&gt;', $content, '&lt;@$p&gt;')" />
+        <!-- Quark Xpress Tags for inline or "character" styles look like so:
+             <@stylename>content<@$p> -->
+        <xsl:value-of select="concat('&lt;@', normalize-space($style-name), '&gt;', $content, '&lt;@$p&gt;')" />
     </xsl:function>
 
-	<xsl:function name="utils:urlify" as="xs:string">
-		<!-- translates an input string into something suitable for URLs or
-			 filenames, mostly by replacing spaces with underscores, etc. -->
-		<xsl:param name="s" as="xs:string" />
-		
-		<xsl:variable name="replacements">
-			<!-- chars which should be replaced with an underscore -->
-			<rule pattern="[\s\\/&amp;\-]" replacement="_" />
-			<!-- n with tilde -->
-			<rule pattern="&#241;" replacement="n" />
-			<!-- blacklisted chars, which must be replaced after all the other
-				 patterns -->
-			<rule pattern="[^A-z0-9_]" replacement="" />
-		</xsl:variable>
-		
-		<xsl:variable name="result" select="utils:urlify-helper(lower-case($s), $replacements/rule)" />
-		<!-- <xsl:message>urlify(<xsl:value-of select="$s" />) = <xsl:value-of select="$result" /></xsl:message> -->
-		<xsl:value-of select="$result" />
-	</xsl:function>
-	
-	<xsl:function name="utils:urlify-helper" as="xs:string">
-		<xsl:param name="s" as="xs:string" />
-		<xsl:param name="rules" />
-		
-		<xsl:variable name="rule" select="$rules[1]" />
-		<xsl:variable name="pattern" select="$rule/@pattern" />
-		<xsl:variable name="replacement" select="$rule/@replacement" />
-		
-		<xsl:choose>
-			<!-- no rules left (this shouldn't happen) -->
-			<xsl:when test="count($rules) = 0">
-				<xsl:value-of select="$s" />
-			</xsl:when>
-			<!-- one rule left, so we just apply it and return the results -->
-			<xsl:when test="count($rules) = 1">
-				<xsl:value-of select="replace($s, $pattern, $replacement)" />
-			</xsl:when>
-			<!-- apply the first rule and then recursively apply the rest of
-				 the rules -->
-			<xsl:otherwise>
-				<xsl:value-of select="utils:urlify-helper(replace($s, $pattern, $replacement), subsequence($rules, 2))" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:function>
 
+    <!-- =====================================================================
+         urlify(s)
+         
+         Transforms input string 's' into a string suitable for use in URLs or
+         filenames, mostly by replacing spaces with underscores.  Works by
+         running 's' through a series of regular expressions, defined in the
+         variable $replacements below.
+    ====================================================================== -->
+    <xsl:function name="utils:urlify" as="xs:string">
+        <xsl:param name="s" as="xs:string" />
+        
+        <xsl:variable name="replacements">
+            <!-- chars which should be replaced with an underscore -->
+            <rule pattern="[\s\\/&amp;\-]" replacement="_" />
+            <!-- n with tilde -->
+            <rule pattern="&#241;" replacement="n" />
+            <!-- blacklisted chars, which must be replaced after all the other
+                 patterns -->
+            <rule pattern="[^A-z0-9_]" replacement="" />
+        </xsl:variable>
+        
+        <xsl:value-of select="utils:urlify-helper(lower-case($s), $replacements/rule)" />
+    </xsl:function>
+    
+    <xsl:function name="utils:urlify-helper" as="xs:string">
+        <xsl:param name="s" as="xs:string" />
+        <xsl:param name="rules" />
+        
+        <xsl:variable name="rule" select="$rules[1]" />
+        <xsl:variable name="pattern" select="$rule/@pattern" />
+        <xsl:variable name="replacement" select="$rule/@replacement" />
+        
+        <xsl:choose>
+            <!-- no rules left (this shouldn't happen) -->
+            <xsl:when test="count($rules) = 0">
+                <xsl:value-of select="$s" />
+            </xsl:when>
+            <!-- one rule left, so we just apply it and return the results -->
+            <xsl:when test="count($rules) = 1">
+                <xsl:value-of select="replace($s, $pattern, $replacement)" />
+            </xsl:when>
+            <!-- apply the first rule and then recursively apply the rest of
+                 the rules -->
+            <xsl:otherwise>
+                <xsl:value-of select="utils:urlify-helper(replace($s, $pattern, $replacement), subsequence($rules, 2))" />
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+
+
+    <!-- =====================================================================
+         senior-adult-days(days)
+         
+         Takes input string 'days' as a sequence of one letter abbreviations
+         for the meeting days of a class (e.g. 'MWF' for a class meeting on
+         Monday, Wednesday and Friday) and returns a more human-friendly
+         representation of the days of the week.
+         
+         If only one day is given as input, that day's full name is returned.  
+         If more than one day is given as input, abbreviated versions of the
+         days are returned.
+          
+         Examples:
+          - utils:senior-adult-days('M') => 'Monday'
+          - utils:senior-adult-days('TR') => 'Tues. & Thurs.'
+          - utils:senior-adult-days('MWF') => 'Mon., Wed., Fri.'
+    ====================================================================== -->
     <xsl:function name="utils:senior-adult-days" as="xs:string">
-        <xsl:param name="input" as="xs:string" />
-        <xsl:value-of select="utils:senior-adult-days-helper($input, '', ' &amp; ')" />
+        <xsl:param name="days" as="xs:string" />
+        <xsl:value-of select="utils:senior-adult-days-helper($days, '', ' &amp; ')" />
     </xsl:function>
 
     <xsl:function name="utils:senior-adult-days-helper" as="xs:string">
