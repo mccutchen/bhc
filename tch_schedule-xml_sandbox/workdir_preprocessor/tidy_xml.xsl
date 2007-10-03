@@ -131,11 +131,6 @@
 		<xsl:param name="subject-special" as="element()*" />
 		<xsl:param name="subject-normal"  as="element()*" />
 		
-		<!-- DEBUG: -->
-		<xsl:if test="count ($classes[compare(@rubric,'GOVT') = 0 and compare(@number, '2301') = 0 and compare(@section, '2423') = 0]) &gt; 0">
-			<xsl:value-of select="bingo" />
-		</xsl:if>
-		
 		<!-- group by topic -->
 		<xsl:for-each-group select="$classes" group-by="@name-of-topic">
 			<xsl:variable name="name"          select="@name-of-topic"   as="xs:string"  />
@@ -300,35 +295,56 @@
 					<!-- write class info -->
 					<xsl:copy-of select="@rubric|@number|@title-short|@title-long|@credit-hours|@core-code|@core-name" />
 					
+					<!-- try to clump multiple, identical class comments -->
+					<xsl:variable name="clump" select="string-length(normalize-space(fn:compare-comments(current-group()))) = 0" as="xs:boolean" />
+					
+					<xsl:if test="$clump">
+						<xsl:call-template name="create-comments">
+							<xsl:with-param name="comments" select="current-group()[1]/comments" />
+						</xsl:call-template>
+					</xsl:if>
+					
 					<!-- copy comments -->
 					<xsl:apply-templates select="comments-course" />
 					
 					<!-- proceed to classes -->
-					<xsl:apply-templates select="current-group()" />
+					<xsl:apply-templates select="current-group()">
+						<xsl:with-param name="clump" select="$clump" tunnel="yes" />
+					</xsl:apply-templates>
 				</xsl:element>
 			</xsl:for-each-group>
 		</xsl:for-each-group>
 	</xsl:template>
 	
-	<xsl:template match="comments-course">
+	<xsl:template name="create-comments">
+		<xsl:param name="comments" as="element()" />
+		
 		<xsl:element name="comments">
-			<xsl:copy-of select="*" />
+			<xsl:copy-of select="$comments/text()" />
 		</xsl:element>
 	</xsl:template>
 	
 	<xsl:template match="class">
+		<xsl:param name="clump" tunnel="yes" />
+		
 		<xsl:element name="class">
 			<xsl:copy-of select="@section|@synonym|@type-credit|@topic-code|@capacity|@weeks|@date-start|@date-end" />
 			
 			<!-- for sorting purposes -->
-			<xsl:attribute name="sortkey-days"  select="fn:safe-min(meeting/@sortkey-days)"  />
-			<xsl:attribute name="sortkey-times" select="fn:safe-min(meeting/@sortkey-times)" />
+			<xsl:attribute name="sortkey-days"  select="fn:safe-min(meeting[@method = 'LEC']/@sortkey-days)"  />
+			<xsl:attribute name="sortkey-times" select="fn:safe-min(meeting[@method = 'LEC']/@sortkey-times)" />
 
 			<!-- copy meeting (with a few changes) -->
 			<xsl:apply-templates select="meeting" />
 			
+			<!-- if not clumped, copy comments -->
+			<xsl:if test="not($clump) and comments">
+				<xsl:call-template name="create-comments">
+					<xsl:with-param name="comments" select="comments" />
+				</xsl:call-template>
+			</xsl:if>
 			<!-- copy sub-elements -->
-			<xsl:copy-of select="comments|xlisting|corequisite-section"/>
+			<xsl:copy-of select="xlisting|corequisite-section"/>
 			
 		</xsl:element>
 	</xsl:template>
@@ -385,9 +401,51 @@
 			 Every other language I've used says an empty string evaluates to zero. -->
 		<xsl:variable name="set_non-empty" select="$set_str[string-length() &gt; 0]" as="xs:string*" />
 		
-		<xsl:if test="count($set_non-empty)">
-			<xsl:value-of select="min($set_non-empty)" />
-		</xsl:if>
+		<xsl:choose>
+			<xsl:when test="count($set_non-empty)">
+				<xsl:value-of select="min($set_non-empty)" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="0" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<xsl:function name="fn:compare-comments" as="xs:string">
+		<xsl:param name="classes" as="element()*" />
+		
+		<xsl:choose>
+			<xsl:when test="count($classes) &lt; 1">
+				<xsl:value-of select="'false'" />
+			</xsl:when>
+			<xsl:when test="count($classes) != count($classes/comments)">
+				<xsl:value-of select="'false'" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:variable name="comments" select="$classes/comments" as="element()*" />
+				<xsl:variable name="base" select="$comments[1]/text()" as="xs:string" />
+						
+				<xsl:value-of select="fn:compare-comments($base, $comments, 2)" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<xsl:function name="fn:compare-comments" as="xs:string">
+		<xsl:param name="base"     as="xs:string"  />
+		<xsl:param name="comments" as="element()*" />
+		<xsl:param name="index"    as="xs:integer" />
+		
+		<xsl:choose>
+			<xsl:when test="count($comments) &lt; $index">
+				<xsl:value-of select="''" />
+			</xsl:when>
+			<xsl:when test="compare($base, $comments[$index]/text()) = 0">
+				<xsl:value-of select="fn:compare-comments($base, $comments, $index + 1)" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="'false'" />
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:function>
 
 </xsl:stylesheet>

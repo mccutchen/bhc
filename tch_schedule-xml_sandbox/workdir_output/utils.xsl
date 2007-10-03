@@ -56,10 +56,8 @@
 			<rule pattern="[^A-z0-9_]" replacement="" />
 		</xsl:variable>
 		
-		<xsl:variable name="result" select="utils:urlify-helper(lower-case($s), $replacements/rule)" />
-		<!-- <xsl:message>urlify(<xsl:value-of select="$s" />) = <xsl:value-of select="$result" /></xsl:message> -->
-		<xsl:value-of select="$result" />
-	</xsl:function>
+    	<xsl:value-of select="utils:urlify-helper(lower-case($s), $replacements/rule)" />
+    </xsl:function>
 	
 	<xsl:function name="utils:urlify-helper" as="xs:string">
 		<xsl:param name="s" as="xs:string" />

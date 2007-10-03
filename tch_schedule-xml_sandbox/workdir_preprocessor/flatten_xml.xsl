@@ -31,17 +31,15 @@
 	<!-- something for sorting into minimesters -->
 	
 	<!-- for debugging purposes -->
-	<xsl:variable name="release-type" select="'debug-templates'" as="xs:string" />
-	<!--
 	<xsl:variable name="release-type" select="'final'" />
-	<xsl:variable name="release-type" select="'debug-functions'" />
+	<!--
+		<xsl:variable name="release-type" select="'debug-templates'" as="xs:string" />
+		<xsl:variable name="release-type" select="'debug-functions'" />
 	-->
 	
 	<!-- 
 		This is the first step in creating a fairly neat and tidy xml document containing the useful information
 		from DSC XML. This transform merely flattens the XML, exposing the data elements needed for tidy_xml.xsl.
-		I originally found this code to be inelegant, however, I now believe it to be a good method for creating
-		an organized structure, considering the amount of work needed to produce halfway-decent xml.
 	-->
 	
 	
@@ -107,7 +105,7 @@
 			<!-- now just stuff it with sorting info -->
 			<xsl:choose>
 				<!-- Special type (by topic-code): Emeritus = Senior Adult -->
-				<xsl:when test="(@topic-code = 'E') or (@topic-code = 'EG') or (@topic-code = 'EMBLG')">
+				<xsl:when test="@topic-code = ('E','EG','EMBLG')">
 					<xsl:variable name="match-node" select="$doc-divisions//subject[@name = 'Senior Adult Education Program']" />
 					<xsl:call-template name="apply-sorting-node">
 						<xsl:with-param name="match-node" select="$match-node" />
@@ -177,8 +175,8 @@
 	
 	<!-- error-check the match node -->
 	<xsl:template name="apply-sorting-node">
-		<xsl:param name="match-node" as="element()*" />
-		<xsl:param name="class-id"   as="xs:string"  />
+		<xsl:param name="match-node"     as="element()*" />
+		<xsl:param name="class-id"       as="xs:string"  />
 		
 		<xsl:choose>
 			<!-- no matches -->
@@ -189,6 +187,7 @@
 			<!-- multiple matches -->
 			<xsl:when test="count($match-node) &gt; 1">
 				<xsl:variable name="max-node" select="$match-node[@priority = max($match-node/@priority)]" as="element()*" />
+				<xsl:variable name="max-node-index" select="$match-node[@priority = max($match-node/@priority)]/position()" as="xs:integer*" />
 				<xsl:choose>
 					<!-- still multiple matches -->
 					<xsl:when test="count($max-node) != 1">

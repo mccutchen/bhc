@@ -61,7 +61,94 @@
             </topic>
         </subject>
 
-    
+  <!-- =======================================================================
+            Coordinated Studies (Resi Douglas)
+        ======================================================================== -->
+        <subject name="Coordinated Studies">
+            <comments>
+                <h1>AMERICA AT THE CROSSROADS</h1>
+                <p>The coordinated studies courses meet Monday through Thursday from 9-11:50 a.m. in Room T303</p>
+                <p>The program is a 12-credit-hour block of choices from <b>CORE CURRICULUM COURSES</b>, interrelated by the theme <b>"America at the Crossroads."</b>  </p>
+                <p>Students will hear diverse perspectives related to their course work from four different instructors. This learning community emphasizes interactive learning activities, community building and team work.  Through coordinating ideas students will develop critical thinking skills.  This program includes readings from popular sources.  The four program professors together meet with the entire group daily, so student-teacher interaction is enhanced. </p>
+                <p>Enrollment is limited to 90 students, so a true learning community is formed.  </p>
+                <p><b>To register for the Coordinated Studies Program, see an advisor in the Brookhaven College Advising and Counseling Center, Bldg. S, Room S113.</b></p>
+                <p><b>Choose four courses from the following list:</b></p>
+                <table margin="5" border="0" cellpadding="10" cellspacing="0">
+                    <tr>
+                        <td>Cultural Studies</td>
+                        <td>CUST 2370</td>
+                    </tr>                    <tr>
+                        <td>English Composition I OR II</td>
+                        <td>ENGL 1301 OR ENGL 1302</td>
+                        <td>Students will need to choose between ENGL 1311 and 1302 as per prerequisites.</td>
+                    </tr>
+                    <tr>
+                        <td>American Government</td>
+                        <td>GOVT 2301</td>
+                    </tr>
+  					<tr>
+                        <td>Introduction to Comparative Politics</td>
+                        <td>GOVT 2371</td>
+                    </tr>                    <tr>
+                        <td>History of the U.S.</td>
+                        <td>HIST 1302</td>
+                    </tr>
+                    <tr>
+                        <td>Ethics</td>
+                        <td>PHIL 2306</td>
+                    </tr>      
+                    <tr>
+                        <td>Introduction to Speech OR Fundamentals of Public Speaking</td>
+                        <td>SPCH 1311 OR SPCH 1315</td></tr>
+                        <tr>
+                        <td>Students should be advised to choose between SPCH 1311 and 1315 based on their degree requirement.</td>
+                    </tr> 
+				</table>                    
+                <p>Students should take their paid registration summary to the first day of class. For more information, please contact Delryn Fleming at 972-860-4772 or e-mail Delryn@dcccd.edu.</p>
+            </comments>
+            <pattern match="ALCE" />
+        </subject>
+
+        <!-- These are the courses that should have coordinated studies subheads.  They are sloppily out of any kind of order, but I don't think it matters. -->
+        <subject name="English">
+            <topic name="Coordinated Studies">
+                <pattern match="ENGL 1301-2050" />
+                <pattern match="ENGL 1302-2050" />
+            </topic>
+        </subject>
+        
+        <subject name="Speech">
+            <topic name="Coordinated Studies">
+                <pattern match="SPCH 1311-2050" />
+                <pattern match="SPCH 1315-2050" />
+            </topic>
+        </subject>
+        
+        <subject name="Government">
+            <topic name="Coordinated Studies">
+                <pattern match="GOVT 2301-2050" />
+                <pattern match="GOVT 2371-2050" />
+            </topic>
+		</subject>
+		
+        <subject name="Philosophy">
+            <topic name="Coordinated Studies">
+                <pattern match="PHIL 2306-2050" />
+            </topic>
+		</subject>
+		
+        <subject name="Cultural Studies">
+            <topic name="Coordinated Studies">
+                <pattern match="CUST 2370-2050" />
+            </topic>
+		</subject>
+            
+        <subject name="History">
+            <topic name="Coordinated Studies">
+                <pattern match="HIST 1302-2050" />
+            </topic>
+		</subject>
+
     
         <!-- =======================================================================
             CIT (Bill Hammerschlag)
@@ -96,8 +183,8 @@
                 <pattern match="ITSE 1432-2501" />
                 <pattern match="ITSE 1432-2502" />
                 <pattern match="ITSE 2417-2501" />
-                <pattern match="ITSE 2453-2501" />
                 <pattern match="ITSE 2431-2501" />
+                <pattern match="ITSE 2453-2501" />
             </topic>
             <topic name="Microsoft Academy Courses">
                 <comments>NOTE:  Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for a Microsoft Certified Systems Administrator, MCSA; a Microsoft Certified Systems Engineer, MCSE; and a Microsoft Certified Database Administrator, MCDBA.  For additional information, call 972-860-4176.</comments>
@@ -131,18 +218,20 @@
                 <pattern match="ITSE 2402-2501" />
                 <pattern match="ITSE 2409-2501" />
                 <pattern match="ITSW 1410-2500" />
-                <pattern match="IMED-1416-2426" />
-                <pattern match="IMED-2409-2426" />
+                <pattern match="IMED 1416-2426" />
+                <pattern match="IMED 2409-2426" />
                 <pattern match="IMED 2415-2426" />
                 <pattern match="INEW 1440-2426" />
                 <pattern match="INEW 2434-2426" />
                 <pattern match="ITNW 1437-2426" />
-                <pattern match="ITSE 1411-2426"  />
+                <pattern match="ITSE 1411-2426" />
                 <pattern match="ITSE 2402-2426" />
                 <pattern match="ITSE 2409-2426" />
             </topic>
             <topic name="Application Software Courses">
                 <pattern match="ITSC 1409-2001" />
+                <pattern match="ITSC 1409-2501" /> <!-- added 9/23 per P. Byars -->
+                <pattern match="ITSC 1409-2250" /> <!-- added 9/23 per P. Byars, replacement for some ITSC 2431 -->
                 <pattern match="ITSC 2431-2300" />
                 <pattern match="ITSW 1404-2001" />
                 <pattern match="ITSW 1407-2001" />
@@ -150,6 +239,8 @@
                 <pattern match="ITSC 1191-2250" />
                 <pattern match="ITSC 1191-2201" />
                 <pattern match="ITSC 1191-2202" />
+                <pattern match="ITSC 1191-2203" /> <!-- added 9/23 per P. Byars -->
+                <pattern match="ITSC 1191-2703" /> <!-- added 9/23 per P. Byars -->
                 <pattern match="ITSC 1291-2200" />
                 <pattern match="ITSW 1401-2200" />
                 <pattern match="ITSC 1409-2500" />
@@ -175,7 +266,9 @@
                 <pattern match="ITSC 2431-2427" />
                 <pattern match="ITSC 2431-2428" />
                 <pattern match="ITSC 2431-2429" />
-                <pattern match="ITSW 1401-2426" />
+                <pattern match="ITSC 1315-2426" />
+                <pattern match="ITSC 1315-2427" />                
+				<pattern match="ITSW 1401-2426" />
                 <pattern match="ITSW 1401-2427" />
                 <pattern match="ITSW 1401-2428" />
                 <pattern match="ITSW 1401-2429" />
@@ -279,6 +372,7 @@
                 <pattern match="ARTS 1301-2001" />
                 <pattern match="ARTS 1301-2002" />
                 <pattern match="ARTS 1301-2003" />
+                <pattern match="ARTS 1301-2010" />
                 <pattern match="ARTS 1301-2004" />
                 <pattern match="ARTS 1301-2005" />
                 <pattern match="ARTS 1301-2006" />
@@ -290,6 +384,8 @@
                 <pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2250" />
                 <pattern match="ARTS 1301-2420" />
+                <pattern match="ARTS 1301-2251" />
+                <pattern match="ARTS 1301-2421" />
             </topic>
             <topic name="Art History">
                 <pattern match="ARTS 1303-2001" />
@@ -308,6 +404,8 @@
                 <pattern match="ARTS 2348-2002" />
                 <pattern match="ARTS 2349-2002" />
                 <pattern match="ARTS 2311-2012" />
+                <pattern match="ARTS 2313-2501" />
+                <pattern match="ARTS 2314-2501" />
             </topic>
             <topic name="Art Metals">
                 <pattern match="ARTS 2341-2001" />
@@ -352,8 +450,6 @@
                 <pattern match="ARTS 1312-2001" />
                 <pattern match="ARTS 2311-2019" />
                 <pattern match="ARTS 2311-2014" />
-                <pattern match="ARTS 2311-2004" />
-                <pattern match="ARTS 2312-2010" />
                 <pattern match="ARTS 1311-2501" />
                 <pattern match="ARTS 1312-2501" />
             </topic>
@@ -436,7 +532,8 @@
                 <pattern match="ARTS 2327-2501" />
                 <pattern match="ARTS 2311-2501" />
                 <pattern match="ARTS 2312-2501" />
-            </topic>
+                <pattern match="ARTS 2311-2004" />
+                <pattern match="ARTS 2312-2010" />            </topic>
             <topic name="Watercolor">
                 <pattern match="ARTS 2366-2001" />
                 <pattern match="ARTS 2367-2001" />
@@ -452,6 +549,10 @@
         </subject>
         
         <subject name="Music">
+            <topic name="Music - Piano for Senior Adults">
+                <pattern match="MUSI 1181-2006" />
+                <pattern match="MUSI 1182-2007" />
+            </topic>
             <topic name="Music Appreciation">
                 <pattern match="MUSI 1306-2001" />
                 <pattern match="MUSI 1306-2002" />
@@ -466,6 +567,9 @@
                 <pattern match="MUSI 1306-2432" />
                 <pattern match="MUSI 1306-2433" />
                 <pattern match="MUSI 1306-2300" />
+                <pattern match="MUSI 1306-2250" />
+                <pattern match="MUSI 1306-2251" />
+                <pattern match="MUSI 1306-2700" />
             </topic>
             <topic name="Music Theory">
                 <pattern match="MUSI 1311-2001" />
@@ -507,8 +611,10 @@
             </topic>
             <topic name="Piano For Non Music Majors">
                 <pattern match="MUSI 1181-2001" />
+                <pattern match="MUSI 1181-2003" />
                 <pattern match="MUSI 1181-2501" />
                 <pattern match="MUSI 1181-2502" />
+                <pattern match="MUSI 1182-2501" />
             </topic>
             <topic name="Guitar">
                 <pattern match="MUSI 1192-2001" />
@@ -567,8 +673,10 @@
                     <pattern match="MUAP 1105-2001" />
                     <pattern match="MUAP 1109-2001" />
                     <pattern match="MUAP 1109-2202" />
+                    <pattern match="MUAP 1109-2002" />
                     <pattern match="MUAP 1113-2001" />
                     <pattern match="MUAP 1117-2001" />
+                    <pattern match="MUAP 1117-2002" />
                     <pattern match="MUAP 1121-2001" />
                     <pattern match="MUAP 1125-2001" />
                     <pattern match="MUAP 1125-2002" />
@@ -577,6 +685,7 @@
                     <pattern match="MUAP 1133-2001" />
                     <pattern match="MUAP 1133-2002" />
                     <pattern match="MUAP 1137-2001" />
+                    <pattern match="MUAP 1137-2002" />
                     <pattern match="MUAP 1141-2001" />
                     <pattern match="MUAP 1141-2002" />
                     <pattern match="MUAP 1145-2001" />
@@ -598,6 +707,7 @@
                     <pattern match="MUAP 1181-2003" />
                     <pattern match="MUAP 1181-2004" />
                     <pattern match="MUAP 1181-2005" />
+                    <pattern match="MUAP 1181-2006" />
                     <pattern match="MUAP 1181-2007" />
                 </subtopic>
                 <subtopic name="Intermediate">
@@ -605,6 +715,8 @@
                     <pattern match="MUAP 2201-2001" />
                     <pattern match="MUAP 2209-2001" />
                     <pattern match="MUAP 2209-2002" />
+                    <pattern match="MUAP 2217-2001" />
+                    <pattern match="MUAP 2229-2001" />
                     <pattern match="MUAP 2233-2001" />
                     <pattern match="MUAP 2237-2001" />
                     <pattern match="MUAP 2257-2002" />
@@ -626,6 +738,7 @@
                 <pattern match="DANC 2303-2001" />
                 <pattern match="DANC 2303-2002" />
                 <pattern match="DANC 2303-2501" />
+                <pattern match="DANC 2303-2250" />
             </topic>
             <topic name="Body Conditioning">
                 <pattern match="DANC 1141-2001" />
@@ -730,8 +843,23 @@
             </topic>
         </subject>
 		
+		<subject name="Humanities"> 
+             <topic name="None"> 
+                 <pattern match="HUMA" priority="1" /> 
+             </topic> 
+            <topic name="December Winter Flex Term">
+                 <pattern match="HUMA 1315-2202" priority="2" /> 
+                 <pattern match="HUMA 1315-2203" priority="2" /> 
+             </topic> 
+         </subject>
+         
+         
+
 		
 		
+   <!-- =======================================================================
+            Health and Human Services
+        ======================================================================== -->
 		<subject name="Nursing">
             <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
 			<topic name="none">
@@ -754,10 +882,6 @@
 			</topic>
 		</subject>
 		
-		
-   <!-- =======================================================================
-            Health and Human Services
-        ======================================================================== -->
 		<subject name="Radiologic Sciences">
             <comments>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
             <topic name="none">
@@ -793,15 +917,7 @@
             </topic>
         </subject>
 		
-		<subject name="Humanities"> 
-             <topic name="None"> 
-                 <pattern match="HUMA" priority="1" /> 
-             </topic> 
-             <topic name="Humanities December Winter Term Courses"> 
-                 <pattern match="HUMA 1315-2202" priority="2" /> 
-                 <pattern match="HUMA 1315-2203" priority="2" /> 
-             </topic> 
-         </subject>
+
 		 
    <!-- =======================================================================
             Emergency Medical Services (Cletha Silas)
@@ -810,31 +926,28 @@
 		    <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http:www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcmMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.  NOTE: REQUIRED:  Current CPR AHA Healthcare Provider or equivalent certification.</comments>
 		 	<topic name="Emergency Medical Services, Basic">
 				<subtopic name="EMT Class #40">
-					<pattern match="EMSP 1160-2640" />
+					<pattern match="EMSP 1160-2240" />
 				</subtopic>
 				<subtopic name="EMT Class #41">
-					<pattern match="EMSP 1160-2641" />
+					<pattern match="EMSP 1160-2241" />
 				</subtopic>
 		 	    <subtopic name="EMT-Basic Class #42">
-		 	        <comments>A Mandatory orientation will be held on Jan 14 from 6pm - 10pm.</comments>
 		 	        <pattern match="EMSP 1501-2542" />
 		 	        <pattern match="EMSP 1501-2500" />
 		 	        <pattern match="EMSP 1501-2501" />
-		 	        <pattern match="EMSP 1160-2642" />
+		 	        <pattern match="EMSP 1160-2242" />
 		 	    </subtopic>
 		 	    <subtopic name="EMT Class #43, B-Shift">
-		 	        <comments>This class will follow the traditional Fire Department B-shift schedule. This class will be meeting on the following Saturdays from 8 a.m. - 5 p.m.: Jan. 19, Feb. 9, Mar. 13 and Apr. 12. A mandatory orientation will be held on Jan 16 from 8 a.m. - 5 p.m.</comments>
 					<pattern match="EMSP 1501-2243" />
 					<pattern match="EMSP 1501-2201" />
 					<pattern match="EMSP 1501-2202" />
-					<pattern match="EMSP 1160-2643" />
+					<pattern match="EMSP 1160-2243" />
 				</subtopic>
 				<subtopic name="EMT Class #44, C-Shift">
-				    <comments>This class will follow the traditional Fire Department C-shift schedule.  A mandatory orientation will be held on Jan 17 from 8 a.m. - 5 p.m.</comments>
 					<pattern match="EMSP 1501-2244" />
 					<pattern match="EMSP 1501-2203" />
 					<pattern match="EMSP 1501-2204" />
-				    <pattern match="EMSP 1160-2644" />
+				    <pattern match="EMSP 1160-2244" />
 				</subtopic>
 			</topic>
 			<topic name="Emergency Medical Services, Paramedic">
@@ -867,7 +980,7 @@
 					<pattern match="EMSP 2430-2700" />
 					<pattern match="EMSP 2338-2719" />
 					<pattern match="EMSP 2338-2700" />
-				    <pattern match="EMSP 2261-2619" />
+				    <pattern match="EMSP 2261-2219" />
 				</subtopic>
 				<subtopic name="Paramedic Class #20, B-Shift">
 					<pattern match="EMSP 1438-2220" />

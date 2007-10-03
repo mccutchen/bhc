@@ -3,126 +3,71 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-    exclude-result-prefixes="xs utils">
+    xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
+    exclude-result-prefixes="xs utils fn">
 
     <!-- $Id$
-
          The print output transformer.  This XSLT file generates a set
          of plain text files embedded with Quark XPress Tags.  The
          text files can be imported into Quark XPress, which should
          correctly style the imported text based on the XPress Tags
          therein. -->
 
-    <!-- XPress Tagged Text files should be plain text, ASCII-encoded.
-         Any non-ASCII characters must be specially escaped. -->
-    <xsl:output
-        method="text"
-        encoding="us-ascii" />
-
-    <!-- Strip any extra whitespace around elements. -->
+	<!--=====================================================================
+		parameters
+		======================================================================-->
+	<xsl:param name="output-directory" as="xs:string" />
+	
+	
+	<!--=====================================================================
+		Setup
+		
+		- output ascii plain-text
+		- strip extra whitespace
+		- include utility functions
+		======================================================================-->
+    <xsl:output method="text" encoding="us-ascii" indent="no" />
     <xsl:strip-space elements="*" />
-
-    <!-- Include utility functions -->
     <xsl:include href="utils.xsl" />
 
 
-    <!-- =============================================================
-         Parameters
-         =============================================================
-
-         $output-directory is the name of the directory in which the
-         output will be stored.
-
-         $output-extension is file extension the output text files
-         should have.  Must start with a period.  This used to be
-         ".xtg", but somewhere between version 4 and version 6, Quark
-         XPress started to recognize ".txt" files as possibly
-         containing Tagged Text.
-
-         $target-platform is the name of the platform/OS that will be
-         used to process the output files.  Must be one of "mac", "pc"
-         or "unix".  This controls the line-endings used by the "br"
-         named template. -->
-    <xsl:param name="output-directory">output/print</xsl:param>
-    <xsl:param name="output-extension">.txt</xsl:param>
-    <xsl:param name="target-platform">mac</xsl:param>
-
-
-    <!-- =============================================================
-         Output document initialization
-         =============================================================
-
-         These templates follow this idiom for creating output
-         documents:
-
-         1. For each element that will have an output document, create
-         a template which matches that element and has a mode of
-         "init".  In this template, create an <xsl:result-document>
-         element with the proper @href to create the document.  Inside
-         the <xsl:result-document>, apply templates to the current
-         element, but without the @mode="init" attribute.
-
-         2. In the root-matching template, apply templates to each of
-         the elements that should have result documents, with
-         @mode="init".
-
-         3. Create another template which matches each element that
-         will have an output document, but do not give it a mode.  In
-         this template, generate the actual content for the result
-         document.  This template will get applied inside each of the
-         <xsl:result-document> templates from #1, above. -->
-
-    <xsl:template match="/schedule">
-        <xsl:apply-templates select="term | term/division/subject | term/special-section" mode="init" />
-    </xsl:template>
-
-    <xsl:template match="term" mode="init">
-        <xsl:result-document href="{$output-directory}/{@machine_name}{$output-extension}">
+	<!--=====================================================================
+		Start transformation
+		======================================================================-->
+	
+    <!-- for each term, make a new result document -->
+    <xsl:template match="//term">
+        
+        <!-- set up result document -->
+    	<xsl:variable name="dir" select="if(@name) then fn:generate-outdir(@year,@semester,@name) else fn:generate-outdir(@year,@semester)" />
+        <xsl:result-document href="{$dir}">
             <xsl:call-template name="quark-preamble" />
-            <xsl:apply-templates select="." />
+            
+            <!-- if multiple terms, output extra info -->
+        	<xsl:if test="count(//term) &gt; 1">
+                <xsl:value-of select="fn:xtag('Term Header')" /><xsl:value-of select="@name" /><xsl:call-template name="br" />
+                <xsl:value-of select="fn:xtag('Term Dates')" /><xsl:value-of select="@dates" /><xsl:call-template name="br" />
+            </xsl:if>
+            
+            <!-- continue transformation -->
+            <xsl:apply-templates select="." mode="output" />
         </xsl:result-document>
     </xsl:template>
-
-    <xsl:template match="subject" mode="init">
-        <xsl:result-document href="{$output-directory}/{ancestor::term/@machine_name}/{ancestor::division/@machine_name}/{@machine_name}{$output-extension}">
-            <xsl:call-template name="quark-preamble" />
-            <xsl:apply-templates select="." />
-        </xsl:result-document>
-    </xsl:template>
-
-    <xsl:template match="special-section" mode="init">
-        <xsl:result-document href="{$output-directory}/{ancestor::term/@machine_name}/{@machine_name}{$output-extension}">
-            <xsl:call-template name="quark-preamble" />
-            <xsl:apply-templates select="." />
-        </xsl:result-document>
-    </xsl:template>
-
-
-    <!-- =============================================================
-         Output content templates
-         =============================================================
-
-         The rest of the templates in this XSLT file are responsible
-         for actually creating the content for the result documents
-         that were created by the above templates. -->
-
-    <xsl:template match="term">
-        <!-- only output the term header if there is more than one term -->
-        <xsl:if test="count(/schedule/term) &gt; 1">
-            <xsl:value-of select="utils:xtag('Term Header')" /><xsl:value-of select="@name" /><xsl:call-template name="br" />
-            <xsl:value-of select="utils:xtag('Term Dates')" /><xsl:value-of select="@dates" /><xsl:call-template name="br" />
-        </xsl:if>
-
+    
+    
+	<!--=====================================================================
+		Process data
+		======================================================================-->
+	
+	<!-- process terms -->
+    <xsl:template match="term" mode="output">
         <!-- first, output everything that's not in the School of the Arts or Senior Adult Education -->
-        <xsl:apply-templates select="division[@name != 'School of the Arts' and @name != 'Senior Adult Education Office']/subject | special-section">
+        <xsl:apply-templates select="division[@name != 'School of the Arts' and @name != 'Senior Adult Education Office']/subject">
             <xsl:sort select="@name" />
         </xsl:apply-templates>
 
         <!-- let it breathe! -->
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
+        <xsl:call-template name="breather" />
 
         <!-- output School of the Arts -->
         <xsl:apply-templates select="division[@name = 'School of the Arts']/subject">
@@ -130,10 +75,7 @@
         </xsl:apply-templates>
 
         <!-- let it breathe! -->
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
+        <xsl:call-template name="breather" />
 
         <!-- output the Senior Adult courses -->
         <xsl:apply-templates select="division[@name = 'Senior Adult Education Office']/subject">
@@ -141,23 +83,7 @@
         </xsl:apply-templates>
     </xsl:template>
 
-    <xsl:template match="special-section">
-        <xsl:value-of select="utils:xtag('Subject Header')" /><xsl:value-of select="upper-case(@name)" /><xsl:text> COURSES</xsl:text><xsl:call-template name="br" />
-        <xsl:call-template name="blank-line" />
-
-        <xsl:apply-templates select="subject | minimester">
-            <xsl:sort select="@sortkey" />
-            <xsl:sort select="@name" />
-        </xsl:apply-templates>
-    </xsl:template>
-
-    <xsl:template match="minimester">
-        <xsl:value-of select="utils:xtag('Minimester Header')" /><xsl:value-of select="upper-case(@name)" /><xsl:call-template name="br" />
-        <xsl:apply-templates select="subject">
-            <xsl:sort select="@name" />
-        </xsl:apply-templates>
-    </xsl:template>
-
+	<!-- process subjects -->
     <xsl:template match="subject">
         <xsl:apply-templates select="@name" />
 
@@ -169,31 +95,23 @@
         <!-- insert a list of the Core courses -->
         <xsl:call-template name="make-core-list" />
 
-        <!-- if this is the Senior Adults subject, manually add a 'credit courses'
-             topic header -->
+        <!-- if this is the Senior Adults subject, manually add a 'credit courses' topic header -->
         <xsl:if test="@name = 'Senior Adult Education Program'">
             <xsl:value-of select="utils:xtag('Topic Header')" />
             <xsl:text>CREDIT COURSES</xsl:text>
             <xsl:call-template name="br" />
         </xsl:if>
 
-        <!-- Output any stand-alone types before topics or subtopics.  This allows some
-             special regroupings to have courses that aren't in a subgroup (topic, etc.)
-             and courses that are in a subgroup.  See, e.g. EMS courses. -->
+        <!-- Output any stand-alone types before subgroups. This allows some special retroupings
+             to have courses that aren't in a subgroup (topic, etc.) and courses that are in a 
+             subgroup.  See, e.g. EMS courses. -->
         <xsl:apply-templates select="type">
-            <xsl:sort select="@sortkey" data-type="number" />
+            <xsl:sort select="@sortkey-type" data-type="number" />
         </xsl:apply-templates>
 
         <xsl:apply-templates select="topic">
             <xsl:sort select="@sortkey" data-type="number" />
             <xsl:sort select="@name" />
-        </xsl:apply-templates>
-
-        <!-- this will print out any courses in a <special-subject> -->
-        <xsl:apply-templates select="group | course">
-            <xsl:sort select="@sortkey" data-type="number" />
-            <xsl:sort select="@default-sortkey" />
-            <xsl:sort select="min(descendant::class/@section)" />
         </xsl:apply-templates>
 
         <!-- each subject section should be followed by three blank lines -->
@@ -202,14 +120,16 @@
         <xsl:call-template name="blank-line" />
     </xsl:template>
 
-
+	<!-- process topics -->
     <xsl:template match="topic">
         <xsl:apply-templates select="@name" />
         <xsl:apply-templates select="comments" />
 
-        <!-- output any stand-alone types before topics or subtopics -->
-        <xsl:apply-templates select="type">
-            <xsl:sort select="@sortkey" data-type="number" />
+    	<!-- Output any stand-alone types before subgroups. This allows some special retroupings
+    		to have courses that aren't in a subgroup (topic, etc.) and courses that are in a 
+    		subgroup.  See, e.g. EMS courses. -->
+    	<xsl:apply-templates select="type">
+    		<xsl:sort select="@sortkey-type" data-type="number" />
         </xsl:apply-templates>
 
         <xsl:apply-templates select="subtopic">
@@ -217,68 +137,55 @@
             <xsl:sort select="@name" />
         </xsl:apply-templates>
 
-        <!-- this will print out any courses in a <special-subject> -->
-        <xsl:apply-templates select="group | course">
-            <xsl:sort select="@sortkey" data-type="number" />
-            <xsl:sort select="@default-sortkey" />
-            <xsl:sort select="min(descendant::class/@section)" />
-        </xsl:apply-templates>
-
-        <xsl:if test="position() != last()">
+    	<!-- each topic section should be followed by one blank line -->
+    	<xsl:if test="position() != last()">
             <xsl:call-template name="blank-line" />
         </xsl:if>
     </xsl:template>
 
-
+	<!-- process subtopics -->
     <xsl:template match="subtopic">
         <xsl:apply-templates select="@name" />
         <xsl:apply-templates select="comments" />
 
+		<!-- subtopics are the lowest level of subgroup, so output types -->
         <xsl:apply-templates select="type">
-            <xsl:sort select="@sortkey" data-type="number" />
+        	<xsl:sort select="@sortkey-type" data-type="number" />
         </xsl:apply-templates>
 
-        <!-- this will print out any courses in a <special-subject> -->
-        <xsl:apply-templates select="group | course">
-            <xsl:sort select="@sortkey" data-type="number" />
-            <xsl:sort select="@default-sortkey" />
-            <xsl:sort select="min(descendant::class/@section)" />
-        </xsl:apply-templates>
-
+    	<!-- each subtopic section should be followed by one blank line -->
         <xsl:if test="position() != last()">
             <xsl:call-template name="blank-line" />
         </xsl:if>
     </xsl:template>
-
-
-    <!--<xsl:template match="(subject | topic | subtopic)/@name">-->
+	
+	<!-- format the names of subjects, topics, and subtopics -->
     <xsl:template match="subject/@name | topic/@name | subtopic/@name">
-        <xsl:variable name="style-name">
-            <!-- if this is a child of a special-section element, add that to its Xtag -->
-            <xsl:if test="ancestor::special-section">Special </xsl:if>
-            <xsl:value-of select="concat(upper-case(substring(../local-name(), 1,1)), lower-case(substring(../local-name(), 2)))" /> Header
-        </xsl:variable>
+    	<xsl:variable name="style-name"
+    		select="concat(upper-case(substring(../local-name(), 1,1)), lower-case(substring(../local-name(), 2)), ' Header')" />
         <xsl:value-of select="utils:xtag($style-name)" />
         <xsl:value-of select="upper-case(.)" />
         <xsl:call-template name="br" />
     </xsl:template>
 
-
+	<!-- process types -->
     <xsl:template match="type">
         <xsl:apply-templates select="@name" />
 
-        <xsl:apply-templates select="group | course">
-            <xsl:sort select="@sortkey" data-type="number" />
-            <xsl:sort select="@default-sortkey" />
-            <xsl:sort select="min(descendant::class/@section)" />
-        </xsl:apply-templates>
-
-        <!-- each type section should be followed by one blank line -->
+    	<xsl:apply-templates select="course">
+    		<xsl:sort select="@sortkey" data-type="number" />
+    		<xsl:sort select="@rubric"  data-type="text"   />
+    		<xsl:sort select="@number"  data-type="number" />
+    		<xsl:sort select="min(descendant::class/@section)" />
+    	</xsl:apply-templates>
+    	
+    	<!-- each type section should be followed by one blank line -->
         <xsl:if test="position() != last()">
             <xsl:call-template name="blank-line" />
         </xsl:if>
     </xsl:template>
 
+	<!-- format the names of types -->
     <xsl:template match="type/@name">
         <!-- only output the type header if we're not in a special-section with the same name -->
         <xsl:if test="normalize-space(.) != normalize-space(ancestor::special-section[1]/@name)">
@@ -286,24 +193,8 @@
         </xsl:if>
     </xsl:template>
 
-
-
-    <xsl:template match="group">
-        <xsl:apply-templates select="course">
-            <xsl:sort select="@sortkey" data-type="number" />
-            <xsl:sort select="@default-sortkey" />
-            <xsl:sort select="min(descendant::class/@section)" />
-        </xsl:apply-templates>
-        <xsl:apply-templates select="comments" />
-
-        <!-- each group section should be followed by one blank line -->
-        <xsl:call-template name="blank-line" />
-    </xsl:template>
-
-
-
-
-    <xsl:template match="course">
+	<!-- process courses -->
+	<xsl:template match="course">
         <xsl:apply-templates select="class">
             <xsl:sort select="@sortkey" data-type="number" />
             <xsl:sort select="@sortkey-days" data-type="number" />
@@ -316,22 +207,17 @@
 
         <!-- only add a blank line after the comments if this is not the
              last course and if this isn't part of a <group> -->
-        <xsl:if test="position() != last() and not(ancestor::group) and not(ancestor::special-section and following-sibling::course/@number = self::course/@number)">
+        <xsl:if test="(position() != last()) and not(following-sibling::course/@number = self::course/@number)">
             <xsl:call-template name="blank-line" />
         </xsl:if>
     </xsl:template>
 
-
-
-
-    <xsl:template match="class">
-        <xsl:variable name="type">
-            <xsl:choose>
-                <xsl:when test="ancestor::type"><xsl:value-of select="ancestor::type/@name" /></xsl:when>
-                <xsl:when test="ancestor::special-section"><xsl:value-of select="ancestor::special-section/@name" /></xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="main-style-name">
+	<!-- don't display classes with topic codes of XX or ZZ -->
+	<xsl:template match="class[@topic-code = ('XX','ZZ')]" />
+	<!-- process classes -->
+	<xsl:template match="class">
+        <xsl:variable name="type" select="ancestor::type/@name" as="xs:string" />
+        <xsl:variable name="main-style-name" as="xs:string">
             <!-- this should define the possible different class-type styles -->
             <xsl:choose>
                 <xsl:when test="$type = 'Night' or $type = 'Flex - Night' or $type = 'Fast Track Night'">Night</xsl:when>
@@ -343,85 +229,127 @@
         <xsl:variable name="style-name">
             <!-- prepend Core to the style name if it's a Core Course -->
             <xsl:choose>
-                <xsl:when test="parent::course/@core-component and parent::course/@core-component != ''">Core <xsl:value-of select="$main-style-name" /></xsl:when>
-                <xsl:otherwise><xsl:value-of select="$main-style-name" /></xsl:otherwise>
+                <xsl:when test="parent::course/@core-name and parent::course/@core-name != ''">
+                	<xsl:value-of select="concat('Core ',$main-style-name)" />
+                </xsl:when>
+                <xsl:otherwise>
+                	<xsl:value-of select="$main-style-name" />
+                </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
 
         <xsl:value-of select="utils:xtag(concat($style-name, ' Class'))" />
 
-        <!-- the class number is a composite of the course's @rubrik and @number and the class's @section -->
-        <xsl:value-of select="../@rubrik" /><xsl:text> </xsl:text>
+        <!-- the class number is a composite of the course's @rubric and @number and the class's @section -->
+        <xsl:value-of select="../@rubric" /><xsl:text> </xsl:text>
         <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
         <xsl:value-of select="@section" /><xsl:call-template name="sep" />
 
-        <xsl:value-of select="../@title" /><xsl:call-template name="sep" />
+        <xsl:value-of select="../@title-short" /><xsl:call-template name="sep" />
         <xsl:value-of select="@synonym" /><xsl:call-template name="sep" />
         <xsl:value-of select="../@credit-hours" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@formatted-dates" /> <xsl:apply-templates select="@weeks" /><xsl:call-template name="br" />
-        <xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@formatted-times" /> / <xsl:value-of select="@method" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@room" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
-
-        <xsl:apply-templates select="extra">
+        <xsl:value-of select="utils:format-dates(@date-start, @date-end)" />
+		<xsl:apply-templates select="@weeks" /><xsl:call-template name="br" />
+		<!-- classes do not have this information
+			<xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
+			<xsl:value-of select="utils:format-times(@time-start, @time-end)" /><xsl:text> / </xsl:text>
+			<xsl:value-of select="@method" /><xsl:call-template name="sep" />
+			<xsl:value-of select="@room" /><xsl:call-template name="sep" />
+			<xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
+		-->
+		
+        <xsl:apply-templates select="meeting">
             <xsl:sort select="@sortkey" />
         </xsl:apply-templates>
     </xsl:template>
 
+	<!-- format class attributes -->
     <xsl:template match="class/@weeks">
-        <xsl:text> (</xsl:text>
-        <xsl:value-of select="." />
-        <xsl:text> Wks)</xsl:text>
+        <xsl:value-of select="concat(' (', ., ' Wks)')" />
     </xsl:template>
 
     <xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@weeks" priority="1">
         <!-- don't output the number of weeks for Senior Adult courses -->
     </xsl:template>
 
-    <xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days">
-        <!-- spell out the days of the week for Senior Adult courses -->
-        <xsl:value-of select="utils:senior-adult-days(.)" />
-    </xsl:template>
-
-
-    <xsl:template match="extra[@method = ('LEC','')]">
+	<!-- process meetings (normal / extra) -->
+    <xsl:template match="meeting[@method = ('LEC','')]">
         <xsl:value-of select="@days" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@formatted-times" /> / <xsl:value-of select="@method" /><xsl:call-template name="sep" />
+    	<xsl:value-of select="utils:format-times(@time-start, @time-end)" />
+    	<xsl:text> / </xsl:text>
+    	<xsl:value-of select="@method" /><xsl:call-template name="sep" />
         <xsl:value-of select="@room" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
+    	<xsl:value-of select="if (faculty/@name-last) then faculty/@name-last else 'Staff'" /><xsl:call-template name="br" />
     </xsl:template>
 
-    <xsl:template match="extra">
-        <xsl:value-of select="utils:xtag('Extra Class')" />
-        <xsl:value-of select="@method" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@formatted-times" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@days" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@room" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
-    </xsl:template>
-
-
-    <!-- =============================================================
-         <comments> element templates
-         =============================================================
-
-         <comments> elements are allowed to have a small subset of
-         HTML elements as children, in addition to the special
-         elements <url> and <email.  The set of HTML elements allowed
-         in <comments> elements is:
-
-             h1, p, b, i, table, tr, td
-
-         The following templates handle the proper Quark XPress Tag
-         generation for the <comments> element and its children.  -->
-    <xsl:template match="comments">
+	<xsl:template match="meeting[@method = 'INET']">
+		<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
+		<xsl:value-of select="concat('NA / ', parent::class/@topic-code)" /><xsl:call-template name="sep" />
+		<xsl:value-of select="'OL'" /><xsl:call-template name="sep" />
+		<xsl:value-of select="''" /><xsl:call-template name="sep" />
+		<xsl:value-of select="if (faculty/@name-last) then faculty/@name-last else 'Staff'" /><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<xsl:template match="meeting[@method = 'COOP']">
+		<xsl:value-of select="utils:xtag('Extra Class')" />
+		<xsl:value-of select="@method" /><xsl:call-template name="sep" />
+		<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
+		<xsl:choose>
+			<xsl:when test="@room = 'INET'">
+				<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
+				<xsl:value-of select="'OL'" /><xsl:call-template name="sep" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="@days" /><xsl:call-template name="sep" />
+				<xsl:value-of select="@room" /><xsl:call-template name="sep" />
+			</xsl:otherwise>
+		</xsl:choose>
+		<xsl:value-of select="if (faculty/@name-last) then faculty/@name-last else 'Staff'" /><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<xsl:template match="meeting">
+		<xsl:value-of select="utils:xtag('Extra Class')" />
+		<xsl:value-of select="@method" /><xsl:call-template name="sep" />
+		<xsl:value-of select="if (@time-start != '' and @time-end != '') then utils:format-times(@time-start, @time-end) else 'TBA'" /><xsl:call-template name="sep" />
+		<xsl:choose>
+			<xsl:when test="@room = 'INET'">
+				<xsl:value-of select="'TBA'" /><xsl:call-template name="sep" />
+				<xsl:value-of select="'OL'" /><xsl:call-template name="sep" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="@days" /><xsl:call-template name="sep" />
+				<xsl:value-of select="@room" /><xsl:call-template name="sep" />
+			</xsl:otherwise>
+		</xsl:choose>
+		<xsl:value-of select="if (faculty/@name-last) then faculty/@name-last else 'Staff'" /><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<!-- format meeting attributes -->
+	<xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days">
+		<!-- spell out the days of the week for Senior Adult courses -->
+		<xsl:value-of select="utils:senior-adult-days(.)" />
+	</xsl:template>
+	
+	
+	<!--=====================================================================
+		Format Comments and Comments Sub-Elements
+		
+		<comments> elements are allowed to have a small subset of
+		HTML elements as children, in addition to the special
+		elements <url> and <email>.  The set of HTML elements allowed
+		in <comments> elements is:
+		
+		* h1, p, b, i, table, tr, td
+		
+		The following templates handle the proper Quark XPress Tag
+		generation for the <comments> element and its children.
+		======================================================================-->
+	<xsl:template match="comments">
         <xsl:variable name="style-name">
             <xsl:choose>
                 <xsl:when test="parent::subject">Subject Comments</xsl:when>
                 <xsl:when test="parent::topic">Topic Comments</xsl:when>
                 <xsl:when test="parent::subtopic">Subtopic Comments</xsl:when>
-                <xsl:when test="parent::group">Group Comments</xsl:when>
                 <xsl:otherwise>Annotation</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -431,11 +359,9 @@
         <xsl:apply-templates>
             <xsl:with-param name="comments-style" select="$style-name" tunnel="yes" />
         </xsl:apply-templates>
+		
         <xsl:call-template name="br" />
     </xsl:template>
-
-    <!-- Remove <comments> inside of <special-section>s -->
-    <xsl:template match="comments[ancestor::special-section]" />
 
     <xsl:template match="comments//p">
         <xsl:apply-templates />
@@ -458,14 +384,14 @@
 
     <xsl:template match="comments//tr">
         <xsl:if test="not(count(td) = (1, 2))">
-            <xsl:message>Error in Comments: Tables must have either one or two columns</xsl:message>
+            <xsl:message>Error in <xsl:value-of select="ancestor::comments/parent::element()/@name" /> comments (from the custom mappings files): Tables must have either one or two columns</xsl:message>
         </xsl:if>
 
         <xsl:choose>
             <xsl:when test="count(td) = 2">
                 <!-- The following line sets the tabs for these two
                      columns to be positioned at 125 pts, aligned
-                     lef, and filled with blank spaces ("1 ") -->
+                     left, and filled with blank spaces ("1 ") -->
                 <xsl:text>&lt;*t(125.0,0,"1 ")&gt;</xsl:text>
                 <xsl:apply-templates select="td[1]" />
                 <xsl:call-template name="sep" />
@@ -487,139 +413,201 @@
     </xsl:template>
 
 
-    <!-- =============================================================
-         Specialty named templates
-         =============================================================
-
-         Named templates that serve a very specific purpose, like
-         creating the division information at the top of each subject
-         and getting a nicely-formatted list of the Core Curriculum
-         courses in each subject.  -->
-
+	<!--=====================================================================
+		Named Templates
+		
+		templates for very specific purposes, like creating the division 
+		information at the top of each subject and getting a nicely-formatted 
+		list of the Core Curriculum courses in each subject.
+		======================================================================-->
+	
+	<!-- spit out the division name and contact information -->
     <xsl:template name="division-info">
         <xsl:value-of select="utils:xtag('Division Info')" />
-        <xsl:choose>
-            <!-- if we're inside a division, print the full division contact info -->
-            <xsl:when test="ancestor::division">
-                <!-- Get the division info.  Any info on this element overrides the info provided
-                     by the ancestor division. -->
-                <xsl:variable name="division-name" select="upper-case(ancestor::division/@name)" />
-                <xsl:variable name="ext" select="if (@ext) then @ext else ancestor::division/@ext" />
-                <xsl:variable name="room" select="if (@room) then @room else ancestor::division/@room" />
-                <xsl:variable name="extra-room" select="if (@extra-room) then @extra-room else ancestor::division/@extra-room" />
-                <xsl:variable name="email" select="if (@email) then @email else ancestor::division/@email" />
 
-                <!-- division name -->
-                <xsl:value-of select="$division-name" /><xsl:text>  |  </xsl:text>
-
-                <!-- phone number plus extension -->
-                <xsl:text>972-860-</xsl:text><xsl:value-of select="$ext" /><xsl:text>  |  </xsl:text>
-
-                <!-- either room or rooms or location -->
-                <xsl:choose>
-                    <!-- if there is a @location, don't print 'ROOM ' first, just print
-                         the location -->
-                    <xsl:when test="@location">
-                        <xsl:value-of select="@location" />
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <!-- if there is an @extra-room, add an S to ROOM -->
-                        <xsl:text>ROOM</xsl:text><xsl:value-of select="if ($extra-room) then 'S ' else ' '" />
-
-                        <!-- the actual room number -->
-                        <xsl:value-of select="$room" />
-
-                        <!-- if there's an extra room, add it -->
-                        <xsl:if test="$extra-room">
-                            <xsl:text> and </xsl:text><xsl:value-of select="$extra-room" />
-                        </xsl:if>
-                    </xsl:otherwise>
-                </xsl:choose>
-                <xsl:call-template name="br" />
-
-                <!-- email address -->
-                <xsl:text>E-MAIL:  </xsl:text><xsl:value-of select="$email" />
-            </xsl:when>
-
-            <!-- otherwise (we're probably in a special-section), just try to print the division name -->
-            <xsl:otherwise><xsl:value-of select="if (@division-name) then upper-case(@division-name) else 'UNKNOWN DIVISION'" /></xsl:otherwise>
-        </xsl:choose>
-        <xsl:call-template name="br" />
+    	<!-- Get the division info. -->
+    	<xsl:variable name="division-name" select="upper-case(ancestor::division/@name)" />
+    	<xsl:variable name="ext"           select="if (contact/@ext) then contact/@ext else ancestor::division/contact/@ext" />
+    	<xsl:variable name="room"          select="if (contact/@room) then contact/@room else ancestor::division/contact/@room" />
+    	<xsl:variable name="extra-room"    select="if (contact/@extra-room) then contact/@extra-room else ancestor::division/contact/@extra-room" />
+    	<xsl:variable name="email"         select="if (contact/@email) then contact/@email else ancestor::division/contact/@email" />
+    	
+    	<!-- division name -->
+    	<xsl:value-of select="$division-name" /><xsl:text>  |  </xsl:text>
+    	
+    	<!-- phone number plus extension -->
+    	<xsl:text>972-860-</xsl:text><xsl:value-of select="$ext" /><xsl:text>  |  </xsl:text>
+    	
+    	<!-- either room or rooms or location -->
+    	<xsl:choose>
+    		<!-- if there is a @location, don't print 'ROOM ' first, just print
+    			the location -->
+    		<xsl:when test="@location">
+    			<xsl:value-of select="@location" />
+    		</xsl:when>
+    		<xsl:otherwise>
+    			<!-- if there is an @extra-room, add an S to ROOM -->
+    			<xsl:text>ROOM</xsl:text><xsl:value-of select="if ($extra-room) then 'S ' else ' '" />
+    			
+    			<!-- the actual room number -->
+    			<xsl:value-of select="$room" />
+    			
+    			<!-- if there's an extra room, add it -->
+    			<xsl:if test="$extra-room">
+    				<xsl:text> and </xsl:text><xsl:value-of select="$extra-room" />
+    			</xsl:if>
+    		</xsl:otherwise>
+    	</xsl:choose>
+    	<xsl:call-template name="br" />
+    	
+    	<!-- email address -->
+    	<xsl:text>E-MAIL:  </xsl:text><xsl:value-of select="$email" />
+    	
+    	<xsl:call-template name="br" />
     </xsl:template>
 
-
-    <!-- the next template creates the list of Core Curriculum courses
-         at the top of each subject -->
+    <!-- create the list of Core Curriculum courses at the top of each subject -->
     <xsl:template name="make-core-list">
-        <xsl:variable name="core-courses" select="descendant::course[@core-component and @core-component != '']" />
-        <xsl:if test="$core-courses and not(ancestor::special-section)">
-            <xsl:variable name="core-component" select="lower-case((descendant::course/@core-component)[1])" />
-
-            <xsl:value-of select="utils:xtag('Core List Header')" />
-            <xsl:text>The following courses </xsl:text>
-            <xsl:if test="$core-component = 'other'">in this subject </xsl:if>
-            <xsl:text>are part of</xsl:text>
-            <xsl:call-template name="br" />
-            <xsl:text>the </xsl:text>
-            <xsl:if test="$core-component != 'other'"><xsl:value-of select="$core-component" /> component of the </xsl:if>
-            <xsl:text>Core Curriculum:</xsl:text>
-            <xsl:call-template name="br" />
-
-            <xsl:value-of select="utils:xtag('Core List')" />
-            <xsl:for-each-group select="$core-courses" group-by="@rubrik">
-                <xsl:sort select="@rubrik" />
-
-                <xsl:for-each-group select="current-group()" group-by="@number">
-                    <xsl:sort select="@number" />
-                    <xsl:value-of select="concat(@rubrik, ' ', @number)" />
-
-                    <xsl:if test="position() != last()">
-                        <xsl:value-of select="', '" />
-                    </xsl:if>
-                </xsl:for-each-group>
-
-                <xsl:if test="position() != last()">
-                    <xsl:value-of select="', '" />
-                </xsl:if>
-            </xsl:for-each-group>
-
-            <xsl:call-template name="br" />
-            <xsl:call-template name="blank-line" />
-        </xsl:if>
+    	<xsl:for-each-group select="descendant::course[@core-name and @core-name != '']" group-by="@core-name">
+    		<xsl:call-template name="make-core-list-entry">
+    			<xsl:with-param name="core-component" select="current-grouping-key()" as="xs:string" />
+    			<xsl:with-param name="core-courses"   select="current-group()"        as="element()*" />
+    		</xsl:call-template>
+    	</xsl:for-each-group>
     </xsl:template>
+	<xsl:template name="make-core-list-entry">
+		<xsl:param name="core-component" as="xs:string" />
+		<xsl:param name="core-courses"   as="element()*" />
+		
+		<xsl:if test="count($core-courses) &gt; 0">
+			<xsl:value-of select="utils:xtag('Core List Header')" />
+			<xsl:text>The following courses </xsl:text>
+			<xsl:if test="$core-component = 'other'">in this subject </xsl:if>
+			<xsl:text>are part of</xsl:text>
+			<xsl:call-template name="br" />
+			<xsl:text>the </xsl:text>
+			<xsl:if test="$core-component != 'other'"><xsl:value-of select="$core-component" /> component of the </xsl:if>
+			<xsl:text>Core Curriculum:</xsl:text>
+			<xsl:call-template name="br" />
+			
+			<xsl:value-of select="utils:xtag('Core List')" />
+			<xsl:for-each-group select="$core-courses" group-by="@rubric">
+				<xsl:sort select="@rubric" />
+				
+				<xsl:for-each-group select="current-group()" group-by="@number">
+					<xsl:sort select="@number" />
+					<xsl:value-of select="concat(@rubric, ' ', @number)" />
+					
+					<xsl:if test="position() != last()">
+						<xsl:value-of select="', '" />
+					</xsl:if>
+				</xsl:for-each-group>
+				
+				<xsl:if test="position() != last()">
+					<xsl:value-of select="', '" />
+				</xsl:if>
+			</xsl:for-each-group>
+			
+			<xsl:call-template name="br" />
+			<xsl:call-template name="blank-line" />
+		</xsl:if>
+	</xsl:template>
 
 
-    <!-- =============================================================
-         Utility named templates
-         =============================================================
-
-         "Utility" type templates to help create the output text
-         files, including templates to insert line breaks, blank lines
-         and separators.  -->
-    <xsl:template name="blank-line">
-        <xsl:value-of select="utils:xtag('Normal Class')" />
-        <xsl:call-template name="br" />
-    </xsl:template>
-
+	<!--=====================================================================
+		Named templates for Special Characters
+		
+		insert special characters into the output
+		======================================================================-->
+	
+	<!-- quark preamble is <v6.50><e0>\r -->
+	<xsl:template name="quark-preamble">
+		<xsl:text>&lt;v6.50&gt;&lt;e0&gt;</xsl:text><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<!-- quark requires mac-style line markers, '\r' -->
     <xsl:template name="br">
-        <xsl:choose>
-            <xsl:when test="$target-platform = 'mac'">
-                <xsl:text>&#13;</xsl:text>
-            </xsl:when>
-            <xsl:when test="$target-platform = 'unix'">
-                <xsl:text>&#10;</xsl:text>
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:text>&#13;&#10;</xsl:text>
-            </xsl:otherwise>
-        </xsl:choose>
+    	<xsl:text>&#13;</xsl:text>
     </xsl:template>
 
+	<!-- a dash -->
     <xsl:template name="sep">
         <xsl:text>&#9;</xsl:text>
     </xsl:template>
 
-    <xsl:template name="quark-preamble">
-        <xsl:text>&lt;v6.50&gt;&lt;e0&gt;</xsl:text><xsl:call-template name="br" />
-    </xsl:template>
+	<!-- inserts a blank line into the output -->
+	<xsl:template name="blank-line">
+		<xsl:value-of select="utils:xtag('Normal Class')" />
+		<xsl:call-template name="br" />
+	</xsl:template>
+	
+	<!-- four blank lines -->
+	<xsl:template name="breather">
+		<xsl:call-template name="br" />
+		<xsl:call-template name="br" />
+		<xsl:call-template name="br" />
+		<xsl:call-template name="br" />
+	</xsl:template>
+	
+	
+	<!--=====================================================================
+		Quark XPress Tags Functions
+		
+		insert Quark XPress Tags into the output
+		======================================================================-->
+	
+	<!-- paragraph styles (look like '@style:') -->
+	<xsl:function name="fn:xtag" as="xs:string">
+		<xsl:param name="style-name" as="xs:string" />
+		
+		<xsl:value-of select="concat('@', normalize-space($style-name), ':')" />
+	</xsl:function>
+	
+	<!-- character styles (look like '<@style>...<@$p>' -->
+	<xsl:function name="fn:xtag-inline" as="xs:string">
+		<xsl:param name="style-name"    as="xs:string" />
+		<xsl:param name="content"       as="xs:string" />
+		
+		<xsl:value-of select="concat('&lt;@', normalize-space($style-name), '&gt;', $content, '&lt;@$p&gt;')" />
+	</xsl:function>
+	
+	
+	<!--======================================================================
+		Utility Functions
+		
+		little utility functions to make the above code cleaner
+		======================================================================-->
+	
+	<!-- generates a string in the form:  'yyyy'-'semester'_print/'term'.txt -->
+	<xsl:function name="fn:generate-outdir" as="xs:string">
+		<xsl:param name="year"     as="xs:string" />
+		<xsl:param name="semester" as="xs:string" />
+		
+		<xsl:value-of select="fn:generate-outdir($year,$semester,'')" />
+	</xsl:function>
+	
+	<xsl:function name="fn:generate-outdir" as="xs:string">
+		<xsl:param name="year"     as="xs:string" />
+		<xsl:param name="semester" as="xs:string" />
+		<xsl:param name="term"     as="xs:string" />
+
+		
+		<xsl:variable name="dir" as="xs:string">
+			<xsl:variable name="dir" select="normalize-space($output-directory)" as="xs:string" />
+			<xsl:choose>
+				<xsl:when test="not (ends-with($dir, '/')) and not (ends-with($dir, '/'))">
+					<xsl:value-of select="concat($dir,'/')" />
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$dir" />
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		<xsl:variable name="file" select="if ($term != '') then concat(utils:urlify($term), '.txt') else concat($semester, '.txt')" />
+		
+		<xsl:variable name="path" select="concat($dir, $year, '-', $semester, '_print/', $file)" as="xs:string"/>
+		<!-- '{$dir}{$year}-{$semester}_print/{$file}' -->
+		<xsl:value-of select="$path" />
+	</xsl:function>
+	
 </xsl:stylesheet>

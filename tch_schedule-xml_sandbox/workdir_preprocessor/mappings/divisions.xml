@@ -8,23 +8,10 @@
 		</subject>
 		<subject name="Accounting">
 			<comments>
-				<p>
-					<b>NOTE:</b> If you are working toward obtaining the Accounting Clerk Certificate 
-					or the Accounting Assistant Certificate, you may take these courses even though 
-					you have not taken the Texas Success Initiative exam. Obtain a TSI waiver form 
-					online, or call 972-860-4160, for more information.
-				</p>
+				<p><b>NOTE:</b> If you are working toward obtaining the Accounting Clerk Certificate or the Accounting Assistant Certificate, you may take these courses even though you have not taken the Texas Success Initiative exam. Obtain a TSI waiver form online, or call 972-860-4160, for more information.</p>
 				<h1>ACCOUNTING CLERK CERTIFICATE</h1>
-				<p>
-					This program will allow you to obtain marketable job skills necessary for 
-					entry-level accounting positions. The courses in this program will give you an 
-					opportunity to acquire basic accounting, 10-key, spreadsheet, and word processing 
-					skills.
-				</p>
-				<p>
-					The following five courses must be completed to receive this certificate. Upon 
-					completion, you will have earned 16 college credits.
-				</p>
+				<p>This program will allow you to obtain marketable job skills necessary for entry-level accounting positions. The courses in this program will give you an opportunity to acquire basic accounting, 10-key, spreadsheet, and word processing skills.</p>
+				<p>The following five courses must be completed to receive this certificate. Upon completion, you will have earned 16 college credits.</p>
 				<table border="0" cellpadding="5" cellspacing="0">
 					<tr>
 						<td>ACCT 2401 Prin of Accounting I</td>
@@ -39,23 +26,25 @@
 						<td></td>
 					</tr>
 				</table>
-				<p>
-					*You must be employed to enroll in ACNT 1380. If you are not employed, select 
-					a Business/Technical elective.
-				</p>
+				<p>*You must be employed to enroll in ACNT 1380. If you are not employed, select a Business/Technical elective.</p>
 			</comments>
 			<pattern match="ACNT" />
 			<pattern match="ACCT" />
 		</subject>
-		<subject name="Business Office Systems and Support" sorted="true">
+		<subject name="Business Office Systems and Support">
 			<contact email="bhcBOSS@dcccd.edu" />
 			<pattern match="POFT" />
 			<pattern match="POFI" />
 			<pattern match="POFM" />
+			<pattern match="MDCA" />
 		</subject>
 		<subject name="Business">
-			<pattern match="BUSI" />
-			<pattern match="IBUS" />
+			<!-- Ok, I'm going to try this. Basically, IBUS 1305 should follow BUSI 1305 -->
+			<pattern match="BCIS" priority="0" />
+			<pattern match="BUSI 130[0-5]" priority="1" />
+			<pattern match="IBUS 1305" priority="1" />
+			<pattern match="BUSI" priority="0" />
+			<pattern match="IBUS" priority="0" />
 		</subject>
 		<subject name="Computer Information Technology">
 			<contact email="bhcCIT@dcccd.edu" />
@@ -82,43 +71,16 @@
 		<subject name="Economics">
 			<pattern match="ECON" />
 			<comments>
-				<p>
-					<b>NOTE:</b> The courses shown below include a high level of learning support for 
-					each student. This high level of support is provided to help students build success 
-					at each step in their course. To help build this success students enrolling 
-					initially in ECON 2301 will be enrolled in ECON 1303 (self-paced/online) with the 
-					same section number. This concurrent enrollment is required unless the student has 
-					completed ECON 1303 in a previous semester or is enrolling in a Distance Learning 
-					section of ECON 2301.
-				</p>
-				<p>
-					The concurrent ECON 1303 course provides the student with the high level HelpLab 
-					support and provides the self-paced preparation ("prepare-as-you-go" course) for 
-					ECON 2301. The enhanced HelpLab support includes personal one-to-one tutoring, group 
-					test review sessions, multimedia study materials and online practice tests along 
-					with personal assistance by telephone and e-mail.
-				</p>
-				<p>
-					ECON 1303 is a transferable credit course, is a Core Curriculum course and can be 
-					taken independently online (see Distance Learning section below) or, as indicated 
-					above, will be taken concurrently with ECON 2301.
-				</p>
-				<p>
-					The orientation for the concurrent ECON 1303 is part of the orientation for the 
-					ECON 2301 course carrying the same section number. If there are any questions, please 
-					come by the ECON HelpLab, Room M130, call 972-860-4169 or 972-860-4164, or e-mail 
-					Gus Herring at gHerring@dcccd.edu with a copy to Bob Smith at bSmith1@dcccd.edu.
-				</p>
+				<p><b>NOTE:</b> The courses shown below include a high level of learning support for each student. This high level of support is provided to help students build success at each step in their course. To help build this success students enrolling initially in ECON 2301 will be enrolled in ECON 1303 (self-paced/online) with the same section number. This concurrent enrollment is required unless the student has completed ECON 1303 in a previous semester or is enrolling in a Distance Learning section of ECON 2301.</p>
+				<p>The concurrent ECON 1303 course provides the student with the high level HelpLab support and provides the self-paced preparation ("prepare-as-you-go" course) for ECON 2301. The enhanced HelpLab support includes personal one-to-one tutoring, group test review sessions, multimedia study materials and online practice tests along with personal assistance by telephone and e-mail.</p>
+				<p>ECON 1303 is a transferable credit course, is a Core Curriculum course and can be taken independently online (see Distance Learning section below) or, as indicated above, will be taken concurrently with ECON 2301.</p>
+				<p>The orientation for the concurrent ECON 1303 is part of the orientation for the ECON 2301 course carrying the same section number. If there are any questions, please come by the ECON HelpLab, Room M130, call 972-860-4169 or 972-860-4164, or e-mail Gus Herring at gHerring@dcccd.edu with a copy to Bob Smith at bSmith1@dcccd.edu.</p>
 			</comments>
 		</subject>
 		<subject name="Journalism">
 			<pattern match="JOUR" />
 			<comments>
-				<p>
-					NOTE: Journalism 1307 surveys the field of mass communications. Journalism 2311 is a 
-					reporting course. Students may enroll in Journalism 2311 without having taken 
-					Journalism 1307. Room B212 is the student newspaper office.
-				</p>
+				<p>NOTE: Journalism 1307 surveys the field of mass communications. Journalism 2311 is a reporting course. Students may enroll in Journalism 2311 without having taken Journalism 1307. Room B212 is the student newspaper office.</p>
 			</comments>
 		</subject>
 		<subject name="Management">
@@ -134,10 +96,9 @@
 			<pattern match="FSHD" />
 			<pattern match="FSHN" />
 		</subject>
-		<!-- is this really a subject?
 		<subject name="Spanish Language">
 			<pattern match="SPNL" />
-		</subject> -->
+		</subject>
 		<subject name="Visual Communications" email="bhcVCOM@dcccd.edu">
 			<pattern match="ARTC" />
 			<pattern match="ARTV" />
@@ -168,8 +129,9 @@
 			<contact email="bhcSpeech@dcccd.edu" />
 			<pattern match="SPCH" />
 		</subject>
-		<!-- this one I don't know what to do with
-		<pattern match="DCLS" /> -->
+		<subject name="College Learning Skills">
+			<pattern match="DCOM" />
+		</subject>
 	</division>
 	<division name="Health and Human Services">
 		<contact ext="4239" room="A219" email="bhcHHServices@dcccd.edu" />
@@ -179,11 +141,7 @@
 			<pattern match="CDEC" />
 			<pattern match="TECA" />
 			<comments>
-				<p>
-					NOTE: All students enrolling in child development courses must submit to a criminal 
-					background check. For additional information call Dr. Jane Rowe at 972-860-4144 or 
-					Johnny Castro at 972-860-4136.
-				</p>
+				<p>NOTE: All students enrolling in child development courses must submit to a criminal background check. For additional information call Dr. Jane Rowe at 972-860-4144 or Johnny Castro at 972-860-4136.</p>
 			</comments>
 		</subject>
 		<subject name="Education">
@@ -198,14 +156,7 @@
 			<pattern match="HPRS" />
 			<pattern match="RNSG" />
 			<comments>
-				<p>
-					Clinical opportunities are not available for any student without a U.S. Social Security number, 
-					http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before 
-					applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and 
-					Radiologic Sciences. International students are advised to contact the Brookhaven College 
-					Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, 
-					concerning this requirement.
-				</p>
+				<p>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</p>
 			</comments>
 		</subject>
 		<subject name="Radiologic Sciences">
@@ -226,57 +177,31 @@
 			</topic>
 			<topic name="Non-Majors Biology">
 				<comments>
-					<p>
-						NOTE: Biology 1408 and 1409 are courses for non-majors. Non-science majors and 
-						returning students with limited biology background may take either course in 
-						preparation for their first biology course for majors.  There are no 
-						prerequisites.
-					</p>
+					<p>NOTE: Biology 1408 and 1409 are courses for non-majors. Non-science majors and returning students with limited biology background may take either course in preparation for their first biology course for majors.  There are no prerequisites.</p>
 				</comments>
 				<pattern match="BIOL 140[89]" />
 			</topic>
 			<topic name="Majors Biology">
 				<comments>
-					<p>
-						NOTE: Biology 1406 and 1407 are courses for students majoring and/or minoring in 
-						biology or related disciplines. It is recommended that students have recently 
-						had either high school biology or Biology 1408 or 1409. It is also recommended 
-						that students have recently had high school chemistry or Chemistry 1405 before 
-						taking this course.
-					</p>
+					<p>NOTE: Biology 1406 and 1407 are courses for students majoring and/or minoring in biology or related disciplines. It is recommended that students have recently had either high school biology or Biology 1408 or 1409. It is also recommended that students have recently had high school chemistry or Chemistry 1405 before taking this course.</p>
 				</comments>
 				<pattern match="BIOL 140[67]" />
 			</topic>
 			<topic name="Anatomy &amp; Physiology for Nursing Majors">
 				<comments>
-					<p>
-						NOTE: Enrollment into SCIT 1407 will require an appropriate reading and writing 
-						score on one of the assessment instruments (THEA/TASP, etc.) taken within the 
-						last two years. If your reading or writing score is below the minimum cutoff, 
-						you will be advised to enroll into an alternative biology course, such as 
-						BIOL 1408 or DIRS 9170.  SCIT 1407 is a prerequisite for the Nursing Program.
-					</p>
+					<p>NOTE: Enrollment into SCIT 1407 will require an appropriate reading and writing score on one of the assessment instruments (THEA/TASP, etc.) taken within the last two years. If your reading or writing score is below the minimum cutoff, you will be advised to enroll into an alternative biology course, such as BIOL 1408 or DIRS 9170.  SCIT 1407 is a prerequisite for the Nursing Program.</p>
 				</comments>
 				<pattern match="SCIT" />   <!-- duplicated -->
 			</topic>
 			<topic name="Honors Anatomy &amp; Physiology (Majors)">
 				<comments>
-					<p>
-						NOTE: Biology 2401 and 2402 are anatomy and physiology courses for biology majors 
-						and for students wanting a transferable anatomy and physiology course, such as, 
-						Bachelor of Science, Nursing; physical therapy and kinesiology students. Please 
-						see the online Catalog for prerequisite information.
-					</p>
+					<p>NOTE: Biology 2401 and 2402 are anatomy and physiology courses for biology majors and for students wanting a transferable anatomy and physiology course, such as, Bachelor of Science, Nursing; physical therapy and kinesiology students. Please see the online Catalog for prerequisite information.</p>
 				</comments>
 				<pattern match="BIOL 240[12]" />
 			</topic>
 			<topic name="Genetics">
 				<comments>
-					<p>
-						NOTE: Genetics is a course for science majors. Please see the online Catalog for 
-						prerequisite information. For more information call 972-860-4753 or e-mail 
-						aBailey@dcccd.edu.
-					</p>
+					<p>NOTE: Genetics is a course for science majors. Please see the online Catalog for prerequisite information. For more information call 972-860-4753 or e-mail aBailey@dcccd.edu.</p>
 				</comments>
 				<pattern match="BIOL 2416" />
 			</topic>
@@ -287,27 +212,15 @@
 				<pattern match="BIOL 1411-2226" />
 			</topic>
 			<comments>
-				<p>
-					NOTE: Meeting course prerequisites is very important to your success in science courses. 
-					Before registering, check the Catalog online or call the division office for prerequisite 
-					information.
-				</p>
+				<p>NOTE: Meeting course prerequisites is very important to your success in science courses. Before registering, check the Catalog online or call the division office for prerequisite information.</p>
 			</comments>
 		</subject>
 		<subject name="Chemistry">
 			<contact email="bhcScience@dcccd.edu" />
 			<pattern match="CHEM" />
 			<comments>
-				<p>
-					NOTE: Meeting course prerequisites is very important to your success in chemistry 
-					courses. Before registering, check the Catalog online or call the division office 
-					for prerequisite information.
-				</p>
-				<p>
-					NOTE: All chemistry labs will meet as scheduled the first week of class whether the 
-					lecture class has met or not. It is MANDATORY to attend Safety Lab, which is offered 
-					only the first week at the scheduled lab time for your section.
-				</p>
+				<p>NOTE: Meeting course prerequisites is very important to your success in chemistry courses. Before registering, check the Catalog online or call the division office for prerequisite information.</p>
+				<p>NOTE: All chemistry labs will meet as scheduled the first week of class whether the lecture class has met or not. It is MANDATORY to attend Safety Lab, which is offered only the first week at the scheduled lab time for your section.</p>
 			</comments>
 		</subject>
 		<subject name="Developmental Mathematics">
@@ -321,12 +234,7 @@
 			<contact  email="bhcScience@dcccd.edu" />
 			<pattern match="GEOL" />
 			<comments>
-				<p>
-					NOTE: GEOL 1401,1403, 1404 and 1445 are four-credit-hour Core Curriculum lab sciences. 
-					Students are encouraged to bring textbook and lab manual to their first class meeting. 
-					For text information visit the bookstore or call the geology lab at 972-860-4713. 
-					Several local field trips will be open to GEOL students.
-				</p>
+				<p>NOTE: GEOL 1401,1403, 1404 and 1445 are four-credit-hour Core Curriculum lab sciences. Students are encouraged to bring textbook and lab manual to their first class meeting. For text information visit the bookstore or call the geology lab at 972-860-4713. Several local field trips will be open to GEOL students.</p>
 			</comments>
 		</subject>
 		<subject name="Geospatial Technology">
@@ -340,11 +248,7 @@
 			<pattern match="MATH" />
 			<pattern match="TECM" />
 			<comments>
-				<p>
-					NOTE: REQUIRED FOR ALL MATH COURSES: One of any version of the following Texas Instruments 
-					calculators: TI-83, TI-84 or TI-86.  NOTE:  All MATH courses are part of the Service-Learning 
-					Program, check with the instructor or e-mail bhcServiceLearning@dcccd.edu for more information.
-				</p>
+				<p>NOTE: REQUIRED FOR ALL MATH COURSES: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86.  NOTE:  All MATH courses are part of the Service-Learning Program, check with the instructor or e-mail bhcServiceLearning@dcccd.edu for more information.</p>
 			</comments>
 		</subject>
 		<subject name="Physical Science">
@@ -399,13 +303,7 @@
 		<contact ext="4807" room="M211A" extra-room="M203" email="bhcSeniorAdultEducation@dcccd.edu" />
 		<subject name="Senior Adult Education Program">
 			<comments>
-				<p>All courses listed under Senior Adult Education Program have been planned for adults who 
-					are 50 years or older. For information and personal assistance with registration, please 
-					call DeBorah Whaley- Stephenson at 972-860-4807 or Janice Groeneman at 972-860-4698. The 
-					Senior Adult Education offices are located in Building M, in rooms M203 and M211A. Are 
-					you eligible for FREE tuition? If you are 65 years or older and reside in Dallas County 
-					(or own property in Dallas County subject to ad valorem taxation), tuition for credit 
-					classes is waived for up to six credit hours per semester.</p>
+				<p>All courses listed under Senior Adult Education Program have been planned for adults who are 50 years or older. For information and personal assistance with registration, please call DeBorah Whaley- Stephenson at 972-860-4807 or Janice Groeneman at 972-860-4698. The Senior Adult Education offices are located in Building M, in rooms M203 and M211A. Are you eligible for FREE tuition? If you are 65 years or older and reside in Dallas County (or own property in Dallas County subject to ad valorem taxation), tuition for credit classes is waived for up to six credit hours per semester.</p>
 			</comments>
 		</subject>
 	</division>
@@ -515,28 +413,21 @@
 				<pattern match="VIET"/>
 			</topic>
 			<comments>
-				<p>
-					NOTE: New! Look for Linguistics in its own section following Languages.
-				</p>
+				<p>NOTE: New! Look for Linguistics in its own section following Languages.</p>
 			</comments>
 		</subject>
 	</division>
+	
+	<division name="Unknown Division" display="false">
+		<!-- These don't appear to belong to a division... I'll have to track them down -->
+		<subject name="Career Exploration">
+			<pattern match="CREX" />
+		</subject>
+		<subject name="Linguistics">
+			<pattern match="LING" />
+		</subject>
+		<subject name="DCLS">
+			<pattern match="DCLS" />
+		</subject>
+	</division>
 </divisions>
-
-<!-- These don't appear to belong to a division... I'll have to track them down
-	<subject name="Career Exploration">
-		<pattern match="CREX" />
-	</subject>
-	<subject name="College Learning Skills">
-		<pattern match="DCOM" />
-	</subject>
-	<subject name="Linguistics">
-		<pattern match="LING" />
-	</subject>
-	<subject name="Spanish Language">
-		<pattern match="SPNL" />
-	</subject>
-	<subject name="?">
-		<pattern match="DCLS" />
-	</subject>
--->

@@ -20,6 +20,10 @@
     {
         text-indent: 1em;
     }
+    .commnets p
+    {
+        text-decoration:none;
+    }
     
     h1, h2, h3, h4, h5, p.division-info
     {
@@ -117,10 +121,15 @@
     {
         margin-bottom: 1em;
     }
+    table
+    {
+        overflow: hidden;
+    }
     td
     {
         padding: 0;
         padding-right: 1em;
+        white-space: nowrap;
     }
     td.dates, td.faculty
     {
@@ -135,6 +144,11 @@
     {
         color: #693;
     }
+    td.class-comments
+    {
+        white-space: normal;
+    }
+    
     div.course-section p.comments
     {
         margin-top: -.4em;
@@ -149,6 +163,7 @@
     td.class-comments
     {
         background-color: #dff4ff;
+        text-decoration: none;
     }
     td.class-comments div.comments
     {
@@ -169,6 +184,9 @@
     /* match styles with print */
     div.core td {
     text-decoration: underline;
+    }
+    div.core td.class-comments {
+    text-decoration: none;
     }
     div.N td {
     font-weight: bold;
