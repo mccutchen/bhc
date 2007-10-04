@@ -8,40 +8,27 @@
     exclude-result-prefixes="xs utils">
 
 
-    <!-- Defaults -->
+	<!-- =====================================================================
+		 Default Values
+		 ===================================================================== -->
     <xsl:variable name="default-time" as="xs:string">NA</xsl:variable>
     <xsl:variable name="default-date" as="xs:string">NA</xsl:variable>
 
+
     <!-- =====================================================================
-         Basic utilities
-    ====================================================================== -->
+         Basic Utilities
+         ===================================================================== -->
+	<!-- sort-order
+		 This is one of Will's functions. not really sure what it's for in his program -->
     <xsl:function name="utils:sort-order" as="xs:integer">
         <xsl:param name="needle" />
         <xsl:param name="haystack" />
         <xsl:number value="index-of($haystack, $needle)[1]" />
     </xsl:function>
     
-    
-    <!-- =====================================================================
-         Quark XPress Tag functions
-    ====================================================================== -->
-    <xsl:function name="utils:xtag" as="xs:string">
-        <xsl:param name="style-name" as="xs:string" />
-        <xsl:value-of select="concat('@', normalize-space($style-name), ':')" />
-    </xsl:function>
-
-    <xsl:function name="utils:xtag-inline" as="xs:string">
-        <xsl:param name="style-name" as="xs:string" />
-        <xsl:param name="content" as="xs:string" />
-        <!-- inline styles in Quark Xpress Tags look like <@stylename>content<@$p> -->
-        <xsl:value-of select="concat('&lt;@', $style-name, '&gt;', $content, '&lt;@$p&gt;')" />
-    </xsl:function>
-
-    
-    <!-- =====================================================================
-         Urlify
-    ====================================================================== -->
-    <xsl:function name="utils:urlify" as="xs:string">
+    <!-- make-url
+    	 converts a string into a url-safe string -->
+    <xsl:function name="utils:make-url" as="xs:string">
 		<!-- translates an input string into something suitable for URLs or
 			 filenames, mostly by replacing spaces with underscores, etc. -->
 		<xsl:param name="s" as="xs:string" />
@@ -86,8 +73,8 @@
 	
 
     <!-- =====================================================================
-         Date formatters
-    ====================================================================== -->
+    	 Date formatters
+    	 ===================================================================== -->
     <xsl:function name="utils:format-dates" as="xs:string">
         <xsl:param name="start-date" as="xs:string" />
         <xsl:param name="end-date" as="xs:string" />
@@ -109,7 +96,7 @@
 
     <!-- =====================================================================
          Time formatters
-    ====================================================================== -->
+         ===================================================================== -->
     <xsl:function name="utils:format-times" as="xs:string">
         <!-- Formats the given start time and end time according to AP
              style.  Uses the utils:format-time() function to format

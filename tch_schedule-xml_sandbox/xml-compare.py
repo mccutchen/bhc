@@ -69,7 +69,8 @@ if __name__ == '__main__':
         if (not dsc_classes.has_key(k)): tidy_only.append(k);
 
     # now output
-    fout = file('output/' + year + '-' + semester + '_class-compare.txt', 'w');
+    fout = file('data/' + year + '-' + semester + '_compare.txt', 'w');
+    
     print 'DSC  ', len(dsc_classes), 'courses',
     if (len(dsc_repeats) > 0):
         print 'with errors:';
@@ -116,3 +117,5 @@ if __name__ == '__main__':
             print >> fout, len(tidy_only), ' imaginary classes found only in tidy xml:';
             for k in tidy_only: print >> fout, tidy_classes[k], ' : ', k;
     else: print 'ok.';
+    
+    fout.close();

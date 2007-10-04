@@ -3,16 +3,18 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-	xmlns:fn="http://www.brookhavencollege.edu/xml/fn">	
+	xmlns:fn="http://www.brookhavencollege.edu/xml/fn">
+	
 	<!-- utility functions -->
 	<xsl:include
-		href="libs/utils.xsl" />
+		href="xml-utils.xsl" />
 	
 	<xsl:output
 		method="xml"
 		encoding="iso-8859-1"
 		indent="yes"
-		exclude-result-prefixes="utils" />
+		doctype-system="../dtds/xml-tidy.dtd"
+		exclude-result-prefixes="xs utils fn" />
 	
 	<!-- command line parameters -->
 	<xsl:param name="semester" as="xs:string" />
@@ -142,7 +144,8 @@
 				<!-- special topic name 'none' just means "group, but don't display topic name" -->
 				<xsl:when test="compare(@name-of-topic, 'none') = 0">
 					<xsl:element name="topic">
-						<xsl:attribute name="name" select="'none'" />
+						<xsl:attribute name="name"    select="'none'" />
+						<xsl:attribute name="sortkey" select="0"      />
 						
 						<xsl:call-template name="create-types">
 							<xsl:with-param name="classes" select="current-group()" />

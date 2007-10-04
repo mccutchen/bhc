@@ -1,3 +1,0 @@
-@ECHO Analyzing...
-@python -m AnalyzeScheduleTypes ../output/2008-Spring_tidy.xml analysis-st_2008-Spring/
-@PAUSE

@@ -7,12 +7,13 @@
 
 	<!-- utility functions -->
 	<xsl:include
-		href="libs/utils.xsl" />
+		href="xml-utils.xsl" />
 	  
 	<xsl:output
 		method="xml"
 		encoding="iso-8859-1"
 		indent="yes"
+		doctype-system="../dtds/xml-flat.dtd"
 		exclude-result-prefixes="xs utils fn" />
 	
 	<!-- command line parameters -->
@@ -21,11 +22,11 @@
 	  
 	<!-- save some typing on edit -->
 	<xsl:variable name="dir-mappings"  select="'mappings/'"                                                 as="xs:string"  />
-	<xsl:variable name="file-semester" select="concat($year, '-', lower-case($semester), '.xml')"           as="xs:string"  />
+	<xsl:variable name="file-sorting"  select="concat($year, '-', lower-case($semester), '.xml')"           as="xs:string"  />
 	
 	<!-- some global vars -->
 	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, 'divisions.xml'))/divisions"  as="element()*" />
-	<xsl:variable name="doc-semester"  select="document(concat($dir-mappings, $file-semester))/mappings"    as="element()*" />
+	<xsl:variable name="doc-semester"  select="document(concat($dir-mappings, $file-sorting))/mappings"     as="element()*" />
 	<xsl:variable name="doc-sortkeys"  select="document('mappings/sortkeys.xml')/sortkeys"                  as="element()*" />
 	<xsl:variable name="doc-core"      select="document(concat($dir-mappings, 'core.xml'))/core-components" as="element()*" />
 	<!-- something for sorting into minimesters -->
@@ -39,7 +40,7 @@
 	
 	<!-- 
 		This is the first step in creating a fairly neat and tidy xml document containing the useful information
-		from DSC XML. This transform merely flattens the XML, exposing the data elements needed for tidy_xml.xsl.
+		from DSC XML. This transform merely flattens the XML, exposing the data elements needed for xml-tidy.xsl.
 	-->
 	
 	
