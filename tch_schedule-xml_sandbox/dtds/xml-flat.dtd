@@ -1,0 +1,74 @@
+<!ELEMENT schedule (term+)>
+<!ATTLIST schedule
+date-created CDATA #REQUIRED
+time-created CDATA #REQUIRED>
+
+<!ELEMENT term (class+)>
+<!ATTLIST term
+year CDATA #REQUIRED
+semester CDATA #REQUIRED
+date-start CDATA #REQUIRED
+date-end CDATA #REQUIRED>
+
+<!ELEMENT class (comments?, meeting*, xlisting*, corequisite-section*)>
+<!ATTLIST class
+rubric CDATA #REQUIRED
+number CDATA #REQUIRED
+section CDATA #REQUIRED
+synonym CDATA #REQUIRED
+type-credit CDATA #REQUIRED
+type-schedule CDATA #REQUIRED
+topic-code CDATA #REQUIRED
+credit-hours CDATA #REQUIRED
+capacity CDATA #REQUIRED
+core-code CDATA #IMPLIED
+core-name CDATA #IMPLIED
+weeks CDATA #REQUIRED
+date-start CDATA #REQUIRED
+date-end CDATA #REQUIRED
+title-short CDATA #REQUIRED
+title-long CDATA #REQUIRED
+name-of-division CDATA #REQUIRED
+name-of-subject CDATA #REQUIRED
+name-of-topic CDATA #IMPLIED
+name-of-subtopic CDATA #IMPLIED>
+
+<!ELEMENT comments (#PCDATA)>
+
+<!ELEMENT meeting (faculty*)>
+<!ATTLIST meeting
+days CDATA #REQUIRED
+method CDATA #REQUIRED
+bldg CDATA #REQUIRED
+room CDATA #REQUIRED
+time-start CDATA #REQUIRED
+time-end CDATA #REQUIRED
+sortkey-days CDATA #REQUIRED
+sortkey-times CDATA #REQUIRED
+sortkey-method CDATA #REQUIRED>
+
+<!ELEMENT faculty (#PCDATA)>
+<!ATTLIST faculty
+name-first CDATA #REQUIRED
+name-middle CDATA #REQUIRED
+name-last CDATA #REQUIRED
+email CDATA #REQUIRED
+phone CDATA #REQUIRED
+class-load CDATA #REQUIRED>
+
+
+<!ELEMENT xlisting (#PCDATA)>
+<!ATTLIST xlisting
+title CDATA #REQUIRED
+synonym CDATA #REQUIRED
+rubric CDATA #REQUIRED
+number CDATA #REQUIRED
+section CDATA #REQUIRED>
+
+<!ELEMENT corequisite-section (#PCDATA)>
+<!ATTLIST corequisite-section
+title CDATA #REQUIRED
+synonym CDATA #REQUIRED
+rubric CDATA #REQUIRED
+number CDATA #REQUIRED
+section CDATA #REQUIRED>

@@ -1,0 +1,3 @@
+@ECHO Analyzing...
+@python -m AnalyzeDL ../output/2008-Spring_tidy.xml analysis-dl_2008-Spring/
+@PAUSE
