@@ -11,8 +11,9 @@
 	<!-- =====================================================================
 		 Default Values
 		 ===================================================================== -->
-    <xsl:variable name="default-time" as="xs:string">NA</xsl:variable>
-    <xsl:variable name="default-date" as="xs:string">NA</xsl:variable>
+    <xsl:variable name="default-time"     select="'NA'"      as="xs:string" />
+    <xsl:variable name="default-date"     select="'NA'"      as="xs:string" />
+	<xsl:variable name="output-directory" select="'output/'" as="xs:string" />
 
 
     <!-- =====================================================================
@@ -26,7 +27,35 @@
         <xsl:number value="index-of($haystack, $needle)[1]" />
     </xsl:function>
     
-    <!-- make-url
+	<!-- generate-outdir
+		 generates a string in the form:  $output-directory/'yyyy'-'semester'_print/('term'|'semester').$output-extension -->
+	<xsl:function name="utils:generate-outdir" as="xs:string">
+		<xsl:param name="year"     as="xs:string" />
+		<xsl:param name="semester" as="xs:string" />		
+		
+		<xsl:variable name="dir" as="xs:string">
+			<xsl:variable name="dir" select="normalize-space($output-directory)" as="xs:string" />
+			<xsl:choose>
+				<xsl:when test="not (ends-with($dir, '/')) and not (ends-with($dir, '/'))">
+					<xsl:value-of select="concat($dir,'/')" />
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of select="$dir" />
+				</xsl:otherwise>
+			</xsl:choose>
+		</xsl:variable>
+		
+		<xsl:variable name="path" select="concat($dir, $year, '-', $semester)" as="xs:string"/>
+		<!-- '{$dir}{$year}-{$semester}}' -->
+		<xsl:value-of select="$path" />
+	</xsl:function>
+	
+	<xsl:function name="utils:get-outdir" as="xs:string">
+		<xsl:value-of select="$output-directory" />
+	</xsl:function>
+	
+	
+	<!-- make-url
     	 converts a string into a url-safe string -->
     <xsl:function name="utils:make-url" as="xs:string">
 		<!-- translates an input string into something suitable for URLs or

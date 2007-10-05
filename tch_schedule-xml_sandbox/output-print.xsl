@@ -14,23 +14,20 @@
          therein. -->
 
 	<!--=====================================================================
-		parameters
+		Setup
 		======================================================================-->
-	<xsl:param name="output-directory" as="xs:string" />
+	<xsl:output method="text" encoding="us-ascii" indent="no" />
+	<xsl:strip-space elements="*" />
+	<xsl:include href="output-utils.xsl" />
 	
 	
 	<!--=====================================================================
-		Setup
-		
-		- output ascii plain-text
-		- strip extra whitespace
-		- include utility functions
+		Globals
 		======================================================================-->
-    <xsl:output method="text" encoding="us-ascii" indent="no" />
-    <xsl:strip-space elements="*" />
-    <xsl:include href="output-utils.xsl" />
-
-
+	<xsl:variable name="output-type" as="xs:string" select="'print'" />
+	<xsl:variable name="ext"         as="xs:string" select="'txt'"   />
+	
+	
 	<!--=====================================================================
 		Start transformation
 		======================================================================-->
@@ -39,8 +36,10 @@
     <xsl:template match="//term">
         
         <!-- set up result document -->
-    	<xsl:variable name="dir" select="if(@name) then fn:generate-outdir(@year,@semester,@name) else fn:generate-outdir(@year,@semester)" />
-        <xsl:result-document href="{$dir}">
+    	<xsl:variable name="dir"  select="concat(utils:generate-outdir(@year, @semester), '_', $output-type)"         as="xs:string" />
+    	<xsl:variable name="file" select="if (@name != '') then utils:make-url(@name) else utils:make-url(@semester)" as="xs:string" />
+    	
+        <xsl:result-document href="{$dir}/{$file}.{$ext}">
             <xsl:call-template name="quark-preamble" />
             
             <!-- if multiple terms, output extra info -->
@@ -570,44 +569,5 @@
 		
 		<xsl:value-of select="concat('&lt;@', normalize-space($style-name), '&gt;', $content, '&lt;@$p&gt;')" />
 	</xsl:function>
-	
-	
-	<!--======================================================================
-		Utility Functions
-		
-		little utility functions to make the above code cleaner
-		======================================================================-->
-	
-	<!-- generates a string in the form:  'yyyy'-'semester'_print/'term'.txt -->
-	<xsl:function name="fn:generate-outdir" as="xs:string">
-		<xsl:param name="year"     as="xs:string" />
-		<xsl:param name="semester" as="xs:string" />
-		
-		<xsl:value-of select="fn:generate-outdir($year,$semester,'')" />
-	</xsl:function>
-	
-	<xsl:function name="fn:generate-outdir" as="xs:string">
-		<xsl:param name="year"     as="xs:string" />
-		<xsl:param name="semester" as="xs:string" />
-		<xsl:param name="term"     as="xs:string" />
 
-		
-		<xsl:variable name="dir" as="xs:string">
-			<xsl:variable name="dir" select="normalize-space($output-directory)" as="xs:string" />
-			<xsl:choose>
-				<xsl:when test="not (ends-with($dir, '/')) and not (ends-with($dir, '/'))">
-					<xsl:value-of select="concat($dir,'/')" />
-				</xsl:when>
-				<xsl:otherwise>
-					<xsl:value-of select="$dir" />
-				</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-		<xsl:variable name="file" select="if ($term != '') then concat(utils:make-url($term), '.txt') else concat($semester, '.txt')" />
-		
-		<xsl:variable name="path" select="concat($dir, $year, '-', $semester, '_print/', $file)" as="xs:string"/>
-		<!-- '{$dir}{$year}-{$semester}_print/{$file}' -->
-		<xsl:value-of select="$path" />
-	</xsl:function>
-	
 </xsl:stylesheet>

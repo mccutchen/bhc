@@ -6,9 +6,10 @@
     xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
     exclude-result-prefixes="xs utils fn">
 
-    <!-- include some handy utility functions -->
-    <xsl:include href="output-utils.xsl" />
-    
+	<!--=====================================================================
+		Setup
+		======================================================================-->
+	<xsl:include href="output-utils.xsl" />
     <xsl:output
         method="xhtml"
         encoding="us-ascii"
@@ -17,45 +18,48 @@
         doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
         doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
     
-    <!-- parameters -->
-    <xsl:param name="year"             as="xs:string" />
-    <xsl:param name="semester"         as="xs:string" />
     
-    <!-- globals -->
-    <xsl:variable name="page-title"       as="xs:string" select="'Proof Report'" />
-    <xsl:variable name="output-directory" as="xs:string" select="concat('output/', $year, '-', $semester, '_proof')" />
-    <xsl:variable name="output-extension" as="xs:string" select="'.html'"        />
+	<!--=====================================================================
+		Parameters
+		
+		-highlighting:
+		turns highlighting on/off
+		
+		-output style:
+		A switch which controls how many proof documents are generated:
+		* If true, only the documents for each individual subject are
+		created, for simplicity's sake.
+		* If false, all of the possible documents are created, which
+		includes one for each term, each division, each special-section
+		and each subject, all stowed in appropriate directories.
+		======================================================================-->
+	<xsl:param name="with-highlighted-groups" select="'false'" />
+	<xsl:param name="for-secretaries" select="'true'" />
+	
+	
+	<!--=====================================================================
+		Globals
+		======================================================================-->
+	<xsl:variable name="output-type" as="xs:string" select="'proof'"        />
+	<xsl:variable name="ext"         as="xs:string" select="'html'"         />
+	<xsl:variable name="page-title"  as="xs:string" select="'Proof Report'" />
 
-    <!-- options -->
-    <!-- highlighting -->
-    <xsl:param name="with-highlighted-groups" select="'false'" />
-    
-    <!-- output style
-        A switch which controls how many proof documents are generated:
-        
-        * If true, only the documents for each individual subject are
-        created, for simplicity's sake.
-        
-        * If false, all of the possible documents are created, which
-        includes one for each term, each division, each special-section
-        and each subject, all stowed in appropriate directories.
-    -->
-    <xsl:param name="for-secretaries" select="'true'" />
+
+	<!--=====================================================================
+		Stylesheet
+		======================================================================-->
+    <xsl:variable name="doc-css" select="document('includes/proof-css.xml')/styles" as="node()*" />
 
 
-    <!-- grab the stylesheet to use -->
-    <xsl:variable name="doc-css" select="document('css/proof-css.xml')/styles" as="node()*" />
-
-
-    <!-- =====================================================================
-         Output document initialization
-
-         Each template whose @mode="init" has only one purpose:  create an
-         appropriately-located <xsl:result-document /> into which it will
-         insert itself.
-    ====================================================================== -->
+    <!--=====================================================================
+    	Output document initialization
+    	
+    	Each template whose @mode="init" has only one purpose:  create an
+    	appropriately-located <xsl:result-document /> into which it will
+    	insert itself.
+    	====================================================================== -->
     <xsl:template match="/schedule">
-        <!-- either way, we need to apply this template -->
+    	<!-- initialize each subject (create result document) -->
         <xsl:apply-templates select="//subject" mode="init" />
     </xsl:template>
 
@@ -63,9 +67,14 @@
         <!-- if there are courses to display -->
         <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
             
-            <xsl:variable name="output-path" select="concat($output-directory, '/', utils:make-url(parent::division/@name), '/', utils:make-url(@name), $output-extension)" as="xs:string" />
-            <xsl:result-document href="{$output-path}">
-                <xsl:call-template name="page-template">
+            <xsl:variable name="year" select="ancestor::term/@year" as="xs:string" />
+        	<xsl:variable name="sem"  select="ancestor::term/@semester" as="xs:string" />
+        	<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
+        	<xsl:variable name="div"  select="utils:make-url(parent::division/@name)" as="xs:string" />
+        	<xsl:variable name="file" select="utils:make-url(@name)" as="xs:string" />
+        	
+        	<xsl:result-document href="{$dir}/{$div}/{$file}.{$ext}">
+        		<xsl:call-template name="page-template">
                     <xsl:with-param name="page-title" select="@name" />
                 </xsl:call-template>
             </xsl:result-document>
@@ -73,12 +82,12 @@
     </xsl:template>
 
 
-    <!-- =====================================================================
-         Document-building templates
-
-         This is where the "real" work gets done, after the result-documents
-         are created by the @mode="init" templates.
-    ====================================================================== -->
+    <!--=====================================================================
+    	Document-building templates
+    	
+    	This is where the "real" work gets done, after the result-documents
+    	are created by the @mode="init" templates.
+    	====================================================================== -->
     <xsl:template match="term">
         <!-- only output the term header if there is more than one term -->
         <xsl:if test="count(//term) &gt; 1">
@@ -378,15 +387,14 @@
     </xsl:template>
 
 
-    <!-- =====================================================================
-         Comments
-
-         Comments can have a small subset of HTML elements embedded
-         within them, as well as the special elements <url> and
-         <email>.  The set of legal HTML for comments is:
-
-         h1, p, b, i, table, tr, td
-    ====================================================================== -->
+    <!--=====================================================================
+    	Comments
+    	
+    	Comments can have a small subset of HTML elements embedded within 
+    	them, as well as the special elements <url> and <email>. The set of 
+    	legal HTML for comments is:
+    		h1, p, b, i, table, tr, td
+    	====================================================================== -->
     <xsl:template match="comments">
         <!-- only include a row for comments if comments exist -->
         <div class="comments">
@@ -451,12 +459,12 @@
 
 
 
-    <!-- =====================================================================
-         Named templates
-
-         Specialty templates to create the division-info and the HTML template
-         for each page.
-    ====================================================================== -->
+    <!--=====================================================================
+    	Named templates
+    	
+    	Specialty templates to create the division-info and the HTML template
+    	for each page.
+    	======================================================================-->
     <xsl:template name="division-info">
         <!-- get a pointer to the division node -->
         <xsl:variable name="division" select="ancestor::division" />

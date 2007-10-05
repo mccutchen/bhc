@@ -5,9 +5,10 @@
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
     exclude-result-prefixes="xs utils">
     
-    <!-- utility functions -->
+	<!--=====================================================================
+		Setup
+		======================================================================-->
     <xsl:include href="output-utils.xsl" />
-    
     <xsl:output
         method="xhtml"
         encoding="us-ascii"
@@ -16,44 +17,59 @@
         doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
         doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
     
-    <!-- parameters -->
-    <xsl:param name="page-title">Room Coordinator Report</xsl:param>
-    <xsl:param name="output-directory">output/room-coordinator</xsl:param>
-    <xsl:param name="output-extension">.html</xsl:param>
     
-    <!-- options -->
-    <!-- filters
-        The room coordinator report can be filtered to only include
-        classes from a certain division or rubric by setting either
-        or both of the parameters below, as strings.
-    -->
+	<!--=====================================================================
+		Globals
+		======================================================================-->
+	<xsl:variable name="output-type" as="xs:string" select="'rooms'"                   />
+	<xsl:variable name="ext"         as="xs:string" select="'html'"                    />
+	<xsl:variable name="page-title"  as="xs:string" select="'Room Coordinator Report'" />
+	
+	
+	<!--=====================================================================
+		Filters
+		
+		The room coordinator report can be filtered to only include classes 
+		from a certain division or rubric by setting either or both of the 
+		parameters below, as strings.
+		======================================================================-->
     <xsl:variable name="division-filter" select="()" />
     <xsl:variable name="rubric-filter" select="()" />
     
-    <!-- processing variables
-        The room coordinator wants "normal" classes to come out ahead
-        of "special" classes.  Normal classes do not include their
-        annotations, but special classes do.
-        
-        The two different types of classes are defined by either
-        their course type (e.g. Day, Night, Distance Learning) or by
-        their teaching method (e.g. Lecture, Lab, Internet, TV).
-        
-        The following variables define the normal and special course
-        types and teaching methods. 
-    -->
+    
+	<!--=====================================================================
+		Processing Variables
+		
+		The room coordinator wants "normal" classes to come out ahead of 
+		"special" classes. Normal classes do not include their annotations, 
+		but special classes do.
+		
+		The two different types of classes are defined by either their course 
+		type (e.g. Day, Night, Distance Learning) or by their teaching method 
+		(e.g. Lecture, Lab, Internet, TV).
+		
+		The following variables define the normal and special course types and 
+		teaching methods.
+		======================================================================-->
     <xsl:variable name="normal-types" select="('D','N','W', 'FD', 'FN')" />
     <xsl:variable name="special-types" select="('DL','SP', 'FTD', 'FTN')" />
     <xsl:variable name="normal-methods" select="('LEC', 'LAB', 'CLIN', 'PRVT', 'PRAC', 'COOP', 'INT')" />
     <xsl:variable name="special-methods" select="('INET', 'TVP', 'IDL', 'TV')" />
     
     
-    <xsl:template match="/">
+	<!--=====================================================================
+		Start transformation
+		======================================================================-->
+	<xsl:template match="/">
         <xsl:apply-templates select="//term" />
     </xsl:template>
     
     <xsl:template match="term">
-        <xsl:result-document href="{$output-directory}/{utils:make-url(@year)}-{utils:make-url(@semester)}_room-coordinator.html">
+    	<!-- set up result document -->
+    	<xsl:variable name="dir"  select="concat(utils:generate-outdir(@year, @semester), '_', $output-type)"  as="xs:string" />
+    	<xsl:variable name="file" select="concat(utils:make-url(@year), '-', utils:make-url(@semester), '_room-coordinator')" as="xs:string" />
+    	
+    	<xsl:result-document href="{$dir}/{$file}.{$ext}">
             <html>
                 <head>
                     <title><xsl:value-of select="$page-title" /></title>

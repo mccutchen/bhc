@@ -1,52 +1,69 @@
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:utils="http://www.brookhavencollege.edu/xml/utils" exclude-result-prefixes="xs utils">
+<xsl:stylesheet
+	version="2.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
+	xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
+	exclude-result-prefixes="xs utils fn">
 
-    <xsl:output method="xhtml" encoding="us-ascii" indent="yes" omit-xml-declaration="yes"
+	<!--=====================================================================
+		Setup
+		======================================================================-->
+	<xsl:include href="output-utils.xsl"/>
+	<xsl:output method="xhtml" encoding="us-ascii" indent="yes" omit-xml-declaration="yes"
         doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN"
         doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
 
-    <!-- include some handy utility functions -->
-    <xsl:include href="output-utils.xsl"/>
 
-    <!-- Parameters -->
-    <!-- is this an "enrolling now" schedule? -->
-    <xsl:param name="enrolling-now"/>
-    
-    <!-- Global Variables -->
-    <!-- the schedule title -->
-    <xsl:variable name="schedule-name"  select="concat(//term[1]/@semester, ' ', //term[1]/@year, ' Credit')" />
-    <xsl:variable name="schedule-title" select="if($enrolling-now and string-length($enrolling-now) &gt; 0) then concat('Enrolling Now&#8212;', $schedule-name) else $schedule-name" />
+	<!--=====================================================================
+		Parameters
+		======================================================================-->
+	<!-- is this an "enrolling now" schedule? -->
+	<xsl:param name="enrolling-now"/>	
+	
+	
+	<!--=====================================================================
+		Globals
+		======================================================================-->
+	<xsl:variable name="output-type" as="xs:string" select="'rooms'"                   />
+	<xsl:variable name="ext"         as="xs:string" select="'aspx'"                    />
+	<xsl:variable name="page-title"  as="xs:string" select="'Room Coordinator Report'" />
+	
+	
+	<!--=====================================================================
+		Processing Variables
+		======================================================================-->
+    <!-- multiple terms? -->
+    <xsl:variable name="multiple-terms" select="count(//term) &gt; 1" />
+
+	<!-- schedule title -->
+	<xsl:variable name="schedule-title" select="fn:make-title(//term/@semester, //term/@year)" as="xs:string" />
 
     <!-- the text for the channel-header on each schedule page -->
     <xsl:variable name="channel-header" select="concat($schedule-title, ' Course Schedule')" />
 
-    <!-- output file specifications -->
-    <xsl:variable name="output-directory" select="'output/web'" />
-    <xsl:variable name="output-extension" select="'.aspx'"      />
-    
-    <!-- multiple terms? -->
-    <xsl:variable name="multiple-terms" select="count(//term) &gt; 1" />
-
-    <!-- Include other required stylesheets -->
+	
+	<!--=====================================================================
+		Additional Stylesheets
+		======================================================================-->
     <xsl:include href="includes/page-template.xsl" />
     <xsl:include href="includes/indexer.xsl"       />
 
 
 
 
-    <!-- ========================================================================== -->
-    <!-- Initialization:                                                            -->
-    <!-- This section creates all of the result documents for this schedule by      -->
-    <!--    using the xsl:result-document facility.                                 -->
-    <!-- ========================================================================== -->
+	<!--=====================================================================
+		Initialization
+		
+		creates all result documents for the schedule
+		======================================================================-->
     <xsl:template match="/">
         <xsl:apply-templates select="schedule" mode="init"/>
     </xsl:template>
 
     <xsl:template match="schedule" mode="init">
         <!-- full schedule index -->
-        <xsl:result-document href="{$output-directory}/index{$output-extension}">
+        <xsl:result-document href="{utils:get-outdir()}/index.{$ext}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="concat($schedule-title, ' Course Index')" />
             </xsl:call-template>
@@ -63,7 +80,7 @@
         <!-- ideally, this won't mattter
         <xsl:if test="count(//term) &gt; 1"> -->
             <xsl:result-document
-                href="{$output-directory}/{utils:make-url(@semester)}/index{$output-extension}">
+                href="{$output-directory}/{utils:make-url(@semester)}/index{$ext}">
                 <xsl:call-template name="page-template">
                     <xsl:with-param name="page-title" select="concat(@semester, ' Course Index')" />
                 </xsl:call-template>
@@ -92,7 +109,7 @@
             <xsl:value-of select="concat(utils:make-url(@name), '/')"/>
         </xsl:variable>
 
-        <xsl:result-document href="{$path-root}index{$output-extension}">
+        <xsl:result-document href="{$path-root}index{$ext}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title"><xsl:value-of select="@name"/> Course Index</xsl:with-param>
                 <xsl:with-param name="page-type" tunnel="yes">subindex</xsl:with-param>
@@ -125,7 +142,7 @@
         </xsl:variable>
 
         <xsl:result-document
-            href="{$output-directory}/{$path-root}{utils:make-url(@name)}{$output-extension}">
+            href="{$output-directory}/{$path-root}{utils:make-url(@name)}{$ext}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name"/>
                 <xsl:with-param name="path-root" select="$path-root" tunnel="yes"/>
@@ -565,5 +582,67 @@
             </xsl:choose>
         </p>
     </xsl:template>
+	
+	<!--
+		Functions
+	-->
+	<xsl:function name="fn:make-title" as="xs:string">
+		<xsl:param name="semesters" as="xs:string*" />
+		<xsl:param name="years"     as="xs:string*" />
+		
+		<xsl:variable name="term-list" select="fn:make-term-list($semesters, $years)" as="xs:string" />
+		<xsl:variable name="enrolling" select="if ($enrolling-now and $enrolling-now != '') then 'Enrolling Now&#8212;' else ''" as="xs:string" />
+		
+		<xsl:value-of select="concat($enrolling, $term-list, ' Credit')" />
+	</xsl:function>
+	
+	<xsl:function name="fn:make-term-list" as="xs:string">
+		<xsl:param name="semesters" as="xs:string*" />
+		<xsl:param name="years"     as="xs:string*" />
+		
+		<xsl:choose>
+			<!-- when invalid data passed -->
+			<xsl:when test="count($semesters) != count($years) or count($semesters) = 0">
+				<xsl:value-of select="'Invalid Semester List'" />
+			</xsl:when>
+			<!-- there is only one semester -->
+			<xsl:when test="count($semesters) = 1">
+				<xsl:value-of select="concat($semesters[1], ' ', $years[1])" />
+			</xsl:when>
+			<!-- otherwise, go deeper -->
+			<xsl:otherwise>
+				<xsl:value-of select="fn:make-term-list($semesters, $years, 1, '')" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<xsl:function name="fn:make-term-list" as="xs:string">
+		<xsl:param name="semesters" as="xs:string*" />
+		<xsl:param name="years"     as="xs:string*" />
+		<xsl:param name="index"     as="xs:integer" />
+		<xsl:param name="string"    as="xs:string" />
+
+		<xsl:choose>
+			<!-- if we're done -->
+			<xsl:when test="$index &gt; count($semesters)">
+				<xsl:value-of select="$string" />
+			</xsl:when>
+			<!-- we're not dealing with summer -->
+			<xsl:when test="not(contains('Summer', $semesters[$index]))">
+				<xsl:variable name="string-new" select="concat(', ', $semesters[$index], ' ', $years[$index])" as="xs:string" />
+				<xsl:value-of select="fn:make-term-list($semesters, $years, $index + 1, concat($string, $string-new))" />
+			</xsl:when>
+			<!-- we're dealing with summer, but it is the first one in the given year -->
+			<xsl:when test="not(contains($string, concat('Summer ', $years[$index])))">
+				<xsl:variable name="string-new" select="concat(', Summer ', $years[$index])" as="xs:string" />
+				<xsl:value-of select="fn:make-term-list($semesters, $years, $index + 1, concat($string, $string-new))" />
+			</xsl:when>
+			<!-- we're dealing with summer, and it is NOT the first one in the given year -->
+			<xsl:otherwise>
+				<xsl:value-of select="fn:make-term-list($semesters, $years, $index + 1, $string)" />
+			</xsl:otherwise>
+		</xsl:choose>
+		
+	</xsl:function>
 
 </xsl:stylesheet>

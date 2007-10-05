@@ -1,5 +1,16 @@
-@REM Assumes that java is somewhere on %PATH%
-@ECHO Running transformation...
-@java -jar C:\saxon\saxon8.jar -o proof.txt data\2007-Fall_tidy.xml proof.xsl year=2007 semester=Fall
-@ECHO Finished.
-@PAUSE
+::Assumes that java is somewhere on %PATH%
+@ECHO OFF
+
+SET xsl=proof
+SET year=2007
+SET sem=Fall
+SET dir=data
+
+SET input=%dir%\%year%-%sem%.xml
+
+
+ECHO Running transformation...
+java -jar C:\saxon\saxon8.jar -o no-file.txt %input% output-%xsl%.xsl
+ECHO Finished
+ECHO.
+PAUSE

@@ -147,7 +147,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
             <xsl:if test="ancestor::minimester and $page-type != 'subindex'">
                 <xsl:value-of select="concat(ancestor::minimester/utils:make-url(@name), '/')" />
             </xsl:if>
-            <xsl:value-of select="concat(utils:make-url(@name), $output-extension)" />
+            <xsl:value-of select="concat(utils:make-url(@name), $ext)" />
         </xsl:variable>
 
         <li>
