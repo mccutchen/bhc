@@ -348,6 +348,7 @@
 				<pattern match="DANC 2351-2736"/>
 				<pattern match="DANC 2352-2736"/>
 				<pattern match="DANC 2352-2235"/>
+				<pattern match="DANC 2352-2701"/> <!-- added 2007-10-05: Dance Performance IV -->
 			</topic>
 			<topic name="Hip Hop">
 				<pattern match="DANC 1222-2001"/>
