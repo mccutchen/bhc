@@ -387,7 +387,7 @@ class Summer07Enrolling(Enrolling, Summer07, Summer07Web):
 class Fall07(Fall):
     input = 'data/2007-fall/BH2007FA.TXT'
     terms = {
-        'Fall': (),
+        'Fall': (date(2007, 8, 27), date(2007, 12, 13)),
     }
 
 class Fall07Proof(Fall07, Proof):
