@@ -7,7 +7,7 @@
     exclude-result-prefixes="xs utils fn">
 
     <!-- include some handy utility functions -->
-    <xsl:include href="utils.xsl" />
+    <xsl:include href="output-utils.xsl" />
     
     <xsl:output
         method="xhtml"
@@ -63,7 +63,7 @@
         <!-- if there are courses to display -->
         <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
             
-            <xsl:variable name="output-path" select="concat($output-directory, '/', utils:urlify(parent::division/@name), '/', utils:urlify(@name), $output-extension)" as="xs:string" />
+            <xsl:variable name="output-path" select="concat($output-directory, '/', utils:make-url(parent::division/@name), '/', utils:make-url(@name), $output-extension)" as="xs:string" />
             <xsl:result-document href="{$output-path}">
                 <xsl:call-template name="page-template">
                     <xsl:with-param name="page-title" select="@name" />
@@ -119,7 +119,7 @@
                 <!-- if there are types, do that -->
                 <xsl:when test="count(type) &gt; 0">
                     <xsl:apply-templates select="type">
-                        <xsl:sort select="@sortkey-type" data-type="number" />
+                        <xsl:sort select="@sortkey" data-type="number" />
                     </xsl:apply-templates>
                 </xsl:when>
             </xsl:choose>
@@ -148,7 +148,7 @@
                     <!-- if there are types, do that -->
                     <xsl:when test="count(type) &gt; 0">
                         <xsl:apply-templates select="type">
-                            <xsl:sort select="@sortkey-type" data-type="number" />
+                            <xsl:sort select="@sortkey" data-type="number" />
                         </xsl:apply-templates>
                     </xsl:when>
                 </xsl:choose>
@@ -165,7 +165,7 @@
                 <h3 class="subtopic-header"><xsl:value-of select="@name" /></h3>
                 
                 <xsl:apply-templates select="type">
-                    <xsl:sort select="@sortkey-type" data-type="number" />
+                    <xsl:sort select="@sortkey" data-type="number" />
                 </xsl:apply-templates>
                 
             </div>

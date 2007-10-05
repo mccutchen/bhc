@@ -92,7 +92,7 @@
 			<xsl:attribute name="section"       select="@section"                            />
 			<xsl:attribute name="synonym"       select="@synonym"                            />
 			<xsl:attribute name="type-credit"   select="@credit-type"                        />  <!-- I don't know if this is useful for anything, so I'll keep it -->
-			<xsl:attribute name="type-schedule" select="@schedule-type"                      />
+			<xsl:attribute name="schedule-type" select="@schedule-type"                      />
 			<xsl:attribute name="topic-code"    select="@topic-code"                         />
 			<xsl:apply-templates select="ancestor::course/@credit-hours" />
 			<xsl:apply-templates select="ancestor::course/@core-code"    />

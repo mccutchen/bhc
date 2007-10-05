@@ -6,7 +6,7 @@
 	xmlns:fn="http://www.brookhavencollege.edu/xml/fn">	
 	<!-- utility functions -->
 	<xsl:include
-		href="libs/utils.xsl" />
+		href="xml-utils.xsl" />
 	
 	<xsl:output
 		method="xml"
@@ -66,7 +66,7 @@
 			
 			<!-- if there are types, copy them -->
 			<xsl:apply-templates select="type">
-				<xsl:sort select="@sortkey-type" data-type="number" />
+				<xsl:sort select="@sortkey" data-type="number" />
 			</xsl:apply-templates>
 		</xsl:element>
 	</xsl:template>
@@ -83,7 +83,7 @@
 			
 			<!-- if there are types, copy them -->
 			<xsl:apply-templates select="type">
-				<xsl:sort select="@sortkey-type" data-type="number" />
+				<xsl:sort select="@sortkey" data-type="number" />
 			</xsl:apply-templates>
 		</xsl:element>
 	</xsl:template>
@@ -93,7 +93,7 @@
 			<xsl:copy-of select="attribute()" />
 			
 			<xsl:apply-templates select="type">
-				<xsl:sort select="@sortkey-type" data-type="number" />
+				<xsl:sort select="@sortkey" data-type="number" />
 			</xsl:apply-templates>
 		</xsl:element>
 	</xsl:template>

@@ -1,0 +1,96 @@
+
+spring.txt
+----------------------------------------
+Paragraph styles in use:
+@Subject Header
+@Division Info
+@Subject Comments
+@Type Header
+@Normal Class
+@Annotation
+@Extra Class
+@Night Class
+@Distance Learning Class
+@Core List Header
+@Core List
+@Core Normal Class
+@Core Night Class
+@Core Distance Learning Class
+@Topic Header
+@Topic Comments
+@Special Subject Header
+@Special Topic Header
+@Subtopic Header
+@Minimester Header
+@Special Subtopic Header
+@Group Comments
+@Subtopic Comments
+Character styles in use:
+<@Subject Comments Bold>
+<@Subject Comments Header>
+<@website>
+----------------------------------------
+
+
+08Sp.txt
+----------------------------------------
+Paragraph styles in use:
+@Class Head
+@Class Head Small
+@Class Code
+@Class Listings
+@Class Info Left Indent
+@Class Code Subhead-Color
+@Class Listings Evening
+@Class Code Subhead
+No character styles in use.
+----------------------------------------
+
+
+spring.txt
+----------------------------------------
+Paragraph styles in use:
+@Subject Header
+@Division Info
+@Subject Comments
+@Type Header
+@Normal Class
+@Annotation
+@Extra Class
+@Night Class
+@Distance Learning Class
+@Core List Header
+@Core List
+@Core Normal Class
+@Core Night Class
+@Core Distance Learning Class
+@Topic Header
+@Topic Comments
+@Special Subject Header
+@Special Topic Header
+@Subtopic Header
+@Minimester Header
+@Special Subtopic Header
+@Group Comments
+@Subtopic Comments
+Character styles in use:
+<@Subject Comments Bold>
+<@Subject Comments Header>
+<@website>
+----------------------------------------
+
+
+08Sp.txt
+----------------------------------------
+Paragraph styles in use:
+@Class Head
+@Class Head Small
+@Class Code
+@Class Listings
+@Class Info Left Indent
+@Class Listings Evening
+@Class Code Subhead-Color
+@Class Code Subhead
+No character styles in use.
+----------------------------------------
+

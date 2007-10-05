@@ -113,6 +113,21 @@
 		</xsl:choose>
 	</xsl:function>
 	
+	<!-- convert-time-24h
+		 converts times into unambiguous 24-hour format -->
+	<xsl:function name="utils:convert-time-24h" as="xs:string">
+		<xsl:param name="str_in" as="xs:string" />
+		<xsl:variable name="str_std" select="utils:convert-time-std($str_in)" as="xs:string" />
+		
+		<xsl:variable name="h0"  select="xs:integer(tokenize($str_std, ':')[1])" as="xs:integer" />
+		<xsl:variable name="h1" select="if (matches($str_std, 'p.m.')) then xs:string($h0 + 12) else xs:string($h0)" as="xs:string" />
+		<xsl:variable name="hh" select="if (string-length($h1) = 1) then concat('0',$h1) else $h1" as="xs:string" />
+		<xsl:variable name="mm" select="tokenize(tokenize($str_std, ':')[2], ' ')[1]" as="xs:string" />
+		
+		<xsl:value-of select="concat($hh, $mm)" />
+	</xsl:function>
+	
+	
 	<!-- general date utility utilities ;oP I'm not going to document these, they're just to help
 	     the time/date utilities work with screwed up data and no real date-formatting support from xs or xsl -->
 	<xsl:function name="utils:format-mmdd" as="xs:string">

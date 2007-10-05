@@ -53,7 +53,7 @@ sortkey CDATA #REQUIRED>
 <!ATTLIST type
 id CDATA #REQUIRED
 name CDATA #REQUIRED
-sortkey-type CDATA #REQUIRED>
+sortkey CDATA #REQUIRED>
 
 <!ELEMENT course (comments?, class+)>
 <!ATTLIST course

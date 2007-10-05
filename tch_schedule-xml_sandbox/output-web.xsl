@@ -7,7 +7,7 @@
         doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
 
     <!-- include some handy utility functions -->
-    <xsl:include href="utils.xsl"/>
+    <xsl:include href="output-utils.xsl"/>
 
     <!-- Parameters -->
     <!-- is this an "enrolling now" schedule? -->
@@ -29,8 +29,8 @@
     <xsl:variable name="multiple-terms" select="count(//term) &gt; 1" />
 
     <!-- Include other required stylesheets -->
-    <xsl:include href="web/page-template.xsl" />
-    <xsl:include href="web/indexer.xsl"       />
+    <xsl:include href="includes/page-template.xsl" />
+    <xsl:include href="includes/indexer.xsl"       />
 
 
 
@@ -63,7 +63,7 @@
         <!-- ideally, this won't mattter
         <xsl:if test="count(//term) &gt; 1"> -->
             <xsl:result-document
-                href="{$output-directory}/{utils:urlify(@semester)}/index{$output-extension}">
+                href="{$output-directory}/{utils:make-url(@semester)}/index{$output-extension}">
                 <xsl:call-template name="page-template">
                     <xsl:with-param name="page-title" select="concat(@semester, ' Course Index')" />
                 </xsl:call-template>
@@ -87,9 +87,9 @@
         <xsl:variable name="path-root">
             <xsl:value-of select="concat($output-directory, '/')"/>
             <xsl:if test="$multiple-terms">
-                <xsl:value-of select="concat(utils:urlify(ancestor::term/@name), '/')"/>
+                <xsl:value-of select="concat(utils:make-url(ancestor::term/@name), '/')"/>
             </xsl:if>
-            <xsl:value-of select="concat(utils:urlify(@name), '/')"/>
+            <xsl:value-of select="concat(utils:make-url(@name), '/')"/>
         </xsl:variable>
 
         <xsl:result-document href="{$path-root}index{$output-extension}">
@@ -108,24 +108,24 @@
             <xsl:value-of select="''"/>
             <!-- ideally, this won't matter
            <xsl:if test="$multiple-terms"> -->
-                <xsl:value-of select="concat(utils:urlify(ancestor::term/@semester), '/')"/>
+                <xsl:value-of select="concat(utils:make-url(ancestor::term/@semester), '/')"/>
             <!-- </xsl:if> -->
             <xsl:choose>
                 <!-- special sections don't exist
                 <xsl:when test="ancestor::special-section and not(ancestor::minimester)">
                     <xsl:value-of
-                        select="concat(ancestor::special-section/utils:urlify(@name), '/')"/>
+                        select="concat(ancestor::special-section/utils:make-url(@name), '/')"/>
                         </xsl:when> -->
                 
                 <!-- DEV NOTE: minimesters are no longer seperate elements, so this will have to be modified -->
                 <xsl:when test="ancestor::minimester">
-                    <xsl:value-of select="concat(ancestor::minimester/utils:urlify(@name), '/')"/>
+                    <xsl:value-of select="concat(ancestor::minimester/utils:make-url(@name), '/')"/>
                 </xsl:when>
             </xsl:choose>
         </xsl:variable>
 
         <xsl:result-document
-            href="{$output-directory}/{$path-root}{utils:urlify(@name)}{$output-extension}">
+            href="{$output-directory}/{$path-root}{utils:make-url(@name)}{$output-extension}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name"/>
                 <xsl:with-param name="path-root" select="$path-root" tunnel="yes"/>
@@ -156,7 +156,7 @@
                  and courses that are in a subgroup.  See, e.g. EMS
                  courses. -->
             <xsl:apply-templates select="type">
-                <xsl:sort select="@sortkey-type" data-type="number"/>
+                <xsl:sort select="@sortkey" data-type="number"/>
             </xsl:apply-templates>
 
             <xsl:apply-templates select="topic">
@@ -184,7 +184,7 @@
 
     <xsl:template match="topic | subtopic">
         <div class="{name()}">
-            <a name="{utils:urlify(@name)}"/>
+            <a name="{utils:make-url(@name)}"/>
             <h1 class="{name()}">
                 <xsl:value-of select="@name"/>
             </h1>
@@ -192,7 +192,7 @@
 
             <!-- output any stand-alone types before topics or subtopics -->
             <xsl:apply-templates select="type">
-                <xsl:sort select="@sortkey-type" data-type="number"/>
+                <xsl:sort select="@sortkey" data-type="number"/>
             </xsl:apply-templates>
 
             <xsl:apply-templates select="subtopic">
@@ -214,8 +214,8 @@
     </xsl:template>
 
     <xsl:template match="type">
-        <a name="{utils:urlify(@name)}"/>
-        <div class="schedule-type-section {utils:urlify(@name)}">
+        <a name="{utils:make-url(@name)}"/>
+        <div class="schedule-type-section {utils:make-url(@name)}">
             <h2 class="schedule-type"><xsl:value-of select="@name"/> Courses</h2>
 
             <!-- no group elements
@@ -251,7 +251,7 @@
     <xsl:template match="course">
         <div class="course-section">
             <a name="{@rubric}-{@number}-{min(class/@section)}"/>
-            <a name="{@rubric}-{@number}-{min(class/@section)}-{utils:urlify(@title-long)}"/>
+            <a name="{@rubric}-{@number}-{min(class/@section)}-{utils:make-url(@title-long)}"/>
             <h3>
                 <xsl:value-of select="@title-long"/>
                 <xsl:if test="@core-name and @core-name != ''">
@@ -491,7 +491,7 @@
                             <xsl:for-each select="topic">
                                 <xsl:sort select="@name"/>
                                 <li>
-                                    <a href="#{utils:urlify(@name)}">
+                                    <a href="#{utils:make-url(@name)}">
                                         <xsl:value-of select="@name"/>
                                     </a>
                                 </li>
@@ -504,7 +504,7 @@
                             <xsl:for-each select="type">
                                 <xsl:sort select="@sortkey"/>
                                 <li>
-                                    <a href="#{utils:urlify(@name)}">
+                                    <a href="#{utils:make-url(@name)}">
                                         <xsl:value-of select="@name"/>
                                     </a>
                                 </li>

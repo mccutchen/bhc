@@ -6,7 +6,7 @@
     exclude-result-prefixes="xs utils">
     
     <!-- utility functions -->
-    <xsl:include href="utils.xsl" />
+    <xsl:include href="output-utils.xsl" />
     
     <xsl:output
         method="xhtml"
@@ -53,7 +53,7 @@
     </xsl:template>
     
     <xsl:template match="term">
-        <xsl:result-document href="{$output-directory}/{utils:urlify(@year)}-{utils:urlify(@semester)}_room-coordinator.html">
+        <xsl:result-document href="{$output-directory}/{utils:make-url(@year)}-{utils:make-url(@semester)}_room-coordinator.html">
             <html>
                 <head>
                     <title><xsl:value-of select="$page-title" /></title>

@@ -28,7 +28,7 @@
 		======================================================================-->
     <xsl:output method="text" encoding="us-ascii" indent="no" />
     <xsl:strip-space elements="*" />
-    <xsl:include href="utils.xsl" />
+    <xsl:include href="output-utils.xsl" />
 
 
 	<!--=====================================================================
@@ -97,7 +97,7 @@
 
         <!-- if this is the Senior Adults subject, manually add a 'credit courses' topic header -->
         <xsl:if test="@name = 'Senior Adult Education Program'">
-            <xsl:value-of select="utils:xtag('Topic Header')" />
+            <xsl:value-of select="fn:xtag('Topic Header')" />
             <xsl:text>CREDIT COURSES</xsl:text>
             <xsl:call-template name="br" />
         </xsl:if>
@@ -106,7 +106,7 @@
              to have courses that aren't in a subgroup (topic, etc.) and courses that are in a 
              subgroup.  See, e.g. EMS courses. -->
         <xsl:apply-templates select="type">
-            <xsl:sort select="@sortkey-type" data-type="number" />
+            <xsl:sort select="@sortkey" data-type="number" />
         </xsl:apply-templates>
 
         <xsl:apply-templates select="topic">
@@ -129,7 +129,7 @@
     		to have courses that aren't in a subgroup (topic, etc.) and courses that are in a 
     		subgroup.  See, e.g. EMS courses. -->
     	<xsl:apply-templates select="type">
-    		<xsl:sort select="@sortkey-type" data-type="number" />
+    		<xsl:sort select="@sortkey" data-type="number" />
         </xsl:apply-templates>
 
         <xsl:apply-templates select="subtopic">
@@ -150,7 +150,7 @@
 
 		<!-- subtopics are the lowest level of subgroup, so output types -->
         <xsl:apply-templates select="type">
-        	<xsl:sort select="@sortkey-type" data-type="number" />
+        	<xsl:sort select="@sortkey" data-type="number" />
         </xsl:apply-templates>
 
     	<!-- each subtopic section should be followed by one blank line -->
@@ -163,7 +163,7 @@
     <xsl:template match="subject/@name | topic/@name | subtopic/@name">
     	<xsl:variable name="style-name"
     		select="concat(upper-case(substring(../local-name(), 1,1)), lower-case(substring(../local-name(), 2)), ' Header')" />
-        <xsl:value-of select="utils:xtag($style-name)" />
+        <xsl:value-of select="fn:xtag($style-name)" />
         <xsl:value-of select="upper-case(.)" />
         <xsl:call-template name="br" />
     </xsl:template>
@@ -189,7 +189,7 @@
     <xsl:template match="type/@name">
         <!-- only output the type header if we're not in a special-section with the same name -->
         <xsl:if test="normalize-space(.) != normalize-space(ancestor::special-section[1]/@name)">
-            <xsl:value-of select="utils:xtag('Type Header')" /><xsl:value-of select="." /> Courses<xsl:call-template name="br" />
+            <xsl:value-of select="fn:xtag('Type Header')" /><xsl:value-of select="." /> Courses<xsl:call-template name="br" />
         </xsl:if>
     </xsl:template>
 
@@ -238,7 +238,7 @@
             </xsl:choose>
         </xsl:variable>
 
-        <xsl:value-of select="utils:xtag(concat($style-name, ' Class'))" />
+        <xsl:value-of select="fn:xtag(concat($style-name, ' Class'))" />
 
         <!-- the class number is a composite of the course's @rubric and @number and the class's @section -->
         <xsl:value-of select="../@rubric" /><xsl:text> </xsl:text>
@@ -291,7 +291,7 @@
 	</xsl:template>
 	
 	<xsl:template match="meeting[@method = 'COOP']">
-		<xsl:value-of select="utils:xtag('Extra Class')" />
+		<xsl:value-of select="fn:xtag('Extra Class')" />
 		<xsl:value-of select="@method" /><xsl:call-template name="sep" />
 		<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
 		<xsl:choose>
@@ -308,7 +308,7 @@
 	</xsl:template>
 	
 	<xsl:template match="meeting">
-		<xsl:value-of select="utils:xtag('Extra Class')" />
+		<xsl:value-of select="fn:xtag('Extra Class')" />
 		<xsl:value-of select="@method" /><xsl:call-template name="sep" />
 		<xsl:value-of select="if (@time-start != '' and @time-end != '') then utils:format-times(@time-start, @time-end) else 'TBA'" /><xsl:call-template name="sep" />
 		<xsl:choose>
@@ -354,7 +354,7 @@
             </xsl:choose>
         </xsl:variable>
 
-        <xsl:value-of select="utils:xtag($style-name)" />
+        <xsl:value-of select="fn:xtag($style-name)" />
 
         <xsl:apply-templates>
             <xsl:with-param name="comments-style" select="$style-name" tunnel="yes" />
@@ -372,14 +372,14 @@
 
     <xsl:template match="comments//h1">
         <xsl:param name="comments-style" tunnel="yes" />
-        <xsl:value-of select="utils:xtag-inline(concat($comments-style, ' Header'), current())" />
+        <xsl:value-of select="fn:xtag-inline(concat($comments-style, ' Header'), current())" />
         <xsl:call-template name="br" />
     </xsl:template>
 
     <xsl:template match="comments//b | comments//i">
         <xsl:param name="comments-style" tunnel="yes" />
         <xsl:variable name="style-suffix" select="if (local-name() = 'b') then ' Bold' else ' Italic'" />
-        <xsl:value-of select="utils:xtag-inline(concat($comments-style, $style-suffix), current())" />
+        <xsl:value-of select="fn:xtag-inline(concat($comments-style, $style-suffix), current())" />
     </xsl:template>
 
     <xsl:template match="comments//tr">
@@ -409,7 +409,7 @@
     </xsl:template>
 
     <xsl:template match="url | email">
-        <xsl:value-of select="utils:xtag-inline('website', current())" />
+        <xsl:value-of select="fn:xtag-inline('website', current())" />
     </xsl:template>
 
 
@@ -423,7 +423,7 @@
 	
 	<!-- spit out the division name and contact information -->
     <xsl:template name="division-info">
-        <xsl:value-of select="utils:xtag('Division Info')" />
+        <xsl:value-of select="fn:xtag('Division Info')" />
 
     	<!-- Get the division info. -->
     	<xsl:variable name="division-name" select="upper-case(ancestor::division/@name)" />
@@ -480,7 +480,7 @@
 		<xsl:param name="core-courses"   as="element()*" />
 		
 		<xsl:if test="count($core-courses) &gt; 0">
-			<xsl:value-of select="utils:xtag('Core List Header')" />
+			<xsl:value-of select="fn:xtag('Core List Header')" />
 			<xsl:text>The following courses </xsl:text>
 			<xsl:if test="$core-component = 'other'">in this subject </xsl:if>
 			<xsl:text>are part of</xsl:text>
@@ -490,7 +490,7 @@
 			<xsl:text>Core Curriculum:</xsl:text>
 			<xsl:call-template name="br" />
 			
-			<xsl:value-of select="utils:xtag('Core List')" />
+			<xsl:value-of select="fn:xtag('Core List')" />
 			<xsl:for-each-group select="$core-courses" group-by="@rubric">
 				<xsl:sort select="@rubric" />
 				
@@ -537,7 +537,7 @@
 
 	<!-- inserts a blank line into the output -->
 	<xsl:template name="blank-line">
-		<xsl:value-of select="utils:xtag('Normal Class')" />
+		<xsl:value-of select="fn:xtag('Normal Class')" />
 		<xsl:call-template name="br" />
 	</xsl:template>
 	
@@ -603,7 +603,7 @@
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:variable>
-		<xsl:variable name="file" select="if ($term != '') then concat(utils:urlify($term), '.txt') else concat($semester, '.txt')" />
+		<xsl:variable name="file" select="if ($term != '') then concat(utils:make-url($term), '.txt') else concat($semester, '.txt')" />
 		
 		<xsl:variable name="path" select="concat($dir, $year, '-', $semester, '_print/', $file)" as="xs:string"/>
 		<!-- '{$dir}{$year}-{$semester}_print/{$file}' -->

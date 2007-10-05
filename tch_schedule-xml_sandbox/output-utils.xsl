@@ -43,10 +43,10 @@
 			<rule pattern="[^A-z0-9_]" replacement="" />
 		</xsl:variable>
 		
-    	<xsl:value-of select="utils:urlify-helper(lower-case($s), $replacements/rule)" />
+    	<xsl:value-of select="utils:make-url-helper(lower-case($s), $replacements/rule)" />
     </xsl:function>
 	
-	<xsl:function name="utils:urlify-helper" as="xs:string">
+	<xsl:function name="utils:make-url-helper" as="xs:string">
 		<xsl:param name="s" as="xs:string" />
 		<xsl:param name="rules" />
 		
@@ -66,7 +66,7 @@
 			<!-- apply the first rule and then recursively apply the rest of
 				 the rules -->
 			<xsl:otherwise>
-				<xsl:value-of select="utils:urlify-helper(replace($s, $pattern, $replacement), subsequence($rules, 2))" />
+				<xsl:value-of select="utils:make-url-helper(replace($s, $pattern, $replacement), subsequence($rules, 2))" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>

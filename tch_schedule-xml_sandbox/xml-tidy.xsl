@@ -38,8 +38,8 @@
 	-->
 	
 	<!-- 
-		This transformation gives order to the puddle of data-goo output by flatten_xml.xsl.
-		I'm going to keep the division and term elements (altho, it seems like terms could be used to 
+		This transformation gives order to the puddle of data-goo output by xml-flatten.xsl.
+		I'm going to keep the schedule and term elements (altho, it seems like terms could be used to 
 		hold minimesters? not sure), and add in division, subject, topic, subtopic, and type elements.
 		I can strip most of the data out of the class element once this is complete.
 		In addition, data will be pulled in from other sources (see variables above named 'doc-*') 
@@ -268,16 +268,16 @@
 	<xsl:template name="create-types">
 		<xsl:param name="classes" as="element()*" />
 		
-		<xsl:for-each-group select="$classes" group-by="@type-schedule">
+		<xsl:for-each-group select="$classes" group-by="@schedule-type">
 			<xsl:element name="type">
-				<xsl:variable name="id" select="@type-schedule" as="xs:string" />
+				<xsl:variable name="id" select="@schedule-type" as="xs:string" />
 				
 				<!-- write type info -->
-				<xsl:attribute name="id"   select="@type-schedule"                                              />
+				<xsl:attribute name="id"   select="@schedule-type"                                              />
 				<xsl:attribute name="name" select="$doc-sortkeys/sortkey[@type = 'type']/type[@id = $id]/@name" />
 				
-				<!-- write sortkey-type -->
-				<xsl:attribute name="sortkey-type" select="index-of($doc-sortkeys/sortkey[@type = 'type']/type/@id, current-grouping-key())" />
+				<!-- write sortkey -->
+				<xsl:attribute name="sortkey" select="index-of($doc-sortkeys/sortkey[@type = 'type']/type/@id, current-grouping-key())" />
 				
 				<!-- proceed to courses -->
 				<xsl:call-template name="create-courses">
