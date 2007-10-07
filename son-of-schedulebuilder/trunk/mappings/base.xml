@@ -155,6 +155,7 @@
         </subject>
         <subject name="Education">
             <pattern match="EDUC" priority="0" unsorted="true" />
+            <pattern match="EDTC" priority="0" unsorted="true" />
         </subject>
         <subject name="Emergency Medical Services - Unsorted">
             <pattern match="EMSP" priority="0" unsorted="true" />
