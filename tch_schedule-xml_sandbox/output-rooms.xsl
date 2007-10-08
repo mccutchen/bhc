@@ -34,7 +34,7 @@
 		parameters below, as strings.
 		======================================================================-->
     <xsl:variable name="division-filter" select="()" />
-    <xsl:variable name="rubric-filter" select="()" />
+    <xsl:variable name="rubric-filter"   select="()" />
     
     
 	<!--=====================================================================
@@ -60,11 +60,7 @@
 	<!--=====================================================================
 		Start transformation
 		======================================================================-->
-	<xsl:template match="/">
-        <xsl:apply-templates select="//term" />
-    </xsl:template>
-    
-    <xsl:template match="term">
+    <xsl:template match="//term">
     	<!-- set up result document -->
     	<xsl:variable name="dir"  select="concat(utils:generate-outdir(@year, @semester), '_', $output-type)"  as="xs:string" />
     	<xsl:variable name="file" select="concat(utils:make-url(@year), '-', utils:make-url(@semester), '_room-coordinator')" as="xs:string" />
@@ -87,8 +83,7 @@
                         then
                         descendant::meeting
                         else
-                        descendant::grouping[@type = 'division' and @name = $division-filter]/descendant::meeting |
-                        descendant::course[@rubric = $rubric-filter]/descendant::meeting" />
+                        descendant::division[@name = $division-filter]/descendant::course[@rubric = $rubric-filter]/descendant::meeting" />
                     
                     <xsl:call-template name="make-table">
                         <xsl:with-param name="title">Normal Courses</xsl:with-param>
@@ -129,32 +124,31 @@
         </table>
     </xsl:template>
     
+    
     <!-- ok, so the sorting is all messed up and there is no longer an easy 'extra' element for
          lec/lab pairing, coop's, ect. So, we're going to filter this a bit more than in the
          previous version. I'm going to make a guess and say that 'extra' courses were always
          non-LEC meetings with identical 'rubric number-section' identifiers as a LEC meeting. -->
     <!-- Ah, INET meetings can also have 'extra' LAB meetings -->
-    
+	<!-- DEV NOTE: should the meetings be sorted by sortkey, days, date, time, section? -->
     <xsl:template name="pre-format">
         <xsl:param name="meetings" />
         
         <!-- just call them by the unique 'rubric number section' sets -->
-        <xsl:for-each-group select="$meetings" group-by="ancestor::course/@rubric"> <!-- and ancestor::course/@number and ancestor::class/@section"> -->
+        <xsl:for-each-group select="$meetings" group-by="ancestor::course/@rubric">
             <xsl:sort select="ancestor::course/@rubric" />
-            <xsl:sort select="ancestor::course/@number" />
-            <xsl:sort select="ancestor::class/@section" />
-            
             <xsl:variable name="rubric" select="ancestor::course/@rubric" />
+        	
             <xsl:variable name="rubric-set" select="$meetings[ancestor::course/@rubric = $rubric]" />
             <xsl:for-each-group select="$rubric-set" group-by="ancestor::course/@number">
                 <xsl:sort select="ancestor::course/@number" />
-                
                 <xsl:variable name="number" select="ancestor::course/@number" />
+            	
                 <xsl:variable name="number-set" select="$rubric-set[ancestor::course/@number = $number]" />
                 <xsl:for-each-group select="$number-set" group-by="ancestor::class/@section">
                     <xsl:sort select="ancestor::class/@section" />
-                    
                     <xsl:variable name="section" select="ancestor::class/@section" />
+                	
                     <xsl:variable name="meeting-set" select="$number-set[ancestor::class/@section = $section]" />
                     
                     <!-- if there's more than one, try to find a main/extra relationship -->
@@ -225,13 +219,11 @@
             <th><em><xsl:value-of select="@method" /></em></th>
             <td><xsl:value-of select="@days" />&#160;</td>
             <td><xsl:value-of select="utils:format-times(@time-start, @time-end)" />&#160;</td>
-            <td>&#160;</td><!-- no dates
-            <td><xsl:value-of select="utils:format-dates($class/@date-start, $class/@date-end)" />&#160;</td> -->
+            <td>&#160;</td><!-- no dates -->
             <td><xsl:value-of select="if (not($faculty-name)) then 'Staff' else $faculty-name" />&#160;</td>
             <td><xsl:value-of select="@room" />&#160;</td>
             <td><xsl:value-of select="@method" />&#160;</td>
-            <td>&#160;</td><!-- no course type
-            <td><xsl:text> </xsl:text>&#160;</td> -->
+            <td>&#160;</td><!-- no type -->
             <td><xsl:value-of select="@section-capacity" />&#160;</td>
         </tr>
     </xsl:template>

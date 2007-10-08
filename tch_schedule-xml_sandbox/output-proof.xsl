@@ -123,6 +123,7 @@
                 <xsl:when test="count(topic) &gt; 0">
                     <xsl:apply-templates select="topic">
                         <xsl:sort select="@sortkey" data-type="number" />
+                    	<xsl:sort select="@name"    data-type="text"   />
                     </xsl:apply-templates>
                 </xsl:when>
                 <!-- if there are types, do that -->
@@ -152,6 +153,7 @@
                     <xsl:when test="count(subtopic) &gt; 0">
                         <xsl:apply-templates select="subtopic">
                             <xsl:sort select="@sortkey" data-type="number" />
+                        	<xsl:sort select="@name"    data-type="text"   />
                         </xsl:apply-templates>
                     </xsl:when>
                     <!-- if there are types, do that -->
@@ -189,76 +191,18 @@
             <!-- start div -->
             <div class="type-section {@id}">
                 <h4 class="type-header"><xsl:value-of select="@name" /> Courses</h4>
-                    
-                    <xsl:apply-templates select="course">
-                        <xsl:sort select="@rubric" data-type="text"   />
-                        <xsl:sort select="@number" data-type="number" />
-                    </xsl:apply-templates>
-    
-                <!--<xsl:apply-templates select="course">
+                
+                <xsl:apply-templates select="course">
                     <xsl:sort select="@sortkey" data-type="number" />
-                    <xsl:sort select="@default-sortkey" />
-                    <xsl:sort select="min(descendant::class/@section)" />
-                </xsl:apply-templates>-->
+                    <xsl:sort select="@rubric"  data-type="text"   />
+                    <xsl:sort select="@number"  data-type="number" />
+                    <xsl:sort select="min(descendant::class/@section)" data-type="number" />
+                </xsl:apply-templates>
             </div>
         </xsl:if>
     </xsl:template>
 
 
-    <xsl:template match="course-removed">
-        <!-- do not include classes with XX or ZZ for a topic code -->
-        <xsl:variable name="classes" select="class[@topic-code != ('XX','ZZ')]" as="element()*" />
-        <xsl:variable name="core-class" select="if (@core-code) then ' core' else ''" />
-        
-        <!-- if there are courses to display -->
-        <xsl:if test="count($classes) &gt; 0">
-            <!-- show the non-commented courses -->
-            <xsl:variable name="commentless" select="$classes[not(comments)]" as="element()*" />
-            <div class="course-section{$core-class}">
-                <table>
-                    <xsl:apply-templates select="$commentless">
-                        <!--<xsl:sort select="@sortkey" data-type="number" />-->
-                        <xsl:sort select="@sortkey-days"  data-type="number" />
-                        <xsl:sort select="@sortkey-times" data-type="number" />
-                        <xsl:sort select="@sortkey-date"  data-type="number" />
-                        <xsl:sort select="@section"       data-type="number" />
-                    </xsl:apply-templates>
-                </table>
-                <xsl:apply-templates select="comments" />
-            </div>
-            
-            <!-- show the commented classes -->
-            <div class="course-section{$core-class}">
-                <!-- show the commented courses, try to clump -->
-                <xsl:variable name="commented" select="$classes[comments]" as="element()*" />
-                <xsl:choose>
-                    <xsl:when test="fn:compare-comments($commented)">
-                        <table>
-                            <xsl:apply-templates select="$commented">
-                                <!--<xsl:sort select="@sortkey" data-type="number" />-->
-                                <xsl:sort select="@sortkey-days"  data-type="number" />
-                                <xsl:sort select="@sortkey-times" data-type="number" />
-                                <xsl:sort select="@sortkey-date"  data-type="number" />
-                                <xsl:sort select="@section"       data-type="number" />
-                            </xsl:apply-templates>
-                        </table>
-                        <xsl:apply-templates select="$commented[1]/comments" />
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <!-- try to sub-clump -->
-                        <xsl:apply-templates select="$commented" mode="distinct">
-                            <!--<xsl:sort select="@sortkey" data-type="number" />-->
-                            <xsl:sort select="@sortkey-days"  data-type="number" />
-                            <xsl:sort select="@sortkey-times" data-type="number" />
-                            <xsl:sort select="@sortkey-date"  data-type="number" />
-                            <xsl:sort select="@section"       data-type="number" />
-                        </xsl:apply-templates>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </div>
-        </xsl:if>
-    </xsl:template>
-    
     <xsl:template match="course">
         <!-- do not include classes with XX or ZZ for a topic code -->
         <xsl:variable name="classes" select="class[@topic-code != ('XX','ZZ')]" as="element()*" />
@@ -296,7 +240,13 @@
                     <table>
                         <xsl:apply-templates select="$classes[position() &gt; $min-index and position() &lt; $max-index]" />
                     </table>
-                    <xsl:apply-templates select="$classes[$min-index+1]/comments" />
+                    <xsl:apply-templates select="$classes[$min-index+1]/comments">
+                    	<xsl:sort select="@sortkey" data-type="number" />
+                    	<xsl:sort select="@sortkey-days"  data-type="number" />
+                    	<xsl:sort select="@sortkey-times" data-type="number" />
+                    	<xsl:sort select="@sortkey-date"  data-type="number" />
+                    	<xsl:sort select="@section"       data-type="number" />
+                    </xsl:apply-templates>
                     <xsl:apply-templates select="comments" />
                 </div>
                 <xsl:call-template name="group-comments">
@@ -309,13 +259,6 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="class" mode="distinct">
-        <table>
-            <xsl:apply-templates select="." />
-        </table>
-        <xsl:apply-templates select="comments" />
-    </xsl:template>
-
     <xsl:template match="class">
         <tr>
             <!-- <xsl:apply-templates select="@sortkey | @default-sortkey" /> -->
@@ -330,6 +273,7 @@
             <td class="dates"><xsl:value-of select="utils:format-dates(@date-start, @date-end)" />&#160;<xsl:apply-templates select="@weeks" /></td>
         </tr>
         <xsl:apply-templates select="meeting">
+        	<xsl:sort select="@sortkey"        data-type="number" />
             <xsl:sort select="@sortkey-method" data-type="number" />
             <xsl:sort select="@sortkey-days"   data-type="number" />
             <xsl:sort select="@sortkey-times"  data-type="number" />

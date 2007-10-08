@@ -6,19 +6,15 @@
     xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
     exclude-result-prefixes="xs utils fn">
 
-    <!-- $Id$
-         The print output transformer.  This XSLT file generates a set
-         of plain text files embedded with Quark XPress Tags.  The
-         text files can be imported into Quark XPress, which should
-         correctly style the imported text based on the XPress Tags
-         therein. -->
-
 	<!--=====================================================================
 		Setup
 		======================================================================-->
-	<xsl:output method="text" encoding="us-ascii" indent="no" />
-	<xsl:strip-space elements="*" />
 	<xsl:include href="output-utils.xsl" />
+	<xsl:output
+		method="text"
+		encoding="us-ascii"
+		indent="no" />
+	<xsl:strip-space elements="*" />
 	
 	
 	<!--=====================================================================
@@ -249,16 +245,12 @@
         <xsl:value-of select="../@credit-hours" /><xsl:call-template name="sep" />
         <xsl:value-of select="utils:format-dates(@date-start, @date-end)" />
 		<xsl:apply-templates select="@weeks" /><xsl:call-template name="br" />
-		<!-- classes do not have this information
-			<xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
-			<xsl:value-of select="utils:format-times(@time-start, @time-end)" /><xsl:text> / </xsl:text>
-			<xsl:value-of select="@method" /><xsl:call-template name="sep" />
-			<xsl:value-of select="@room" /><xsl:call-template name="sep" />
-			<xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
-		-->
 		
         <xsl:apply-templates select="meeting">
             <xsl:sort select="@sortkey" />
+        	<xsl:sort select="@sortkey-method" data-type="number" />
+        	<xsl:sort select="@sortkey-days"   data-type="number" />
+        	<xsl:sort select="@sortkey-times"  data-type="number" />
         </xsl:apply-templates>
     </xsl:template>
 

@@ -13,12 +13,13 @@
 		method="xml"
 		encoding="iso-8859-1"
 		indent="yes"
-		doctype-system="../dtds/xml-combined.dtd"
+
 		exclude-result-prefixes="xs utils fn" />
+		<!-- can't add: doctype-system="../dtds/xml-combined.dtd" 'cause it's not ready yet, if I even decide to make it -->
 	
 	<!-- command line parameters -->
 	<xsl:param name="s2" as="xs:string" />
-	<xsl:variable name="doc-s2" select="document($s2)/schedule" as="element()*" />
+	<xsl:variable name="doc-s2" select="document(replace($s2, '\\', '/'))/schedule" as="element()*" />
 	
 	<!-- for debugging purposes -->
 	<xsl:variable name="release-type" select="'final'" />

@@ -10,9 +10,11 @@ SET dir=data
 SET year=2007
 SET sem=Summer
 SET abbr=SU
+SET abbr1=S1
+SET abbr2=S2
 
-SET source1=%dir%\schedule-200-%year%%abbr%1.xml
-SET source2=%dir%\schedule-200-%year%%abbr%2.xml
+SET source1=%dir%\schedule-200-%year%%abbr1%.xml
+SET source2=%dir%\schedule-200-%year%%abbr2%.xml
 SET combined=%dir%\%year%-%sem%_combined.xml
 SET flat=%dir%\%year%-%sem%_flat.xml
 SET tidy=%dir%\%year%-%sem%_tidy.xml
@@ -24,7 +26,7 @@ SET final=%dir%\%year%-%sem%.xml
 
 
 ECHO Combining %sem% %year%...
-java -jar C:\saxon\saxon8.jar -o %combined% %source1% xml-combine.xsl %source2%
+java -jar C:\saxon\saxon8.jar -o %combined% %source1% xml-combine.xsl s2=%source2%
 
 ECHO Flattening %sem% %year%...
 java -jar C:\saxon\saxon8.jar -o %flat% %combined% xml-flatten.xsl %params%
@@ -37,7 +39,8 @@ ECHO Finished
 ECHO.
 
 ECHO Error-checking %sem% %year%...
-python -m xml-compare %source% %flat% %tidy% %sem% %year%
+ECHO Can't errorcheck summer yet, will add functionality later.
+::python -m xml-compare %source% %flat% %tidy% %sem% %year%
 ECHO Finished
 ECHO.
 
@@ -49,7 +52,7 @@ IF (%mode%)==(debug) GOTO FINISH
 DEL %combined%
 DEL %flat%
 DEL %tidy%
-DEL %compare%
+::DEL %compare%
 
 :FINISH
 ECHO. Finished

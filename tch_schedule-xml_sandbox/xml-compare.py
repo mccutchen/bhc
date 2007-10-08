@@ -11,7 +11,7 @@ except ImportError:
 if __name__ == '__main__':
     # get filenames to work with
     import sys;
-    assert len(sys.argv) == 6, 'path and file name for DSC XML, flat XML, and tidy XML, respectively.';
+    assert len(sys.argv) == 6, 'path and file name for DSC XML, flat XML, and tidy XML, respectively, followed by semester and year.';
     dsc_path, flat_path, tidy_path, semester, year = sys.argv[1:];
 
     # get xml
