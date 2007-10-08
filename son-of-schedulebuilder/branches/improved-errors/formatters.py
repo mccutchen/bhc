@@ -99,6 +99,16 @@ class CreditFormatter(BaseFormatter):
         start = self.input.get('start-date','')
         end = self.input.get('end-date','')
         return '%s-%s' % (self.format_date(start), self.format_date(end))
+    
+    def format_weeks(self, value):
+        """Ensures that a valid value for weeks was given.  If not, an
+        error is reported."""
+        try:
+            return int(value)
+        except ValueError:
+            error = DataError(self.input, 'No weeks given')
+            profile.errors.add(error)
+            return ''
 
     def format_credit_hours(self, value):
         """Remove trailing zeros and decimals."""
@@ -275,8 +285,22 @@ class CreditFormatter(BaseFormatter):
 
         # then, try to see if there are regroupings that apply to this class
         name = FormatUtils.get_name_for(FormatUtils.get_class_number(self.input), 'subject')
-
-        return name or default_name
+        
+        if not name:
+            name = default_name
+        
+        # check for errors
+        if 'unsorted' in name.lower():
+            desc = 'Unsorted subject: "%s"' % name
+            error = DataError(self.input, desc)
+            profile.errors.add(error)
+        
+        if re.match(r'^[A-Z]{4}$', name):
+            desc = 'Subject missing from mappings: "%s"' % name
+            error = DataError(self.input, desc)
+            profile.errors.add(error)
+        
+        return name
 
     def format_subject_comments(self, value):
         comments = FormatUtils.get_comments_for(FormatUtils.get_class_number(self.input), 'subject')
@@ -350,7 +374,7 @@ class SessionFormatter(BaseFormatter):
         Sunday ('U') to the end."""
         if value and value[0] == 'U':
             value = value[1:] + 'U'
-        return value.replace(' ','')
+        return value.replace(' ', '')
 
     def format_formatted_times(self, value):
         """Tries to convert the start-time and end-time of the given class into
@@ -713,3 +737,27 @@ class FormatUtils:
             value = re.sub(pattern, replace, value)
 
         return value
+
+
+class DataError(Exception):
+    """An error encountered in the schedule data, to be reported to the
+    user after the XML has been built."""
+    def __init__(self, classdata, description):
+        try:
+            self.course = FormatUtils.get_class_number(classdata)
+            self.regnum = classdata['synonym']
+            # should we ignore this error?
+            self.ignore = classdata['topic-code'] in profile.skip_topic_codes
+        except KeyError:
+            self.course = 'Unknown course'
+            self.regnum = 'XXXXXX'
+        self.description = description
+
+    def __hash__(self):
+        return hash(str(self))
+
+    def __cmp__(self, other):
+        return cmp((self.description, self.course), (other.description, other.course))
+
+    def __str__(self):
+        return '%s    #%s    %s' % (self.course, self.regnum, self.description)
