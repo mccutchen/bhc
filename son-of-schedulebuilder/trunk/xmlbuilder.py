@@ -47,6 +47,9 @@ def build(classes=None):
             get_distance_learning(term, class_data)
             get_weekend(term, class_data)
             get_weekend(term, class_data, name='Weekend Core Curriculum', core_only=True)
+    
+    # report any errors encountered while building the XML
+    report_errors(timestamp)
 
     print 'Writing xml data to %s ...' % profile.output_xml_path
     xmlutils.write_xml(tree, profile.output_xml_path)
@@ -281,6 +284,30 @@ def post_process(outpath):
         for line in saxonout:
             if line.strip():
                 print ' - %s' % line.strip()
+
+
+def report_errors(timestamp):
+    errors = [error for error in profile.errors if not error.ignore]
+    if not errors:
+        return
+
+    errorfile = file('errors.txt', 'w')
+    
+    def duplex_print(s):
+        """Prints to stdout and to the error file opened above."""
+        print s
+        print >> errorfile, s
+    
+    divider = '=' * 72
+    duplex_print('Errors in schedule data (also written to %s)' % errorfile.name)
+    duplex_print(divider)
+    duplex_print('Course            Reg #      Description')
+    #             XXXX 1234-1234    #XXXXXX    Description...
+    duplex_print(divider)
+    for error in sorted(errors):
+        duplex_print(error)
+    duplex_print(divider)
+    print
 
 
 ###############

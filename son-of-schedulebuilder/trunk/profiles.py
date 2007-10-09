@@ -132,6 +132,9 @@ class CreditProfile(BaseProfile):
 
     # what parameters should we pass to Saxon?
     saxon_params = ''
+    
+    # a list of errors to report to the user
+    errors = set()
 
 
 class FullProfile(CreditProfile):
@@ -140,7 +143,6 @@ class FullProfile(CreditProfile):
     special_sections = True
     skip_topic_codes = 'XX YY'.split()
     post_processors = [
-        'warnings.xsl',
         'types.xsl',
         'groups.xsl',
         'contact-info.xsl',
