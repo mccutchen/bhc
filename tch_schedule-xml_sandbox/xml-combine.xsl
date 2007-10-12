@@ -13,7 +13,6 @@
 		method="xml"
 		encoding="iso-8859-1"
 		indent="yes"
-
 		exclude-result-prefixes="xs utils fn" />
 		<!-- can't add: doctype-system="../dtds/xml-combined.dtd" 'cause it's not ready yet, if I even decide to make it -->
 	

@@ -27,11 +27,18 @@
 	<!--=====================================================================
 		Start transformation
 		======================================================================-->
+	<xsl:template match="/schedule">
+		<!-- create single-file output
+		<xsl:apply-templates select="term" mode="init" /> -->
+		
+		<!-- create multi-file output -->
+		<xsl:apply-templates select="descendant::subject" mode="init" />
+	</xsl:template>
 	
     <!-- for each term, make a new result document -->
-    <xsl:template match="//term">
+    <xsl:template match="term" mode="init">
         
-        <!-- set up result document -->
+        <!-- set up single result document -->
     	<xsl:variable name="dir"  select="concat(utils:generate-outdir(@year, @semester), '_', $output-type)"         as="xs:string" />
     	<xsl:variable name="file" select="if (@name != '') then utils:make-url(@name) else utils:make-url(@semester)" as="xs:string" />
     	
@@ -45,17 +52,37 @@
             </xsl:if>
             
             <!-- continue transformation -->
-            <xsl:apply-templates select="." mode="output" />
+            <xsl:apply-templates select="." />
         </xsl:result-document>
     </xsl:template>
-    
+
+	<!-- for each term, division, and subject make a new result document -->
+	<xsl:template match="subject" mode="init">
+		
+		<!-- set up single result document -->
+		<xsl:variable name="year" select="ancestor::term/@year"                     as="xs:string" />
+		<xsl:variable name="sem"  select="ancestor::term/@semester"                 as="xs:string" />
+		<xsl:variable name="pre"  select="utils:generate-outdir($year, $sem)"       as="xs:string" />
+		<xsl:variable name="dir"  select="concat($pre, '_', $output-type)"          as="xs:string" />
+		<xsl:variable name="term" select="utils:make-url(ancestor::term/@semester)" as="xs:string" />
+		<xsl:variable name="div"  select="utils:make-url(parent::division/@name)"   as="xs:string" />
+		<xsl:variable name="subj" select="utils:make-url(@name)"                    as="xs:string" />
+		
+		<xsl:result-document href="{$dir}/{$term}/{$div}/{$subj}.{$ext}">
+			<xsl:call-template name="quark-preamble" />
+			
+			<!-- continue transformation -->
+			<xsl:apply-templates select="." />
+		</xsl:result-document>
+	</xsl:template>
+	
     
 	<!--=====================================================================
 		Process data
 		======================================================================-->
 	
 	<!-- process terms -->
-    <xsl:template match="term" mode="output">
+    <xsl:template match="term">
         <!-- first, output everything that's not in the School of the Arts or Senior Adult Education -->
         <xsl:apply-templates select="division[@name != 'School of the Arts' and @name != 'Senior Adult Education Office']/subject">
             <xsl:sort select="@name" />
@@ -165,14 +192,16 @@
 
 	<!-- process types -->
     <xsl:template match="type">
-        <xsl:apply-templates select="@name" />
-
-    	<xsl:apply-templates select="course">
-    		<xsl:sort select="@sortkey" data-type="number" />
-    		<xsl:sort select="@rubric"  data-type="text"   />
-    		<xsl:sort select="@number"  data-type="number" />
-    		<xsl:sort select="min(descendant::class/@section)" />
-    	</xsl:apply-templates>
+    	<xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
+    		<xsl:apply-templates select="@name" />
+    		
+    		<xsl:apply-templates select="course">
+    			<xsl:sort select="@sortkey" data-type="number" />
+    			<xsl:sort select="@rubric"  data-type="text"   />
+    			<xsl:sort select="@number"  data-type="number" />
+    			<xsl:sort select="min(descendant::class/@section)" />
+    		</xsl:apply-templates>
+    	</xsl:if>   	
     	
     	<!-- each type section should be followed by one blank line -->
         <xsl:if test="position() != last()">
@@ -190,16 +219,18 @@
 
 	<!-- process courses -->
 	<xsl:template match="course">
-        <xsl:apply-templates select="class">
-            <xsl:sort select="@sortkey" data-type="number" />
-            <xsl:sort select="@sortkey-days" data-type="number" />
-            <xsl:sort select="@sortkey-date" data-type="number" />
-			<xsl:sort select="@sortkey-time" data-type="number" order="ascending" />
-            <xsl:sort select="@section" />
-        </xsl:apply-templates>
-
-        <xsl:apply-templates select="comments" />
-
+		<xsl:if test="count(class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
+			<xsl:apply-templates select="class">
+				<xsl:sort select="@sortkey" data-type="number" />
+				<xsl:sort select="@sortkey-days" data-type="number" />
+				<xsl:sort select="@sortkey-date" data-type="number" />
+				<xsl:sort select="@sortkey-time" data-type="number" order="ascending" />
+				<xsl:sort select="@section" />
+			</xsl:apply-templates>
+			
+			<xsl:apply-templates select="comments" />
+		</xsl:if>
+		
         <!-- only add a blank line after the comments if this is not the
              last course and if this isn't part of a <group> -->
         <xsl:if test="(position() != last()) and not(following-sibling::course/@number = self::course/@number)">
@@ -252,7 +283,9 @@
         	<xsl:sort select="@sortkey-days"   data-type="number" />
         	<xsl:sort select="@sortkey-times"  data-type="number" />
         </xsl:apply-templates>
-    </xsl:template>
+		
+		<xsl:apply-templates select="comments" />
+	</xsl:template>
 
 	<!-- format class attributes -->
     <xsl:template match="class/@weeks">
