@@ -42,10 +42,11 @@ filenames_list   = []
 # Note: filenames_list indices (each is a string):
 id_announcements = 0
 id_events        = 1
-id_birthdays     = 2
-id_hails         = 3
-id_articles      = 4
-id_bodies        = 5  # <-- a list of strings
+id_aroundtown    = 2
+id_birthdays     = 3
+id_hails         = 4
+id_articles      = 5
+id_bodies        = 6  # <-- a list of strings
 
 
 # Def set dates
@@ -64,12 +65,21 @@ def SetDates():
         date = ParseDate(date_in);
 
     # if that didn't work, prompt user until they get it right
-    while (not date):
-        date_in = raw_input('Enter the issue date (mmddyy): ');
-        date = ParseDate(date_in);
+    if (not date):
+        while (not date):
+            date_in = raw_input('Enter the issue date (mmddyy): ');
+            date = ParseDate(date_in);
 
-        if (not date):
-            print 'Invalid date. Please try again.';
+            if (not date):
+                print 'Invalid date. Please try again.';
+
+        # write date to file so we don't have to do this again
+        if (os.path.exists(dir_input + date_file)):
+            print >> 'Unable to write issue-date.txt; file already exists';
+        else:
+            fout = open(dir_input + date_file, 'w');
+            print fout >> date.strftime('%m%d%Y');
+            fout.close();
 
     # now make use of the date 
     if (date):
@@ -109,12 +119,14 @@ def ParseDate(date_in):
 
 # Def: get filenames
 def GetFilenames(dir_in):
-    f_list = ['','','','','',[]]
+    f_list = ['','','','','','',[]]
     for f in glob.glob(dir_in + '*.txt'):
         if (f.lower().find('announcements.txt') >= 0):
             f_list[id_announcements] = f
         elif (f.lower().find('events.txt') >= 0):
             f_list[id_events] = f
+        elif (f.lower().find('aroundtown.txt') >= 0):
+            f_list[id_aroundtown] = f
         elif (f.lower().find('birthdays.txt') >= 0):
             f_list[id_birthdays] = f
         elif (f.lower().find('hailfarewell.txt') >= 0):
@@ -124,7 +136,7 @@ def GetFilenames(dir_in):
         elif (f.lower().find('issue-date.txt') >= 0):
             continue;
         else:
-            f_list[5].append(f)
+            f_list[id_bodies].append(f)
     return f_list
 
 # Def: format
@@ -307,7 +319,7 @@ def ReadAnnouncements(fname):
 def ReadEvents(fname):
     date_str   = ""
     id_list    = []
-    event_list = ['title',['presenter'],['location'],['date'],['url'],['desc']]
+    event_list = ['title',['presenter'],['location'],['date'],['url'],['description']]
     date_list  = ['',[]] # ['date',[event_list]]
     out_list   = []
     r_mode     = "title"
@@ -324,7 +336,7 @@ def ReadEvents(fname):
                     id_list.append(date_str)
                     date_list = [date_str, [event_list]]
                     out_list.append(date_list)
-                event_list = ['title',['presenter'],['location'],['date'],['url'],['desc']]
+                event_list = ['title',['presenter'],['location'],['date'],['url'],['description']]
                 r_mode = "title"
         else:
             # Here's the magic line. We'll see how well it works.
@@ -352,6 +364,49 @@ def ReadEvents(fname):
                     
     if (event_list[0] != 'title'):
         out_list.append([date_str, event_list])
+
+    in_file.close()
+    return out_list
+
+# Def: read around town
+# NOTE: this is really just a copy-paste (mostly) of read events
+#       most of the same functionality is supported. We'll see how
+#       much tweaking is required.
+def ReadAroundTown(fname):
+    date_str   = ""
+    id_list    = []
+    event_list = ['title',['location'],['date'],['description']]
+    out_list   = []
+    r_mode     = "title"
+    
+    in_file = open(fname, "r")
+    for line in in_file:
+        
+        if (line.strip() == ""):
+            if (r_mode == "other"):
+                # save old
+                out_list.append(event_list);
+                event_list = ['title',['location'],['date'],['description']]
+                r_mode = "title"
+        else:
+            # Here's the magic line. We'll see how well it works.
+            # Basically, since the line types can occur in any order
+            #   within events.txt, this function *attempts* to figure
+            #   out which type of information each line contains.
+            line_type = GetType(Format(line))
+            if (r_mode == "title"):
+                event_list[0] = line_type[1];
+                r_mode = 'other'
+            else:
+                if (line_type[0] == 'location'):
+                    event_list[1].append(line_type[1])
+                elif (line_type[0] == 'date'):
+                    event_list[2].append(line_type[1])
+                else:
+                    event_list[3].append(line_type[1])
+                    
+    if (event_list[0] != 'title'):
+        out_list.append(event_list)
 
     in_file.close()
     return out_list
@@ -522,7 +577,7 @@ def WriteArticles(indent, lvl, article_list):
 
 
 # writes the features section
-def WriteFeatures(indent, lvl, announcement_list, event_list, birthday_list, hail_list):
+def WriteFeatures(indent, lvl, announcement_list, event_list, around_list, birthday_list, hail_list):
     # avoid writing empty tags:
     if (len(announcement_list) + len(event_list) + len(birthday_list) + len(hail_list) == 0):
         return ''
@@ -569,6 +624,30 @@ def WriteFeatures(indent, lvl, announcement_list, event_list, birthday_list, hai
                         item = item + 1
                 out_str = out_str + indent*(lvl+3) + '</event>\n'
             out_str = out_str + indent*(lvl+2) + '</date-group>\n'
+
+        out_str = out_str + indent*(lvl+1) + '</feature>\n'
+
+    # avoid writing empty tags:
+    if (len(around_list) > 0):
+        # fill in events
+        # (Treat as rough draft, unless the events.txt has been pre-formated)
+        out_str += indent*(lvl+1) + '<feature id="around-town">\n'
+        out_str += indent*(lvl+2) + '<title>Events in the Metroplex</title>\n'
+
+        for event in around_list:
+            out_str = out_str + indent*(lvl+2) + '<event>\n'
+            out_str = out_str + indent*(lvl+3) + '<title>' + event[0] + '</title>\n'
+            for index in [1,2,3]:
+                # hack
+                if (index >= len(event)): continue;
+                
+                item = 1
+                while item < len(event[index]):
+                    tag_o = '<' + event[index][0] + '>'
+                    tag_c = '</' + event[index][0] + '>\n'
+                    out_str = out_str + indent*(lvl+3) + tag_o + event[index][item] + tag_c
+                    item = item + 1
+            out_str = out_str + indent*(lvl+2) + '</event>\n'
 
         out_str = out_str + indent*(lvl+1) + '</feature>\n'
                                  
@@ -631,6 +710,10 @@ if (__name__ == '__main__'):
         list_events = ReadEvents(filenames_list[id_events])
     else:
         list_events = []
+    if (len(filenames_list[id_aroundtown]) > 0):
+        list_around = ReadAroundTown(filenames_list[id_aroundtown])
+    else:
+        list_around = []
     if (len(filenames_list[id_birthdays]) > 0):
         list_birthdays = ReadBirthdays(filenames_list[id_birthdays])
     else:
@@ -647,7 +730,7 @@ if (__name__ == '__main__'):
     # xml string - we'll add to this as we go
     xml_string = '<?xml version="1.0" encoding="utf-8"?>\n<chatter>\n    <issue date="' + date_long + '" url="' + date_short + '">\n'
     xml_string = xml_string + WriteArticles("    ", 2, list_articles)
-    xml_string = xml_string + WriteFeatures("    ", 2, list_announcements, list_events, list_birthdays, list_hails)
+    xml_string = xml_string + WriteFeatures("    ", 2, list_announcements, list_events, list_around, list_birthdays, list_hails)
     xml_string = xml_string + """    </issue>\n</chatter>"""
 
     # print out the xml

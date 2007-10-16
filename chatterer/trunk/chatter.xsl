@@ -270,13 +270,6 @@
 
 
 	<!-- around town -->
-	<xsl:template match="feature[@id='around-town']">
-		<div class="item">
-			<h2 class="image"><img src="/images/bhc/chatter/ardtown-300x114.jpg" width="300" height="114" alt="Around Town" border="0" /></h2>
-		</div>
-		<xsl:apply-templates select="*[not(self::title)]" />
-	</xsl:template>
-
 	<xsl:template match="feature[@id='around-town']/event">
 		<div class="item">
 			<xsl:apply-templates select="title" />
