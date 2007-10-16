@@ -7,11 +7,15 @@
 SET mode=debug
 
 SET dir=data
+SET map=mappings
 SET year=2007
 SET sem=Summer
 SET abbr=SU
 SET abbr1=S1
 SET abbr2=S2
+
+SET mapin=%map%\%year%-%sem%\base.xml
+SET mapout=%map%\%year%-%sem%_mappings.xml
 
 SET source1=%dir%\schedule-200-%year%%abbr1%.xml
 SET source2=%dir%\schedule-200-%year%%abbr2%.xml
@@ -24,6 +28,11 @@ SET compare=%dir%\%year%-%sem%_compare.txt
 SET last=%tidy%
 SET final=%dir%\%year%-%sem%.xml
 
+
+ECHO Generating mappings %sem% %year%...
+java -jar C:\saxon\saxon8.jar -o %mapout% %mapin% xml-mappings.xsl %params%
+ECHO Finished
+ECHO.
 
 ECHO Combining %sem% %year%...
 java -jar C:\saxon\saxon8.jar -o %combined% %source1% xml-combine.xsl s2=%source2%

@@ -22,12 +22,11 @@
 	  
 	<!-- save some typing on edit -->
 	<xsl:variable name="dir-mappings"  select="'mappings/'"                                                 as="xs:string"  />
-	<xsl:variable name="file-sorting"  select="concat($year, '-', lower-case($semester), '.xml')"           as="xs:string"  />
+	<xsl:variable name="file-sorting"  select="concat($year, '-', $semester, '_mappings.xml')"              as="xs:string"  />
 	
 	<!-- some global vars -->
-	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, 'divisions.xml'))/divisions"  as="element()*" />
-	<xsl:variable name="doc-semester"  select="document(concat($dir-mappings, $file-sorting))/mappings"     as="element()*" />
-	<xsl:variable name="doc-sortkeys"  select="document('mappings/sortkeys.xml')/sortkeys"                  as="element()*" />
+	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, $file-sorting))/mappings"     as="element()*" />
+	<xsl:variable name="doc-sortkeys"  select="document(concat($dir-mappings, 'sortkeys.xml'))/sortkeys"    as="element()*" />
 	<xsl:variable name="doc-core"      select="document(concat($dir-mappings, 'core.xml'))/core-components" as="element()*" />
 	<!-- something for sorting into minimesters -->
 	
@@ -47,7 +46,7 @@
 	<!-- start (mostly for setting up debugging info) -->
 	<xsl:template match="/">
 		<!-- ensure the parameters got passed -->
-		<xsl:if test="fn:is-valid-params() = 'yes'">
+		<xsl:if test="fn:is-valid-params()">
 			<!-- copy over some of the pertinant info -->
 			<xsl:apply-templates select="schedule" />
 		</xsl:if>
@@ -105,7 +104,7 @@
 
 			<!-- now just stuff it with sorting info -->
 			<xsl:choose>
-				<!-- Special type (by topic-code): Emeritus = Senior Adult -->
+				<!-- special type (by topic-code): Emeritus = Senior Adult -->
 				<xsl:when test="@topic-code = ('E','EG','EMBLG')">
 					<xsl:variable name="match-node" select="$doc-divisions//subject[@name = 'Senior Adult Education Program']" />
 					<xsl:call-template name="apply-sorting-node">
@@ -115,23 +114,10 @@
 				</xsl:when>
 				<!-- special sorting (topics/subtopics, etc) -->
 				<xsl:otherwise>
-					<xsl:variable name="match-node-special" select="$doc-semester/descendant::pattern[matches($class-id, @match)]" />
-					<xsl:choose>
-						<xsl:when test="count($match-node-special) &gt; 0">
-							<xsl:call-template name="apply-sorting-node">
-								<xsl:with-param name="match-node" select="$match-node-special" />
-								<xsl:with-param name="class-id"   select="$class-id"           />
-							</xsl:call-template>
-						</xsl:when>
-						<!-- normal sorting (by division/subject) -->
-						<xsl:otherwise>
-							<xsl:variable name="match-node-normal" select="$doc-divisions/descendant::pattern[matches($class-id, @match)]" />
-							<xsl:call-template name="apply-sorting-node">
-								<xsl:with-param name="match-node" select="$match-node-normal"  />
-								<xsl:with-param name="class-id"   select="$class-id"           />
-							</xsl:call-template>
-						</xsl:otherwise>
-					</xsl:choose>
+					<xsl:call-template name="apply-sorting-node">
+						<xsl:with-param name="match-node" select="$doc-divisions/descendant::pattern[matches($class-id, @match)]" as="element()*" />
+						<xsl:with-param name="class-id"   select="$class-id" as="xs:string" />
+					</xsl:call-template>
 				</xsl:otherwise>
 			</xsl:choose>
 			
@@ -187,9 +173,9 @@
 			</xsl:when>
 			<!-- multiple matches -->
 			<xsl:when test="count($match-node) &gt; 1">
-				<xsl:variable name="max-node" select="$match-node[@priority = max($match-node/@priority)]" as="element()*" />
-				<xsl:variable name="max-node-index" select="$match-node[@priority = max($match-node/@priority)]/position()" as="xs:integer*" />
-				<xsl:choose>
+				<!-- first choose highest priority(s), then longest lengths (most precise, roughly) -->
+				<xsl:variable name="temp-node" select="$match-node[@priority = max($match-node/@priority)]" as="element()*" />
+				<xsl:variable name="max-node"  select="$temp-node[string-length(@match) = max(fn:string-length($temp-node/@match))]" as="element()*" />				<xsl:choose>
 					<!-- still multiple matches -->
 					<xsl:when test="count($max-node) != 1">
 						<xsl:message>!Warning! unable to resolve multiple match results for <xsl:value-of select="$class-id" /></xsl:message>
@@ -222,60 +208,25 @@
 		<xsl:param name="class-id" tunnel="yes" as="xs:string" />
 		
 		<xsl:attribute name="name-of-subject" select="@name" />
-		
-		<!-- switch over to doc-divisions, if necessary -->
-		<xsl:choose>
-			<xsl:when test="count(parent::division) = 0">
-				<xsl:variable name="name"   select="@name" as="xs:string" />
-				<xsl:variable name="parent" select="$doc-divisions/descendant::subject[compare(@name, $name) = 0]/parent::node()" />
-				<xsl:choose>
-					<xsl:when test="count($parent) = 0">
-						<xsl:message>!Warning! Unable to resolve subject <xsl:value-of select="$name"/> to a single division</xsl:message>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:apply-templates select="$parent" />
-					</xsl:otherwise>
-				</xsl:choose>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:apply-templates select="parent::division" />
-			</xsl:otherwise>
-		</xsl:choose>
+		<xsl:apply-templates select="parent::division" />
 	</xsl:template>
 
 	<xsl:template match="topic">
 		<xsl:param name="class-id" tunnel="yes" as="xs:string" />
 		
 		<xsl:attribute name="name-of-topic" select="@name" />
-		
-		<xsl:variable name="parent" select="parent::subject" />
-		<xsl:choose>
-			<xsl:when test="count($parent) != 1">
-				<xsl:message>!Warning! Unable to resolve division for <xsl:value-of select="$class-id" />.</xsl:message>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:apply-templates select="$parent" />
-			</xsl:otherwise>
-		</xsl:choose>
+		<xsl:apply-templates select="parent::subject" />
 	</xsl:template>
 	<xsl:template match="subtopic">
 		<xsl:param name="class-id" tunnel="yes" as="xs:string" />
 		
 		<xsl:attribute name="name-of-subtopic" select="@name" />
-		
-		<xsl:variable name="parent" select="parent::topic" />
-		<xsl:choose>
-			<xsl:when test="count($parent) != 1">
-				<xsl:message>!Warning! Unable to resolve division for <xsl:value-of select="$class-id" />.</xsl:message>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:apply-templates select="$parent" />
-			</xsl:otherwise>
-		</xsl:choose>
+		<xsl:apply-templates select="parent::topic" />
 	</xsl:template>
 	
 	<!-- this just catches patterns and bumps it back up to the lowest level of organization -->
 	<xsl:template match="pattern">
+		<xsl:if test="ancestor::subject/@ordered = 'true'"><xsl:attribute name="sortkey" select="@sortkey" /></xsl:if>
 		<xsl:apply-templates select="parent::node()" />
 	</xsl:template>
 	
@@ -340,37 +291,65 @@
 	</xsl:template>
 
 	<!-- functions -->
-	<xsl:function name="fn:is-valid-params">
+	<xsl:function name="fn:is-valid-params" as="xs:boolean">
 		<xsl:choose>
-			<xsl:when test="(fn:is-valid-semester() != 'yes') or (fn:is-valid-year() != 'yes')">
-				<xsl:if test="fn:is-valid-semester() != 'yes'"><xsl:message>!Warning! Invalid semester passed: semester(<xsl:value-of select="$semester" />).</xsl:message></xsl:if>
-				<xsl:if test="fn:is-valid-year() != 'yes'"><xsl:message>!Warning! Invalid year passed: year(<xsl:value-of select="$year" />).</xsl:message></xsl:if>
-			</xsl:when>
-			<xsl:when test="count($doc-semester) = 0">
-				<xsl:message>!Warning! couldn't load special sorting for: semester(<xsl:value-of select="$semester" />), year(<xsl:value-of select="$year" />).</xsl:message>
-			</xsl:when>
-			<xsl:when test="count($doc-core) = 0">
-				<xsl:message>!Warning! couldn't load core info.</xsl:message>
+			<xsl:when test="not(fn:is-valid-semester()) or not(fn:is-valid-year())">
+				<xsl:if test="not(fn:is-valid-semester())">
+					<xsl:message>
+						<xsl:text>!Warning! Invalid semester passed: semester(</xsl:text>
+						<xsl:value-of select="$semester" />
+						<xsl:text>).</xsl:text>
+					</xsl:message>
+				</xsl:if>
+				<xsl:if test="not(fn:is-valid-year())">
+					<xsl:message>
+						<xsl:text>!Warning! Invalid year passed: year(</xsl:text>
+						<xsl:value-of select="$year" />
+						<xsl:text>).</xsl:text>
+					</xsl:message>
+				</xsl:if>
+				<xsl:value-of select="false()" />
 			</xsl:when>
 			<xsl:when test="count($doc-divisions) = 0">
-				<xsl:message>!Warning! couldn't load division info.</xsl:message>
+				<xsl:message>
+					<xsl:text>!Warning! couldn't load special sorting for: semester(</xsl:text>
+					<xsl:value-of select="$semester" />
+					<xsl:text>), year(</xsl:text>
+					<xsl:value-of select="$year" />
+					<xsl:text>).</xsl:text>
+				</xsl:message>
+				<xsl:value-of select="false()" />
 			</xsl:when>
-			<xsl:otherwise>yes</xsl:otherwise>
+			<xsl:when test="count($doc-core) = 0">
+				<xsl:message>
+					<xsl:text>!Warning! couldn't load core info.</xsl:text>
+				</xsl:message>
+				<xsl:value-of select="false()" />
+			</xsl:when>
+			<xsl:when test="count($doc-sortkeys) = 0">
+				<xsl:message>
+					<xsl:text>!Warning! couldn't load sortkey info.</xsl:text>
+				</xsl:message>
+				<xsl:value-of select="false()" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="true()" />
+			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-	<xsl:function name="fn:is-valid-semester">
+	<xsl:function name="fn:is-valid-semester" as="xs:boolean">
 		<xsl:choose>
-			<xsl:when test="$semester = 'Fall'">yes</xsl:when>
-			<xsl:when test="$semester = 'Summer'">yes</xsl:when>
-			<xsl:when test="$semester = 'Spring'">yes</xsl:when>
-			<xsl:otherwise>no</xsl:otherwise>
+			<xsl:when test="$semester = 'Fall'"><xsl:value-of select="true()" /></xsl:when>
+			<xsl:when test="$semester = 'Summer'"><xsl:value-of select="true()" /></xsl:when>
+			<xsl:when test="$semester = 'Spring'"><xsl:value-of select="true()" /></xsl:when>
+			<xsl:otherwise><xsl:value-of select="false()" /></xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-	<xsl:function name="fn:is-valid-year">
+	<xsl:function name="fn:is-valid-year" as="xs:boolean">
 		<xsl:choose>
 			<!-- I know this looks stupid, but it's just testing that year is a number -->
-			<xsl:when test="number($year) = number($year)">yes</xsl:when>
-			<xsl:otherwise>no</xsl:otherwise>
+			<xsl:when test="number($year) = number($year)"><xsl:value-of select="true()" /></xsl:when>
+			<xsl:otherwise><xsl:value-of select="false()" /></xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
 	
@@ -384,32 +363,50 @@
 		
 		<xsl:choose>
 			<!-- pm -->
-			<xsl:when test="matches($time, '.*[pP].*')">
+			<xsl:when test="matches($time, '(p\.m\.)|PM|pm')">
 				<xsl:choose>
 					<!-- if it's not 12pm, add 12 to it -->
 					<xsl:when test="$hour != '12'">
-						<xsl:value-of select="xs:string(xs:integer($hour) + 12)" /><xsl:value-of select="$mins" />
+						<xsl:value-of select="concat(xs:string(xs:integer($hour) + 12), $mins)" />
 					</xsl:when>
 					<!-- if it is 12pm, leave as-is. -->
 					<xsl:when test="$hour = '12'">
-						<xsl:value-of select="$hour" /><xsl:value-of select="$mins" />
+						<xsl:value-of select="concat($hour, $mins)" />
 					</xsl:when>
 				</xsl:choose>
 			</xsl:when>
 			<!-- am -->
-			<xsl:when test="matches($time, '.*[aA].*')">
+			<xsl:when test="matches($time, '(a\.m\.)|AM|am')">
 				<xsl:choose>
 					<!-- if it's not 12am, leave as-is -->
 					<xsl:when test="$hour != '12'">
-						<xsl:value-of select="$hour" /><xsl:value-of select="$mins" />
+						<xsl:value-of select="concat($hour, $mins)" />
 					</xsl:when>
 					<!-- if it is 12am, it's really 0am -->
 					<xsl:when test="$hour = '12'">
-						<xsl:value-of select="'00'" /><xsl:value-of select="$mins" />
+						<xsl:value-of select="concat('00', $mins)" />
 					</xsl:when>
 				</xsl:choose>
 			</xsl:when>
+			<xsl:when test="$time = ('','TBA','TBD')" />
+			<xsl:otherwise>
+				<xsl:message>
+					<xsl:text>Invalid time: '</xsl:text>
+					<xsl:value-of select="$time" />
+					<xsl:text>'.</xsl:text>
+				</xsl:message>
+				<xsl:value-of select="''" />
+			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:function>
+	
+	<!-- convert string-length(string) into string-length(strings*) -->
+	<xsl:function name="fn:string-length">
+		<xsl:param name="strings" as="xs:string*" />
+		
+		<xsl:for-each select="$strings">
+			<xsl:value-of select="string-length(.)" />
+		</xsl:for-each>
 	</xsl:function>
 	
 </xsl:stylesheet>

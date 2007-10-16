@@ -5,9 +5,13 @@
 SET mode=debug
 
 SET dir=data
+SET map=mappings
 SET year=2007
 SET sem=Fall
 SET abbr=FA
+
+SET mapin=%map%\%year%-%sem%\base.xml
+SET mapout=%map%\%year%-%sem%_mappings.xml
 
 SET source=%dir%\schedule-200-%year%%abbr%.xml
 SET flat=%dir%\%year%-%sem%_flat.xml
@@ -18,6 +22,11 @@ SET compare=%dir%\%year%-%sem%_compare.txt
 SET last=%tidy%
 SET final=%dir%\%year%-%sem%.xml
 
+
+ECHO Generating mappings %sem% %year%...
+java -jar C:\saxon\saxon8.jar -o %mapout% %mapin% xml-mappings.xsl %params%
+ECHO Finished
+ECHO.
 
 ECHO Flattening %sem% %year%...
 java -jar C:\saxon\saxon8.jar -o %flat% %source% xml-flatten.xsl %params%

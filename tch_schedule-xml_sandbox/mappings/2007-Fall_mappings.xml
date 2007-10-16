@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<mappings>
+   <division name="Business Studies">
+      <contact ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu"/>
+      <subject name="Automotive Technology">
+         <contact ext="4189" room="Q100" email="bhcAutomotive@dcccd.edu"/>
+         <pattern match="AUMT" priority="1" sortkey="2"/>
+      </subject>
+      <subject name="Accounting">
+         <comments>
+				        <p>
+               <b>NOTE:</b> If you are working toward obtaining the Accounting Clerk Certificate
+					or the Accounting Assistant Certificate, you may take these courses even though
+					you have not taken the Texas Success Initiative exam. Obtain a TSI waiver form
+					online, or call 972-860-4160, for more information.</p>
+				        <h1>ACCOUNTING CLERK CERTIFICATE</h1>
+				        <p>This program will allow you to obtain marketable job skills necessary for
+					entry-level accounting positions. The courses in this program will give you an
+					opportunity to acquire basic accounting, 10-key, spreadsheet, and word
+					processing skills.</p>
+				        <p>The following five courses must be completed to receive this certificate. Upon
+					completion, you will have earned 16 college credits.</p>
+				        <table border="0" cellpadding="5" cellspacing="0">
+					          <tr>
+						            <td>ACCT 2401 Prin of Accounting I</td>
+						            <td>POFT 1325 Business Math &amp; Machine Appl.</td>
+					          </tr>
+					          <tr>
+						            <td>ACNT 1311 Intro to Comp Acct</td>
+						            <td>POFI 2301 Word Processing I</td>
+					          </tr>
+					          <tr>
+						            <td>*ACNT 1380 Cooperative Ed.</td>
+						            <td/>
+					          </tr>
+				        </table>
+				        <p>*You must be employed to enroll in ACNT 1380. If you are not employed, select a
+					Business/Technical elective.</p>
+			      </comments>
+         <pattern match="ACNT" priority="1" sortkey="2"/>
+         <pattern match="ACCT" priority="1" sortkey="3"/>
+      </subject>
+      <subject name="Business Office Systems and Support">
+         <contact email="bhcBOSS@dcccd.edu"/>
+         <pattern match="POFT" priority="1" sortkey="2"/>
+         <pattern match="POFI" priority="1" sortkey="3"/>
+         <pattern match="POFM" priority="1" sortkey="4"/>
+         <pattern match="MDCA" priority="1" sortkey="5"/>
+      </subject>
+      <subject name="Business" ordered="true">
+         <pattern match="BCIS" priority="0" sortkey="1"/>
+         <pattern match="BUSI 130[0-5]" priority="1" sortkey="2"/>
+         <pattern match="IBUS 1305" priority="1" sortkey="3"/>
+         <pattern match="BUSI" priority="0" sortkey="4"/>
+         <pattern match="IBUS" priority="0" sortkey="5"/>
+      </subject>
+      <subject name="Computer Information Technology" ordered="true">
+         <contact email="bhcCIT@dcccd.edu"/>
+         <pattern match="ITSC 1191-2781" priority="1" sortkey="1"/>
+         <pattern match="ITSC 1291-2780" priority="1" sortkey="2"/>
+         <topic name="Introduction To Computing">
+            <comments>NOTE:  ITSC 1401 is a technical/occupational course required for certain certificate and associate degree plans.  It will not meet the Brookhaven College Core Curriculum and/or Associate in Arts or Associate in Science requirement, and is not for transfer to a four-year school.</comments>
+            <pattern match="ITSC 1401" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="CIT Core">
+            <pattern match="ITNW 1425-2001" priority="1" sortkey="1"/>
+            <pattern match="ITSC 2435-2001" priority="1" sortkey="2"/>
+            <pattern match="ITNW 1425-2426" priority="1" sortkey="3"/>
+            <pattern match="ITSC 1405-2426" priority="1" sortkey="4"/>
+            <pattern match="ITSC 2435-2426" priority="1" sortkey="5"/>
+         </topic>
+         <topic name="Open Source Software - NEW!">
+            <pattern match="ITNW 2454-2700" priority="1" sortkey="1"/>
+            <pattern match="ITSW 1407-2700" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Programming">
+            <pattern match="ITSE 1407-2001" priority="1" sortkey="1"/>
+            <pattern match="ITSE 2417-2001" priority="1" sortkey="2"/>
+            <pattern match="GAME 1443-2502" priority="1" sortkey="3"/>
+            <pattern match="GAME 1459-2501" priority="1" sortkey="4"/>
+            <pattern match="INEW 2438-2501" priority="1" sortkey="5"/>
+            <pattern match="ITSE 1407-2501" priority="1" sortkey="6"/>
+            <pattern match="ITSE 1407-2502" priority="1" sortkey="7"/>
+            <pattern match="ITSE 1430-2502" priority="1" sortkey="8"/>
+            <pattern match="ITSE 1432-2501" priority="1" sortkey="9"/>
+            <pattern match="ITSE 1432-2502" priority="1" sortkey="10"/>
+            <pattern match="ITSE 2417-2501" priority="1" sortkey="11"/>
+            <pattern match="ITSE 2431-2501" priority="1" sortkey="12"/>
+            <pattern match="ITSE 2455-2501" priority="1" sortkey="13"/>
+         </topic>
+         <topic name="Microsoft Academy">
+            <comments>NOTE:  Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for a Microsoft Certified Systems Administrator, MCSA; a Microsoft Certified Systems Engineer, MCSE; and a Microsoft Certified Systems Developer, MCDBA.  For additional information, call 972-860-4176.</comments>
+            <pattern match="ITMC 1403-2501" priority="1" sortkey="2"/>
+            <pattern match="ITMC 2403-2501" priority="1" sortkey="3"/>
+            <pattern match="ITMT 1400-2501" priority="1" sortkey="4"/>
+            <pattern match="ITMT 1440-2501" priority="1" sortkey="5"/>
+            <pattern match="ITSE 1356-2501" priority="1" sortkey="6"/>
+         </topic>
+         <topic name="UNIX">
+            <pattern match="ITSC 1407-2501" priority="1" sortkey="1"/>
+            <pattern match="ITSC 1416-2501" priority="1" sortkey="2"/>
+            <pattern match="ITSC 2437-2426" priority="1" sortkey="3"/>
+            <pattern match="ITSC 1442-2426" priority="1" sortkey="4"/>
+         </topic>
+         <topic name="Information Security and LAN">
+            <pattern match="ITCC 1400-2501" priority="1" sortkey="1"/>
+            <pattern match="ITCC 1400-2700" priority="1" sortkey="2"/>
+            <pattern match="ITNW 1451-2426" priority="1" sortkey="3"/>
+            <pattern match="ITSY 1400-2426" priority="1" sortkey="4"/>
+            <pattern match="ITSY 2400-2426" priority="1" sortkey="5"/>
+            <pattern match="ITSY 2401-2426" priority="1" sortkey="6"/>
+         </topic>
+         <topic name="WWW and E-Commerce">
+            <pattern match="IMED 2415-2001" priority="1" sortkey="1"/>
+            <pattern match="IMED 2415-2002" priority="1" sortkey="2"/>
+            <pattern match="ITSW 1410-2001" priority="1" sortkey="3"/>
+            <pattern match="IMED 1416-2501" priority="1" sortkey="4"/>
+            <pattern match="ITSE 1411-2501" priority="1" sortkey="5"/>
+            <pattern match="ITSE 2402-2501" priority="1" sortkey="6"/>
+            <pattern match="IMED 1416-2426" priority="1" sortkey="7"/>
+            <pattern match="IMED 2415-2426" priority="1" sortkey="8"/>
+            <pattern match="ITNW 1437-2426" priority="1" sortkey="9"/>
+            <pattern match="ITSE 1411-2426" priority="1" sortkey="10"/>
+            <pattern match="ITSE 2402-2426" priority="1" sortkey="11"/>
+            <pattern match="ITSE 2409-2426" priority="1" sortkey="12"/>
+            <pattern match="ITSE 2413-2426" priority="1" sortkey="13"/>
+            <pattern match="ITSW 1410-2426" priority="1" sortkey="14"/>
+            <pattern match="ITSW 1410-2427" priority="1" sortkey="15"/>
+            <pattern match="ITSW 1410-2428" priority="1" sortkey="16"/>
+            <pattern match="INEW 1440-2501" priority="1" sortkey="17"/>
+            <pattern match="INEW 1440-2426" priority="1" sortkey="18"/>
+         </topic>
+         <topic name="Application Software Courses">
+            <pattern match="ITSC 1409-2001" priority="1" sortkey="1"/>
+            <pattern match="ITSW 1404-2001" priority="1" sortkey="2"/>
+            <pattern match="ITSW 1407-2001" priority="1" sortkey="3"/>
+            <pattern match="ITSC 2431-2300" priority="1" sortkey="4"/>
+            <pattern match="ITSC 1191-2200" priority="1" sortkey="5"/>
+            <pattern match="ITSC 1191-2250" priority="1" sortkey="6"/>
+            <pattern match="ITSC 1191-2201" priority="1" sortkey="7"/>
+            <pattern match="ITSC 1191-2202" priority="1" sortkey="8"/>
+            <pattern match="ITSC 1291-2200" priority="1" sortkey="9"/>
+            <pattern match="ITSW 1401-2200" priority="1" sortkey="10"/>
+            <pattern match="ITSC 1409-2780" priority="1" sortkey="11"/>
+            <pattern match="ITSC 2431-2780" priority="1" sortkey="12"/>
+            <pattern match="ITSC 1409-2700" priority="1" sortkey="13"/>
+            <pattern match="ITSC 2431-2500" priority="1" sortkey="14"/>
+            <pattern match="ITSW 1401-2500" priority="1" sortkey="15"/>
+            <pattern match="ITSW 1404-2500" priority="1" sortkey="16"/>
+            <pattern match="ITSW 1407-2500" priority="1" sortkey="17"/>
+            <pattern match="ITSC 1191-2700" priority="1" sortkey="18"/>
+            <pattern match="ITSC 1191-2704" priority="1" sortkey="19"/>
+            <pattern match="ITSC 1191-2703" priority="1" sortkey="20"/>
+            <pattern match="ITSC 1191-2702" priority="1" sortkey="21"/>
+            <pattern match="ITSC 1291-2700" priority="1" sortkey="22"/>
+            <pattern match="ITSC 1291-2701" priority="1" sortkey="23"/>
+            <pattern match="ITSC 1191-2426" priority="1" sortkey="24"/>
+            <pattern match="ITSC 1191-2427" priority="1" sortkey="25"/>
+            <pattern match="ITSC 1291-2426" priority="1" sortkey="26"/>
+            <pattern match="ITSC 1291-2427" priority="1" sortkey="27"/>
+            <pattern match="ITSC 1409-2426" priority="1" sortkey="28"/>
+            <pattern match="ITSC 1409-2428" priority="1" sortkey="29"/>
+            <pattern match="ITSC 1409-2427" priority="1" sortkey="30"/>
+            <pattern match="ITSC 1415-2426" priority="1" sortkey="31"/>
+            <pattern match="ITSC 1491-2426" priority="1" sortkey="32"/>
+            <pattern match="ITSC 1415-2427" priority="1" sortkey="33"/>
+            <pattern match="ITSC 2431-2426" priority="1" sortkey="34"/>
+            <pattern match="ITSC 2431-2428" priority="1" sortkey="35"/>
+            <pattern match="ITSC 2431-2427" priority="1" sortkey="36"/>
+            <pattern match="ITSC 2431-2429" priority="1" sortkey="37"/>
+            <pattern match="ITSW 1401-2426" priority="1" sortkey="38"/>
+            <pattern match="ITSW 1401-2428" priority="1" sortkey="39"/>
+            <pattern match="ITSW 1401-2427" priority="1" sortkey="40"/>
+            <pattern match="ITSW 1404-2426" priority="1" sortkey="41"/>
+            <pattern match="ITSW 1404-2428" priority="1" sortkey="42"/>
+            <pattern match="ITSW 1404-2427" priority="1" sortkey="43"/>
+            <pattern match="ITSW 1407-2426" priority="1" sortkey="44"/>
+            <pattern match="ITSW 1407-2428" priority="1" sortkey="45"/>
+            <pattern match="ITSW 1407-2427" priority="1" sortkey="46"/>
+         </topic>
+         <topic name="General Electives">
+            <pattern match="ITSC 1425-2501" priority="1" sortkey="1"/>
+            <pattern match="ITNW 1380-2300" priority="1" sortkey="2"/>
+         </topic>
+      </subject>
+      <subject name="Computer Information Technology - Unsorted" display="false">
+         <pattern match="GAME" priority="0" sortkey="1"/>
+         <pattern match="INEW" priority="0" sortkey="2"/>
+         <pattern match="ITCC" priority="0" sortkey="3"/>
+         <pattern match="ITNW" priority="0" sortkey="4"/>
+         <pattern match="ITSC" priority="0" sortkey="5"/>
+         <pattern match="ITSE" priority="0" sortkey="6"/>
+         <pattern match="ITSW" priority="0" sortkey="7"/>
+         <pattern match="ITSY" priority="0" sortkey="8"/>
+         <pattern match="ITMC" priority="0" sortkey="9"/>
+         <pattern match="ITMT" priority="0" sortkey="10"/>
+      </subject>
+      <subject name="Computer Science" ordered="true">
+         <contact email="bhcCIT@dcccd.edu"/>
+         <topic name="Computer Literacy">
+            <comments>NOTE:  COSC 1300 will meet the Core Curriculum and/or Associate in Arts or Associate in Science requirement, and may be used for transfer to a four-year school.</comments>
+            <pattern match="COSC (1300|1401)" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Programming">
+            <pattern match="COSC 1309-2001" priority="1" sortkey="1"/>
+            <pattern match="COSC 1415-2001" priority="1" sortkey="2"/>
+            <pattern match="COSC 1436-2001" priority="1" sortkey="3"/>
+            <pattern match="COSC 1437-2001" priority="1" sortkey="4"/>
+            <pattern match="COSC 1415-2501" priority="1" sortkey="5"/>
+            <pattern match="COSC 1430-2502" priority="1" sortkey="6"/>
+            <pattern match="COSC 1436-2501" priority="1" sortkey="7"/>
+            <pattern match="COSC 1436-2502" priority="1" sortkey="8"/>
+            <pattern match="COSC 1437-2501" priority="1" sortkey="9"/>
+            <pattern match="COSC 1437-2502" priority="1" sortkey="10"/>
+            <pattern match="COSC 2415-2501" priority="1" sortkey="11"/>
+            <pattern match="COSC 2430-2501" priority="1" sortkey="12"/>
+            <pattern match="COSC 2436-2501" priority="1" sortkey="13"/>
+            <pattern match="COSC 1309-2426" priority="1" sortkey="14"/>
+         </topic>
+      </subject>
+      <subject name="Computer Science - Unsorted" display="false">
+         <pattern match="COSC" priority="0" sortkey="1"/>
+      </subject>
+      <subject name="Computer Studies - Business Computer Information Systems" ordered="true">
+         <contact email="bhcCIT@dcccd.edu"/>
+         <comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
+         <topic name="Business Computer Applications">
+            <pattern match="BCIS 1405-2011" priority="1" sortkey="1"/>
+            <pattern match="BCIS 1405-2012" priority="1" sortkey="2"/>
+            <pattern match="BCIS 1405-2511" priority="1" sortkey="3"/>
+            <pattern match="BCIS 1405-2512" priority="1" sortkey="4"/>
+            <pattern match="BCIS 1405-2300" priority="1" sortkey="5"/>
+            <pattern match="BCIS 1405-2421" priority="1" sortkey="6"/>
+            <pattern match="BCIS 1405-2422" priority="1" sortkey="7"/>
+         </topic>
+         <topic name="Programming">
+            <pattern match="BCIS 1431-2501" priority="1" sortkey="1"/>
+            <pattern match="BCIS 1431-2502" priority="1" sortkey="2"/>
+         </topic>
+      </subject>
+      <subject name="Computer Studies - Business Computer Information Systems - Unsorted"
+               display="false">
+         <pattern match="BCIS" priority="0" sortkey="1"/>
+      </subject>
+      <subject name="Economics">
+         <pattern match="ECON" priority="1" sortkey="1"/>
+         <comments>
+				        <p>
+               <b>NOTE:</b> The courses shown below include a high level of learning support for
+					each student. This high level of support is provided to help students build
+					success at each step in their course. To help build this success students
+					enrolling initially in ECON 2301 will be enrolled in ECON 1303
+					(self-paced/online) with the same section number. This concurrent enrollment is
+					required unless the student has completed ECON 1303 in a previous semester or is
+					enrolling in a Distance Learning section of ECON 2301.</p>
+				        <p>The concurrent ECON 1303 course provides the student with the high level HelpLab
+					support and provides the self-paced preparation ("prepare-as-you-go" course) for
+					ECON 2301. The enhanced HelpLab support includes personal one-to-one tutoring,
+					group test review sessions, multimedia study materials and online practice tests
+					along with personal assistance by telephone and e-mail.</p>
+				        <p>ECON 1303 is a transferable credit course, is a Core Curriculum course and can be
+					taken independently online (see Distance Learning section below) or, as
+					indicated above, will be taken concurrently with ECON 2301.</p>
+				        <p>The orientation for the concurrent ECON 1303 is part of the orientation for the
+					ECON 2301 course carrying the same section number. If there are any questions,
+					please come by the ECON HelpLab, Room M130, call 972-860-4169 or 972-860-4164,
+					or e-mail Gus Herring at gHerring@dcccd.edu with a copy to Bob Smith at
+					bSmith1@dcccd.edu.</p>
+			      </comments>
+      </subject>
+      <subject name="Journalism">
+         <pattern match="JOUR" priority="1" sortkey="1"/>
+         <comments>
+				        <p>NOTE: Journalism 1307 surveys the field of mass communications. Journalism 2311
+					is a reporting course. Students may enroll in Journalism 2311 without having
+					taken Journalism 1307. Room B212 is the student newspaper office.</p>
+			      </comments>
+      </subject>
+      <subject name="Management">
+         <pattern match="HRPO" priority="1" sortkey="1"/>
+         <pattern match="BMGT" priority="1" sortkey="2"/>
+         <pattern match="BUSG" priority="1" sortkey="3"/>
+      </subject>
+      <subject name="Management Program" ordered="true">
+         <comments>NOTE:  Earn six credit hours, but attend class only one night per week for three hours.  For advisement, call the faculty members: Mary Lou Avera, 972-860-4179, marylou@dcccd.edu;  or Marisa Walsdorf, 972-860-4186, marisa_walsdorf@dcccd.edu.  Minimum requirements for enrollment:  A student must be currently employed in an appropriate job and meet the TSI requirements in reading and writing.  Credits are earned in a traditional on-campus course and in an on-the-job, cooperative education training course.  There are no course prerequisites, but students may enroll in only one co-op ed course per semester.  It is strongly recommended that interested students contact a faculty member before classes begin.  Visit us online at www.BrookhavenCollege.edu   then click on "M" for Management in the A-Z index.</comments>
+         <topic name="none"/>
+         <topic name="none">
+            <pattern match="HRPO 2301-2501" priority="1" sortkey="1"/>
+            <pattern match="BMGT 1383-2501" priority="1" sortkey="2"/>
+            <pattern match="HRPO 2307-2502" priority="1" sortkey="3"/>
+            <pattern match="BMGT 2382-2502" priority="1" sortkey="4"/>
+         </topic>
+      </subject>
+      <subject name="Marketing">
+         <pattern match="MRKG" priority="1" sortkey="1"/>
+         <pattern match="FSHD" priority="1" sortkey="2"/>
+         <pattern match="FSHN" priority="1" sortkey="3"/>
+      </subject>
+      <subject name="Spanish Language">
+         <pattern match="SPNL" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Visual Communications">
+         <contact email="bhcVCOM@dcccd.edu"/>
+         <pattern match="ARTC" priority="1" sortkey="2"/>
+         <pattern match="ARTV" priority="1" sortkey="3"/>
+         <pattern match="GRPH" priority="1" sortkey="4"/>
+         <pattern match="IMED" priority="1" sortkey="5"/>
+         <pattern match="PHTC" priority="1" sortkey="6"/>
+      </subject>
+   </division>
+   <division name="Communications">
+      <contact ext="4555" room="L367" email="XX-MISSING"/>
+      <subject name="Developmental Reading">
+         <contact email="bhcReadingWriting@dcccd.edu"/>
+         <pattern match="DREA" priority="1" sortkey="2"/>
+      </subject>
+      <subject name="Developmental Writing">
+         <contact email="bhcReadingWriting@dcccd.edu"/>
+         <pattern match="DWRI" priority="1" sortkey="2"/>
+      </subject>
+      <subject name="English">
+         <contact email="bhcEnglish@dcccd.edu"/>
+         <pattern match="ENGL" priority="1" sortkey="2"/>
+         <topic name="Coordinated Studies" ordered="true">
+            <pattern match="ENGL 1301-2050" priority="1" sortkey="1"/>
+            <pattern match="ENGL 1302-2050" priority="1" sortkey="2"/>
+         </topic>
+      </subject>
+      <subject name="Photography">
+         <contact email="bhcPhotography@dcccd.edu"/>
+         <pattern match="PHOT" priority="1" sortkey="2"/>
+      </subject>
+      <subject name="Speech">
+         <contact email="bhcSpeech@dcccd.edu"/>
+         <pattern match="SPCH" priority="1" sortkey="2"/>
+         <topic name="Coordinated Studies">
+            <pattern match="SPCH 1311-2050" priority="1" sortkey="1"/>
+            <pattern match="SPCH 1315-2050" priority="1" sortkey="2"/>
+         </topic>
+      </subject>
+      <subject name="College Learning Skills">
+         <pattern match="DCOM" priority="1" sortkey="1"/>
+      </subject>
+   </division>
+   <division name="Health and Human Services">
+      <contact ext="4239" room="A219" email="bhcHHServices@dcccd.edu"/>
+      <subject name="Child Development">
+         <contact ext="4144" room="K211" email="bhcChildDevelop@dcccd.edu"/>
+         <pattern match="EDTC" priority="1" sortkey="2"/>
+         <pattern match="CDEC" priority="1" sortkey="3"/>
+         <pattern match="TECA" priority="1" sortkey="4"/>
+         <comments>
+				        <p>NOTE: All students enrolling in child development courses must submit to a
+					criminal background check. For additional information call Dr. Jane Rowe at
+					972-860-4144 or Johnny Castro at 972-860-4136.</p>
+			      </comments>
+      </subject>
+      <subject name="Education">
+         <pattern match="EDUC" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Emergency Medical Services" ordered="true">
+         <contact ext="7879" location="East Center #2" email="bhcEMS@dcccd.edu"/>
+         <comments>
+			         <p>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/.  Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences.  International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning  this requirement.</p>
+			         <p>NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road.</p>
+			         <p>NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. </p>
+		       </comments>
+         <pattern match="EMSP 2332-2204" priority="1" sortkey="2"/>
+         <topic name="Emergency Medical Services, Basic">
+            <pattern match="EMSP 1501-2220" priority="1" sortkey="1"/>
+            <pattern match="EMSP 1501-2201" priority="1" sortkey="2"/>
+            <pattern match="EMSP 1501-2202" priority="1" sortkey="3"/>
+            <pattern match="EMSP 1501-2203" priority="1" sortkey="4"/>
+            <pattern match="EMSP 1501-2201" priority="1" sortkey="5"/>
+            <pattern match="EMSP 1501-2202" priority="1" sortkey="6"/>
+            <pattern match="EMSP 1501-2203" priority="1" sortkey="7"/>
+            <pattern match="EMSP 2261-2216" priority="1" sortkey="8"/>
+            <pattern match="EMSP 2260-2619" priority="1" sortkey="9"/>
+            <subtopic name="EMT-Basic Class #40, Evenings">
+               <pattern match="EMSP 1501-2540" priority="1" sortkey="1"/>
+               <pattern match="EMSP 1501-2500" priority="1" sortkey="2"/>
+               <pattern match="EMSP 1501-2501" priority="1" sortkey="3"/>
+               <pattern match="EMSP 1501-2502" priority="1" sortkey="4"/>
+               <pattern match="EMSP 1501-2202" priority="1" sortkey="5"/>
+            </subtopic>
+            <subtopic name="EMT-Basic Class #41, B Shift">
+               <pattern match="EMSP 1501-2006" priority="1" sortkey="1"/>
+               <pattern match="EMSP 1501-2007" priority="1" sortkey="2"/>
+               <pattern match="EMSP 1501-2008" priority="1" sortkey="3"/>
+               <pattern match="EMSP 1501-2041" priority="1" sortkey="4"/>
+            </subtopic>
+            <subtopic name="EMT-Basic Class #42, C Shift">
+               <pattern match="EMSP 1501-2003" priority="1" sortkey="1"/>
+               <pattern match="EMSP 1501-2004" priority="1" sortkey="2"/>
+               <pattern match="EMSP 1501-2005" priority="1" sortkey="3"/>
+               <pattern match="EMSP 1501-2042" priority="1" sortkey="4"/>
+            </subtopic>
+         </topic>
+         <topic name="Emergency Medical Services,  Paramedic">
+            <subtopic name="Paramedic Class #16, A Shift">
+               <pattern match="EMSP 2430-2216" priority="1" sortkey="1"/>
+               <pattern match="EMSP 2430-2201" priority="1" sortkey="2"/>
+               <pattern match="EMSP 2338-2216" priority="1" sortkey="3"/>
+               <pattern match="EMSP 2338-2201" priority="1" sortkey="4"/>
+               <pattern match="EMSP 2143-2216" priority="1" sortkey="5"/>
+               <pattern match="EMSP 2143-2201" priority="1" sortkey="6"/>
+               <pattern match="EMSP 2463-2216" priority="1" sortkey="7"/>
+               <pattern match="EMSP 2332-2005" priority="1" sortkey="8"/>
+               <pattern match="EMSP 2332-2205" priority="1" sortkey="9"/>
+            </subtopic>
+            <subtopic name="Paramedic Class #17, B Shift">
+               <pattern match="EMSP 1355-2217" priority="1" sortkey="1"/>
+               <pattern match="EMSP 1355-2204" priority="1" sortkey="2"/>
+               <pattern match="EMSP 1355-2205" priority="1" sortkey="3"/>
+               <pattern match="EMSP 1355-2206" priority="1" sortkey="4"/>
+               <pattern match="EMSP 2261-2217" priority="1" sortkey="5"/>
+               <pattern match="EMSP 2430-2217" priority="1" sortkey="6"/>
+               <pattern match="EMSP 2430-2204" priority="1" sortkey="7"/>
+               <pattern match="EMSP 2430-2205" priority="1" sortkey="8"/>
+            </subtopic>
+            <subtopic name="Paramedic Class #18, C Shift">
+               <pattern match="EMSP 1438-2218" priority="1" sortkey="1"/>
+               <pattern match="EMSP 1438-2207" priority="1" sortkey="2"/>
+               <pattern match="EMSP 1438-2208" priority="1" sortkey="3"/>
+               <pattern match="EMSP 1438-2209" priority="1" sortkey="4"/>
+               <pattern match="EMSP 1356-2218" priority="1" sortkey="5"/>
+               <pattern match="EMSP 1356-2207" priority="1" sortkey="6"/>
+               <pattern match="EMSP 1356-2208" priority="1" sortkey="7"/>
+               <pattern match="EMSP 1356-2209" priority="1" sortkey="8"/>
+               <pattern match="EMSP 2444-2218" priority="1" sortkey="9"/>
+               <pattern match="EMSP 2444-2207" priority="1" sortkey="10"/>
+               <pattern match="EMSP 2444-2208" priority="1" sortkey="11"/>
+               <pattern match="EMSP 2444-2209" priority="1" sortkey="12"/>
+               <pattern match="EMSP 2260-2718" priority="1" sortkey="13"/>
+               <pattern match="EMSP 2260-2218" priority="1" sortkey="14"/>
+            </subtopic>
+            <subtopic name="Paramedic Class #19, Evenings">
+               <pattern match="EMSP 1438-2719" priority="1" sortkey="1"/>
+               <pattern match="EMSP 1438-2700" priority="1" sortkey="2"/>
+               <pattern match="EMSP 1438-2701" priority="1" sortkey="3"/>
+               <pattern match="EMSP 1438-2702" priority="1" sortkey="4"/>
+               <pattern match="EMSP 1438-2519" priority="1" sortkey="5"/>
+               <pattern match="EMSP 1438-2500" priority="1" sortkey="6"/>
+               <pattern match="EMSP 1438-2501" priority="1" sortkey="7"/>
+               <pattern match="EMSP 1438-2502" priority="1" sortkey="8"/>
+               <pattern match="EMSP 2444-2719" priority="1" sortkey="9"/>
+               <pattern match="EMSP 1356-2719" priority="1" sortkey="10"/>
+               <pattern match="EMSP 1356-2700" priority="1" sortkey="11"/>
+               <pattern match="EMSP 1356-2701" priority="1" sortkey="12"/>
+               <pattern match="EMSP 1356-2702" priority="1" sortkey="13"/>
+               <pattern match="EMSP 2261-2619" priority="1" sortkey="14"/>
+               <pattern match="EMSP 2444-2700" priority="1" sortkey="15"/>
+               <pattern match="EMSP 2444-2701" priority="1" sortkey="16"/>
+               <pattern match="EMSP 2444-2702" priority="1" sortkey="17"/>
+            </subtopic>
+         </topic>
+      </subject>
+      <subject name="Emergency Medical Services - Unsorted" display="false">
+         <pattern match="EMSP" priority="0" sortkey="1"/>
+      </subject>
+      <subject name="Nursing">
+         <contact ext="4754" room="K224" email="bhcNursing@dcccd.edu"/>
+         <comments>
+				        <p>Clinical opportunities are not available for any student without a U.S. Social
+					Security number, http://www.ssa.gov/ssnumber/. Potential applicants should
+					obtain a Social Security number before applying to Brookhaven College's health
+					programs in Emergency Medical Services, Nursing and Radiologic Sciences.
+					International students are advised to contact the Brookhaven College
+					Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu,
+					972-860-4192, concerning this requirement.</p>
+			      </comments>
+         <pattern match="HPRS" priority="1" sortkey="3"/>
+         <pattern match="RNSG" priority="1" sortkey="4"/>
+      </subject>
+      <subject name="Radiologic Sciences" ordered="true">
+         <contact ext="4264" room="L107" email="bhcRadTech@dcccd.edu"/>
+         <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+         <topic name="none">
+            <pattern match="RADR 1201-2201" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Third Semester Program Students">
+            <comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
+            <pattern match="RADR 2217-2001" priority="1" sortkey="2"/>
+            <pattern match="RADR 1166-2601" priority="1" sortkey="3"/>
+            <pattern match="RADR 1166-2602" priority="1" sortkey="4"/>
+            <pattern match="RADR 1166-2603" priority="1" sortkey="5"/>
+            <pattern match="RADR 2331-2001" priority="1" sortkey="6"/>
+            <pattern match="RADR 2331-2002" priority="1" sortkey="7"/>
+            <pattern match="RADR 2331-2003" priority="1" sortkey="8"/>
+            <pattern match="RADR 2331-2004" priority="1" sortkey="9"/>
+            <pattern match="RADR 2305-2001" priority="1" sortkey="10"/>
+            <pattern match="RADR 2305-2002" priority="1" sortkey="11"/>
+            <pattern match="RADR 2305-2003" priority="1" sortkey="12"/>
+            <pattern match="RADR 2305-2004" priority="1" sortkey="13"/>
+         </topic>
+         <topic name="Sixth Semester Program Students">
+            <comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
+            <pattern match="RADR 1250-2001" priority="1" sortkey="2"/>
+            <pattern match="RADR 2235-2001" priority="1" sortkey="3"/>
+            <pattern match="RADR 2267-2601" priority="1" sortkey="4"/>
+            <pattern match="RADR 2267-2602" priority="1" sortkey="5"/>
+         </topic>
+      </subject>
+      <subject name="Radiologic Sciences - Unsorted" display="false">
+         <pattern match="RADR" priority="0" sortkey="1"/>
+      </subject>
+   </division>
+   <division name="Mathematics and Science">
+      <contact ext="4750" room="K224" email="XX-MISSING"/>
+      <subject name="Astronomy">
+         <contact email="bhcScience@dcccd.edu"/>
+         <pattern match="PHYS 141[12]" priority="1" sortkey="2"/>
+      </subject>
+      <subject name="Biology" ordered="true">
+         <contact email="bhcScience@dcccd.edu"/>
+         <comments>
+				        <p>NOTE: Meeting course prerequisites is very important to your success in science
+					courses. Before registering, check the Catalog online or call the division
+					office for prerequisite information.</p>
+			      </comments>
+         <topic name="Directed Studies">
+            <pattern match="DIRS" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Non-Majors Biology">
+            <comments>
+				           <p>NOTE: Biology 1408 and 1409 are courses for non-majors. Non-science majors and returning students with limited biology background may take either course in preparation for their first biology course for majors.  There are no prerequisites.</p>
+			         </comments>
+            <pattern match="BIOL 140[89]" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Majors Biology">
+            <comments>
+				           <p>NOTE: Biology 1406 and 1407 are courses for students majoring and/or minoring in biology or related disciplines. It is recommended that students have recently had either high school biology or Biology 1408 or 1409. It is also recommended that students have recently had high school chemistry or Chemistry 1405 before taking this course.</p>
+			         </comments>
+            <pattern match="BIOL 140[67]" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Anatomy &amp; Physiology for Nursing Majors">
+            <comments>
+				           <p>NOTE: Enrollment into SCIT 1407 will require an appropriate reading and writing score on one of the assessment instruments (THEA/TASP, etc.) taken within the last two years. If your reading or writing score is below the minimum cutoff, you will be advised to enroll into an alternative biology course, such as BIOL 1408 or DIRS 9170.  SCIT 1407 is a prerequisite for the Nursing Program.</p>
+			         </comments>
+            <pattern match="SCIT" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Honors Anatomy &amp; Physiology (Majors)">
+            <comments>
+				           <p>NOTE: Biology 2401 and 2402 are anatomy and physiology courses for biology majors and for students wanting a transferable anatomy and physiology course, such as, Bachelor of Science, Nursing; physical therapy and kinesiology students. Please see the online Catalog for prerequisite information.</p>
+			         </comments>
+            <pattern match="BIOL 240[12]" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Genetics">
+            <comments>
+				           <p>NOTE: Genetics is a course for science majors. Please see the online Catalog for prerequisite information. For more information call 972-860-4753 or e-mail aBailey@dcccd.edu.</p>
+			         </comments>
+            <pattern match="BIOL 2416" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Microbiology">
+            <pattern match="BIOL 2420" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Botany">
+            <pattern match="BIOL 1411-2226" priority="1" sortkey="1"/>
+         </topic>
+      </subject>
+      <subject name="Biology - Unsorted" display="false">
+         <pattern match="BIOL" priority="0" sortkey="1"/>
+         <pattern match="DIRS" priority="0" sortkey="2"/>
+         <pattern match="SCIT" priority="0" sortkey="3"/>
+      </subject>
+      <subject name="Chemistry">
+         <contact email="bhcScience@dcccd.edu"/>
+         <pattern match="CHEM" priority="1" sortkey="2"/>
+         <comments>
+				        <p>NOTE: Meeting course prerequisites is very important to your success in chemistry
+					courses. Before registering, check the Catalog online or call the division
+					office for prerequisite information.</p>
+				        <p>NOTE: All chemistry labs will meet as scheduled the first week of class whether
+					the lecture class has met or not. It is MANDATORY to attend Safety Lab, which is
+					offered only the first week at the scheduled lab time for your section.</p>
+			      </comments>
+      </subject>
+      <subject name="Developmental Mathematics">
+         <contact email="bhcMath@dcccd.edu"/>
+         <pattern match="DMAT" priority="1" sortkey="2"/>
+      </subject>
+      <subject name="Geography">
+         <pattern match="GEOG" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Geology">
+         <contact email="bhcScience@dcccd.edu"/>
+         <pattern match="GEOL" priority="1" sortkey="2"/>
+         <comments>
+				        <p>NOTE: GEOL 1401,1403, 1404 and 1445 are four-credit-hour Core Curriculum lab
+					sciences. Students are encouraged to bring textbook and lab manual to their
+					first class meeting. For text information visit the bookstore or call the
+					geology lab at 972-860-4713. Several local field trips will be open to GEOL
+					students.</p>
+			      </comments>
+      </subject>
+      <subject name="Geospatial Technology">
+         <contact email="bhcGeospatialTech@dcccd.edu" ext="4362"/>
+         <pattern match="CRTG" priority="1" sortkey="2"/>
+         <pattern match="GISC" priority="1" sortkey="3"/>
+         <pattern match="SRVY" priority="1" sortkey="4"/>
+      </subject>
+      <subject name="Mathematics">
+         <contact email="bhcMath@dcccd.edu"/>
+         <pattern match="MATH" priority="1" sortkey="2"/>
+         <pattern match="TECM" priority="1" sortkey="3"/>
+         <comments>
+				        <p>NOTE: REQUIRED FOR ALL MATH COURSES: One of any version of the following Texas
+					Instruments calculators: TI-83, TI-84 or TI-86. NOTE: All MATH courses are part
+					of the Service-Learning Program, check with the instructor or e-mail
+					bhcServiceLearning@dcccd.edu for more information.</p>
+			      </comments>
+      </subject>
+      <subject name="Physical Science">
+         <contact email="bhcScience@dcccd.edu"/>
+         <pattern match="PHYS 1415" priority="1" sortkey="2"/>
+         <pattern match="PHYS 1417" priority="1" sortkey="3"/>
+      </subject>
+      <subject name="Physics">
+         <contact email="bhcScience@dcccd.edu"/>
+         <pattern match="PHYS [12]4[02][1256]" priority="1" sortkey="2"/>
+      </subject>
+   </division>
+   <division name="Physical Education, Athletics and Nutrition">
+      <contact ext="4120" room="T315" email="bhcPhysicalEd@dcccd.edu"/>
+      <subject name="Nutrition">
+         <pattern match="NUTR" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Physical Education">
+         <pattern match="PHED" priority="1" sortkey="1"/>
+      </subject>
+   </division>
+   <division name="School of the Arts">
+      <contact ext="4730" room="D123" email="BCSA@dcccd.edu"/>
+      <subject name="Art" ordered="true">
+         <contact room="T129" email="bhcArt@dcccd.edu"/>
+         <topic name="Art Appreciation">
+            <pattern match="ARTS 1301" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Art History">
+            <pattern match="ARTS 130[34]" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2373-2001" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Art and Computers">
+            <pattern match="ARTS 2313-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2314-2001" priority="1" sortkey="2"/>
+            <pattern match="ARTS 2311-2004" priority="1" sortkey="3"/>
+            <pattern match="ARTS 2348-2001" priority="1" sortkey="4"/>
+            <pattern match="ARTS 2348-2201" priority="1" sortkey="5"/>
+            <pattern match="ARTS 2349-2001" priority="1" sortkey="6"/>
+            <pattern match="ARTS 2349-2201" priority="1" sortkey="7"/>
+            <pattern match="ARTS 2311-2017" priority="1" sortkey="8"/>
+            <pattern match="ARTS 2311-2201" priority="1" sortkey="9"/>
+         </topic>
+         <topic name="Art Metals">
+            <pattern match="ARTS 2341-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2342-2001" priority="1" sortkey="2"/>
+            <pattern match="ARTS 2311-2013" priority="1" sortkey="3"/>
+            <pattern match="ARTS 2312-2007" priority="1" sortkey="4"/>
+            <pattern match="ARTS 2341-2501" priority="1" sortkey="5"/>
+            <pattern match="ARTS 2342-2501" priority="1" sortkey="6"/>
+            <pattern match="ARTS 2311-2507" priority="1" sortkey="7"/>
+            <pattern match="ARTS 2312-2507" priority="1" sortkey="8"/>
+         </topic>
+         <topic name="Ceramics">
+            <pattern match="ARTS 2346-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2311-2010" priority="1" sortkey="2"/>
+            <pattern match="ARTS 2347-2002" priority="1" sortkey="3"/>
+            <pattern match="ARTS 2311-2011" priority="1" sortkey="4"/>
+            <pattern match="ARTS 2312-2009" priority="1" sortkey="5"/>
+            <pattern match="ARTS 2311-2005" priority="1" sortkey="6"/>
+            <pattern match="ARTS 2312-2014" priority="1" sortkey="7"/>
+            <pattern match="ARTS 2347-2003" priority="1" sortkey="8"/>
+            <pattern match="ARTS 2311-2018" priority="1" sortkey="9"/>
+            <pattern match="ARTS 2312-2018" priority="1" sortkey="10"/>
+            <pattern match="ARTS 2346-2501" priority="1" sortkey="11"/>
+            <pattern match="ARTS 2347-2501" priority="1" sortkey="12"/>
+            <pattern match="ARTS 2311-2506" priority="1" sortkey="13"/>
+            <pattern match="ARTS 2312-2505" priority="1" sortkey="14"/>
+            <pattern match="ARTS 2346-2502" priority="1" sortkey="15"/>
+            <pattern match="ARTS 2347-2502" priority="1" sortkey="16"/>
+            <pattern match="ARTS 2311-2509" priority="1" sortkey="17"/>
+            <pattern match="ARTS 2312-2509" priority="1" sortkey="18"/>
+            <pattern match="ARTS 2346-2250" priority="1" sortkey="19"/>
+            <pattern match="ARTS 2347-2250" priority="1" sortkey="20"/>
+            <pattern match="ARTS 2311-2252" priority="1" sortkey="21"/>
+            <pattern match="ARTS 2312-2252" priority="1" sortkey="22"/>
+         </topic>
+         <topic name="Design">
+            <pattern match="ARTS 1311-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 1311-2002" priority="1" sortkey="2"/>
+            <pattern match="ARTS 1312-2001" priority="1" sortkey="3"/>
+            <pattern match="ARTS 1311-2003" priority="1" sortkey="4"/>
+            <pattern match="ARTS 1312-2002" priority="1" sortkey="5"/>
+            <pattern match="ARTS 1311-2501" priority="1" sortkey="6"/>
+            <pattern match="ARTS 1312-2501" priority="1" sortkey="7"/>
+         </topic>
+         <topic name="Drawing">
+            <pattern match="ARTS 1316-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 1316-2002" priority="1" sortkey="2"/>
+            <pattern match="ARTS 1316-2003" priority="1" sortkey="3"/>
+            <pattern match="ARTS 1317-2001" priority="1" sortkey="4"/>
+            <pattern match="ARTS 2311-2002" priority="1" sortkey="5"/>
+            <pattern match="ARTS 2312-2011" priority="1" sortkey="6"/>
+            <pattern match="ARTS 2323-2001" priority="1" sortkey="7"/>
+            <pattern match="ARTS 2324-2001" priority="1" sortkey="8"/>
+            <pattern match="ARTS 2311-2008" priority="1" sortkey="9"/>
+            <pattern match="ARTS 2312-2002" priority="1" sortkey="10"/>
+            <pattern match="ARTS 1316-2501" priority="1" sortkey="11"/>
+            <pattern match="ARTS 1317-2501" priority="1" sortkey="12"/>
+            <pattern match="ARTS 2311-2502" priority="1" sortkey="13"/>
+            <pattern match="ARTS 2312-2506" priority="1" sortkey="14"/>
+            <pattern match="ARTS 2323-2501" priority="1" sortkey="15"/>
+            <pattern match="ARTS 2324-2501" priority="1" sortkey="16"/>
+            <pattern match="ARTS 2311-2508" priority="1" sortkey="17"/>
+            <pattern match="ARTS 2312-2502" priority="1" sortkey="18"/>
+            <pattern match="ARTS 1316-2250" priority="1" sortkey="19"/>
+            <pattern match="ARTS 1317-2250" priority="1" sortkey="20"/>
+            <pattern match="ARTS 2311-2250" priority="1" sortkey="21"/>
+            <pattern match="ARTS 2312-2250" priority="1" sortkey="22"/>
+         </topic>
+         <topic name="Painting">
+            <pattern match="ARTS 2316-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2317-2001" priority="1" sortkey="2"/>
+            <pattern match="ARTS 2311-2006" priority="1" sortkey="3"/>
+            <pattern match="ARTS 2312-2004" priority="1" sortkey="4"/>
+            <pattern match="ARTS 2316-2002" priority="1" sortkey="5"/>
+            <pattern match="ARTS 2317-2002" priority="1" sortkey="6"/>
+            <pattern match="ARTS 2311-2015" priority="1" sortkey="7"/>
+            <pattern match="ARTS 2312-2015" priority="1" sortkey="8"/>
+            <pattern match="ARTS 2316-2003" priority="1" sortkey="9"/>
+            <pattern match="ARTS 2317-2003" priority="1" sortkey="10"/>
+            <pattern match="ARTS 2311-2012" priority="1" sortkey="11"/>
+            <pattern match="ARTS 2312-2005" priority="1" sortkey="12"/>
+            <pattern match="ARTS 2316-2004" priority="1" sortkey="13"/>
+            <pattern match="ARTS 2317-2004" priority="1" sortkey="14"/>
+            <pattern match="ARTS 2311-2007" priority="1" sortkey="15"/>
+            <pattern match="ARTS 2312-2017" priority="1" sortkey="16"/>
+            <pattern match="ARTS 2316-2501" priority="1" sortkey="17"/>
+            <pattern match="ARTS 2317-2501" priority="1" sortkey="18"/>
+            <pattern match="ARTS 2311-2504" priority="1" sortkey="19"/>
+            <pattern match="ARTS 2312-2510" priority="1" sortkey="20"/>
+            <pattern match="ARTS 2316-2250" priority="1" sortkey="21"/>
+            <pattern match="ARTS 2317-2250" priority="1" sortkey="22"/>
+            <pattern match="ARTS 2311-2251" priority="1" sortkey="23"/>
+            <pattern match="ARTS 2312-2251" priority="1" sortkey="24"/>
+         </topic>
+         <topic name="Photography">
+            <pattern match="ARTS 2356-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2357-2001" priority="1" sortkey="2"/>
+            <pattern match="ARTS 2311-2003" priority="1" sortkey="3"/>
+            <pattern match="ARTS 2312-2003" priority="1" sortkey="4"/>
+            <pattern match="ARTS 2356-2501" priority="1" sortkey="5"/>
+            <pattern match="ARTS 2357-2501" priority="1" sortkey="6"/>
+            <pattern match="ARTS 2311-2503" priority="1" sortkey="7"/>
+            <pattern match="ARTS 2312-2503" priority="1" sortkey="8"/>
+         </topic>
+         <topic name="Printmaking">
+            <pattern match="ARTS 2333-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2334-2001" priority="1" sortkey="2"/>
+            <pattern match="ARTS 2311-2009" priority="1" sortkey="3"/>
+            <pattern match="ARTS 2312-2006" priority="1" sortkey="4"/>
+            <pattern match="ARTS 2333-2501" priority="1" sortkey="5"/>
+            <pattern match="ARTS 2334-2501" priority="1" sortkey="6"/>
+            <pattern match="ARTS 2311-2505" priority="1" sortkey="7"/>
+            <pattern match="ARTS 2312-2504" priority="1" sortkey="8"/>
+         </topic>
+         <topic name="Sculpture">
+            <pattern match="ARTS 2326-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2327-2001" priority="1" sortkey="2"/>
+            <pattern match="ARTS 2311-2001" priority="1" sortkey="3"/>
+            <pattern match="ARTS 2312-2001" priority="1" sortkey="4"/>
+            <pattern match="ARTS 2326-2501" priority="1" sortkey="5"/>
+            <pattern match="ARTS 2327-2501" priority="1" sortkey="6"/>
+            <pattern match="ARTS 2311-2501" priority="1" sortkey="7"/>
+            <pattern match="ARTS 2312-2501" priority="1" sortkey="8"/>
+         </topic>
+         <topic name="Watercolor">
+            <pattern match="ARTS 2366-2001" priority="1" sortkey="1"/>
+            <pattern match="ARTS 2367-2001" priority="1" sortkey="2"/>
+            <pattern match="ARTS 2311-2016" priority="1" sortkey="3"/>
+            <pattern match="ARTS 2312-2016" priority="1" sortkey="4"/>
+         </topic>
+      </subject>
+      <subject name="Art - Unsorted" display="false">
+         <pattern match="ARTS" priority="0" sortkey="1"/>
+      </subject>
+      <subject name="Cultural Studies">
+         <contact email="bhcCulturalStudies@dcccd.edu"/>
+         <pattern match="CUST" priority="1" sortkey="2"/>
+         <topic name="Coordinated Studies">
+            <pattern match="CUST 2370-2050" priority="1" sortkey="1"/>
+         </topic>
+      </subject>
+      <subject name="Dance" ordered="true">
+         <contact ext="4122" room="T129" email="bhcDance@dcccd.edu"/>
+         <comments>NOTE: For more information regarding dance courses, please call the Dance
+			Department at 972-860-4122. For dance courses above the beginning level, placement
+			counseling with the Dance Department is required.</comments>
+         <topic name="Dance Appreciation">
+            <pattern match="DANC 2303-2001" priority="1" sortkey="1"/>
+            <pattern match="DANC 2303-2002" priority="1" sortkey="2"/>
+            <pattern match="DANC 2303-2501" priority="1" sortkey="3"/>
+         </topic>
+         <topic name="Body Conditioning">
+            <pattern match="DANC 1141-2001" priority="1" sortkey="1"/>
+            <pattern match="DANC 1142-2001" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Tap">
+            <pattern match="DANC 1110-2001" priority="1" sortkey="1"/>
+            <pattern match="DANC 1111-2001" priority="1" sortkey="2"/>
+            <pattern match="DANC 2110-2001" priority="1" sortkey="3"/>
+            <pattern match="DANC 2111-2001" priority="1" sortkey="4"/>
+         </topic>
+         <topic name="Dance Practicum">
+            <pattern match="DANC 1351-2235" priority="1" sortkey="1"/>
+            <pattern match="DANC 1351-2736" priority="1" sortkey="2"/>
+            <pattern match="DANC 1351-2236" priority="1" sortkey="3"/>
+            <pattern match="DANC 1352-2235" priority="1" sortkey="4"/>
+            <pattern match="DANC 1352-2736" priority="1" sortkey="5"/>
+            <pattern match="DANC 2351-2235" priority="1" sortkey="6"/>
+            <pattern match="DANC 2351-2736" priority="1" sortkey="7"/>
+            <pattern match="DANC 2352-2736" priority="1" sortkey="8"/>
+            <pattern match="DANC 2352-2235" priority="1" sortkey="9"/>
+            <pattern match="DANC 2352-2701" priority="1" sortkey="10"/>
+         </topic>
+         <topic name="Hip Hop">
+            <pattern match="DANC 1222-2001" priority="1" sortkey="1"/>
+            <pattern match="DANC 1222-2501" priority="1" sortkey="2"/>
+            <pattern match="DANC 1223-2501" priority="1" sortkey="3"/>
+            <pattern match="DANC 1223-2700" priority="1" sortkey="4"/>
+            <pattern match="DANC 2222-2501" priority="1" sortkey="5"/>
+            <pattern match="DANC 2223-2501" priority="1" sortkey="6"/>
+         </topic>
+         <topic name="Ballet">
+            <pattern match="DANC 1341-2001" priority="1" sortkey="1"/>
+            <pattern match="DANC 1342-2001" priority="1" sortkey="2"/>
+            <pattern match="DANC 2341-2001" priority="1" sortkey="3"/>
+            <pattern match="DANC 2342-2001" priority="1" sortkey="4"/>
+            <pattern match="DANC 1341-2501" priority="1" sortkey="5"/>
+            <pattern match="DANC 1342-2501" priority="1" sortkey="6"/>
+            <pattern match="DANC 2341-2501" priority="1" sortkey="7"/>
+            <pattern match="DANC 2342-2501" priority="1" sortkey="8"/>
+         </topic>
+         <topic name="Ballet Technique">
+            <pattern match="DANC 2141-2001" priority="1" sortkey="1"/>
+            <pattern match="DANC 2142-2250" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Modern Dance">
+            <comments>Students must have had one semester of dance training for the following
+				classes.</comments>
+            <pattern match="DANC 1245-2001" priority="1" sortkey="2"/>
+            <pattern match="DANC 1245-2002" priority="1" sortkey="3"/>
+            <pattern match="DANC 1245-2003" priority="1" sortkey="4"/>
+            <pattern match="DANC 1246-2001" priority="1" sortkey="5"/>
+            <pattern match="DANC 2245-2001" priority="1" sortkey="6"/>
+            <pattern match="DANC 2246-2001" priority="1" sortkey="7"/>
+            <pattern match="DANC 1245-2501" priority="1" sortkey="8"/>
+            <pattern match="DANC 1246-2501" priority="1" sortkey="9"/>
+            <pattern match="DANC 2245-2501" priority="1" sortkey="10"/>
+            <pattern match="DANC 2246-2501" priority="1" sortkey="11"/>
+         </topic>
+         <topic name="Musical Comedy">
+            <pattern match="DANC 2212-2001" priority="1" sortkey="1"/>
+         </topic>
+      </subject>
+      <subject name="Dance - Unsorted" display="false">
+         <pattern match="DANC" priority="0" sortkey="1"/>
+      </subject>
+      <subject name="Drama" ordered="true">
+         <topic name="Introduction to Theatre">
+            <pattern match="DRAM 1310-2001" priority="1" sortkey="1"/>
+            <pattern match="DRAM 1310-2002" priority="1" sortkey="2"/>
+            <pattern match="DRAM 1310-2004" priority="1" sortkey="3"/>
+            <pattern match="DRAM 1310-2501" priority="1" sortkey="4"/>
+         </topic>
+         <topic name="Film Appreciation">
+            <pattern match="DRAM 2366-2002" priority="1" sortkey="1"/>
+            <pattern match="DRAM 2366-2004" priority="1" sortkey="2"/>
+            <pattern match="DRAM 2366-2420" priority="1" sortkey="3"/>
+            <pattern match="DRAM 2366-2421" priority="1" sortkey="4"/>
+            <pattern match="DRAM 2366-2200" priority="1" sortkey="5"/>
+         </topic>
+         <topic name="Stage Movement">
+            <pattern match="DRAM 1322-2001" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Stagecraft">
+            <pattern match="DRAM 1330-2001" priority="1" sortkey="1"/>
+            <pattern match="DRAM 1330-2200" priority="1" sortkey="2"/>
+            <pattern match="DRAM 2331-2001" priority="1" sortkey="3"/>
+         </topic>
+         <topic name="Acting">
+            <pattern match="DRAM 1351-2001" priority="1" sortkey="1"/>
+            <pattern match="DRAM 1351-2002" priority="1" sortkey="2"/>
+            <pattern match="DRAM 1352-2001" priority="1" sortkey="3"/>
+            <pattern match="DRAM 1352-2002" priority="1" sortkey="4"/>
+            <pattern match="DRAM 2351-2001" priority="1" sortkey="5"/>
+            <pattern match="DRAM 2351-2002" priority="1" sortkey="6"/>
+            <pattern match="DRAM 2352-2001" priority="1" sortkey="7"/>
+            <pattern match="DRAM 2352-2002" priority="1" sortkey="8"/>
+            <pattern match="DRAM 2352-2200" priority="1" sortkey="9"/>
+            <pattern match="DRAM 1351-2501" priority="1" sortkey="10"/>
+            <pattern match="DRAM 1352-2501" priority="1" sortkey="11"/>
+            <pattern match="DRAM 2351-2501" priority="1" sortkey="12"/>
+            <pattern match="DRAM 2352-2501" priority="1" sortkey="13"/>
+         </topic>
+         <topic name="Rehearsal">
+            <subtopic name="First Play, Fall 2007">
+               <pattern match="DRAM 1221-2735" priority="1" sortkey="1"/>
+               <pattern match="DRAM 1221-2737" priority="1" sortkey="2"/>
+               <pattern match="DRAM 1221-2739" priority="1" sortkey="3"/>
+            </subtopic>
+            <subtopic name="Second Play, Fall 2007">
+               <pattern match="DRAM 1221-2736" priority="1" sortkey="1"/>
+            </subtopic>
+         </topic>
+      </subject>
+      <subject name="Drama - Unsorted">
+         <pattern match="DRAM" priority="0" sortkey="1"/>
+      </subject>
+      <subject name="Humanities">
+         <contact email="bhcHumanities@dcccd.edu"/>
+         <pattern match="HUMA" priority="1" sortkey="2"/>
+      </subject>
+      <subject name="Music" ordered="true">
+         <contact email="bhcMusic@dcccd.edu"/>
+         <topic name="Music Appreciation">
+            <pattern match="MUSI 1306" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Music Theory">
+            <pattern match="MUSI 1311-2001" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1312-2001" priority="1" sortkey="2"/>
+            <pattern match="MUSI 2311-2001" priority="1" sortkey="3"/>
+         </topic>
+         <topic name="Musicianship">
+            <pattern match="MUSI 1116-2001" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1117-2001" priority="1" sortkey="2"/>
+            <pattern match="MUSI 2116-2001" priority="1" sortkey="3"/>
+         </topic>
+         <topic name="Music Literature">
+            <pattern match="MUSI 1308-2300" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1309-2300" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Foundation of Music">
+            <pattern match="MUSI 1300-2300" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1304-2300" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Composition">
+            <pattern match="MUSI 1386-2001" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1386-2300" priority="1" sortkey="2"/>
+            <pattern match="MUSI 1386-2501" priority="1" sortkey="3"/>
+         </topic>
+         <topic name="Recital">
+            <pattern match="MUSI 9176-2001" priority="1" sortkey="1"/>
+            <pattern match="MUSI 9176-2002" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Digital">
+            <pattern match="MUSI 1390-2001" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Piano for Music Majors">
+            <pattern match="MUSI 1181-2003" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1182-2003" priority="1" sortkey="2"/>
+            <pattern match="MUSI 1181-2002" priority="1" sortkey="3"/>
+            <pattern match="MUSI 1182-2002" priority="1" sortkey="4"/>
+            <pattern match="MUSI 2181-2001" priority="1" sortkey="5"/>
+            <pattern match="MUSI 2182-2001" priority="1" sortkey="6"/>
+         </topic>
+         <topic name="Piano for Non Music Majors">
+            <pattern match="MUSI 1181-2001" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1181-2501" priority="1" sortkey="2"/>
+            <pattern match="MUSI 1181-2502" priority="1" sortkey="3"/>
+            <pattern match="MUSI 1182-2501" priority="1" sortkey="4"/>
+         </topic>
+         <topic name="Guitar">
+            <pattern match="MUSI 1192-2001" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1192-2002" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Voice">
+            <pattern match="MUSI 1183-2001" priority="1" sortkey="1"/>
+            <pattern match="MUSI 1183-2501" priority="1" sortkey="2"/>
+            <pattern match="MUSI 1183-2502" priority="1" sortkey="3"/>
+         </topic>
+         <topic name="Music Ensembles">
+            <subtopic name="Flute Ensemble">
+               <pattern match="MUEN 1132-2001" priority="1" sortkey="1"/>
+            </subtopic>
+            <subtopic name="Chamber Ensemble">
+               <pattern match="MUEN 1152-2702" priority="1" sortkey="1"/>
+               <pattern match="MUEN 1152-2750" priority="1" sortkey="2"/>
+            </subtopic>
+            <subtopic name="Guitar Ensemble">
+               <pattern match="MUEN 1134-2001" priority="1" sortkey="1"/>
+               <pattern match="MUEN 1134-2002" priority="1" sortkey="2"/>
+               <pattern match="MUEN 1134-2501" priority="1" sortkey="3"/>
+               <pattern match="MUEN 1134-2502" priority="1" sortkey="4"/>
+            </subtopic>
+            <subtopic name="Keyboard Ensemble">
+               <pattern match="MUEN 1131-2001" priority="1" sortkey="1"/>
+               <pattern match="MUEN 1131-2002" priority="1" sortkey="2"/>
+            </subtopic>
+            <subtopic name="Percussion Ensemble">
+               <pattern match="MUEN 1135-2201" priority="1" sortkey="1"/>
+            </subtopic>
+            <subtopic name="Handbell Ensemble">
+               <pattern match="MUEN 1135-2700" priority="1" sortkey="1"/>
+               <pattern match="MUEN 1135-2501" priority="1" sortkey="2"/>
+               <pattern match="MUEN 1135-2001" priority="1" sortkey="3"/>
+            </subtopic>
+            <subtopic name="Orchestra Ensemble">
+               <pattern match="MUEN 1121-2001" priority="1" sortkey="1"/>
+            </subtopic>
+            <subtopic name="Vocal Jazz/Lab Band">
+               <pattern match="MUEN 1151-2001" priority="1" sortkey="1"/>
+               <pattern match="MUEN 1151-2201" priority="1" sortkey="2"/>
+               <pattern match="MUEN 2123-2001" priority="1" sortkey="3"/>
+               <pattern match="MUEN 2123-2002" priority="1" sortkey="4"/>
+               <pattern match="MUEN 2123-2200" priority="1" sortkey="5"/>
+               <pattern match="MUEN 2123-2501" priority="1" sortkey="6"/>
+            </subtopic>
+            <subtopic name="Women's Chorus">
+               <pattern match="MUEN 1151-2002" priority="1" sortkey="1"/>
+               <pattern match="MUEN 1151-2202" priority="1" sortkey="2"/>
+            </subtopic>
+            <subtopic name="Windsong Vocal Ensemble">
+               <pattern match="MUEN 1153-2250" priority="1" sortkey="1"/>
+               <pattern match="MUEN 1153-2201" priority="1" sortkey="2"/>
+               <pattern match="MUEN 1153-2200" priority="1" sortkey="3"/>
+            </subtopic>
+            <subtopic name="Brookhaven Choral Society">
+               <pattern match="MUEN 2141-2200" priority="1" sortkey="1"/>
+               <pattern match="MUEN 2141-2501" priority="1" sortkey="2"/>
+               <pattern match="MUEN 2141-2701" priority="1" sortkey="3"/>
+            </subtopic>
+         </topic>
+         <topic name="Music (Private Lessons)">
+            <subtopic name="Beginning">
+               <comments>NOTE: These courses are private lesson courses, by audition only. Students
+					are required to audition in advance to be placed at the correct level. An
+					accompanist fee may be required. Enrollment in a music ensemble is required for
+					all students who are accepted into private lesson courses. Please call the Music
+					Office at 972-860-4102 for more information.</comments>
+               <pattern match="MUAP 1" priority="1" sortkey="2"/>
+            </subtopic>
+            <subtopic name="Intermediate">
+               <comments>NOTE: These courses are private lesson courses, by audition only. Students
+					must audition in advance. An accompanist fee may be required. Enrollment in core
+					music major courses, including Theory, Musicianship, Piano Class and Recital
+					(MUSI 9176) are mandatory for all students who are accepted into private lessons
+					at this level. Please call the Music Office at 972-860-4102 for more
+					information.</comments>
+               <pattern match="MUAP 2" priority="1" sortkey="2"/>
+            </subtopic>
+         </topic>
+      </subject>
+      <subject name="Music - Unsorted">
+         <pattern match="MUSI" priority="0" sortkey="1"/>
+         <pattern match="MUEN" priority="0" sortkey="2"/>
+         <pattern match="MUAP" priority="0" sortkey="3"/>
+      </subject>
+   </division>
+   <division name="Senior Adult Education Office">
+      <contact ext="4807" room="M211A" extra-room="M203"
+               email="bhcSeniorAdultEducation@dcccd.edu"/>
+      <subject name="Senior Adult Education Program">
+         <comments>
+				        <p>All courses listed under Senior Adult Education Program have been planned for
+					adults who are 50 years or older. For information and personal assistance with
+					registration, please call DeBorah Whaley- Stephenson at 972-860-4807 or Janice
+					Groeneman at 972-860-4698. The Senior Adult Education offices are located in
+					Building M, in rooms M203 and M211A. Are you eligible for FREE tuition? If you
+					are 65 years or older and reside in Dallas County (or own property in Dallas
+					County subject to ad valorem taxation), tuition for credit classes is waived for
+					up to six credit hours per semester.</p>
+			      </comments>
+      </subject>
+   </division>
+   <division name="Social Science">
+      <contact ext="4130" room="K240" email="bhcSocialScience@dcccd.edu"/>
+      <subject name="Anthropology">
+         <pattern match="ANTH" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Coordinated Studies">
+         <comments>
+			         <h1>AMERICA AT THE CROSSROADS</h1>
+			         <p>The coordinated studies courses meet Monday through Thursday from 9-11:50 a.m.</p>
+            <!--  in Room XXX. -->
+			<p>The program is a 12-credit-hour block of choices from <b>CORE CURRICULUM COURSES</b>, interrelated by the theme <b>"America at the Crossroads."</b>  
+            </p>
+			         <p>Students will hear diverse perspectives related to their course work from four different instructors. This learning community emphasizes interactive learning activities, community building and team work.  Through coordinating ideas students will develop critical thinking skills.  This program includes readings from popular sources.  The four program professors together meet with the entire group daily, so student-teacher interaction is enhanced. </p>
+			         <p>Enrollment is limited to 90 students, so a true learning community is formed.  </p>
+			         <p>
+               <b>To register for the Coordinated Studies Program, see an advisor in the Brookhaven College Advising and Counseling Center, Bldg. S, Room S113.</b>
+            </p>
+			         <p>
+               <b>Choose four courses from the following list:</b>
+            </p>
+			         <table margin="5" border="0" cellpadding="10" cellspacing="0">
+				           <tr>
+					             <td>Cultural Studies</td>
+					             <td>CUST 2370</td>
+				           </tr>                    
+               <tr>
+					             <td>English Composition I OR II</td>
+					             <td>ENGL 1301 OR ENGL 1302</td>
+				           </tr>
+				           <tr>
+					             <td>American Government</td>
+					             <td>GOVT 2301</td>
+				           </tr>
+				           <tr>
+					             <td>History of the U.S.</td>
+					             <td>HIST 1301</td>
+				           </tr>
+				           <tr>
+					             <td>Philosophy</td>
+					             <td>PHIL 1301</td>
+				           </tr>      
+				           <tr>
+					             <td>Introduction to Speech OR Fundamentals of Public Speaking</td>
+					             <td>SPCH 1311 OR SPCH 1315</td>
+               </tr>
+				           <tr>
+					             <td>Students should be advised to choose between SPCH 1311 and 1315 based on their degree requirement.</td>
+				           </tr> 
+			         </table>                    
+			         <p>Students should take their paid registration summary to the first day of class. For more information, please contact Delryn Fleming at 972-860-4772 or e-mail Delryn@dcccd.edu.</p>
+		       </comments>
+         <pattern match="ALCE" priority="1" sortkey="2"/>
+      </subject>
+      <subject name="Coordinated Studies - Unsorted" display="false">
+         <pattern match="ALCE" priority="0" sortkey="1"/>
+      </subject>
+      <subject name="Government">
+         <pattern match="GOVT" priority="1" sortkey="1"/>
+         <topic name="Coordinated Studies">
+            <pattern match="GOVT 2301-2050" priority="1" sortkey="1"/>
+         </topic>
+      </subject>
+      <subject name="History">
+         <pattern match="HIST" priority="1" sortkey="1"/>
+         <topic name="Coordinated Studies">
+            <pattern match="HIST 1301-2050" priority="1" sortkey="1"/>
+         </topic>
+      </subject>
+      <subject name="Human Development">
+         <pattern match="HDEV" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Philosophy">
+         <pattern match="PHIL" priority="1" sortkey="1"/>
+         <topic name="Coordinated Studies">
+            <pattern match="PHIL 1301-2050" priority="1" sortkey="1"/>
+         </topic>
+      </subject>
+      <subject name="Psychology">
+         <pattern match="PSYC" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Religion">
+         <pattern match="RELI" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Sociology">
+         <pattern match="SOCI" priority="1" sortkey="1"/>
+      </subject>
+   </division>
+   <division name="World Languages">
+      <contact ext="4770" room="L420" email="bhcWorldLanguages@dcccd.edu"/>
+      <subject name="English for Speakers of Other Languages" ordered="true">
+         <topic name="Listening/Speaking Level One">
+            <pattern match="ESOL 0031" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Listening/Speaking Level Two">
+            <pattern match="ESOL 0032" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Listening/Speaking Level Three">
+            <pattern match="ESOL 0033" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Listening/Speaking Level Four">
+            <pattern match="ESOL 0034" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Accent Reduction">
+            <pattern match="ESOL 0034-2020" priority="1" sortkey="1"/>
+            <pattern match="ESOL 0034-2021" priority="1" sortkey="2"/>
+         </topic>
+         <topic name="Reading Level One">
+            <pattern match="ESOL 0041" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Reading Level Two">
+            <pattern match="ESOL 0042" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Reading Level Three">
+            <pattern match="ESOL 0043" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Reading Level Four">
+            <pattern match="ESOL 0044" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Writing and Grammar Level One">
+            <pattern match="ESOL 00[56]1" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Writing and Grammar Level Two">
+            <pattern match="ESOL 00[56]2" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Writing and Grammar Level Three">
+            <pattern match="ESOL 00[56]3" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Writing and Grammar Level Four">
+            <pattern match="ESOL 00[56]4" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Level One Intensive English Program">
+            <pattern match="ESOL 0036" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Level Two Intensive English Program">
+            <pattern match="ESOL 0066" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Level Three Intensive English Program">
+            <pattern match="ESOL 0056" priority="1" sortkey="1"/>
+            <subtopic name="ESOL Writing for ENGL 1301">
+               <pattern match="ESOL 0056-2028" priority="1" sortkey="1"/>
+            </subtopic>
+         </topic>
+         <topic name="Level Four Intensive English Program">
+            <pattern match="ESOL 0046" priority="1" sortkey="1"/>
+         </topic>
+      </subject>
+      <subject name="English for Speakers of Other Languages - Unsorted" display="false">
+         <pattern match="ESOL" priority="0" sortkey="1"/>
+      </subject>
+      <subject name="Languages" ordered="true">
+         <topic name="American Sign Language">
+            <pattern match="SGNL" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Arabic">
+            <pattern match="ARAB" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Cherokee">
+            <pattern match="CHER" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Chinese">
+            <pattern match="CHIN" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Choctaw">
+            <pattern match="CHOC" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Czechoslovakian">
+            <pattern match="CZEC" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Farsi">
+            <pattern match="FARS" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="French">
+            <pattern match="FREN" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="German">
+            <pattern match="GERM" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Greek">
+            <pattern match="GREE" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Hebrew">
+            <pattern match="HEBR" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Hindi">
+            <pattern match="HIND" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Italian">
+            <pattern match="ITAL" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Japanese">
+            <pattern match="JAPN" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Korean">
+            <pattern match="KORE" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Latin">
+            <pattern match="LATI" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Portuguese">
+            <pattern match="PORT" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Russian">
+            <pattern match="RUSS" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Spanish">
+            <pattern match="SPAN" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Swahili">
+            <pattern match="SWAH" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Thai">
+            <pattern match="THAI" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Turkish">
+            <pattern match="TURK" priority="1" sortkey="1"/>
+         </topic>
+         <topic name="Vietnamese">
+            <pattern match="VIET" priority="1" sortkey="1"/>
+         </topic>
+         <comments>
+				        <p>NOTE: New! Look for Linguistics in its own section following Languages.</p>
+			      </comments>
+      </subject>
+   </division>
+   <division name="Unknown Division" display="false">
+      <subject name="Career Exploration">
+         <pattern match="CREX" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="Linguistics">
+         <pattern match="LING" priority="1" sortkey="1"/>
+      </subject>
+      <subject name="DCLS">
+         <pattern match="DCLS" priority="1" sortkey="1"/>
+      </subject>
+   </division>
+</mappings>

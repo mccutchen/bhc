@@ -17,7 +17,7 @@ number CDATA #REQUIRED
 section CDATA #REQUIRED
 synonym CDATA #REQUIRED
 type-credit CDATA #REQUIRED
-type-schedule CDATA #REQUIRED
+schedule-type CDATA #REQUIRED
 topic-code CDATA #REQUIRED
 credit-hours CDATA #REQUIRED
 capacity CDATA #REQUIRED
@@ -28,6 +28,7 @@ date-start CDATA #REQUIRED
 date-end CDATA #REQUIRED
 title-short CDATA #REQUIRED
 title-long CDATA #REQUIRED
+sortkey CDATA #IMPLIED
 name-of-division CDATA #REQUIRED
 name-of-subject CDATA #REQUIRED
 name-of-topic CDATA #IMPLIED

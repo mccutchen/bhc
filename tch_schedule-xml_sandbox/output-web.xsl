@@ -72,58 +72,51 @@
     </xsl:template>
 
     <xsl:template match="schedule" mode="init">
+    	
+    	<xsl:variable name="outdir" select="concat(utils:generate-outdir(term[1]/@year, utils:base-semester(term[1]/@semester)), '_web')" as="xs:string" />
+    	
         <!-- full schedule index -->
-        <xsl:result-document href="{utils:get-outdir()}/index.{$ext}">
+        <xsl:result-document href="{$outdir}/index.{$ext}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="concat($schedule-title, ' Course Index')" />
             </xsl:call-template>
         </xsl:result-document>
 
         <xsl:apply-templates select="term" mode="init">
-            <xsl:with-param name="page-type" select="'subindex'" tunnel="yes" />
+            <xsl:with-param name="page-type" select="'subindex'" as="xs:string" tunnel="yes" />
+        	<xsl:with-param name="outdir" select="$outdir"  as="xs:string" />
         </xsl:apply-templates>
     </xsl:template>
 
-    <xsl:template match="term" mode="init">
-        <xsl:param name="term-name" select="concat(@year, ' ', @semester)" />
-        
-        <!-- ideally, this won't mattter
-        <xsl:if test="count(//term) &gt; 1"> -->
-            <xsl:result-document
-                href="{$output-directory}/{utils:make-url(@semester)}/index{$ext}">
-                <xsl:call-template name="page-template">
-                    <xsl:with-param name="page-title" select="concat(@semester, ' Course Index')" />
-                </xsl:call-template>
-            </xsl:result-document>
-        <!-- </xsl:if> -->
+	<xsl:template match="term[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" mode="init" />
+	<xsl:template match="term" mode="init">
+		<xsl:param name="outdir" as="xs:string" />
+		
+		<xsl:variable name="subdir" select="utils:make-url(@semester)" as="xs:string" />
+		
+        <xsl:result-document href="{$outdir}/{$subdir}/index.{$ext}">
+            <xsl:call-template name="page-template">
+                <xsl:with-param name="page-title" select="concat(@semester, ' Course Index')" />
+            </xsl:call-template>
+        </xsl:result-document>
 
         <!-- subject pages -->
         <xsl:apply-templates select="descendant::subject" mode="init">
-            <xsl:with-param name="term-name" select="$term-name" />
         	<xsl:sort select="@name" data-type="text" />
+        	<xsl:with-param name="outdir" select="concat($outdir, '/', $subdir)" as="xs:string" />
         </xsl:apply-templates>
+		
+		<!-- minimester pages -->
+		<!-- to be written later -->
     </xsl:template>
 
-    <xsl:template match="subject" mode="init">
-        <xsl:param name="term-name" />
+	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" mode="init" />
+	<xsl:template match="subject" mode="init">
+		<xsl:param name="outdir" as="xs:string" />
         
-        <xsl:variable name="path-root">
-            <xsl:value-of select="''"/>
-            <!-- ideally, this won't matter
-           <xsl:if test="$multiple-terms"> -->
-                <xsl:value-of select="concat(utils:make-url(ancestor::term/@semester), '/')"/>
-            <!-- </xsl:if> -->
-        	
-        	<!-- DEV NOTE: minimesters are no longer seperate elements, so this will have to be modified -->
-        	<xsl:if test="ancestor::minimester">
-        		<xsl:value-of select="concat(ancestor::minimester/utils:make-url(@name), '/')"/>
-        	</xsl:if>
-        </xsl:variable>
-
-        <xsl:result-document href="{$output-directory}/{$path-root}{utils:make-url(@name)}{$ext}">
+        <xsl:result-document href="{$outdir}/{utils:make-url(@name)}.{$ext}">
             <xsl:call-template name="page-template">
                 <xsl:with-param name="page-title" select="@name"/>
-                <xsl:with-param name="path-root" select="$path-root" tunnel="yes"/>
             </xsl:call-template>
         </xsl:result-document>
     </xsl:template>
@@ -137,8 +130,18 @@
          These templates are responsible for building the subject page content. The
          index pages are built by the included indexer.xsl.
          =========================================================================== -->
-    <xsl:template match="subject">
-        <div class="subject">
+	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="subject">
+		<!-- if this is not supposed to display, display a warning -->
+		<xsl:if test="@display = 'false'">
+			<xsl:message>
+				<xsl:text>!Warning! Unsorted subject: </xsl:text>
+				<xsl:value-of select="@name" />
+				<xsl:text>.</xsl:text>
+			</xsl:message>
+		</xsl:if>
+		
+		<div class="subject">
             <xsl:apply-templates select="comments"/>
             <xsl:call-template name="subject-summary"/>
 
@@ -166,7 +169,9 @@
         </div>
     </xsl:template>
 
-    <xsl:template match="topic | subtopic">
+	<xsl:template match="topic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="subtopic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="topic | subtopic">
         <div class="{name()}">
             <a name="{utils:make-url(@name)}"/>
             <h1 class="{name()}">
@@ -187,7 +192,8 @@
         <hr/>
     </xsl:template>
 
-    <xsl:template match="type">
+	<xsl:template match="type[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="type">
         <a name="{utils:make-url(@name)}"/>
         <div class="schedule-type-section {utils:make-url(@name)}">
             <h2 class="schedule-type"><xsl:value-of select="@name"/> Courses</h2>
@@ -202,7 +208,9 @@
         <hr/>
     </xsl:template>
 
-    <xsl:template match="course[@core-name and @core-name != '']">
+	<xsl:template match="course[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	
+	<xsl:template match="course[@core-name and @core-name != '']">
         <div class="core-course">
             <xsl:next-match/>
         </div>

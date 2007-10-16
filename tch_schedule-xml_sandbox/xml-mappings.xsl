@@ -36,7 +36,7 @@
 	
 	
 	<!-- start (copy everything except subject and comment()s -->
-	<xsl:template match="mappings|division|subject|topic|subtopic|pattern|contact">
+	<xsl:template match="mappings|division|subject|topic|subtopic|contact">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			<xsl:apply-templates select="*" />
@@ -69,7 +69,16 @@
 		
 		<!-- in place of the file element, add the elements it pointed to -->
 		<xsl:apply-templates select="$sub-elements" />
-		
+	</xsl:template>
+	
+	<!-- patterns need to be prioritized -->
+	<xsl:template match="pattern">
+		<xsl:copy>
+			<xsl:copy-of select="@match" />
+			<xsl:variable name="priority" select="if(@priority) then @priority else '1'" />
+			<xsl:attribute name="priority" select="$priority" />
+			<xsl:attribute name="sortkey" select="position()" />
+		</xsl:copy>
 	</xsl:template>
 	
 </xsl:stylesheet>

@@ -28,15 +28,42 @@
 		Start transformation
 		======================================================================-->
 	<xsl:template match="/schedule">
-		<!-- create single-file output
-		<xsl:apply-templates select="term" mode="init" /> -->
+		<!-- create single-file output -->
+		<xsl:apply-templates select="term" mode="init">
+			<xsl:with-param name="show-comments" select="true()" tunnel="yes" />
+		</xsl:apply-templates>
 		
 		<!-- create multi-file output -->
-		<xsl:apply-templates select="descendant::subject" mode="init" />
+		<xsl:apply-templates select="descendant::subject" mode="init">
+			<xsl:with-param name="show-comments" select="true()" tunnel="yes" />
+		</xsl:apply-templates>
+		
+		<!-- create special subjects -->
+		<!-- distance learning -->
+		<xsl:call-template name="create-special-section">
+			<xsl:with-param name="classes" select="descendant::type[@id = 'DL']/course" as="element()*" />
+			<xsl:with-param name="title"   select="'Distance Learning'"  as="xs:string"  />
+		</xsl:call-template>
+		<!-- flex term -->
+		<xsl:call-template name="create-special-section">
+			<xsl:with-param name="classes" select="descendant::type[@id = ('FD','FN')]/course" as="element()*" />
+			<xsl:with-param name="title"   select="'Flex Term'"  as="xs:string"  />
+		</xsl:call-template>
+		<!-- weekend -->
+		<xsl:call-template name="create-special-section">
+			<xsl:with-param name="classes" select="descendant::type[@id = 'W']/course" as="element()*" />
+			<xsl:with-param name="title"   select="'Weekend'"  as="xs:string"  />
+		</xsl:call-template>
+		<!-- weekend core curriculum -->
+		<xsl:call-template name="create-special-section">
+			<xsl:with-param name="classes" select="descendant::type[@id = 'W']/descendant::course[@core-code and @core-code != '']" as="element()*" />
+			<xsl:with-param name="title"   select="'Weekend Core Curriculum'"  as="xs:string"  />
+		</xsl:call-template>
 	</xsl:template>
 	
     <!-- for each term, make a new result document -->
-    <xsl:template match="term" mode="init">
+	<xsl:template match="term[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" mode="init" />
+	<xsl:template match="term" mode="init">
         
         <!-- set up single result document -->
     	<xsl:variable name="dir"  select="concat(utils:generate-outdir(@year, @semester), '_', $output-type)"         as="xs:string" />
@@ -55,9 +82,19 @@
             <xsl:apply-templates select="." />
         </xsl:result-document>
     </xsl:template>
-
+	
 	<!-- for each term, division, and subject make a new result document -->
+	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" mode="init" />
 	<xsl:template match="subject" mode="init">
+		
+		<!-- if this is not supposed to display, display a warning -->
+		<xsl:if test="@display = 'false'">
+			<xsl:message>
+				<xsl:text>!Warning! Unsorted subject: </xsl:text>
+				<xsl:value-of select="@name" />
+				<xsl:text>.</xsl:text>
+			</xsl:message>
+		</xsl:if>
 		
 		<!-- set up single result document -->
 		<xsl:variable name="year" select="ancestor::term/@year"                     as="xs:string" />
@@ -106,7 +143,8 @@
     </xsl:template>
 
 	<!-- process subjects -->
-    <xsl:template match="subject">
+	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="subject">
         <xsl:apply-templates select="@name" />
 
         <!-- print the division information -->
@@ -143,7 +181,8 @@
     </xsl:template>
 
 	<!-- process topics -->
-    <xsl:template match="topic">
+	<xsl:template match="topic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="topic">
         <xsl:apply-templates select="@name" />
         <xsl:apply-templates select="comments" />
 
@@ -166,7 +205,8 @@
     </xsl:template>
 
 	<!-- process subtopics -->
-    <xsl:template match="subtopic">
+	<xsl:template match="subtopic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="subtopic">
         <xsl:apply-templates select="@name" />
         <xsl:apply-templates select="comments" />
 
@@ -191,7 +231,8 @@
     </xsl:template>
 
 	<!-- process types -->
-    <xsl:template match="type">
+	<xsl:template match="type[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="type">
     	<xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
     		<xsl:apply-templates select="@name" />
     		
@@ -218,7 +259,10 @@
     </xsl:template>
 
 	<!-- process courses -->
+	<xsl:template match="course[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
 	<xsl:template match="course">
+		<xsl:param name="show-comments" as="xs:boolean" tunnel="yes" />
+		
 		<xsl:if test="count(class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
 			<xsl:apply-templates select="class">
 				<xsl:sort select="@sortkey" data-type="number" />
@@ -228,7 +272,9 @@
 				<xsl:sort select="@section" />
 			</xsl:apply-templates>
 			
-			<xsl:apply-templates select="comments" />
+			<xsl:if test="$show-comments">
+				<xsl:apply-templates select="comments" />
+			</xsl:if>
 		</xsl:if>
 		
         <!-- only add a blank line after the comments if this is not the
@@ -242,7 +288,9 @@
 	<xsl:template match="class[@topic-code = ('XX','ZZ')]" />
 	<!-- process classes -->
 	<xsl:template match="class">
-        <xsl:variable name="type" select="ancestor::type/@name" as="xs:string" />
+		<xsl:param name="show-comments" as="xs:boolean" tunnel="yes" />
+		
+		<xsl:variable name="type" select="ancestor::type/@name" as="xs:string" />
         <xsl:variable name="main-style-name" as="xs:string">
             <!-- this should define the possible different class-type styles -->
             <xsl:choose>
@@ -284,7 +332,10 @@
         	<xsl:sort select="@sortkey-times"  data-type="number" />
         </xsl:apply-templates>
 		
-		<xsl:apply-templates select="comments" />
+		<xsl:if test="$show-comments">
+			<xsl:apply-templates select="comments" />
+		</xsl:if>
+		
 	</xsl:template>
 
 	<!-- format class attributes -->
@@ -437,6 +488,99 @@
     </xsl:template>
 
 
+	<!--=====================================================================
+		Special Section Templates
+		
+		templates for creating special sections.
+		======================================================================-->
+	<xsl:template name="create-special-section">
+		<xsl:param name="classes" as="element()*" />
+		<xsl:param name="title"   as="xs:string"  />
+		
+		<!-- set up single result document -->
+		<xsl:variable name="year" select="//term/@year"                     as="xs:string" />
+		<xsl:variable name="sem"  select="//term/@semester"                 as="xs:string" />
+		<xsl:variable name="pre"  select="utils:generate-outdir($year, $sem)"       as="xs:string" />
+		<xsl:variable name="dir"  select="concat($pre, '_', $output-type)"          as="xs:string" />
+		<xsl:variable name="term" select="utils:make-url(//term/@semester)" as="xs:string" />
+		<xsl:variable name="file" select="utils:make-url($title)"                   as="xs:string" />
+		
+		<xsl:result-document href="{$dir}/{$term}/{$file}.{$ext}">
+			<xsl:call-template name="quark-preamble" />
+			
+			<!-- place page title header -->
+			<xsl:value-of select="fn:xtag('Subject Header')" />
+			<xsl:value-of select="concat(upper-case($title), ' COURSES')" />
+			<xsl:call-template name="br" />
+			<xsl:call-template name="br" />
+			
+			<!-- set up subject -->
+			<xsl:for-each-group select="$classes" group-by="ancestor::subject/@name">
+				<xsl:sort select="ancestor::subject/@name" />
+				
+				<xsl:value-of select="fn:xtag('Special Subject Header')" />
+				<xsl:value-of select="upper-case(current-grouping-key())" />
+				<xsl:call-template name="br" />
+				
+				<!-- (if they're in the same subject, they have to be in the same division) -->
+				<xsl:value-of select="fn:xtag('Division Info')" />
+				<xsl:value-of select="upper-case(ancestor::division/@name)" />
+				<xsl:call-template name="br" />
+				
+				<!-- set up sans-topics -->
+
+				<!-- set up type -->
+				<xsl:for-each-group select="current-group()[not(ancestor::topic)]" group-by="ancestor::type/@name">
+					<xsl:sort select="ancestor::type/@sortkey" data-type="number" />
+					
+					<xsl:value-of select="fn:xtag('Type Header')" />
+					<xsl:value-of select="concat(current-grouping-key(), ' Courses')" />
+					<xsl:call-template name="br" />
+					
+					<!-- now spit out courses -->
+					<xsl:apply-templates select="current-group()[not(ancestor::topic)]">
+						<xsl:with-param name="show-comments" select="false()" tunnel="yes" />
+					</xsl:apply-templates>
+					<xsl:call-template name="br" />
+					<xsl:call-template name="br" />
+					<xsl:call-template name="br" />
+					
+				</xsl:for-each-group>
+				
+				<!-- set up topic -->
+				<xsl:for-each-group select="current-group()[ancestor::topic]" group-by="ancestor::topic/@name">
+					<xsl:sort select="ancestor::topic/@name" />
+
+					<xsl:if test="current-grouping-key()">
+						<xsl:value-of select="fn:xtag('Special Topic Header')" />
+						<xsl:value-of select="upper-case(current-grouping-key())" />
+						<xsl:call-template name="br" />
+					</xsl:if>
+					
+					<!-- set up type -->
+					<xsl:for-each-group select="current-group()" group-by="ancestor::type/@name">
+						<xsl:sort select="ancestor::type/@sortkey" data-type="number" />
+						
+						<xsl:value-of select="fn:xtag('Type Header')" />
+						<xsl:value-of select="concat(current-grouping-key(), ' Courses')" />
+						<xsl:call-template name="br" />
+						
+						<!-- now spit out courses -->
+						<xsl:apply-templates select="current-group()">
+							<xsl:with-param name="show-comments" select="false()" tunnel="yes" />
+						</xsl:apply-templates>
+						<xsl:call-template name="br" />
+						<xsl:call-template name="br" />
+						<xsl:call-template name="br" />
+						
+					</xsl:for-each-group>
+				</xsl:for-each-group>
+			</xsl:for-each-group>
+			
+		</xsl:result-document>
+	</xsl:template>
+	
+	
 	<!--=====================================================================
 		Named Templates
 		

@@ -14,6 +14,11 @@
     <xsl:variable name="default-time"     select="'NA'"      as="xs:string" />
     <xsl:variable name="default-date"     select="'NA'"      as="xs:string" />
 	<xsl:variable name="output-directory" select="'output/'" as="xs:string" />
+	
+	<!-- =====================================================================
+		Value Lists
+		===================================================================== -->
+	<xsl:variable name="suppressed-topic-codes" select="'XX','ZZ'" as="xs:string*" />
 
 
     <!-- =====================================================================
@@ -54,6 +59,18 @@
 		<xsl:value-of select="$output-directory" />
 	</xsl:function>
 	
+	<!-- base-semester
+		 sometimes we need the base semester (ie: Summer I -> Summer). This function does that -->
+	<xsl:function name="utils:base-semester" as="xs:string">
+		<xsl:param name="semester" as="xs:string" />
+		
+		<xsl:choose>
+			<xsl:when test="lower-case($semester) = 'fall'"><xsl:value-of select="'Fall'" /></xsl:when>
+			<xsl:when test="lower-case($semester) = 'spring'"><xsl:value-of select="'Spring'" /></xsl:when>
+			<xsl:when test="contains(lower-case($semester), 'summer')"><xsl:value-of select="'Summer'" /></xsl:when>
+			<xsl:otherwise><xsl:value-of select="$semester" /></xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
 	
 	<!-- make-url
     	 converts a string into a url-safe string -->

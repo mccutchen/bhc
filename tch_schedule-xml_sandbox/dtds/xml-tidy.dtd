@@ -24,7 +24,9 @@ email CDATA #IMPLIED>
 
 <!ELEMENT subject (contact?, comments?, (topic|type)+)>
 <!ATTLIST subject
-name CDATA #REQUIRED>
+name CDATA #REQUIRED
+ordered CDATA #IMPLIED
+display CDATA #IMPLIED>
 
 <!ELEMENT comments (#PCDATA|p|table|b|h1|h2)*>
 <!ELEMENT p (#PCDATA|p|table|b|h1|h2)*>
@@ -63,7 +65,8 @@ credit-hours CDATA #REQUIRED
 core-code CDATA #IMPLIED
 core-name CDATA #IMPLIED
 title-short CDATA #REQUIRED
-title-long CDATA #REQUIRED>
+title-long CDATA #REQUIRED
+sortkey CDATA #IMPLIED>
 
 <!-- note: for some reason, there are classes without meetings -->
 <!ELEMENT class (comments?, meeting*, comments?, xlisting*, corequisite-section*)>

@@ -60,27 +60,25 @@
     	====================================================================== -->
     <xsl:template match="/schedule">
     	<!-- initialize each subject (create result document) -->
-        <xsl:apply-templates select="//subject" mode="init" />
+        <xsl:apply-templates select="descendant::subject" mode="init" />
+    	
     </xsl:template>
 
+	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" mode="init" />
     <xsl:template match="subject" mode="init">
-        <!-- if there are courses to display -->
-        <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
-            
-            <xsl:variable name="year" select="ancestor::term/@year" as="xs:string" />
-        	<xsl:variable name="sem"  select="ancestor::term/@semester" as="xs:string" />
-        	<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
-        	<xsl:variable name="div"  select="utils:make-url(parent::division/@name)" as="xs:string" />
-        	<xsl:variable name="file" select="utils:make-url(@name)" as="xs:string" />
-        	
-        	<xsl:result-document href="{$dir}/{$div}/{$file}.{$ext}">
-        		<xsl:call-template name="page-template">
-                    <xsl:with-param name="page-title" select="@name" />
-                </xsl:call-template>
-            </xsl:result-document>
-        </xsl:if>
+    	<xsl:variable name="year" select="ancestor::term/@year" as="xs:string" />
+    	<xsl:variable name="sem"  select="ancestor::term/@semester" as="xs:string" />
+    	<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
+    	<xsl:variable name="div"  select="utils:make-url(parent::division/@name)" as="xs:string" />
+    	<xsl:variable name="file" select="utils:make-url(@name)" as="xs:string" />
+    	
+    	<xsl:result-document href="{$dir}/{$div}/{$file}.{$ext}">
+    		<xsl:call-template name="page-template">
+    			<xsl:with-param name="page-title" select="@name" />
+    		</xsl:call-template>
+    	</xsl:result-document>
     </xsl:template>
-
+	
 
     <!--=====================================================================
     	Document-building templates
@@ -103,8 +101,19 @@
     </xsl:template>
 
 
-    <xsl:template match="subject">
-        <!-- start div -->
+	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="subject">
+		
+		<!-- if this is not supposed to display, display a warning -->
+		<xsl:if test="@display = 'false'">
+			<xsl:message>
+				<xsl:text>!Warning! Unsorted subject: </xsl:text>
+				<xsl:value-of select="@name" />
+				<xsl:text>.</xsl:text>
+			</xsl:message>
+		</xsl:if>
+				
+		<!-- start div -->
         <div class="subject-section">
             <h1 class="subject-header"><xsl:value-of select="upper-case(@name)" /></h1>
 
@@ -136,38 +145,36 @@
         </div>
     </xsl:template>
     
-    <xsl:template match="topic">
-        <!-- if there are courses to display -->
-        <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
-            
-            <!-- start div -->
-            <div class="topic-section">
-                <h2 class="topic-header"><xsl:value-of select="upper-case(@name)" /></h2>
-                
-                <!-- paste in comments -->
-                <xsl:apply-templates select="comments" />
-                
-                <!-- decide whether to sort by subtopic or type -->
-                <xsl:choose>
-                    <!-- if there are subtopics, do that -->
-                    <xsl:when test="count(subtopic) &gt; 0">
-                        <xsl:apply-templates select="subtopic">
-                            <xsl:sort select="@sortkey" data-type="number" />
-                        	<xsl:sort select="@name"    data-type="text"   />
-                        </xsl:apply-templates>
-                    </xsl:when>
-                    <!-- if there are types, do that -->
-                    <xsl:when test="count(type) &gt; 0">
-                        <xsl:apply-templates select="type">
-                            <xsl:sort select="@sortkey" data-type="number" />
-                        </xsl:apply-templates>
-                    </xsl:when>
-                </xsl:choose>
-            </div>
-       </xsl:if>
-    </xsl:template>
+	<xsl:template match="topic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="topic">
+		<!-- start div -->
+		<div class="topic-section">
+			<h2 class="topic-header"><xsl:value-of select="upper-case(@name)" /></h2>
+			
+			<!-- paste in comments -->
+			<xsl:apply-templates select="comments" />
+			
+			<!-- decide whether to sort by subtopic or type -->
+			<xsl:choose>
+				<!-- if there are subtopics, do that -->
+				<xsl:when test="count(subtopic) &gt; 0">
+					<xsl:apply-templates select="subtopic">
+						<xsl:sort select="@sortkey" data-type="number" />
+						<xsl:sort select="@name"    data-type="text"   />
+					</xsl:apply-templates>
+				</xsl:when>
+				<!-- if there are types, do that -->
+				<xsl:when test="count(type) &gt; 0">
+					<xsl:apply-templates select="type">
+						<xsl:sort select="@sortkey" data-type="number" />
+					</xsl:apply-templates>
+				</xsl:when>
+			</xsl:choose>
+		</div>
+	</xsl:template>
     
-    <xsl:template match="subtopic">
+	<xsl:template match="subtopic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="subtopic">
         <!-- if there are courses to display -->
         <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
             
@@ -184,7 +191,8 @@
     </xsl:template>
 
 
-    <xsl:template match="type">
+	<xsl:template match="type[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="type">
         <!-- if there are courses to display -->
         <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
             
@@ -203,7 +211,8 @@
     </xsl:template>
 
 
-    <xsl:template match="course">
+	<xsl:template match="course[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
+	<xsl:template match="course">
         <!-- do not include classes with XX or ZZ for a topic code -->
         <xsl:variable name="classes" select="class[@topic-code != ('XX','ZZ')]" as="element()*" />
         

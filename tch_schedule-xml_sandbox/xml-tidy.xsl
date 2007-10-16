@@ -21,13 +21,12 @@
 	<xsl:param name="year"     as="xs:string" />
 	
 	<!-- save some typing on edit -->
-	<xsl:variable name="dir-mappings"  select="'mappings/'"                                                 as="xs:string"  />
-	<xsl:variable name="file-sorting"  select="concat($year, '-', lower-case($semester), '.xml')"           as="xs:string"  />
+	<xsl:variable name="dir-mappings"  select="'mappings/'"                                             as="xs:string"  />
+	<xsl:variable name="file-sorting"  select="concat($year, '-', $semester, '_mappings.xml')"          as="xs:string"  />
 	
 	<!-- some global vars -->
-	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, 'divisions.xml'))/divisions"  as="element()*" />
-	<xsl:variable name="doc-semester"  select="document(concat($dir-mappings, $file-sorting))/mappings"     as="element()*" />
-	<xsl:variable name="doc-sortkeys"  select="document('mappings/sortkeys.xml')/sortkeys"                  as="element()*" />
+	<xsl:variable name="doc-divisions" select="document(concat($dir-mappings, $file-sorting))/mappings" as="element()*" />
+	<xsl:variable name="doc-sortkeys"  select="document('mappings/sortkeys.xml')/sortkeys"              as="element()*" />
 	<!-- something for sorting into minimesters -->
 
 	<!-- for debugging purposes -->
@@ -49,7 +48,7 @@
 	<!-- main match -->
 	<xsl:template match="/">
 		<!-- ensure the parameters got passed -->
-		<xsl:if test="fn:is-valid-params() = 'yes'">
+		<xsl:if test="fn:is-valid-params()">
 			<!-- copy over some of the pertinant info -->
 			<xsl:apply-templates select="schedule" />
 		</xsl:if>
@@ -99,22 +98,21 @@
 		
 		<xsl:for-each-group select="$classes" group-by="@name-of-subject">
 			<xsl:element name="subject">
-				<xsl:variable name="name"            select="@name-of-subject"                                              as="xs:string"  />
-				<xsl:variable name="subject-special" select="$doc-semester/descendant::subject[compare(@name, $name) = 0]"  as="element()*" />
-				<xsl:variable name="subject-normal"  select="$doc-divisions/descendant::subject[compare(@name, $name) = 0]" as="element()*" />
+				<xsl:variable name="name"     select="@name-of-subject"                                              as="xs:string"  />
+				<xsl:variable name="subject"  select="$doc-divisions/descendant::subject[compare(@name, $name) = 0]" as="element()*" />
 				
 				<!-- write subject info -->
 				<xsl:attribute name="name" select="$name" />
-				<xsl:copy-of select="$subject-normal/contact"  />
-				<xsl:copy-of select="$subject-normal/comments" />
+				<xsl:copy-of select="$subject/attribute()" />
+				<xsl:copy-of select="$subject/contact"  />
+				<xsl:copy-of select="$subject/comments" />
 				
 				<!-- send those with topics to create-topics, those without to create-types -->
 				<xsl:variable name="courses-topic" select="current-group()[@name-of-topic]" as="element()*" />
 				<xsl:if test="count($courses-topic) &gt; 0">
 					<xsl:call-template name="create-topics">
-						<xsl:with-param name="classes"         select="$courses-topic"   as="element()*" />
-						<xsl:with-param name="subject-special" select="$subject-special" as="element()*" />
-						<xsl:with-param name="subject-normal"  select="$subject-normal"  as="element()*" />
+						<xsl:with-param name="classes"  select="$courses-topic" as="element()*" />
+						<xsl:with-param name="subject"  select="$subject"       as="element()*" />
 					</xsl:call-template>
 				</xsl:if>
 				<xsl:variable name="courses-types" select="current-group()[not(@name-of-topic)]" as="element()*" />
@@ -129,15 +127,13 @@
 	
 	<!-- create topics, if they exist -->
 	<xsl:template name="create-topics">
-		<xsl:param name="classes"         as="element()*" />
-		<xsl:param name="subject-special" as="element()*" />
-		<xsl:param name="subject-normal"  as="element()*" />
+		<xsl:param name="classes"  as="element()*" />
+		<xsl:param name="subject"  as="element()*" />
 		
 		<!-- group by topic -->
 		<xsl:for-each-group select="$classes" group-by="@name-of-topic">
-			<xsl:variable name="name"          select="@name-of-topic"   as="xs:string"  />
-			<xsl:variable name="topic-special" select="$subject-special/topic[compare(@name, $name) = 0]" as="element()*" />
-			<xsl:variable name="topic-normal"  select="$subject-normal/topic[compare(@name, $name) = 0]"  as="element()*" />
+			<xsl:variable name="name"   select="@name-of-topic"                             as="xs:string"  />
+			<xsl:variable name="topic"  select="$subject/topic[compare(@name, $name) = 0]"  as="element()*" />
 
 			<!-- determine whether to use special or normal -->
 			<xsl:choose>
@@ -152,21 +148,21 @@
 						</xsl:call-template>
 					</xsl:element>
 				</xsl:when>
-				<xsl:when test="count($topic-special) = 1">
+				<!-- if there is exactly one match -->
+				<xsl:when test="count($topic) = 1">
 					<xsl:element name="topic">
 						<xsl:attribute name="name"    select="current-grouping-key()"                        />
-						<xsl:attribute name="sortkey" select="index-of($subject-special/topic/@name, $name)" />
+						<xsl:attribute name="sortkey" select="index-of($subject/topic/@name, $name)" />
 						
 						<!-- copy comments, if they exist -->
-						<xsl:copy-of select="$topic-special/comments" />
+						<xsl:copy-of select="$topic/comments" />
 						
-						<!-- send those with topics to create-topics, those without to create-types -->
+						<!-- send those with topics to create-subtopics, those without to create-types -->
 						<xsl:variable name="courses-subtopic" select="current-group()[@name-of-subtopic]" as="element()*" />
 						<xsl:if test="count($courses-subtopic) &gt; 0">
 							<xsl:call-template name="create-subtopics">
-								<xsl:with-param name="classes"       select="$courses-subtopic" as="element()*" />
-								<xsl:with-param name="topic-special" select="$topic-special"    as="element()*" />
-								<xsl:with-param name="topic-normal"  select="$topic-normal"     as="element()*" />
+								<xsl:with-param name="classes" select="$courses-subtopic" as="element()*" />
+								<xsl:with-param name="topic"   select="$topic"            as="element()*" />
 							</xsl:call-template>
 						</xsl:if>
 						<xsl:variable name="courses-types" select="current-group()[not(@name-of-subtopic)]" as="element()*" />
@@ -177,40 +173,25 @@
 						</xsl:if>
 					</xsl:element>
 				</xsl:when>
-				<xsl:when test="count($topic-special) &gt; 1">
-					<xsl:message>!Warning! Unable to resolve topic <xsl:value-of select="current-grouping-key()" /> to a single topic in <xsl:value-of select="@name-of-subject" />.</xsl:message>
+				<!-- if there are multiple matches -->
+				<xsl:when test="count($topic) &gt; 1">
+					<xsl:message>
+						<xsl:text>!Warning! Unable to resolve topic </xsl:text>
+						<xsl:value-of select="current-grouping-key()" />
+						<xsl:text> to a single topic in </xsl:text>
+						<xsl:value-of select="@name-of-subject" />
+						<xsl:text>.</xsl:text>
+					</xsl:message>
 				</xsl:when>
+				<!-- if there are no matches -->
 				<xsl:otherwise>
-					<xsl:choose>
-						<xsl:when test="count($topic-normal) = 1">
-							<xsl:element name="topic">
-								<xsl:attribute name="name"    select="current-grouping-key()"                       />
-								<xsl:attribute name="sortkey" select="index-of($subject-normal/topic/@name, $name)" />
-								
-								<!-- copy comments, if they exist -->
-								<xsl:copy-of select="$topic-normal/comments" />
-								
-								<!-- send those with topics to create-topics, those without to create-types -->
-								<xsl:variable name="courses-subtopic" select="current-group()[@name-of-subtopic]" as="element()*" />
-								<xsl:if test="count($courses-subtopic) &gt; 0">
-									<xsl:call-template name="create-subtopics">
-										<xsl:with-param name="classes"       select="$courses-subtopic" as="element()*" />
-										<xsl:with-param name="topic-special" select="$topic-special"    as="element()*" />
-										<xsl:with-param name="topic-normal"  select="$topic-normal"     as="element()*" />
-									</xsl:call-template>
-								</xsl:if>
-								<xsl:variable name="courses-types" select="current-group()[not(@name-of-subtopic)]" as="element()*" />
-								<xsl:if test="count($courses-types) &gt; 0">
-									<xsl:call-template name="create-types">
-										<xsl:with-param name="classes" select="$courses-types" />
-									</xsl:call-template>
-								</xsl:if>
-							</xsl:element>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:message>!Warning! Unable to resolve topic <xsl:value-of select="current-grouping-key()" /> to a single topic in <xsl:value-of select="@name-of-subject" />.</xsl:message>
-						</xsl:otherwise>
-					</xsl:choose>
+					<xsl:message>
+						<xsl:text>!Warning! Unable to resolve topic </xsl:text>
+						<xsl:value-of select="current-grouping-key()" />
+						<xsl:text> to any topic in </xsl:text>
+						<xsl:value-of select="@name-of-subject" />
+						<xsl:text>.</xsl:text>
+					</xsl:message>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each-group>
@@ -218,47 +199,49 @@
 	
 	<!-- create subtopics, if they exist -->
 	<xsl:template name="create-subtopics">
-		<xsl:param name="classes"       as="element()*" />
-		<xsl:param name="topic-special" as="element()*" />
-		<xsl:param name="topic-normal"  as="element()*" />
+		<xsl:param name="classes" as="element()*" />
+		<xsl:param name="topic"   as="element()*" />
 		
 		<!-- group by subtopic -->
 		<xsl:for-each-group select="$classes" group-by="@name-of-subtopic">
-			<xsl:variable name="name"             select="@name-of-subtopic"                                  as="xs:string"  />
-			<xsl:variable name="subtopic-special" select="$topic-special/subtopic[compare(@name, $name) = 0]" as="element()*" />
-			<xsl:variable name="subtopic-normal"  select="$topic-normal/subtopic[compare(@name, $name) = 0]"  as="element()*" />
+			<xsl:variable name="name"      select="@name-of-subtopic"                           as="xs:string"  />
+			<xsl:variable name="subtopic"  select="$topic/subtopic[compare(@name, $name) = 0]"  as="element()*" />
 			
-			<!-- determine whether to use special or normal -->
 			<xsl:choose>
-				<xsl:when test="count($subtopic-special) = 1">
+				<!-- if there is exactly one match -->
+				<xsl:when test="count($subtopic) = 1">
 					<xsl:element name="subtopic">
 						<xsl:attribute name="name"    select="current-grouping-key()"                         />
-						<xsl:attribute name="sortkey" select="index-of($topic-special/subtopic/@name, $name)" />
+						<xsl:attribute name="sortkey" select="index-of($topic/subtopic/@name, $name)" />
 						
 						<xsl:call-template name="create-types">
 							<xsl:with-param name="classes" select="current-group()" />
 						</xsl:call-template>
 					</xsl:element>
 				</xsl:when>
-				<xsl:when test="count($topic-special) &gt; 1">
-					<xsl:message>!Warning! Unable to resolve subtopic <xsl:value-of select="current-grouping-key()" /> to a single subtopic in topic <xsl:value-of select="@name-of-topic" /> in subject <xsl:value-of select="@name-of-subject" />.</xsl:message>
+				<!-- if there are multiple matches -->
+				<xsl:when test="count($topic) &gt; 1">
+					<xsl:message>
+						<xsl:text>!Warning! Unable to resolve subtopic </xsl:text>
+						<xsl:value-of select="current-grouping-key()" />
+						<xsl:text> to a single subtopic in topic </xsl:text>
+						<xsl:value-of select="@name-of-topic" />
+						<xsl:text> in subject </xsl:text>
+						<xsl:value-of select="@name-of-subject" />
+						<xsl:text>.</xsl:text>
+					</xsl:message>
 				</xsl:when>
+				<!-- if there are no matches -->
 				<xsl:otherwise>
-					<xsl:choose>
-						<xsl:when test="count($topic-normal) = 1">
-							<xsl:element name="topic">
-								<xsl:attribute name="name"    select="current-grouping-key()"                        />
-								<xsl:attribute name="sortkey" select="index-of($topic-normal/subtopic/@name, $name)" />
-								
-								<xsl:call-template name="create-types">
-									<xsl:with-param name="classes" select="current-group()" />
-								</xsl:call-template>
-							</xsl:element>
-						</xsl:when>
-						<xsl:otherwise>
-							<xsl:message>!Warning! Unable to resolve subtopic <xsl:value-of select="current-grouping-key()" /> to a single subtopic in topic <xsl:value-of select="@name-of-topic" /> in subject <xsl:value-of select="@name-of-subject" />.</xsl:message>
-						</xsl:otherwise>
-					</xsl:choose>
+					<xsl:message>
+						<xsl:text>!Warning! Unable to resolve subtopic </xsl:text>
+						<xsl:value-of select="current-grouping-key()" />
+						<xsl:text> to any subtopic in topic </xsl:text>
+						<xsl:value-of select="@name-of-topic" />
+						<xsl:text> in subject </xsl:text>
+						<xsl:value-of select="@name-of-subject" />
+						<xsl:text>.</xsl:text>
+					</xsl:message>
 				</xsl:otherwise>
 			</xsl:choose>
 		</xsl:for-each-group>
@@ -297,6 +280,7 @@
 				<xsl:element name="course">
 					<!-- write class info -->
 					<xsl:copy-of select="@rubric|@number|@title-short|@title-long|@credit-hours|@core-code|@core-name" />
+					<xsl:if test="@sortkey"><xsl:attribute name="sortkey" select="@sortkey" /></xsl:if>
 					
 					<!-- try to clump multiple, identical class comments -->
 					<xsl:variable name="clump" select="string-length(normalize-space(fn:compare-comments(current-group()))) = 0" as="xs:boolean" />
@@ -363,37 +347,59 @@
 	</xsl:template>
 	
 	<!-- functions -->
-	<xsl:function name="fn:is-valid-params">
+	<xsl:function name="fn:is-valid-params" as="xs:boolean">
 		<xsl:choose>
-			<xsl:when test="(fn:is-valid-semester() != 'yes') or (fn:is-valid-year() != 'yes')">
-				<xsl:if test="fn:is-valid-semester() != 'yes'"><xsl:message>!Warning! Invalid semester passed: semester(<xsl:value-of select="$semester" />).</xsl:message></xsl:if>
-				<xsl:if test="fn:is-valid-year() != 'yes'"><xsl:message>!Warning! Invalid year passed: year(<xsl:value-of select="$year" />).</xsl:message></xsl:if>
-			</xsl:when>
-			<xsl:when test="count($doc-semester) = 0">
-				<xsl:message>!Warning! couldn't load special sorting for: semester(<xsl:value-of select="$semester" />), year(<xsl:value-of select="$year" />).</xsl:message>
-			</xsl:when>
-			<xsl:when test="count($doc-sortkeys) = 0">
-				<xsl:message>!Warning! couldn't load type info.</xsl:message>
+			<xsl:when test="not(fn:is-valid-semester()) or not(fn:is-valid-year())">
+				<xsl:if test="not(fn:is-valid-semester())">
+					<xsl:message>
+						<xsl:text>!Warning! Invalid semester passed: semester(</xsl:text>
+						<xsl:value-of select="$semester" />
+						<xsl:text>).</xsl:text>
+					</xsl:message>
+				</xsl:if>
+				<xsl:if test="not(fn:is-valid-year())">
+					<xsl:message>
+						<xsl:text>!Warning! Invalid year passed: year(</xsl:text>
+						<xsl:value-of select="$year" />
+						<xsl:text>).</xsl:text>
+					</xsl:message>
+				</xsl:if>
+				<xsl:value-of select="false()" />
 			</xsl:when>
 			<xsl:when test="count($doc-divisions) = 0">
-				<xsl:message>!Warning! couldn't load division info.</xsl:message>
+				<xsl:message>
+					<xsl:text>!Warning! couldn't load special sorting for: semester(</xsl:text>
+					<xsl:value-of select="$semester" />
+					<xsl:text>), year(</xsl:text>
+					<xsl:value-of select="$year" />
+					<xsl:text>).</xsl:text>
+				</xsl:message>
+				<xsl:value-of select="false()" />
 			</xsl:when>
-			<xsl:otherwise>yes</xsl:otherwise>
+			<xsl:when test="count($doc-sortkeys) = 0">
+				<xsl:message>
+					<xsl:text>!Warning! couldn't load sortkey info.</xsl:text>
+				</xsl:message>
+				<xsl:value-of select="false()" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="true()" />
+			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-	<xsl:function name="fn:is-valid-semester">
+	<xsl:function name="fn:is-valid-semester" as="xs:boolean">
 		<xsl:choose>
-			<xsl:when test="$semester = 'Fall'">yes</xsl:when>
-			<xsl:when test="$semester = 'Summer'">yes</xsl:when>
-			<xsl:when test="$semester = 'Spring'">yes</xsl:when>
-			<xsl:otherwise>no</xsl:otherwise>
+			<xsl:when test="$semester = 'Fall'"><xsl:value-of select="true()" /></xsl:when>
+			<xsl:when test="$semester = 'Summer'"><xsl:value-of select="true()" /></xsl:when>
+			<xsl:when test="$semester = 'Spring'"><xsl:value-of select="true()" /></xsl:when>
+			<xsl:otherwise><xsl:value-of select="false()" /></xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-	<xsl:function name="fn:is-valid-year">
+	<xsl:function name="fn:is-valid-year" as="xs:boolean">
 		<xsl:choose>
 			<!-- I know this looks stupid, but it's just testing that year is a number -->
-			<xsl:when test="number($year) = number($year)">yes</xsl:when>
-			<xsl:otherwise>no</xsl:otherwise>
+			<xsl:when test="number($year) = number($year)"><xsl:value-of select="true()" /></xsl:when>
+			<xsl:otherwise><xsl:value-of select="false()" /></xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
 	
