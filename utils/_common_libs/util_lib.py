@@ -2,8 +2,8 @@
 # Section:    Brookhaven MPI
 # e-mail:     thaapala@dcccd.edu
 # extention:  x4104
-# Created:    11 June 2007
-# Modified:   03 July 2007
+# Created:    11 June    2007
+# Modified:   08 October 2007
 
 # Utility Library: This library is included in many projects.
 # PLEASE NOTE: the versions are *NOT* interchangeable. This library grows
@@ -31,24 +31,18 @@
 #                   filename. Loops until a valid path is entered or user enters
 #                   '.cancel', whereupon None is returned
 #
-# CleanPath(path), returns a path in the standard format 'c://foo\bar.txt' yields
-#                   'c:\foo\bar.txt'. Path need not exist, though if it does
-#                   and the path entered is a directory, a trailing '\' is
-#                   appended.
+# CleanPath(path), ***removed***
+#                  use: os.path.normcase(path) to normalize path
 #
 # CleanURL(url), returns a URL in the standard format:
 #                   'http:\www.orange.com/oregano//' yields
 #                      'http://www.orange.com/oregano/'
 #
-# StripPathDirs(path), returns the filename (if path contains a filename). Path
-#                   need not exist. Makes a best-guess based on extention.
-#                   directories with extensions may give false positives, and
-#                   files without extensions may give false negatives.
+# StripPathDirs(path), ***removed***
+#                  use: os.path.basename(path) to retrieve filename
 #
-# StripPathFile(path), returns the directories in a path without the filename.
-#                   Path need not exist. Makes a best-guess based on extension.
-#                   Directories with extensions may give false positives, and
-#                   files without extensions may give false negatives.
+# StripPathFile(path), ***removed***
+#                  use: os.path.dirname(path) to retrieve directory name(s)
 #
 # StripRel(root_path, full_path), returns the difference between two paths.
 #                   If the root_path is not contained within the full_path,
@@ -83,9 +77,9 @@
 #                   If the data does not pass a Validate(id,data) test,
 #                   the function returns None.
 #                    - none:  returns data unchanged
-#                    - dir:   returns CleanPath(data)
-#                    - file:  returns CleanPath(data)
-#                    - path:  returns CleanPath(data)
+#                    - dir:   returns os.path.normcase(data)
+#                    - file:  returns os.path.normcase(data)
+#                    - path:  returns os.path.normcase(data)
 #                    - yesno: returns true if data can be resolved to
 #                               true and returns false if teh data can
 #                               be resolved to false.
@@ -180,19 +174,6 @@ def GetExt(filename):
     return filename[i:];
 
 
-# def CleanPath()
-# formats a path in a consistant way to assist display and pattern checking
-# input:  path_in  - the path to be cleaned
-# output: path_out - the cleaned path
-def CleanPath(path_in):
-    assert(type(path_in) == str), "util_lib.CleanPath(): path_in must be a string.";
-
-    if (os.path.isdir(path_in)):
-        return (path_in + '\\').strip().lower().replace('/','\\').replace('\\\\', '\\');
-    else:
-        return path_in.strip().lower().replace('/','\\').replace('\\\\', '\\');
-
-
 # def CleanURL()
 # formats a URL in a consistant way to assist display and pattern checking
 # input:  url_in  - the url to be cleaned
@@ -208,58 +189,7 @@ def CleanURL(url_in):
     return out_str
 
 
-# def StripPathDirs()
-# input:  path - the path to the file or directory
-# output: returns the filename if the path points to a file, else None
-def StripPathDirs(path):
-    assert (type(path) == str), 'util_lib.StripFilename(): path must be a string.\n';
 
-    # quick check
-    if (os.path.isdir(path)):
-        return '';
-    
-    # clean up the path
-    temp_str = CleanPath(path);
-
-    # strip off drives
-    pos = temp_str.find(':');
-    while (pos > 0):
-        temp_str = temp_str[pos+1:];
-        pos = temp_str.find(':');
-        
-    # start stripping off directories
-    pos = temp_str.find('\\');
-    while (pos > 0):
-        temp_str = temp_str[pos+1:];
-        pos = temp_str.find('\\');
-
-    # return what we've got
-    return temp_str;
-
-
-# def StripPathFile()
-# input:  path - the path to the file or directory
-# output: returns the filename if the path points to a file, else ''
-def StripPathFile(path):
-    assert (type(path) == str), 'util_lib.StripFilename(): path must be a string.\n';
-
-    # clean up the path
-    temp_str = CleanPath(path);
-
-    # quick check
-    if (os.path.isdir(path)):
-        return path;
-
-    # get filename
-    fn = StripPathDirs(path);
-
-    # return what we've got
-    if (len(path) - len(fn) < 0):
-        return '';
-    else:
-        return path[:len(path) - len(fn)];
-
-           
 # def StripRel()
 # strips off relative part of path
 # input:  path_root  - the root path
@@ -272,11 +202,11 @@ def StripRel(path_root, path_full):
 
     # short circuit if root is empty
     if (path_root == ''):
-        return CleanPath(path_full);
+        return os.path.normcase(path_full);
 
     # prevent false negatives (clean up):
-    path_root = CleanPath(path_root);
-    path_full = CleanPath(path_full);
+    path_root = os.path.normcase(path_root);
+    path_full = os.path.normcase(path_full);
 
     # compare 'em
     if (path_root in path_full):
@@ -293,7 +223,7 @@ def SafeSave(path):
     assert (type(path) == str), 'util_lib.SafeFile(): path must be a string.';
 
     # clean it
-    path = CleanPath(path)
+    path = os.path.normcase(path)
 
     # if it's '{something}:', then it's not in the cwd
     if (path.find(':') > 0):
@@ -387,17 +317,17 @@ def Resolve(id_in, data_in):
 # individual resolving functions. See Resolve() for additional info
 def ResolveDir(data_in):
     if ((type(data_in) == str) and (ValidateDir(data_in))):
-        return CleanPath(data_in);
+        return os.path.normcase(data_in);
     else:
         return None;
 def ResolveFile(data_in):
     if ((type(data_in) == str) and (ValidateFile(data_in))):
-        return CleanPath(data_in);
+        return os.path.normcase(data_in);
     else:
         return None;
 def ResolvePath(data_in):
     if ((type(data_in) == str) and (ValidatePath(data_in))):
-        return CleanPath(data_in);
+        return os.path.normcase(data_in);
     else:
         return None;
 def ResolveYesNo(data_in):
