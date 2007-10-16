@@ -75,10 +75,10 @@ def SetDates():
 
         # write date to file so we don't have to do this again
         if (os.path.exists(dir_input + date_file)):
-            print >> 'Unable to write issue-date.txt; file already exists';
+            print 'Unable to write issue-date.txt; file already exists';
         else:
             fout = open(dir_input + date_file, 'w');
-            print fout >> date.strftime('%m%d%Y');
+            print >> fout, date.strftime('%m%d%Y');
             fout.close();
 
     # now make use of the date 
