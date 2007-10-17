@@ -18,7 +18,7 @@
 	<!-- =====================================================================
 		Value Lists
 		===================================================================== -->
-	<xsl:variable name="suppressed-topic-codes" select="'XX','ZZ'" as="xs:string*" />
+	<xsl:variable name="suppressed-topic-codes" select="'XX','YY','ZZ'" as="xs:string*" />
 
 
     <!-- =====================================================================
@@ -32,6 +32,18 @@
         <xsl:number value="index-of($haystack, $needle)[1]" />
     </xsl:function>
     
+    <!-- has-classes
+    	 This just checks to see if a node has descendants who:
+    	 1) are classes
+    	 2) have a @topic-code not in $suppressed-topic-codes
+    	 3) have at least one meeting -->
+	<xsl:function name="utils:has-classes" as="xs:boolean">
+		<xsl:param name="node" as="element()" />
+		
+		<xsl:variable name="result" select="$node/descendant-or-self::class[not (@topic-code = $suppressed-topic-codes) and meeting]/self::node()" as="element()*" />
+		<xsl:value-of select="count($result) != 0" />
+	</xsl:function>
+	
 	<!-- generate-outdir
 		 generates a string in the form:  $output-directory/'yyyy'-'semester'_print/('term'|'semester').$output-extension -->
 	<xsl:function name="utils:generate-outdir" as="xs:string">
@@ -117,7 +129,45 @@
 		</xsl:choose>
 	</xsl:function>
 	
-
+	
+	<!--=====================================================================
+		Comment Groupers
+		=====================================================================-->
+	<xsl:function name="utils:max-comment-match" as="xs:integer">
+		<xsl:param name="classes" as="element()*" />
+		<xsl:param name="index"   as="xs:integer" />
+		
+		<xsl:choose>
+			<xsl:when test="count($classes) &lt; 1 or $index &lt; 1 or $index &gt; count($classes)">
+				<xsl:value-of select="-1" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:variable name="base" select="normalize-space($classes[$index]/comments/text())" as="xs:string" />
+				<xsl:value-of select="utils:max-comment-match($base, $classes, $index + 1)" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<xsl:function name="utils:max-comment-match" as="xs:integer">
+		<xsl:param name="base"    as="xs:string"  />
+		<xsl:param name="classes" as="element()*" />
+		<xsl:param name="index"   as="xs:integer" />
+		
+		<xsl:choose>
+			<xsl:when test="$index &gt; count($classes)">
+				<xsl:value-of select="$index - 1" />
+			</xsl:when>
+			<xsl:when test="compare($base, normalize-space($classes[$index]/comments/text())) = 0">
+				<xsl:value-of select="utils:max-comment-match($base, $classes, $index + 1)" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$index - 1" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	
+	
     <!-- =====================================================================
     	 Date formatters
     	 ===================================================================== -->

@@ -70,7 +70,11 @@
     </xsl:template>
 
     <xsl:template name="preview-special-notice">
-        <p class="special-notice">Registration for continuing students begins April 18.<br />Registration for new students begins April 24.</p>
+        <p class="special-notice">
+        	<xsl:text>Registration for continuing students begins April 18.</xsl:text>
+        	<xsl:call-template name="br" />
+        	<xsl:text>Registration for new students begins April 24.</xsl:text>
+        </p>
     </xsl:template>
 
     <xsl:template name="make-breadcrumbs">
@@ -139,23 +143,22 @@
 
     <xsl:template name="aspx-meta">
         <xsl:param name="page-title" />
-        <xsl:text disable-output-escaping="yes">
-            &lt;bhc:meta title="</xsl:text><xsl:if test="$enrolling-now">Enrolling Now&#8212;</xsl:if><xsl:value-of select="$page-title" /><xsl:text disable-output-escaping="yes">" runat="server" /&gt;</xsl:text>
+        <xsl:text disable-output-escaping="yes">&lt;bhc:meta title="</xsl:text>
+    	<xsl:if test="$enrolling-now">Enrolling Now&#8212;</xsl:if>
+    	<xsl:value-of select="$page-title" />
+    	<xsl:text disable-output-escaping="yes">" runat="server" /&gt;</xsl:text>
     </xsl:template>
 
     <xsl:template name="aspx-header">
-        <xsl:text disable-output-escaping="yes">
-        &lt;bhc:header searchPath="~/course-schedules/credit/" runat="server" /&gt;</xsl:text>
+        <xsl:text disable-output-escaping="yes">&lt;bhc:header searchPath="~/course-schedules/credit/" runat="server" /&gt;</xsl:text>
     </xsl:template>
 
     <xsl:template name="aspx-footer">
-        <xsl:text disable-output-escaping="yes">
-        &lt;bhc:footer runat="server" /&gt;</xsl:text>
+        <xsl:text disable-output-escaping="yes">&lt;bhc:footer runat="server" /&gt;</xsl:text>
     </xsl:template>
 
     <xsl:template name="aspx-sidebar">
-        <xsl:text disable-output-escaping="yes">
-        &lt;bhc:sidebar runat="server" /&gt;</xsl:text>
+        <xsl:text disable-output-escaping="yes">&lt;bhc:sidebar runat="server" /&gt;</xsl:text>
     </xsl:template>
 
 </xsl:stylesheet>

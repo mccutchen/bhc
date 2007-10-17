@@ -153,7 +153,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
         <li>
             <a href="{$url}"><xsl:value-of select="@name" /></a>
             <xsl:if test="not(ancestor::special-section)">
-                <br />
+                <xsl:call-template name="br" />
                 <span class="in-division">
                     <xsl:choose>
                         <xsl:when test="ancestor::division">

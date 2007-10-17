@@ -41,29 +41,28 @@
 		<!-- create special subjects -->
 		<!-- distance learning -->
 		<xsl:call-template name="create-special-section">
-			<xsl:with-param name="classes" select="descendant::type[@id = 'DL']/course" as="element()*" />
+			<xsl:with-param name="classes" select="descendant::type[@id = 'DL']/course[utils:has-classes(.)]" as="element()*" />
 			<xsl:with-param name="title"   select="'Distance Learning'"  as="xs:string"  />
 		</xsl:call-template>
 		<!-- flex term -->
 		<xsl:call-template name="create-special-section">
-			<xsl:with-param name="classes" select="descendant::type[@id = ('FD','FN')]/course" as="element()*" />
+			<xsl:with-param name="classes" select="descendant::type[@id = ('FD','FN')]/course[utils:has-classes(.)]" as="element()*" />
 			<xsl:with-param name="title"   select="'Flex Term'"  as="xs:string"  />
 		</xsl:call-template>
 		<!-- weekend -->
 		<xsl:call-template name="create-special-section">
-			<xsl:with-param name="classes" select="descendant::type[@id = 'W']/course" as="element()*" />
+			<xsl:with-param name="classes" select="descendant::type[@id = 'W']/course[utils:has-classes(.)]" as="element()*" />
 			<xsl:with-param name="title"   select="'Weekend'"  as="xs:string"  />
 		</xsl:call-template>
 		<!-- weekend core curriculum -->
 		<xsl:call-template name="create-special-section">
-			<xsl:with-param name="classes" select="descendant::type[@id = 'W']/descendant::course[@core-code and @core-code != '']" as="element()*" />
+			<xsl:with-param name="classes" select="descendant::type[@id = 'W']/descendant::course[@core-code and @core-code != '' and utils:has-classes(.)]" as="element()*" />
 			<xsl:with-param name="title"   select="'Weekend Core Curriculum'"  as="xs:string"  />
 		</xsl:call-template>
 	</xsl:template>
 	
     <!-- for each term, make a new result document -->
-	<xsl:template match="term[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" mode="init" />
-	<xsl:template match="term" mode="init">
+	<xsl:template match="term[utils:has-classes(.)]" mode="init">
         
         <!-- set up single result document -->
     	<xsl:variable name="dir"  select="concat(utils:generate-outdir(@year, @semester), '_', $output-type)"         as="xs:string" />
@@ -84,8 +83,7 @@
     </xsl:template>
 	
 	<!-- for each term, division, and subject make a new result document -->
-	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" mode="init" />
-	<xsl:template match="subject" mode="init">
+	<xsl:template match="subject[utils:has-classes(.)]" mode="init">
 		
 		<!-- if this is not supposed to display, display a warning -->
 		<xsl:if test="@display = 'false'">
@@ -119,7 +117,7 @@
 		======================================================================-->
 	
 	<!-- process terms -->
-    <xsl:template match="term">
+	<xsl:template match="term[utils:has-classes(.)]">
         <!-- first, output everything that's not in the School of the Arts or Senior Adult Education -->
         <xsl:apply-templates select="division[@name != 'School of the Arts' and @name != 'Senior Adult Education Office']/subject">
             <xsl:sort select="@name" />
@@ -143,8 +141,7 @@
     </xsl:template>
 
 	<!-- process subjects -->
-	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="subject">
+	<xsl:template match="subject[utils:has-classes(.)]">
         <xsl:apply-templates select="@name" />
 
         <!-- print the division information -->
@@ -181,8 +178,7 @@
     </xsl:template>
 
 	<!-- process topics -->
-	<xsl:template match="topic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="topic">
+	<xsl:template match="topic[utils:has-classes(.)]">
         <xsl:apply-templates select="@name" />
         <xsl:apply-templates select="comments" />
 
@@ -205,8 +201,7 @@
     </xsl:template>
 
 	<!-- process subtopics -->
-	<xsl:template match="subtopic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="subtopic">
+	<xsl:template match="subtopic[utils:has-classes(.)]">
         <xsl:apply-templates select="@name" />
         <xsl:apply-templates select="comments" />
 
@@ -231,8 +226,7 @@
     </xsl:template>
 
 	<!-- process types -->
-	<xsl:template match="type[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="type">
+	<xsl:template match="type[utils:has-classes(.)]">
     	<xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
     		<xsl:apply-templates select="@name" />
     		
@@ -259,8 +253,7 @@
     </xsl:template>
 
 	<!-- process courses -->
-	<xsl:template match="course[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="course">
+	<xsl:template match="course[utils:has-classes(.)]">
 		<xsl:param name="show-comments" as="xs:boolean" tunnel="yes" />
 		
 		<xsl:if test="count(class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
@@ -284,10 +277,8 @@
         </xsl:if>
     </xsl:template>
 
-	<!-- don't display classes with topic codes of XX or ZZ -->
-	<xsl:template match="class[@topic-code = ('XX','ZZ')]" />
 	<!-- process classes -->
-	<xsl:template match="class">
+	<xsl:template match="class[utils:has-classes(.)]">
 		<xsl:param name="show-comments" as="xs:boolean" tunnel="yes" />
 		
 		<xsl:variable name="type" select="ancestor::type/@name" as="xs:string" />

@@ -58,14 +58,13 @@
     	appropriately-located <xsl:result-document /> into which it will
     	insert itself.
     	====================================================================== -->
-    <xsl:template match="/schedule">
+	<xsl:template match="/schedule[utils:has-classes(.)]">
     	<!-- initialize each subject (create result document) -->
-        <xsl:apply-templates select="descendant::subject" mode="init" />
+		<xsl:apply-templates select="descendant::subject[utils:has-classes(.)]" mode="init" />
     	
     </xsl:template>
 
-	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" mode="init" />
-    <xsl:template match="subject" mode="init">
+	<xsl:template match="subject[utils:has-classes(.)]" mode="init">
     	<xsl:variable name="year" select="ancestor::term/@year" as="xs:string" />
     	<xsl:variable name="sem"  select="ancestor::term/@semester" as="xs:string" />
     	<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
@@ -86,7 +85,7 @@
     	This is where the "real" work gets done, after the result-documents
     	are created by the @mode="init" templates.
     	====================================================================== -->
-    <xsl:template match="term">
+	<xsl:template match="term[utils:has-classes(.)]">
         <!-- only output the term header if there is more than one term -->
         <xsl:if test="count(//term) &gt; 1">
             <h1 class="term-header">
@@ -95,14 +94,13 @@
             </h1>
         </xsl:if>
 
-        <xsl:apply-templates select="subject">
+		<xsl:apply-templates select="subject[utils:has-classes(.)]">
             <xsl:sort select="@name" />
         </xsl:apply-templates>
     </xsl:template>
 
 
-	<xsl:template match="subject[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="subject">
+	<xsl:template match="subject[utils:has-classes(.)]">
 		
 		<!-- if this is not supposed to display, display a warning -->
 		<xsl:if test="@display = 'false'">
@@ -125,28 +123,21 @@
 
             <!-- insert a list of the Core courses -->
             <xsl:call-template name="make-core-list" />
-            
-            <!-- decide whether to sort by topic or type -->
-            <xsl:choose>
-                <!-- if there are topics, do that -->
-                <xsl:when test="count(topic) &gt; 0">
-                    <xsl:apply-templates select="topic">
-                        <xsl:sort select="@sortkey" data-type="number" />
-                    	<xsl:sort select="@name"    data-type="text"   />
-                    </xsl:apply-templates>
-                </xsl:when>
-                <!-- if there are types, do that -->
-                <xsl:when test="count(type) &gt; 0">
-                    <xsl:apply-templates select="type">
-                        <xsl:sort select="@sortkey" data-type="number" />
-                    </xsl:apply-templates>
-                </xsl:when>
-            </xsl:choose>
+        	
+        	<!-- include non-topic'd courses -->
+        	<xsl:apply-templates select="type[utils:has-classes(.)]">
+        		<xsl:sort select="@sortkey" />
+        	</xsl:apply-templates>
+        	
+        	<!-- include topic'd courses -->
+        	<xsl:apply-templates select="topic[utils:has-classes(.)]">
+        		<xsl:sort select="@sortkey" data-type="number" />
+        		<xsl:sort select="@name"    data-type="text"   />
+        	</xsl:apply-templates>
         </div>
     </xsl:template>
     
-	<xsl:template match="topic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="topic">
+	<xsl:template match="topic[utils:has-classes(.)]">
 		<!-- start div -->
 		<div class="topic-section">
 			<h2 class="topic-header"><xsl:value-of select="upper-case(@name)" /></h2>
@@ -158,14 +149,14 @@
 			<xsl:choose>
 				<!-- if there are subtopics, do that -->
 				<xsl:when test="count(subtopic) &gt; 0">
-					<xsl:apply-templates select="subtopic">
+					<xsl:apply-templates select="subtopic[utils:has-classes(.)]">
 						<xsl:sort select="@sortkey" data-type="number" />
 						<xsl:sort select="@name"    data-type="text"   />
 					</xsl:apply-templates>
 				</xsl:when>
 				<!-- if there are types, do that -->
 				<xsl:when test="count(type) &gt; 0">
-					<xsl:apply-templates select="type">
+					<xsl:apply-templates select="type[utils:has-classes(.)]">
 						<xsl:sort select="@sortkey" data-type="number" />
 					</xsl:apply-templates>
 				</xsl:when>
@@ -173,8 +164,7 @@
 		</div>
 	</xsl:template>
     
-	<xsl:template match="subtopic[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="subtopic">
+	<xsl:template match="subtopic[utils:has-classes(.)]">
         <!-- if there are courses to display -->
         <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
             
@@ -191,30 +181,24 @@
     </xsl:template>
 
 
-	<xsl:template match="type[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="type">
-        <!-- if there are courses to display -->
-        <xsl:if test="count(descendant::class[@topic-code != 'XX' and @topic-code != 'ZZ']) &gt; 0">
-            
-            <!-- start div -->
-            <div class="type-section {@id}">
-                <h4 class="type-header"><xsl:value-of select="@name" /> Courses</h4>
-                
-                <xsl:apply-templates select="course">
-                    <xsl:sort select="@sortkey" data-type="number" />
-                    <xsl:sort select="@rubric"  data-type="text"   />
-                    <xsl:sort select="@number"  data-type="number" />
-                    <xsl:sort select="min(descendant::class/@section)" data-type="number" />
-                </xsl:apply-templates>
-            </div>
-        </xsl:if>
-    </xsl:template>
+	<xsl:template match="type[utils:has-classes(.)]">
+		<!-- start div -->
+		<div class="type-section {@id}">
+			<h4 class="type-header"><xsl:value-of select="@name" /> Courses</h4>
+			
+			<xsl:apply-templates select="course">
+				<xsl:sort select="@sortkey" data-type="number" />
+				<xsl:sort select="@rubric"  data-type="text"   />
+				<xsl:sort select="@number"  data-type="number" />
+				<xsl:sort select="min(descendant::class/@section)" data-type="number" />
+			</xsl:apply-templates>
+		</div>
+	</xsl:template>
 
 
-	<xsl:template match="course[count(descendant::class[@topic-code != 'XX' and @topic-code !='ZZ']) = 0]" />
-	<xsl:template match="course">
+	<xsl:template match="course[utils:has-classes(.)]">
         <!-- do not include classes with XX or ZZ for a topic code -->
-        <xsl:variable name="classes" select="class[@topic-code != ('XX','ZZ')]" as="element()*" />
+		<xsl:variable name="classes" select="class[utils:has-classes(.)]" as="element()*" />
         
         <!-- determine whether or not this is a core course -->
         <xsl:variable name="is-core" select="if (@core-code) then ' core' else ''" />
@@ -224,8 +208,8 @@
             <xsl:call-template name="group-comments">
                 <xsl:with-param name="is-core" select="$is-core" />
                 <xsl:with-param name="classes" select="$classes" />
-                <xsl:with-param name="min-index" select="0" />
-                <xsl:with-param name="max-index" select="fn:max-comment-match($classes, 1) + 1" />
+                <xsl:with-param name="min-index" select="1" />
+                <xsl:with-param name="max-index" select="utils:max-comment-match($classes, 1) + 1" />
             </xsl:call-template>
         </xsl:if>
     </xsl:template>
@@ -235,21 +219,22 @@
         <xsl:param name="classes" as="element()*" />
         <xsl:param name="min-index" as="xs:integer" />
         <xsl:param name="max-index" as="xs:integer" />
-        
+    	
         <!-- check for stop-conditions -->
         <xsl:choose>
             <!-- if we're done -->
-            <xsl:when test="$min-index &lt; 0 or $min-index &gt; count($classes)" />
+            <xsl:when test="$min-index &lt; 1 or $min-index &gt; count($classes)" />
             <xsl:when test="count($classes) &lt; 1" />
-            <xsl:when test="$max-index &lt; 0 or $max-index &gt; count($classes) + 2" />
+        	<xsl:when test="$min-index &gt;= $max-index" />
+        	<xsl:when test="count($classes[position() &gt;= $min-index and position() &lt; $max-index]) = 0" />
             
             <!-- otherwise, do it -->
             <xsl:otherwise>
                 <div class="course-section{$is-core}">
                     <table>
-                        <xsl:apply-templates select="$classes[position() &gt; $min-index and position() &lt; $max-index]" />
+                        <xsl:apply-templates select="$classes[position() &gt;= $min-index and position() &lt; $max-index]" />
                     </table>
-                    <xsl:apply-templates select="$classes[$min-index+1]/comments">
+                    <xsl:apply-templates select="$classes[$min-index]/comments">
                     	<xsl:sort select="@sortkey" data-type="number" />
                     	<xsl:sort select="@sortkey-days"  data-type="number" />
                     	<xsl:sort select="@sortkey-times" data-type="number" />
@@ -262,7 +247,7 @@
                     <xsl:with-param name="is-core" select="$is-core" />
                     <xsl:with-param name="classes" select="$classes" />
                     <xsl:with-param name="min-index" select="$max-index" />
-                    <xsl:with-param name="max-index" select="fn:max-comment-match($classes, $max-index) + 1" />
+                    <xsl:with-param name="max-index" select="utils:max-comment-match($classes, $max-index) + 1" />
                 </xsl:call-template>
             </xsl:otherwise>
         </xsl:choose>
@@ -270,7 +255,6 @@
     
     <xsl:template match="class">
         <tr>
-            <!-- <xsl:apply-templates select="@sortkey | @default-sortkey" /> -->
             <td class="number">
                 <!-- the class number is a composite of the course's @rubric and @number and the class's @section -->
                 <xsl:value-of select="../@rubric" /><xsl:text> </xsl:text>
@@ -318,13 +302,23 @@
         <tr>
             <td class="method">NA</td>
             <td class="times">NA / <xsl:value-of select="parent::class/@topic-code" /></td>
-            <td class="days">INET</td>
+            <td class="days">OL</td>
             <td class="room"></td>
             <td class="faculty"><xsl:if test="not(faculty)">Staff</xsl:if><xsl:apply-templates select="faculty" /></td>
         </tr>
     </xsl:template>
-
-    <xsl:template match="meeting">
+	
+	<xsl:template match="meeting[@method = 'LAB' and @room = 'INET']">
+		<tr class="extra-meeting">
+			<td class="method"><xsl:value-of select="@method" /></td>
+			<td class="times"><xsl:value-of select="fn:pick-times(@method, @time-start, @time-end)" /></td>
+			<td class="days">TBA</td>
+			<td class="room">OL</td>
+			<td class="faculty"><xsl:if test="not(faculty)">Staff</xsl:if><xsl:apply-templates select="faculty" /></td>
+		</tr>
+	</xsl:template>
+	
+	<xsl:template match="meeting">
         <tr class="extra-meeting">
             <td class="method"><xsl:value-of select="@method" /></td>
             <td class="times"><xsl:value-of select="fn:pick-times(@method, @time-start, @time-end)" /></td>
@@ -545,42 +539,6 @@
         </xsl:choose>
     </xsl:function>
     
-    <xsl:function name="fn:max-comment-match" as="xs:integer">
-        <xsl:param name="classes" as="element()*" />
-        <xsl:param name="index"   as="xs:integer" />
-        
-        <xsl:choose>
-            <xsl:when test="count($classes) &lt; 1 or $index &lt; 1 or $index &gt; count($classes)">
-                <xsl:value-of select="-1" />
-            </xsl:when>
-            <xsl:when test="count($classes) eq 1">
-                <xsl:value-of select="$index" />
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:variable name="base" select="normalize-space($classes[$index]/comments/text())" as="xs:string" />
-                <xsl:value-of select="fn:max-comment-match($base, $classes, $index + 1)" />
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
-    
-    <xsl:function name="fn:max-comment-match" as="xs:integer">
-        <xsl:param name="base"    as="xs:string"  />
-        <xsl:param name="classes" as="element()*" />
-        <xsl:param name="index"   as="xs:integer" />
-        
-        <xsl:choose>
-            <xsl:when test="$index &gt; count($classes)">
-                <xsl:value-of select="$index - 1" />
-            </xsl:when>
-            <xsl:when test="compare($base, normalize-space($classes[$index]/comments/text())) = 0">
-                <xsl:value-of select="fn:max-comment-match($base, $classes, $index + 1)" />
-            </xsl:when>
-            <xsl:otherwise>
-                <xsl:value-of select="$index - 1" />
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:function>
-
     <xsl:function name="fn:compare-comments" as="xs:boolean">
         <xsl:param name="classes" as="element()*" />
         
