@@ -1,26 +1,12 @@
-<?xml version='1.0'?>
-
-<!--
-template.xsl
-$Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
--->
-
 <xsl:stylesheet
     version="2.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
     exclude-result-prefixes="utils">
 
-    <xsl:variable name="index-type">
-        <xsl:choose>
-            <xsl:when test="/term">term</xsl:when>
-            <xsl:when test="/special-section">special-section</xsl:when>
-            <xsl:otherwise>schedule</xsl:otherwise>
-        </xsl:choose>
-    </xsl:variable>
 
-
-    <xsl:template match="schedule" mode="index">
+	
+	<xsl:template match="schedule" mode="index">
         <div class="complete-index">
             <xsl:call-template name="index-summary" />
 
@@ -68,7 +54,8 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
     </xsl:template>
 
 
-    <xsl:template match="special-section[minimester]" mode="index">
+    <xsl:template match="term" mode="index-special">
+    	<xsl:param name="classes" as="element()*" />
         <!-- insert an anchor before all of the minimester sections -->
         <a name="minimester" />
 
@@ -79,7 +66,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
     </xsl:template>
 
 
-    <!-- no such thing as minimesters or special-sections anymore
+    <!-- no such thing as minimesters or special-sections anymore -->
     <xsl:template match="special-section[not(minimester)] | minimester" mode="index">
         <xsl:param name="page-type" tunnel="yes" />
 
@@ -100,7 +87,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
             </xsl:call-template>
         </div>
     </xsl:template>
-    -->
+    
 
 
     <xsl:template name="index-columns">
@@ -138,7 +125,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
         <xsl:param name="url-root" select="''" tunnel="yes" />
 
         <xsl:variable name="url">
-            <xsl:if test="$multiple-terms and $page-type != 'subindex'">
+            <xsl:if test="count(//term) &gt; 1">
                 <xsl:value-of select="concat(ancestor::term/utils:make-url(@name), '/')" />
             </xsl:if>
             <xsl:if test="ancestor::special-section and not(ancestor::minimester) and $page-type != 'subindex'">
