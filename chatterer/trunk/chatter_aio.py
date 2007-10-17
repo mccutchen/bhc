@@ -62,7 +62,7 @@ def SetDates():
         fin = open(dir_input + date_file);
         date_in = fin.readline();
         fin.close();
-        date = ParseDate(date_in);
+        date = ParseDate(date_in.strip());
 
     # if that didn't work, prompt user until they get it right
     if (not date):
@@ -93,11 +93,6 @@ def SetDates():
         # we're done
         valid = True;
 
-    # DEBUG:
-    print 'month: ' + month;
-    print 'short: ' + date_short;
-    print 'long:  ' + date_long;
-    
     return True;
 
 # def ParseDate
