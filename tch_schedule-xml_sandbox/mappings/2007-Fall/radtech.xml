@@ -1,0 +1,33 @@
+<!--=======================================================================
+	Radiologic Sciences (Christi Carter and Monica Wenthold)
+	========================================================================-->
+<mappings>
+	<subject name="Radiologic Sciences" ordered="true">
+		<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+		<topic name="none">
+			<pattern match="RADR 1201-2201"/>
+		</topic>
+		<topic name="Third Semester Program Students">
+			<comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
+			<pattern match="RADR 2217-2001"/>
+			<pattern match="RADR 1166-2601"/>
+			<pattern match="RADR 1166-2602"/>
+			<pattern match="RADR 1166-2603"/>
+			<pattern match="RADR 2331-2001"/>
+			<pattern match="RADR 2331-2002"/>
+			<pattern match="RADR 2331-2003"/>
+			<pattern match="RADR 2331-2004"/>
+			<pattern match="RADR 2305-2001"/>
+			<pattern match="RADR 2305-2002"/>
+			<pattern match="RADR 2305-2003"/>
+			<pattern match="RADR 2305-2004"/>
+		</topic>
+		<topic name="Sixth Semester Program Students">
+			<comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
+			<pattern match="RADR 1250-2001"/>
+			<pattern match="RADR 2235-2001"/>
+			<pattern match="RADR 2267-2601"/>
+			<pattern match="RADR 2267-2602"/>
+		</topic>
+	</subject>
+</mappings>
