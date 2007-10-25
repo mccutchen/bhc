@@ -57,7 +57,7 @@ session_schema_4 = Schema(SessionFormatter(),
 )
 
 
-# This is the main schema for the Colleageu schedule download file.
+# This is the main schema for the Colleague schedule download file.
 # It uses the schemas defined above to parse out the four possible
 # class sessions.  This schema is formatted using a
 # formatters.CreditFormatter.
