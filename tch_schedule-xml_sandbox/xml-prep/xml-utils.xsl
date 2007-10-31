@@ -125,6 +125,13 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
+	<xsl:function name="utils:convert-date-list-ord" as="xs:integer*">
+		<xsl:param name="date" as="xs:string*" />
+		
+		<xsl:for-each select="$date">
+			<xsl:value-of select="utils:convert-date-ord(.)" />
+		</xsl:for-each>
+	</xsl:function>
 	
 	
 	<!-- convert-time-std
@@ -178,6 +185,13 @@
 				<xsl:value-of select="0" />
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:function>
+	<xsl:function name="utils:convert-time-list-ord" as="xs:integer*">
+		<xsl:param name="time" as="xs:string*" />
+		
+		<xsl:for-each select="$time">
+			<xsl:value-of select="utils:convert-time-ord(.)" />
+		</xsl:for-each>
 	</xsl:function>
 	
 	

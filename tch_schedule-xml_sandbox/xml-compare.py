@@ -8,47 +8,52 @@ except ImportError:
     # Otherwise, it must be installed by the user
     import cElementTree as ET;
 
-if __name__ == '__main__':
+def main():
     # get filenames to work with
     import sys;
-    assert len(sys.argv) == 5, 'path for: dsc, fix, form.';
-    dsc_path, fix_path, form_path, out_path = sys.argv[1:];
-    # flat_path, tidy_path, 
-
-    # get xml
-    dsc_xml  = ET.ElementTree(file=dsc_path).findall('//class');
-    fix_xml  = ET.ElementTree(file=fix_path).findall('//course');
-    form_xml = ET.ElementTree(file=form_path).findall('//course');
-#    flat_xml = ET.ElementTree(file=flat_path).findall('//class');
-#    tidy_xml = ET.ElementTree(file=tidy_path).findall('//course');
+    if (len(sys.argv) == 5):
+        dsc_path = [sys.argv[1]];
+        fix_path, form_path, out_path = sys.argv[2:];
+    elif (len(sys.argv) == 6):
+        dsc_path = sys.argv[1:2];
+        fix_path, form_path, out_path = sys.argv[3:];
+    else:
+        assert False, 'useage: xml-compare <dsc path> <fixed path> <formed path> <output path>';
 
     # build class list for dsc
     dsc_classes = {};
     dsc_repeats = [];
-    for e in dsc_xml:
-        syn = e.get('synonym');
-        if (dsc_classes.has_key(syn)): dsc_repeats.append(syn);
-        else: dsc_classes[syn] = e.get('rubric') + ' ' + e.get('number') + '-' + e.get('section');
+    for path in dsc_path:
+        dsc_xml  = ET.ElementTree(file=path).findall('//class');
+        for e in dsc_xml:
+            syn = int(e.get('synonym'));
+            if (dsc_classes.has_key(syn)): dsc_repeats.append(syn);
+            else: dsc_classes[syn] = e.get('rubric') + ' ' + e.get('number') + '-' + e.get('section');
+    dsc_xml = None;
 
     # build class list for fixed
     fix_classes = {};
     fix_repeats = [];
+    fix_xml  = ET.ElementTree(file=fix_path).findall('//course');
     for course in fix_xml:
         cid = course.get('rubric') + ' ' + course.get('number') + '-';
         for e in course.findall('class'):
-            syn = e.get('synonym');
+            syn = int(e.get('synonym'));
             if (fix_classes.has_key(syn)): fix_repeats.append(syn);
             else: fix_classes[syn] = cid + e.get('section');
+    fix_xml = None;
 
     # build class list for formed
     form_classes = {};
     form_repeats = [];
+    form_xml = ET.ElementTree(file=form_path).findall('//course');
     for course in form_xml:
         cid = course.get('rubric') + ' ' + course.get('number') + '-';
         for e in course.findall('class'):
-            syn = e.get('synonym');
+            syn = int(e.get('synonym'));
             if (form_classes.has_key(syn)): form_repeats.append(syn);
             else: form_classes[syn] = cid + e.get('section');
+    form_xml = None;
 
     # start comparison
     fix_extra    = [];
@@ -87,13 +92,13 @@ if __name__ == '__main__':
             print >> fout, len(fix_repeats), ' repeated classes in fixed xml:';
             for k in fix_repeats: print >> fout, fix_classes[k], ' : ', k;
         if (len(fix_missing) > 0):
-            print '  ', len(dsc_only), ' missing classes.';
-            print >> fout, len(dsc_only), ' classes not copied from dsc xml:';
-            for k in dsc_only: print >> fout, dsc_classes[k], ' : ', k;
+            print '  ', len(fix_missing), ' missing classes.';
+            print >> fout, len(fix_missing), ' classes not copied from dsc xml:';
+            for k in fix_missing: print >> fout, dsc_classes[k], ' : ', k;
         if (len(fix_extra) > 0):
             print '  ', len(fix_extra), ' extra classes.';
             print >> fout, len(fix_extra), ' extra classes created by fix xml:';
-            for k in fix_extra: print >> fout, fix_extra[k], ' : ', k;
+            for k in fix_extra: print >> fout, fix_classes[k], ' : ', k;
     else: print 'ok.';
 
     # formed
@@ -105,13 +110,17 @@ if __name__ == '__main__':
             print >> fout, len(form_repeats), ' repeated classes in fixed xml:';
             for k in form_repeats: print >> fout, form_classes[k], ' : ', k;
         if (len(form_missing) > 0):
-            print '  ', len(dsc_only), ' missing classes.';
-            print >> fout, len(dsc_only), ' classes not copied from dsc xml:';
+            print '  ', len(form_missing), ' missing classes.';
+            print >> fout, len(form_missing), ' classes not copied from dsc xml:';
             for k in dsc_only: print >> fout, dsc_classes[k], ' : ', k;
         if (len(form_extra) > 0):
             print '  ', len(form_extra), ' extra classes.';
             print >> fout, len(form_extra), ' extra classes created by fix xml:';
-            for k in form_extra: print >> fout, form_extra[k], ' : ', k;
+            for k in form_extra: print >> fout, form_classes[k], ' : ', k;
     else: print 'ok.';
     
     fout.close();
+
+
+if __name__ == '__main__':
+    main();
