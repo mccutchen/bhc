@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <mappings>
-	<!-- term info -->
-	<term name="May Term"  semester="Summer" year="2007" date-start="5/14/2007" date-end="6/1/2007" />
-	<term name="Summer I"  semester="Summer" year="2007" date-start="6/4/2007"  date-end="7/3/2007" />
-	<term name="Summer II" semester="Summer" year="2007" date-start="7/9/2007"  date-end="8/9/2007" />
-
 	<!-- Business Studies -->
 	<division name="Business Studies">
 		<contact ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu"/>

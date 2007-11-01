@@ -84,7 +84,7 @@
 		<xsl:param name="courses" as="element()*" />
 
 		<!-- get a list of possible terms -->
-		<xsl:variable name="terms" select="$doc-mappings/term" as="element()*" />
+		<xsl:variable name="terms" select="$doc-mappings/info/term" as="element()*" />
 		
 		<!-- for each term, spit out classes -->
 		<xsl:for-each select="$terms">
@@ -99,7 +99,7 @@
 		</xsl:for-each>
 		
 		<!-- if there are any that didn't fit into the terms, spit 'em out  -->
-		<xsl:call-template name="report-term-leftovers">
+		<xsl:call-template name="create-term-leftovers">
 			<xsl:with-param name="terms"   select="$terms"  />
 			<xsl:with-param name="classes" select="//class" />
 		</xsl:call-template>
@@ -276,6 +276,8 @@
 			<xsl:when test="count($match-node) &lt; 1">
 				<xsl:value-of select="$match-node/@name" />
 				<xsl:message><xsl:text>!Warning! no matches found for </xsl:text><xsl:value-of select="$class-id" /></xsl:message>
+				<xsl:attribute name="name-of-division" select="'Unknown Division'" />
+				<xsl:attribute name="name-of-subject"  select="'Unknown Subject'"  />
 			</xsl:when>
 			<!-- multiple matches -->
 			<xsl:when test="count($match-node) &gt; 1">
@@ -285,6 +287,8 @@
 					<!-- still multiple matches -->
 					<xsl:when test="count($max-node) != 1">
 						<xsl:message>!Warning! unable to resolve multiple match results for <xsl:value-of select="$class-id" /></xsl:message>
+						<xsl:attribute name="name-of-division" select="fn:merge-identical($max-node/ancestor::division/@name, 'Unknown Division')" />
+						<xsl:attribute name="name-of-subject" select="fn:merge-identical($max-node/ancestor::subject/@name, 'Unknown Subject')" />
 					</xsl:when>
 					<!-- pared down to single match -->
 					<xsl:otherwise>
@@ -402,41 +406,53 @@
 		</xsl:choose>
 	</xsl:template>
 	
-	<xsl:template name="report-term-leftovers">
+	<xsl:template name="create-term-leftovers">
 		<xsl:param name="terms"   as="element()*" />
 		<xsl:param name="classes" as="element()*" />
 		
 		<xsl:choose>
+			<!-- if we've finished processing terms -->
 			<xsl:when test="count($terms) = 0">
+				
+				<!-- if we ended up with classes that don't fit -->
 				<xsl:if test="count($classes) &gt; 0">
-					<xsl:message>
-						<xsl:text>Error: </xsl:text>
-						<xsl:value-of select="count($classes)"></xsl:value-of>
-						<xsl:text> Classes do not fit into any term.</xsl:text>
-					</xsl:message>
-					
-					<xsl:for-each-group select="$classes" group-by="ancestor::course/@rubric">
-						<xsl:variable name="rubric" select="current-grouping-key()" />
-						<xsl:for-each-group select="current-group()" group-by="ancestor::course/@number">
-							<xsl:variable name="number" select="current-grouping-key()" />
-							<xsl:message>
-								<xsl:value-of select="$rubric" /><xsl:text> </xsl:text><xsl:value-of select="$number" /><xsl:text>: </xsl:text>
+					<xsl:element name="term">
+						<xsl:attribute name="name" select="'leftovers'" />
+						<xsl:attribute name="date-start" select="'NA'" />
+						<xsl:attribute name="date-end" select="'NA'" />
+						<xsl:message>
+							<xsl:text>!Warning!: </xsl:text>
+							<xsl:value-of select="count($classes)"></xsl:value-of>
+							<xsl:text> Classes do not fit into any term.</xsl:text>
+						</xsl:message>
+						
+						<xsl:for-each-group select="$classes" group-by="ancestor::course/@rubric">
+							<xsl:for-each-group select="current-group()" group-by="ancestor::course/@number">
+								<xsl:variable name="course" select="current-group()/parent::course" as="element()" />
 								
-								<xsl:for-each select="current-group()">
-									<xsl:value-of select="@synonym" />
-									<xsl:text> </xsl:text>
-								</xsl:for-each>
-							</xsl:message>
+								<xsl:element name="course">
+									<xsl:attribute name="rubric"       select="$course/@rubric" />
+									<xsl:attribute name="number"       select="$course/@number" />
+									<xsl:attribute name="credit-hours" select="$course/@credit-hours" />
+									<xsl:if test="$course/@core-code"><xsl:attribute name="core-code"    select="$course/@core-code" /></xsl:if>
+									<xsl:attribute name="title-short"  select="$course/@title" />
+									<xsl:attribute name="title-long"   select="$course/@long-title" />
+									
+									<xsl:apply-templates select="$course/description" />
+									<xsl:apply-templates select="current-group()" />
+								</xsl:element>
+							</xsl:for-each-group>
 						</xsl:for-each-group>
-					</xsl:for-each-group>
+					</xsl:element>
 				</xsl:if>
 			</xsl:when>
 			
+			<!-- process next term -->
 			<xsl:otherwise>
 				<xsl:variable name="term-start" select="$terms[1]/@date-start" as="xs:string" />
 				<xsl:variable name="term-end"   select="$terms[1]/@date-end"   as="xs:string" />
 				
-				<xsl:call-template name="report-term-leftovers">
+				<xsl:call-template name="create-term-leftovers">
 					<xsl:with-param name="terms" select="$terms[position() != 1]" />
 					<xsl:with-param name="classes" select="$classes[not(utils:compare-dates-between(@start-date, $term-start, $term-end, true(), true()))]" />
 				</xsl:call-template>
@@ -495,6 +511,32 @@
 				<xsl:value-of select="'Unknown'" />
 			</xsl:otherwise>
 		</xsl:choose>
+	</xsl:function>
+	
+	<!-- if all strings in series are identical, returns the string, otherwise returns the passed default -->
+	<xsl:function name="fn:merge-identical">
+		<xsl:param name="series"  as="xs:string*" />
+		<xsl:param name="default" as="xs:string"  />
+		
+		<xsl:value-of select="fn:merge-identical($series[1], $series[position() != 1], $default)" />
+	</xsl:function>
+	<xsl:function name="fn:merge-identical">
+		<xsl:param name="match"   as="xs:string"  />
+		<xsl:param name="series"  as="xs:string*" />
+		<xsl:param name="default" as="xs:string"  />
+		
+		<xsl:choose>
+			<xsl:when test="count($series) = 0">
+				<xsl:value-of select="$match" />
+			</xsl:when>
+			<xsl:when test="$series[1] != $match">
+				<xsl:value-of select="$default" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="fn:merge-identical($match, $series[position() != 1], $default)" />
+			</xsl:otherwise>
+		</xsl:choose>
+		
 	</xsl:function>
 	
 	<!-- convert string-length(string) into string-length(strings*) -->

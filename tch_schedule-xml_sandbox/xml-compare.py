@@ -23,11 +23,7 @@ def main():
     # build class list for dsc
     dsc_classes = {};
     dsc_repeats = [];
-    # DEBUG:
-    print len(dsc_path), ' paths:';
     for path in dsc_path:
-        # DEBUG:
-        print path;
         dsc_xml  = ET.ElementTree(file=path).findall('//class');
         for e in dsc_xml:
             syn = int(e.get('synonym'));

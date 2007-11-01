@@ -27,6 +27,12 @@
 	<xsl:param name="dir-mappings" />
 	
 	
+	<!--=====================================================================
+		Globals
+		======================================================================-->
+	<!-- load the semester info file -->
+	<xsl:variable name="file-info" select="replace(concat($dir-mappings, '_info.xml'), '\\', '/')" as="xs:string" />
+	<xsl:variable name="doc-info" select="if (utils:check-file($file-info)) then doc($file-info)/info else ''" />
 	
 	<!--=====================================================================
 		Begin Transformation
@@ -34,14 +40,28 @@
 		Note: if there is more than one input file, the creation datetime
 		will reflect the creation of the oldest input file.
 		======================================================================-->
-	<!-- start (copy everything except subject and comment()s -->
-	<xsl:template match="mappings|contact">
-		<xsl:copy>
-			<xsl:copy-of select="attribute()" />
-			<xsl:apply-templates select="*" />
-		</xsl:copy>
+	<!-- start -->
+	<xsl:template match="/mappings">
+		<xsl:choose>
+			<!-- if there's errors loading the semester info, bail out -->
+			<xsl:when test="$doc-info = ''">
+				<xsl:message>
+					<xsl:text>Unable to load semester info from </xsl:text>
+					<xsl:value-of select="$file-info" />
+					<xsl:text>!</xsl:text>
+				</xsl:message>
+			</xsl:when>
+			
+			<!-- otherwise, proceed -->
+			<xsl:otherwise>
+				<xsl:copy>
+					<xsl:copy-of select="$doc-info" />
+					<xsl:apply-templates select="*" />
+				</xsl:copy>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
-	<xsl:template match="term|division|subject|topic|subtopic">
+	<xsl:template match="term|division|subject|topic|subtopic|contact">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			<xsl:if test="parent::node()/@ordered = 'true'"><xsl:attribute name="sortkey" select="position()" /></xsl:if>
