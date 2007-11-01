@@ -232,11 +232,14 @@
 			<xsl:for-each-group select="current-group()" group-by="parent::course/@number">
 				<xsl:sort select="parent::course/@number"/>
 				
-				<xsl:variable name="course" select="current-group()/parent::course" as="element()" />
+				<!-- note: if a course has classes that fall into multiple terms, the current-group()
+					may have multpiple matches for parent::course - but all matches are identical, so
+					just use one -->
+				<xsl:variable name="course" select="current-group()/parent::course" as="element()*" />
 				
 				<xsl:element name="course">
-					<xsl:copy-of select="$course/attribute()" />
-					<xsl:copy-of select="$course/comments" />
+					<xsl:copy-of select="$course[1]/attribute()" />
+					<xsl:copy-of select="$course[1]/comments" />
 					
 					<xsl:call-template name="create-classes">
 						<xsl:with-param name="classes" select="current-group()" />

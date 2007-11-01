@@ -15,7 +15,7 @@ def main():
         dsc_path = [sys.argv[1]];
         fix_path, form_path, out_path = sys.argv[2:];
     elif (len(sys.argv) == 6):
-        dsc_path = sys.argv[1:2];
+        dsc_path = sys.argv[1:3];
         fix_path, form_path, out_path = sys.argv[3:];
     else:
         assert False, 'useage: xml-compare <dsc path> <fixed path> <formed path> <output path>';
@@ -23,7 +23,11 @@ def main():
     # build class list for dsc
     dsc_classes = {};
     dsc_repeats = [];
+    # DEBUG:
+    print len(dsc_path), ' paths:';
     for path in dsc_path:
+        # DEBUG:
+        print path;
         dsc_xml  = ET.ElementTree(file=path).findall('//class');
         for e in dsc_xml:
             syn = int(e.get('synonym'));
@@ -112,7 +116,7 @@ def main():
         if (len(form_missing) > 0):
             print '  ', len(form_missing), ' missing classes.';
             print >> fout, len(form_missing), ' classes not copied from dsc xml:';
-            for k in dsc_only: print >> fout, dsc_classes[k], ' : ', k;
+            for k in form_missing: print >> fout, dsc_classes[k], ' : ', k;
         if (len(form_extra) > 0):
             print '  ', len(form_extra), ' extra classes.';
             print >> fout, len(form_extra), ' extra classes created by fix xml:';

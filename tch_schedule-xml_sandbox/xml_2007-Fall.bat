@@ -28,19 +28,19 @@ SET final=%data%\%year%-%sem%.xml
 
 ECHO Generating mappings for %sem% %year%...
 SET params=dir-mappings=../%mapdir%
-::java -jar C:\saxon\saxon8.jar -o %mapout% %mapin% %prep%\xml-mappings.xsl %params%
+java -jar C:\saxon\saxon8.jar -o %mapout% %mapin% %prep%\xml-mappings.xsl %params%
 ECHO Finished
 ECHO.
 
 ECHO Fixing %sem% %year%...
 SET params=path-sortkeys=..\%sortkeys% path-mappings=../%mappings%
-::java -jar C:\saxon\saxon8.jar -o %fix% %source% %prep%\xml-fix.xsl %params%
+java -jar C:\saxon\saxon8.jar -o %fix% %source% %prep%\xml-fix.xsl %params%
 ECHO Finished
 ECHO.
 
 ECHO Forming %sem% %year%...
 SET params=path-sortkeys=../%sortkeys% path-mappings=../%mappings%
-::java -jar C:\saxon\saxon8.jar -o %form% %fix% %prep%\xml-form.xsl %params%
+java -jar C:\saxon\saxon8.jar -o %form% %fix% %prep%\xml-form.xsl %params%
 ECHO Finished
 ECHO.
 

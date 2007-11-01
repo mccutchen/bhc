@@ -50,76 +50,113 @@
 		======================================================================-->
 	<xsl:template match="/schedule">
 		<xsl:choose>
-			<xsl:when test="$doc-mappings != '' and $doc-sortkeys != ''">
-				<xsl:element name="schedule">
-					<xsl:choose>
-						<!-- if we are merging two documents -->
-						<xsl:when test="$doc-schedule != ''">
-							<xsl:attribute name="semester"      select="Summer"         />
-							<xsl:attribute name="year"          select="term[1]/@year"  />
-							<!-- make sure creation datetime is accurate -->
-							<xsl:call-template name="set-creation-datetime">
-								<xsl:with-param name="date1" select="@date-created" />
-								<xsl:with-param name="time1" select="@time-created" />
-								<xsl:with-param name="date2" select="$doc-schedule/@date-created" />
-								<xsl:with-param name="time2" select="$doc-schedule/@time-created" />
-							</xsl:call-template>
-							
-							<!-- two docs means summer, so one term will need to be split -->
-							<xsl:call-template name="break-terms">
-								<xsl:with-param name="t1" select="term"        as="element()*" />
-								<xsl:with-param name="t2" select="$doc-schedule//term" as="element()*" />
-							</xsl:call-template>
-						</xsl:when>
-						
-						<!-- if we are NOT merging two documents, do it the easy way -->
-						<xsl:otherwise>
-							<xsl:attribute name="semester"      select="fn:clean-semester(term/@name)"         />
-							<xsl:attribute name="year"          select="term/@year"                            />
-							<xsl:attribute name="creation-date" select="utils:convert-date-std(@date-created)" />
-							<xsl:attribute name="creation-time" select="utils:convert-time-std(@time-created)" />
-
-							
-							<xsl:apply-templates select="term" />
-						</xsl:otherwise>
-					</xsl:choose>
-				</xsl:element>
-			</xsl:when>
-			<xsl:otherwise>
+			<!-- if there's errors loading the required docs, bail out -->
+			<xsl:when test="$doc-mappings = '' or $doc-sortkeys = ''">
 				<xsl:message>
 					<xsl:text>Unable to load: </xsl:text>
 					<xsl:value-of select="if($doc-mappings = '') then $path-mappings else ''" />
 					<xsl:value-of select="if($doc-sortkeys = '') then $path-sortkeys else ''" />
 				</xsl:message>
+			</xsl:when>
+			
+			<!-- otherwise, proceed -->
+			<xsl:otherwise>
+				<xsl:element name="schedule">
+					<xsl:call-template name="set-semester-year">
+						<xsl:with-param name="semesters" select="term/@name, if($doc-schedule != '') then $doc-schedule//term/@name else none" />
+						<xsl:with-param name="years"     select="term/@year, if($doc-schedule != '') then $doc-schedule//term/@year else none" />
+					</xsl:call-template>
+					<xsl:call-template name="set-creation-datetime">
+						<xsl:with-param name="dates" select="@date-created, if($doc-schedule != '') then $doc-schedule//term/@date-created else none" />
+						<xsl:with-param name="times" select="@time-created, if($doc-schedule != '') then $doc-schedule//term/@time-created else none" />
+					</xsl:call-template>
+					
+					<!-- it doesn't matter what term a course falls into in dsc xml, we have our own dates -->
+					<xsl:call-template name="create-terms">
+						<xsl:with-param name="courses" select="//course, if($doc-schedule != '') then $doc-schedule//course else none" />
+					</xsl:call-template>
+				</xsl:element>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
 	
+	<xsl:template name="create-terms">
+		<xsl:param name="courses" as="element()*" />
 
+		<!-- get a list of possible terms -->
+		<xsl:variable name="terms" select="$doc-mappings/term" as="element()*" />
+		
+		<!-- for each term, spit out classes -->
+		<xsl:for-each select="$terms">
+			<xsl:sort select="utils:convert-date-ord(@date-start)" data-type="number" />
+			
+			<xsl:variable name="date-min" select="@date-start" as="xs:string" />
+			<xsl:variable name="date-max" select="@date-end"   as="xs:string" />
+			<xsl:apply-templates select=".">
+				<xsl:with-param name="courses" 
+					select="$courses[class[utils:compare-dates-between(@start-date, $date-min, $date-max, true(), true())]]" />
+			</xsl:apply-templates>
+		</xsl:for-each>
+		
+		<!-- if there are any that didn't fit into the terms, spit 'em out  -->
+		<xsl:call-template name="report-term-leftovers">
+			<xsl:with-param name="terms"   select="$terms"  />
+			<xsl:with-param name="classes" select="//class" />
+		</xsl:call-template>
+	</xsl:template>
+	
 	<!--=====================================================================
 		Regular Templates
+		
+		Create & process the sub-elements of the schedule
 		======================================================================-->
 	<xsl:template match="term">
+		<xsl:param name="courses" as="element()*" />
+		
 		<xsl:element name="term">
-			<xsl:attribute name="name"       select="utils:strip-semester(@name)"         />
-			<xsl:attribute name="date-start" select="utils:convert-date-std(@start-date)" />
-			<xsl:attribute name="date-end"   select="utils:convert-date-std(@end-date)"   />
+			<xsl:attribute name="name"       select="@name"                               />
+			<xsl:attribute name="date-start" select="utils:convert-date-std(@date-start)" />
+			<xsl:attribute name="date-end"   select="utils:convert-date-std(@date-end)"   />
 			
-			<xsl:apply-templates select="location[@name = 200]//course" />
+			<xsl:apply-templates select="$courses">
+				<xsl:with-param name="date-min" select="@date-start" />
+				<xsl:with-param name="date-max" select="@date-end"   />
+			</xsl:apply-templates>
 		</xsl:element>
 	</xsl:template>
 	
+	<xsl:template name="create-terms-leftovers">
+		<xsl:param name="courses" as="element()*" />
+		
+		<xsl:if test="$courses">
+			<xsl:element name="term">
+				<xsl:attribute name="name" select="'leftovers'" />
+				<xsl:attribute name="date-start" select="NA" />
+				<xsl:attribute name="date-end" select="NA" />
+
+				<xsl:apply-templates select="$courses">
+					<xsl:with-param name="date-min" select="@date-start" />
+					<xsl:with-param name="date-max" select="@date-end"   />
+				</xsl:apply-templates>
+			</xsl:element>
+		</xsl:if>
+	</xsl:template>
+	
+	
 	<xsl:template match="course">
+		<xsl:param name="date-min" as="xs:string" />
+		<xsl:param name="date-max" as="xs:string" />
+		
 		<xsl:element name="course">
 			<xsl:attribute name="rubric"       select="@rubric" />
 			<xsl:attribute name="number"       select="@number" />
-			<xsl:apply-templates select="@credit-hours" />
+			<xsl:attribute name="credit-hours" select="@credit-hours" />
 			<xsl:if test="@core-code"><xsl:attribute name="core-code"    select="@core-code" /></xsl:if>
 			<xsl:attribute name="title-short"  select="@title" />
 			<xsl:attribute name="title-long"   select="@long-title" />
 			
 			<xsl:apply-templates select="description" />
-			<xsl:apply-templates select="class" />
+			<xsl:apply-templates select="class[utils:compare-dates-between(@start-date, $date-min, $date-max, true(), true())]" />
 		</xsl:element>
 	</xsl:template>
 	
@@ -299,112 +336,6 @@
 		<xsl:apply-templates select="parent::node()" />
 	</xsl:template>
 	
-	<!--=====================================================================
-		Restructuring Templates
-		
-		These templates do some heavy-duty work, but pass control back to the
-		above templates once complete
-		======================================================================-->
-	<xsl:template name="break-terms">
-		<xsl:param name="t1" as="element()*" />
-		<xsl:param name="t2" as="element()*" />
-		
-		<!-- verify that the terms are valid -->
-		<xsl:choose>
-			<!-- when NOT valid: throw error and quit -->
-			<xsl:when test="count($t1) != 1 or count($t2) != 1 or not(fn:verify-terms($t1/@name, $t2/@name))">
-				<xsl:message>
-					<xsl:text>!Error! Unable to merge terms '</xsl:text>
-					<xsl:value-of select="$t1/@name" />
-					<xsl:text>' with terms '</xsl:text>
-					<xsl:value-of select="$t2/@name" />
-					<xsl:text>'.</xsl:text>
-				</xsl:message>
-			</xsl:when>
-			<!-- when valid: process -->
-			<xsl:otherwise>
-				<!-- load the dates for breaking the terms -->
-				<xsl:variable name="year" select="$t1/@year" />
-				<xsl:variable name="sem"  select="fn:clean-semester($t1/@name)" />
-				<xsl:variable name="file" select="concat('../mappings/', $year, '-', $sem, '/base.xml')" as="xs:string" />
-				
-				<xsl:if test="utils:check-file($file)">
-					<xsl:variable name="term-list" select="document($file)//term[@year = $year and @semester = $sem]" as="element()*" />
-					<xsl:variable name="courses" select="$t1/location[@name = '200']//course | $t2/location[@name = '200']//course" as="element()*" />
-					
-					<xsl:for-each select="$term-list">
-						<xsl:sort select="utils:convert-date-ord(@date-start)" data-type="number" />
-						
-						<xsl:element name="term">
-							<xsl:attribute name="name" select="@name"             />
-							<xsl:attribute name="date-start" select="@date-start" />
-							<xsl:attribute name="date-end"   select="@date-end"   />
-							
-							<xsl:variable name="date-start" select="@date-start" />
-							<xsl:variable name="date-end"   select="@date-end"   />
-							<xsl:apply-templates select="$courses[class[utils:compare-dates(@start-date, $date-start) != -1 and utils:compare-dates(@start-date, $date-end) != 1]]" mode="break">
-								<xsl:with-param name="date-start" select="$date-start" />
-								<xsl:with-param name="date-end"   select="$date-end"   />
-							</xsl:apply-templates>
-						</xsl:element>
-					</xsl:for-each>
-					
-					<!-- now list out all of the classes that do not fall into the terms listed -->
-					<xsl:variable name="date-min-ord" select="min(utils:convert-date-list-ord($term-list/@date-start))" as="xs:integer" />
-					<xsl:variable name="date-max-ord" select="max(utils:convert-date-list-ord($term-list/@date-end))" as="xs:integer" />
-					<xsl:variable name="date-min" select="$term-list[utils:convert-date-ord(@date-start) = $date-min-ord]/@date-start" as="xs:string" />
-					<xsl:variable name="date-max" select="$term-list[utils:convert-date-ord(@date-end) = $date-max-ord]/@date-end" as="xs:string" />
-					<xsl:variable name="courses-early" select="$courses[class[utils:convert-date-ord(@start-date) &lt; $date-min-ord]]" as="element()*" />
-					<xsl:variable name="courses-late" select="$courses[class[utils:convert-date-ord(@start-date) &gt; $date-max-ord]]" as="element()*" />
-					
-					<xsl:if test="$courses-early">
-						<xsl:element name="term">
-							<xsl:attribute name="name" select="'under-run'" />
-							<xsl:attribute name="date-start" select="@date-start" />
-							<xsl:attribute name="date-end"   select="@date-end"   />
-							
-							<xsl:apply-templates select="$courses-early" mode="break">
-								<xsl:with-param name="date-start" select="'1/1/1450'" />
-								<xsl:with-param name="date-end"   select="$date-min"  />
-							</xsl:apply-templates>
-						</xsl:element>
-					</xsl:if>
-					
-					<xsl:if test="$courses-late">
-						<xsl:element name="term">
-							<xsl:attribute name="name" select="'over-run'"  />
-							<xsl:attribute name="date-start" select="@date-start" />
-							<xsl:attribute name="date-end"   select="@date-end"   />
-							
-							<xsl:apply-templates select="$courses-late" mode="break">
-								<xsl:with-param name="date-start" select="$date-max"    />
-								<xsl:with-param name="date-end"   select="'12/12/2550'" />
-							</xsl:apply-templates>
-						</xsl:element>
-					</xsl:if>
-					
-				</xsl:if>
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:template>
-	
-	<xsl:template match="course" mode="break">
-		<xsl:param name="date-start" as="xs:string" />
-		<xsl:param name="date-end"   as="xs:string" />
-		
-		<xsl:element name="course">
-			<xsl:attribute name="rubric"       select="@rubric" />
-			<xsl:attribute name="number"       select="@number" />
-			<xsl:attribute name="credit-hours" select="@credit-hours" />
-			<xsl:if test="@core-code"><xsl:attribute name="core-code"    select="@core-code" /></xsl:if>
-			<xsl:attribute name="title-short"  select="@title" />
-			<xsl:attribute name="title-long"   select="@long-title" />
-			
-			<xsl:apply-templates select="description" />
-			<xsl:apply-templates select="class[utils:compare-dates(@start-date, $date-start) != -1 and utils:compare-dates(@start-date, $date-end) != 1]" />
-		</xsl:element>
-	</xsl:template>
-	
 	
 	<!--=====================================================================
 		Utility Templates
@@ -412,42 +343,107 @@
 		These templates are here to clean up the code above
 		======================================================================-->
 	<xsl:template name="set-creation-datetime">
-		<xsl:param name="date1" as="xs:string"/>
-		<xsl:param name="time1" as="xs:string" />
-		<xsl:param name="date2" as="xs:string" />
-		<xsl:param name="time2" as="xs:string" />
+		<xsl:param name="dates" as="xs:string*"/>
+		<xsl:param name="times" as="xs:string*" />
 		
-		<!-- we would hope that these are produced on the same day, but they may not be -->
+		<!-- check the number of date-time sets -->
 		<xsl:choose>
-			<!-- if they are, we're golden. Just proceed. -->
-			<xsl:when test="compare($date1, $date2) = 0">
-				<xsl:attribute name="creation-date" select="$date1" />
-				<xsl:attribute name="creation-time" select="utils:select-time-oldest($time1, $time2)" />
+			<!-- ensure the numbers match -->
+			<xsl:when test="count($dates) != count($times)">
+				<xsl:message><xsl:text>ERROR: numbers of schedule dates and times do not match.</xsl:text></xsl:message>
 			</xsl:when>
 			
-			<!-- otherwise, find the older of the two -->
+			<!-- if there is only one set -->
+			<xsl:when test="count($dates) = 1">
+				<xsl:attribute name="creation-date" select="$dates[1]" />
+				<xsl:attribute name="creation-time" select="$times[1]" />
+			</xsl:when>
+			
+			<!-- otherwise there are multiple, so use newest (Summer I stops being produced before Summer II leaves scope) -->
 			<xsl:otherwise>
-				<xsl:variable name="oldest-date" select="utils:select-date-oldest($date1, $date2)" as="xs:string" />
-				<xsl:variable name="oldest-time" select="if (compare($oldest-date, $date1) = 0) then $time1 else $time2" />
-				
-				<!-- display warning to user, but continue transformation -->
-				<xsl:message>
-					<xsl:text>!Warning! documents not produced on the same day:
-</xsl:text>
-					<xsl:text>S1 (</xsl:text>
-					<xsl:value-of select="$date1" /><xsl:text> @ </xsl:text><xsl:value-of select="$time1" />
-					<xsl:text>)
-</xsl:text>
-					<xsl:text>S2 (</xsl:text>
-					<xsl:value-of select="$date2" /><xsl:text> @ </xsl:text><xsl:value-of select="$time2" />
-					<xsl:text>)</xsl:text>
-				</xsl:message>
-				
-				<xsl:attribute name="creation-date" select="$oldest-date" />
-				<xsl:attribute name="creation-time" select="$oldest-time" />
+				<xsl:variable name="date-newest" select="utils:select-date-newest($dates)" as="xs:string" />
+				<xsl:attribute name="creation-date" select="$date-newest" />
+				<xsl:attribute name="creation-time" select="$times[index-of($dates, $date-newest)]" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
+	
+	<xsl:template name="set-semester-year">
+		<xsl:param name="semesters" as="xs:string*" />
+		<xsl:param name="years"     as="xs:string*" />
+
+		<!-- check the number of semester-year sets -->
+		<xsl:choose>
+			<!-- ensure the numbers match -->
+			<xsl:when test="count($semesters) != count($years)">
+				<xsl:message><xsl:text>ERROR: numbers of schedule semesters and years do not match.</xsl:text></xsl:message>
+			</xsl:when>
+			
+			<!-- if there is only one set -->
+			<xsl:when test="count($semesters) = 1">
+				<xsl:attribute name="semester" select="utils:strip-semester($semesters[1])" />
+				<xsl:attribute name="year"     select="$years[1]" />
+			</xsl:when>
+			
+			<!-- if there are two sets, ensure it's summer -->
+			<xsl:when test="count($semesters) = 2">
+				<xsl:if test="fn:verify-terms($semesters[1], $semesters[2])">
+					<xsl:attribute name="semester" select="'Summer'" />
+					<xsl:attribute name="year"     select="$years[1]" />
+				</xsl:if>
+			</xsl:when>
+			
+			<!-- otherwise there are multiple, and that is not supported -->
+			<xsl:otherwise>
+				<xsl:message>
+					<xsl:text>ERROR: unable to merge multiple, non-Summer schedules.</xsl:text>
+				</xsl:message>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template name="report-term-leftovers">
+		<xsl:param name="terms"   as="element()*" />
+		<xsl:param name="classes" as="element()*" />
+		
+		<xsl:choose>
+			<xsl:when test="count($terms) = 0">
+				<xsl:if test="count($classes) &gt; 0">
+					<xsl:message>
+						<xsl:text>Error: </xsl:text>
+						<xsl:value-of select="count($classes)"></xsl:value-of>
+						<xsl:text> Classes do not fit into any term.</xsl:text>
+					</xsl:message>
+					
+					<xsl:for-each-group select="$classes" group-by="ancestor::course/@rubric">
+						<xsl:variable name="rubric" select="current-grouping-key()" />
+						<xsl:for-each-group select="current-group()" group-by="ancestor::course/@number">
+							<xsl:variable name="number" select="current-grouping-key()" />
+							<xsl:message>
+								<xsl:value-of select="$rubric" /><xsl:text> </xsl:text><xsl:value-of select="$number" /><xsl:text>: </xsl:text>
+								
+								<xsl:for-each select="current-group()">
+									<xsl:value-of select="@synonym" />
+									<xsl:text> </xsl:text>
+								</xsl:for-each>
+							</xsl:message>
+						</xsl:for-each-group>
+					</xsl:for-each-group>
+				</xsl:if>
+			</xsl:when>
+			
+			<xsl:otherwise>
+				<xsl:variable name="term-start" select="$terms[1]/@date-start" as="xs:string" />
+				<xsl:variable name="term-end"   select="$terms[1]/@date-end"   as="xs:string" />
+				
+				<xsl:call-template name="report-term-leftovers">
+					<xsl:with-param name="terms" select="$terms[position() != 1]" />
+					<xsl:with-param name="classes" select="$classes[not(utils:compare-dates-between(@start-date, $term-start, $term-end, true(), true()))]" />
+				</xsl:call-template>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
 	
 	<!--=====================================================================
 		Functions
@@ -509,5 +505,4 @@
 			<xsl:value-of select="string-length(.)" />
 		</xsl:for-each>
 	</xsl:function>
-	
 </xsl:stylesheet>

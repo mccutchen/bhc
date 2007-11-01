@@ -284,6 +284,35 @@
 		</xsl:choose>
 	</xsl:function>
 	
+	<!-- compare-dates-between
+		returns true if the first date is after the second, but before the third
+		the fourth and fifth parameter specify inclusiveness for the second and third
+		  dates, respectively -->
+	<xsl:function name="utils:compare-dates-between" as="xs:boolean">
+		<xsl:param name="date-curr" as="xs:string" />
+		<xsl:param name="date-min"  as="xs:string" />
+		<xsl:param name="date-max"  as="xs:string" />
+		<xsl:param name="inc-min"   as="xs:boolean" />
+		<xsl:param name="inc-max"   as="xs:boolean" />
+		
+		<xsl:choose>
+			<xsl:when test="$inc-min and $inc-max">
+				<xsl:value-of select="(utils:compare-dates($date-curr, $date-min) != -1) and (utils:compare-dates($date-curr, $date-max) != 1)" />
+			</xsl:when>
+			<xsl:when test="$inc-min">
+				<xsl:value-of select="(utils:compare-dates($date-curr, $date-min) != -1) and (utils:compare-dates($date-curr, $date-max) = -1)" />
+			</xsl:when>
+			<xsl:when test="$inc-max">
+				<xsl:value-of select="(utils:compare-dates($date-curr, $date-min) = 1) and (utils:compare-dates($date-curr, $date-max) != 1)" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="(utils:compare-dates($date-curr, $date-min) = 1) and (utils:compare-dates($date-curr, $date-max) = -1)" />
+			</xsl:otherwise>
+		</xsl:choose>
+		
+		
+	</xsl:function>
+	
 	<!-- compare-times
 		returns 0 if equal, 1 if date1 is greater than date2 or -1 if less than -->
 	<xsl:function name="utils:compare-times" as="xs:integer">
@@ -310,53 +339,57 @@
 	<!-- select-date-oldest
 		returns the older of two passed dates -->
 	<xsl:function name="utils:select-date-oldest" as="xs:string">
-		<xsl:param name="date1" as="xs:string" />
-		<xsl:param name="date2" as="xs:string" />
+		<xsl:param name="date" as="xs:string*" />
 		
-		<xsl:variable name="d1" select="xs:integer(utils:convert-date-ord($date1))" as="xs:integer" />
-		<xsl:variable name="d2" select="xs:integer(utils:convert-date-ord($date2))" as="xs:integer" />
-		
-		<xsl:value-of select="if ($d1 &gt; $d2) then $date2 else $date1" />
+		<xsl:for-each select="$date">
+			<xsl:sort select="utils:convert-date-ord(.)" order="descending" />
+			
+			<xsl:if test="position() = last()">
+				<xsl:value-of select="." />
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:function>
 	
 	<!-- select-date-newest
 		returns the newer of two passed dates -->
 	<xsl:function name="utils:select-date-newest" as="xs:string">
-		<xsl:param name="date1" as="xs:string" />
-		<xsl:param name="date2" as="xs:string" />
+		<xsl:param name="date" as="xs:string*" />
 		
-		<xsl:variable name="d1" select="xs:integer(utils:convert-date-ord($date1))" as="xs:integer" />
-		<xsl:variable name="d2" select="xs:integer(utils:convert-date-ord($date2))" as="xs:integer" />
-		
-		<xsl:value-of select="if ($d1 &lt; $d2) then $date2 else $date1" />
+		<xsl:for-each select="$date">
+			<xsl:sort select="utils:convert-date-ord(.)" order="ascending" />
+			
+			<xsl:if test="position() = last()">
+				<xsl:value-of select="." />
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:function>
 	
 	<!-- select-time-oldest
 		returns the older of two passed times -->
 	<xsl:function name="utils:select-time-oldest" as="xs:string">
-		<xsl:param name="time1" as="xs:string" />
-		<xsl:param name="time2" as="xs:string" />
+		<xsl:param name="time" as="xs:string*" />
 		
-		<xsl:variable name="t1" select="xs:integer(utils:convert-time-ord($time1))" as="xs:integer" />
-		<xsl:variable name="t2" select="xs:integer(utils:convert-time-ord($time2))" as="xs:integer" />
-		
-		<xsl:value-of select="if ($t1 &gt; $t2) then $time2 else $time1" />
+		<xsl:for-each select="$time">
+			<xsl:sort select="utils:convert-time-ord(.)" order="descending" />
+			
+			<xsl:if test="position() = last()">
+				<xsl:value-of select="." />
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:function>
 	
 	<!-- select-time-oldest
 		returns the newer of two passed times -->
 	<xsl:function name="utils:select-time-newest" as="xs:string">
-		<xsl:param name="time1" as="xs:string" />
-		<xsl:param name="time2" as="xs:string" />
+		<xsl:param name="time" as="xs:string*" />
 		
-		<xsl:variable name="t1" select="xs:integer(utils:convert-time-ord($time1))" as="xs:integer" />
-		<xsl:variable name="t2" select="xs:integer(utils:convert-time-ord($time2))" as="xs:integer" />
-		
-		<xsl:value-of select="if ($t1 &lt; $t2) then $time2 else $time1" />
+		<xsl:for-each select="$time">
+			<xsl:sort select="utils:convert-time-ord(.)" order="ascending" />
+			
+			<xsl:if test="position() = last()">
+				<xsl:value-of select="." />
+			</xsl:if>
+		</xsl:for-each>
 	</xsl:function>
 	
-
-
-
-
 </xsl:stylesheet>

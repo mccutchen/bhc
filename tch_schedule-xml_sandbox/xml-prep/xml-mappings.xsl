@@ -41,7 +41,7 @@
 			<xsl:apply-templates select="*" />
 		</xsl:copy>
 	</xsl:template>
-	<xsl:template match="division|subject|topic|subtopic">
+	<xsl:template match="term|division|subject|topic|subtopic">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			<xsl:if test="parent::node()/@ordered = 'true'"><xsl:attribute name="sortkey" select="position()" /></xsl:if>
