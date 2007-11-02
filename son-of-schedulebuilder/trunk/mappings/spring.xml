@@ -206,6 +206,7 @@
                 <pattern match="ITSY 2400-2426" />
                 <pattern match="ITSY 2401-2426" />
                 <pattern match="ITSY 2459-2426" />
+            	<pattern match="ITCC 1400-2250" /> <!-- added 11/02/2007 (guesstimate), CISCO 1 -->
             </topic>
             <topic name="WWW AND E-Commerce">
                 <pattern match="IMED 1416-2001" />
