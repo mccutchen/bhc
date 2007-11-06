@@ -14,7 +14,7 @@ SET mapout=%dir%\%year%-%sem%_mappings.xml
 
 
 ECHO Generating mappings for %sem% %year%...
-SET params=dir-mappings=%mapdir%
+SET params=dir-mappings=%mapdir%/
 java -jar C:\saxon\saxon8.jar -o %mapout% %mapin% xml-mappings.xsl %params%
 ECHO Finished
 ECHO.

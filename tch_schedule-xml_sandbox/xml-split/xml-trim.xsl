@@ -17,10 +17,8 @@
 	<!--=====================================================================
 		Simple Transformation
 		
-		Creates the first of two custom derivations of the xml:
-		 1) trimmed: all is-suppressed classes (and empty ancestor nodes) are
-		    removed.
-		 2) enrolling: lists only classes that fit within the enrolling window
+		all classes with (@is-suppressed = "true") are removed. Also removes 
+		any ancestor nodes which would be empty as a result.
 		 ======================================================================-->
 	<xsl:template match="schedule|term|division|subject|topic|subtopic|course">
 		<xsl:copy>

@@ -61,10 +61,18 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
-	<xsl:template match="term|division|subject|topic|subtopic|contact">
+	<!-- these elements may be ordered, so perform check -->
+	<xsl:template match="term|division|subject|topic|subtopic">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			<xsl:if test="parent::node()/@ordered = 'true'"><xsl:attribute name="sortkey" select="position()" /></xsl:if>
+			<xsl:apply-templates select="*" />
+		</xsl:copy>
+	</xsl:template>
+	<!-- these elements cannot be ordered -->
+	<xsl:template match="contact">
+		<xsl:copy>
+			<xsl:copy-of select="attribute()" />
 			<xsl:apply-templates select="*" />
 		</xsl:copy>
 	</xsl:template>

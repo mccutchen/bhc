@@ -183,7 +183,7 @@
 			<!-- these are some artificial attributes that I'm going to put in the data, 
 				since they are an integral part of how the output is produced. Maybe not
 				the perfect solution, but it makes my life easier -->
-			<xsl:attribute name="is-suppressed" select="@topic-code = ('XX','YY','ZZ') or not(meeting)" />
+			<xsl:attribute name="is-suppressed" select="@topic-code = ('XX','YY') or not(meeting)" />
 			<xsl:attribute name="is-dl" select="@schedule-type = 'DL'" />
 			<xsl:attribute name="is-w" select="@schedule-type = 'W'" />
 			<xsl:attribute name="is-wcc" select="@schedule-type = 'W' and ancestor::course/@core-code and ancestor::course/@core-code != ''" />

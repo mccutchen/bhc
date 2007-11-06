@@ -256,7 +256,7 @@
 			<xsl:element name="class">
 				<xsl:copy-of select="@synonym|@section|@date-start|@date-end|@schedule-type|@topic-code|@weeks|@capacity"/>
 				<xsl:copy-of select="@sortkey-days|@sortkey-times|@sortkey-method" />
-				<xsl:copy-of select="@is-suppressed|@is-dl|@is-w|@is-wcc|@is-flex|@sortkey"/>
+				<xsl:copy-of select="@is-suppressed|@is-dl|@is-w|@is-wcc|@is-flex|@flex-month|@sortkey"/>
 				
 				<xsl:copy-of select="comments" />
 				<xsl:copy-of select="meeting"  />
