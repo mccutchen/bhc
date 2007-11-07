@@ -1,7 +1,7 @@
 @ECHO OFF
 
 ::Set this to debug in order to keep intermediate files
-SET mode=debug
+::SET mode=debug
 
 SET prep=xml-prep
 SET data=data
@@ -57,9 +57,9 @@ ECHO. Cleaning up...
 copy /b %last% %final%
 
 IF (%mode%)==(debug) GOTO FINISH
+DEL %mapout%
 DEL %fix%
 DEL %form%
-DEL %compare%
 
 :FINISH
 ECHO Finished

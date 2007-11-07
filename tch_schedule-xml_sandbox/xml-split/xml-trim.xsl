@@ -20,11 +20,11 @@
 		all classes with (@is-suppressed = "true") are removed. Also removes 
 		any ancestor nodes which would be empty as a result.
 		 ======================================================================-->
-	<xsl:template match="schedule|term|division|subject|topic|subtopic|course">
+	<xsl:template match="schedule|term|division|subject|topic|subtopic|type|course">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
-			<xsl:apply-templates select="*[descendant::class[@is-suppressed = 'false']]" />
+			<xsl:apply-templates select="*[descendant-or-self::class[@is-suppressed = 'false']]|contact|comments" />
 		</xsl:copy>
 	</xsl:template>
 	
