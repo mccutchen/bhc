@@ -5,7 +5,7 @@ year 			CDATA #REQUIRED
 creation-date 	CDATA #REQUIRED
 creation-time 	CDATA #REQUIRED>
 
-<!ELEMENT term (special-section+)>
+<!ELEMENT term (division+, special-section*)>
 <!ATTLIST term
 name 			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED

@@ -17,160 +17,95 @@
 	<!--=====================================================================
 		Simple Transformation
 		
-		So, this transformation is a little odd. The output no longer conforms
+		So, this transformation is a little odd. First, it includes a copy of
+		  whatever is fed into it. Second, it includes a special listing of
+		  the special-section classes. The output no longer conforms
 		  to xml-formed.dtd, because it inserts <special-section name="whatever">
 		  tags into the <term> elements.
 		Basically, this transformation grabs all of the special classes
-		  (@is-whatever = "true") and puts them into a special-only xml. This
+		  (@is-whatever = "true") and puts them into a specialized xml. This
 		  is to facilitate the web output and its derivatives. It's wasteful
 		  of space, but makes the web transform faster and simpler. I think it
-		  justifies the extra space and step.
+		  justifies the extra space and steps.
 		  ======================================================================-->
 	<xsl:template match="/schedule">
-		<!-- distance learning -->
-		<xsl:apply-templates select="." mode="dl" />
-		
-		<!-- weekend -->
-		<xsl:apply-templates select="." mode="w" />
-		
-		<!-- weekend core curriculum -->
-		<xsl:apply-templates select="." mode="wcc" />
-		
-		<!-- flex term -->
-		<xsl:apply-templates select="." mode="flex" />
-	</xsl:template>
-	
-	
-	<!-- distance learning -->
-	<xsl:template match="schedule" mode="dl">
-		<xsl:result-document 
-			method="xml" 
-			encoding="iso-8859-1" 
-			indent="yes"
-			doctype-system="../dtds/xml-formated.dtd" 
-			exclude-result-prefixes="xs utils fn" 
-			href="{@year}-{@semester}_dl.xml">
-			<xsl:copy>
-				<xsl:copy-of select="attribute()" />
-				<xsl:apply-templates select="*[descendant::class[@is-dl = 'true']]" mode="dl" />
-			</xsl:copy>
-		</xsl:result-document>
-	</xsl:template>
-	<xsl:template match="term" mode="dl">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
-			<xsl:element name="special-section">
-				<xsl:attribute name="name" select="'Distance Learning'" />
-				
-				<xsl:apply-templates select="*[descendant::class[@is-dl = 'true']]">
-					<xsl:with-param name="type"  select="'dl'" tunnel="yes" />
-				</xsl:apply-templates>
-			</xsl:element>
+			
+			<xsl:apply-templates select="term" />
 		</xsl:copy>
 	</xsl:template>
 	
-	<!-- weekend -->
-	<xsl:template match="schedule" mode="w">
-		<xsl:result-document 
-			method="xml" 
-			encoding="iso-8859-1" 
-			indent="yes"
-			doctype-system="../dtds/xml-formated.dtd" 
-			exclude-result-prefixes="xs utils fn" 
-			href="{@year}-{@semester}_w.xml">
-			<xsl:copy>
-				<xsl:copy-of select="attribute()" />
-				<xsl:apply-templates select="*[descendant::class[@is-w = 'true']]" mode="w" />
-			</xsl:copy>
-		</xsl:result-document>
-	</xsl:template>
-	<xsl:template match="term" mode="w">
+	<xsl:template match="term">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
-			<xsl:element name="special-section">
-				<xsl:attribute name="name" select="'Weekend'"/>
-				
-				<xsl:apply-templates select="*[descendant::class[@is-w = 'true']]">
-					<xsl:with-param name="type"  select="'w'" tunnel="yes" />
-				</xsl:apply-templates>
-			</xsl:element>
-		</xsl:copy>
-	</xsl:template>
-	
-	<!-- weekend core curriculum -->
-	<xsl:template match="schedule" mode="wcc">
-		<xsl:result-document 
-			method="xml" 
-			encoding="iso-8859-1" 
-			indent="yes"
-			doctype-system="../dtds/xml-formated.dtd" 
-			exclude-result-prefixes="xs utils fn" 
-			href="{@year}-{@semester}_wcc.xml">
-			<xsl:copy>
-				<xsl:copy-of select="attribute()" />
-				<xsl:apply-templates select="*[descendant::class[@is-wcc = 'true']]" mode="wcc" />
-			</xsl:copy>
-		</xsl:result-document>
-	</xsl:template>
-	<xsl:template match="term" mode="wcc">
-		<xsl:copy>
-			<xsl:copy-of select="attribute()" />
-			<xsl:element name="special-section">
-				<xsl:attribute name="name" select="'Weekend Core Curriculum'" />
-				
-				<xsl:apply-templates select="*[descendant::class[@is-wcc = 'true']]">
-					<xsl:with-param name="type"  select="'wcc'" tunnel="yes" />
-				</xsl:apply-templates>
-			</xsl:element>
-		</xsl:copy>
-	</xsl:template>
-	
-	<!-- flex term -->
-	<xsl:template match="schedule" mode="flex">
-		<xsl:result-document 
-			method="xml" 
-			encoding="iso-8859-1" 
-			indent="yes"
-			doctype-system="../dtds/xml-formated.dtd" 
-			exclude-result-prefixes="xs utils fn" 
-			href="{@year}-{@semester}_flex.xml">
-			<xsl:copy>
-				<xsl:copy-of select="attribute()" />
-				<xsl:apply-templates select="term[descendant::class[@is-flex = 'true']]" mode="flex" />
-			</xsl:copy>
-		</xsl:result-document>
-	</xsl:template>
-	<xsl:template match="term" mode="flex">
-		<xsl:variable name="term" select="." as="element()" />
-		<xsl:copy>
-			<xsl:copy-of select="attribute()" />
-			<xsl:element name="special-section">
-				<xsl:attribute name="name" select="'Flex Term'" />
-				
-				<xsl:variable name="debug" select="$term/descendant::class[@is-flex = 'true']/@flex-month" />
-				<xsl:value-of select="count($debug)" />
-				<xsl:for-each-group select="descendant::class[@is-flex = 'true']/@flex-month" group-by=".">
-					<xsl:sort select="." />
+			
+			<!-- copy input term -->
+			<xsl:copy-of select="*" />
+			
+			<!-- tack on special sections -->
+			
+			<!-- distance learning -->
+			<xsl:if test="descendant::class[@is-dl = 'true']">
+				<xsl:element name="special-section">
+					<xsl:attribute name="name" select="'Distance Learning'" />
 					
-					<xsl:variable name="flex-month" select="current-grouping-key()" as="xs:string" />
+					<xsl:apply-templates select="*[descendant::class[@is-dl = 'true']]">
+						<xsl:with-param name="type" select="'dl'" tunnel="yes" />
+					</xsl:apply-templates>
+				</xsl:element>
+			</xsl:if>
+			
+			<!-- weekend -->
+			<xsl:if test="descendant::class[@is-w = 'true']">
+				<xsl:element name="special-section">
+					<xsl:attribute name="name" select="'Weekend'" />
 					
-					<xsl:element name="special-section">
-						<xsl:attribute name="name" select="$flex-month" />
+					<xsl:apply-templates select="*[descendant::class[@is-w = 'true']]">
+						<xsl:with-param name="type" select="'w'" tunnel="yes" />
+					</xsl:apply-templates>
+				</xsl:element>
+			</xsl:if>
+			
+			<!-- weekend core curriculum -->
+			<xsl:if test="descendant::class[@is-wcc = 'true']">
+				<xsl:element name="special-section">
+					<xsl:attribute name="name" select="'Weekend Core Curriculum'" />
+					
+					<xsl:apply-templates select="*[descendant::class[@is-wcc = 'true']]">
+						<xsl:with-param name="type" select="'wcc'" tunnel="yes" />
+					</xsl:apply-templates>
+				</xsl:element>
+			</xsl:if>
+			
+			<!-- flex term -->
+			<xsl:if test="descendant::class[@is-flex = 'true']">
+				<xsl:element name="special-section">
+					<xsl:attribute name="name" select="'Flex Term'" />
+					
+					<xsl:variable name="term" select="." />
+					<xsl:for-each-group select="descendant::class[@is-flex = 'true']/@flex-month" group-by=".">
+						<xsl:sort select="." />
 						
-						<xsl:apply-templates select="$term/*[descendant::class[@is-flex = 'true' and @flex-month = $flex-month]]">
-							<xsl:with-param name="type"  select="'flex'"      tunnel="yes" />
-							<xsl:with-param name="month" select="$flex-month" tunnel="yes" />
-						</xsl:apply-templates>
-						
-					</xsl:element>
-					
-				</xsl:for-each-group>
-			</xsl:element>
+						<xsl:variable name="flex-month" select="current-grouping-key()" as="xs:string" />
+						<xsl:element name="special-section">
+							<xsl:attribute name="name" select="concat($flex-month, ' Flex Term')" />
+							
+							<xsl:apply-templates select="$term/*[descendant::class[@is-flex = 'true' and @flex-month = $flex-month]]">
+								<xsl:with-param name="type"  select="'flex'"      tunnel="yes" />
+								<xsl:with-param name="month" select="$flex-month" tunnel="yes" />
+							</xsl:apply-templates>
+							
+						</xsl:element>
+					</xsl:for-each-group>
+				</xsl:element>
+			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
+
 	
-	<!-- generic -->
-	<xsl:template match="division|subject|topic|subtopic|course">
+	<!-- generic ('cause I hate stringy code) -->
+	<xsl:template match="division|subject|topic|subtopic|type|course">
 		<xsl:param name="type"  as="xs:string" tunnel="yes" />
 		<xsl:param name="month" as="xs:string" tunnel="yes" select="'na'" />
 		<xsl:copy>

@@ -6,6 +6,7 @@ SET out=..
 SET year=2007
 SET sem=Fall
 SET type=print
+
 SET splitter=trim
 SET format=trimmed
 
