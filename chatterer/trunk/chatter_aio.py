@@ -146,6 +146,8 @@ def Format(line_in, replace = True):
         133: '&#8230;', # elipsis
         150: '&#8211;', # dash
         151: '&#8212;', # long dash
+        169: '&#169;',  # Copywrite symbol
+        174: '&#174;',  # Registered Trademark symbol
         188: '&#188;',  # 1/4
         189: '&#189;',  # 1/2
         190: '&#190;',  # 3/4

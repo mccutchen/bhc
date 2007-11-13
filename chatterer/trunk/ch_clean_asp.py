@@ -239,7 +239,5 @@ if (__name__ == '__main__'):
         # 3) write the modified string back to file
         if (not WriteString(path, out_str)):
             print '  Error: cannot write file \'' + path + '\'.';
-        else:
-            print '  Cleaned file: \'' + path + '\'.';
 
     print 'Processing complete.';
