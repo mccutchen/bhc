@@ -41,33 +41,17 @@
 		<xsl:result-document href="{$output-directory}/{@url}/index{$output-extension}">
 			<xsl:call-template name="page-template">
 				<xsl:with-param name="page-title" select="'Front Page'" as="xs:string" />
-				<xsl:with-param name="url-prefix" select="$default-url-prefix" as="xs:string" tunnel="yes" />
-			</xsl:call-template>
-		</xsl:result-document>
-		<xsl:result-document href="{$output-directory}/index{$output-extension}">
-			<xsl:call-template name="page-template">
-				<xsl:with-param name="page-title" select="'Front Page'" as="xs:string" />
-				<xsl:with-param name="url-prefix" select="concat(@url, '/')" as="xs:string" tunnel="yes" />
 			</xsl:call-template>
 		</xsl:result-document>
 
-		<!-- sidebars -->
+		<!-- sidebar -->
 		<xsl:result-document href="{$output-directory}/{@url}/sidebar.ascx">
-			<xsl:call-template name="sidebar-template">
-				<xsl:with-param name="url-prefix" select="$default-url-prefix" as="xs:string" tunnel="yes" />
-			</xsl:call-template>
+			<xsl:call-template name="sidebar-template" />
 		</xsl:result-document>
-		<xsl:result-document href="{$output-directory}/sidebar.ascx">
-			<xsl:call-template name="sidebar-template">
-				<xsl:with-param name="url-prefix" select="concat(@url, '/')" as="xs:string" tunnel="yes" />
-			</xsl:call-template>
-		</xsl:result-document>
-
 		<!-- footer -->
 		<xsl:result-document href="{$output-directory}/{@url}/footer.ascx">
 			<xsl:call-template name="footer-template">
-				<xsl:with-param name="url-prefix" select="$default-url-prefix" as="xs:string" tunnel="yes" />
-				<xsl:with-param name="issue-date" select="@date"               as="xs:string"              />
+				<xsl:with-param name="issue-date" select="@date" as="xs:string" />
 			</xsl:call-template>
 		</xsl:result-document>
 	</xsl:template>
@@ -77,8 +61,7 @@
 		<xsl:message>Creating <xsl:value-of select="local-name()" /><xsl:text> </xsl:text><xsl:value-of select="@id" /></xsl:message>
 		<xsl:result-document href="{$output-directory}/{ancestor::issue/@url}/{@id}{$output-extension}">
 			<xsl:call-template name="page-template">
-				<xsl:with-param name="page-title" select="title" as="xs:string" />
-				<xsl:with-param name="url-prefix" select="$default-url-prefix" as="xs:string" tunnel="yes" />
+				<xsl:with-param name="page-title" select="title" as="xs:string"  />
 			</xsl:call-template>
 		</xsl:result-document>
 	</xsl:template>
@@ -150,8 +133,7 @@
 	</xsl:template>
 
 	<xsl:template match="title" mode="index">
-		<xsl:param name="url-prefix" as="xs:string" tunnel="yes" />
-		<h2><a href="{$url-prefix}{ancestor::article/@id}{$output-extension}"><xsl:value-of select="." /></a></h2>
+		<h2><a href="{ancestor::article/@id}{$output-extension}"><xsl:value-of select="." /></a></h2>
 	</xsl:template>
 
 	<xsl:template match="intro | body/p[1]" mode="index">
@@ -172,8 +154,7 @@
 
 	<!-- template to add a "read more" link to the articles on the index -->
 	<xsl:template name="read-more-link">
-		<xsl:param name="url-prefix" as="xs:string" tunnel="yes" />
-		<xsl:text>&#160; </xsl:text><a href="{$url-prefix}{ancestor::article/@id}{$output-extension}">Read&#160;More&#160;»</a>
+		<xsl:text>&#160; </xsl:text><a href="{ancestor::article/@id}{$output-extension}">Read&#160;More&#160;»</a>
 	</xsl:template>
 
 
@@ -259,13 +240,13 @@
 
 	<xsl:template match="feature[@id='campus-events']/date-group/event">
 		<li>
-			<xsl:apply-templates />
+			<xsl:apply-templates /><xsl:call-template name="br" />
 		</li>
 	</xsl:template>
 
 	<xsl:template match="feature[@id='campus-events']/date-group/event/element()">
 		<xsl:apply-templates />
-		<xsl:if test="following-sibling::element()"><br /></xsl:if>
+		<xsl:call-template name="br" />
 	</xsl:template>
 
 
@@ -403,4 +384,11 @@
 			<xsl:apply-templates select="body" />
 		</div>
 	</xsl:template>
+	
+	
+	<!-- formatting templates -->
+	<xsl:template name="br">
+		<xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
+	</xsl:template>
+	
 </xsl:stylesheet>

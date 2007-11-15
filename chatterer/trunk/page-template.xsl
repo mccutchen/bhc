@@ -7,9 +7,8 @@
     exclude-result-prefixes="xs">
 
     <xsl:template name="page-template">
-        <xsl:param    name="page-title" select="$default-page-title"     as="xs:string"              />
-        <xsl:param    name="url-prefix" select="$default-url-prefix"     as="xs:string" tunnel="yes" />
-        <xsl:variable name="this-issue" select="ancestor-or-self::issue" as="element()"              />
+        <xsl:param    name="page-title" select="$default-page-title"     as="xs:string" />
+        <xsl:variable name="this-issue" select="ancestor-or-self::issue" as="element()" />
         
         <div class="asp">%@ Register tagprefix="bhc" Tagname="meta" src="~/includes/meta.ascx"                 </div>
         <xsl:choose>
@@ -20,8 +19,8 @@
         <div class="asp">%@ Register tagprefix="bhc" Tagname="header" src="/chatter/includes/header_story.ascx"</div>
         </xsl:otherwise>
         </xsl:choose>
-        <div class="asp">%@ Register tagprefix="bhc" Tagname="sidebar" src="sidebar.ascx"                      </div>
-        <div class="asp">%@ Register tagprefix="bhc" Tagname="footer" src="<xsl:value-of select="$url-prefix" />footer.ascx"</div>
+        <div class="asp">%@ Register tagprefix="bhc" Tagname="sidebar" src="sidebar.ascx"</div>
+        <div class="asp">%@ Register tagprefix="bhc" Tagname="footer"  src="footer.ascx" </div>
 
         <html>
             <head>
@@ -80,16 +79,14 @@
     </xsl:template>
 
     <xsl:template match="article | feature" mode="sidebar">
-        <xsl:param name="url-prefix" select="'yyy'" as="xs:string" tunnel="yes" />
-        <li><a href="{$url-prefix}{@id}{$output-extension}"><xsl:value-of select="title" /></a></li>
+        <li><a href="{@id}{$output-extension}"><xsl:value-of select="title" /></a></li>
     </xsl:template>
 
     <xsl:template match="feature[@id='announcements']" mode="sidebar">
-        <xsl:param name="url-prefix" as="xs:string" tunnel="yes" />
-        <li><a href="{$url-prefix}{@id}{$output-extension}"><xsl:value-of select="title" /></a>
+        <li><a href="{@id}{$output-extension}"><xsl:value-of select="title" /></a>
             <ul>
                 <xsl:for-each select="announcement">
-                    <li><a href="{$url-prefix}{parent::feature/@id}{$output-extension}#{@id}"><xsl:value-of select="title" /></a></li>
+                    <li><a href="{parent::feature/@id}{$output-extension}#{@id}"><xsl:value-of select="title" /></a></li>
                 </xsl:for-each>
             </ul>
         </li>
