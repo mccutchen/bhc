@@ -323,6 +323,7 @@
                 <pattern match="COSC 1300-2423" />
                 <pattern match="COSC 1300-2424" />
                 <pattern match="COSC 1300-2425" />
+                <pattern match="COSC 1300-2426"/> <!--  EDITED ON NOV. 26, 2007 -->
                 <pattern match="COSC 1401-2421" />
                 <pattern match="COSC 1401-2422" />
             </topic>
