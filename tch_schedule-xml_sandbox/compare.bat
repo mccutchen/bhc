@@ -14,7 +14,7 @@ SET form=%data%\%year%-%sem%_formed.xml
 SET compare=%data%\%year%-%sem%_compare.txt
 
 ECHO Error-checking %sem% %year%...
-python -m xml-compare %source1% %source2% %fix% %form% %compare%
+python -m compare %source1% %source2% %fix% %form% %compare%
 ECHO Finished
 ECHO.
 

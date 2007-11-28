@@ -6,7 +6,7 @@
 # Modified:  05 November 2007
 
 # Synopsis:
-# Contains the data structures used in the Schedule Builder ScriptBuilder
+# Contains the data structures used in the BHC Schedule Builder
 
 
 # Transform is just a cheezy little struct

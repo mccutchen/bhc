@@ -5,14 +5,119 @@
 	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
 	xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
 	exclude-result-prefixes="xs utils fn">
+
+	<!--=====================================================================
+		Description
+		
+		This stylesheet handles all of the indexing tasks associated with
+		creating a web schedule (web, enrolling now, enrolling soon).
+		======================================================================-->
 	
-	<xsl:include href="output-utils.xsl" />
+
+	<!--=====================================================================
+		Setup
+		
+		Creates the index page shell.
+		======================================================================-->
+	<xsl:template match="schedule|term|special-section" mode="init-index">
+		<xsl:param name="title"  as="xs:string" tunnel="yes" />
+		<xsl:param name="header" as="xs:string" tunnel="yes" />
+		
+		
+		<xsl:call-template name="aspx-preamble" />
+		
+		<html>
+			<head>
+				<xsl:call-template name="bhc-meta">
+					<xsl:with-param name="title" select="$title" />
+				</xsl:call-template>
+				
+				<link rel="stylesheet" type="text/css" href="/course-schedules/credit/schedule.css" />
+			</head>
+			
+			<body class="with-sidebar">
+				<xsl:call-template name="bhc-header" />
+				
+				<div id="channel-header" class="course-schedules">
+					<h1><xsl:value-of select="$header" /></h1>
+				</div>
+				
+				<div id="page-container">
+					
+					<div id="page-header">
+						
+						<div id="breadcrumbs">
+							<xsl:apply-templates select="." mode="make-breadcrumbs" />
+						</div>
+						
+						<h1><xsl:value-of select="$title" /></h1>
+					
+					</div>
+					
+					<div class="page-content">
+						
+						<xsl:call-template name="make-econnect-notice" />
+						
+						<xsl:apply-templates select="." mode="make-jump-to" />
+						
+						<xsl:apply-templates select="." mode="index" />
+						
+					</div> <!-- end page-content -->
+				</div> <!-- end page-container -->
+				
+				<xsl:call-template name="bhc-sidebar" />
+				
+				<xsl:call-template name="bhc-footer" />
+				
+			</body>
+		</html>
+		
+	</xsl:template>
+
+
+	<!--=====================================================================
+		Content
+		
+		Creates the index page content w/links, etc.
+		======================================================================-->
+	<xsl:template match="schedule" mode="index">
+		<xsl:apply-templates select="term" />
+	</xsl:template>
+	
+	<xsl:template match="term[@display = 'false']">
+		<xsl:message><xsl:text>!Warning! Skipping suppressed term </xsl:text><xsl:value-of select="@name" /><xsl:text>.</xsl:text></xsl:message>
+	</xsl:template>
+	<xsl:template match="term" mode="index">
+		<!-- NOTE TO SELF:
+			DIVIDE INTO COLUMNS HERE! -->
+		
+		<!-- list regular sections -->
+		<h1><a name="{utils:make-url(@name)}"></a><xsl:value-of select="@name" /></h1>
+		<xsl:call-template name="make-core-legend" />
+		<xsl:apply-templates select="division/subject" mode="index" />
+		
+		<!-- list special sections -->
+		<!-- DEV NOTE: POSSIBLE PROBLEM WITH FLEX TERMS HERE! -->
+		<h1><a name="{utils:make-url(@name)}"></a><xsl:value-of select="@name" /></h1>
+		<xsl:call-template name="make-core-legend" />
+		<xsl:apply-templates select="special-section" mode="index" />
+	</xsl:template>
+	
+	<xsl:template match="special-section" mode="index">
+		<xsl:apply-templates select="descendant::subject" mode="index" />
+	</xsl:template>
+						
 	
 	<!--=====================================================================
-		Schedule
+		Make Templates
 		
-		indexes the entire schedule.
+		Creates specific portions of the page
 		======================================================================-->
+	
+	
+	
+	
+	
 	<xsl:template name="create-index-schedule">
 		<xsl:param name="title" as="xs:string" />
 		

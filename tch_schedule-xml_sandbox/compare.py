@@ -20,6 +20,13 @@ def main():
     else:
         assert False, 'useage: xml-compare <dsc path> <fixed path> <formed path> <output path>';
 
+    # run it
+    return run(dsc_path, fix_path, form_path, out_path);
+
+def call(dsc_path, fix_path, form_path, out_path):
+    return run(dsc_path, fix_path, form_path, out_path);
+
+def run(dsc_path, fix_path, form_path, out_path):
     # build class list for dsc
     dsc_classes = {};
     dsc_repeats = [];
@@ -71,12 +78,14 @@ def main():
         
 
     # now output
+    isOk = True;
     fout = file(out_path, 'w');
 
     # dsc
     print 'DSC  ', len(dsc_classes), 'classes',
     if (len(dsc_repeats) > 0):
         print 'with errors:';
+        isOk = False;
         if (len(dsc_repeats) > 0):
             print '  ', len(dsc_repeats), ' repeated classes.';
             print >> fout, len(dsc_repeats), ' repeated classes in dsc xml:';
@@ -87,6 +96,7 @@ def main():
     print 'Fix  ', len(fix_classes), 'classes',
     if (len(fix_repeats) > 0 or len(fix_missing) > 0 or len(fix_extra) > 0):
         print 'with errors:';
+        isOk = False;
         if (len(fix_repeats) > 0):
             print '  ', len(fix_repeats), ' repeated classes.';
             print >> fout, len(fix_repeats), ' repeated classes in fixed xml:';
@@ -105,6 +115,7 @@ def main():
     print 'Form ', len(form_classes), 'classes',
     if (len(form_repeats) > 0 or len(form_missing) > 0 or len(form_extra) > 0):
         print 'with errors:';
+        isOk = False;
         if (len(form_repeats) > 0):
             print '  ', len(form_repeats), ' repeated classes.';
             print >> fout, len(form_repeats), ' repeated classes in fixed xml:';
@@ -120,6 +131,7 @@ def main():
     else: print 'ok.';
     
     fout.close();
+    return isOk;
 
 
 if __name__ == '__main__':
