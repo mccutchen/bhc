@@ -451,6 +451,36 @@ class Spring08NonCorePrint(NonCore, Spring08Print):
 class Spring08NonCoreProof(NonCore, Spring08Proof):
     output_dir = 'spring08-noncore-proof'
 
+# ===================================================================
+# Summer 2008 profiles
+# ===================================================================
+class Summer08(Summer):
+    input = ('data/2008-summer/bh2008s1.txt', 'data/2008-summer/bh2008s2.txt')
+    terms = {
+        'Summer I/May Term': (date(2008, 5, 12), date(2008, 5, 30)),
+        'Summer I':  (date(2008, 6, 9), date(2008, 7, 3)),
+        'Summer II':  (date(2008, 7, 9), date(2008, 8, 7)),
+    }
+
+class Summer08Proof(Summer08, Proof):
+    output_dir = 'summer08-proof'
+
+class Summer08Print(Summer08, Print):
+    output_dir = 'summer08-print'
+
+class Summer08Rooms(Summer08, RoomCoordinator):
+    output_dir = 'summer08-rooms'
+
+class Summer08FullProof(Summer08, FullProof):
+    output_dir = 'summer08-full-proof'
+
+class Summer08Web(Summer08, Web):
+    output_dir = 'summer08-web'
+    saxon_params = 'schedule-title="Summer 2008 Credit"'
+
+class Summer08Enrolling(Enrolling, Summer08, Summer08Web):
+    output_dir = 'summer08-enrolling'
+
 
 
 # ===================================================================
