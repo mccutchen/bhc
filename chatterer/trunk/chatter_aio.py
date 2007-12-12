@@ -360,7 +360,7 @@ def ReadEvents(fname):
                     event_list[5].append(line_type[1])
                     
     if (event_list[0] != 'title'):
-        out_list.append([date_str, event_list])
+        out_list.append([date_str, [event_list]])
 
     in_file.close()
     return out_list
