@@ -18,6 +18,8 @@ def main():
         dsc_path = sys.argv[1:3];
         fix_path, form_path, out_path = sys.argv[3:];
     else:
+        print 'You entered:';
+        for i in sys.argv[1:]: print i + '\n';
         assert False, 'useage: xml-compare <dsc path> <fixed path> <formed path> <output path>';
 
     # run it

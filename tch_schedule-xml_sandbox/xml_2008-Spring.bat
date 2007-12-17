@@ -3,61 +3,88 @@
 ::Set this to debug in order to keep intermediate files
 SET mode=debug
 
-SET prep=xml-prep
-SET data=data
-SET map=mappings
 SET year=2008
 SET sem=Spring
 SET abbr=SP
 
-SET mapdir=mappings/%year%-%sem%/
-SET mapin=%mapdir%base.xml
-SET mapout=%data%\%year%-%sem%_mappings.xml
+SET data=data
+SET map=mappings
+SET prep=xml-prep
 
+SET mapdir=%map%\%year%-%sem%
 SET sortkeys=%map%\sortkeys.xml
 SET core=%map%\core.xml
+
 SET mappings=%data%\%year%-%sem%_mappings.xml
-
-SET source=%data%\schedule-200-%year%%abbr%.xml
-SET fix=%data%\%year%-%sem%_fixed.xml
-SET form=%data%\%year%-%sem%_formed.xml
-
-SET compare=%data%\%year%-%sem%_compare.txt
-SET last=%form%
+SET raw=%data%\schedule-200-%year%%abbr%.xml
+SET fixed=%data%\%year%-%sem%_fixed.xml
+SET formed=%data%\%year%-%sem%_formed.xml
+SET last=%formed%
 SET final=%data%\%year%-%sem%.xml
+SET compare=%data%\%year%-%sem%_compare.txt
 
+:: Step 1: Generate Mappings
 
-ECHO Generating mappings for %sem% %year%...
-SET params=dir-mappings=../%mapdir%
-java -jar C:\saxon\saxon8.jar -o %mapout% %mapin% %prep%\xml-mappings.xsl %params%
+SET type=mappings
+SET format=mappings
+SET source=%mapdir%\base.xml
+SET dest=%mappings%
+
+SET params=path-mappings=../%mapdir%/
+
+ECHO Generating %format% output for %sem% %year%...
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %prep%\xml-%type%.xsl %params%
 ECHO Finished
 ECHO.
 
-ECHO Fixing %sem% %year%...
-SET params=path-sortkeys=..\%sortkeys% path-core=../%core% path-mappings=../%mappings%
-java -jar C:\saxon\saxon8.jar -o %fix% %source% %prep%\xml-fix.xsl %params%
+
+:: Step 2: Fix DSC XML
+
+SET type=fix
+SET format=fixed
+SET source=%raw%
+SET dest=%fixed%
+
+SET params=path-sortkeys=../%sortkeys% path-core=../%core% path-mappings=../%mappings%
+
+ECHO Generating %format% output for %sem% %year%...
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %prep%\xml-%type%.xsl %params%
 ECHO Finished
 ECHO.
 
-ECHO Forming %sem% %year%...
-SET params=path-sortkeys=../%sortkeys% path-mappings=../%mappings%
-java -jar C:\saxon\saxon8.jar -o %form% %fix% %prep%\xml-form.xsl %params%
+
+:: Step 3: Form DSC XML
+
+SET type=form
+SET format=formed
+SET source=%fixed%
+SET dest=%formed%
+
+SET params=path-sortkeys=../%sortkeys% path-mappings=../%mappings%/
+
+ECHO Generating %format% output for %sem% %year%...
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %prep%\xml-%type%.xsl %params%
 ECHO Finished
 ECHO.
+
+
+:: Step 4: Error check
 
 ECHO Error-checking %sem% %year%...
-python -m compare %source% %fix% %form% %compare%
+python -m compare %raw% %fixed% %formed% %compare%
 ECHO Finished
 ECHO.
 
+
+:: Step 5: Clean up
 :: copies the last file into final. If not debugging, deletes intermediate steps
 ECHO. Cleaning up...
 copy /b %last% %final%
 
 IF (%mode%)==(debug) GOTO FINISH
-DEL %mapout%
-DEL %fix%
-DEL %form%
+DEL %mappings%
+DEL %fixed%
+DEL %formed%
 
 :FINISH
 ECHO Finished

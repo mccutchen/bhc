@@ -28,10 +28,8 @@
 		Globals
 		======================================================================-->
 	<!-- check for presence of mapping and sorting info -->
-	<xsl:variable name="doc-mappings"
-		select="if (utils:check-file($path-mappings)) then doc(replace($path-mappings, '\\', '/'))/mappings else ''"/>
-	<xsl:variable name="doc-sortkeys"
-		select="if (utils:check-file($path-sortkeys)) then doc(replace($path-sortkeys, '\\', '/'))/sortkeys else ''"/>
+	<xsl:variable name="doc-mappings" select="if (utils:check-file($path-mappings)) then doc(replace($path-mappings, '\\', '/'))/mappings else ''"/>
+	<xsl:variable name="doc-sortkeys" select="if (utils:check-file($path-sortkeys)) then doc(replace($path-sortkeys, '\\', '/'))/sortkeys else ''"/>
 
 
 	<!--=====================================================================
@@ -40,11 +38,25 @@
 		Creates Division, Subject, Topic, Subtopic, and Type elements
 		======================================================================-->
 	<xsl:template match="/schedule">
-		<xsl:element name="schedule">
-			<xsl:copy-of select="attribute()" />
+		<xsl:choose>
+			<!-- if there's errors loading the required docs, bail out -->
+			<xsl:when test="$doc-mappings = '' or $doc-sortkeys = ''">
+				<xsl:message>
+					<xsl:text>Unable to load: </xsl:text>
+					<xsl:value-of select="if($doc-mappings = '') then $path-mappings else ''" />
+					<xsl:value-of select="if($doc-sortkeys = '') then $path-sortkeys else ''" />
+				</xsl:message>
+			</xsl:when>
 			
-			<xsl:apply-templates select="term" />
-		</xsl:element>
+			<!-- otherwise, proceed -->
+			<xsl:otherwise>
+				<xsl:element name="schedule">
+					<xsl:copy-of select="attribute()" />
+					
+					<xsl:apply-templates select="term" />
+				</xsl:element>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
 	<xsl:template match="term">

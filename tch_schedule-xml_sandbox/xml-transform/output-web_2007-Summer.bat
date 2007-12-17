@@ -8,7 +8,7 @@ SET sem=Summer
 SET type=web
 
 
-:: Step 1, pre-format the data
+:: Step 1: Pre-Format the Data
 
 SET splitter1=trim
 SET format1=trimmed
@@ -34,7 +34,7 @@ ECHO Finished
 ECHO.
 
 
-:: Step 2, produce output
+:: Step 2, Produce Output
 
 SET source=%dest2%
 SET dest=%out%\no-file.txt
@@ -46,7 +46,6 @@ ECHO.
 
 
 :: Step 3, clean up
-
 
 ECHO Cleaning up...
 DEL %dest1%

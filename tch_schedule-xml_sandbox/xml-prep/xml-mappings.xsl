@@ -24,15 +24,15 @@
 		Parameters
 		======================================================================-->
 	<!-- a second input file (for Summer semesters) -->
-	<xsl:param name="dir-mappings" />
+	<xsl:param name="path-mappings" />
 	
 	
 	<!--=====================================================================
 		Globals
 		======================================================================-->
 	<!-- load the semester info file -->
-	<xsl:variable name="file-info" select="replace(concat($dir-mappings, '_info.xml'), '\\', '/')" as="xs:string" />
-	<xsl:variable name="doc-info" select="if (utils:check-file($file-info)) then doc($file-info)/info else ''" />
+	<xsl:variable name="file-info" select="replace(concat($path-mappings, '_info.xml'), '\\', '/')" as="xs:string" />
+	<xsl:variable name="doc-info"  select="if (utils:check-file($file-info)) then doc($file-info)/info else ''" />
 	
 	<!--=====================================================================
 		Begin Transformation
@@ -87,22 +87,33 @@
 	<!-- file elements need to be treated a little differently -->
 	<xsl:template match="file">
 		<!-- snag the replacement elements from the file specified -->
-		<xsl:variable name="name"         select="parent::subject/@name" as="xs:string" />
-		<xsl:variable name="sub-elements" select="doc(concat($dir-mappings, '/', @src))/descendant::subject[@name = $name]/*" as="element()*" />
+		<xsl:variable name="name"     select="parent::subject/@name"                                 as="xs:string" />
+		<xsl:variable name="file-ext" select="replace(concat($path-mappings, '/', @src), '\\', '/')" as="xs:string" />
+		<xsl:variable name="doc-ext"  select="if (utils:check-file($file-ext)) then doc($file-ext) else ''" />
 		
-		<!-- if not found, or empty, present user with error message -->
-		<xsl:if test="count($sub-elements) eq 0">
-			<xsl:message>
-				<xsl:text>Unable to find </xsl:text>
-				<xsl:value-of select="file/@src" />
-				<xsl:text>, or file does not contain information for.</xsl:text>
-				<xsl:value-of select="@name" />
-				<xsl:text>.</xsl:text>
-			</xsl:message>
-		</xsl:if>
-		
-		<!-- in place of the file element, add the elements it pointed to -->
-		<xsl:apply-templates select="$sub-elements" />
+		<xsl:choose>
+			<xsl:when test="$doc-ext = ''">
+				<xsl:message>
+					<xsl:text>Unable to find </xsl:text>
+					<xsl:value-of select="file/@src" />
+					<xsl:text>.</xsl:text>
+				</xsl:message>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:variable name="sub-elements" select="$doc-ext/descendant::subject[@name = $name]/*" as="element()*" />
+				<xsl:if test="count($sub-elements) = 0">
+					<xsl:message>
+						<xsl:text>File </xsl:text>
+						<xsl:value-of select="file/@src" />
+						<xsl:text> does not contain information for </xsl:text>
+						<xsl:value-of select="@name" />
+						<xsl:text>.</xsl:text>
+					</xsl:message>
+				</xsl:if>
+				<!-- insert data from external file -->
+				<xsl:apply-templates select="$sub-elements" />
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
 	<!-- patterns need to be prioritized -->

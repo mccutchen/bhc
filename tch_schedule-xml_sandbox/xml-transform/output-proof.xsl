@@ -61,21 +61,22 @@
 	<xsl:template match="/schedule">
     	<!-- initialize each subject (create result document) -->
 		<xsl:apply-templates select="descendant::subject" mode="init" />
-    </xsl:template>
-
+	</xsl:template>
+	
 	<xsl:template match="subject" mode="init">
-    	<xsl:variable name="year" select="ancestor::schedule/@year" as="xs:string" />
+		<xsl:variable name="year" select="ancestor::schedule/@year" as="xs:string" />
 		<xsl:variable name="sem"  select="ancestor::schedule/@semester" as="xs:string" />
-    	<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
-    	<xsl:variable name="div"  select="utils:make-url(parent::division/@name)" as="xs:string" />
-    	<xsl:variable name="file" select="utils:make-url(@name)" as="xs:string" />
-    	
-    	<xsl:result-document href="{$dir}/{$div}/{$file}.{$ext}">
-    		<xsl:call-template name="page-template">
-    			<xsl:with-param name="page-title" select="@name" />
-    		</xsl:call-template>
-    	</xsl:result-document>
-    </xsl:template>
+		<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
+		<xsl:variable name="term" select="utils:make-url(ancestor::term/@name)" as="xs:string" />
+		<xsl:variable name="div"  select="utils:make-url(parent::division/@name)" as="xs:string" />
+		<xsl:variable name="file" select="utils:make-url(@name)" as="xs:string" />
+		
+		<xsl:result-document href="{$dir}/{$term}/{$div}/{$file}.{$ext}">
+			<xsl:call-template name="page-template">
+				<xsl:with-param name="page-title" select="@name" />
+			</xsl:call-template>
+		</xsl:result-document>
+	</xsl:template>
 	
 
     <!--=====================================================================
@@ -134,7 +135,7 @@
         		<xsl:sort select="@name"    data-type="text"   />
         	</xsl:apply-templates>
         </div>
-    </xsl:template>
+   </xsl:template>
     
 	<xsl:template match="topic">
 		<!-- start div -->
