@@ -1,65 +1,67 @@
 <!ELEMENT schedule (term+)>
 <!ATTLIST schedule
-semester CDATA #REQUIRED
-year CDATA #REQUIRED
-creation-date CDATA #REQUIRED
-creation-time CDATA #REQUIRED>
+semester 		CDATA #REQUIRED
+year 			CDATA #REQUIRED
+creation-date 	CDATA #REQUIRED
+creation-time 	CDATA #REQUIRED>
 
 <!ELEMENT term (course+)>
 <!ATTLIST term
-name CDATA #REQUIRED
-date-start CDATA #REQUIRED
-date-end CDATA #REQUIRED>
+name 			CDATA #REQUIRED
+date-start 		CDATA #REQUIRED
+date-end 		CDATA #REQUIRED
+display 		(true|false) "true">
 
 <!ELEMENT course (comments?, class+)>
 <!ATTLIST course
-rubric CDATA #REQUIRED
-number CDATA #REQUIRED
-credit-hours CDATA #REQUIRED
-title-short CDATA #REQUIRED
-title-long CDATA #REQUIRED
-core-code CDATA #IMPLIED>
+rubric 			CDATA #REQUIRED
+number 			CDATA #REQUIRED
+credit-hours 	CDATA #REQUIRED
+title-short 	CDATA #REQUIRED
+title-long 		CDATA #REQUIRED
+core-code 		CDATA #IMPLIED
+core-name 		CDATA #IMPLIED>
 
 <!ELEMENT class (comments?, meeting*)>
 <!ATTLIST class
-synonym CDATA #REQUIRED
-section CDATA #REQUIRED
-date-start CDATA #REQUIRED
-date-end CDATA #REQUIRED
-schedule-type CDATA #REQUIRED
-topic-code CDATA #REQUIRED
-weeks CDATA #REQUIRED
-capacity CDATA #REQUIRED
-is-suppressed (true|false) "false"
-is-dl (true|false) "false"
-is-w  (true|false) "false"
-is-wcc  (true|false) "false"
-is-flex  (true|false) "false"
-flex-month CDATA #IMPLIED
-name-of-division CDATA #REQUIRED
-name-of-subject CDATA #REQUIRED
-name-of-topic CDATA #IMPLIED
-name-of-subtopic CDATA #IMPLIED
-sortkey CDATA #IMPLIED>
+synonym 		CDATA #REQUIRED
+section 		CDATA #REQUIRED
+date-start 		CDATA #REQUIRED
+date-end 		CDATA #REQUIRED
+schedule-type 	CDATA #REQUIRED
+topic-code 		CDATA #REQUIRED
+weeks 			CDATA #REQUIRED
+capacity 		CDATA #REQUIRED
+is-suppressed 	(true|false) "false"
+is-dl 			(true|false) "false"
+is-w  			(true|false) "false"
+is-wcc  		(true|false) "false"
+is-flex  		(true|false) "false"
+flex-month 		CDATA #IMPLIED
+name-of-division 	CDATA #REQUIRED
+name-of-subject 	CDATA #REQUIRED
+name-of-topic 		CDATA #IMPLIED
+name-of-subtopic 	CDATA #IMPLIED
+sortkey 		CDATA #IMPLIED>
 
 <!ELEMENT meeting (faculty*)>
 <!ATTLIST meeting
-method CDATA #REQUIRED
-days CDATA #REQUIRED
-bldg CDATA #REQUIRED
-room CDATA #REQUIRED
-time-start CDATA #REQUIRED
-time-end CDATA #REQUIRED
-sortkey-days CDATA #REQUIRED
-sortkey-times CDATA #REQUIRED
-sortkey-method CDATA #REQUIRED>
+method 			CDATA #REQUIRED
+days 			CDATA #REQUIRED
+bldg 			CDATA #REQUIRED
+room 			CDATA #REQUIRED
+time-start 		CDATA #REQUIRED
+time-end 		CDATA #REQUIRED
+sortkey-days 	CDATA #REQUIRED
+sortkey-times 	CDATA #REQUIRED
+sortkey-method 	CDATA #REQUIRED>
 
 <!ELEMENT faculty (#PCDATA)>
 <!ATTLIST faculty
-name-first CDATA #REQUIRED
-name-middle CDATA #REQUIRED
-name-last CDATA #REQUIRED
-email CDATA #REQUIRED
-phone CDATA #REQUIRED>
+name-first 		CDATA #REQUIRED
+name-middle 	CDATA #REQUIRED
+name-last 		CDATA #REQUIRED
+email 		CDATA #REQUIRED
+phone 		CDATA #REQUIRED>
 
 <!ELEMENT comments (#PCDATA)>

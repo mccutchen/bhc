@@ -32,15 +32,17 @@
 	
 	<!-- for sortkey values -->
 	<xsl:param name="path-sortkeys" />
+	<xsl:param name="path-core"     />
 	
 	
 	<!--=====================================================================
 		Globals
 		======================================================================-->
 	<!-- check for presence of second file -->
-	<xsl:variable name="doc-schedule" select="if (utils:check-file($second-schedule)) then doc(replace($second-schedule, '\\', '/'))/schedule else ''" />
-	<xsl:variable name="doc-mappings" select="if (utils:check-file($path-mappings)) then doc(replace($path-mappings, '\\', '/'))/mappings else ''" />
-	<xsl:variable name="doc-sortkeys" select="if (utils:check-file($path-sortkeys)) then doc(replace($path-sortkeys, '\\', '/'))/sortkeys else ''" />
+	<xsl:variable name="doc-schedule" select="if (utils:check-file($second-schedule)) then doc(replace($second-schedule, '\\','/'))/schedule  else ''" />
+	<xsl:variable name="doc-mappings" select="if (utils:check-file($path-mappings))   then doc(replace($path-mappings, '\\','/'))/mappings    else ''" />
+	<xsl:variable name="doc-sortkeys" select="if (utils:check-file($path-sortkeys))   then doc(replace($path-sortkeys, '\\','/'))/sortkeys    else ''" />
+	<xsl:variable name="doc-core"     select="if (utils:check-file($path-core))       then doc(replace($path-core, '\\','/'))/core-components else ''" />
 	
 	<!--=====================================================================
 		Begin Transformation
@@ -51,11 +53,12 @@
 	<xsl:template match="/schedule">
 		<xsl:choose>
 			<!-- if there's errors loading the required docs, bail out -->
-			<xsl:when test="$doc-mappings = '' or $doc-sortkeys = ''">
+			<xsl:when test="$doc-mappings = '' or $doc-core = '' or $doc-sortkeys = ''">
 				<xsl:message>
 					<xsl:text>Unable to load: </xsl:text>
 					<xsl:value-of select="if($doc-mappings = '') then $path-mappings else ''" />
 					<xsl:value-of select="if($doc-sortkeys = '') then $path-sortkeys else ''" />
+					<xsl:value-of select="if($doc-core     = '') then $path-core     else ''" />
 				</xsl:message>
 			</xsl:when>
 			
@@ -72,8 +75,9 @@
 					</xsl:call-template>
 					
 					<!-- it doesn't matter what term a course falls into in dsc xml, we have our own dates -->
+					<xsl:variable name="other-courses" select="if($doc-schedule != '') then $doc-schedule//course else none" as="element()*"></xsl:variable>
 					<xsl:call-template name="create-terms">
-						<xsl:with-param name="courses" select="//course, if($doc-schedule != '') then $doc-schedule//course else none" />
+						<xsl:with-param name="courses" select="//course | $other-courses" />
 					</xsl:call-template>
 				</xsl:element>
 			</xsl:otherwise>
@@ -117,29 +121,13 @@
 			<xsl:attribute name="name"       select="@name"                               />
 			<xsl:attribute name="date-start" select="utils:convert-date-std(@date-start)" />
 			<xsl:attribute name="date-end"   select="utils:convert-date-std(@date-end)"   />
+			<xsl:attribute name="display" select="'true'" />
 			
 			<xsl:apply-templates select="$courses">
 				<xsl:with-param name="date-min" select="@date-start" />
 				<xsl:with-param name="date-max" select="@date-end"   />
 			</xsl:apply-templates>
 		</xsl:element>
-	</xsl:template>
-	
-	<xsl:template name="create-terms-leftovers">
-		<xsl:param name="courses" as="element()*" />
-		
-		<xsl:if test="$courses">
-			<xsl:element name="term">
-				<xsl:attribute name="name" select="'leftovers'" />
-				<xsl:attribute name="date-start" select="NA" />
-				<xsl:attribute name="date-end" select="NA" />
-
-				<xsl:apply-templates select="$courses">
-					<xsl:with-param name="date-min" select="@date-start" />
-					<xsl:with-param name="date-max" select="@date-end"   />
-				</xsl:apply-templates>
-			</xsl:element>
-		</xsl:if>
 	</xsl:template>
 	
 	
@@ -151,7 +139,11 @@
 			<xsl:attribute name="rubric"       select="@rubric" />
 			<xsl:attribute name="number"       select="@number" />
 			<xsl:attribute name="credit-hours" select="@credit-hours" />
-			<xsl:if test="@core-code"><xsl:attribute name="core-code"    select="@core-code" /></xsl:if>
+			<xsl:if test="@core-code">
+				<xsl:attribute name="core-code" select="@core-code" />
+				<xsl:variable name="code" select="@core-code" />
+				<xsl:attribute name="core-name" select="$doc-core/component[@code = $code]/@name" />
+			</xsl:if>
 			<xsl:attribute name="title-short"  select="@title" />
 			<xsl:attribute name="title-long"   select="@long-title" />
 			
@@ -420,6 +412,7 @@
 						<xsl:attribute name="name" select="'leftovers'" />
 						<xsl:attribute name="date-start" select="'NA'" />
 						<xsl:attribute name="date-end" select="'NA'" />
+						<xsl:attribute name="display" select="'false'" />
 						<xsl:message>
 							<xsl:text>!Warning!: </xsl:text>
 							<xsl:value-of select="count($classes)"></xsl:value-of>

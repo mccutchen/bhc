@@ -1,10 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet
 	version="2.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-	xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
-	exclude-result-prefixes="xs utils fn">
+	exclude-result-prefixes="xs utils">
 	
 	<!--=====================================================================
 		Description
@@ -19,9 +19,11 @@
 	<!--=====================================================================
 		Includes & Output
 		======================================================================-->
-	<xsl:include href="output-utils.xsl" />
-	<xsl:include href="output-web_page.xsl"  />
-	<xsl:include href="output-web_index.xsl" />
+	<xsl:include href="output-utils.xsl"        />
+	<xsl:include href="output-web_template.xsl" />
+	<xsl:include href="output-web_index.xsl"    />
+	<xsl:include href="output-web_page.xsl"     />
+	
 	<xsl:output
 		method="xhtml"
 		encoding="us-ascii"
@@ -36,12 +38,13 @@
 		======================================================================-->
 	<!-- is this an "enrolling now" schedule? -->
 	<xsl:param name="schedule-type" />	
+	<xsl:variable name="prefix"       as="xs:string" select="if($schedule-type) then concat($schedule-type, ' - ') else ''" />
 	
 	
 	<!--=====================================================================
 		Globals
 		======================================================================-->
-	<xsl:variable name="output-type"  as="xs:string" select="if($schedule-type) then utils:make-url($schedule-type) else 'web'"  />
+	<xsl:variable name="output-type"  as="xs:string" select="if($schedule-type) then utils:make-url($schedule-type) else 'web'" />
 	<xsl:variable name="ext"          as="xs:string" select="'aspx'" />
 	
 	
@@ -53,32 +56,28 @@
 		======================================================================-->
 	<xsl:template match="/schedule">
 		<!-- processing vars -->
-		<xsl:variable name="base-dir" select="utils:generate-outdir(@year, @semester)"                          as="xs:string" />
-		<xsl:variable name="path"     select="concat($base-dir, '_', $output-type)"                             as="xs:string" />
-		<xsl:variable name="prefix"   select="if($schedule-type) then concat($schedule-type, ' - ') else ''"    as="xs:string" />
-		<xsl:variable name="header"   select="concat($prefix, @semester, ' ', @year, 'Credit Course Schedule')" as="xs:string" />
-		<xsl:variable name="title"    select="concat($prefix, @semester, ' ', @year, ' Credit Course Index')"   as="xs:string" />
-		<xsl:variable name="year"     select="@year"                                                            as="xs:string" />
+		<xsl:variable name="base-dir" select="utils:generate-outdir(@year, @semester)"           as="xs:string" />
+		<xsl:variable name="path"     select="concat($base-dir, '_', $output-type)"              as="xs:string" />
+		<xsl:variable name="channel"  select="concat($prefix, @semester, ' ', @year, ' Credit')" as="xs:string" />
+		<xsl:variable name="title"    select="concat($channel, ' Course Index')"                  as="xs:string" />
+		<xsl:variable name="year"     select="@year"                                             as="xs:string" />
 		
 		<!-- index: create schedule index -->
 		<xsl:apply-templates select="." mode="init-index">
-			<xsl:with-param name="path"   select="$path"   tunnel="yes" />
-			<xsl:with-param name="prefix" select="$prefix" tunnel="yes" />
-			<xsl:with-param name="header" select="$header" tunnel="yes" />
-			<xsl:with-param name="title"  select="$title"  tunnel="yes" />
+			<xsl:with-param name="path"    select="$path"    tunnel="yes" />
+			<xsl:with-param name="channel" select="$channel" tunnel="yes" />
+			<xsl:with-param name="title"   select="$title"   tunnel="yes" />
 		</xsl:apply-templates>
 		
 		<!-- process the terms -->
 		<xsl:apply-templates select="term" mode="setup">
-			<xsl:with-param name="base-path" select="$path"                />
-			<xsl:with-param name="prefix"    select="$prefix" tunnel="yes" />
-			<xsl:with-param name="header"    select="$header" tunnel="yes" />
+			<xsl:with-param name="base-path" select="$path"                 />
+			<xsl:with-param name="channel"   select="$channel" tunnel="yes" />
 		</xsl:apply-templates>
 	</xsl:template>
 	
 	<xsl:template match="term" mode="setup">
 		<xsl:param name="base-path" as="xs:string"              />
-		<xsl:param name="prefix"    as="xs:string" tunnel="yes" />
 		
 		<!-- processing vars -->
 		<xsl:variable name="path"  select="concat($base-path, '/', utils:make-url(@name))" as="xs:string" />
@@ -102,7 +101,7 @@
 	</xsl:template>
 	
 	<!-- if there are multiple levels of special sections, just pass through to the bottom -->
-	<xsl:template match="special-section[special-section]">
+	<xsl:template match="special-section[special-section]" mode="setup">
 		<xsl:param name="base-path" as="xs:string" />
 		<xsl:apply-templates select="special-section" mode="setup">
 			<xsl:with-param name="base-path" select="$base-path" />
@@ -111,7 +110,6 @@
 	<!-- once we get to the bottom -->
 	<xsl:template match="special-section[not(special-section)]" mode="setup">
 		<xsl:param name="base-path" as="xs:string"              />
-		<xsl:param name="prefix"    as="xs:string" tunnel="yes" />
 		
 		<!-- processing vars -->
 		<xsl:variable name="path"  select="concat($base-path, '/', utils:make-url(@name))" as="xs:string" />
@@ -125,8 +123,8 @@
 		
 		<!-- page: create special-section pages -->
 		<xsl:apply-templates select="division/subject" mode="init-page">
-			<xsl:with-param name="path"    select="$path" />
-			<xsl:with-param name="section" select="@name" tunnel="yes" />
+			<xsl:with-param name="base-path" select="$path" />
+			<xsl:with-param name="section"   select="@name" tunnel="yes" />
 		</xsl:apply-templates>
 	</xsl:template>
 	
@@ -137,9 +135,11 @@
 		initializes result documents.
 		======================================================================-->
 	<xsl:template match="schedule|term|special-section" mode="init-index">
-		<xsl:param name="path" as="xs:string" />
+		<xsl:param name="path" as="xs:string" tunnel="yes" />
 		<xsl:result-document href="{$path}/index.{$ext}">
-			<xsl:apply-templates select="." mode="index" />
+			<xsl:apply-templates select="." mode="create-page">
+				<xsl:with-param name="mode"   select="'index'" tunnel="yes" />
+			</xsl:apply-templates>
 		</xsl:result-document>
 	</xsl:template>
 	
@@ -147,49 +147,25 @@
 		<xsl:param name="base-path" as="xs:string" />
 		<xsl:variable name="path" select="concat($base-path, '/', utils:make-url(parent::division/@name))" as="xs:string" />
 		<xsl:result-document href="{$path}/{utils:make-url(@name)}.{$ext}">
-			<xsl:apply-templates select="." mode="page">
-				<xsl:with-param name="path"  select="$path" tunnel="yes" />
-				<xsl:with-param name="title" select="@name" tunnel="yes" />
+			<xsl:apply-templates select="." mode="create-page">
+				<xsl:with-param name="path"  select="$path"  tunnel="yes" />
+				<xsl:with-param name="title" select="@name"  tunnel="yes" />
+				<xsl:with-param name="mode"  select="'page'" tunnel="yes" />
 			</xsl:apply-templates>
 		</xsl:result-document>
 	</xsl:template>
-
-
+	
+	
 	<!--=====================================================================
-		ASPX templates
+		Generic templates
 		
-		handles the asxp elements
+		Shortcuts for common tasks
 		======================================================================-->
-	<xsl:template name="aspx-preamble">
-		<!-- normally, this would generate an error because it's a text node outside of the root node. 
-			However, wrapping it in a comment works because xhtml comments can appear anywhere, and 
-			ASPX evaluates code inside comments just fine. -->
-		<xsl:comment>
-			<xsl:text disable-output-escaping="yes">&lt;%@ register tagprefix="bhc" tagname="header" src="~/includes/header.ascx" %&gt;
-				&lt;%@ register tagprefix="bhc" tagname="meta" src="~/includes/meta.ascx" %&gt;
-				&lt;%@ register tagprefix="bhc" tagname="footer" src="~/includes/footer.ascx" %&gt;
-				&lt;%@ register tagprefix="bhc" tagname="sidebar" src="~/course-schedules/credit/sidebar.ascx" %&gt;
-			</xsl:text>
-		</xsl:comment>
+	<xsl:template name="br">
+		<xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
+	</xsl:template>
+	<xsl:template name="newline">
+		<xsl:text disable-output-escaping="yes">&#10;</xsl:text>
 	</xsl:template>
 	
-	<xsl:template name="aspx-meta">
-		<xsl:param name="title" />
-		<xsl:text disable-output-escaping="yes">&lt;bhc:meta title="</xsl:text>
-		<xsl:value-of select="$title" />
-		<xsl:text disable-output-escaping="yes">" runat="server" /&gt;</xsl:text>
-	</xsl:template>
-	
-	<xsl:template name="aspx-header">
-		<xsl:text disable-output-escaping="yes">&lt;bhc:header searchPath="~/course-schedules/credit/" runat="server" /&gt;</xsl:text>
-	</xsl:template>
-	
-	<xsl:template name="aspx-footer">
-		<xsl:text disable-output-escaping="yes">&lt;bhc:footer runat="server" /&gt;</xsl:text>
-	</xsl:template>
-	
-	<xsl:template name="aspx-sidebar">
-		<xsl:text disable-output-escaping="yes">&lt;bhc:sidebar runat="server" /&gt;</xsl:text>
-	</xsl:template>
-
 </xsl:stylesheet>

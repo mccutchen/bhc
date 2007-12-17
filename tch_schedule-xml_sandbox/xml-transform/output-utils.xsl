@@ -84,6 +84,33 @@
 		</xsl:choose>
 	</xsl:function>
 	
+	<!-- repeat-string
+		 returns the passed string, repeated x number of times -->
+	<xsl:function name="utils:repeat-string" as="xs:string">
+		<xsl:param name="str"   as="xs:string"  />
+		<xsl:param name="cnt"   as="xs:integer" />
+		
+		<xsl:choose>
+			<xsl:when test="$cnt &gt; 0">
+				<xsl:value-of select="utils:repeat-string($str, $cnt - 1, $str)" />
+			</xsl:when>
+			<xsl:otherwise><xsl:value-of select="''" /></xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<xsl:function name="utils:repeat-string" as="xs:string">
+		<xsl:param name="str"   as="xs:string"  />
+		<xsl:param name="cnt"   as="xs:integer" />
+		<xsl:param name="total" as="xs:string"  />
+		
+		<xsl:choose>
+			<xsl:when test="$cnt &gt; 0">
+				<xsl:value-of select="utils:repeat-string($str, $cnt - 1, concat($str, $total))" />
+			</xsl:when>
+			<xsl:otherwise><xsl:value-of select="$total" /></xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
 	<!-- make-url
     	 converts a string into a url-safe string -->
     <xsl:function name="utils:make-url" as="xs:string">

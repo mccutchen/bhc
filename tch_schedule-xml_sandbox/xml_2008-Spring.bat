@@ -6,9 +6,9 @@ SET mode=debug
 SET prep=xml-prep
 SET data=data
 SET map=mappings
-SET year=2007
-SET sem=Fall
-SET abbr=FA
+SET year=2008
+SET sem=Spring
+SET abbr=SP
 
 SET mapdir=mappings/%year%-%sem%/
 SET mapin=%mapdir%base.xml
@@ -34,13 +34,13 @@ ECHO Finished
 ECHO.
 
 ECHO Fixing %sem% %year%...
-SET params=path-sortkeys=..\%sortkeys% path-mappings=../%mappings%
+SET params=path-sortkeys=..\%sortkeys% path-core=../%core% path-mappings=../%mappings%
 java -jar C:\saxon\saxon8.jar -o %fix% %source% %prep%\xml-fix.xsl %params%
 ECHO Finished
 ECHO.
 
 ECHO Forming %sem% %year%...
-SET params=path-sortkeys=../%sortkeys% path-core=../%core% path-mappings=../%mappings%
+SET params=path-sortkeys=../%sortkeys% path-mappings=../%mappings%
 java -jar C:\saxon\saxon8.jar -o %form% %fix% %prep%\xml-form.xsl %params%
 ECHO Finished
 ECHO.

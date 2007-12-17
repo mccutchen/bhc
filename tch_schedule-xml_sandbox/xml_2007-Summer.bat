@@ -17,6 +17,7 @@ SET mapin=%mapdir%base.xml
 SET mapout=%data%\%year%-%sem%_mappings.xml
 
 SET sortkeys=%map%\sortkeys.xml
+SET core=%map%\core.xml
 SET mappings=%data%\%year%-%sem%_mappings.xml
 
 SET source1=%data%\schedule-200-%year%%abbr1%.xml
@@ -36,7 +37,7 @@ ECHO Finished
 ECHO.
 
 ECHO Fixing %sem% %year%...
-SET params=path-sortkeys=../%sortkeys% path-mappings=../%mappings% second-schedule=../%source2%
+SET params=path-sortkeys=../%sortkeys% path-core=../%core% path-mappings=../%mappings% second-schedule=../%source2%
 java -jar C:\saxon\saxon8.jar -o %fix% %source1% %prep%\xml-fix.xsl %params%
 ECHO Finished
 ECHO.

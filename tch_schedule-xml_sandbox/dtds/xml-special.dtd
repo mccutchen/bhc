@@ -9,7 +9,8 @@ creation-time 	CDATA #REQUIRED>
 <!ATTLIST term
 name 			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED
-date-end 		CDATA #REQUIRED>
+date-end 		CDATA #REQUIRED
+display         (true|false) "true">
 
 <!ELEMENT special-section (special-section+|division+)>
 <!ATTLIST special-section
@@ -52,6 +53,7 @@ credit-hours 	CDATA #REQUIRED
 title-short 	CDATA #REQUIRED
 title-long 		CDATA #REQUIRED
 core-code 		CDATA #IMPLIED
+core-name       CDATA #IMPLIED
 sortkey 		CDATA #IMPLIED>
 
 <!ELEMENT class (comments?, meeting*)>

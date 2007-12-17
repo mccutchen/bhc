@@ -1,0 +1,614 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<mappings>
+	<!-- Business Studies -->
+	<division name="Business Studies">
+		<contact ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu"/>
+
+		<subject name="Automotive Technology">
+			<contact ext="4189" room="Q100" email="bhcAutomotive@dcccd.edu"/>
+			<pattern match="AUMT"/>
+		</subject>
+
+		<subject name="Accounting">
+			<comments>
+				<p><b>NOTE:</b> If you are working toward obtaining the Accounting Clerk Certificate
+					or the Accounting Assistant Certificate, you may take these courses even though
+					you have not taken the Texas Success Initiative exam. Obtain a TSI waiver form
+					online, or call 972-860-4160, for more information.</p>
+				<h1>ACCOUNTING CLERK CERTIFICATE</h1>
+				<p>This program will allow you to obtain marketable job skills necessary for
+					entry-level accounting positions. The courses in this program will give you an
+					opportunity to acquire basic accounting, 10-key, spreadsheet, and word
+					processing skills.</p>
+				<p>The following five courses must be completed to receive this certificate. Upon
+					completion, you will have earned 16 college credits.</p>
+				<table border="0" cellpadding="5" cellspacing="0">
+					<tr>
+						<td>ACCT 2401 Prin of Accounting I</td>
+						<td>POFT 1325 Business Math &amp; Machine Appl.</td>
+					</tr>
+					<tr>
+						<td>ACNT 1311 Intro to Comp Acct</td>
+						<td>POFI 2301 Word Processing I</td>
+					</tr>
+					<tr>
+						<td>*ACNT 1380 Cooperative Ed.</td>
+						<td/>
+					</tr>
+				</table>
+				<p>*You must be employed to enroll in ACNT 1380. If you are not employed, select a
+					Business/Technical elective.</p>
+			</comments>
+			<pattern match="ACNT"/>
+			<pattern match="ACCT"/>
+		</subject>
+
+		<subject name="Business Office Systems and Support">
+			<contact email="bhcBOSS@dcccd.edu"/>
+			<pattern match="POFT"/>
+			<pattern match="POFI"/>
+			<pattern match="POFM"/>
+			<pattern match="MDCA"/>
+		</subject>
+
+		<subject name="Business" ordered="true">
+			<!-- Ok, I'm going to try this. Basically, IBUS 1305 should follow BUSI 1305 -->
+			<pattern match="BCIS" priority="0"/>
+			<pattern match="BUSI 130[0-5]" priority="1"/>
+			<pattern match="IBUS 1305" priority="1"/>
+			<pattern match="BUSI" priority="0"/>
+			<pattern match="IBUS" priority="0"/>
+		</subject>
+
+		<!--=======================================================================
+			CIT (Bill Hammerschlag)
+			========================================================================-->
+		<subject name="Computer Information Technology" ordered="true">
+			<contact email="bhcCIT@dcccd.edu"/>
+			<file src="computer_information_technology.xml"/>
+		</subject>
+		<subject name="Computer Information Technology - Unsorted" display="false">
+			<pattern match="GAME" priority="0"/>
+			<!-- also has IMED, but most of them are in Vis Com -->
+			<pattern match="INEW" priority="0"/>
+			<pattern match="ITCC" priority="0"/>
+			<pattern match="ITNW" priority="0"/>
+			<pattern match="ITSC" priority="0"/>
+			<pattern match="ITSE" priority="0"/>
+			<pattern match="ITSW" priority="0"/>
+			<pattern match="ITSY" priority="0"/>
+			<pattern match="ITMC" priority="0"/>
+			<pattern match="ITMT" priority="0"/>
+		</subject>
+
+		<subject name="Computer Science" ordered="true">
+			<contact email="bhcCIT@dcccd.edu"/>
+			<file src="computer_information_technology.xml"/>
+		</subject>
+		<subject name="Computer Science - Unsorted" display="false">
+			<pattern match="COSC" priority="0"/>
+		</subject>
+
+		<subject name="Computer Studies - Business Computer Information Systems" ordered="true">
+			<contact email="bhcCIT@dcccd.edu"/>
+			<file src="computer_information_technology.xml"/>
+		</subject>
+
+		<subject name="Economics">
+			<pattern match="ECON"/>
+			<comments>
+				<p><b>NOTE:</b> The courses shown below include a high level of learning support for
+					each student. This high level of support is provided to help students build
+					success at each step in their course. To help build this success students
+					enrolling initially in ECON 2301 will be enrolled in ECON 1303
+					(self-paced/online) with the same section number. This concurrent enrollment is
+					required unless the student has completed ECON 1303 in a previous semester or is
+					enrolling in a Distance Learning section of ECON 2301.</p>
+				<p>The concurrent ECON 1303 course provides the student with the high level HelpLab
+					support and provides the self-paced preparation ("prepare-as-you-go" course) for
+					ECON 2301. The enhanced HelpLab support includes personal one-to-one tutoring,
+					group test review sessions, multimedia study materials and online practice tests
+					along with personal assistance by telephone and e-mail.</p>
+				<p>ECON 1303 is a transferable credit course, is a Core Curriculum course and can be
+					taken independently online (see Distance Learning section below) or, as
+					indicated above, will be taken concurrently with ECON 2301.</p>
+				<p>The orientation for the concurrent ECON 1303 is part of the orientation for the
+					ECON 2301 course carrying the same section number. If there are any questions,
+					please come by the ECON HelpLab, Room M130, call 972-860-4169 or 972-860-4164,
+					or e-mail Gus Herring at gHerring@dcccd.edu with a copy to Bob Smith at
+					bSmith1@dcccd.edu.</p>
+			</comments>
+		</subject>
+
+		<subject name="Journalism">
+			<pattern match="JOUR"/>
+			<comments>
+				<p>NOTE: Journalism 1307 surveys the field of mass communications. Journalism 2311
+					is a reporting course. Students may enroll in Journalism 2311 without having
+					taken Journalism 1307. Room B212 is the student newspaper office.</p>
+			</comments>
+		</subject>
+
+		<subject name="Management">
+			<pattern match="HRPO"/>
+			<pattern match="BMGT"/>
+			<pattern match="BUSG"/>
+		</subject>
+
+		<!--=======================================================================
+			Management Program (Marisa Walsdorf & Mary Lou Avera)
+			========================================================================-->
+		<subject name="Management Program" ordered="true">
+			<file src="management_program.xml"/>
+		</subject>
+		<!-- unsorted courses are in Mangement -->
+
+		<subject name="Marketing">
+			<pattern match="MRKG"/>
+			<pattern match="FSHD"/>
+			<pattern match="FSHN"/>
+		</subject>
+
+		<subject name="Spanish Language">
+			<pattern match="SPNL"/>
+		</subject>
+
+		<subject name="Visual Communications">
+			<contact email="bhcVCOM@dcccd.edu" />
+			<pattern match="ARTC"/>
+			<pattern match="ARTV"/>
+			<pattern match="GRPH"/>
+			<pattern match="IMED"/>
+			<pattern match="PHTC"/>
+		</subject>
+	</division>
+
+
+	<division name="Communications">
+		<contact ext="4555" room="L367" email="XX-MISSING"/>
+
+		<subject name="Developmental Reading">
+			<contact email="bhcReadingWriting@dcccd.edu"/>
+			<pattern match="DREA"/>
+		</subject>
+
+		<subject name="Developmental Writing">
+			<contact email="bhcReadingWriting@dcccd.edu"/>
+			<pattern match="DWRI"/>
+		</subject>
+
+		<subject name="English">
+			<contact email="bhcEnglish@dcccd.edu"/>
+			<pattern match="ENGL"/>
+			<topic name="Coordinated Studies" ordered="true">
+				<pattern match="ENGL 1301-2050" priority="1"/>
+				<pattern match="ENGL 1302-2050" priority="1"/>
+			</topic>
+		</subject>
+
+		<subject name="Photography">
+			<contact email="bhcPhotography@dcccd.edu"/>
+			<pattern match="PHOT"/>
+		</subject>
+
+		<subject name="Speech">
+			<contact email="bhcSpeech@dcccd.edu"/>
+			<pattern match="SPCH"/>
+			<topic name="Coordinated Studies">
+				<pattern match="SPCH 1311-2050"/>
+				<pattern match="SPCH 1315-2050"/>
+			</topic>
+		</subject>
+
+		<subject name="College Learning Skills">
+			<pattern match="DCOM"/>
+		</subject>
+	</division>
+
+
+	<division name="Health and Human Services">
+		<contact ext="4239" room="A219" email="bhcHHServices@dcccd.edu"/>
+
+		<subject name="Child Development">
+			<contact ext="4144" room="K211" email="bhcChildDevelop@dcccd.edu"/>
+			<pattern match="EDTC"/>
+			<pattern match="CDEC"/>
+			<pattern match="TECA"/>
+			<comments>
+				<p>NOTE: All students enrolling in child development courses must submit to a
+					criminal background check. For additional information call Dr. Jane Rowe at
+					972-860-4144 or Johnny Castro at 972-860-4136.</p>
+			</comments>
+		</subject>
+
+		<subject name="Education">
+			<pattern match="EDUC"/>
+		</subject>
+
+		<!--=======================================================================
+			EMS (Cletha Silas)
+			========================================================================-->
+		<subject name="Emergency Medical Services" ordered="true">
+			<contact ext="7879" location="East Center #2" email="bhcEMS@dcccd.edu"/>
+			<file src="emergency_medical_services.xml"/>
+		</subject>
+		<subject name="Emergency Medical Services - Unsorted" display="false">
+			<pattern match="EMSP" priority="0"/>
+		</subject>
+
+		<!-- =======================================================================
+			Health and Human Services
+			======================================================================== -->
+		<!-- starting Spring 2008
+		<subject name="Nursing" ordered="true">
+			<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+			< nursing.xml >
+		</subject>
+		<subject name="Nursing - Unsorted" display="false">
+			<pattern match="HPRS" priority="0"/>
+			<pattern match="RNSG" priority="0"/>
+		</subject>
+		-->
+		<subject name="Nursing">
+			<contact ext="4754" room="K224" email="bhcNursing@dcccd.edu"/>
+			<comments>
+				<p>Clinical opportunities are not available for any student without a U.S. Social
+					Security number, http://www.ssa.gov/ssnumber/. Potential applicants should
+					obtain a Social Security number before applying to Brookhaven College's health
+					programs in Emergency Medical Services, Nursing and Radiologic Sciences.
+					International students are advised to contact the Brookhaven College
+					Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu,
+					972-860-4192, concerning this requirement.</p>
+			</comments>
+
+			<pattern match="HPRS"/>
+			<pattern match="RNSG"/>
+		</subject>
+
+		<!--=======================================================================
+			Radiologic Sciences (Christi Carter and Monica Wenthold)
+			========================================================================-->
+		<subject name="Radiologic Sciences" ordered="true">
+			<contact ext="4264" room="L107" email="bhcRadTech@dcccd.edu"/>
+			<file src="radtech.xml"/>
+		</subject>
+		<subject name="Radiologic Sciences - Unsorted" display="false">
+			<pattern match="RADR" priority="0"/>
+		</subject>
+	</division>
+
+
+	<division name="Mathematics and Science">
+		<contact ext="4750" room="K224" email="XX-MISSING"/>
+
+		<subject name="Astronomy">
+			<contact email="bhcScience@dcccd.edu"/>
+			<pattern match="PHYS 141[12]"/>
+		</subject>
+
+		<subject name="Biology" ordered="true">
+			<contact email="bhcScience@dcccd.edu"/>
+			<comments>
+				<p>NOTE: Meeting course prerequisites is very important to your success in science
+					courses. Before registering, check the Catalog online or call the division
+					office for prerequisite information.</p>
+			</comments>
+			<file src="biology.xml"/>
+		</subject>
+		<subject name="Biology - Unsorted" display="false">
+			<pattern match="BIOL" priority="0"/>
+			<pattern match="DIRS" priority="0"/> <!-- will never catch anything, for reference only -->
+			<pattern match="SCIT" priority="0"/> <!-- will never catch anything, for reference only -->
+		</subject>
+
+		<subject name="Chemistry">
+			<contact email="bhcScience@dcccd.edu"/>
+			<pattern match="CHEM"/>
+			<comments>
+				<p>NOTE: Meeting course prerequisites is very important to your success in chemistry
+					courses. Before registering, check the Catalog online or call the division
+					office for prerequisite information.</p>
+				<p>NOTE: All chemistry labs will meet as scheduled the first week of class whether
+					the lecture class has met or not. It is MANDATORY to attend Safety Lab, which is
+					offered only the first week at the scheduled lab time for your section.</p>
+			</comments>
+		</subject>
+
+		<subject name="Developmental Mathematics">
+			<contact email="bhcMath@dcccd.edu"/>
+			<pattern match="DMAT"/>
+		</subject>
+
+		<subject name="Geography">
+			<pattern match="GEOG"/>
+		</subject>
+
+		<subject name="Geology">
+			<contact email="bhcScience@dcccd.edu"/>
+			<pattern match="GEOL"/>
+			<comments>
+				<p>NOTE: GEOL 1401,1403, 1404 and 1445 are four-credit-hour Core Curriculum lab
+					sciences. Students are encouraged to bring textbook and lab manual to their
+					first class meeting. For text information visit the bookstore or call the
+					geology lab at 972-860-4713. Several local field trips will be open to GEOL
+					students.</p>
+			</comments>
+		</subject>
+
+		<subject name="Geospatial Technology">
+			<contact email="bhcGeospatialTech@dcccd.edu" ext="4362"/>
+			<pattern match="CRTG"/>
+			<pattern match="GISC"/>
+			<pattern match="SRVY"/>
+		</subject>
+
+		<subject name="Mathematics">
+			<contact email="bhcMath@dcccd.edu"/>
+			<pattern match="MATH"/>
+			<pattern match="TECM"/>
+			<comments>
+				<p>NOTE: REQUIRED FOR ALL MATH COURSES: One of any version of the following Texas
+					Instruments calculators: TI-83, TI-84 or TI-86. NOTE: All MATH courses are part
+					of the Service-Learning Program, check with the instructor or e-mail
+					bhcServiceLearning@dcccd.edu for more information.</p>
+			</comments>
+		</subject>
+
+		<subject name="Physical Science">
+			<contact email="bhcScience@dcccd.edu"/>
+			<pattern match="PHYS 1415"/>
+			<pattern match="PHYS 1417"/>
+		</subject>
+
+		<subject name="Physics">
+			<contact email="bhcScience@dcccd.edu"/>
+			<pattern match="PHYS [12]4[02][1256]"/>
+		</subject>
+	</division>
+
+
+	<division name="Physical Education, Athletics and Nutrition">
+		<contact ext="4120" room="T315" email="bhcPhysicalEd@dcccd.edu"/>
+
+		<subject name="Nutrition">
+			<pattern match="NUTR"/>
+		</subject>
+
+		<subject name="Physical Education">
+			<pattern match="PHED"/>
+		</subject>
+	</division>
+
+
+	<!--=======================================================================
+		School of the Arts (Fran Rhodes & Jill Williams
+		========================================================================-->
+	<division name="School of the Arts">
+		<contact ext="4730" room="D123" email="BCSA@dcccd.edu"/>
+
+		<subject name="Art" ordered="true">
+			<contact room="T129" email="bhcArt@dcccd.edu"/>
+			<file src="school_of_the_arts.xml"/>
+		</subject>
+		<subject name="Art - Unsorted" display="false">
+			<pattern match="ARTS" priority="0"/>
+		</subject>
+
+		<subject name="Cultural Studies">
+			<contact email="bhcCulturalStudies@dcccd.edu"/>
+			<pattern match="CUST"/>
+			<topic name="Coordinated Studies">
+				<pattern match="CUST 2370-2050" priority="1"/>
+			</topic>
+		</subject>
+
+		<subject name="Dance" ordered="true">
+			<contact ext="4122" room="T129" email="bhcDance@dcccd.edu"/>
+			<file src="school_of_the_arts.xml"/>
+		</subject>
+		<subject name="Dance - Unsorted" display="false">
+			<pattern match="DANC" priority="0"/>
+		</subject>
+
+		<subject name="Drama" ordered="true">
+			<file src="school_of_the_arts.xml"/>
+		</subject>
+		<subject name="Drama - Unsorted">
+			<pattern match="DRAM" priority="0"/>
+		</subject>
+
+		<subject name="Humanities">
+			<contact email="bhcHumanities@dcccd.edu"/>
+			<pattern match="HUMA"/>
+		</subject>
+
+		<subject name="Music" ordered="true">
+			<contact email="bhcMusic@dcccd.edu"/>
+			<file src="school_of_the_arts.xml"/>
+		</subject>
+		<subject name="Music - Unsorted">
+			<pattern match="MUSI" priority="0"/>
+			<pattern match="MUEN" priority="0"/>
+			<pattern match="MUAP" priority="0"/>
+		</subject>
+	</division>
+
+
+	<!-- senior adult doesn't match on rubric/course/section, it matches off the topic code -->
+	<division name="Senior Adult Education Office">
+		<contact ext="4807" room="M211A" extra-room="M203" email="bhcSeniorAdultEducation@dcccd.edu"/>
+
+		<subject name="Senior Adult Education Program">
+			<comments>
+				<p>All courses listed under Senior Adult Education Program have been planned for
+					adults who are 50 years or older. For information and personal assistance with
+					registration, please call DeBorah Whaley- Stephenson at 972-860-4807 or Janice
+					Groeneman at 972-860-4698. The Senior Adult Education offices are located in
+					Building M, in rooms M203 and M211A. Are you eligible for FREE tuition? If you
+					are 65 years or older and reside in Dallas County (or own property in Dallas
+					County subject to ad valorem taxation), tuition for credit classes is waived for
+					up to six credit hours per semester.</p>
+			</comments>
+		</subject>
+	</division>
+
+
+	<division name="Social Science">
+		<contact ext="4130" room="K240" email="bhcSocialScience@dcccd.edu"/>
+
+		<subject name="Anthropology">
+			<pattern match="ANTH"/>
+		</subject>
+
+		<!-- =======================================================================
+			Coordinated Studies (Resi Douglas)
+			======================================================================== -->
+		<subject name="Coordinated Studies">
+			<file src="coordinated_studies.xml"/>
+		</subject>
+		<subject name="Coordinated Studies - Unsorted" display="false">
+			<pattern match="ALCE" priority="0"/>
+		</subject>
+
+		<subject name="Government">
+			<pattern match="GOVT"/>
+			<topic name="Coordinated Studies">
+				<pattern match="GOVT 2301-2050" priority="1"/>
+			</topic>
+		</subject>
+
+		<subject name="History">
+			<pattern match="HIST"/>
+			<topic name="Coordinated Studies">
+				<pattern match="HIST 1301-2050" priority="1"/>
+			</topic>
+		</subject>
+
+		<subject name="Human Development">
+			<pattern match="HDEV"/>
+		</subject>
+
+		<subject name="Philosophy">
+			<pattern match="PHIL"/>
+			<topic name="Coordinated Studies">
+				<pattern match="PHIL 1301-2050" priority="1"/>
+			</topic>
+		</subject>
+
+		<subject name="Psychology">
+			<pattern match="PSYC"/>
+		</subject>
+
+		<subject name="Religion">
+			<pattern match="RELI"/>
+		</subject>
+
+		<subject name="Sociology">
+			<pattern match="SOCI"/>
+		</subject>
+	</division>
+
+
+	<!--=======================================================================
+		World Languages (Joe Monroy)
+		========================================================================-->
+	<division name="World Languages">
+		<contact ext="4770" room="L420" email="bhcWorldLanguages@dcccd.edu"/>
+
+		<subject name="English for Speakers of Other Languages" ordered="true">
+			<file src="world_languages.xml"/>
+		</subject>
+		<subject name="English for Speakers of Other Languages - Unsorted" display="false">
+			<pattern match="ESOL" priority="0"/>
+		</subject>
+
+		<subject name="Languages" ordered="true">
+			<topic name="American Sign Language">
+				<pattern match="SGNL"/>
+			</topic>
+			<topic name="Arabic">
+				<pattern match="ARAB"/>
+			</topic>
+			<topic name="Cherokee">
+				<pattern match="CHER"/>
+			</topic>
+			<topic name="Chinese">
+				<pattern match="CHIN"/>
+			</topic>
+			<topic name="Choctaw">
+				<pattern match="CHOC"/>
+			</topic>
+			<topic name="Czechoslovakian">
+				<pattern match="CZEC"/>
+			</topic>
+			<topic name="Farsi">
+				<pattern match="FARS"/>
+			</topic>
+			<topic name="French">
+				<pattern match="FREN"/>
+			</topic>
+			<topic name="German">
+				<pattern match="GERM"/>
+			</topic>
+			<topic name="Greek">
+				<pattern match="GREE"/>
+			</topic>
+			<topic name="Hebrew">
+				<pattern match="HEBR"/>
+			</topic>
+			<topic name="Hindi">
+				<pattern match="HIND"/>
+			</topic>
+			<topic name="Italian">
+				<pattern match="ITAL"/>
+			</topic>
+			<topic name="Japanese">
+				<pattern match="JAPN"/>
+			</topic>
+			<topic name="Korean">
+				<pattern match="KORE"/>
+			</topic>
+			<topic name="Latin">
+				<pattern match="LATI"/>
+			</topic>
+			<topic name="Portuguese">
+				<pattern match="PORT"/>
+			</topic>
+			<topic name="Russian">
+				<pattern match="RUSS"/>
+			</topic>
+			<topic name="Spanish">
+				<pattern match="SPAN"/>
+			</topic>
+			<topic name="Swahili">
+				<pattern match="SWAH"/>
+			</topic>
+			<topic name="Thai">
+				<pattern match="THAI"/>
+			</topic>
+			<topic name="Turkish">
+				<pattern match="TURK"/>
+			</topic>
+			<topic name="Vietnamese">
+				<pattern match="VIET"/>
+			</topic>
+			<comments>
+				<p>NOTE: New! Look for Linguistics in its own section following Languages.</p>
+			</comments>
+		</subject>
+	</division>
+
+
+	<division name="Unknown Division" display="false">
+		<!-- These don't appear to belong to a division... I'll have to track them down -->
+		<subject name="Career Exploration">
+			<pattern match="CREX"/>
+		</subject>
+		<subject name="Linguistics">
+			<pattern match="LING"/>
+		</subject>
+		<subject name="DCLS">
+			<pattern match="DCLS"/>
+		</subject>
+	</division>
+</mappings>
