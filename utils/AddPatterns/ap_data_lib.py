@@ -45,6 +45,19 @@ class Item(object):
         self.pattern_list = [];
         self.child_list = [];
 
+    def __str__(self):
+        return self.format_output(0, '  ');
+
+    def format_output(self, lvl, sep):
+        ret_str = '';
+        if (self.name != ''): ret_str += lvl*sep + 'Name: ' + self.name + '\n';
+        if (self.comment != ''): ret_str += (lvl+1)*sep + 'Comments: ' + self.comment + '\n';
+        for pattern in self.pattern_list:
+            ret_str += pattern.format_output(lvl+1, sep);
+        for child in self.child_list:
+            ret_str += child.format_output(lvl+1, sep);
+        return ret_str;
+
 # holds subject data
 class Subject(Item):
     def GetType(self):
@@ -73,3 +86,9 @@ class Pattern(object):
 
     def GetType(self):
         return type_Pattern;
+
+    def __str__(self):
+        return self.match;
+    
+    def format_output(self, lvl, sep):
+        return lvl*sep + self.match + '\n';

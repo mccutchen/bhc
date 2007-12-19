@@ -17,45 +17,67 @@ def get_file_list():
 def read_file(filename):
     fin = open(filename, 'r');
 
+    cnt = 0;
     for line in fin:
+        cnt += 1;
+        
         # skip empty lines
         if (line.strip() != ''):
 
-            # first level
-            if(line.find('\t') < 0):
-                add_subject(line.strip());
-            else:
+            try:
+
+                # get level and type
+                level = get_level(line.rstrip());
+                line  = line.strip();
+                ltype = get_type(line);
+
+                # first level
+                if (level == 1):
+                    if (ltype == 'name'): add_subject(line);
+                    else: print_error(line, cnt);
 
                 # second level
-                if (line[1:].find('\t') < 0):
-                    if (line.find('<comments>') >= 0):
-                        add_comment(line.strip(), get_subject());
-                    elif (is_pattern(line.strip())):
-                          add_pattern(line.strip(), get_subject());
-                    else:
-                        add_topic(line.strip());
+                elif (level == 2):
+                    if (ltype == 'name'): add_topic(line);
+                    elif (ltype == 'comment'): add_comment(line, get_subject());
+                    elif (ltype == 'pattern'): add_pattern(line, get_subject());
+                    else: print_error(line, cnt);
+
+                # third level
+                elif (level == 3):
+                    if (ltype == 'name'): add_subtopic(line);
+                    elif (ltype == 'comment'): add_comment(line, get_topic());
+                    elif (ltype == 'pattern'): add_pattern(line, get_topic());
+                    else: print_error(line, cnt);
+
+                # fourth level
+                elif (level == 4):
+                    if (ltype == 'comment'): add_comment(line, get_subtopic());
+                    elif (ltype == 'pattern'): add_pattern(line, get_subtopic());
+                    else: print_error(line, cnt);
+
+                # default
                 else:
+                    print_error(line, cnt);
 
-                    # third level
-                    if (line[2:].find('\t') < 0):
-                        if (line.find('<comments>') >= 0):
-                            add_comment(line.strip(), get_topic());
-                        elif (is_pattern(line.strip())):
-                            add_pattern(line.strip(), get_topic());
-                        else:
-                            add_subtopic(line.strip());
-                    else:
-
-                        # fourth (and last) level
-                        if (line.find('<comments>') >= 0):
-                            add_comment(line.strip(), get_subtopic());
-                        elif (is_pattern(line.strip())):
-                            add_pattern(line.strip(), get_subtopic());
-                        else:
-                            print "can't decide what to do with", line.strip();
+            except:
+                print 'Fatal exception on line', cnt;
 
     fin.close();
 
+def get_level(line):
+    level = 0;
+    while (line[level:].find('\t') >= 0): level += 1;
+    return level+1;
+    
+def get_type(line):
+    if (line.find('<comments>') >= 0): return 'comment';
+    elif (is_pattern(line)): return 'pattern';
+    else: return 'name';
+
+def print_error(line, cnt):
+    print 'Error on line ', cnt, '\n  Can\'t decide what to do with \n\'', line, '\'\n';
+    
 no_caps = ['of', 'the', 'and', 'or', 'for', 'to'];
 def fix_caps(name):
     words = ((name.replace('/', ' / ')).lower()).split(' ');
