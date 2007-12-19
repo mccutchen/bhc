@@ -112,7 +112,7 @@
 	
 	<!-- convert-date-ord
 		 converts dates into an ordinal (yyyymmdd format) -->
-	<xsl:function name="utils:convert-date-ord" as="xs:integer">
+	<xsl:function name="utils:convert-date-ord" as="xs:string">
 		<xsl:param name="date" as="xs:string" />
 		
 		<xsl:variable name="parts" select="tokenize(utils:convert-date-std($date), '/')" as="xs:string*" />
@@ -125,7 +125,7 @@
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-	<xsl:function name="utils:convert-date-list-ord" as="xs:integer*">
+	<xsl:function name="utils:convert-date-list-ord" as="xs:string*">
 		<xsl:param name="date" as="xs:string*" />
 		
 		<xsl:for-each select="$date">
@@ -174,19 +174,19 @@
 	
 	<!-- convert-time-ord
 	this is really just 24-hour format, but returned as an integer (or 0, if string does not convert) -->
-	<xsl:function name="utils:convert-time-ord" as="xs:integer">
+	<xsl:function name="utils:convert-time-ord" as="xs:string">
 		<xsl:param name="time" as="xs:string" />
 		
 		<xsl:choose>
 			<xsl:when test="matches($time, '[0-9]+')">
-				<xsl:value-of select="utils:convert-date-ord($time)" />
+				<xsl:value-of select="utils:convert-time-24h($time)" />
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="0" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
-	<xsl:function name="utils:convert-time-list-ord" as="xs:integer*">
+	<xsl:function name="utils:convert-time-list-ord" as="xs:string*">
 		<xsl:param name="time" as="xs:string*" />
 		
 		<xsl:for-each select="$time">
@@ -274,14 +274,10 @@
 		<xsl:param name="date1" as="xs:string" />
 		<xsl:param name="date2" as="xs:string" />
 		
-		<xsl:variable name="d1" select="utils:convert-date-ord($date1)" as="xs:integer" />
-		<xsl:variable name="d2" select="utils:convert-date-ord($date2)" as="xs:integer" />
+		<xsl:variable name="d1" select="utils:convert-date-ord($date1)" as="xs:string" />
+		<xsl:variable name="d2" select="utils:convert-date-ord($date2)" as="xs:string" />
 		
-		<xsl:choose>
-			<xsl:when test="$d1 = $d2"><xsl:value-of select="0" /></xsl:when>
-			<xsl:when test="$d1 &gt; $d2"><xsl:value-of select="1" /></xsl:when>
-			<xsl:when test="$d1 &lt; $d2"><xsl:value-of select="-1" /></xsl:when>
-		</xsl:choose>
+		<xsl:value-of select="compare($d1, $d2)" />
 	</xsl:function>
 	
 	<!-- compare-dates-between
@@ -319,14 +315,10 @@
 		<xsl:param name="time1" as="xs:string" />
 		<xsl:param name="time2" as="xs:string" />
 		
-		<xsl:variable name="t1" select="utils:convert-time-ord($time1)" as="xs:integer" />
-		<xsl:variable name="t2" select="utils:convert-time-ord($time2)" as="xs:integer" />
+		<xsl:variable name="t1" select="utils:convert-time-ord($time1)" as="xs:string" />
+		<xsl:variable name="t2" select="utils:convert-time-ord($time2)" as="xs:string" />
 		
-		<xsl:choose>
-			<xsl:when test="$t1 = $t2"><xsl:value-of select="0" /></xsl:when>
-			<xsl:when test="$t1 &gt; $t2"><xsl:value-of select="1" /></xsl:when>
-			<xsl:when test="$t1 &lt; $t2"><xsl:value-of select="-1" /></xsl:when>
-		</xsl:choose>
+		<xsl:value-of select="compare($t1, $t2)" />
 	</xsl:function>
 	
 	

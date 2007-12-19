@@ -53,8 +53,9 @@
         Method sort orders
         *********************************************************************** -->
     <sortkey type="method">
-        <method id="LEC" />
-        <method id=""    />
-        <method id="LAB" />
+        <method id="LEC"  />
+        <method id=""     />
+        <method id="LAB"  />
+    	<method id="COOP" />
     </sortkey>
 </sortkeys>

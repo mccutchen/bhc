@@ -13,7 +13,7 @@
 			<pattern match="EMSP 1501-2280" /> - added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (3 hours ago)) -
 			<pattern match="EMSP 1501-2281" /> - added 2007-09-17: Emergency Medical Techni-Basic (put at the top, in the absence of any direction from Cletha Silas, "Give us an hour" (3 hours ago)) -
 		-->
-		<topic name="Emergency Medical Services, Basic">
+		<topic name="Emergency Medical Services, Basic" ordered="true">
 			<pattern match="EMSP 1501-2220" />
 			<pattern match="EMSP 1501-2201" />
 			<pattern match="EMSP 1501-2202" />	
@@ -25,28 +25,28 @@
 			<pattern match="EMSP 2261-2216" /><!-- Added 07/06/2007 -->
 			<pattern match="EMSP 2260-2619" /><!-- Added 07/06/2007 -->
 			
-			<subtopic name="EMT-Basic Class #40, Evenings">
+			<subtopic name="EMT-Basic Class #40, Evenings" ordered="true">
 				<pattern match="EMSP 1501-2540" /> <!-- this course shows up in this subtopic, so I removed it from the parent topic -->  
 				<pattern match="EMSP 1501-2500" />
 				<pattern match="EMSP 1501-2501" />
 				<pattern match="EMSP 1501-2502" /><!--  This may or may not be in the right place, see Cletha's 4/11/07 e-mail -->	
 				<pattern match="EMSP 1501-2202" />
 			</subtopic>
-			<subtopic name="EMT-Basic Class #41, B Shift"><!-- Added 4/25 -->
+			<subtopic name="EMT-Basic Class #41, B Shift" ordered="true"><!-- Added 4/25 -->
 				<pattern match="EMSP 1501-2006" />
 				<pattern match="EMSP 1501-2007" />
 				<pattern match="EMSP 1501-2008" />
 				<pattern match="EMSP 1501-2041" />
 			</subtopic>  
-			<subtopic name="EMT-Basic Class #42, C Shift"><!-- Added 4/25 -->
+			<subtopic name="EMT-Basic Class #42, C Shift" ordered="true"><!-- Added 4/25 -->
 				<pattern match="EMSP 1501-2003" />
 				<pattern match="EMSP 1501-2004" />
 				<pattern match="EMSP 1501-2005" />
 				<pattern match="EMSP 1501-2042" />
 			</subtopic>                
 		</topic>
-		<topic name="Emergency Medical Services,  Paramedic">
-			<subtopic name="Paramedic Class #16, A Shift">
+		<topic name="Emergency Medical Services,  Paramedic" ordered="true">
+			<subtopic name="Paramedic Class #16, A Shift" ordered="true">
 				<pattern match="EMSP 2430-2216" />
 				<pattern match="EMSP 2430-2201" />
 				<pattern match="EMSP 2338-2216" />
@@ -57,7 +57,7 @@
 				<pattern match="EMSP 2332-2005" /><!-- Added 07/06/2007 -->
 				<pattern match="EMSP 2332-2205" /><!-- added 2007-08-24 -->
 			</subtopic>
-			<subtopic name="Paramedic Class #17, B Shift">
+			<subtopic name="Paramedic Class #17, B Shift" ordered="true">
 				<pattern match="EMSP 1355-2217" />
 				<pattern match="EMSP 1355-2204" />
 				<pattern match="EMSP 1355-2205" />
@@ -67,7 +67,7 @@
 				<pattern match="EMSP 2430-2204" />
 				<pattern match="EMSP 2430-2205" />
 			</subtopic>
-			<subtopic name="Paramedic Class #18, C Shift">
+			<subtopic name="Paramedic Class #18, C Shift" ordered="true">
 				<pattern match="EMSP 1438-2218" />
 				<pattern match="EMSP 1438-2207" />
 				<pattern match="EMSP 1438-2208" />
@@ -84,7 +84,7 @@
 				<pattern match="EMSP 2260-2218" /><!-- Added 5/25 -->
 				
 			</subtopic>
-			<subtopic name="Paramedic Class #19, Evenings"><!-- Added a lot of these 4/26 -->
+			<subtopic name="Paramedic Class #19, Evenings" ordered="true"><!-- Added a lot of these 4/26 -->
 				<pattern match="EMSP 1438-2719" />
 				<pattern match="EMSP 1438-2700" />
 				<pattern match="EMSP 1438-2701" />

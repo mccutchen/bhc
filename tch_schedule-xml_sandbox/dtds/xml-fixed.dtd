@@ -10,6 +10,7 @@ creation-time 	CDATA #REQUIRED>
 name 			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED
 date-end 		CDATA #REQUIRED
+sortkey 		CDATA #REQUIRED
 display 		(true|false) "true">
 
 <!ELEMENT course (comments?, class+)>
@@ -32,6 +33,8 @@ schedule-type 	CDATA #REQUIRED
 topic-code 		CDATA #REQUIRED
 weeks 			CDATA #REQUIRED
 capacity 		CDATA #REQUIRED
+sortkey 		CDATA #IMPLIED
+sortkey-dates	CDATA #REQUIRED
 is-suppressed 	(true|false) "false"
 is-dl 			(true|false) "false"
 is-w  			(true|false) "false"
@@ -41,8 +44,7 @@ flex-month 		CDATA #IMPLIED
 name-of-division 	CDATA #REQUIRED
 name-of-subject 	CDATA #REQUIRED
 name-of-topic 		CDATA #IMPLIED
-name-of-subtopic 	CDATA #IMPLIED
-sortkey 		CDATA #IMPLIED>
+name-of-subtopic 	CDATA #IMPLIED>
 
 <!ELEMENT meeting (faculty*)>
 <!ATTLIST meeting

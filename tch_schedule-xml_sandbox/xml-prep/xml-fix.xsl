@@ -121,7 +121,8 @@
 			<xsl:attribute name="name"       select="@name"                               />
 			<xsl:attribute name="date-start" select="utils:convert-date-std(@date-start)" />
 			<xsl:attribute name="date-end"   select="utils:convert-date-std(@date-end)"   />
-			<xsl:attribute name="display" select="'true'" />
+			<xsl:attribute name="display"    select="'true'" />
+			<xsl:attribute name="sortkey"    select="@sortkey" />
 			
 			<xsl:apply-templates select="$courses">
 				<xsl:with-param name="date-min" select="@date-start" />
@@ -166,6 +167,7 @@
 			<xsl:attribute name="topic-code" select="@topic-code" />
 			<xsl:attribute name="weeks" select="@weeks" />
 			<xsl:attribute name="capacity" select="@capacity" />
+			<xsl:attribute name="sortkey-dates" select="utils:convert-date-ord(@start-date)" />
 			<!-- these attributes from the dtd seem mildly useful, but don't actually exist in the data
 			<xsl:attribute name="seats-available" select="@seats-available" />
 			<xsl:attribute name="tuition" select="@tuition" /> -->
@@ -222,14 +224,16 @@
 			<!-- insert sortkeys -->
 			<!-- write sortkey-days -->
 			<xsl:variable name="days" select="@days" />
-			<xsl:attribute name="sortkey-days" select="index-of($doc-sortkeys/sortkey[@type = 'days']/days/@id, $days)" />
+			<xsl:variable name="sortkey-days" select="index-of($doc-sortkeys/sortkey[@type = 'days']/days/@id, $days)" as="xs:integer*" />
+			<xsl:attribute name="sortkey-days" select="if (not($sortkey-days)) then 0 else $sortkey-days" />
 			
 			<!-- write sortkey-times -->
 			<xsl:attribute name="sortkey-times" select="utils:convert-time-ord(@start-time)" />
 			
 			<!-- write sortkey-method -->
 			<xsl:variable name="method" select="@method" />
-			<xsl:attribute name="sortkey-method" select="index-of($doc-sortkeys/sortkey[@type = 'method']/method/@id, $method)" />
+			<xsl:variable name="sortkey-method" select="index-of($doc-sortkeys/sortkey[@type = 'method']/method/@id, $method)" as="xs:integer*" />
+			<xsl:attribute name="sortkey-method" select="if (not($sortkey-method)) then 0 else $sortkey-method" />
 			
 			<xsl:apply-templates select="faculty" />
 		</xsl:element>
@@ -413,6 +417,7 @@
 						<xsl:attribute name="date-start" select="'NA'" />
 						<xsl:attribute name="date-end" select="'NA'" />
 						<xsl:attribute name="display" select="'false'" />
+						<xsl:attribute name="sortkey" select="999" />
 						<xsl:message>
 							<xsl:text>!Warning!: </xsl:text>
 							<xsl:value-of select="count($classes)"></xsl:value-of>
