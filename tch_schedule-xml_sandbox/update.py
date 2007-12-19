@@ -105,5 +105,7 @@ if (__name__ == '__main__'):
         rVal = run();
     except:
         print '!Error! update failed utterly!';
-    os.system('pause');
+
+    if ((len(sys.argv) < 2) or (sys.argv[1] != '-no_pause')):
+        os.system('pause');
     sys.exit(rVal);
