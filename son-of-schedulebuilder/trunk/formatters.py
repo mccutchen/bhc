@@ -52,6 +52,14 @@ class CreditFormatter(BaseFormatter):
         """Lets courses be sorted by their number.  HIST 1301 is sorted as 1301,
         for example."""
         return self.input['number']
+        
+    def format_type(self, value):
+        """If the current course does not have its 'schedule type' set in
+        Colleague, it is noted in the errors for this run.  The input value is
+        returned unchanged."""
+        if not value.strip():
+            profile.errors.add(DataError(self.input, 'Unknown course type'))
+        return value
 
     def format_comments(self, value):
         """Comments are given as 10 separate fields.  The algorithm for constructing
@@ -73,7 +81,6 @@ class CreditFormatter(BaseFormatter):
         """Returns the ordinal value of the given class's start date."""
         return utils.parsedate(self.input['start-date']).toordinal()
     
-    count = 0
     def format_class_sortkey_time(self, value):
         """Returns the 24-hour time value of the given class's start time."""
         start_time = self.input.get('session', {}).get('start-time')
