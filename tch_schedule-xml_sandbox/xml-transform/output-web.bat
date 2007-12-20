@@ -30,9 +30,10 @@ ECHO ----------------------------------------
 
 :: A. Trim
 
+SET step=1
 SET splitter=trim
 SET text=Trimming data
-SET format=%type%1
+SET format=%type%_%step%-%splitter%
 
 SET source=%data%\%ys%.xml
 SET dest1=%data%\%ys%_%format%.xml
@@ -44,10 +45,11 @@ ECHO.
 
 :: B. Split
 
+SET step=2
 SET splitter=split
 SET text=Splitting courses
 
-SET format=%type%2
+SET format=%type%_%step%-%splitter%
 
 SET source=%dest1%
 SET dest2=%data%\%ys%_%format%.xml
@@ -59,10 +61,11 @@ ECHO.
 
 :: C. Sort
 
+SET step=3
 SET splitter=sort
 SET text=Sorting data
 
-SET format=%type%3
+SET format=%type%_%step%-%splitter%
 
 SET source=%dest2%
 SET dest3=%data%\%ys%_%format%.xml
@@ -74,10 +77,11 @@ ECHO.
 
 :: D. Special Sections
 
+SET step=4
 SET splitter=special
 SET text=Inserting Special Sections
 
-SET format=%type%4
+SET format=%type%_%step%-%splitter%
 
 SET source=%dest3%
 SET dest4=%data%\%ys%_%format%.xml
@@ -109,6 +113,7 @@ DEL %dest1%
 DEL %dest2%
 DEL %dest3%
 DEL %dest4%
+DEL %dest5%
 
 :FINISH
 ECHO Finished

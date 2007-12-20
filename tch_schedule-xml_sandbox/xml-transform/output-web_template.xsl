@@ -56,7 +56,7 @@
 	<xsl:template match="schedule" mode="create-page" priority="0">
 		<div class="complete-index">
 			<xsl:call-template name="make-jumpto">
-				<xsl:with-param name="list" select="term[@display = 'true']/@name" />
+				<xsl:with-param name="list" select="if (count(//term[@display = 'true']) &gt; 1) then term[@display = 'true']/@name else term[@display = 'true']/special-section/@name" />
 			</xsl:call-template>
 			
 			<xsl:for-each select="term[@display = 'true']">
@@ -151,7 +151,7 @@
 		</xsl:choose>
 	</xsl:template>
 	<!-- schedule or single term-->
-	<xsl:template match="schedule | term[count(parent::schedule/term) = 1]" mode="make-crumb" priority="2">
+	<xsl:template match="schedule | term[count(//term[@display = 'true']) &lt; 2]" mode="make-crumb" priority="2">
 		<xsl:param name="level"   as="xs:integer" />
 		<xsl:param name="channel" as="xs:string" tunnel="yes" />
 		

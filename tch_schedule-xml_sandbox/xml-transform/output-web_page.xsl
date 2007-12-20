@@ -30,15 +30,10 @@
 		
 		
 		<!-- stand-alone types -->
-		<xsl:apply-templates select="type">
-			<xsl:sort select="@sortkey" data-type="number" />
-		</xsl:apply-templates>
+		<xsl:apply-templates select="type" />
 		
 		<!-- topics -->
-		<xsl:apply-templates select="topic">
-			<xsl:sort select="@sortkey" data-type="number" />
-			<xsl:sort select="@name"    data-type="text"   />
-		</xsl:apply-templates>
+		<xsl:apply-templates select="topic" />
 	</xsl:template>
 	
 	<xsl:template match="topic">
@@ -50,15 +45,10 @@
 			<xsl:apply-templates select="comments" />
 			
 			<!-- types -->
-			<xsl:apply-templates select="type">
-				<xsl:sort select="@sortkey" data-type="number" />
-			</xsl:apply-templates>
+			<xsl:apply-templates select="type" />
 			
 			<!-- subtopics -->
-			<xsl:apply-templates select="subtopic">
-				<xsl:sort select="@sortkey" data-type="number" />
-				<xsl:sort select="@name"    data-type="text"   />
-			</xsl:apply-templates>
+			<xsl:apply-templates select="subtopic" />
 		</div>
 	</xsl:template>
 	
@@ -71,9 +61,7 @@
 			<xsl:apply-templates select="comments" />
 			
 			<!-- types -->
-			<xsl:apply-templates select="type">
-				<xsl:sort select="@sortkey" data-type="number" />
-			</xsl:apply-templates>		
+			<xsl:apply-templates select="type" />
 		</div>
 	</xsl:template>
 	
@@ -82,12 +70,7 @@
 		<div class="schedule-type-section {utils:make-url(@name)}">
 			<h2 class="schedule-type"><xsl:value-of select="@name" /> Courses</h2>
 			
-			<xsl:apply-templates select="course">
-				<xsl:sort select="@sortkey" data-type="number" />
-				<xsl:sort select="@rubric"  data-type="number" />
-				<xsl:sort select="@number"  data-type="number" />
-				<xsl:sort select="min(class/@section)" data-type="number" />
-			</xsl:apply-templates>
+			<xsl:apply-templates select="course" />
 		</div>
 	</xsl:template>
 	
@@ -165,24 +148,13 @@
 			</tr>
 			
 			<!-- class info -->
-			<xsl:apply-templates select="$classes">
-				<xsl:sort select="@sortkey"       data-type="number" />
-				<xsl:sort select="@sortkey-days"  data-type="number" />
-				<xsl:sort select="@sortkey-times" data-type="number" />
-				<xsl:sort select="@sortkey-date"  data-type="number" />
-				<xsl:sort select="@section"       data-type="number" />
-			</xsl:apply-templates>
+			<xsl:apply-templates select="$classes" />
 		</table>
 		<xsl:apply-templates select="$classes[1]/comments" />
 	</xsl:template>
 	
 	<xsl:template match="class">
-		<xsl:apply-templates select="meeting">
-			<xsl:sort select="@sortkey"        data-type="number" />
-			<xsl:sort select="@sortkey-days"   data-type="number" />
-			<xsl:sort select="@sortkey-times"  data-type="number" />
-			<xsl:sort select="@sortkey-method" data-type="number" />
-		</xsl:apply-templates>
+		<xsl:apply-templates select="meeting" />
 	</xsl:template>
 	
 	<xsl:template match="class" mode="display">

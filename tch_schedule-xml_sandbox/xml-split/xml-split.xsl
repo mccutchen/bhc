@@ -1,9 +1,7 @@
 <xsl:stylesheet 
 	version="2.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-	xmlns:fn="http://www.brookhavencollege.edu/xml/fn">
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	
 	
 	<!--=====================================================================
@@ -11,7 +9,7 @@
 		======================================================================-->
 	<!-- output -->
 	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
-		exclude-result-prefixes="xs utils fn" doctype-system="../dtds/xml-formed.dtd"/>
+		exclude-result-prefixes="xs" doctype-system="../dtds/xml-formed.dtd"/>
 	
 	
 	<!--=====================================================================
@@ -19,7 +17,7 @@
 		
 		Courses are split apart by their classes' sortkeys
 		======================================================================-->
-	<xsl:template match="schedule | term | division | subject | topic | subtopic | type">
+	<xsl:template match="schedule | term | division | subject | topic | subtopic">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
@@ -31,37 +29,38 @@
 		<xsl:copy-of select="." />
 	</xsl:template>
 	
-	<xsl:template match="course">
-		<xsl:variable name="course" select="." as="element()" />
-		
-		<!-- copy un-sorted classes -->
-		<xsl:variable name="unsorted" select="class[not(@sortkey)]" as="element()*" />
-		<xsl:call-template name="copy-classes">
-			<xsl:with-param name="course"  select="$course" />
-			<xsl:with-param name="classes" select="$unsorted" />
-		</xsl:call-template>
-		
-		<!-- copy sorted classes -->
-		<xsl:for-each-group select="class" group-by="@sortkey">
-			<xsl:call-template name="copy-classes">
-				<xsl:with-param name="course"  select="$course" />
-				<xsl:with-param name="classes" select="current-group()" />
-			</xsl:call-template>
-		</xsl:for-each-group>
+	<xsl:template match="type">
+		<xsl:copy>
+			<xsl:copy-of select="attribute()" />
+
+			<xsl:variable name="classes" select="descendant::class" as="element()*" />
+			<xsl:apply-templates select="descendant::class">
+				<xsl:sort select="@sortkey" data-type="number" />
+			</xsl:apply-templates>
+		</xsl:copy>
 	</xsl:template>
 	
-	<xsl:template name="copy-classes">
-		<xsl:param name="course"  as="element()" />
-		<xsl:param name="classes" as="element()*" />
-		
-		<xsl:if test="count($classes) &gt; 0">
+	<xsl:template match="class">
+		<xsl:variable name="prev" select="preceding-sibling::class[position() = last()]" as="element()*" />
+		<xsl:if test="not($prev) or not($prev/parent::course = parent::course)">
 			<xsl:element name="course">
-				<xsl:copy-of select="$course/attribute()" />
-				<xsl:attribute name="sortkey" select="$classes[1]/@sortkey" />
-				<xsl:copy-of select="$course/comments" />
+				<xsl:copy-of select="parent::course/attribute()" />
+				<xsl:attribute name="sortkey" select="@sortkey" />
+				<xsl:copy-of select="parent::course/comments" />
 				
-				<xsl:copy-of select="$classes" />
+				<xsl:copy-of select="." />
+				<xsl:variable name="next" select="following-sibling::class[1]" as="element()*" />
+				<xsl:apply-templates select="$next" mode="fill" />
 			</xsl:element>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template match="class" mode="fill">
+		<xsl:variable name="prev" select="preceding-sibling::class[position() = last()]" as="element()*" />
+		<xsl:if test="$prev/parent::course = parent::course">
+			<xsl:copy-of select="." />
+			<xsl:variable name="next" select="following-sibling::class[1]" as="element()*" />
+			<xsl:apply-templates select="$next" mode="fill" />
 		</xsl:if>
 	</xsl:template>
 	

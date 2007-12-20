@@ -2,8 +2,7 @@
 	version="2.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-	xmlns:fn="http://www.brookhavencollege.edu/xml/fn">
+	xmlns:utils="http://www.brookhavencollege.edu/xml/utils">
 	
 	
 	<!--=====================================================================
@@ -14,7 +13,7 @@
 		href="../xml-prep/xml-utils.xsl" />
 	<!-- output -->
 	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
-		exclude-result-prefixes="xs utils fn" doctype-system="../dtds/xml-formed.dtd"/>
+		exclude-result-prefixes="xs utils" doctype-system="../dtds/xml-formed.dtd"/>
 	
 	
 	<!--=====================================================================
@@ -28,7 +27,7 @@
 		change without notice.
 		======================================================================-->
 	<!-- output directory -->
-	<xsl:param name="date-min"         as="xs:string" />
+	<xsl:param name="date-min" as="xs:string" />
 	
 	
 	<!--=====================================================================
@@ -41,7 +40,7 @@
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
-			<xsl:apply-templates select="*[descendant::class[utils:compare-dates(@date-start, $date-min) != -1]]" />
+			<xsl:apply-templates select="*[descendant-or-self::class[utils:compare-dates(@date-start, $date-min) != -1]]" />
 		</xsl:copy>
 	</xsl:template>
 	

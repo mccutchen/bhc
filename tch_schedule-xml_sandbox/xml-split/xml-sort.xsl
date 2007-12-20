@@ -1,17 +1,14 @@
 <xsl:stylesheet 
 	version="2.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-	xmlns:fn="http://www.brookhavencollege.edu/xml/fn">
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	
 	
 	<!--=====================================================================
-		Setup
+		Includes & Output
 		======================================================================-->
-	<!-- output -->
 	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
-		exclude-result-prefixes="xs utils fn" doctype-system="../dtds/xml-formed.dtd"/>
+		exclude-result-prefixes="xs" doctype-system="../dtds/xml-formed.dtd"/>
 	
 	
 	<!--=====================================================================
@@ -80,7 +77,7 @@
 			
 			<xsl:apply-templates select="class">
 				<xsl:sort select="min(class/@sortkey)"                           data-type="number" />
-				<xsl:sort select="fn:safe-min(meeting[@method = 'LEC']/@sortkey-days)"   data-type="number" />
+				<xsl:sort select="utils:safe-min(meeting[@method = 'LEC']/@sortkey-days)"   data-type="number" />
 				<xsl:sort select="min(meeting[@method = 'LEC']/@sortkey-times)"  data-type="number" />
 				<xsl:sort select="min(meeting[@method = 'LEC']/@sortkey-method)" data-type="number" />
 				<xsl:sort select="@sortkey-dates"                                data-type="number" />
@@ -107,57 +104,5 @@
 	<xsl:template match="meeting">
 		<xsl:copy-of select="." />
 	</xsl:template>
-	
-	
-	
-	
-	<xsl:function name="fn:to-int" as="xs:integer">
-		<xsl:param name="x" as="xs:string*" />
-		
-		<xsl:choose>
-			<xsl:when test="number($x)">
-				<xsl:value-of select="xs:integer($x)" />
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="0" />
-			</xsl:otherwise>
-		</xsl:choose>
-		
-	</xsl:function>
-	
-	<xsl:function name="fn:safe-min" as="xs:integer">
-		<xsl:param name="x" as="xs:string*" />
-		
-		<xsl:choose>
-			<xsl:when test="count($x) &lt; 1">
-				<xsl:value-of select="0" />
-			</xsl:when>
-			<xsl:when test="count($x) = 1">
-				<xsl:value-of select="fn:to-int($x[1])" />
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="fn:safe-min($x[position() &gt; 1], fn:to-int($x[1]))" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:function>
-	
-	<xsl:function name="fn:safe-min" as="xs:integer">
-		<xsl:param name="x" as="xs:string*" />
-		<xsl:param name="max" as="xs:integer" />
-		
-		<xsl:variable name="y" select="fn:to-int($x[1])" as="xs:integer" />
-		<xsl:choose>
-			<xsl:when test="count($x) = 0">
-				<xsl:value-of select="$max" />
-			</xsl:when>
-			<xsl:when test="$max &lt; $y">
-				<xsl:value-of select="fn:safe-min($x[position() &gt; 1], $y)" />
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="fn:safe-min($x[position() &gt; 1], $max)" />
-			</xsl:otherwise>
-		</xsl:choose>
-		
-	</xsl:function>
 	
 </xsl:stylesheet>

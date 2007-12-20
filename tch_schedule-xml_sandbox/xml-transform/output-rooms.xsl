@@ -89,12 +89,12 @@
                     
                     <xsl:call-template name="make-table">
                         <xsl:with-param name="title">Normal Courses</xsl:with-param>
-                        <xsl:with-param name="meetings" select="$possible-meetings[@method = $normal-methods and not(ancestor::course/@type-id = $special-types)]" />
+                        <xsl:with-param name="meetings" select="$possible-meetings[@method = $normal-methods and not(ancestor::type/@id = $special-types)]" />
                     </xsl:call-template>
                     
                     <xsl:call-template name="make-table">
                         <xsl:with-param name="title">Special Courses</xsl:with-param>
-                        <xsl:with-param name="meetings" select="$possible-meetings[@method = $special-methods or ancestor::course/@type-id = $special-types]" />
+                        <xsl:with-param name="meetings" select="$possible-meetings[@method = $special-methods or ancestor::type/@id = $special-types]" />
                     </xsl:call-template>
                 </body>
             </html>
@@ -170,7 +170,7 @@
                     
                     <!-- comments will only appear if it's a distance learning class -->
                     <xsl:if test="$meeting-set/@method = $special-methods or $meeting-set/ancestor::course/@type-id = $special-types">
-                        <xsl:apply-templates select="$meeting-set/ancestor::course/description" />
+                        <xsl:apply-templates select="$meeting-set/ancestor::course/comments" />
                     </xsl:if>
                 </xsl:for-each-group>
             </xsl:for-each-group>
@@ -204,10 +204,9 @@
             <td><xsl:value-of select="$class/@capacity" />&#160;</td>
         </tr>
         
-        <!-- comments will only appear if it's a distance learning class
-        <xsl:if test="@method = $special-methods or $course/@type-id = $special-types">
-            <xsl:apply-templates select="$course/description" />
-        </xsl:if> -->
+        <xsl:if test="@method = $special-methods or $type-id = $special-types">
+            <xsl:apply-templates select="parent::class/comments" />
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="meeting" mode="extra">
@@ -230,7 +229,7 @@
         </tr>
     </xsl:template>
     
-    <xsl:template match="description">
+    <xsl:template match="comments">
         <tr class="comments">
             <td colspan="8">
                 <xsl:value-of select="current()" />

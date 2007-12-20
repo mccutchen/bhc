@@ -1,9 +1,7 @@
 <xsl:stylesheet 
 	version="2.0" 
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-	xmlns:fn="http://www.brookhavencollege.edu/xml/fn">
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
 	
 	
 	<!--=====================================================================
@@ -11,7 +9,7 @@
 		======================================================================-->
 	<!-- output -->
 	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
-		exclude-result-prefixes="xs utils fn" doctype-system="../dtds/xml-formed.dtd"/>
+		exclude-result-prefixes="xs" doctype-system="../dtds/xml-formed.dtd"/>
 	
 	
 	<!--=====================================================================
