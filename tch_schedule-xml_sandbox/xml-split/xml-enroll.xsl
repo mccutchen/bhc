@@ -6,12 +6,10 @@
 	
 	
 	<!--=====================================================================
-		Setup
+		Includes & Output
 		======================================================================-->
-	<!-- utility functions -->
 	<xsl:include
 		href="../xml-prep/xml-utils.xsl" />
-	<!-- output -->
 	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
 		exclude-result-prefixes="xs utils" doctype-system="../dtds/xml-formed.dtd"/>
 	
