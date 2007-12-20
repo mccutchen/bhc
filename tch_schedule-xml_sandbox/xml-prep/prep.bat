@@ -60,6 +60,9 @@ SET dest2=%root%%data%\%ys%_%format%.xml
 SET params=path-sortkeys=%up%%sortkeys%
 SET params=%params% path-core=%up%%core%
 SET params=%params% path-mappings=%up%%mappings%
+IF "%params%"=="": GOTO FIX
+SET params=%params% second-schedule=%up%%raw2%
+:FIX
 
 ECHO %text%...
 java -jar C:\saxon\saxon8.jar -o %dest2% %source% %xsl% %params%

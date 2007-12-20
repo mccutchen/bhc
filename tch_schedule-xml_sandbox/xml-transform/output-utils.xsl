@@ -62,7 +62,7 @@
 			</xsl:choose>
 		</xsl:variable>
 		
-		<xsl:variable name="path" select="concat($dir, $year, '-', $semester)" as="xs:string"/>
+		<xsl:variable name="path" select="concat($dir, utils:make-url($year), '-', utils:make-url($semester))" as="xs:string"/>
 		<!-- '{$dir}{$year}-{$semester}}' -->
 		<xsl:value-of select="$path" />
 	</xsl:function>
