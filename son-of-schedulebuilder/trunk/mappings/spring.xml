@@ -682,6 +682,7 @@
                 	<pattern match="MUAP 1115-2001" /> <!-- added 12/06/2007 - Electric Bass -->
                     <pattern match="MUAP 1117-2001" />
                     <pattern match="MUAP 1117-2002" />
+                    <pattern match="MUAP 1117-2003" /> <!-- added 12/21/2007 - Flute -->
                     <pattern match="MUAP 1121-2001" />
                     <pattern match="MUAP 1125-2001" />
                     <pattern match="MUAP 1125-2002" />
@@ -936,6 +937,7 @@
 		 	<topic name="Emergency Medical Services, Basic">
 				<subtopic name="Basic Class #40">
 					<pattern match="EMSP 1160-2240" />
+					<pattern match="EMSP 1160-2250" /> <!-- added 12/21/2007 -->
 				</subtopic>
 				<subtopic name="Basic Class #41">
 					<pattern match="EMSP 1160-2241" />
