@@ -457,8 +457,13 @@ class Spring08NonCoreProof(NonCore, Spring08Proof):
 class Summer08(Summer):
     input = ('data/2008-summer/bh2008s1.txt', 'data/2008-summer/bh2008s2.txt')
     terms = {
-        'Summer I/May Term': (date(2008, 5, 12), date(2008, 5, 30)),
-        'Summer I':  (date(2008, 6, 9), date(2008, 7, 3)),
+        # original dates
+        # Mayterm: 5/12 - 5/30
+        # Summer I: 6/9 - 7/3
+        # Summer II: 7/9 - 8/7
+
+        'Summer I/May Term': (date(2008, 5, 1), date(2008, 5, 30)),
+        'Summer I':  (date(2008, 6, 1), date(2008, 7, 3)),
         'Summer II':  (date(2008, 7, 9), date(2008, 8, 7)),
     }
 
