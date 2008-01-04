@@ -39,7 +39,7 @@
 		Globals
 		======================================================================-->
 	<!-- check for presence of second file -->
-	<xsl:variable name="doc-schedule" select="if (utils:check-file($second-schedule)) then doc(replace($second-schedule, '\\','/'))/schedule  else ''" />
+	<xsl:variable name="doc-schedule" select="if (contains($second-schedule, '.xml') and utils:check-file($second-schedule)) then doc(replace($second-schedule, '\\','/'))/schedule  else ''" />
 	<xsl:variable name="doc-mappings" select="if (utils:check-file($path-mappings))   then doc(replace($path-mappings, '\\','/'))/mappings    else ''" />
 	<xsl:variable name="doc-sortkeys" select="if (utils:check-file($path-sortkeys))   then doc(replace($path-sortkeys, '\\','/'))/sortkeys    else ''" />
 	<xsl:variable name="doc-core"     select="if (utils:check-file($path-core))       then doc(replace($path-core, '\\','/'))/core-components else ''" />
