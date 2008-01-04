@@ -63,7 +63,7 @@
 		<xsl:element name="term">
 			<xsl:copy-of select="attribute()" />
 			
-			<xsl:for-each-group select="descendant::class" group-by="@name-of-division">
+			<xsl:for-each-group select="descendant::class" group-by="hierarchy/@name-of-division">
 				<xsl:variable name="node" select="$doc-mappings//division[@name = current-grouping-key()]" />
 				<xsl:if test="count($node) != 1">
 					<xsl:call-template name="print-error">
@@ -87,7 +87,7 @@
 			<xsl:copy-of select="$division/attribute()" />
 			<xsl:copy-of select="$division/contact"     />
 			
-			<xsl:for-each-group select="$classes" group-by="@name-of-subject">
+			<xsl:for-each-group select="$classes" group-by="hierarchy/@name-of-subject">
 				<xsl:variable name="node" select="$division/subject[@name = current-grouping-key()]" />
 				<xsl:if test="count($node) != 1">
 					<xsl:call-template name="print-error">
@@ -115,8 +115,8 @@
 			<xsl:copy-of select="$subject/comments"    />
 			
 			<!-- split off the classese w/o a topic -->
-			<xsl:variable name="classes-type"  select="$classes[not(@name-of-topic)]" as="element()*" />
-			<xsl:variable name="classes-topic" select="$classes[@name-of-topic]" as="element()*"      />
+			<xsl:variable name="classes-type"  select="$classes[not(hierarchy/@name-of-topic)]" as="element()*" />
+			<xsl:variable name="classes-topic" select="$classes[hierarchy/@name-of-topic]" as="element()*"      />
 			
 			<!-- types -->
 			<xsl:call-template name="create-types">
@@ -124,7 +124,7 @@
 			</xsl:call-template>
 			
 			<!-- topics -->
-			<xsl:for-each-group select="$classes" group-by="@name-of-topic">
+			<xsl:for-each-group select="$classes" group-by="hierarchy/@name-of-topic">
 				<xsl:variable name="node" select="$subject/topic[@name = current-grouping-key()]" />
 				<xsl:if test="count($node) != 1">
 					<xsl:call-template name="print-error">
@@ -151,8 +151,8 @@
 			<xsl:copy-of select="$topic/comments"    />
 			
 			<!-- split off the classese w/o a topic -->
-			<xsl:variable name="classes-type"     select="$classes[not(@name-of-subtopic)]" as="element()*" />
-			<xsl:variable name="classes-subtopic" select="$classes[@name-of-subtopic]"      as="element()*" />
+			<xsl:variable name="classes-type"     select="$classes[not(hierarchy/@name-of-subtopic)]" as="element()*" />
+			<xsl:variable name="classes-subtopic" select="$classes[hierarchy/@name-of-subtopic]"      as="element()*" />
 			
 			<!-- types -->
 			<xsl:call-template name="create-types">
@@ -160,7 +160,7 @@
 			</xsl:call-template>
 			
 			<!-- subtopics -->
-			<xsl:for-each-group select="$classes" group-by="@name-of-subtopic">
+			<xsl:for-each-group select="$classes" group-by="hierarchy/@name-of-subtopic">
 				<xsl:variable name="node" select="$topic/subtopic[@name = current-grouping-key()]" />
 				<xsl:if test="count($node) != 1">
 					<xsl:call-template name="print-error">
@@ -253,27 +253,23 @@
 					<xsl:copy-of select="$course[1]/attribute()" />
 					<xsl:copy-of select="$course[1]/comments" />
 					
-					<xsl:call-template name="create-classes">
-						<xsl:with-param name="classes" select="current-group()" />
-					</xsl:call-template>
+					<xsl:apply-templates select="current-group()" />
 				</xsl:element>
 			</xsl:for-each-group>
 		</xsl:for-each-group>
 	</xsl:template>
 	
-	<xsl:template name="create-classes">
-		<xsl:param name="classes" as="element()*" />
-		
-		<xsl:for-each select="$classes">
-			<xsl:element name="class">
-				<xsl:copy-of select="@synonym|@section|@date-start|@date-end|@schedule-type|@topic-code|@weeks|@capacity"/>
-				<xsl:copy-of select="@sortkey-dates|@sortkey" />
-				<xsl:copy-of select="@is-suppressed|@is-dl|@is-w|@is-wcc|@is-flex|@flex-month"/>
-				
-				<xsl:copy-of select="comments" />
-				<xsl:copy-of select="meeting"  />
-			</xsl:element>
-		</xsl:for-each>
+	<xsl:template match="class">
+		<xsl:copy>
+			<xsl:copy-of select="attribute()" />
+			<xsl:if test="hierarchy/@sortkey">
+				<xsl:attribute name="sortkey" select="hierarchy/@sortkey" />
+			</xsl:if>
+			
+			<xsl:copy-of select="visibility" />
+			<xsl:copy-of select="comments" />
+			<xsl:copy-of select="meeting"  />
+		</xsl:copy>
 	</xsl:template>
 	
 	<xsl:template name="print-error">

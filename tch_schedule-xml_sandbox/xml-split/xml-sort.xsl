@@ -93,7 +93,8 @@
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
-			<xsl:copy-of select="comments" />
+			<xsl:copy-of select="visibility" />
+			<xsl:copy-of select="comments"   />
 			
 			<xsl:apply-templates select="meeting">
 				<xsl:sort select="@sortkey"        data-type="number" />

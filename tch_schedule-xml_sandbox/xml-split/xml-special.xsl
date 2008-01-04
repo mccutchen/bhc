@@ -44,52 +44,52 @@
 			<!-- tack on special sections -->
 			
 			<!-- distance learning -->
-			<xsl:if test="descendant::class[@is-dl = 'true']">
+			<xsl:if test="descendant::visibility[@is-dl = 'true']">
 				<xsl:element name="special-section">
 					<xsl:attribute name="name" select="'Distance Learning'" />
 					
-					<xsl:apply-templates select="*[descendant::class[@is-dl = 'true']]">
+					<xsl:apply-templates select="*[descendant::class[visibility/@is-dl = 'true']]">
 						<xsl:with-param name="type" select="'dl'" tunnel="yes" />
 					</xsl:apply-templates>
 				</xsl:element>
 			</xsl:if>
 			
 			<!-- weekend -->
-			<xsl:if test="descendant::class[@is-w = 'true']">
+			<xsl:if test="descendant::class[visibility/@is-w = 'true']">
 				<xsl:element name="special-section">
 					<xsl:attribute name="name" select="'Weekend'" />
 					
-					<xsl:apply-templates select="*[descendant::class[@is-w = 'true']]">
+					<xsl:apply-templates select="*[descendant::class[visibility/@is-w = 'true']]">
 						<xsl:with-param name="type" select="'w'" tunnel="yes" />
 					</xsl:apply-templates>
 				</xsl:element>
 			</xsl:if>
 			
 			<!-- weekend core curriculum -->
-			<xsl:if test="descendant::class[@is-wcc = 'true']">
+			<xsl:if test="descendant::class[visibility/@is-wcc = 'true']">
 				<xsl:element name="special-section">
 					<xsl:attribute name="name" select="'Weekend Core Curriculum'" />
 					
-					<xsl:apply-templates select="*[descendant::class[@is-wcc = 'true']]">
+					<xsl:apply-templates select="*[descendant::class[visibility/@is-wcc = 'true']]">
 						<xsl:with-param name="type" select="'wcc'" tunnel="yes" />
 					</xsl:apply-templates>
 				</xsl:element>
 			</xsl:if>
 			
 			<!-- flex term -->
-			<xsl:if test="descendant::class[@is-flex = 'true']">
+			<xsl:if test="descendant::class[visibility/@is-flex = 'true']">
 				<xsl:element name="special-section">
 					<xsl:attribute name="name" select="'Flex Term'" />
 					
 					<xsl:variable name="term" select="." />
-					<xsl:for-each-group select="descendant::class[@is-flex = 'true']/@flex-month" group-by=".">
+					<xsl:for-each-group select="descendant::class/visibility[@is-flex = 'true']/@flex-month" group-by=".">
 						<xsl:sort select="." />
 						
 						<xsl:variable name="flex-month" select="current-grouping-key()" as="xs:string" />
 						<xsl:element name="special-section">
 							<xsl:attribute name="name" select="concat($flex-month, ' Flex Term')" />
 							
-							<xsl:apply-templates select="$term/*[descendant::class[@is-flex = 'true' and @flex-month = $flex-month]]">
+							<xsl:apply-templates select="$term/*[descendant::class[visibility/@is-flex = 'true' and visibility/@flex-month = $flex-month]]">
 								<xsl:with-param name="type"  select="'flex'"      tunnel="yes" />
 								<xsl:with-param name="month" select="$flex-month" tunnel="yes" />
 							</xsl:apply-templates>
@@ -111,16 +111,16 @@
 			
 			<xsl:choose>
 				<xsl:when test="compare($type, 'dl') = 0">
-					<xsl:apply-templates select="*[descendant-or-self::class[@is-dl = 'true']] | contact | comments" />
+					<xsl:apply-templates select="*[descendant-or-self::class[visibility/@is-dl = 'true']] | contact | comments" />
 				</xsl:when>
 				<xsl:when test="compare($type, 'w') = 0">
-					<xsl:apply-templates select="*[descendant-or-self::class[@is-w = 'true']] | contact | comments" />
+					<xsl:apply-templates select="*[descendant-or-self::class[visibility/@is-w = 'true']] | contact | comments" />
 				</xsl:when>
 				<xsl:when test="compare($type, 'wcc') = 0">
-					<xsl:apply-templates select="*[descendant-or-self::class[@is-wcc = 'true']] | contact | comments" />
+					<xsl:apply-templates select="*[descendant-or-self::class[visibility/@is-wcc = 'true']] | contact | comments" />
 				</xsl:when>
 				<xsl:when test="compare($type, 'flex') = 0">
-					<xsl:apply-templates select="*[descendant-or-self::class[@is-flex = 'true' and compare(@flex-month, $month) = 0]] | contact | comments" />
+					<xsl:apply-templates select="*[descendant-or-self::class[visibility/@is-flex = 'true' and compare(visibility/@flex-month, $month) = 0]] | contact | comments" />
 				</xsl:when>
 			</xsl:choose>
 		</xsl:copy>

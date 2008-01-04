@@ -55,25 +55,25 @@
 		<xsl:call-template name="init-special-section">
 			<xsl:with-param name="path" select="$path" />
 			<xsl:with-param name="title"   select="'Distance Learning'" tunnel="yes" />
-			<xsl:with-param name="classes" select="descendant::class[@is-dl = 'true']" tunnel="yes" />
+			<xsl:with-param name="classes" select="descendant::class[visibility/@is-dl = 'true']" tunnel="yes" />
 		</xsl:call-template>
 		<!-- flex term -->
 		<xsl:call-template name="init-special-section">
 			<xsl:with-param name="path" select="$path" />
 			<xsl:with-param name="title" select="'Flex Term'" tunnel="yes" />
-			<xsl:with-param name="classes" select="descendant::class[@is-flex = 'true']" tunnel="yes" />
+			<xsl:with-param name="classes" select="descendant::class[visibility/@is-flex = 'true']" tunnel="yes" />
 		</xsl:call-template>
 		<!-- weekend -->
 		<xsl:call-template name="init-special-section">
 			<xsl:with-param name="path" select="$path" />
 			<xsl:with-param name="title" select="'Weekend'" tunnel="yes" />
-			<xsl:with-param name="classes" select="descendant::class[@is-w = 'true']" tunnel="yes" />
+			<xsl:with-param name="classes" select="descendant::class[visibility/@is-w = 'true']" tunnel="yes" />
 		</xsl:call-template>
 		<!-- weekend core curriculum -->
 		<xsl:call-template name="init-special-section">
 			<xsl:with-param name="path" select="$path" />
 			<xsl:with-param name="title" select="'Weekend Core Curriculum'" tunnel="yes" />
-			<xsl:with-param name="classes" select="descendant::class[@is-wcc = 'true']" tunnel="yes" />
+			<xsl:with-param name="classes" select="descendant::class[visibility/@is-wcc = 'true']" tunnel="yes" />
 		</xsl:call-template>
 	</xsl:template>
 	
@@ -330,7 +330,7 @@
         <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
         <xsl:value-of select="@section" /><xsl:call-template name="sep" />
 
-        <xsl:value-of select="../@title-short" /><xsl:call-template name="sep" />
+        <xsl:value-of select="@title" /><xsl:call-template name="sep" />
         <xsl:value-of select="@synonym" /><xsl:call-template name="sep" />
         <xsl:value-of select="../@credit-hours" /><xsl:call-template name="sep" />
         <xsl:value-of select="utils:format-dates(@date-start, @date-end)" />
@@ -375,6 +375,10 @@
 			<xsl:when test="@room = 'INET'">
 				<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
 				<xsl:value-of select="'OL'" /><xsl:call-template name="sep" />
+			</xsl:when>
+			<xsl:when test="@days = 'MTWRFSU'">
+				<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
+				<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="@days" /><xsl:call-template name="sep" />

@@ -219,7 +219,7 @@
                 <xsl:value-of select="../@rubric" /><xsl:text> </xsl:text>
                 <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
                 <xsl:value-of select="@section" /></td>
-            <td class="title"><xsl:value-of select="../@title-short" /></td>
+            <td class="title"><xsl:value-of select="@title" /></td>
             <td class="synonym"><xsl:value-of select="@synonym" /></td>
             <td class="credit_hours"><xsl:value-of select="../@credit-hours" /></td>
             <td class="dates"><xsl:value-of select="utils:format-dates(@date-start, @date-end)" />&#160;<xsl:apply-templates select="@weeks" /></td>

@@ -137,16 +137,17 @@
 		<xsl:param name="date-max" as="xs:string" />
 		
 		<xsl:element name="course">
-			<xsl:attribute name="rubric"       select="@rubric" />
-			<xsl:attribute name="number"       select="@number" />
-			<xsl:attribute name="credit-hours" select="@credit-hours" />
+			<xsl:attribute name="rubric"  select="@rubric" />
+			<xsl:attribute name="number"  select="@number" />
+			<xsl:apply-templates          select="@credit-hours" />
 			<xsl:if test="@core-code">
 				<xsl:attribute name="core-code" select="@core-code" />
 				<xsl:variable name="code" select="@core-code" />
 				<xsl:attribute name="core-name" select="$doc-core/component[@code = $code]/@name" />
 			</xsl:if>
+			<!-- oddly enough, course titles are not used, only class titles 
 			<xsl:attribute name="title-short"  select="@title" />
-			<xsl:attribute name="title-long"   select="@long-title" />
+			<xsl:attribute name="title-long"   select="@long-title" /> -->
 			
 			<xsl:apply-templates select="description" />
 			<xsl:apply-templates select="class[utils:compare-dates-between(@start-date, $date-min, $date-max, true(), true())]" />
@@ -161,6 +162,7 @@
 		<xsl:element name="class">
 			<xsl:attribute name="synonym" select="@synonym" />
 			<xsl:attribute name="section" select="@section" />
+			<xsl:attribute name="title"   select="@title"   />
 			<xsl:attribute name="date-start" select="utils:convert-date-std(@start-date)" />
 			<xsl:attribute name="date-end" select="utils:convert-date-std(@end-date)" />
 			<xsl:attribute name="schedule-type" select="@schedule-type" />
@@ -177,34 +179,38 @@
 			<!-- these are some artificial attributes that I'm going to put in the data, 
 				since they are an integral part of how the output is produced. Maybe not
 				the perfect solution, but it makes my life easier -->
-			<xsl:attribute name="is-suppressed" select="@topic-code = ('XX','YY') or not(meeting)" />
-			<xsl:attribute name="is-dl" select="@schedule-type = 'DL'" />
-			<xsl:attribute name="is-w" select="@schedule-type = 'W'" />
-			<xsl:attribute name="is-wcc" select="@schedule-type = 'W' and ancestor::course/@core-code and ancestor::course/@core-code != ''" />
-			<xsl:attribute name="is-flex" select="@schedule-type = ('FD','FN')" />
-			<xsl:if test="@schedule-type = ('FD','FN')">
-				<xsl:attribute name="flex-month" select="utils:month-name(tokenize(utils:convert-date-std(@start-date), '/')[1])" />
-			</xsl:if>
+			<xsl:element name="visibility">
+				<xsl:attribute name="is-suppressed" select="@topic-code = ('XX','YY') or not(meeting)" />
+				<xsl:attribute name="is-dl" select="@schedule-type = 'DL'" />
+				<xsl:attribute name="is-w" select="@schedule-type = 'W'" />
+				<xsl:attribute name="is-wcc" select="@schedule-type = 'W' and ancestor::course/@core-code and ancestor::course/@core-code != ''" />
+				<xsl:attribute name="is-flex" select="@schedule-type = ('FD','FN')" />
+				<xsl:if test="@schedule-type = ('FD','FN')">
+					<xsl:attribute name="flex-month" select="utils:month-name(tokenize(utils:convert-date-std(@start-date), '/')[1])" />
+				</xsl:if>
+			</xsl:element>
 			
 			<!-- figure out where it should be in the division structure -->
-			<xsl:variable name="class-id" select="concat(parent::course/@rubric, ' ', parent::course/@number, '-', @section)" as="xs:string" />
-			<xsl:choose>
-				<!-- special type (by topic-code): Emeritus = Senior Adult -->
-				<xsl:when test="@topic-code = ('E','EG','EMBLG')">
-					<xsl:variable name="match-node" select="$doc-mappings//subject[@name = 'Senior Adult Education Program']" />
-					<xsl:call-template name="apply-sorting-node">
-						<xsl:with-param name="match-node" select="$match-node" />
-						<xsl:with-param name="class-id"   select="$class-id"   />
-					</xsl:call-template>
-				</xsl:when>
-				<!-- special sorting (topics/subtopics, etc) -->
-				<xsl:otherwise>
-					<xsl:call-template name="apply-sorting-node">
-						<xsl:with-param name="match-node" select="$doc-mappings/descendant::pattern[matches($class-id, @match)]" as="element()*" />
-						<xsl:with-param name="class-id"   select="$class-id" as="xs:string" />
-					</xsl:call-template>
-				</xsl:otherwise>
-			</xsl:choose>
+			<xsl:element name="hierarchy">
+				<xsl:variable name="class-id" select="concat(parent::course/@rubric, ' ', parent::course/@number, '-', @section)" as="xs:string" />
+				<xsl:choose>
+					<!-- special type (by topic-code): Emeritus = Senior Adult -->
+					<xsl:when test="@topic-code = ('E','EG','EMBLG')">
+						<xsl:variable name="match-node" select="$doc-mappings//subject[@name = 'Senior Adult Education Program']" />
+						<xsl:call-template name="apply-sorting-node">
+							<xsl:with-param name="match-node" select="$match-node" />
+							<xsl:with-param name="class-id"   select="$class-id"   />
+						</xsl:call-template>
+					</xsl:when>
+					<!-- special sorting (topics/subtopics, etc) -->
+					<xsl:otherwise>
+						<xsl:call-template name="apply-sorting-node">
+							<xsl:with-param name="match-node" select="$doc-mappings/descendant::pattern[matches($class-id, @match)]" as="element()*" />
+							<xsl:with-param name="class-id"   select="$class-id" as="xs:string" />
+						</xsl:call-template>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:element>
 			
 			
 			<xsl:apply-templates select="description" />
@@ -429,12 +435,12 @@
 								<xsl:variable name="course" select="current-group()/parent::course" as="element()" />
 								
 								<xsl:element name="course">
-									<xsl:attribute name="rubric"       select="$course/@rubric" />
-									<xsl:attribute name="number"       select="$course/@number" />
-									<xsl:attribute name="credit-hours" select="$course/@credit-hours" />
-									<xsl:if test="$course/@core-code"><xsl:attribute name="core-code"    select="$course/@core-code" /></xsl:if>
-									<xsl:attribute name="title-short"  select="$course/@title" />
-									<xsl:attribute name="title-long"   select="$course/@long-title" />
+									<xsl:attribute name="rubric" select="$course/@rubric" />
+									<xsl:attribute name="number" select="$course/@number" />
+									<xsl:apply-templates         select="$course/@credit-hours" />
+									<xsl:if test="$course/@core-code">
+										<xsl:attribute name="core-code"    select="$course/@core-code" />
+									</xsl:if>
 									
 									<xsl:apply-templates select="$course/description" />
 									<xsl:apply-templates select="current-group()" />

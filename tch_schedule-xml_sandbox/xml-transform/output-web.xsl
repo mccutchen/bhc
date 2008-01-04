@@ -145,10 +145,9 @@
 	
 	<xsl:template match="subject" mode="init-page">
 		<xsl:param name="base-path" as="xs:string" />
-		<xsl:variable name="path" select="concat($base-path, '/', utils:make-url(parent::division/@name))" as="xs:string" />
-		<xsl:result-document href="{$path}/{utils:make-url(@name)}.{$ext}">
+		<xsl:result-document href="{$base-path}/{utils:make-url(@name)}.{$ext}">
 			<xsl:apply-templates select="." mode="create-page">
-				<xsl:with-param name="path"  select="$path"  tunnel="yes" />
+				<xsl:with-param name="path"  select="$base-path"  tunnel="yes" />
 				<xsl:with-param name="title" select="@name"  tunnel="yes" />
 				<xsl:with-param name="mode"  select="'page'" tunnel="yes" />
 			</xsl:apply-templates>

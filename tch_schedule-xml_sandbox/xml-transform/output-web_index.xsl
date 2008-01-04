@@ -70,8 +70,9 @@
 		<xsl:param name="with-divs"  as="xs:boolean" tunnel="yes" />
 		<xsl:param name="add-path"   as="xs:string"  tunnel="yes" />
 		
-		<xsl:variable name="div"  select="parent::division/@name"                                   as="xs:string" />
-		<xsl:variable name="path" select="concat(utils:make-url($div), '/', utils:make-url(@name))" as="xs:string" />
+		<xsl:variable name="div"  select="parent::division/@name" as="xs:string" />
+		<xsl:variable name="path" select="utils:make-url(@name)"  as="xs:string" />
+		
 		<li><a href="{$add-path}{$path}.{$ext}"><xsl:value-of select="@name"></xsl:value-of></a>
 			<xsl:if test="$with-divs">
 				<xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>

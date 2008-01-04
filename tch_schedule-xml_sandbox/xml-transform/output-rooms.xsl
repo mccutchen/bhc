@@ -185,7 +185,7 @@
         
         <tr class="{$course/@type-id}">
             <td><xsl:value-of select="$course/@rubric" />&#160;<xsl:value-of select="$course/@number" />-<xsl:value-of select="$class/@section" />&#160;</td>
-            <th><xsl:value-of select="$course/@title-long" />&#160;</th>
+            <th><xsl:value-of select="$class/@title" />&#160;</th>
             <xsl:choose>
                 <xsl:when test="@method = 'INET' or @room = 'INET'">
                     <td>NA&#160;</td>

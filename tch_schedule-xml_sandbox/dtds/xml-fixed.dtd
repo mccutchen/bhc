@@ -18,29 +18,34 @@ display 		(true|false) "true">
 rubric 			CDATA #REQUIRED
 number 			CDATA #REQUIRED
 credit-hours 	CDATA #REQUIRED
-title-short 	CDATA #REQUIRED
-title-long 		CDATA #REQUIRED
 core-code 		CDATA #IMPLIED
 core-name 		CDATA #IMPLIED>
 
-<!ELEMENT class (comments?, meeting*)>
+<!ELEMENT class (visibility, hierarchy, comments?, meeting*)>
 <!ATTLIST class
 synonym 		CDATA #REQUIRED
 section 		CDATA #REQUIRED
+title			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED
 date-end 		CDATA #REQUIRED
 schedule-type 	CDATA #REQUIRED
 topic-code 		CDATA #REQUIRED
 weeks 			CDATA #REQUIRED
 capacity 		CDATA #REQUIRED
-sortkey 		CDATA #IMPLIED
-sortkey-dates	CDATA #REQUIRED
+sortkey-dates	CDATA #REQUIRED>
+
+<!ELEMENT visibility EMPTY>
+<!ATTLIST visibility
 is-suppressed 	(true|false) "false"
 is-dl 			(true|false) "false"
 is-w  			(true|false) "false"
 is-wcc  		(true|false) "false"
 is-flex  		(true|false) "false"
-flex-month 		CDATA #IMPLIED
+flex-month 		CDATA #IMPLIED>
+
+<!ELEMENT hierarchy EMPTY>
+<!ATTLIST hierarchy
+sortkey 			CDATA #IMPLIED
 name-of-division 	CDATA #REQUIRED
 name-of-subject 	CDATA #REQUIRED
 name-of-topic 		CDATA #IMPLIED
@@ -58,7 +63,7 @@ sortkey-days 	CDATA #REQUIRED
 sortkey-times 	CDATA #REQUIRED
 sortkey-method 	CDATA #REQUIRED>
 
-<!ELEMENT faculty (#PCDATA)>
+<!ELEMENT faculty EMPTY>
 <!ATTLIST faculty
 name-first 		CDATA #REQUIRED
 name-middle 	CDATA #REQUIRED

@@ -47,16 +47,15 @@ sortkey 		CDATA #REQUIRED>
 rubric 			CDATA #REQUIRED
 number 			CDATA #REQUIRED
 credit-hours 	CDATA #REQUIRED
-title-short 	CDATA #REQUIRED
-title-long 		CDATA #REQUIRED
 core-code 		CDATA #IMPLIED
 core-name 		CDATA #IMPLIED
 sortkey 		CDATA #IMPLIED>
 
-<!ELEMENT class (comments?, meeting*)>
+<!ELEMENT class (visibility, comments?, meeting*)>
 <!ATTLIST class
 synonym 		CDATA #REQUIRED
 section 		CDATA #REQUIRED
+title 			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED
 date-end 		CDATA #REQUIRED
 schedule-type 	CDATA #REQUIRED
@@ -64,7 +63,10 @@ topic-code 		CDATA #REQUIRED
 weeks 			CDATA #REQUIRED
 capacity 		CDATA #REQUIRED
 sortkey 		CDATA #IMPLIED
-sortkey-dates	CDATA #REQUIRED
+sortkey-dates	CDATA #REQUIRED>
+
+<!ELEMENT visibility EMPTY>
+<!ATTLIST visibility
 is-suppressed 	(true|false) "false"
 is-dl 			(true|false) "false"
 is-w  			(true|false) "false"

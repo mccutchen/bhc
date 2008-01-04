@@ -42,7 +42,7 @@
 	
 	<xsl:template match="class">
 		<xsl:variable name="prev" select="preceding-sibling::class[position() = last()]" as="element()*" />
-		<xsl:if test="not($prev) or not($prev/parent::course = parent::course)">
+		<xsl:if test="not($prev) or not($prev/parent::course = parent::course) or not($prev/@title = @title)">
 			<xsl:element name="course">
 				<xsl:copy-of select="parent::course/attribute()" />
 				<xsl:attribute name="sortkey" select="@sortkey" />
@@ -57,7 +57,7 @@
 	
 	<xsl:template match="class" mode="fill">
 		<xsl:variable name="prev" select="preceding-sibling::class[position() = last()]" as="element()*" />
-		<xsl:if test="$prev/parent::course = parent::course">
+		<xsl:if test="$prev/parent::course = parent::course and $prev/@title = @title">
 			<xsl:copy-of select="." />
 			<xsl:variable name="next" select="following-sibling::class[1]" as="element()*" />
 			<xsl:apply-templates select="$next" mode="fill" />

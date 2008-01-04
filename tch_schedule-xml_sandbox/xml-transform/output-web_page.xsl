@@ -83,8 +83,8 @@
 	<xsl:template match="course">
 		<div class="course-section">
 			<a name="{@rubric}-{@number}-{min(class/@section)}"></a>
-			<a name="{@rubric}-{@number}-{min(class/@section)}-{utils:make-url(@title-long)}"></a>
-			<h3><xsl:value-of select="@title-long" />
+			<a name="{@rubric}-{@number}-{min(class/@section)}-{utils:make-url(class[1]/@title)}"></a>
+			<h3><xsl:value-of select="class[1]/@title" />
 				<xsl:if test="@core-name"> <span class="core">&#160;&#8226;&#160;Core Curriculum</span></xsl:if></h3>
 			<xsl:apply-templates select="comments" />
 			
@@ -154,7 +154,7 @@
 	</xsl:template>
 	
 	<xsl:template match="class">
-		<xsl:apply-templates select="meeting" />
+		<xsl:apply-templates select="meeting" mode="setup" />
 	</xsl:template>
 	
 	<xsl:template match="class" mode="display">
@@ -173,54 +173,52 @@
 		</td>
 	</xsl:template>
 	
-	<xsl:template match="meeting[@method = ('LEC','')]">
+	<xsl:template match="meeting[@method = ('LEC', '', 'INET') or count(parent::class/meeting) = 1]" mode="setup">
 		<tr>
 			<xsl:apply-templates select="parent::class" mode="display" />
+			<xsl:apply-templates select="." />
+		</tr>
+	</xsl:template>
+	<xsl:template match="meeting" mode="setup">
+		<tr class="extra">
+			<td>&#160;</td>
+			<td>&#160;</td>
+			<td>&#160;</td>
+			<td>&#160;</td>
+			<xsl:apply-templates select="." />
+		</tr>
+	</xsl:template>
+	
+	<xsl:template match="meeting[@method = ('LEC','')]">
 			<td class="days"><xsl:apply-templates select="@days" /></td>
 			<xsl:variable name="times" select="utils:format-times(@time-start, @time-end)" as="xs:string" />
 			<td class="times"><xsl:value-of select="if ($times = 'NA' and @room != 'INET') then 'TBA' else $times" /></td>
 			<td class="format"><xsl:apply-templates select="@method" /></td>
 			<td class="room"><xsl:value-of select="@room" /></td>
 			<td class="faculty"><xsl:apply-templates select="faculty" /></td>
-		</tr>
 	</xsl:template>
 	<xsl:template match="meeting[@method = ('INET')]">
-		<tr>
-			<xsl:apply-templates select="parent::class" mode="display" />
 			<td class="days">NA</td>
 			<td class="times">NA</td>
 			<td class="format"><xsl:apply-templates select="@method" /></td>
 			<td class="room"><xsl:value-of select="@room" /></td>
 			<td class="faculty"><xsl:apply-templates select="faculty" /></td>
-		</tr>
 	</xsl:template>
 	
 	<xsl:template match="meeting[@method = ('LAB')]">
-		<tr class="extra">
-			<td>&#160;</td>
-			<td>&#160;</td>
-			<td>&#160;</td>
-			<td>&#160;</td>
 			<td class="days"><xsl:apply-templates select="@days" /></td>
 			<xsl:variable name="times" select="utils:format-times(@time-start, @time-end)" as="xs:string" />
 			<td class="times"><xsl:value-of select="if ($times = 'NA') then 'TBA' else $times" /></td>
 			<td class="format"><xsl:apply-templates select="@method" /></td>
 			<td class="room"><xsl:value-of select="@room" /></td>
 			<td class="faculty"><xsl:apply-templates select="faculty" /></td>
-		</tr>
 	</xsl:template>
 	<xsl:template match="meeting">
-		<tr class="extra">
-			<td>&#160;</td>
-			<td>&#160;</td>
-			<td>&#160;</td>
-			<td>&#160;</td>
 			<td class="days"><xsl:apply-templates select="@days" /></td>
 			<td class="times"><xsl:value-of select="utils:format-times(@time-start, @time-end)" /></td>
 			<td class="format"><xsl:apply-templates select="@method" /></td>
 			<td class="room"><xsl:value-of select="if (@method = 'COOP' and @room = 'TBA') then 'NA' else @room" /></td>
 			<td class="faculty"><xsl:apply-templates select="faculty" /></td>
-		</tr>
 	</xsl:template>
 	
 	<xsl:template match="class/@weeks">

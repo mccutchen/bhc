@@ -44,8 +44,10 @@
 						<xsl:next-match />
 						
 					</div> <xsl:comment> end of page-content </xsl:comment>
+
+					<xsl:call-template name="newline" />
+				
 				</div> <xsl:comment> end of page-container </xsl:comment>
-				<xsl:call-template name="newline" />
 				
 				<xsl:call-template name="aspx-sidebar" />
 				<xsl:call-template name="aspx-footer"  />
@@ -118,9 +120,9 @@
 		
 		<p>Jump to:
 			<xsl:for-each select="$list">
-				<a href="#{utils:make-url(.)}"><xsl:value-of select="." /></a>
+				<a href="#{utils:make-url(.)}"><xsl:value-of select="." /> Courses</a>
 				<xsl:if test="position() != last()">
-					<xsl:text>&#160;&#160;|&#160;&#160;</xsl:text>
+					<xsl:text>&#160;&#160;|&#160;</xsl:text>
 				</xsl:if>
 			</xsl:for-each>
 		</p>
@@ -129,8 +131,8 @@
 	
 	<xsl:template name="make-breadcrumbs">
 		<div id="breadcrumbs">
-			<a href="/">Home</a>&#160;&#160;&#187;&#160;
-			<a href="/course-schedules/">Course Schedules</a>&#160;&#160;&#187;&#160;
+			<a href="/">Home</a><xsl:text>&#160;&#160;&#187;&#160;</xsl:text>
+			<a href="/course-schedules/">Course Schedules</a><xsl:text>&#160;&#160;&#187;&#160;</xsl:text>
 			
 			<xsl:apply-templates select="." mode="make-crumb">
 				<xsl:with-param name="level" select="0" />
@@ -146,7 +148,7 @@
 				<a class="selected"><xsl:value-of select="$name" /></a>
 			</xsl:when>
 			<xsl:otherwise>
-				<a href="{utils:repeat-string('../',$level)}"><xsl:value-of select="$name" /></a>&#160;&#160;&#187;&#160;
+				<a href="{utils:repeat-string('../',$level)}"><xsl:value-of select="$name" /></a><xsl:text>&#160;&#160;&#187;&#160;</xsl:text>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -210,12 +212,15 @@
 		<!-- normally, this would generate an error because it's a text node outside of the root node. 
 			However, wrapping it in a comment works because xhtml comments can appear anywhere, and 
 			ASPX evaluates code inside comments just fine. -->
-		<xsl:comment>
-			<xsl:text disable-output-escaping="yes">&#10;&lt;%@ register tagprefix="bhc" tagname="header"  src="~/includes/header.ascx"                 %&gt;</xsl:text>
-			<xsl:text disable-output-escaping="yes">&#10;&lt;%@ register tagprefix="bhc" tagname="meta"    src="~/includes/meta.ascx"                   %&gt;</xsl:text>
-			<xsl:text disable-output-escaping="yes">&#10;&lt;%@ register tagprefix="bhc" tagname="footer"  src="~/includes/footer.ascx"                 %&gt;</xsl:text>
-			<xsl:text disable-output-escaping="yes">&#10;&lt;%@ register tagprefix="bhc" tagname="sidebar" src="~/course-schedules/credit/sidebar.ascx" %&gt;&#10;</xsl:text>
-		</xsl:comment>
+		<!-- UPDATE: Unfortunately, this confuzes IE to have a comment at the top of the page. Why? Who knows.
+			What this means is that I cannot run this transformation through Oxygen, but can run it through Saxon.
+			One more bump. I've lost count. -->
+
+		<xsl:text disable-output-escaping="yes">&#10;&lt;%@ register tagprefix="bhc" tagname="header"  src="~/includes/header.ascx"                 %&gt;</xsl:text>
+		<xsl:text disable-output-escaping="yes">&#10;&lt;%@ register tagprefix="bhc" tagname="meta"    src="~/includes/meta.ascx"                   %&gt;</xsl:text>
+		<xsl:text disable-output-escaping="yes">&#10;&lt;%@ register tagprefix="bhc" tagname="footer"  src="~/includes/footer.ascx"                 %&gt;</xsl:text>
+		<xsl:text disable-output-escaping="yes">&#10;&lt;%@ register tagprefix="bhc" tagname="sidebar" src="~/course-schedules/credit/sidebar.ascx" %&gt;&#10;</xsl:text>
+
 		<xsl:call-template name="newline" /><xsl:call-template name="newline" />
 	</xsl:template>
 	

@@ -22,7 +22,7 @@
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
-			<xsl:apply-templates select="*[descendant-or-self::class[@is-suppressed = 'false']]|contact|comments" />
+			<xsl:apply-templates select="*[descendant-or-self::class[visibility/@is-suppressed = 'false']]|contact|comments" />
 		</xsl:copy>
 	</xsl:template>
 	
