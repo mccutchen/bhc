@@ -25,8 +25,9 @@
 		change without notice.
 		======================================================================-->
 	<!-- output directory -->
-	<xsl:param name="date-min" as="xs:string" />
+	<xsl:param name="date-path" as="xs:string" />
 	
+	<xsl:variable name="doc-date" select="if (contains($date-path, '.xml') and utils:check-file($date-path)) then doc(replace($date-path, '\\', '/'))/date/@today else ''" as="xs:string" />
 	
 	<!--=====================================================================
 		Simple Transformation
@@ -34,11 +35,25 @@
 		lists only classes that fit within the enrolling window (ie, after the
 		supplied date)
 		======================================================================-->
-	<xsl:template match="schedule|term|division|subject|topic|subtopic|course">
+	<xsl:template match="schedule" priority="2">
+		<xsl:choose>
+			<xsl:when test="$doc-date = ''">
+				<xsl:message>Invalid date or file: 
+					<xsl:value-of select="$date-path" />
+					<xsl:value-of select="$doc-date" />
+				</xsl:message>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:next-match />
+			</xsl:otherwise>
+		</xsl:choose>
+		
+	</xsl:template>
+	<xsl:template match="schedule|term|division|subject|topic|subtopic|type|course">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
-			<xsl:apply-templates select="*[descendant-or-self::class[utils:compare-dates(@date-start, $date-min) != -1]]" />
+			<xsl:apply-templates select="*[descendant-or-self::class[utils:compare-dates(@date-start, $doc-date) != -1]]" />
 		</xsl:copy>
 	</xsl:template>
 	

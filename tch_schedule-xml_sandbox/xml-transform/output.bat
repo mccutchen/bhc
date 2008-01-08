@@ -5,6 +5,7 @@ GOTO %2
 :proof
 :print
 :web
+:enrolling
 :rooms
 CALL %1output-%2 %3 %4
 GOTO END

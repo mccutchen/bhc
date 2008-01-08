@@ -30,7 +30,7 @@ SET bat=xml-transform\output xml-transform\
 :: and    {semester} = Summer, Spring, or Fall
 
 ECHO.
-CALL %bat% proof %year% %semester%
+::CALL %bat% proof %year% %semester%
 ECHO.
 
 ECHO.
@@ -38,8 +38,11 @@ ECHO.
 ECHO.
 
 ECHO.
-::CALL %bat% web %year% %semester%
+CALL %bat% web %year% %semester%
 ECHO.
+
+ECHO.
+CALL %bat% enrolling %year% %semester%
 
 ECHO.
 ::CALL %bat% rooms %year% %semester%
