@@ -1,3 +1,10 @@
+# Author:     Travis Haapala
+# Section:    Brookhaven MPI
+# e-mail:     thaapala@dcccd.edu
+# extention:  x4104
+# Created:    18 October 2007
+# Modified:   19 December 2007
+
 # Just building a list of courses from each xml document, then comparing the lists
 
 # get xml lib (stolen out of Will's test.py)

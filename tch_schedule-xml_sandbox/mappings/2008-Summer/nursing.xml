@@ -1,0 +1,26 @@
+<!--=======================================================================
+	Health and Human Services
+	========================================================================-->
+<mappings>
+	<subject name="Nursing" ordered="true">
+		<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+		<topic name="none">
+			<comments>NOTE: The following courses are available to anyone interested in the Nursing program. Acceptance into the program is NOT REQUIRED. For more information call 972-860-4754.</comments>
+			<pattern match="HPRS 1203" />
+			<pattern match="RNSG 1211" />
+			<pattern match="RNSG 1301" />
+			<pattern match="RNSG 1108" />
+		</topic>
+		<topic name="First Semester Program Students" ordered="true">
+			<comments>NOTE: The following courses are for students in the first semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+			<pattern match="RNSG 1105" />
+			<pattern match="RNSG 1413" />
+			<pattern match="RNSG 1360" />
+		</topic>
+		<topic name="Third Semester Program Students" ordered="true">
+			<comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+			<pattern match="RNSG 1443" />
+			<pattern match="RNSG 2461" />
+		</topic>
+	</subject>
+</mappings>

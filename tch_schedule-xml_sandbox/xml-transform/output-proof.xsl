@@ -212,38 +212,89 @@
         </xsl:choose>
     </xsl:template>
     
-    <xsl:template match="class">
-        <tr>
-            <td class="number">
-                <!-- the class number is a composite of the course's @rubric and @number and the class's @section -->
-                <xsl:value-of select="../@rubric" /><xsl:text> </xsl:text>
-                <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
-                <xsl:value-of select="@section" /></td>
-            <td class="title"><xsl:value-of select="@title" /></td>
-            <td class="synonym"><xsl:value-of select="@synonym" /></td>
-            <td class="credit_hours"><xsl:value-of select="../@credit-hours" /></td>
-            <td class="dates"><xsl:value-of select="utils:format-dates(@date-start, @date-end)" />&#160;<xsl:apply-templates select="@weeks" /></td>
-        </tr>
-        <xsl:apply-templates select="meeting" />
-    </xsl:template>
-
-    <xsl:template match="class/@weeks">
-        (<xsl:value-of select="." />&#160;Wks)
-    </xsl:template>
-
-    <xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@weeks" priority="1">
-        <!-- don't output the number of weeks for Senior Adult courses -->
-    </xsl:template>
-
-    <xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days">
-        <!-- spell out the days of the week for Senior Adult courses -->
-        <xsl:value-of select="utils:senior-adult-days(.)" />
-    </xsl:template>
-
-
+	<xsl:template match="class">
+		<!-- select the primary class -->
+		<xsl:variable name="first-lec" select="utils:find-first-lec(meeting)" as="xs:integer" />
+		
+		<xsl:choose>
+			<!-- if there are NO MEETINGS, display an error, 'cause that's bad -->
+			<xsl:when test="$first-lec &lt; 1">
+				<xsl:variable name="cid" select="concat(parent::course/@rubric,' ',parent::course/@number,'-',@section)" />
+				<xsl:message>!ERROR! No meetings found for class <xsl:value-of select="$cid" /></xsl:message>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:apply-templates select="." mode="display" />
+				<xsl:apply-templates select="meeting[position() = $first-lec]" mode="primary" />
+				<xsl:apply-templates select="meeting[position() != $first-lec]" mode="secondary" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template match="class" mode="display">
+		<tr>
+			<td class="number">
+				<!-- the class number is a composite of the course's @rubric and @number and the class's @section -->
+				<xsl:value-of select="../@rubric" /><xsl:text> </xsl:text>
+				<xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
+				<xsl:value-of select="@section" /></td>
+			<td class="title"><xsl:value-of select="@title" /></td>
+			<td class="synonym"><xsl:value-of select="@synonym" /></td>
+			<td class="credit_hours"><xsl:value-of select="../@credit-hours" /></td>
+			<td class="dates"><xsl:value-of select="utils:format-dates(@date-start, @date-end)" />&#160;<xsl:apply-templates select="@weeks" /></td>
+		</tr>
+	</xsl:template>
+	
+	<xsl:template match="meeting" mode="primary">
+		<tr>
+			<td class="days"><xsl:apply-templates select="@days" /></td>
+			<td class="times"><xsl:value-of select="fn:pick-times(@method, @time-start, @time-end)" />
+				<xsl:text>&#160;/&#160;</xsl:text><xsl:apply-templates select="@method" /></td>
+			<td class="room"><xsl:apply-templates select="@room" /></td>
+			<td></td>
+			<td class="faculty"><xsl:if test="not(faculty)">Staff</xsl:if><xsl:apply-templates select="faculty" /></td>
+		</tr>
+	</xsl:template>
+	<xsl:template match="meeting" mode="secondary">
+		<tr class="extra-meeting">
+			<td class="method"><xsl:apply-templates select="@method" /></td>
+			<td class="times"><xsl:value-of select="fn:pick-times(@method, @time-start, @time-end)" /></td>
+			<td class="days"><xsl:apply-templates select="@days" /></td>
+			<td class="room"><xsl:apply-templates select="@room" /></td>
+			<td class="faculty"><xsl:if test="not(faculty)">Staff</xsl:if><xsl:apply-templates select="faculty" /></td>
+		</tr>
+	</xsl:template>
+	
+	<xsl:template match="@method[. = 'INET']">
+		<xsl:variable name="tc" select="ancestor::class/@topic-code" as="xs:string" />
+		<xsl:value-of select="if ($tc = '') then 'OL' else $tc" />
+	</xsl:template>
+	<xsl:template match="@method">
+		<xsl:value-of select="." />
+	</xsl:template>
+	
+	<xsl:template match="meeting[@method = 'INET']/@days">
+		<xsl:value-of select="'NA'" />
+	</xsl:template>
+	<xsl:template match="meeting[@method = 'LAB' and @room = 'INET']/@days">
+		<xsl:value-of select="'TBA'" />
+	</xsl:template>
+	<xsl:template match="@days">
+		<xsl:value-of select="." />
+	</xsl:template>
+	
+	<xsl:template match="meeting[@method = 'INET']/@room">
+		<xsl:value-of select="'OL'" />
+	</xsl:template>
+	<xsl:template match="meeting[@method = 'LAB' and @room = 'INET']/@room">
+		<xsl:value-of select="'OL'" />
+	</xsl:template>
+	<xsl:template match="@room">
+		<xsl:value-of select="." />
+	</xsl:template>
+	
+	<!--
     <xsl:template match="meeting[@method = ('LEC','')]">
         <tr>
-            <!--<xsl:apply-templates select="@sortkey | @default-sortkey" />-->
             <td class="days"><xsl:value-of select="@days" /></td>
             <td class="times"><xsl:value-of select="fn:pick-times(@method, @time-start, @time-end)" />&#160;/&#160;<xsl:value-of select="@method" /></td>
             <td class="room"><xsl:value-of select="@room" /></td>
@@ -282,8 +333,22 @@
             <td class="faculty"><xsl:if test="not(faculty)">Staff</xsl:if><xsl:apply-templates select="faculty" /></td>
         </tr>
     </xsl:template>
+    -->
 
-    <xsl:template match="faculty">
+	<xsl:template match="class/@weeks">
+		(<xsl:value-of select="." />&#160;Wks)
+	</xsl:template>
+	
+	<xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@weeks" priority="1">
+		<!-- don't output the number of weeks for Senior Adult courses -->
+	</xsl:template>
+	
+	<xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days">
+		<!-- spell out the days of the week for Senior Adult courses -->
+		<xsl:value-of select="utils:senior-adult-days(.)" />
+	</xsl:template>
+	
+	<xsl:template match="faculty">
         <xsl:value-of select="@name-last" />
         <xsl:if test="position() != last()"><xsl:value-of select="', '" /></xsl:if>
     </xsl:template>

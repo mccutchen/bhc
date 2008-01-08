@@ -4,8 +4,7 @@
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-	xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
-	exclude-result-prefixes="xs utils fn">
+	exclude-result-prefixes="xs utils">
 	
 	<!--=====================================================================
 		Description
@@ -156,7 +155,7 @@
 	
 	<xsl:template match="class">
 		<!-- select the primary class -->
-		<xsl:variable name="first-lec" select="fn:find-first-lec(meeting)" as="xs:integer" />
+		<xsl:variable name="first-lec" select="utils:find-first-lec(meeting)" as="xs:integer" />
 		
 		<xsl:choose>
 			<!-- if there are NO MEETINGS, display an error, 'cause that's bad -->
@@ -266,6 +265,7 @@
 	
 	<xsl:template match="faculty">
 		<xsl:value-of select="@name-last" />
+		<xsl:if test="position() != last()"><xsl:value-of select="', '" /></xsl:if>
 	</xsl:template>
 	
 	
@@ -431,46 +431,4 @@
         </p>
     </xsl:template>
 	
-	
-	<!-- ==========================================================================
-		Functions
-		
-		Used to clean up the above code
-		=========================================================================== -->
-	<xsl:function name="fn:find-first-lec" as="xs:integer">
-		<xsl:param name="meetings" as="element()*" />
-		
-		<xsl:choose>
-			<xsl:when test="count($meetings) &lt; 1">
-				<xsl:value-of select="-1" />
-			</xsl:when>
-			<xsl:when test="count($meetings) = 1">
-				<xsl:value-of select="1" />
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="fn:find-first-lec($meetings, 1)" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:function>
-	
-	<xsl:function name="fn:find-first-lec" as="xs:integer">
-		<xsl:param name="meetings" as="element()*" />
-		<xsl:param name="index"    as="xs:integer" />
-		
-		<xsl:choose>
-			<xsl:when test="$index &lt; 1">
-				<xsl:value-of select="-1" />
-			</xsl:when>
-			<xsl:when test="$index &gt; count($meetings)">
-				<xsl:value-of select="1" />
-			</xsl:when>
-			<xsl:when test="$meetings[$index]/@method = ('LEC','')">
-				<xsl:value-of select="$index" />
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:value-of select="fn:find-first-lec($meetings, $index + 1)" />
-			</xsl:otherwise>
-		</xsl:choose>
-	</xsl:function>
-
 </xsl:stylesheet>

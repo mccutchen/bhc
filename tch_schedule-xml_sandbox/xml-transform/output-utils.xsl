@@ -194,6 +194,45 @@
 	</xsl:function>
 	
 	
+	<!-- ==========================================================================
+		Find primary meeting
+		=========================================================================== -->
+	<xsl:function name="utils:find-first-lec" as="xs:integer">
+		<xsl:param name="meetings" as="element()*" />
+		
+		<xsl:choose>
+			<xsl:when test="count($meetings) &lt; 1">
+				<xsl:value-of select="-1" />
+			</xsl:when>
+			<xsl:when test="count($meetings) = 1">
+				<xsl:value-of select="1" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="utils:find-first-lec($meetings, 1)" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<xsl:function name="utils:find-first-lec" as="xs:integer">
+		<xsl:param name="meetings" as="element()*" />
+		<xsl:param name="index"    as="xs:integer" />
+		
+		<xsl:choose>
+			<xsl:when test="$index &lt; 1">
+				<xsl:value-of select="-1" />
+			</xsl:when>
+			<xsl:when test="$index &gt; count($meetings)">
+				<xsl:value-of select="1" />
+			</xsl:when>
+			<xsl:when test="$meetings[$index]/@method = ('LEC','')">
+				<xsl:value-of select="$index" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="utils:find-first-lec($meetings, $index + 1)" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
 	
     <!-- =====================================================================
     	 Date formatters
