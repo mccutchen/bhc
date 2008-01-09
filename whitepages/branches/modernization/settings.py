@@ -18,7 +18,7 @@ import sys
 
 class database:
     # the path to the database
-    path = 'H:\IAA\PI\Shared Folder\Employee Database and Org Charts\employees_db.mdb'
+    path = 'employees_db.mdb'
     
     # the name of the table in the database
     tablename = 'BrookhavenEmployees'
