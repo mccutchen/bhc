@@ -1,4 +1,5 @@
 from wrm.formatter import Formatter
+import settings
 
 class WhitePagesFormatter(Formatter):
     
