@@ -22,6 +22,9 @@ class database:
     
     # the name of the table in the database
     tablename = 'BrookhavenEmployees'
+    
+    # character encoding used by the database
+    encoding = 'windows-1252'
 
 class output:
     # the name of the folder to store the output in

@@ -11,7 +11,7 @@ def build():
     doc = ElementTree(root)
     
     print >> settings.log.info, ' - Extracting data from database'
-    employees = get_employees(meta.table)
+    employees = get_employees(db.table)
 
     seen_letters = []
     for employee in employees:
