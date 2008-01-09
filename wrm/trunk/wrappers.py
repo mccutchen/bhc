@@ -82,8 +82,12 @@ class SimpleDatabaseWrapper:
         names."""
         return ', '.join(self.columns)
     
-    def all(self):
-        self.execute('select $columns$ from $table$')
+    def all(self, order_by=None):
+        """Convenience function which selects every column in the table and
+        returns an iterator over each row.  If order_by is given, optionally
+        orders the results by that column."""
+        sql = 'select $columns$ from $table$' + (order_by and ' order by %s' % order_by or '')
+        self.execute(sql)
         return self.results()
     
     def commit(self):
