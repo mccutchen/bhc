@@ -15,8 +15,8 @@ if not os.path.exists(settings.database.path):
 
 # try to connect to the database
 try:
-    table = AccessTable(settings.database.path, settings.database.table, settings.database.encoding)
+    table = AccessTable(settings.database.path, settings.database.tablename, settings.database.encoding)
 except Exception, e:
     raise DatabaseError("""Error opening database at %s.  Make sure the table
 defined in the profile (%s) is the correct table.\nException information: %s""" \
-        % (settings.database.path, settings.database.table, e))
+        % (settings.database.path, settings.database.tablename, e))
