@@ -9,25 +9,15 @@
 		Includes & Output
 		======================================================================-->
 	<xsl:include
-		href="../xml-prep/xml-utils.xsl" />
+		href="../prep/xml-utils.xsl" />
 	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
 		exclude-result-prefixes="xs utils" doctype-system="../dtds/xml-formed.dtd"/>
 	
 	
 	<!--=====================================================================
-		Parameters
-		
-		date-min is required because xsl is retarded. I mean, really. Who would
-		ever want to use the current date/time in xsl? Um. Everyone? Too bad.
-		No way to access that, even in xslt 2.0. Of course, you could use 
-		extensions, because that way your code relies on a third party whose 
-		code is not part of the official xslt standard and could disappear or
-		change without notice.
+		Global
 		======================================================================-->
-	<!-- output directory -->
-	<xsl:param name="date-path" as="xs:string" />
-	
-	<xsl:variable name="doc-date" select="if (contains($date-path, '.xml') and utils:check-file($date-path)) then doc(replace($date-path, '\\', '/'))/date/@today else ''" as="xs:string" />
+	<xsl:variable name="current-date" select="utils:convert-date-std(format-date(current-date(), '[M]/[D]/[Y]'))" as="xs:string" />
 	
 	<!--=====================================================================
 		Simple Transformation
@@ -35,25 +25,11 @@
 		lists only classes that fit within the enrolling window (ie, after the
 		supplied date)
 		======================================================================-->
-	<xsl:template match="schedule" priority="2">
-		<xsl:choose>
-			<xsl:when test="$doc-date = ''">
-				<xsl:message>Invalid date or file: 
-					<xsl:value-of select="$date-path" />
-					<xsl:value-of select="$doc-date" />
-				</xsl:message>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:next-match />
-			</xsl:otherwise>
-		</xsl:choose>
-		
-	</xsl:template>
 	<xsl:template match="schedule|term|division|subject|topic|subtopic|type|course">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
-			<xsl:apply-templates select="*[descendant-or-self::class[utils:compare-dates(@date-start, $doc-date) != -1]]" />
+			<xsl:apply-templates select="*[descendant-or-self::class[utils:compare-dates(@date-start, $current-date) != -1]]" />
 		</xsl:copy>
 	</xsl:template>
 	

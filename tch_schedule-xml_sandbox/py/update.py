@@ -15,13 +15,12 @@ import os, sys, urllib2
 # globals
 base_url = ('http://econnect.dcccd.edu/econnect/Schedule/',
             '/xml/');
-output_dir = 'data/';
 HTML_MAX   = 2048;      # 2 KB
 XML_MAX    = 4194304;   # 4 MB
 
 # run
 # the main, sorta
-def run():
+def run(out_dir):
     semesters = ('Fall',
                  'Spring',
                  'Summer1',
@@ -36,7 +35,7 @@ def run():
             print '  !Error! Fetch filename of ' + s + ' xml failed.';
             fail_cnt += 1;
         else:
-            path_dsc = os.path.normcase(output_dir + filename);
+            path_dsc = os.path.normcase(out_dir + filename);
             if (GetXML(s, filename, path_dsc)):
                 print '  Successfully updated ' + s + ' xml.';
             else:
@@ -101,11 +100,18 @@ def GetXML(semester, filename, outpath):
 
 # MAIN
 if (__name__ == '__main__'):
+    rVal = 0;
+    pause = True;
+    if (len(sys.argv) < 2 or len(sys.argv) > 3):
+        print 'Syntax: update {output directory} [-no_pause]'
+        sys.exit(-1);
+    if ((len(sys.argv) == 3) and (sys.argv[2] == '-no_pause')):
+        pause = False;
+        
     try:
-        rVal = run();
+        rVal = run(sys.argv[1]);
     except:
         print '!Error! update failed utterly!';
 
-    if ((len(sys.argv) < 2) or (sys.argv[1] != '-no_pause')):
-        os.system('pause');
+    if (pause): os.system('pause');
     sys.exit(rVal);
