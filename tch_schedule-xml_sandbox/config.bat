@@ -36,3 +36,14 @@ SET transform_dir_out=..\..\
 SET prep_bat=%prep_dir_in%prep
 SET split_bat=%split_dir_in%split
 SET transform_bat=%transform_dir_in%transform
+
+
+
+::================================================::
+:: Debug setup					  ::
+::================================================::
+
+::Set this to debug in order to keep intermediate files
+SET mode=release
+::SET mode=debug
+

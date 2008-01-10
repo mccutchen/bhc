@@ -49,19 +49,19 @@ GOTO %sem%
 :Fall
 SET sched=Normal
 SET abbr=FA
-SET raw=%data%\schedule-200-%year%%abbr%.xml
+SET raw=%data%schedule-200-%year%%abbr%.xml
 GOTO RETURN
 :Spring
 SET sched=Normal
 SET abbr=SP
-SET raw=%data%\schedule-200-%year%%abbr%.xml
+SET raw=%data%schedule-200-%year%%abbr%.xml
 GOTO RETURN
 :Summer
 SET sched=Summer
 SET abbr=S1
 SET abbr2=S2
-SET raw=%data%\schedule-200-%year%%abbr%.xml
-SET raw2=%data%\schedule-200-%year%%abbr2%.xml
+SET raw=%data%schedule-200-%year%%abbr%.xml
+SET raw2=%data%schedule-200-%year%%abbr2%.xml
 GOTO RETURN
 :default
 ECHO Unknown semester: %sem%

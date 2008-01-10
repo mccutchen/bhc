@@ -1,8 +1,5 @@
 @ECHO OFF
 
-::Set this to debug in order to keep intermediate files
-SET mode=debug
-
 
 :: Step 1, Check Parameters
 

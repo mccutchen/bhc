@@ -19,21 +19,26 @@
 		Creates the subject page content w/links, etc.
 		======================================================================-->
 	<xsl:template match="subject" mode="page">
-		<!-- comments -->
-		<xsl:apply-templates select="comments" />
-		
-		<!-- summary -->
-		<xsl:call-template name="make-summary" />
-		
-		<!-- core list -->
-		<xsl:call-template name="make-core" />
-		
-		
-		<!-- stand-alone types -->
-		<xsl:apply-templates select="type" />
-		
-		<!-- topics -->
-		<xsl:apply-templates select="topic" />
+		<div class="subject">
+			<!-- comments -->
+			<xsl:apply-templates select="comments" />
+			
+			<!-- summary -->
+			<xsl:call-template name="make-summary" />
+			
+			<!-- core list -->
+			<xsl:call-template name="make-core" />
+			
+			
+			<!-- stand-alone types -->
+			<xsl:apply-templates select="type" />
+			
+			<!-- topics -->
+			<xsl:apply-templates select="topic" />
+			
+			<!-- other terms -->
+			<xsl:call-template name="other-terms" />
+		</div><xsl:comment>end of subject</xsl:comment>
 	</xsl:template>
 	
 	<xsl:template match="topic">
@@ -415,20 +420,22 @@
     </xsl:template>
 
 
-    <xsl:template name="other-terms">
-        <p>If you don't find the course you're looking for in this term, try
-        <xsl:choose>
-            <xsl:when test="ancestor::term/@name = 'May Term'">
-                <a href="../summer_i/">Summer I</a> or <a href="../summer_ii/">Summer II</a>.
-            </xsl:when>
-            <xsl:when test="ancestor::term/@name = 'Summer I'">
-                <a href="../may_term/">May Term</a> or <a href="../summer_ii/">Summer II</a>.
-            </xsl:when>
-            <xsl:when test="ancestor::term/@name = 'Summer II'">
-                <a href="../may_term/">May Term</a> or <a href="../summer_i/">Summer I</a>.
-            </xsl:when>
-        </xsl:choose>
-        </p>
-    </xsl:template>
+	<xsl:template name="other-terms">
+		<xsl:if test="count(//term[@display = 'true']) &gt; 1">
+			<p>If you don't find the course you're looking for in this term, try
+				<xsl:choose>
+					<xsl:when test="ancestor::term/@name = 'May Term'">
+						<a href="../summer_i/">Summer I</a> or <a href="../summer_ii/">Summer II</a>.
+					</xsl:when>
+					<xsl:when test="ancestor::term/@name = 'Summer I'">
+						<a href="../may_term/">May Term</a> or <a href="../summer_ii/">Summer II</a>.
+					</xsl:when>
+					<xsl:when test="ancestor::term/@name = 'Summer II'">
+						<a href="../may_term/">May Term</a> or <a href="../summer_i/">Summer I</a>.
+					</xsl:when>
+				</xsl:choose>
+			</p>
+		</xsl:if>
+	</xsl:template>
 	
 </xsl:stylesheet>
