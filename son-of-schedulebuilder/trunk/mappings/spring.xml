@@ -707,6 +707,7 @@
                     <pattern match="MUAP 1161-2002" />
                     <pattern match="MUAP 1161-2003" />
                     <pattern match="MUAP 1161-2004" />
+                	<pattern match="MUAP 1161-2005" /> <!-- added 01/11/2008 - Guitar -->
                     <pattern match="MUAP 1169-2001" />
                     <pattern match="MUAP 1169-2002" />
                     <pattern match="MUAP 1169-2005" />
@@ -985,6 +986,7 @@
 				<subtopic name="Paramedic Class #19">
 					<pattern match="EMSP 2434-2719" />
 					<pattern match="EMSP 2434-2700" />
+					<pattern match="EMSP 2434-2706" /> <!-- added 01/11/2008 - Medical Emergencies -->
 					<pattern match="EMSP 1355-2719" />
 					<pattern match="EMSP 1355-2700" />
 					<pattern match="EMSP 2430-2719" />
