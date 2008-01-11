@@ -64,7 +64,7 @@
 			
 			<!-- otherwise, proceed -->
 			<xsl:otherwise>
-				<xsl:element name="schedule">
+				<xsl:copy>
 					<xsl:call-template name="set-semester-year">
 						<xsl:with-param name="semesters" select="term/@name, if($doc-schedule != '') then $doc-schedule//term/@name else none" />
 						<xsl:with-param name="years"     select="term/@year, if($doc-schedule != '') then $doc-schedule//term/@year else none" />
@@ -79,7 +79,7 @@
 					<xsl:call-template name="create-terms">
 						<xsl:with-param name="courses" select="//course | $other-courses" />
 					</xsl:call-template>
-				</xsl:element>
+				</xsl:copy>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:template>
@@ -117,7 +117,7 @@
 	<xsl:template match="term">
 		<xsl:param name="courses" as="element()*" />
 		
-		<xsl:element name="term">
+		<xsl:copy>
 			<xsl:attribute name="name"       select="@name"                               />
 			<xsl:attribute name="date-start" select="utils:convert-date-std(@date-start)" />
 			<xsl:attribute name="date-end"   select="utils:convert-date-std(@date-end)"   />
@@ -128,7 +128,7 @@
 				<xsl:with-param name="date-min" select="@date-start" />
 				<xsl:with-param name="date-max" select="@date-end"   />
 			</xsl:apply-templates>
-		</xsl:element>
+		</xsl:copy>
 	</xsl:template>
 	
 	
@@ -136,7 +136,7 @@
 		<xsl:param name="date-min" as="xs:string" />
 		<xsl:param name="date-max" as="xs:string" />
 		
-		<xsl:element name="course">
+		<xsl:copy>
 			<xsl:attribute name="rubric"  select="@rubric" />
 			<xsl:attribute name="number"  select="@number" />
 			<xsl:apply-templates          select="@credit-hours" />
@@ -151,7 +151,7 @@
 			
 			<xsl:apply-templates select="description" />
 			<xsl:apply-templates select="class[utils:compare-dates-between(@start-date, $date-min, $date-max, true(), true())]" />
-		</xsl:element>
+		</xsl:copy>
 	</xsl:template>
 	
 	<xsl:template match="course/@credit-hours">
@@ -159,7 +159,7 @@
 	</xsl:template>
 	
 	<xsl:template match="class">
-		<xsl:element name="class">
+		<xsl:copy>
 			<xsl:attribute name="synonym" select="@synonym" />
 			<xsl:attribute name="section" select="@section" />
 			<xsl:attribute name="title"   select="@title"   />
@@ -215,11 +215,11 @@
 			
 			<xsl:apply-templates select="description" />
 			<xsl:apply-templates select="meeting" />
-		</xsl:element>
+		</xsl:copy>
 	</xsl:template>
 	
 	<xsl:template match="meeting">
-		<xsl:element name="meeting">
+		<xsl:copy>
 			<xsl:attribute name="method" select="@method" />
 			<xsl:attribute name="days" select="@days" />
 			<xsl:attribute name="bldg" select="@building" />
@@ -242,17 +242,17 @@
 			<xsl:attribute name="sortkey-method" select="if (not($sortkey-method)) then 0 else $sortkey-method" />
 			
 			<xsl:apply-templates select="faculty" />
-		</xsl:element>
+		</xsl:copy>
 	</xsl:template>
 	
 	<xsl:template match="faculty">
-		<xsl:element name="faculty">
+		<xsl:copy>
 			<xsl:attribute name="name-first"  select="@first-name"  />
 			<xsl:attribute name="name-middle" select="@middle-name" />
 			<xsl:attribute name="name-last"   select="@last-name"   />
 			<xsl:attribute name="email"       select="@email"       />
 			<xsl:attribute name="phone"       select="@phone"       />
-		</xsl:element>
+		</xsl:copy>
 	</xsl:template>
 	
 	<xsl:template match="description">

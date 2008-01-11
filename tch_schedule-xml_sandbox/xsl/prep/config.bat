@@ -6,10 +6,6 @@ SET sem=%1
 SET year=%2
 SET ys=%year%-%sem%
 
-GOTO SetAbbr
-:RETURN
-
-
 
 ::================================================::
 :: Directory setup				  ::
@@ -37,6 +33,9 @@ SET fixed=%data%%ys%_fixed.xml
 SET formed=%data%%ys%_formed.xml
 
 
+GOTO SetAbbr
+:RETURN
+
 
 
 GOTO END
@@ -50,11 +49,13 @@ GOTO %sem%
 SET sched=Normal
 SET abbr=FA
 SET raw=%data%schedule-200-%year%%abbr%.xml
+SET raw2=""
 GOTO RETURN
 :Spring
 SET sched=Normal
 SET abbr=SP
 SET raw=%data%schedule-200-%year%%abbr%.xml
+SET raw2=""
 GOTO RETURN
 :Summer
 SET sched=Summer

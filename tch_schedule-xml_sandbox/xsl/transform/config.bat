@@ -32,21 +32,25 @@ GOTO %1
 :rooms
 SET type=rooms
 SET format=Rooms
+SET params=""
 GOTO RETURN
 
 :print
 SET type=print
 SET format=Print
+SET params=""
 GOTO RETURN
 
 :proof
 SET type=proof
 SET format=Proof
+SET params=""
 GOTO RETURN
 
 :web
 SET type=web
 SET format=Web
+SET params=""
 GOTO RETURN
 
 :enrolling

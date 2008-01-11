@@ -127,12 +127,7 @@
     </xsl:template>
     
     
-    <!-- ok, so the sorting is all messed up and there is no longer an easy 'extra' element for
-         lec/lab pairing, coop's, ect. So, we're going to filter this a bit more than in the
-         previous version. I'm going to make a guess and say that 'extra' courses were always
-         non-LEC meetings with identical 'rubric number-section' identifiers as a LEC meeting. -->
-    <!-- Ah, INET meetings can also have 'extra' LAB meetings -->
-	<!-- DEV NOTE: should the meetings be sorted by sortkey, days, date, time, section? -->
+    
     <xsl:template name="pre-format">
         <xsl:param name="meetings" />
         
@@ -152,22 +147,8 @@
                     <xsl:variable name="section" select="ancestor::class/@section" />
                 	
                     <xsl:variable name="meeting-set" select="$number-set[ancestor::class/@section = $section]" />
-                    
-                    <!-- if there's more than one, try to find a main/extra relationship -->
-                    <xsl:choose>
-                        <xsl:when test="count($meeting-set) &gt; 1 and count($meeting-set[@method = 'LEC' or @method = 'INET']) = 1">
-                            <xsl:apply-templates select="$meeting-set[@method = 'LEC' or @method = 'INET']" mode="main" />
-                            <xsl:apply-templates select="$meeting-set[@method != 'LEC' and @method != 'INET']" mode="extra" />
-                        </xsl:when>
-                        <xsl:when test="count($meeting-set) &lt; 1">
-                            <xsl:variable name="class-id"><xsl:value-of select="$rubric" /> <xsl:value-of select="$number" />-<xsl:value-of select="$section" /></xsl:variable>
-                            <xsl:message>!Warning! no meetings listed for course <xsl:value-of select="$class-id" />: <xsl:value-of select="$meeting-set/@synonym" /></xsl:message>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <xsl:apply-templates select="$meeting-set" mode="main" />
-                        </xsl:otherwise>
-                    </xsl:choose>
-                    
+                    <xsl:apply-templates select="$meeting-set" />
+                         
                     <!-- comments will only appear if it's a distance learning class -->
                     <xsl:if test="$meeting-set/@method = $special-methods or $meeting-set/ancestor::course/@type-id = $special-types">
                         <xsl:apply-templates select="$meeting-set/ancestor::course/comments" />
@@ -177,7 +158,7 @@
         </xsl:for-each-group>
     </xsl:template>
     
-    <xsl:template match="meeting" mode="main">
+    <xsl:template match="meeting[@primary = 'true']">
         <xsl:variable name="type-id" select="ancestor::type/@id" />
         <xsl:variable name="course" select="ancestor::course" />
         <xsl:variable name="class" select="parent::class" />
@@ -209,7 +190,7 @@
         </xsl:if>
     </xsl:template>
     
-    <xsl:template match="meeting" mode="extra">
+    <xsl:template match="meeting[@primary = 'false']">
         <xsl:variable name="type" select="ancestor::grouping[@type = 'type']" />
         <xsl:variable name="course" select="ancestor::course" />
         <xsl:variable name="class" select="parent::class" />

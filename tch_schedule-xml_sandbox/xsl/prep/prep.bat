@@ -74,7 +74,7 @@ ECHO.
 
 :: Step 6: Error Check
 
-::ECHO Error-checking %sem% %year%...
+ECHO Error-checking %sem% %year%...
 CD %py_dir_in%
 GOTO ErrorCheck%sched%
 
@@ -92,10 +92,24 @@ ECHO.
 
 
 
-:: Step 7: Clean Up
+:: Step 7: Fix Meetings
+
+SET text=Fixing Meeting elements
+SET xsl=%prep%\xml-meetings.xsl
+
+SET source=%formed%
+SET dest=%data%%ys%.xml
+
+ECHO %text%...
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+ECHO Finished
+ECHO.
+
+
+:: Step 8: Clean Up
 
 ECHO Cleaning up...
-COPY %formed% %data%%ys%.xml >nul
+::COPY %formed% %data%%ys%.xml >nul
 IF (%mode%)==(debug) GOTO FINISH
 DEL %mappings%
 DEL %fixed%

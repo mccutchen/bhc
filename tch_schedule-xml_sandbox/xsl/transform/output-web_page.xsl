@@ -153,29 +153,12 @@
 			</tr>
 			
 			<!-- class info -->
-			<xsl:apply-templates select="$classes" />
+			<xsl:apply-templates select="$classes/meeting" />
 		</table>
 		<xsl:apply-templates select="$classes[1]/comments" />
 	</xsl:template>
-	
-	<xsl:template match="class">
-		<!-- select the primary class -->
-		<xsl:variable name="first-lec" select="utils:find-first-lec(meeting)" as="xs:integer" />
 		
-		<xsl:choose>
-			<!-- if there are NO MEETINGS, display an error, 'cause that's bad -->
-			<xsl:when test="$first-lec &lt; 1">
-					<xsl:variable name="cid" select="concat(parent::course/@rubric,' ',parent::course/@number,'-',@section)" />
-					<xsl:message>!ERROR! No meetings found for class <xsl:value-of select="$cid" /></xsl:message>
-			</xsl:when>
-			<xsl:otherwise>
-					<xsl:apply-templates select="meeting[position() = $first-lec]" mode="primary" />
-					<xsl:apply-templates select="meeting[position() != $first-lec]" mode="secondary" />
-				</xsl:otherwise>
-			</xsl:choose>
-	</xsl:template>
-	
-	<xsl:template match="class" mode="display">
+	<xsl:template match="class">
 		<xsl:variable name="link" select="'https://www1.dcccd.edu/catalogue/coursedescriptions/detail.cfm'" as="xs:string" />
 		<xsl:variable name="cid"  select="concat(../@rubric, '&#160;', ../@number, '-', @section)"        as="xs:string" />
 		
@@ -190,61 +173,37 @@
 			<xsl:apply-templates select="@weeks" />
 		</td>
 	</xsl:template>
+	<xsl:template match="class/@weeks">
+		(<xsl:value-of select="." />&#160;Wks)
+	</xsl:template>
 	
-	<xsl:template match="meeting" mode="primary">
+	<xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@weeks" priority="1">
+		<!-- don't output the number of weeks for Senior Adult courses -->
+	</xsl:template>
+	
+	
+	<xsl:template match="meeting[@primary = 'true']">
 		<tr>
-			<xsl:apply-templates select="parent::class" mode="display" />
-			<xsl:apply-templates select="." />
+			<xsl:apply-templates select="parent::class" />
+			<xsl:next-match />
 		</tr>
 	</xsl:template>
-	<xsl:template match="meeting" mode="secondary">
+	<xsl:template match="meeting[@primary = 'false']">
 		<tr class="extra">
 			<td>&#160;</td>
 			<td>&#160;</td>
 			<td>&#160;</td>
 			<td>&#160;</td>
-			<xsl:apply-templates select="." />
+			<xsl:next-match />
 		</tr>
 	</xsl:template>
 	
-	<xsl:template match="meeting[@method = ('LEC','')]">
-			<td class="days"><xsl:apply-templates select="@days" /></td>
-			<xsl:variable name="times" select="utils:format-times(@time-start, @time-end)" as="xs:string" />
-			<td class="times"><xsl:value-of select="if ($times = 'NA' and @room != 'INET') then 'TBA' else $times" /></td>
-			<td class="format"><xsl:apply-templates select="@method" /></td>
-			<td class="room"><xsl:value-of select="@room" /></td>
-			<td class="faculty"><xsl:apply-templates select="faculty" /></td>
-	</xsl:template>
-	<xsl:template match="meeting[@method = ('INET')]">
-			<td class="days">NA</td>
-			<td class="times">NA</td>
-			<td class="format"><xsl:apply-templates select="@method" /></td>
-			<td class="room"><xsl:value-of select="@room" /></td>
-			<td class="faculty"><xsl:apply-templates select="faculty" /></td>
-	</xsl:template>
-	
-	<xsl:template match="meeting[@method = ('LAB')]">
-			<td class="days"><xsl:apply-templates select="@days" /></td>
-			<xsl:variable name="times" select="utils:format-times(@time-start, @time-end)" as="xs:string" />
-			<td class="times"><xsl:value-of select="if ($times = 'NA') then 'TBA' else $times" /></td>
-			<td class="format"><xsl:apply-templates select="@method" /></td>
-			<td class="room"><xsl:value-of select="@room" /></td>
-			<td class="faculty"><xsl:apply-templates select="faculty" /></td>
-	</xsl:template>
 	<xsl:template match="meeting">
 			<td class="days"><xsl:apply-templates select="@days" /></td>
-			<td class="times"><xsl:value-of select="utils:format-times(@time-start, @time-end)" /></td>
+		<td class="times"><xsl:value-of select="replace(utils:format-times(@time-start, @time-end), '-', '&#8209;')" /></td>
 			<td class="format"><xsl:apply-templates select="@method" /></td>
-			<td class="room"><xsl:value-of select="if (@method = 'COOP' and @room = 'TBA') then 'NA' else @room" /></td>
+			<td class="room"><xsl:value-of select="@room" /></td>
 			<td class="faculty"><xsl:apply-templates select="faculty" /></td>
-	</xsl:template>
-	
-	<xsl:template match="class/@weeks">
-		(<xsl:value-of select="." />&#160;Wks)
-	</xsl:template>
-	
-	<xsl:template match="meeting[starts-with(ancestor::subject/@name, 'Senior Adult')]/@weeks" priority="1">
-		<!-- don't output the number of weeks for Senior Adult courses -->
 	</xsl:template>
 	
 	<xsl:template match="meeting[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days">
@@ -252,10 +211,7 @@
 		<xsl:value-of select="utils:senior-adult-days(.)" />
 	</xsl:template>
 	
-	<xsl:template match="meeting[@method = 'LAB' and @room = 'INET']/@days" priority="2">
-		<xsl:value-of select="'TBA'" />
-	</xsl:template>
-	
+	<!-- I don't know what to do with these, since the method is modified by topic code now.
 	<xsl:template match="meeting[@method = ('INET', 'TV', 'TVP', 'IDL')]/@method">
 		<xsl:variable name="description">
 			<xsl:choose>
@@ -267,6 +223,7 @@
 		</xsl:variable>
 		<a href="/course-schedules/credit/distance-learning/#formats" title="{$description}" rel="special-format"><xsl:value-of select="." /></a>
 	</xsl:template>
+	-->
 	
 	<xsl:template match="faculty">
 		<xsl:value-of select="@name-last" />
