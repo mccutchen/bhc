@@ -1,33 +1,18 @@
 @ECHO OFF
 
-:: Step 1: Check Parameters
-
-if "%1"=="" GOTO SYNTAX
-if "%2"=="" GOTO SYNTAX
-
-
-:: Step 2: Set Variables
-CALL config
 SET pause=no-pause
 
-
-
-:: Step 3: Fetch New Data
+:: Step 1: Fetch New Data
 
 CALL 1_fetch-dsc-xml
 
 
 
-:: Step 4: Prepare the Data
+:: Step 2: Run the usual
 
-CALL 2_prep-data %1 %2
-
-
-
-:: Step 5: Generate Output
-
-CALL 3_generate-output %1 %2
-
+CALL 3_generate-output Spring 2008 web
+CALL 3_generate-output Spring 2008 enrolling-now
+CALL 3_generate-output Summer 2008 proof
 
 GOTO END
 

@@ -17,7 +17,6 @@ SET output_dir_out=..\
 SET map_dir_in=mappings\
 SET map_dir_out=..\
 
-
 SET prep_dir_in=xsl\prep\
 SET prep_dir_out=..\..\
 
@@ -44,6 +43,6 @@ SET transform_bat=%transform_dir_in%transform
 ::================================================::
 
 ::Set this to debug in order to keep intermediate files
-::SET mode=release
-SET mode=debug
+SET mode=release
+::SET mode=debug
 

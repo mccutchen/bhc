@@ -1,82 +1,66 @@
 @ECHO OFF
 
-
-:: Step 1, Check Parameters
-
-if "%1"=="" GOTO SYNTAX
-if "%2"=="" GOTO SYNTAX
-
-
-:: Step 2, Set Variables
-CALL %prep_dir_in%config %1 %2
+:: Step 1: Check Parameters
+::----------------------------------------------
+IF NOT "%setup%"=="true" CALL setup %1 %2 %3
+IF "%ys%"=="" GOTO SYNTAX
 
 
-
-ECHO Preparing raw data for %sem% %year%
-ECHO ----------------------------------------
-
-
-:: Step 3: Create Mappings
-
-SET text=Preparing mappings
-SET xsl=%prep%xml-mappings.xsl
-
-SET source=%basemap%
-SET dest=%mappings%
-SET params=path-mappings=%xsl_root%%mapdir%
-
-ECHO %text%...
-java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
-ECHO Finished
 ECHO.
+ECHO Preparing data for %semester% %year%
+
+
+:: Step 2: Create Mappings
+::----------------------------------------------
+IF NOT EXIST %map_sem% GOTO NO-MAPPINGS
+SET xsl=%prep_dir_in%mappings.xsl
+SET source=%base%
+SET dest=%mappings%
+SET params=path-mappings=%xsl_root%%map_sem%
+
+ECHO  - creating mappings
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
 
 
 
 :: Step 4: Fix Data
-
-SET format=fixed
-SET text=Fixing data
-SET xsl=%prep%\xml-fix.xsl
-
+::----------------------------------------------
+IF NOT EXIST %raw% GOTO NO-DATA
+SET xsl=%prep_dir_in%fix.xsl
 SET source=%raw%
 SET dest=%fixed%
 SET params=path-sortkeys=%xsl_root%%sortkeys%
 SET params=%params% path-core=%xsl_root%%core%
 SET params=%params% path-mappings=%xsl_root%%mappings%
-IF "%raw2%"=="": GOTO FIX
+IF "%raw2%"=="" GOTO FIX
+IF NOT EXIST "%raw2%" GOTO NO-DATA-S2
 SET params=%params% second-schedule=%xsl_root%%raw2%
 :FIX
 
-ECHO %text%...
+ECHO  - fixing data
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
-ECHO Finished
-ECHO.
 
 
 
 :: Step 5: Form Data
-
-SET format=formed
-SET text=Forming data
-SET xsl=%prep%\xml-form.xsl
-
+::----------------------------------------------
+SET xsl=%prep_dir_in%\form.xsl
 SET source=%fixed%
 SET dest=%formed%
 SET params=path-sortkeys=%xsl_root%%sortkeys%
 SET params=%params% path-mappings=%xsl_root%%mappings%/
 
-ECHO %text%...
+ECHO  - forming data
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
-ECHO Finished
-ECHO.
 
 
 
 :: Step 6: Error Check
+::----------------------------------------------
+ECHO  - error checking
 
-ECHO Error-checking %sem% %year%...
 CD %py_dir_in%
-GOTO ErrorCheck%sched%
+GOTO ErrorCheck%schedule%
 
 :ErrorCheckNormal
 python -m compare %py_root%%raw% %py_root%%fixed% %py_root%%formed% %py_root%%compare%
@@ -84,43 +68,49 @@ GOTO ErrorCheckComplete
 
 :ErrorCheckSummer
 python -m compare %py_root%%raw% %py_root%%raw2% %py_root%%fixed% %py_root%%formed% %py_root%%compare%
+GOTO ErrorCheckComplete
+
+:default
+ECHO Unable to error check output!
+GOTO ErrorCheckComplete
 
 :ErrorCheckComplete
 CD %py_dir_out%
-ECHO Finished
-ECHO.
 
 
 
 :: Step 7: Fix Meetings
-
-SET text=Fixing Meeting elements
-SET xsl=%prep%\xml-meetings.xsl
-
+::----------------------------------------------
+SET xsl=%prep_dir_in%\meetings.xsl
 SET source=%formed%
-SET dest=%data%%ys%.xml
+SET dest=%meetings%
 
-ECHO %text%...
+ECHO  - fixing meetings
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
-ECHO Finished
-ECHO.
+
 
 
 :: Step 8: Clean Up
 
-ECHO Cleaning up...
-::COPY %formed% %data%%ys%.xml >nul
+ECHO  - cleaning up
 IF (%mode%)==(debug) GOTO FINISH
 DEL %mappings%
 DEL %fixed%
 DEL %formed%
-
-:FINISH
-ECHO Finished
-ECHO.
 GOTO END
 
 
+:NO-MAPPINGS
+ECHO There are no mappings for %semester% %year%.
+GOTO END
+
+:NO-DATA
+ECHO There is no raw data for %semester% %year%.
+GOTO END
+
+:NO-DATA-S2
+ECHO There is no second schedule for %semester% %year%.
+GOTO END
 
 :SYNTAX
 ECHO Syntax: %0 {semester} {year}
@@ -128,3 +118,5 @@ ECHO.
 GOTO END
 
 :END
+ECHO Finished.
+ECHO.

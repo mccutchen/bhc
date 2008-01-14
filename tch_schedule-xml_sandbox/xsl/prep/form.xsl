@@ -10,7 +10,7 @@
 		Setup
 		======================================================================-->
 	<!-- utility functions -->
-	<xsl:include href="xml-utils.xsl"/>
+	<xsl:include href="prep-utils.xsl"/>
 	<!-- output -->
 	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
 		exclude-result-prefixes="xs utils fn" doctype-system="../dtds/xml-formed.dtd"/>

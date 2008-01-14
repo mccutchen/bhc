@@ -19,10 +19,10 @@
 	<!--=====================================================================
 		Includes & Output
 		======================================================================-->
-	<xsl:include href="output-utils.xsl"        />
-	<xsl:include href="output-web_template.xsl" />
-	<xsl:include href="output-web_index.xsl"    />
-	<xsl:include href="output-web_page.xsl"     />
+	<xsl:include href="transform-utils.xsl"        />
+	<xsl:include href="web_template.xsl" />
+	<xsl:include href="web_index.xsl"    />
+	<xsl:include href="web_page.xsl"     />
 	
 	<xsl:output
 		method="xhtml"

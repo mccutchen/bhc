@@ -1,119 +1,129 @@
 @ECHO OFF
 
-
-:: Step 1, Check Parameters
-
-if "%1"=="" GOTO SYNTAX
-if "%2"=="" GOTO SYNTAX
-
-
-:: Step 2, Set Variables
-CALL %split_dir_in%config %1 %2
+:: Step 1: Check Parameters
+::----------------------------------------------
+IF NOT "%setup%"=="true" CALL setup %1 %2 %3
+IF "%ys%"=="" GOTO SYNTAX
+IF "%type%"=="" GOTO SYNTAX
 
 
-ECHO Splitting data for %sem% %year%
-ECHO ----------------------------------------
+:: Step 2: Determine Type
+::----------------------------------------------
+GOTO %type%
+
+: ROOMS
+::----------------------------------------------
+IF EXIST %rooms% GOTO ROOMS_END
+
+CALL %prep_bat% %semester% %year%
+IF NOT EXIST %rooms% GOTO ERROR
+
+:ROOMS_END
+IF "%type%"=="rooms" GOTO END
 
 
-:: Step 3: Create rooms
+:PRINT
+::----------------------------------------------
+IF EXIST %print% GOTO PRINT_END
+IF NOT EXIST %rooms% GOTO ROOMS
 
-ECHO Creating Rooms data...
-COPY %base% %data%%ys%_rooms.xml >nul
-ECHO Finished.
-ECHO.
-
-
-
-:: Step 4: Create Print
-
-ECHO Creating Print data...
-
-SET xsl=%splitter%xml-trim.xsl
-SET source=%base%
+SET xsl=%split_dir_in%trim.xsl
+SET source=%final%
 SET dest=%trimmed%
+ECHO  - trimming
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %trimmed% GOTO ERROR
 
-COPY %trimmed% %data%%ys%_print.xml >nul
-ECHO Finished
-ECHO.
+IF NOT EXIST %print% GOTO ERROR
+:PRINT_END
+IF "%type%"=="print" GOTO END
 
 
+:PROOF
+::----------------------------------------------
+IF EXIST %proof% GOTO PROOF_END
+IF NOT EXIST %print% GOTO PRINT
 
-:: Step 5: Create Proof
-
-ECHO Creating Proof data...
-
-SET xsl=%splitter%\xml-split.xsl
+SET xsl=%split_dir_in%split.xsl
 SET source=%trimmed%
 SET dest=%split%
+ECHO  - splitting
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %split% GOTO ERROR
 
-SET xsl=%splitter%\xml-sort.xsl
+SET xsl=%split_dir_in%sort.xsl
 SET source=%split%
 SET dest=%sorted%
+ECHO  - sorting
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %sorted% GOTO ERROR
 
-COPY %sorted% %data%%ys%_proof.xml >nul
-ECHO Finished
-ECHO.
+DEL %split%
+
+IF NOT EXIST %proof% GOTO ERROR
+:PRINT_END
+IF "%type%"=="proof" GOTO END
 
 
+:WEB
+::----------------------------------------------
+IF EXIST %web% GOTO WEB_END
+IF NOT EXIST %proof% GOTO PROOF
 
-:: Step 6: Create Web
-
-ECHO Creating Web data...
-
-SET xsl=%splitter%xml-section.xsl
+SET xsl=%split_dir_in%section.xsl
 SET source=%sorted%
 SET dest=%sectioned%
+ECHO  - sectioning
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %sectioned% GOTO ERROR
 
-COPY %sectioned% %data%%ys%_web.xml >nul
-ECHO Finished
-ECHO.
+IF NOT EXIST %web% GOTO ERROR
+:PRINT_END
+IF "%type%"=="web" GOTO END
 
 
+:ENROLLING-NOW
+:ENROLLING-SOON
+::----------------------------------------------
+IF EXIST %enrolling-sectioned% GOTO ENROLLING_END
+IF NOT EXIST %web% GOTO WEB
 
-:: Step 7: Create Web-Enrolling
-
-ECHO Creating Web-Enrolling data...
-
-SET xsl=%splitter%xml-enroll.xsl
+SET xsl=%split_dir_in%enroll.xsl
 SET source=%sorted%
 SET dest=%enrolling%
+ECHO  - enrolling
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %enrolling% GOTO ERROR
 
-SET xsl=%splitter%\xml-section.xsl
+SET xsl=%split_dir_in%section.xsl
 SET source=%enrolling%
 SET dest=%enrolling-sectioned%
+ECHO  - sectioning
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %enrolling-sectioned% GOTO ERROR
 
-COPY %enrolling-sectioned% %data%%ys%_web-enrolling.xml >nul
-ECHO Finished
-ECHO.
-
-
-
-:: Step 8: Clean Up
-
-ECHO Cleaning up...
-IF (%mode%)==(debug) GOTO FINISH
-DEL %trimmed%
-DEL %split%
-DEL %sorted%
-DEL %sectioned%
 DEL %enrolling%
-DEL %enrolling-sectioned%
 
-:FINISH
-ECHO Finished
+IF NOT EXIST %enrolling-sectioned% GOTO ERROR
+:ENROLLING_END
+IF "%type%"=="enrolling-now" GOTO END
+IF "%type%"=="enrolling-soon" GOTO END
+
+
+:default
+::----------------------------------------------
+ECHO Unknown type.
+GOTO END
+
+
+:ERROR
+ECHO Unable to split data.
 ECHO.
 GOTO END
 
 
-
 :SYNTAX
-ECHO Syntax: %0 {semester} {year}
+ECHO Syntax: %0 {semester} {year} {format}
 ECHO.
 GOTO END
 
