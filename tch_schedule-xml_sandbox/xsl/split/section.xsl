@@ -8,8 +8,12 @@
 		Setup
 		======================================================================-->
 	<!-- output -->
-	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
-		exclude-result-prefixes="xs" doctype-system="../dtds/xml-special.dtd"/>
+	<xsl:output
+		method="xml" 
+		encoding="iso-8859-1" 
+		indent="yes"
+		exclude-result-prefixes="xs" 
+		doctype-system="../dtds/special.dtd" />
 	
 	
 	<!--=====================================================================

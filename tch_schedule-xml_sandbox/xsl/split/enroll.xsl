@@ -10,8 +10,12 @@
 		======================================================================-->
 	<xsl:include
 		href="../prep/prep-utils.xsl" />
-	<xsl:output method="xml" encoding="iso-8859-1" indent="yes"
-		exclude-result-prefixes="xs utils" doctype-system="../dtds/xml-formed.dtd"/>
+	<xsl:output 
+		method="xml" 
+		encoding="iso-8859-1" 
+		indent="yes"
+		exclude-result-prefixes="xs utils" 
+		doctype-system="../dtds/meetings.dtd"/>
 	
 	
 	<!--=====================================================================

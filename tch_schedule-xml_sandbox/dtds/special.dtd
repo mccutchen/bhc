@@ -80,6 +80,7 @@ flex-month 		CDATA #IMPLIED>
 
 <!ELEMENT meeting (faculty*)>
 <!ATTLIST meeting
+primary 		(true|false) "false"
 method 			CDATA #REQUIRED
 days 			CDATA #REQUIRED
 bldg 			CDATA #REQUIRED

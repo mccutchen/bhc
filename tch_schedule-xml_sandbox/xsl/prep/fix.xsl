@@ -18,7 +18,7 @@
 		encoding="iso-8859-1"
 		indent="yes"
 		exclude-result-prefixes="xs utils fn"
-		doctype-system="../dtds/xml-fixed.dtd" />
+		doctype-system="../dtds/fixed.dtd" />
 	
 	
 	<!--=====================================================================
