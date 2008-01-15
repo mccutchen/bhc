@@ -108,7 +108,9 @@ extra-room 		CDATA #IMPLIED
 location 		CDATA #IMPLIED
 email 			CDATA #IMPLIED>
 
-<!ELEMENT comments (#PCDATA|p|table|b|h1|h2)*>
+<!ELEMENT comments (#PCDATA|email|url|p|table|b|h1|h2)*>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT url   (#PCDATA)>
 <!ELEMENT p (#PCDATA|p|table|b|h1|h2)*>
 <!ELEMENT table (tr+)>
 <!ATTLIST table

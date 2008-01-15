@@ -240,7 +240,6 @@
 			Health and Human Services
 			======================================================================== -->
 		<subject name="Nursing" ordered="true">
-			<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
 			<file src="nursing.xml" />
 		</subject>
 		<subject name="Nursing - Unsorted" display="false">

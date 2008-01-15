@@ -11,6 +11,9 @@ IF "%type%"=="" GOTO SYNTAX
 :: Step 2: Check for correct data file
 ::----------------------------------------------
 IF EXIST %file% GOTO OUTPUT
+IF EXIST %final% GOTO SPLIT
+CALL %prep_bat%
+:SPLIT
 CALL %split_bat% %type%
 IF NOT EXIST %file% GOTO ERROR
 
@@ -23,6 +26,7 @@ SET xsl=%transform_dir_in%%type%.xsl
 SET source=%file%
 SET dest=no-file.txt
 
+ECHO.
 ECHO Generating %type% output for %semester% %year%
 GOTO %type%
 
@@ -63,9 +67,11 @@ ECHO.
 GOTO END
 
 :CLEAN-UP
+IF (%mode%)==(debug) GOTO END
 IF NOT EXIST %dest% GOTO END
 DEL %dest%
 GOTO END
 
 :END
-ECHO Finished
+ECHO Finished.
+ECHO.

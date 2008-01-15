@@ -169,7 +169,7 @@
 				<xsl:value-of select="-1" />
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:variable name="base" select="normalize-space($classes[$index]/comments/text())" as="xs:string" />
+				<xsl:variable name="base" select="utils:normalize-space($classes[$index]/comments/text())" as="xs:string" />
 				<xsl:value-of select="utils:max-comment-match($base, $classes, $index + 1)" />
 			</xsl:otherwise>
 		</xsl:choose>
@@ -184,11 +184,32 @@
 			<xsl:when test="$index &gt; count($classes)">
 				<xsl:value-of select="$index - 1" />
 			</xsl:when>
-			<xsl:when test="compare($base, normalize-space($classes[$index]/comments/text())) = 0">
+			<xsl:when test="compare($base, utils:normalize-space($classes[$index]/comments/text())) = 0">
 				<xsl:value-of select="utils:max-comment-match($base, $classes, $index + 1)" />
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="$index - 1" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<!-- converts normalize-space() to work on sequences of strings -->
+	<xsl:function name="utils:normalize-space" as="xs:string">
+		<xsl:param name="text" as="xs:string*" />
+		
+		<xsl:value-of select="utils:normalize-space($text, 1, '')" />
+	</xsl:function>
+	<xsl:function name="utils:normalize-space" as="xs:string">
+		<xsl:param name="text"  as="xs:string*" />
+		<xsl:param name="index" as="xs:integer" />
+		<xsl:param name="final" as="xs:string" />
+		
+		<xsl:choose>
+			<xsl:when test="$index &lt; 1 or $index &gt; count($text)">
+				<xsl:value-of select="$final" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="utils:normalize-space($text, $index+1, concat($final, $text[$index]))" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
