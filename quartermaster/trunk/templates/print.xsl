@@ -132,9 +132,7 @@
         </xsl:apply-templates>
 
         <xsl:if test="position() != last()">
-            <xsl:call-template name="blank-line" />
-            <xsl:call-template name="blank-line" />
-            <xsl:call-template name="blank-line" />
+            <xsl:call-template name="end-division" />
         </xsl:if>
     </xsl:template>
 
@@ -162,8 +160,7 @@
         <xsl:apply-templates select="suffix_description" />
 
         <xsl:if test="position() != last()">
-            <xsl:call-template name="blank-line" />
-            <xsl:call-template name="blank-line" />
+            <xsl:call-template name="end-cluster" />
         </xsl:if>
     </xsl:template>
 
@@ -187,15 +184,17 @@
         <xsl:apply-templates select="textbooks" />
         <xsl:apply-templates select="supplies" />
 
-        <xsl:apply-templates select="class">
+    	<xsl:call-template name="start-classes" />
+    	<xsl:apply-templates select="class">
             <xsl:sort select="@date_sortkey" data-type="number" order="ascending" />
             <xsl:sort select="@time_sortkey" data-type="number" order="ascending" />
         </xsl:apply-templates>
 
-        <xsl:apply-templates select="notes" />
+    	<xsl:if test="notes"><xsl:call-template name="end-classes" /></xsl:if>
+    	<xsl:apply-templates select="notes" />
 
         <xsl:if test="position() != last()">
-            <xsl:call-template name="blank-line" />
+            <xsl:call-template name="end-course" />
         </xsl:if>
     </xsl:template>
 
@@ -210,11 +209,21 @@
                 <xsl:otherwise>Day Course</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
+    	
+    	<!-- ok, old format was:
+    		@Tagname: course # \t dates \t hours/sessions \t times
+    		@Tagname: \t location-room \t days \t faculty \t tuition
+    		
+    		new format is:
+    		@Tagname: course # \t reg # \t dates \t hours/sessions \t days
+    		@Tagname: \t times \t \t location-room \t faculty \t tuition
+    	-->
 
+		<!-- tag -->
         <xsl:call-template name="xtag">
             <xsl:with-param name="tagname" select="$tagname" />
         </xsl:call-template>
-
+    	
         <!-- if the class number is missing, print a bold placeholder -->
         <xsl:choose>
             <xsl:when test="not(@class_number)">
@@ -226,27 +235,55 @@
         </xsl:choose>
         <xsl:call-template name="sep" />
 
-        <xsl:value-of select="@start_date"/>-<xsl:value-of select="@end_date"/><xsl:call-template name="sep" />
-        <xsl:value-of select="@hours"/>hrs/<xsl:value-of select="@session"/><xsl:call-template name="sep" />
+    	<!-- reg number -->
+    	<xsl:value-of select="@reg_num" />
+    	<xsl:call-template name="sep" />
+    	
+    	<!-- dates -->
+    	<xsl:value-of select="@start_date"/>-<xsl:value-of select="@end_date"/>
+    	<xsl:call-template name="sep" />
+    	
+    	<!-- hours / session -->
+        <xsl:value-of select="@hours"/>hrs/<xsl:value-of select="@session"/>
+    	<xsl:call-template name="sep" />
+    	
+    	<!-- days -->
+    	<xsl:value-of select="@days"/>
+    	<xsl:call-template name="sep" />
+    	
+    	
+    	<!-- newline -->
+    	<xsl:call-template name="br" />
+    	
+    	<!-- tag -->
+    	<xsl:call-template name="xtag">
+    		<xsl:with-param name="tagname" select="$tagname" />
+    	</xsl:call-template>
+    	
+    	<!-- sep -->
+    	<xsl:call-template name="sep" />
+    	
+    	<!-- times -->
         <xsl:value-of select="@time_formatted"/>
-
-        <!-- split the class information onto two rows -->
-        <xsl:call-template name="br" />
-
-        <!-- reprint the xtag on this new line for consistency (I don't think it's necessary) -->
-        <xsl:call-template name="xtag">
-            <xsl:with-param name="tagname" select="$tagname" />
-        </xsl:call-template>
-
-        <!-- indent the second row of class info -->
-        <xsl:call-template name="sep" />
-
-        <xsl:value-of select="@location"/>-<xsl:value-of select="@room"/><xsl:call-template name="sep" />
-        <xsl:value-of select="@days"/><xsl:call-template name="sep" />
-        <xsl:value-of select="@faculty"/><xsl:call-template name="sep" />
-        <xsl:value-of select="@tuition"/>
-
-        <xsl:call-template name="br" />
+    	<xsl:call-template name="sep" />
+    	
+    	<!-- extra sep -->
+    	<xsl:call-template name="sep" />
+    	
+    	<!-- location-room -->
+    	<xsl:value-of select="@location"/>-<xsl:value-of select="@room"/>
+    	<xsl:call-template name="sep" />
+    	
+    	<!-- faculty -->
+    	<xsl:value-of select="@faculty"/>
+    	<xsl:call-template name="sep" />
+    	
+    	<!-- tuition -->
+    	<xsl:value-of select="@tuition"/>
+    	
+    	
+    	<!-- newline -->
+    	<xsl:call-template name="br" />
     </xsl:template>
 
 
@@ -355,9 +392,29 @@
 
 
     <xsl:template name="blank-line">
-        <xsl:text>@Day Course:</xsl:text><xsl:call-template name="br" />
+        <xsl:text>@Spacer:</xsl:text><xsl:call-template name="br" />
     </xsl:template>
 
+	<xsl:template name="start-classes">
+		<xsl:text>@Start Classes:</xsl:text><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<xsl:template name="end-classes">
+		<xsl:text>@End Classes:</xsl:text><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<xsl:template name="end-course">
+		<xsl:text>@End Course:</xsl:text><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<xsl:template name="end-cluster">
+		<xsl:text>@End Cluster:</xsl:text><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<xsl:template name="end-division">
+		<xsl:text>@End Division:</xsl:text><xsl:call-template name="br" />
+	</xsl:template>
+	
     <xsl:template name="br">
         <xsl:choose>
             <xsl:when test="$output-target-platform = 'mac'">
