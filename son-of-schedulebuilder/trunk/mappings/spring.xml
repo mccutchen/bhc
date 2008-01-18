@@ -738,6 +738,7 @@
                     <pattern match="MUAP 2269-2004" />
                     <pattern match="MUAP 2281-2001" />
                     <pattern match="MUAP 2281-2002" />
+                	<pattern match="MUAP 2281-2003" /> <!-- added 01/18/08 - Voice -->
                 </subtopic>
             </topic>
         </subject>
@@ -775,6 +776,7 @@
                 <pattern match="DANC 1223-2001" />
                 <pattern match="DANC 1222-2501" />
                 <pattern match="DANC 1223-2501" />
+            	<pattern match="DANC 1223-2701" /> <!-- added 01/18/08 - Hip Hop II -->
                 <pattern match="DANC 2222-2501" />
                 <pattern match="DANC 2223-2501" />
             </topic>
