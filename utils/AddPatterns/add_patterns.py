@@ -1,3 +1,13 @@
+# Author:    Travis Haapala
+# Section:   Brookhaven MPI
+# e-mail:    thaapala@dcccd.edu
+# extention: x4104
+# Created:   07 August 2007
+# Modified:  19 December 2007
+
+# Synopsis:
+# Converts a text file to mappings xml style. Not very well yet, this grows with each use.
+
 
 # includes
 import ap_data_lib as data_lib;
