@@ -2,8 +2,8 @@
 # Section:   Brookhaven MPI
 # e-mail:    thaapala@dcccd.edu
 # extention: x4104
-# Created:   19 January 2008
-# Modified:  19 January 2008
+# Created:   22 January 2008
+# Modified:  22 January 2008
 
 # Synopsis:
 # Keeps network connections open. Created because the dev server connection times out
@@ -34,7 +34,7 @@ def Cycle(path):
     # construct output string
     global total_slept;
     total_slept += sleep_time;
-    out_str = 'Connection open for: ' + str(total_slept) + ' seconds.';
+    out_str = FormatSeconds(total_slept);
 
     # write output to command line and specified path
     try:
@@ -56,6 +56,18 @@ def Cycle(path):
     # sleep a bit
     time.sleep(sleep_time);
     return 0;
+
+def FormatSeconds(seconds):
+    minutes = int(seconds / 60)
+    seconds = int(seconds % 60)
+    hours   = int(minutes / 60)
+    minutes = int(minutes % 60)
+    out_str = 'Connection open for:';
+    if (hours > 0): out_str += ' ' + str(hours) + ' hours';
+    if (minutes > 0): out_str += ' ' + str(minutes) + ' minutes';
+    out_str += ' ' + str(seconds) + ' seconds';
+    out_str += '.';
+    return out_str;
 
 def ErrorSyntax():
     print 'Invalid syntax\nSYNTAX: net_helper {path to file} [time to sleep]';
@@ -81,6 +93,7 @@ if (__name__ == '__main__'):
     # grab sleep time and verify
     if (arg_cnt == 3):
         sleep_time = int(sys.argv[2]);
+        total_slept = -sleep_time;
         if (sleep_time <= 0):
             PrintError('Invalid sleep time: ' + str(sleep_time), -1);
 
