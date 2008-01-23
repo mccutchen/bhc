@@ -87,17 +87,21 @@
     	====================================================================== -->
 	<xsl:template match="term">
         <!-- only output the term header if there is more than one term -->
-        <xsl:if test="count(//term) &gt; 1">
-            <h1 class="term-header">
+        <xsl:if test="count(//term[@display = 'true']) &gt; 1">
+            <h2 class="term-header">
                 <xsl:value-of select="concat(@name, ' ', parent::schedule/@year)" />
-                <span class="term-dates"><xsl:value-of select="utils:format-dates(@date-start, @date-end)" /></span>
-            </h1>
+                <span class="term-dates">(<xsl:value-of select="utils:format-dates(@date-start, @date-end)" />)</span>
+            </h2>
+        	<xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
         </xsl:if>
 
 		<xsl:apply-templates select="subject" />
     </xsl:template>
 
 	<xsl:template match="subject">
+		<!-- display term header if applicable -->
+		<xsl:apply-templates select="ancestor::term" />
+		
 		<!-- if this is not supposed to display, display a warning -->
 		<xsl:if test="@display = 'false'">
 			<xsl:message>

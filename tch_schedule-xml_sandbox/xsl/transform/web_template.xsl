@@ -22,10 +22,17 @@
 			<body class="with-sidebar">
 				<xsl:call-template name="aspx-header" />
 				
-				<div id="channel-header" class="course-schedules">
+				<div id="schedule-header" class="channel-header">
 					<h1><xsl:value-of select="concat($channel, ' Course Schedule')" /></h1>
 				</div>
 				<xsl:call-template name="newline" />
+				
+				<!-- if this is a subject page, add the division info -->
+				<xsl:if test="self::subject">
+					<div id="division-header" class="channel-header division-header">
+						<xsl:call-template name="make-division-info" />
+					</div>
+				</xsl:if>
 				
 				<div id="page-container">
 					<div id="page-header">
@@ -115,6 +122,53 @@
 		
 		Creates specific portions of the page
 		======================================================================-->
+	<xsl:template name="make-division-info">
+		<!-- Get the division info. -->
+		<xsl:variable name="division-name" select="ancestor::division/@name" />
+		<xsl:variable name="ext"           select="if (contact/@ext) then contact/@ext else ancestor::division/contact/@ext" />
+		<xsl:variable name="room"          select="if (contact/@room) then contact/@room else ancestor::division/contact/@room" />
+		<xsl:variable name="extra-room"    select="if (contact/@extra-room) then contact/@extra-room else ancestor::division/contact/@extra-room" />
+		<xsl:variable name="email"         select="if (contact/@email) then contact/@email else ancestor::division/contact/@email" />
+		
+		<!-- division name -->
+		<h1><xsl:value-of select="$division-name" /></h1>
+		
+		<div class="contact-info">
+			<!-- either room or rooms or location -->
+			<xsl:choose>
+				<!-- if there is a @location, don't print 'ROOM ' first, just print
+					the location -->
+				<xsl:when test="@location">
+					<xsl:value-of select="@location" />
+				</xsl:when>
+				<xsl:otherwise>
+					<!-- pluralize 'room' if necessary -->
+					<xsl:text>Room</xsl:text><xsl:value-of select="if ($extra-room) then 's' else ''" /><xsl:text>: </xsl:text>
+					
+					<!-- the actual room number -->
+					<xsl:value-of select="$room" />
+					
+					<!-- if there's an extra room, add it -->
+					<xsl:if test="$extra-room">
+						<xsl:text> and </xsl:text><xsl:value-of select="$extra-room" />
+					</xsl:if>
+				</xsl:otherwise>
+			</xsl:choose>
+			<xsl:call-template name="br" />
+			
+			<!-- email address -->
+			<xsl:if test="$email">
+				<xsl:text>E-mail:  </xsl:text><a href="mailto:{$email}"><xsl:value-of select="$email" /></a>
+			</xsl:if>
+			<xsl:call-template name="br" />
+			
+			<!-- phone number plus extension -->
+			<xsl:if test="$ext">
+				<xsl:text>972-860-</xsl:text><xsl:value-of select="$ext" /><xsl:call-template name="br" />
+			</xsl:if>
+		</div>
+	</xsl:template>
+	
 	<xsl:template name="make-jumpto">
 		<xsl:param name="list" as="xs:string*" />
 		
