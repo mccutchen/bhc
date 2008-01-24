@@ -1,4 +1,4 @@
-import sys
+import os, sys
 
 #    These are the settings for whitepages (the Intranet
 #    staff directory builder).
@@ -36,6 +36,10 @@ class output:
         
         # The suffix, including file extension, to use for the file names
         suffix = '.html'
+    
+    class xml:
+        # Where to write the intermediate XML file
+        path = 'whitepages.xml'
 
 class portraits:
     # the absolute path to where the images are stored on the server,
@@ -53,3 +57,8 @@ class log:
 class extras:
     sourcedir = 'templates'
     patterns = 'sdir.html css/*.css'
+
+# Where to find saxon8.jar
+saxon_path = os.name == 'posix' and \
+    os.path.expanduser('~/src/saxon/saxon8.jar') or \
+    'C:/saxon/saxon8.jar'
