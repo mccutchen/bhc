@@ -1,6 +1,4 @@
-# $Id: xmlutils.py 2224 2006-09-22 21:32:30Z wrm2110 $
-
-import re
+import os, re
 
 try:
     from xml.etree import cElementTree as ET
@@ -88,3 +86,25 @@ def indent(elem, level=0):
     else:
         if level and (not elem.tail or not elem.tail.strip()):
             elem.tail = i
+
+def transform(xml_path, xsl_path, saxon_path, params={}):
+    """A wrapper around calling out to Saxon on the command line.  Returns
+    two lists, the lines Saxon prints to STDOUT and those it prints to
+    STDERR."""
+
+    # Convert params dict into a string suitable for command line parameters
+    params = ' '.join(['%s="%s"' % (item) for item in params.items()])
+    
+    # Sub in arguments given to this function
+    cmd = 'java -jar %(saxon_path)s -o transform.log %(xml_path)s %(xsl_path)s %(params)s' % locals()
+    
+    # Open a named pipe to run the command
+    saxonin, saxonout, saxonerr = os.popen3(cmd)
+    
+    # Utility function that removes empty lines from the results of 
+    # running the command
+    def strippedlines(lines):
+        return [line.strip() for line in lines if line.strip()]
+    
+    # Return two lists, stdout and stderr output from the command
+    return strippedlines(saxonout), strippedlines(saxonerr)
