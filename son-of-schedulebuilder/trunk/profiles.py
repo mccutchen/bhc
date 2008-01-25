@@ -464,7 +464,7 @@ class Summer08(Summer):
 
         'Summer I/May Term': (date(2008, 5, 1), date(2008, 5, 30)),
         'Summer I':  (date(2008, 6, 1), date(2008, 7, 3)),
-        'Summer II':  (date(2008, 7, 9), date(2008, 8, 7)),
+        'Summer II':  (date(2008, 7, 7), date(2008, 8, 8)),
     }
 
 class Summer08Proof(Summer08, Proof):
