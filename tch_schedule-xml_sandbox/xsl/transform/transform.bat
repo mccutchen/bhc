@@ -32,6 +32,7 @@ GOTO %type%
 
 :rooms
 :print
+:print-InDesign
 :proof
 :web
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%

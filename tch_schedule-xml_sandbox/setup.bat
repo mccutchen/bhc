@@ -37,6 +37,7 @@ IF NOT "%3"=="" GOTO %3
 GOTO NO-TYPE
 :rooms
 :print
+:print-InDesign
 :proof
 :web
 :enrolling-now
@@ -120,6 +121,7 @@ GOTO %type%
 SET file=%rooms%
 GOTO END
 :print
+:print-InDesign
 SET file=%print%
 GOTO END
 :proof
