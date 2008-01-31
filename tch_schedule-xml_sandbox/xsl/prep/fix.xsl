@@ -234,7 +234,8 @@
 			<xsl:attribute name="sortkey-days" select="if (not($sortkey-days)) then 0 else $sortkey-days" />
 			
 			<!-- write sortkey-times -->
-			<xsl:attribute name="sortkey-times" select="utils:convert-time-ord(@start-time)" />
+			<xsl:variable name="sortkey" select="utils:convert-time-ord(@start-time)" as="xs:string" />
+			<xsl:attribute name="sortkey-times" select="if ($sortkey = '0') then 2500 else $sortkey" />
 			
 			<!-- write sortkey-method -->
 			<xsl:variable name="method" select="@method" />
