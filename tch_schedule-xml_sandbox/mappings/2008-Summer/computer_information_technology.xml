@@ -84,7 +84,7 @@
 			<pattern match="COSC 2436-2502" />
 			<!--<pattern match="COSC 2430-2501" /> duplicate -->
 			<!--<pattern match="COSC 2436-2501" /> duplicate -->
-			<pattern match="COSC 2436-2502" />
+			<!--<pattern match="COSC 2436-2502" /> duplicate -->
 		</topic>
 	</subject>
 	<subject name="Computer Studies - Business Computer Information Systems" ordered="true">
