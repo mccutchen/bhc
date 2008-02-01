@@ -692,6 +692,7 @@
                     <pattern match="MUAP 1129-2002" />
                     <pattern match="MUAP 1133-2001" />
                     <pattern match="MUAP 1133-2002" />
+                	<pattern match="MUAP 1133-2200" /> <!-- added 02/01/2008 - Saxaphone -->
                     <pattern match="MUAP 1137-2001" />
                     <pattern match="MUAP 1137-2002" />
                     <pattern match="MUAP 1141-2001" />
@@ -710,6 +711,7 @@
                     <pattern match="MUAP 1161-2003" />
                     <pattern match="MUAP 1161-2004" />
                 	<pattern match="MUAP 1161-2005" /> <!-- added 01/11/2008 - Guitar -->
+                	<pattern match="MUAP 1161-2206" /> <!-- added 02/01/2008 - Guitar -->
                     <pattern match="MUAP 1169-2001" />
                     <pattern match="MUAP 1169-2002" />
                     <pattern match="MUAP 1169-2005" />
@@ -720,7 +722,7 @@
                     <pattern match="MUAP 1181-2005" />
                     <pattern match="MUAP 1181-2006" />
                     <pattern match="MUAP 1181-2007" />
-                	<pattern match="MUAP 2253-2001" /> <!-- added 12/06/2007 - Tuba -->
+
                 </subtopic>
                 <subtopic name="Intermediate">
                     <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
@@ -741,6 +743,7 @@
                     <pattern match="MUAP 2281-2001" />
                     <pattern match="MUAP 2281-2002" />
                 	<pattern match="MUAP 2281-2003" /> <!-- added 01/18/08 - Voice -->
+                	<pattern match="MUAP 2253-2001" /> <!-- moved 02/01/08 from begining to intermediate, added 12/06/2007 - Tuba -->
                 </subtopic>
             </topic>
         </subject>
@@ -785,6 +788,7 @@
 			<topic name="Jazz">
 				<pattern match="DANC 1247-2501" />
 				<pattern match="DANC 1248-2501" />
+				<pattern match="DANC 1248-2701" /> <!-- added 02/01/08 - Jazz II -->
 			</topic>
             <topic name="Ballet">
                 <pattern match="DANC 1341-2001" />
@@ -804,6 +808,7 @@
                 <comments>Students must have had one semester of dance training for the following classes.</comments>
                 <pattern match="DANC 1245-2001" />
                 <pattern match="DANC 1246-2001" /> <!-- modified 08/23/2007 from -2501 -->
+            	<pattern match="DANC 1246-2701" /> <!-- added 02/01/08 - Modern Dance II -->
                 <pattern match="DANC 2245-2001" />
                 <pattern match="DANC 2246-2001" />
                 <pattern match="DANC 1245-2501" />
@@ -850,6 +855,7 @@
             <topic name="Rehearsal">
                 <subtopic name="First Play, Spring 2008">
                     <pattern match="DRAM 1221-2735" />
+                	<pattern match="DRAM 1221-2737" /> <!-- added 02/01/2008 - Theater Practicum II -->
                 </subtopic>
                 <subtopic name="Second Play, Spring 2008">
                     <pattern match="DRAM 1221-2736" />
