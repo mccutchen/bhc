@@ -592,6 +592,7 @@
             </topic>
             <topic name="Foundation Of Music">
                 <pattern match="MUSI 1304-2001" />
+            	<pattern match="MUSI 1304-2200" /> <!-- added 02/08/2008 - Foundation Mus -->
                 <pattern match="MUSI 1300-2300" />
             </topic>
             <topic name="Composition">
