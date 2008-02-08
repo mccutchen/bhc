@@ -13,12 +13,12 @@ import db
 from schema import schema
 
 def build():
-    print >> settings.log.info, 'Building xml document from %s...' % settings.database.path
+    print 'Building xml document from %s...' % settings.database_path
     
     root = Element('directory')
     doc = ElementTree(root)
     
-    print >> settings.log.info, ' - Extracting data from database'
+    print ' - Extracting data from database'
     employees = get_employees(db.table)
     
     seen_letters = []
@@ -40,7 +40,7 @@ def build():
     # Write our XML file to disk
     wrm.xmlutils.write_xml(doc, 'whitepages.xml')
     
-    print >> settings.log.info, 'Finished.\n'
+    print 'Finished.\n'
     return doc
 
 
@@ -56,8 +56,8 @@ def alphagroup_element(parent, letter):
     prevletter = chr(ord(letter) - 1)
     
     # get the filenames for the pages for the surrounding letters
-    prefix = settings.output.html.prefix
-    suffix = settings.output.html.suffix
+    prefix = settings.output_html_prefix
+    suffix = settings.output_html_suffix
     nextpage = prefix + nextletter.lower() + suffix
     prevpage = prefix + prevletter.lower() + suffix
     
@@ -101,6 +101,6 @@ if __name__ == '__main__':
     tree = build()
     root = tree.getroot()
     
-    print >> settings.log.info, 'Summary:'
-    print >> settings.log.info, ' - Alphagroup elements: %d' % len(root.findall('.//alphagroup'))
-    print >> settings.log.info, ' - Employee elements: %d' % len(root.findall('.//employee'))
+    print 'Summary:'
+    print ' - Alphagroup elements: %d' % len(root.findall('.//alphagroup'))
+    print ' - Employee elements: %d' % len(root.findall('.//employee'))

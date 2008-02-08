@@ -10,8 +10,8 @@ def build(xmldoc):
     params = { 'date': apdate() }
     
     # Run the transformation
-    out, err = xmlutils.transform(settings.output.xml.path, 
-                                  settings.templates.xsl,
+    out, err = xmlutils.transform(settings.output_xml_path, 
+                                  settings.templates_xsl,
                                   settings.saxon_path,
                                   params)
 
@@ -21,7 +21,7 @@ def build(xmldoc):
     for line in err:
         print >> sys.stderr, ' ! Error: %s' % line
         
-    print >> settings.log.info, 'Finished.'
+    print 'Finished.'
 
 
 def main():

@@ -10,7 +10,7 @@ class WhitePagesFormatter(Formatter):
     
     def format_PhotoPath(self, data):
         if isinstance(data, basestring):
-            return settings.portraits.location + data.strip()
+            return settings.portraits_location + data.strip()
         return None
     
     def format_Room(self, data):
