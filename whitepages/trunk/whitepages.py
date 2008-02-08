@@ -9,17 +9,10 @@ def build(xmldoc):
     # Set up Saxon parameters
     params = { 'date': apdate() }
     
-    # Run the transformation
-    out, err = xmlutils.transform(settings.output_xml_path, 
-                                  settings.templates_xsl,
-                                  settings.saxon_path,
-                                  params)
-
-    # Report the results
-    for line in out:
-        print ' - Status: %s' % line
-    for line in err:
-        print >> sys.stderr, ' ! Error: %s' % line
+    # Run the transformation (which will print any messages from Saxon
+    # to stdout and stderr)
+    xmlutils.transform(settings.output_xml_path, settings.templates_xsl,
+                       settings.saxon_path, params)
         
     print 'Finished.'
 

@@ -88,9 +88,8 @@ def indent(elem, level=0):
             elem.tail = i
 
 def transform(xml_path, xsl_path, saxon_path, params={}):
-    """A wrapper around calling out to Saxon on the command line.  Returns
-    two lists, the lines Saxon prints to STDOUT and those it prints to
-    STDERR."""
+    """A wrapper around calling out to Saxon on the command line.  Echos
+    Saxon's output to STDOUT and STDERR."""
 
     # Convert params dict into a string suitable for command line parameters
     params = ' '.join(['%s="%s"' % (item) for item in params.items()])
@@ -106,5 +105,8 @@ def transform(xml_path, xsl_path, saxon_path, params={}):
     def strippedlines(lines):
         return [line.strip() for line in lines if line.strip()]
     
-    # Return two lists, stdout and stderr output from the command
-    return strippedlines(saxonout), strippedlines(saxonerr)
+    # Report the results
+    for line in strippedlines(saxonout):
+        print ' - %s' % line
+    for line in strippedlines(saxonerr):
+        print >> sys.stderr, ' ! %s' % line
