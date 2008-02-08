@@ -1,52 +1,31 @@
-import sys
+import os
 
-#    These are the settings for whitepages (the Intranet
-#    staff directory builder).
-#    
-#    There are a few things to know if you are going to
-#    change any of these settings:
-#        
-#        1) Anything that is not a number must be wrapped
-#        in quotes:
-#            directory = 'output' <- Good
-#            directory = output <- Bad!
-#            
-#        2) Anything following a # is a comment, and is only
-#        there to provide you with extra information.  I've put
-#        comments before all of the important lines, to help
-#        you understand this file, in case you need to make changes.
+# the path to the database
+database_path = 'employees_db.mdb'
 
-class database:
-    # the path to the database
-    path = 'H:\IAA\PI\Shared Folder\Employee Database and Org Charts\employees_db.mdb'
-    
-    # the name of the table in the database
-    tablename = 'BrookhavenEmployees'
+# the name of the table in the database
+database_tablename = 'BrookhavenEmployees'
 
-class output:
-    # the name of the folder to store the output in
-    directory = 'output'
-    
-    class html:
-        # The prefix to use for the file names
-        prefix = 'sdir_'
-        
-        # The suffix, including file extension, to use for the file names
-        suffix = '.html'
+# character encoding used by the database
+database_encoding = 'windows-1252'
 
-class portraits:
-    # the absolute path to where the images are stored on the server,
-    # minus the http://intranet.dcccd.edu part.
-    location = '/images/bhc/sdir/'
+# The prefix to use for the file names
+output_html_prefix = 'sdir_'
 
+# The suffix, including file extension, to use for the file names
+output_html_suffix = '.html'
 
-# You can probably safely ignore anything below here
-class templates:
-    xsl = 'templates/template.xsl'
+# Where to write the intermediate XML file
+output_xml_path = 'whitepages.xml'
 
-class log:
-    info = sys.stdout
+# the absolute path to where the images are stored on the server,
+# minus the http://intranet.dcccd.edu part.
+portraits_location = '/images/bhc/sdir/'
 
-class extras:
-    sourcedir = 'templates'
-    patterns = 'sdir.html css/*.css'
+# XSLT template to use
+templates_xsl = 'templates/template.xsl'
+
+# Where to find saxon8.jar
+saxon_path = os.name == 'posix' and \
+    os.path.expanduser('~/src/saxon/saxon8.jar') or \
+    'C:/saxon/saxon8.jar'

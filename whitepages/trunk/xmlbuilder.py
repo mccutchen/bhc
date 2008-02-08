@@ -1,18 +1,26 @@
 import string, re
-from cElementTree import ElementTree, Element, SubElement
-import wrm
-from wrm.utils import unicodeize
-import settings, meta
+
+try:
+    from xml.etree.cElementTree import ElementTree, Element, SubElement
+except ImportError:
+    from cElementTree import ElementTree, Element, SubElement
+
+import wrm.utils
+import wrm.xmlutils
+
+import settings
+import db
+from schema import schema
 
 def build():
-    print >> settings.log.info, 'Building xml document from %s...' % settings.database.path
+    print 'Building xml document from %s...' % settings.database_path
     
     root = Element('directory')
     doc = ElementTree(root)
     
-    print >> settings.log.info, ' - Extracting data from database'
-    employees = get_employees(meta.table)
-
+    print ' - Extracting data from database'
+    employees = get_employees(db.table)
+    
     seen_letters = []
     for employee in employees:
         if isinstance(employee['LastName'], basestring):
@@ -29,17 +37,10 @@ def build():
     for letter in missing_letters:
         alphagroup = alphagroup_element(root, letter)
     
-    # Should we write out our xml output?
-    try:
-        outpath = settings.output.xml.path
-        print >> settings.log.info, ' - Writing xml data to %s' % outpath
-        outfile = file(outpath, 'w')
-        outfile.write('<?xml version="1.0" encoding="utf-8"?>\n')
-        doc.write(outfile, encoding='utf-8')
-    except AttributeError:
-        pass
+    # Write our XML file to disk
+    wrm.xmlutils.write_xml(doc, 'whitepages.xml')
     
-    print >> settings.log.info, 'Finished.\n'
+    print 'Finished.\n'
     return doc
 
 
@@ -47,10 +48,7 @@ def build():
 # Element creation functions #
 ##############################
 def alphagroup_element(parent, letter):
-    # unicode? yes!
-    letter = unicodeize(letter)
-    
-    # the letter element
+    # Create the letter element
     el = SubElement(parent, 'alphagroup', letter=letter)
     
     # get the surrounding letters in the alphabet
@@ -58,45 +56,41 @@ def alphagroup_element(parent, letter):
     prevletter = chr(ord(letter) - 1)
     
     # get the filenames for the pages for the surrounding letters
-    prefix = settings.output.html.prefix
-    suffix = settings.output.html.suffix
+    prefix = settings.output_html_prefix
+    suffix = settings.output_html_suffix
     nextpage = prefix + nextletter.lower() + suffix
     prevpage = prefix + prevletter.lower() + suffix
     
-    # add poiters to previous and next page
+    # add pointers to previous and next page
     if nextletter in string.ascii_uppercase:
-        el.attrib['next'] = unicodeize(nextpage)
+        el.attrib['next'] = nextpage
     if prevletter in string.ascii_uppercase:
-        el.attrib['previous'] = unicodeize(prevpage)
+        el.attrib['previous'] = prevpage
 
     return el
 
 def employee_element(parent, employee):
-    # make sure we're using unicode
-    employee = unicodeize(employee)
-    
-    # PhotoPath will be an attribute, not a child
-    exclude = ('PhotoPath')
-    children = wrm.utils.filterdict(employee, exclude)
-    
-    # create the employee element
+    # Create the employee element
     el = SubElement(parent, 'employee')
     
     # create its children
-    for name, value in children.items():
+    children = 'LastName FirstName Extension Room Division Title EmailNickname'.split()
+    for name in children:
         child = SubElement(el, name)
-        child.text = value
+        child.text = employee[name]
     
-    # if there is a photopath, add it
+    # if there is a photopath, add it as an attribute
     if employee['PhotoPath']:
         el.attrib['PhotoPath'] = employee['PhotoPath']
 
     return el
     
 def get_employees(table):
-    sql = 'select $columns$ from $table$ order by LastName'
-    table.execute(sql)
-    return filter(employee_filter, map(meta.parser.parse, table.results()))
+    # Get the employees out of the table and run them through the formatters
+    employees = map(schema.extract, table.all(order_by='LastName'))
+    
+    # Filter out vacant employees
+    return filter(employee_filter, employees)
 
 def employee_filter(employee):
     """Employees with a last name of 'Vacant' should be filtered out."""
@@ -107,6 +101,6 @@ if __name__ == '__main__':
     tree = build()
     root = tree.getroot()
     
-    print >> settings.log.info, 'Summary:'
-    print >> settings.log.info, ' - Letter elements: %d' % len(root.findall('.//letter'))
-    print >> settings.log.info, ' - Employee elements: %d' % len(root.findall('.//employee'))
+    print 'Summary:'
+    print ' - Alphagroup elements: %d' % len(root.findall('.//alphagroup'))
+    print ' - Employee elements: %d' % len(root.findall('.//employee'))
