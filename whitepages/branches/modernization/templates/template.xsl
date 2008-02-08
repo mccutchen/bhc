@@ -1,33 +1,28 @@
-<?xml version='1.0'?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet
+    version="2.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-<!-- Output parameters -->
-<xsl:output method="html"
-	encoding="utf-8"
-	indent="yes"
-	omit-xml-declaration="yes"
-	doctype-public="-//W3C//DTD HTML 4.01 Transitional//EN"
-	doctype-system="http://www.w3.org/TR/html4/loose.dtd" />
-<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> -->
-<!-- <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+    <xsl:output method="html"
+    	encoding="utf-8"
+        indent="yes"
+        omit-xml-declaration="yes"
+        doctype-public="-//W3C//DTD HTML 4.01//EN"
+        doctype-system="http://www.w3.org/TR/html4/strict.dtd" />
+	
+    <xsl:param name="output-directory">output</xsl:param>
+    <xsl:param name="output-extension">.html</xsl:param>
+    <xsl:param name="date" />
 
-<!-- date modified, formatted appropriately -->
-<xsl:param name="date" />
-
-<!-- which letter we're dealing with -->
-<xsl:param name="letter">
-	<xsl:value-of select="/alphagroup/@letter" />
-</xsl:param>
-
-    <xsl:template match="/">
+    <xsl:template match="/directory">
         <xsl:apply-templates select="alphagroup" mode="init" />
     </xsl:template>
     
     <xsl:template match="alphagroup" mode="init">
-        <xsl:call-template name="page-template" />
+        <xsl:result-document href="{$output-directory}/sdir_{lower-case(@letter)}{$output-extension}">
+            <xsl:call-template name="page-template" />
+        </xsl:result-document>
     </xsl:template>
     
-
     <xsl:template match="alphagroup">
         <xsl:choose>
             <xsl:when test="employee">
@@ -37,7 +32,8 @@
                 </xsl:apply-templates>
             </xsl:when>
             <xsl:otherwise>
-                <p>There are no employees with last names beginning with <xsl:value-of select="$letter"/></p>
+                <p>There are no employees with last names beginning
+                with <xsl:value-of select="@letter"/></p>
             </xsl:otherwise>
         </xsl:choose>
         
@@ -48,40 +44,34 @@
     <xsl:template match="employee">
         <div class="employee">
             <table border="0" cellpadding="0" cellspacing="0">
-            <tr>
-                <td valign="top">
-                    <xsl:choose>
-                        <xsl:when test="@PhotoPath">
-                            <div class="portrait">
-                            <xsl:element name="img">
-                                <xsl:attribute name="src"><xsl:value-of select="@PhotoPath" /></xsl:attribute>
-                                <xsl:attribute name="width">80</xsl:attribute>
-                                <xsl:attribute name="height">108</xsl:attribute>
-                            </xsl:element>
-                            </div>
-                        </xsl:when>
-                        <xsl:otherwise>
-                            <div class="no-portrait">&#160;</div>
-                        </xsl:otherwise>
-                    </xsl:choose>
-                </td>
-    
-                <td valign="top">
-                <dl>
-                    <dt><xsl:value-of select="FirstName" /><xsl:text> </xsl:text><xsl:value-of select="LastName" /></dt>
-                    <dd class="division"><xsl:value-of select="Division" /></dd>
-                    <dd class="title"><xsl:value-of select="Title" /></dd>
-                    <dd class="contact">Ext. <xsl:value-of select="Extension"/>, <xsl:value-of select="Room"/></dd>
-                    <dd class="email"><a href="mailto:{EmailNickname}"><xsl:value-of select="EmailNickname" /></a></dd>
-                </dl>
-                </td>
-            </tr>
+                <tr>
+                    <td valign="top">
+                        <xsl:choose>
+                            <xsl:when test="@PhotoPath">
+                                <div class="portrait">
+                                    <img src="{@PhotoPath}" width="80" height="108" />
+                                </div>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <div class="no-portrait">&#160;</div>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </td>
+                    
+                    <td valign="top">
+                        <dl>
+                            <dt><xsl:value-of select="FirstName" /><xsl:text> </xsl:text><xsl:value-of select="LastName" /></dt>
+                            <dd class="division"><xsl:value-of select="Division" /></dd>
+                            <dd class="title"><xsl:value-of select="Title" /></dd>
+                            <dd class="contact">Ext. <xsl:value-of select="Extension"/>, <xsl:value-of select="Room"/></dd>
+                            <dd class="email"><a href="mailto:{EmailNickname}"><xsl:value-of select="EmailNickname" /></a></dd>
+                        </dl>
+                    </td>
+                </tr>
             </table>
         </div>
     </xsl:template>
 
-
-    
     <xsl:template name="navigation">
         <div class="navigation">
             <xsl:if test="@previous">
@@ -101,7 +91,6 @@
             </xsl:if>
         </div>
     </xsl:template>
-    
     
     <xsl:template name="page-template">
         <html>
@@ -132,7 +121,7 @@
                     <a href="/intranet/dcccd/bhc/resource/reso.html">Resources</a>&#160;&#160;|&#160;
                     <a href="/intranet/bhc/sdir/sdir.html">Directories</a>&#160;&#160;|&#160;
                     <a href="/intranet/dcccd/bhc/emp_inclementweather.html">Emergencies&#160;&amp;&#160;Bad&#160;Weather</a>&#160;&#160;|&#160;
-                    <a href="http://dsc3.dcccd.edu/intranet/dcccd/" target="_blank">DCCCD&#160;Intranet</a></div>
+                <a href="http://dsc3.dcccd.edu/intranet/dcccd/" target="_blank">DCCCD&#160;Intranet</a></div>
                 <hr />
                 
                 <!-- include the subnavigation -->
@@ -142,7 +131,7 @@
                     <a href="/intranet/dcccd/bhc/hazmat/sld001.htm">HazMat Training</a>&#160;&#160;|&#160; 
                     <a href="http://www.BrookhavenCollege.edu/profdev/">Professional Development</a>&#160;&#160;|&#160; 
                     <a href="/intranet/dcccd/bhc/#planning">Calendars</a>&#160;&#160;|&#160; 
-                    <a href="http://www.BrookhavenCollege.edu/sacs/sacs.html">SACS Self-Study</a></div>
+                <a href="http://www.BrookhavenCollege.edu/sacs/sacs.html">SACS Self-Study</a></div>
                 <hr />
                 
                 <div id="channel-header">
@@ -189,10 +178,8 @@
                             <a href="sdir_z.html">Z</a>&#160;
                         </div>
                         
-                        
                         <!-- insert the page content -->
                         <xsl:apply-templates select="." />
-                        
                         
                         <div class="alphabetical-index">
                             <a href="sdir_a.html">A</a>&#160;
@@ -226,7 +213,6 @@
                 </div>
                 <hr />
                 
-                
                 <div id="sidebar">
                     <ul>
                         <li><a href="/intranet/dcccd/bhc/">Brookhaven College Employee Intranet</a></li>
@@ -249,16 +235,15 @@
                     </ul>
                 </div>
                 
-                
                 <hr />
                 <div id="sitewide-footer">
                     <p>
                         <a href="http://www.dcccd.edu/" target="_blank">Dallas County Community College District</a>&#160;&#160;|&#160;
-                        <a href="http://www.brookhavencollege.edu/" target="_blank">Brookhaven College Home Page</a>&#160;&#160;|&#160;
-                        <a href="http://www.brookhavencollege.edu/AtoZ/" target="_blank">A-Z Index</a>
+                            <a href="http://www.brookhavencollege.edu/" target="_blank">Brookhaven College Home Page</a>&#160;&#160;|&#160;
+                            <a href="http://www.brookhavencollege.edu/AtoZ/" target="_blank">A-Z Index</a>
                     </p>
                     <p>Comments/questions about this site, e-mail the Brookhaven College <a href="mailto:MonicaT@dcccd.edu">Marketing and Public Information Office</a>
-                        or call 972-860-4700.</p>
+                    or call 972-860-4700.</p>
                     <p>Brookhaven College main campus: 3939 Valley View Lane, Farmers Branch, Dallas, TX 75244-4997 | Telephone: 972-860-4700</p>
                     <p>Page modified <xsl:value-of select="$date" />.</p>
                 </div>
