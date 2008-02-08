@@ -131,7 +131,7 @@ class CreditProfile(BaseProfile):
     saxon_path = os.name == 'posix' and os.path.expanduser('~/src/saxon/saxon8.jar') or 'C:/saxon/saxon8.jar'
 
     # what parameters should we pass to Saxon?
-    saxon_params = ''
+    saxon_params = {}
     
     # a list of errors to report to the user
     errors = set()
@@ -154,11 +154,11 @@ class FullProfile(CreditProfile):
 class Proof(FullProfile):
     template = 'xsl/proof.xsl'
     output_dir = 'proof-output'
-    saxon_params = 'for-secretaries="true"'
+    saxon_params = {'for-secretaries': 'true'}
 
 class FullProof(Proof):
     output_dir = 'full-proof-output'
-    saxon_params = 'for-secretaries="false" with-highlighted-groups="true"'
+    saxon_params = {'for-secretaries': 'false', 'with-highlighted-groups': 'true'}
 
 class Print(FullProfile):
     template = 'xsl/print.xsl'
@@ -207,8 +207,6 @@ class Fall05(Fall):
 
 class Fall05Proof(Fall05, Proof):
     output_dir = 'fall05-proof'
-    saxon_params = 'for-secretaries="false"'
-
 
 
 # ===================================================================
@@ -222,14 +220,13 @@ class Spring06(Spring):
 
 class Spring06Proof(Spring06, Proof):
     output_dir = 'spring06-proof'
-    saxon_params = 'for-secretaries="false"'
 
 class Spring06Print(Spring06, Print):
     output_dir = 'spring06-print'
 
 class Spring06Web(Spring06, Web):
     output_dir = 'spring06-web'
-    saxon_params = 'schedule-title="Spring 2006 Credit"'
+    saxon_params = {'schedule-title': 'Spring 2006 Credit'}
 
 class Spring06Enrolling(Spring06, Spring06Web, Enrolling):
     output_dir = 'spring06-enrolling'
@@ -260,7 +257,7 @@ class Summer06FullProof(Summer06, FullProof):
 
 class Summer06Web(Summer06, Web):
     output_dir = 'summer06-web'
-    saxon_params = 'schedule-title="Summer 2006 Credit"'
+    saxon_params = {'schedule-title': 'Summer 2006 Credit'}
 
 class Summer06Enrolling(Enrolling, Summer06, Summer06Web):
     output_dir = 'summer06-enrolling'
@@ -289,7 +286,7 @@ class Fall06Print(Fall06, Print):
 
 class Fall06Web(Fall06, Web):
     output_dir = 'fall06-web'
-    saxon_params = 'schedule-title="Fall 2006 Credit"'
+    saxon_params = {'schedule-title': 'Fall 2006 Credit'}
 
 class Fall06Enrolling(Enrolling, Fall06, Fall06Web):
     output_dir = 'fall06-enrolling'
@@ -334,7 +331,7 @@ class Spring07Print(Spring07, Print):
 
 class Spring07Web(Spring07, Web):
     output_dir = 'spring07-web'
-    saxon_params = 'schedule-title="Spring 2007 Credit"'
+    saxon_params = {'schedule-title': 'Spring 2007 Credit'}
 
 class Spring07Enrolling(Enrolling, Spring07, Spring07Web):
     output_dir = 'spring07-enrolling'
@@ -377,7 +374,7 @@ class Summer07FullProof(Summer07, FullProof):
 
 class Summer07Web(Summer07, Web):
     output_dir = 'summer07-web'
-    saxon_params = 'schedule-title="Summer 2007 Credit"'
+    saxon_params = {'schedule-title': 'Summer 2007 Credit'}
 
 class Summer07Enrolling(Enrolling, Summer07, Summer07Web):
     output_dir = 'summer07-enrolling'
@@ -406,7 +403,7 @@ class Fall07Print(Fall07, Print):
 
 class Fall07Web(Fall07, Web):
     output_dir = 'fall07-web'
-    saxon_params = 'schedule-title="Fall 2007 Credit"'
+    saxon_params = {'schedule-title': 'Fall 2007 Credit'}
 
 class Fall07Enrolling(Enrolling, Fall07, Fall07Web):
     output_dir = 'fall07-enrolling'
@@ -434,7 +431,7 @@ class Spring08Print(Spring08, Print):
 
 class Spring08Web(Spring08, Web):
     output_dir = 'spring08-web'
-    saxon_params = 'schedule-title="Spring 2008 Credit"'
+    saxon_params = {'schedule-title': 'Spring 2008 Credit'}
 
 class Spring08Enrolling(Enrolling, Spring08, Spring08Web):
     output_dir = 'spring08-enrolling'
@@ -481,7 +478,7 @@ class Summer08FullProof(Summer08, FullProof):
 
 class Summer08Web(Summer08, Web):
     output_dir = 'summer08-web'
-    saxon_params = 'schedule-title="Summer 2008 Credit"'
+    saxon_params = {'schedule-title': 'Summer 2008 Credit'}
 
 class Summer08Enrolling(Enrolling, Summer08, Summer08Web):
     output_dir = 'summer08-enrolling'

@@ -2,6 +2,7 @@
 
 import os, sys
 
+from wrm import xmlutils
 from profiles import profile
 import classparser
 import xmlbuilder
@@ -17,17 +18,11 @@ def main():
     if profile.template:
         # get any necessary Saxon parameters
         params = saxon_parameters()
-
-        # transform the XML file
-        print 'Building schedule output...'
-        cmd = 'java -jar %s -o transform.log %s %s %s' % (profile.saxon_path, profile.output_xml_path, profile.template, params)
-        saxonin, saxonout, saxonerr = os.popen3(cmd)
-
-        # report any errors or status messages
-        for line in saxonerr:
-            print >> sys.stderr, ' ! Error: %s' % line.strip()
-        for line in saxonout:
-            print ' - Status: %s' % line.strip()
+        
+        # transform the XML file (this will echo any Saxon output to
+        # stderr and stdout)
+        xmlutils.transform(profile.output_xml_path, profile.template,
+                           profile.saxon_path, params)
 
         print 'Finished.'
     else:
@@ -38,16 +33,16 @@ def saxon_parameters():
     current profile."""
 
     # the output directory
-    params = 'output-directory="%s"' % (profile.output_dir)
+    params = {'output-directory': profile.output_dir,}
 
     # if we're only including classes after a certain date,
     # make this an "Enrolling Now" type schedule
     if profile.include_classes_after:
-        params += ' enrolling-now="true"'
+        params['enrolling-now'] = 'true'
 
     # add any params taken from the profile
     if profile.saxon_params:
-        params += ' %s' % profile.saxon_params
+        params.update(profile.saxon_params)
 
     return params
 
