@@ -1,5 +1,9 @@
 import string, re
-from cElementTree import ElementTree, Element, SubElement
+
+try:
+    from xml.etree.cElementTree import ElementTree, Element, SubElement
+except ImportError:
+    from cElementTree import ElementTree, Element, SubElement
 
 import wrm.utils
 import wrm.xmlutils
