@@ -23,7 +23,7 @@
     <xsl:param name="output-extension">.html</xsl:param>
 
     <xsl:param name="with-highlighted-groups">false</xsl:param>
-
+    	<!-- To see the groupings/cross-listings highlighted in gray on the proofs, change this from false to true. -->
     <xsl:param name="for-secretaries" select="'true'">
         <!-- A switch which controls how many proof documents are generated:
 
