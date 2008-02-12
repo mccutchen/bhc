@@ -293,42 +293,24 @@
             <comments>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
             <topic name="none">
 				<comments>NOTE: The following course is available to anyone interested in the Radiology Technology program.  Acceptance into the program is NOT REQUIRED. For more information call 972-860-4264.</comments>
-				<pattern match="RADR 1201-2002" />
-				<pattern match="RADR 1201-2003" />
+				<pattern match="RADR 1201" />
             </topic>
-            <topic name="First Semester Program Students">
-                <comments>NOTE: The following courses are for students in the first semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
-                <pattern match="RADR 1201-2001" />
-                <pattern match="RADR 1411-2001" />
-                <pattern match="RADR 1411-2002" />
-                <pattern match="RADR 1411-2003" />
-                <pattern match="RADR 1411-2004" />
-                <pattern match="RADR 1411-2005" />
-            	<pattern match="RADR 1411-2006" /> <!-- added 12/06/2007 - Basic Radiographic Procedures -->
-                <pattern match="RADR 2309-2001" />
-                <pattern match="RADR 1203-2001" />
-                <pattern match="RADR 1203-2002" />
-                <pattern match="RADR 1203-2003" />
-                <pattern match="RADR 1203-2004" />
+            <topic name="Second Semester Program Students">
+                <comments>NOTE: The following courses are for students in the second semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RADR 1313" />
+                <pattern match="RADR 2301" />
             </topic>
-            <topic name="Fourth Semester Program Students">
-                <comments>NOTE: The following courses are for students in the fourth semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
-                <pattern match="RADR 1266-2201" />
-                <pattern match="RADR 1266-2202" />
-                <pattern match="RADR 1266-2203" />
-                <pattern match="RADR 1267-2201" />
-                <pattern match="RADR 1267-2202" />
-                <pattern match="RADR 1267-2203" />
-                <pattern match="RADR 2240-2001" />
-                <pattern match="RADR 2233-2001" />
-                <pattern match="RADR 2233-2002" />
+            <topic name="Fifth Semester Program Students">
+                <comments>NOTE: The following courses are for students in the fifth semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RADR 1202" />
+                <pattern match="RADR 2266" />
             </topic>
         </subject>
 		
 
 		 
    <!-- =======================================================================
-            Emergency Medical Services (Cletha Silas)
+            Emergency Medical Services (Monica Wenthold)
         ======================================================================== -->
 		 <subject name="Emergency Medical Services">
 		    <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http:www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.  NOTE: REQUIRED:  Current CPR AHA Healthcare Provider or equivalent certification.</comments>
