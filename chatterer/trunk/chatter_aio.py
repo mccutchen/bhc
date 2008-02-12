@@ -139,6 +139,8 @@ def Format(line_in, replace = True):
     char_map = {
         10:  '',        # newline
         38:  '&amp;',   # ampersand
+        60:  '&lt;',    # less than
+        62:  '&gt;',    # greater than
         145: '&#8216;', # left single quote
         146: '&#8217;', # right single quote
         147: '&#8220;', # left double quote
@@ -534,8 +536,14 @@ def ReadArticles(f_articles, f_bodies):
         if (title_str.lower() in title_map.keys()):
             title_key = title_map.get(title_str.lower())
             out_list[title_key][3] = body_list
+            print "Processed: " + title_str;
         else:
-            print "Unable to process article body: " + title_str
+            print '\n'
+            print "Unable to process article body: " + title_str;
+            print 'title map keys:'
+            for key in title_map.keys():
+                print ' - ' + key;
+            print '\n'
 
         # close f_articles
         in_file.close()
