@@ -20,10 +20,6 @@ def build(xmldoc):
 def main():
     xmldoc = xmlbuilder.build()
     build(xmldoc)
-    
-    # wait for some input from the user and quit
-    raw_input('\nPress return to exit.')
-    sys.exit(0)
 
 
 if __name__ == '__main__':
