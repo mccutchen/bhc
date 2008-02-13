@@ -72,7 +72,7 @@
     			<comments>NOTE:  ITSC 1401 is a career technical education course required for certain certificate and associate degree plans.  It will not meet the Brookhaven College Core Curriculum and/or Associate in Arts or Associate in Science requirement and is not for transfer to a four-year school.</comments>
     			<pattern match="ITSC 1401-2426" />
     			<pattern match="ITSC 1401-2300" />
-    			<pattern match="ITSC 1401-2300" />
+    			<!-- duplicate: <pattern match="ITSC 1401-2300" />-->
     		</topic>
     		<topic name="Cit Core">
     			<pattern match="ITNW 1425-2426" />
@@ -132,12 +132,12 @@
     			<pattern match="COSC 1401-2427" /> <!-- Added 02/13/2008 - Computer Concepts/Applications -->
     			<pattern match="COSC 1300-2300" />
     			<pattern match="COSC 1401-2300" />
-    			<pattern match="COSC 1300-2001" />
-    			<pattern match="COSC 1300-2426" />
-    			<pattern match="COSC 1300-2427" />
-    			<pattern match="COSC 1401-2426" />
-    			<pattern match="COSC 1300-2300" />
-    			<pattern match="COSC 1401-2300" />
+    			<!-- duplicate: <pattern match="COSC 1300-2001" />-->
+    			<!-- duplicate: <pattern match="COSC 1300-2426" />-->
+    			<!-- duplicate: <pattern match="COSC 1300-2427" />-->
+    			<!-- duplicate: <pattern match="COSC 1401-2426" />-->
+    			<!-- duplicate: <pattern match="COSC 1300-2300" />-->
+    			<!-- duplicate: <pattern match="COSC 1401-2300" />-->
     		</topic>
     		<topic name="Programming">
     			<pattern match="COSC 1415-2701" />
@@ -148,9 +148,9 @@
     			<pattern match="COSC 2430-2501" />
     			<pattern match="COSC 2436-2501" />
     			<pattern match="COSC 2436-2502" />
-    			<pattern match="COSC 2430-2501" />
-    			<pattern match="COSC 2436-2501" />
-    			<pattern match="COSC 2436-2502" />
+    			<!-- duplicate: <pattern match="COSC 2430-2501" />-->
+    			<!-- duplicate: <pattern match="COSC 2436-2501" />-->
+    			<!-- duplicate: <pattern match="COSC 2436-2502" />-->
     		</topic>
     	</subject>
     	<subject name="Computer Studies - Business Computer Information Systems">
