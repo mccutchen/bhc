@@ -85,7 +85,7 @@
     			<pattern match="ITSE 1407-2701" />
     			<pattern match="ITSE 1430-2501" />
     			<pattern match="ITSE 2417-2502" />
-    			<pattern match="INEW 2438-2501" />
+    			<pattern match="INEW 2438-2502" /> <!-- modified 02/13/2008: from 2501 to 2502 -->
     			<pattern match="ITSE 2453-2501" />
     		</topic>
     		<topic name="Microsoft Academy">
@@ -129,6 +129,7 @@
     			<pattern match="COSC 1300-2426" />
     			<pattern match="COSC 1300-2427" />
     			<pattern match="COSC 1401-2426" />
+    			<pattern match="COSC 1401-2427" /> <!-- Added 02/13/2008 - Computer Concepts/Applications -->
     			<pattern match="COSC 1300-2300" />
     			<pattern match="COSC 1401-2300" />
     			<pattern match="COSC 1300-2001" />
@@ -156,9 +157,10 @@
     		<comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
     		<pattern match="BCIS 1405-2421" />
     		<pattern match="BCIS 1405-2426" />
+    		<pattern match="BCIS 1405-2427" /> <!-- Added 02/13/2008 - Business Computer Applications -->
     		<pattern match="BCIS 1405-2300" />
-    		<pattern match="BCIS 1405-2426" />
-    		<pattern match="BCIS 1405-2300" />
+    		<!-- duplicate: <pattern match="BCIS 1405-2426" />-->
+    		<!-- duplicate: <pattern match="BCIS 1405-2300" />-->
     	</subject>
     	
     	
