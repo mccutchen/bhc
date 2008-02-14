@@ -185,7 +185,7 @@
     			<pattern match="ARTS 1304-2001" />
     		</topic>
     		<topic name="Art and Computers">
-    			<pattern match="ARTS 2311-2007" /> <!-- two patterns with this cid -->
+    			<pattern match="ARTS 2311-2007" />
     			<pattern match="ARTS 2313-2001" />
     			<pattern match="ARTS 2314-2001" />
     		</topic>
@@ -196,8 +196,8 @@
     			<pattern match="ARTS 2312-2225" />
     			<pattern match="ARTS 2341-2002" />
     			<pattern match="ARTS 2342-2002" />
-    			<pattern match="ARTS 2311-2002" /> <!-- two patterns with this cid -->
-    			<pattern match="ARTS 2312-2002" /> <!-- two patterns with this cid -->
+    			<pattern match="ARTS 2311-2003" />
+    			<pattern match="ARTS 2312-2003" />
     		</topic>
     		<topic name="Ceramics">
     			<pattern match="ARTS 2346-2001" />
@@ -210,7 +210,7 @@
     			<pattern match="ARTS 2312-2702" />
     			<pattern match="ARTS 2346-2002" />
     			<pattern match="ARTS 2347-2002" />
-    			<pattern match="ARTS 2311-2008" />
+    			<pattern match="ARTS 2311-2008" /> <!-- duplicate pattern in different topics -->
     			<pattern match="ARTS 2312-2007" />
     		</topic>
     		<topic name="Design">
@@ -242,8 +242,8 @@
     			<pattern match="ARTS 2312-2200" />
     			<pattern match="ARTS 2316-2001" />
     			<pattern match="ARTS 2317-2001" />
-    			<pattern match="ARTS 2311-2002" /> <!-- two patterns with this cid -->
-    			<pattern match="ARTS 2312-2002" /> <!-- two patterns with this cid -->
+    			<pattern match="ARTS 2311-2002" />
+    			<pattern match="ARTS 2312-2002" />
     			<pattern match="ARTS 2316-2002" />
     			<pattern match="ARTS 2317-2002" />
     			<pattern match="ARTS 2311-2001" />
@@ -274,7 +274,7 @@
     			<pattern match="ARTS 2312-2229" />
     			<pattern match="ARTS 2326-2001" />
     			<pattern match="ARTS 2327-2001" />
-    			<pattern match="ARTS 2311-2007" /> <!-- two patterns with this cid -->
+    			<pattern match="ARTS 2311-2008" /> <!-- duplicate pattern in different topics -->
     			<pattern match="ARTS 1312-2001" />
     		</topic>
     	</subject>
