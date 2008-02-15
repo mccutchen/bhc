@@ -210,7 +210,7 @@
     			<pattern match="ARTS 2312-2702" />
     			<pattern match="ARTS 2346-2002" />
     			<pattern match="ARTS 2347-2002" />
-    			<pattern match="ARTS 2311-2008" /> <!-- duplicate pattern in different topics -->
+    			<pattern match="ARTS 2311-2009" /> <!-- changed to section 2009 per Jill to eliminate dup -->
     			<pattern match="ARTS 2312-2007" />
     		</topic>
     		<topic name="Design">
