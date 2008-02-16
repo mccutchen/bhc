@@ -464,13 +464,14 @@
 					<pattern match="EMSP 2463-2218" />
 				</subtopic>
 				<subtopic name="Paramedic Class #19">
-					<pattern match="EMSP 2143-2719 " />
+					<pattern match="EMSP 2143-2719" />
 					<pattern match="EMSP 2463-2619" />
 				</subtopic>
 				<subtopic name="Paramedic Class #20, B-Shift">
 					<pattern match="EMSP 1356-2220" />
 					<pattern match="EMSP 1356-2202" />
 					<pattern match="EMSP 1356-2203" />
+					<pattern match="EMSP 2260-2220" />
 					<pattern match="EMSP 2444-2220" />
 					<pattern match="EMSP 2444-2202" />
 					<pattern match="EMSP 2444-2203" />
