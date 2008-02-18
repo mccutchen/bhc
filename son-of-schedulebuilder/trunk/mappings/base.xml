@@ -643,7 +643,7 @@
             <pattern match="BCIS 1405" />
         </component>
         <component name="Mathematics">
-            <pattern match="MATH (1314|1324|1332|1333|1348|1414|2342|2412|2442)" />
+            <pattern match="MATH (1314|1316|1324|1332|1333|1348|1414|2342|2412|2442)" />
         </component>
         <component name="Social and Behavioral Sciences">
             <pattern match="HIST 130[12]" />
