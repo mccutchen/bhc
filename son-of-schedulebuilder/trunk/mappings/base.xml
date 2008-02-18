@@ -323,7 +323,9 @@
              Custom subject regroupings
              *********************************************************************** -->
         <subject name="Languages">
+<!-- 
             <comments>NOTE: New! Look for Linguistics in its own section following Languages.</comments>
+ -->
             <topic name="American Sign Language">
                 <pattern match="SGNL"/>
             </topic>
