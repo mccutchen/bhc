@@ -202,7 +202,7 @@
     		<topic name="Ceramics">
     			<pattern match="ARTS 2346-2001" />
     			<pattern match="ARTS 2347-2001" />
-    			<pattern match="ARTS 2311-2006" />
+    			<pattern match="ARTS 2311-2010" /> <!-- changed section from 2006 to 2010 per Jill to eliminate dup -->
     			<pattern match="ARTS 2312-2006" />
     			<pattern match="ARTS 2346-2701" />
     			<pattern match="ARTS 2347-2701" />
@@ -224,6 +224,7 @@
     			<pattern match="ARTS 1316-2001" />
     			<pattern match="ARTS 1317-2001" />
     			<pattern match="ARTS 2311-2005" />
+    			<pattern match="ARTS 2311-2006" />
     			<pattern match="ARTS 2312-2005" />
     			<pattern match="ARTS 1316-2501" />
     			<pattern match="ARTS 1317-2501" />
@@ -274,7 +275,7 @@
     			<pattern match="ARTS 2312-2229" />
     			<pattern match="ARTS 2326-2001" />
     			<pattern match="ARTS 2327-2001" />
-    			<pattern match="ARTS 2311-2008" /> <!-- duplicate pattern in different topics -->
+    			<pattern match="ARTS 2311-2008" />
     			<pattern match="ARTS 1312-2001" />
     		</topic>
     	</subject>
