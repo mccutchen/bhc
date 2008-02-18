@@ -239,7 +239,7 @@
             <pattern match="FSHN" priority="0" unsorted="true" />
         </subject>
         <subject name="Mathematics">
-            <comments>NOTE:  REQUIRED FOR ALL MATH COURSES: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86.  NOTE:  All MATH courses are part of the Service-Learning Program, check with the instructor or e-mail bhcServiceLearning@dcccd.edu for more information.</comments>
+            <comments>NOTE:  REQUIRED for all MATH courses: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86.  NOTE:  All MATH courses are part of the Service-Learning Program; check with the instructor or e-mail bhcServiceLearning@dcccd.edu for more information.</comments>
             <pattern match="MATH" priority="0" unsorted="true" />
             <pattern match="TECM" priority="0" unsorted="true" />
         </subject>
