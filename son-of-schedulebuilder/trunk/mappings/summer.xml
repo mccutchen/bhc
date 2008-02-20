@@ -300,8 +300,8 @@
     			<pattern match="DANC 2352-2225" />
     		</topic>
     		<topic name="Hip Hop">
-    			<pattern match="DANC 1222-2201" />
-    			<pattern match="DANC 1223-2201" />
+    			<pattern match="DANC 1122-2201" />
+    			<pattern match="DANC 1123-2201" />
     		</topic>
     		<topic name="Jazz">
     			<pattern match="DANC 1247-2701" />
