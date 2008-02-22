@@ -93,7 +93,7 @@
     			<pattern match="ITMT 1440-2501" />
     		</topic>
     		<topic name="Www and E-commerce">
-    			<pattern match="IMED 1416-2426" />
+    			<pattern match="IMED 1416-2427" /> <!-- modified 02/22/2008: from 2426 to 2427 -2426 is VCOM -->
     			<pattern match="ITNW 1437-2426" />
     		</topic>
     		<topic name="Application Software">
