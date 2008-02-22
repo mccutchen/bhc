@@ -74,6 +74,13 @@
     			<pattern match="ITSC 1401-2300" />
     			<!-- duplicate: <pattern match="ITSC 1401-2300" />-->
     		</topic>
+    		<topic name="Senior Adult Computer Courses"> <!-- Added topic 2/20 to try to fix Senior Adult unsorted problem - this is probably not the way this should be done, but it seems to work for now - sorta.  I'm not sure why the Topic Name isn't appearing. -->
+    			<pattern match="ITSC 1191-2206" />
+    			<pattern match="ITSC 1191-2209" />
+    			<pattern match="ITSC 1191-2207" />
+    			<pattern match="ITSC 1191-2208" />
+    			<pattern match="ITSC 1191-2205" />
+    		</topic>    		
     		<topic name="Cit Core">
     			<pattern match="ITNW 1425-2426" />
     			<pattern match="ITSC 1405-2426" />
