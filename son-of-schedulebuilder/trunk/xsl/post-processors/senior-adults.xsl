@@ -34,7 +34,7 @@
         <xsl:copy>
             <xsl:apply-templates select="@*" />
             <subject name="Senior Adult Education Program" machine_name="senior_adult_education_program">
-                <comments>All courses listed under Senior Adult Education Program have been planned for adults who are 50 years or older.  For information and personal assistance with registration, please call DeBorah Whaley- Stephenson at 972-860-4807 or Janice Groeneman at 972-860-4698.  The Senior Adult Education offices are located in Building M, in rooms M203 and M211A. Are you eligible for FREE tuition?  If you are 65 years or older and reside in Dallas County (or own property in Dallas County subject to ad valorem taxation), tuition for credit classes is waived for up to six credit hours per semester.</comments>
+                <comments>All courses listed under Senior Adult Education Program have been planned for adults who are 50 years or older.  For information and personal assistance with registration, please call DeBorah Whaley-Stephenson at 972-860-4807 or Janice Groeneman at 972-860-4698.  The Senior Adult Education offices are located in Building M, in rooms M203 and M211A. Are you eligible for FREE tuition?  If you are 65 years or older and reside in Dallas County (or own property in Dallas County subject to ad valorem taxation), tuition for credit classes is waived for up to six credit hours per semester.</comments>
                 <xsl:apply-templates select="node()" />
             </subject>
         </xsl:copy>
