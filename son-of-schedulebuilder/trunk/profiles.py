@@ -460,7 +460,7 @@ class Summer08(Summer):
         # Summer II: 7/9 - 8/7
 
         'Summer I/May Term': (date(2008, 5, 1), date(2008, 5, 30)),
-        'Summer I':  (date(2008, 6, 1), date(2008, 7, 3)),
+        'Summer I':  (date(2008, 6, 1), date(2008, 7, 6)),
         'Summer II':  (date(2008, 7, 7), date(2008, 8, 8)),
     }
 
