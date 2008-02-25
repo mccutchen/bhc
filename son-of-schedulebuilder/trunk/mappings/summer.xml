@@ -161,13 +161,15 @@
     		</topic>
     	</subject>
     	<subject name="Computer Studies - Business Computer Information Systems">
-    		<comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
-    		<pattern match="BCIS 1405-2421" />
-    		<pattern match="BCIS 1405-2426" />
-    		<pattern match="BCIS 1405-2427" /> <!-- Added 02/13/2008 - Business Computer Applications -->
-    		<pattern match="BCIS 1405-2300" />
-    		<!-- duplicate: <pattern match="BCIS 1405-2426" />-->
-    		<!-- duplicate: <pattern match="BCIS 1405-2300" />-->
+    		<topic name="Business Computer Applications">
+				<comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
+				<pattern match="BCIS 1405-2421" />
+				<pattern match="BCIS 1405-2426" />
+				<pattern match="BCIS 1405-2427" /> <!-- Added 02/13/2008 - Business Computer Applications -->
+				<pattern match="BCIS 1405-2300" />
+				<!-- duplicate: <pattern match="BCIS 1405-2426" />-->
+				<!-- duplicate: <pattern match="BCIS 1405-2300" />-->
+			</topic>
     	</subject>
     	
     	
