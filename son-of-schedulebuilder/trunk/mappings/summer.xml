@@ -355,6 +355,9 @@
     			<pattern match="MUSI 1306-2432" />
     		</topic>
     		<topic name="Music Ensembles">
+    			<subtopic name="Brookhaven Choral Society">
+    				<pattern match="MUEN 2141-2200" />
+    			</subtopic>    			
     			<subtopic name="Chamber">
     				<pattern match="MUEN 1152-2200" />
     				<pattern match="MUEN 1152-2201" />
