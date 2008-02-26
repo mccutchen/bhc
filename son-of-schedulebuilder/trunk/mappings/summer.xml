@@ -195,12 +195,13 @@
     		<topic name="Art History">
     			<pattern match="ARTS 1303-2701" />
     			<pattern match="ARTS 1303-2001" />
+    			<pattern match="ARTS 1303-2501" />
     			<pattern match="ARTS 1304-2001" />
     		</topic>
     		<topic name="Art and Computers">
-    			<pattern match="ARTS 2311-2007" />
     			<pattern match="ARTS 2313-2001" />
     			<pattern match="ARTS 2314-2001" />
+    			<pattern match="ARTS 2311-2007" />
     		</topic>
     		<topic name="Art Metals">
     			<pattern match="ARTS 2341-2225" />
@@ -228,6 +229,7 @@
     		</topic>
     		<topic name="Design">
     			<pattern match="ARTS 1311-2001" />
+    			<pattern match="ARTS 1312-2001" />
     		</topic>
     		<topic name="Drawing">
     			<pattern match="ARTS 2323-2225" />
@@ -354,6 +356,9 @@
     			<pattern match="MUSI 1306-2431" />
     			<pattern match="MUSI 1306-2432" />
     		</topic>
+			<topic name="Digital">
+    			<pattern match="MUSI 1390-2200" />
+    		</topic>    		
     		<topic name="Music Ensembles">
     			<subtopic name="Brookhaven Choral Society">
     				<pattern match="MUEN 2141-2200" />
