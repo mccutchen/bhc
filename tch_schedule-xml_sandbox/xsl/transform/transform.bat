@@ -38,6 +38,11 @@ GOTO %type%
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 GOTO CLEAN-UP
 
+:proof-full
+SET xsl=%transform_dir_in%proof.xsl
+SET params="is-full=true"
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
+
 :enrolling-now
 SET params="schedule-type=Enrolling Now"
 GOTO ENROLL

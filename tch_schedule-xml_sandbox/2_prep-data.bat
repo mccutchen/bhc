@@ -8,13 +8,7 @@ IF "%ys%"=="" GOTO SYNTAX
 
 
 
-:: Step 2: Clean Data Directory
-::----------------------------------------------
-CALL %data_dir_in%clean
-
-
-
-:: Step 3: Prepare the Data
+:: Step 2: Prepare the Data
 ::----------------------------------------------
 :: Syntax: CALL %prep_bat% {semester} {year}
 :: where {semester} = Summer, Spring, or Fall

@@ -105,7 +105,7 @@
 		<!-- if there are any that didn't fit into the terms, spit 'em out  -->
 		<xsl:call-template name="create-term-leftovers">
 			<xsl:with-param name="terms"   select="$terms"  />
-			<xsl:with-param name="classes" select="//class" />
+			<xsl:with-param name="classes" select="$courses//class" />
 		</xsl:call-template>
 	</xsl:template>
 	

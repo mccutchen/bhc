@@ -34,7 +34,7 @@
 		and each subject, all stowed in appropriate directories.
 		======================================================================-->
 	<xsl:param name="with-highlighted-groups" select="'false'" />
-	<xsl:param name="for-secretaries" select="'true'" />
+	<xsl:param name="is-full" select="'false'" />
 	
 	
 	<!--=====================================================================
@@ -59,8 +59,33 @@
     	insert itself.
     	====================================================================== -->
 	<xsl:template match="/schedule">
-    	<!-- initialize each subject (create result document) -->
-		<xsl:apply-templates select="descendant::subject" mode="init" />
+		<!-- choose the proof type -->
+		<xsl:choose>
+			<!-- if this is a full proof -->
+			<xsl:when test="$is-full = 'true'">
+				<!-- initialize each term (create result document) -->
+				<xsl:apply-templates select="term" mode="init" />
+			</xsl:when>
+			
+			<!-- otherwise, it's a peicemeal proof -->			
+			<xsl:otherwise>
+				<!-- initialize each subject (create result document) -->
+				<xsl:apply-templates select="descendant::subject" mode="init" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+	
+	<xsl:template match="term" mode="init">
+		<xsl:variable name="year" select="ancestor::schedule/@year" as="xs:string" />
+		<xsl:variable name="sem"  select="ancestor::schedule/@semester" as="xs:string" />
+		<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
+		<xsl:variable name="term" select="utils:make-url(@name)" as="xs:string" />
+		
+		<xsl:result-document href="{$dir}-full/{$term}.{$ext}">
+			<xsl:call-template name="page-template">
+				<xsl:with-param name="page-title" select="@name" />
+			</xsl:call-template>
+		</xsl:result-document>
 	</xsl:template>
 	
 	<xsl:template match="subject" mode="init">
@@ -85,32 +110,62 @@
     	This is where the "real" work gets done, after the result-documents
     	are created by the @mode="init" templates.
     	====================================================================== -->
-	<xsl:template match="term">
+	<xsl:template match="term" mode="page-callback">
+		<!-- display term header if applicable -->
+		<xsl:apply-templates select="." mode="output" />
+		
+		<xsl:choose>
+			<xsl:when test="@display = 'false'">
+				<xsl:message>
+					<xsl:text>!Warning! Unsorted term: </xsl:text>
+					<xsl:value-of select="@name" />
+					<xsl:text>.</xsl:text>
+				</xsl:message>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:message>
+					<xsl:text>Processing term: </xsl:text>
+					<xsl:value-of select="@name" />
+					<xsl:text>.</xsl:text>
+				</xsl:message>
+			</xsl:otherwise>
+		</xsl:choose>
+		
+		<!-- call child subjects -->
+		<xsl:apply-templates select="descendant::subject">
+			<xsl:sort select="@name" />
+		</xsl:apply-templates>
+	</xsl:template>
+	
+	<xsl:template match="term" mode="output">
         <!-- only output the term header if there is more than one term -->
-        <xsl:if test="count(//term[@display = 'true']) &gt; 1">
-            <h2 class="term-header">
+        <xsl:if test="count(ancestor-or-self::schedule//term[@display = 'true']) &gt; 1">
+        	<xsl:variable name="dates" select="if(@date-end = 'NA' and @date-start = 'NA') then 'NA' else utils:format-dates(@date-start, @date-end)" as="xs:string" />
+            <h1 class="term-header">
                 <xsl:value-of select="concat(@name, ' ', parent::schedule/@year)" />
-                <span class="term-dates">(<xsl:value-of select="utils:format-dates(@date-start, @date-end)" />)</span>
-            </h2>
-        	<xsl:text disable-output-escaping="yes">&lt;br /&gt;</xsl:text>
+                <span class="term-dates">(<xsl:value-of select="$dates" />)</span>
+            </h1>
         </xsl:if>
 
 		<xsl:apply-templates select="subject" />
     </xsl:template>
 
-	<xsl:template match="subject">
+	<xsl:template match="subject" mode="page-callback">
 		<!-- display term header if applicable -->
-		<xsl:apply-templates select="ancestor::term" />
+		<xsl:apply-templates select="ancestor::term" mode="output" />
 		
-		<!-- if this is not supposed to display, display a warning -->
-		<xsl:if test="@display = 'false'">
-			<xsl:message>
-				<xsl:text>!Warning! Unsorted subject: </xsl:text>
-				<xsl:value-of select="@name" />
-				<xsl:text>.</xsl:text>
-			</xsl:message>
-		</xsl:if>
-				
+		<xsl:apply-templates select="." />
+	</xsl:template>
+	
+	<xsl:template match="subject[@display = 'false']">
+		<xsl:message>
+			<xsl:text>!Warning! Unsorted subject: </xsl:text>
+			<xsl:value-of select="@name" />
+			<xsl:text>.</xsl:text>
+		</xsl:message>
+		<xsl:next-match />
+	</xsl:template>
+	<xsl:template match="subject">
 		<!-- start div -->
         <div class="subject-section">
             <h1 class="subject-header"><xsl:value-of select="upper-case(@name)" /></h1>
@@ -452,7 +507,7 @@
 
             <body>
                 <!-- apply-templates to whatever element has called this template -->
-                <xsl:apply-templates select="." />
+            	<xsl:apply-templates select="." mode="page-callback" />
             </body>
         </html>
     </xsl:template>

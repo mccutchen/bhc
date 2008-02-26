@@ -330,9 +330,9 @@
 			<pattern match="MATH"/>
 			<pattern match="TECM"/>
 			<comments>
-				<p>NOTE: REQUIRED FOR ALL MATH COURSES: One of any version of the following Texas
+				<p>NOTE: REQUIRED for all MATH COURSES: One of any version of the following Texas
 					Instruments calculators: TI-83, TI-84 or TI-86. NOTE: All MATH courses are part
-					of the Service-Learning Program, check with the instructor or e-mail
+					of the Service-Learning Program; check with the instructor or e-mail
 					bhcServiceLearning@dcccd.edu for more information.</p>
 			</comments>
 		</subject>
@@ -510,6 +510,11 @@
 		</subject>
 
 		<subject name="Languages" ordered="true">
+<!--
+			<comments>
+				<p>NOTE: New! Look for Linguistics in its own section following Languages.</p>
+			</comments>
+-->
 			<topic name="American Sign Language">
 				<pattern match="SGNL"/>
 			</topic>
@@ -579,9 +584,6 @@
 			<topic name="Vietnamese">
 				<pattern match="VIET"/>
 			</topic>
-			<comments>
-				<p>NOTE: New! Look for Linguistics in its own section following Languages.</p>
-			</comments>
 		</subject>
 	</division>
 

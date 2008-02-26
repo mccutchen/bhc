@@ -39,6 +39,7 @@ GOTO NO-TYPE
 :print
 :print-InDesign
 :proof
+:proof-full
 :web
 :enrolling-now
 :enrolling-soon
@@ -125,6 +126,7 @@ GOTO END
 SET file=%print%
 GOTO END
 :proof
+:proof-full
 SET file=%proof%
 GOTO END
 :web

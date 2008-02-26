@@ -2,73 +2,39 @@
 	EMS (Cletha Silas)
 	========================================================================-->
 <mappings>
-	<subject name="Emergency Medical Services" ordered="true">
+	<subject name="Emergency Medical Services">
 		<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http:www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.  NOTE: REQUIRED:  Current CPR AHA Healthcare Provider or equivalent certification.</comments>
-		<topic name="Emergency Medical Services, Basic" ordered="true">
-			<subtopic name="Basic Class #40">
-				<pattern match="EMSP 1160-2240" />
-			</subtopic>
-			<subtopic name="Basic Class #41">
-				<pattern match="EMSP 1160-2241" />
-			</subtopic>
-			<subtopic name="Basic Class #42" ordered="true">
-				<pattern match="EMSP 1501-2542" />
-				<pattern match="EMSP 1501-2500" />
-				<pattern match="EMSP 1501-2501" />
-				<pattern match="EMSP 1160-2242" />
-			</subtopic>
-			<subtopic name="Basic Class #43, B-Shift" ordered="true">
-				<pattern match="EMSP 1501-2243" />
+		<topic name="Emergency Medical Services, Basic">
+			<subtopic name="Basic Class #45">
+				<pattern match="EMSP 1501-2245" />
+				<pattern match="EMSP 1501-2200" />
 				<pattern match="EMSP 1501-2201" />
 				<pattern match="EMSP 1501-2202" />
-				<pattern match="EMSP 1160-2243" />
-			</subtopic>
-			<subtopic name="Basic Class #44, C-Shift" ordered="true">
-				<pattern match="EMSP 1501-2244" />
-				<pattern match="EMSP 1501-2203" />
-				<pattern match="EMSP 1501-2204" />
-				<pattern match="EMSP 1160-2244" />
+				
+				<pattern match="EMSP 1160" />
 			</subtopic>
 		</topic>
-		<topic name="Emergency Medical Services, Paramedic" ordered="true">
-			<subtopic name="Paramedic Class #17, B-Shift" ordered="true">
-				<pattern match="EMSP 2338-2217" />
-				<pattern match="EMSP 2338-2204" />
-				<pattern match="EMSP 2338-2205" />
-				<pattern match="EMSP 2143-2217" />
-				<pattern match="EMSP 2143-2204" />
-				<pattern match="EMSP 2143-2205" />
-				<pattern match="EMSP 2463-2217" />
+		<topic name="Emergency Medical Services, Paramedic">
+			<subtopic name="Paramedic Class #18, C-Shift">
+				<pattern match="EMSP 2143-2218" />
+				<pattern match="EMSP 2463-2218" />
 			</subtopic>
-			<subtopic name="Paramedic Class #18, C-Shift" ordered="true">
-				<pattern match="EMSP 2434-2218" />
-				<pattern match="EMSP 2434-2207" />
-				<pattern match="EMSP 1355-2218" />
-				<pattern match="EMSP 1355-2207" />
-				<pattern match="EMSP 2430-2218" />
-				<pattern match="EMSP 2430-2207" />
-				<pattern match="EMSP 2338-2218" />
-				<pattern match="EMSP 2338-2207" />
-				<pattern match="EMSP 2261-2218" />
+			<subtopic name="Paramedic Class #19">
+				<pattern match="EMSP 2143-2719" />
+				<pattern match="EMSP 2463-2619" />
 			</subtopic>
-			<subtopic name="Paramedic Class #19" ordered="true">
-				<pattern match="EMSP 2434-2719" />
-				<pattern match="EMSP 2434-2700" />
-				<pattern match="EMSP 1355-2719" />
-				<pattern match="EMSP 1355-2700" />
-				<pattern match="EMSP 2430-2719" />
-				<pattern match="EMSP 2430-2700" />
-				<pattern match="EMSP 2338-2719" />
-				<pattern match="EMSP 2338-2700" />
-				<pattern match="EMSP 2261-2219" />
-			</subtopic>
-			<subtopic name="Paramedic Class #20, B-Shift" ordered="true">
-				<pattern match="EMSP 1438-2220" />
-				<pattern match="EMSP 1438-2202" />
-				<pattern match="EMSP 1438-2203" />
-			</subtopic>
-			<subtopic name="Mass Disaster Response, B-Shift" ordered="true">
-				<pattern match="EMSP 2332-2206" />
+			<subtopic name="Paramedic Class #20, B-Shift">
+				<pattern match="EMSP 1356-2220" />
+				<pattern match="EMSP 1356-2202" />
+				<pattern match="EMSP 1356-2203" />
+				<pattern match="EMSP 2260-2220" />
+				<pattern match="EMSP 2444-2220" />
+				<pattern match="EMSP 2444-2202" />
+				<pattern match="EMSP 2444-2203" />
+				<pattern match="EMSP 2463-2220" />
+				<pattern match="EMSP 2434-2220" />
+				<pattern match="EMSP 2434-2202" />
+				<pattern match="EMSP 2434-2203" />
 			</subtopic>
 		</topic>
 	</subject>
