@@ -234,7 +234,7 @@
                  element's @title -->
             <xsl:attribute name="default-sortkey"><xsl:value-of select="@title" /></xsl:attribute>
 
-            <!-- Copy evertyhing else, except for any previous
+            <!-- Copy everything else, except for any previous
                  sortkeys. -->
             <xsl:apply-templates select="(@* except (@sortkey, @default-sortkey)) | node()" />
         </xsl:copy>
