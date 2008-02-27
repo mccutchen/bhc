@@ -296,7 +296,6 @@
     			<pattern match="ARTS 2326-2001" />
     			<pattern match="ARTS 2327-2001" />
     			<pattern match="ARTS 2311-2009" /> <!-- changed to section 2009 per Jill to eliminate dup -->
-    			<pattern match="ARTS 1312-2001" />
     		</topic>
     	</subject>
     	<subject name="Dance">
