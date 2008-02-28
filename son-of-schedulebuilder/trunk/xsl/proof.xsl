@@ -646,7 +646,7 @@
 					div.core td {
 						text-decoration: underline;
 					}
-                    div.N td {
+                    div.N td, div.FN td {
                         font-weight: bold;
                     }
                     div.DL td {
