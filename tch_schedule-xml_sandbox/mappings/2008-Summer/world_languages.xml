@@ -51,7 +51,7 @@
 		<topic name="Level Two Intensive English Program">
 			<pattern match="ESOL 0066" />
 		</topic>
-		<topic name="Level Three Intensive English Program">
+		<topic name="Skill Development in ESOL Writing">
 			<pattern match="ESOL 0056" />
 		</topic>
 		<topic name="Level Four Intensive English Program">

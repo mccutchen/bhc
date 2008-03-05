@@ -8,7 +8,7 @@ CALL config
 
 :: Step 2: Clean Data Directory
 
-CALL %data_dir_in%clean
+CALL clean
 
 
 

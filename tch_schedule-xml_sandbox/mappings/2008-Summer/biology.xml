@@ -1,50 +1,35 @@
 <mappings>
 	<subject name="Biology">
+		<comments>NOTE:  Meeting course prerequisites is very important to your success in science courses.  Before registering, check the Catalog online or call the division office for prerequisite information.</comments>
 		<topic name="Directed Studies">
-			<pattern match="DIRS" />
+			<pattern match="DIRS" unsorted="true" />
 		</topic>
-		
 		<topic name="Non-Majors Biology">
-			<comments>
-				<p>NOTE: Biology 1408 and 1409 are courses for non-majors. Non-science majors and returning students with limited biology background may take either course in preparation for their first biology course for majors.  There are no prerequisites.</p>
-			</comments>
-			<pattern match="BIOL 140[89]" />
+			<comments>NOTE:  Biology 1408 and 1409 are courses for non-majors.  Non-science majors and returning students with limited biology background may take either course in preparation for their first biology course for majors.  There are no prerequisites.</comments>
+			<pattern match="BIOL 140[89]" unsorted="true" />
 		</topic>
-		
 		<topic name="Majors Biology">
-			<comments>
-				<p>NOTE: Biology 1406 and 1407 are courses for students majoring and/or minoring in biology or related disciplines. It is recommended that students have recently had either high school biology or Biology 1408 or 1409. It is also recommended that students have recently had high school chemistry or Chemistry 1405 before taking this course.</p>
-			</comments>
-			<pattern match="BIOL 140[67]" />
+			<comments>NOTE:  Biology 1406 and 1407 are courses for students majoring and/or minoring in biology or related disciplines.  It is recommended that students have recently had either high school biology or Biology 1408 or 1409.  It is also recommended that students have recently had high school chemistry or Chemistry 1405 before taking this course.</comments>
+			<pattern match="BIOL 140[67]" unsorted="true" />
 		</topic>
-		
 		<topic name="Anatomy &amp; Physiology for Nursing Majors">
-			<comments>
-				<p>NOTE: Enrollment into SCIT 1407 will require an appropriate reading and writing score on one of the assessment instruments (THEA/TASP, etc.) taken within the last two years. If your reading or writing score is below the minimum cutoff, you will be advised to enroll into an alternative biology course, such as BIOL 1408 or DIRS 9170.  SCIT 1407 is a prerequisite for the Nursing Program.</p>
-			</comments>
-			<pattern match="SCIT" />   <!-- duplicated -->
+			<comments>NOTE:  Enrollment into SCIT 1407 will require an appropriate reading and writing score on one of the assessment instruments (THEA/TASP, etc.) taken within the last two years.  If your reading or writing score is below the minimum cutoff, you will be advised to enroll into an alternative biology course, such as BIOL 1408 or DIRS 9170.  SCIT 1407 is a prerequisite for the Nursing Program.</comments>
+			<pattern match="SCIT" unsorted="true" />
 		</topic>
-		
 		<topic name="Honors Anatomy &amp; Physiology (Majors)">
-			<comments>
-				<p>NOTE: Biology 2401 and 2402 are anatomy and physiology courses for biology majors and for students wanting a transferable anatomy and physiology course, such as, Bachelor of Science, Nursing; physical therapy and kinesiology students. Please see the online Catalog for prerequisite information.</p>
-			</comments>
-			<pattern match="BIOL 240[12]" />
+			<comments>NOTE: Biology 2401 and 2402 are anatomy and physiology courses for biology majors and for students wanting a transferable anatomy and physiology course, such as, Bachelor of Science, Nursing; physical therapy and kinesiology students. Please see the online Catalog for prerequisite information.</comments>
+			<pattern match="BIOL 240[12]" unsorted="true" />
 		</topic>
-		
 		<topic name="Genetics">
-			<comments>
-				<p>NOTE: Genetics is a course for science majors. Please see the online Catalog for prerequisite information. For more information call 972-860-4753 or e-mail aBailey@dcccd.edu.</p>
-			</comments>
-			<pattern match="BIOL 2416" />
+			<comments>NOTE:  Genetics is a course for science majors.  Please see the online Catalog for prerequisite information.  For more information call 972-860-4753 or e-mail aBailey@dcccd.edu.</comments>
+			<pattern match="BIOL 2416" unsorted="true" />
 		</topic>
-		
 		<topic name="Microbiology">
-			<pattern match="BIOL 2420" />
+			<pattern match="BIOL 2420" unsorted="true" />
 		</topic>
-		
 		<topic name="Botany">
 			<pattern match="BIOL 1411-2226" />
 		</topic>
 	</subject>
 </mappings>
+

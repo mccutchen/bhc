@@ -14,6 +14,7 @@ IF "%ys%"=="" GOTO SYNTAX
 :: where {semester} = Summer, Spring, or Fall
 :: and   {year} is a valid, 4-digit year
 
+CALL clean semester
 CALL %prep_bat% %1 %2
 
 

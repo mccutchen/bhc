@@ -268,7 +268,6 @@
 			<pattern match="PHYS 141[12]"/>
 		</subject>
 
-		<!-- no mappings yet
 		<subject name="Biology" ordered="true">
 			<contact email="bhcScience@dcccd.edu"/>
 			<comments>
@@ -277,7 +276,7 @@
 					office for prerequisite information.</p>
 			</comments>
 			<file src="biology.xml"/>
-		</subject> -->
+		</subject>
 		<subject name="Biology - Unsorted" display="false">
 			<pattern match="BIOL" priority="0"/>
 			<pattern match="DIRS" priority="0"/> <!-- will never catch anything, for reference only -->
@@ -369,11 +368,10 @@
 	<division name="School of the Arts">
 		<contact ext="4730" room="D123" email="BCSA@dcccd.edu"/>
 
-		<!-- no mappings yet
 		<subject name="Art" ordered="true">
 			<contact room="T129" email="bhcArt@dcccd.edu"/>
 			<file src="school_of_the_arts.xml"/>
-		</subject> -->
+		</subject>
 		<subject name="Art - Unsorted" display="false">
 			<pattern match="ARTS" priority="0"/>
 		</subject>
@@ -386,19 +384,17 @@
 			</topic>
 		</subject>
 
-		<!-- no mappings yet
 		<subject name="Dance" ordered="true">
 			<contact ext="4122" room="T129" email="bhcDance@dcccd.edu"/>
 			<file src="school_of_the_arts.xml"/>
-		</subject> -->
+		</subject>
 		<subject name="Dance - Unsorted" display="false">
 			<pattern match="DANC" priority="0"/>
 		</subject>
 
-		<!-- no mappings yet
 		<subject name="Drama" ordered="true">
 			<file src="school_of_the_arts.xml"/>
-		</subject> -->
+		</subject>
 		<subject name="Drama - Unsorted">
 			<pattern match="DRAM" priority="0"/>
 		</subject>
@@ -408,11 +404,10 @@
 			<pattern match="HUMA"/>
 		</subject>
 
-		<!-- no mappings yet
 		<subject name="Music" ordered="true">
 			<contact email="bhcMusic@dcccd.edu"/>
 			<file src="school_of_the_arts.xml"/>
-		</subject> -->
+		</subject>
 		<subject name="Music - Unsorted">
 			<pattern match="MUSI" priority="0"/>
 			<pattern match="MUEN" priority="0"/>

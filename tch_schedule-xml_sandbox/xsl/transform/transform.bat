@@ -63,7 +63,7 @@ ECHO Invalid syntax.
 ECHO Syntax: 3_generate-output {semester} {year} {type}
 ECHO where {semester} = Summer, Spring, or Fall
 ECHO and   {year} is a valid, 4-digit year
-ECHO and   {type} = rooms, print, InDesign-print, proof, web, enrolling-now, enrolling-soon
+ECHO and   {type} = rooms, print, InDesign-print, proof, proof-full, web, enrolling-now, enrolling-soon
 ECHO.
 GOTO END
 

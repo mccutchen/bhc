@@ -43,6 +43,7 @@ IF "%type%"=="print" GOTO END
 
 
 :PROOF
+:PROOF-FULL
 ::----------------------------------------------
 IF EXIST %proof% GOTO PROOF_END
 IF NOT EXIST %print% GOTO PRINT
@@ -75,6 +76,7 @@ DEL %sorted%
 :PROOF_END
 IF NOT EXIST %proof% GOTO ERROR
 IF "%type%"=="proof" GOTO END
+IF "%type%"=="proof-full" GOTO END
 
 
 :WEB

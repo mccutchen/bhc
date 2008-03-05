@@ -34,6 +34,9 @@
 			<pattern match="INEW 2438-2502" /> <!-- modified 02/13/2008: from 2501 to 2502 -->
 			<pattern match="ITSE 2453-2501" />
 		</topic>
+		<topic name="Networking">
+			<pattern match="ITCC 1400-2250" /> <!-- added section 02/26/2008 per Bill -->
+		</topic>
 		<topic name="Microsoft Academy">
 			<pattern match="ITMT 1400-2501" />
 			<pattern match="ITMT 1440-2501" />
