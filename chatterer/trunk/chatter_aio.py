@@ -22,7 +22,7 @@
 # Place all input files (text files) into the source/ directory.
 # Output is put in with the source files (because it's the source for the next step)
 # The output will be a file called chatter.raw.xml - this is NOT a perfect transfer
-#   because of the complexity of the data (and simplicity of this program ;oP
+#   because of the complexity of the data (and simplicity of this program ;oP )
 
 
 # we'll need these for working with files
@@ -39,7 +39,7 @@ date_file        = 'issue-date.txt'
 dir_output       = 'source\\'
 file_output      = 'chatter.raw.xml'
 filenames_list   = []
-# Note: filenames_list indices (each is a string):
+# Note: filenames_list indices (each item in the list is a string, except the last):
 id_announcements = 0
 id_events        = 1
 id_aroundtown    = 2
@@ -49,7 +49,7 @@ id_articles      = 5
 id_bodies        = 6  # <-- a list of strings
 
 
-# Def set dates
+# Def: loads dates from file, or prompts user and creates file
 def SetDates():
     # what we're looking for
     date = None;
@@ -95,7 +95,7 @@ def SetDates():
 
     return True;
 
-# def ParseDate
+# Def: converts date into useable form
 def ParseDate(date_in):
     if (type(date_in) != str): return None;
     if (len(date_in) < 6): return None;
@@ -112,7 +112,7 @@ def ParseDate(date_in):
     else:
         return d;
 
-# Def: get filenames
+# Def: gets a list of all text files in the source directory
 def GetFilenames(dir_in):
     f_list = ['','','','','','',[]]
     for f in glob.glob(dir_in + '*.txt'):
@@ -134,7 +134,7 @@ def GetFilenames(dir_in):
             f_list[id_bodies].append(f)
     return f_list
 
-# Def: format
+# Def: replaces special chars with their unicode entities
 def Format(line_in, replace = True):
     char_map = {
         10:  '',        # newline
@@ -171,13 +171,18 @@ def Format(line_in, replace = True):
                     out_list.append(char_map.get(n))
                 else:
                     out_list.append(c)
+        elif (n <= 31):
+            print '!Non-printable character (' + str(n) + ') skipped.';
+        elif (n >= 128):
+            print '- Non-standard character (' + str(n) + ') found: ' + c + '.';
+            out_list.append(c);
         else:
             out_list.append(c)
         index = index + 1
         
     return out_str.join(out_list)
 
-# Def: make id
+# Def: converts an article title into a filename-format string
 def MakeID(line_in):
     # remove extra spaces
     line_in = Format(line_in.strip(), False)
@@ -225,7 +230,7 @@ def MakeID(line_in):
 
 
 
-# Def: get type (of line in events.txt)
+# Def: figure out what type of line we are reading from events.txt
 def GetType(line):
     # A line can be one of the following (matched in this order):
     #  -title
@@ -275,7 +280,7 @@ def GetType(line):
 
     return [line_type, line]
 
-# Def: read announcements
+# Def: reads the announcements file
 def ReadAnnouncements(fname):
     body_list = []
     title_str = ""
@@ -309,7 +314,7 @@ def ReadAnnouncements(fname):
     in_file.close()
     return out_list
 
-# Def: read events
+# Def: reads the events file
 # NOTE: I did my best to stuff the text into the correct tags,
 #       but I'm willing to bet that some of it will be in the
 #       wrong place. Too many possibilities to code.
@@ -367,7 +372,7 @@ def ReadEvents(fname):
     in_file.close()
     return out_list
 
-# Def: read around town
+# Def: reads the around town file
 # NOTE: this is really just a copy-paste (mostly) of read events
 #       most of the same functionality is supported. We'll see how
 #       much tweaking is required.
@@ -410,7 +415,7 @@ def ReadAroundTown(fname):
     in_file.close()
     return out_list
 
-# Def: read birthdays
+# Def: reads the birthdays file
 def ReadBirthdays(fname):
     date_str  = ""
     name_str = ""
@@ -425,7 +430,7 @@ def ReadBirthdays(fname):
     in_file.close()
     return out_list
 
-# Def: read hail/farewells
+# Def: reads the hail/farewell file
 def ReadHails(fname):
     type_list = ['',[]]
     out_list  = []
@@ -444,16 +449,16 @@ def ReadHails(fname):
         else:
             if (r_mode == "type"):
                 r_mode = "names"
-                if ("new hires" in line.strip().lower()):
+                lsl = line.strip().lower();
+                if ("hires" in lsl or "welcome" in lsl or "hail" in lsl):
                     type_list[0] = 'Hail'
-                elif ("terminations" in line.strip().lower()):
+                elif ("terminations" in lsl or "bye" in lsl or "farewell" in lsl):
                     type_list[0] = 'Farewell'
-                elif ("changing roles" in line.strip().lower()):
+                elif ("roles" in lsl or "change" in lsl or "move" in lsl):
                     type_list[0] = 'Role Changes'
                 else:
-                    continue
-                    #print "Unknown Hail-and-Farewell type: " + line
-                    #type_list = [Format(line)]
+                    continue;
+                    print "Unknown Hail-and-Farewell type: " + line
             else:
                 pos0 = line.find(',')
                 pos1 = line[pos0+1:].find(',') + pos0+1
@@ -475,7 +480,7 @@ def ReadHails(fname):
     in_file.close()
     return out_list
 
-# Def: read articles
+# Def: reads the articles file
 def ReadArticles(f_articles, f_bodies):
     title_map  = {}
     title_key  = 0
@@ -551,7 +556,7 @@ def ReadArticles(f_articles, f_bodies):
     # all done
     return out_list
 
-# writes the articles section
+# Def: writes the articles section
 def WriteArticles(indent, lvl, article_list):
     # avoid writing empty tags:
     if (len(article_list) == 0):
@@ -581,7 +586,7 @@ def WriteArticles(indent, lvl, article_list):
     return out_str
 
 
-# writes the features section
+# Def: writes the features section
 def WriteFeatures(indent, lvl, announcement_list, event_list, around_list, birthday_list, hail_list):
     # avoid writing empty tags:
     if (len(announcement_list) + len(event_list) + len(birthday_list) + len(hail_list) == 0):
