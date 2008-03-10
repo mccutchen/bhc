@@ -776,6 +776,7 @@
                 <pattern match="DANC 2351-2736" />
                 <pattern match="DANC 2352-2235" />
                 <pattern match="DANC 2352-2736" />
+            	<pattern match="DANC 1213-2236" /> <!-- added 03/10/2008 - Dance Practicum I -->
             </topic>
             <topic name="Hip Hop">
                 <pattern match="DANC 1222-2001" />

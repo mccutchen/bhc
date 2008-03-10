@@ -3,12 +3,13 @@
 # e-mail:     thaapala@dcccd.edu
 # extention:  x4104
 # Created:    13 February 2008
-# Modified:   13 February 2008
+# Modified:   10 March    2008
 
 # checks mappings for duplicates that could mess with order in output
 
 # GLOBALS
-mappings = ['base.xml', 'fall.xml', 'spring.xml', 'summer.xml'];
+# I didn't include 'base.xml', because I don't want to touch that one
+mappings = ['fall.xml', 'spring.xml', 'summer.xml'];
 
 # get xml lib (stolen out of Will's SoSB test.py)
 try:

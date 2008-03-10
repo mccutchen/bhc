@@ -483,8 +483,35 @@ class Summer08Web(Summer08, Web):
 class Summer08Enrolling(Enrolling, Summer08, Summer08Web):
     output_dir = 'summer08-enrolling'
 
+# ===================================================================
+# Fall 2008 profiles
+# ===================================================================
+class Fall08(Fall):
+    input = 'data/2008-fall/BH2008FA.TXT'
+    terms = {
+        'Fall': (date(2008, 8, 25), date(2008, 12, 11)),
+    }
 
+class Fall08Proof(Fall08, Proof):
+    output_dir = 'fall08-proof'
 
+class Fall08FullProof(Fall08, FullProof):
+    output_dir = 'fall08-full-proof'
+
+class Fall08Rooms(Fall08, RoomCoordinator):
+    output_dir = 'fall08-rooms'
+
+class Fall08Print(Fall08, Print):
+    output_dir = 'fall08-print'
+
+class Fall08Web(Fall08, Web):
+    output_dir = 'fall08-web'
+    saxon_params = {'schedule-title': 'Fall 2008 Credit'}
+
+class Fall08Enrolling(Enrolling, Fall08, Fall08Web):
+    output_dir = 'fall08-enrolling'
+
+    
 # ===================================================================
 # Profile validator
 # ===================================================================
