@@ -21,7 +21,7 @@ def extract(data, fields, strip=True):
             results[field] = results[field].strip()
     return results
 
-for line in file('../2008-summer/BH2008S1.TXT'):
+for line in file('../2008-summer/BH2008S2.TXT'):
     data = extract(line, fields)
     if data['topic_code'] not in ('XX', 'YY'):
         if len(data['title']) > 27:
@@ -39,6 +39,8 @@ for line in file('../2008-summer/BH2008S1.TXT'):
             longtitles[length][title].append((class_number, synonym))
     elif len(data['title']) > 27:
         print 'Suppressed: %s (%d) (%s)' % (data['title'], len(data['title']), data['synonym'])
+        
+        
 
 print
 print
