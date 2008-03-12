@@ -40,7 +40,7 @@
 	<!--=====================================================================
 		Globals
 		======================================================================-->
-	<xsl:variable name="output-type" as="xs:string" select="'proof'"        />
+	<xsl:variable name="output-type" as="xs:string" select="if($is-full = 'true') then 'proof-full' else 'proof'" />
 	<xsl:variable name="ext"         as="xs:string" select="'html'"         />
 	<xsl:variable name="page-title"  as="xs:string" select="'Proof Report'" />
 
@@ -59,20 +59,14 @@
     	insert itself.
     	====================================================================== -->
 	<xsl:template match="/schedule">
-		<!-- choose the proof type -->
-		<xsl:choose>
-			<!-- if this is a full proof -->
-			<xsl:when test="$is-full = 'true'">
-				<!-- initialize each term (create result document) -->
-				<xsl:apply-templates select="term" mode="init" />
-			</xsl:when>
-			
-			<!-- otherwise, it's a peicemeal proof -->			
-			<xsl:otherwise>
-				<!-- initialize each subject (create result document) -->
-				<xsl:apply-templates select="descendant::subject" mode="init" />
-			</xsl:otherwise>
-		</xsl:choose>
+		<!-- if this is a full proof -->
+		<xsl:if test="$is-full = 'true'">
+			<!-- initialize each term (create result document) -->
+			<xsl:apply-templates select="term" mode="init" />
+		</xsl:if>
+		
+		<!-- initialize each subject (create result document) -->
+		<xsl:apply-templates select="descendant::subject" mode="init" />
 	</xsl:template>
 	
 	<xsl:template match="term" mode="init">
@@ -81,7 +75,7 @@
 		<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
 		<xsl:variable name="term" select="utils:make-url(@name)" as="xs:string" />
 		
-		<xsl:result-document href="{$dir}-full/{$term}.{$ext}">
+		<xsl:result-document href="{$dir}/{$term}.{$ext}">
 			<xsl:call-template name="page-template">
 				<xsl:with-param name="page-title" select="@name" />
 			</xsl:call-template>
@@ -131,10 +125,37 @@
 			</xsl:otherwise>
 		</xsl:choose>
 		
-		<!-- call child subjects -->
-		<xsl:apply-templates select="descendant::subject">
+		<!-- There are apparently some divisions' subjects that are handled a little differently -->
+		<xsl:variable name="special-divisions" select="'Senior Adult Education Office', 'School of the Arts'" as="xs:string*" />
+		
+		<!-- call normal child subjects -->
+		<xsl:apply-templates select="descendant::subject[not(parent::division/@name = $special-divisions)]">
 			<xsl:sort select="@name" />
 		</xsl:apply-templates>
+		
+		<!-- call weeekend child subjects -->
+		<div class="special-section">
+			<h1 class="subject-header">WEEKEND COURSES</h1>
+			<xsl:call-template name="make-special-subjects">
+				<xsl:with-param name="classes" select="descendant::class[visibility/@is-w = 'true']" />
+			</xsl:call-template>
+		</div>
+		
+		<!-- call weekend-core child subjects -->
+		<div class="special-section">
+			<h1 class="subject-header">WEEKEND CORE CURRICULUM COURSES</h1>
+			<xsl:call-template name="make-special-subjects">
+				<xsl:with-param name="classes" select="descendant::class[visibility/@is-wcc = 'true']" />
+			</xsl:call-template>
+		</div>
+		
+		<!-- call special division subjects -->
+		<xsl:for-each-group select="descendant::subject[parent::division/@name = $special-divisions]" group-by="parent::division/@name">
+			<h1 class="division-header"><xsl:value-of select="current-grouping-key()" /></h1>
+			<xsl:apply-templates select="current-group()">
+				<xsl:sort select="@name" />
+			</xsl:apply-templates>
+		</xsl:for-each-group>
 	</xsl:template>
 	
 	<xsl:template match="term" mode="output">
@@ -206,7 +227,7 @@
 	<xsl:template match="subtopic">
         <!-- start div -->
         <div class="subtopic-section">
-            <h3 class="subtopic-header"><xsl:value-of select="@name" /></h3>
+        	<h3 class="subtopic-header"><xsl:value-of select="upper-case(@name)" /></h3>
             
         	<xsl:apply-templates select="type" />
         </div>
@@ -488,6 +509,33 @@
             </div>
         </xsl:for-each-group>
     </xsl:template>
+	
+	<xsl:template name="make-special-subjects">
+		<xsl:param name="classes" as="element()*" />
+		
+		<div class="subject-section">
+			<xsl:for-each-group select="$classes" group-by="ancestor::subject/@name">
+				<xsl:sort select="ancestor::subject/@name" />
+				<h1 class="special-subject-header"><xsl:value-of select="upper-case(current-grouping-key())" /></h1>
+				<p class="division-info"><xsl:value-of select="upper-case(ancestor::division/@name)" /></p>
+				
+				<xsl:for-each-group select="current-group()" group-by="ancestor::type/@id">
+					<div class="type-section {current-grouping-key()}">
+						
+						<xsl:for-each-group select="current-group()" group-by="concat(parent::class/@rubric, ' ', parent::class/@number)">
+							<xsl:variable name="is-core" select="if (current-group()/parent::class/@core-code) then 'core' else ''" as="xs:string" />
+							
+							<div class="course-section {$is-core}">
+								<table>
+									<xsl:apply-templates select="current-group()/meeting" />
+								</table>
+							</div>
+						</xsl:for-each-group>
+					</div>
+				</xsl:for-each-group>
+			</xsl:for-each-group>
+		</div>
+	</xsl:template>
 
 
     <xsl:template name="page-template">
@@ -499,7 +547,7 @@
                 <!-- paste in the css -->
                 <style type="text/css">
                     <xsl:value-of select="$doc-css/text()" disable-output-escaping="yes" />
-                    <xsl:if test="$with-highlighted-groups = 'true'">
+                    <xsl:if test="$with-highlighted-groups = 'true' or $is-full = 'true'">
                         <xsl:value-of select="$doc-css/conditional[@name = 'with-highlighted-groups']/text()" disable-output-escaping="yes" />
                     </xsl:if>
                 </style>
@@ -524,7 +572,7 @@
         <xsl:variable name="formatted-times" select="utils:format-times($time-start, $time-end)" as="xs:string" />
         
         <xsl:choose>
-            <xsl:when test="($formatted-times eq 'NA') and ($method = ('LEC','LAB'))">
+            <xsl:when test="($formatted-times = 'NA') and ($method = ('LEC','LAB'))">
                 <xsl:value-of select="'TBA'" />
             </xsl:when>
             <xsl:otherwise>
@@ -540,7 +588,7 @@
             <xsl:when test="count($classes) &lt; 1">
                 <xsl:value-of select="false()" />
             </xsl:when>
-            <xsl:when test="count($classes) eq 1">
+            <xsl:when test="count($classes) = 1">
                 <xsl:value-of select="true()" />
             </xsl:when>
             <xsl:when test="count($classes) != count($classes/comments)">

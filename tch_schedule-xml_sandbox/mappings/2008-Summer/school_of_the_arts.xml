@@ -2,7 +2,7 @@
 	School of the Arts (Fran Rhodes & Jill Williams
 	========================================================================-->
 <mappings>
-	<subject name="Art">
+	<subject name="Art" ordered="true">
 		<topic name="Art Appreciation">
 			<pattern match="ARTS 1301-2201" />
 			<pattern match="ARTS 1301-2001" />
@@ -118,7 +118,7 @@
 		</topic>
 	</subject>
 	
-	<subject name="Dance">
+	<subject name="Dance" ordered="true">
 		<topic name="Ballet">
 			<pattern match="DANC 1342-2201" />
 			<pattern match="DANC 2341-2201" />
@@ -158,7 +158,7 @@
 		</topic>
 	</subject>
 	
-	<subject name="Drama">
+	<subject name="Drama" ordered="true">
 		<topic name="Film Appreciation">
 			<pattern match="DRAM 2366-2420" />
 			<pattern match="DRAM 2366-2421" />
@@ -169,7 +169,7 @@
 		</topic>
 	</subject>
 	
-	<subject name="Music">
+	<subject name="Music" ordered="true">
 		<topic name="Music Appreciation">
 			<pattern match="MUSI 1306-2429" />
 			<pattern match="MUSI 1306-2430" />
