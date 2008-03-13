@@ -161,10 +161,10 @@
 	<xsl:template match="term" mode="output">
         <!-- only output the term header if there is more than one term -->
         <xsl:if test="count(ancestor-or-self::schedule//term[@display = 'true']) &gt; 1">
-        	<xsl:variable name="dates" select="if(@date-end = 'NA' and @date-start = 'NA') then 'NA' else utils:format-dates(@date-start, @date-end)" as="xs:string" />
+        	<xsl:variable name="dates" select="if(@date-end = 'NA' and @date-start = 'NA') then 'NA' else utils:long-dates(utils:format-dates(@date-start, @date-end))" as="xs:string" />
             <h1 class="term-header">
                 <xsl:value-of select="concat(@name, ' ', parent::schedule/@year)" />
-                <span class="term-dates">(<xsl:value-of select="$dates" />)</span>
+                <span class="term-dates"><xsl:value-of select="$dates" /></span>
             </h1>
         </xsl:if>
 
@@ -274,19 +274,21 @@
             
             <!-- otherwise, do it -->
             <xsl:otherwise>
-                <div class="course-section{$is-core}">
-                    <table>
-                        <xsl:apply-templates select="$classes[position() &gt;= $min-index and position() &lt; $max-index]/meeting" />
-                    </table>
-                    <xsl:apply-templates select="$classes[$min-index]/comments" />
-                    <xsl:apply-templates select="comments" />
-                </div>
-                <xsl:call-template name="group-comments">
-                    <xsl:with-param name="is-core" select="$is-core" />
-                    <xsl:with-param name="classes" select="$classes" />
-                    <xsl:with-param name="min-index" select="$max-index" />
-                    <xsl:with-param name="max-index" select="utils:max-comment-match($classes, $max-index) + 1" />
-                </xsl:call-template>
+            	<div class="group-section">
+	                <div class="course-section{$is-core}">
+	                    <table>
+	                        <xsl:apply-templates select="$classes[position() &gt;= $min-index and position() &lt; $max-index]/meeting" />
+	                    </table>
+	                    <xsl:apply-templates select="$classes[$min-index]/comments" />
+	                    <xsl:apply-templates select="comments" />
+	                </div>
+	                <xsl:call-template name="group-comments">
+	                    <xsl:with-param name="is-core" select="$is-core" />
+	                    <xsl:with-param name="classes" select="$classes" />
+	                    <xsl:with-param name="min-index" select="$max-index" />
+	                    <xsl:with-param name="max-index" select="utils:max-comment-match($classes, $max-index) + 1" />
+	                </xsl:call-template>
+            	</div>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>

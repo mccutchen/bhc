@@ -100,17 +100,19 @@ SET fixed=%data%%ys%_fixed.xml
 SET formed=%data%%ys%_formed.xml
 SET meetings=%data%%ys%_meetings.xml
 SET final=%meetings%
-SET rooms=%final%
+
 SET trimmed=%data%%ys%_trimmed.xml
-SET print=%trimmed%
 SET split=%data%%ys%_split.xml
 SET sorted=%data%%ys%_sorted.xml
 SET linked=%data%%ys%_linked.xml
-SET proof=%linked%
 SET sectioned=%data%%ys%_sectioned.xml
-SET web=%sectioned%
 SET enrolling=%data%%ys%_enrolling.xml
 SET enrolling-sectioned=%data%%ys%_enrolling-sectioned.xml
+
+SET rooms=%final%
+SET proof=%linked%
+SET print=%linked%
+SET web=%sectioned%
 SET enrolling-now=%enrolling-sectioned%
 SET enrolling-soon=%enrolling-sectioned%
 

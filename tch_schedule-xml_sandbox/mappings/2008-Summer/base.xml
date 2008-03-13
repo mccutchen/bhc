@@ -270,11 +270,6 @@
 
 		<subject name="Biology" ordered="true">
 			<contact email="bhcScience@dcccd.edu"/>
-			<comments>
-				<p>NOTE: Meeting course prerequisites is very important to your success in science
-					courses. Before registering, check the Catalog online or call the division
-					office for prerequisite information.</p>
-			</comments>
 			<file src="biology.xml"/>
 		</subject>
 		<subject name="Biology - Unsorted" display="false">

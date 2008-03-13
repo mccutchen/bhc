@@ -95,7 +95,7 @@
             <!-- if multiple terms, output extra info -->
         	<xsl:if test="count(//term) &gt; 1">
                 <xsl:value-of select="fn:xtag('Term Header')" /><xsl:value-of select="@name" /><xsl:call-template name="br" />
-                <xsl:value-of select="fn:xtag('Term Dates')" /><xsl:value-of select="@dates" /><xsl:call-template name="br" />
+                <xsl:value-of select="fn:xtag('Term Dates')" /><xsl:value-of select="utils:long-dates(utils:format-dates(@date-start, @date-end))" /><xsl:call-template name="br" />
             </xsl:if>
             
             <!-- continue transformation -->
@@ -351,7 +351,7 @@
 
 	<!-- process meetings (normal / extra) -->
     <xsl:template match="meeting[@method = ('LEC','')]">
-        <xsl:value-of select="@days" /><xsl:call-template name="sep" />
+    	<xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
     	<xsl:value-of select="utils:format-times(@time-start, @time-end)" />
     	<xsl:text> / </xsl:text>
     	<xsl:value-of select="@method" /><xsl:call-template name="sep" />
@@ -381,10 +381,18 @@
 				<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="@days" /><xsl:call-template name="sep" />
+				<xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
 				<xsl:value-of select="@room" /><xsl:call-template name="sep" />
 			</xsl:otherwise>
 		</xsl:choose>
+		<xsl:value-of select="if (faculty/@name-last) then faculty/@name-last else 'Staff'" /><xsl:call-template name="br" />
+	</xsl:template>
+	
+	<xsl:template match="meeting[@method = 'OL']">
+		<xsl:value-of select="'NA'" /><xsl:call-template name="sep" />
+		<xsl:value-of select="concat('NA / ', parent::class/@topic-code)" /><xsl:call-template name="sep" />
+		<xsl:value-of select="'OL'" /><xsl:call-template name="sep" />
+		<xsl:value-of select="''" /><xsl:call-template name="sep" />
 		<xsl:value-of select="if (faculty/@name-last) then faculty/@name-last else 'Staff'" /><xsl:call-template name="br" />
 	</xsl:template>
 	
@@ -398,7 +406,7 @@
 				<xsl:value-of select="'OL'" /><xsl:call-template name="sep" />
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="@days" /><xsl:call-template name="sep" />
+				<xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
 				<xsl:value-of select="@room" /><xsl:call-template name="sep" />
 			</xsl:otherwise>
 		</xsl:choose>
@@ -436,7 +444,7 @@
 	</xsl:template>
 	
 	<!-- format meeting attributes -->
-	<xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days">
+	<xsl:template match="meeting[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days" priority="1">
 		<!-- spell out the days of the week for Senior Adult courses -->
 		<xsl:value-of select="utils:senior-adult-days(.)" />
 	</xsl:template>
@@ -605,6 +613,10 @@
     <xsl:template match="url | email">
         <xsl:value-of select="fn:xtag-inline('website', current())" />
     </xsl:template>
+	
+	<xsl:template match="comments//text()">
+		<xsl:value-of select="normalize-space(.)" />
+	</xsl:template>
 
 
 	<!--=====================================================================

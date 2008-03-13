@@ -26,8 +26,10 @@ IF "%type%"=="rooms" GOTO END
 
 
 :PRINT
+:PROOF
+:PROOF-FULL
 ::----------------------------------------------
-IF EXIST %print% GOTO PRINT_END
+IF EXIST %proof% GOTO PROOF_END
 IF NOT EXIST %rooms% GOTO ROOMS
 
 SET xsl=%split_dir_in%trim.xsl
@@ -37,19 +39,8 @@ ECHO  - trimming
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %trimmed% GOTO ERROR
 
-:PRINT_END
-IF NOT EXIST %print% GOTO ERROR
-IF "%type%"=="print" GOTO END
-
-
-:PROOF
-:PROOF-FULL
-::----------------------------------------------
-IF EXIST %proof% GOTO PROOF_END
-IF NOT EXIST %print% GOTO PRINT
-
 SET xsl=%split_dir_in%split.xsl
-SET source=%print%
+SET source=%trimmed%
 SET dest=%split%
 ECHO  - splitting
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%

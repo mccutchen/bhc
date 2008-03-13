@@ -259,6 +259,8 @@
     	 Date formatters
     	 ===================================================================== -->
     <xsl:function name="utils:format-dates" as="xs:string">
+    	<!-- returns date pair in m/d format. If either date is bad, prints error message
+    		 and returns the value of $default-date -->
         <xsl:param name="start-date" as="xs:string" />
         <xsl:param name="end-date" as="xs:string" />
 
@@ -275,6 +277,41 @@
             </xsl:otherwise>
         </xsl:choose>
     </xsl:function>
+	
+	<xsl:function name="utils:long-dates" as="xs:string">
+		<!-- returns the formatted date in Month Day - Month Day format. Only accepts formatted dates as input -->
+		<xsl:param name="formatted-dates" as="xs:string" />
+		
+		<xsl:variable name="date1" select="substring-before($formatted-dates, '-')"        as="xs:string" />
+		<xsl:variable name="m1"    select="utils:month-name(substring-before($date1,'/'))" as="xs:string" />
+		<xsl:variable name="d1"    select="substring-after($date1, '/')"                   as="xs:string" />
+		
+		<xsl:variable name="date2" select="substring-after($formatted-dates, '-')"         as="xs:string" />
+		<xsl:variable name="m2"    select="utils:month-name(substring-before($date2,'/'))" as="xs:string" />
+		<xsl:variable name="d2"    select="substring-after($date2, '/')"                   as="xs:string" />
+		
+		<xsl:value-of select="concat($m1, ' ', $d1, ' - ', $m2, ' ', $d2)" />
+	</xsl:function>
+	
+	<xsl:function name="utils:month-name" as="xs:string">
+		<xsl:param name="str_in" as="xs:string" />
+		
+		<xsl:choose>
+			<xsl:when test="$str_in = '01' or $str_in = '1'"><xsl:value-of select="'January'" /></xsl:when>
+			<xsl:when test="$str_in = '02' or $str_in = '2'"><xsl:value-of select="'February'" /></xsl:when>
+			<xsl:when test="$str_in = '03' or $str_in = '3'"><xsl:value-of select="'March'" /></xsl:when>
+			<xsl:when test="$str_in = '04' or $str_in = '4'"><xsl:value-of select="'April'" /></xsl:when>
+			<xsl:when test="$str_in = '05' or $str_in = '5'"><xsl:value-of select="'May'" /></xsl:when>
+			<xsl:when test="$str_in = '06' or $str_in = '6'"><xsl:value-of select="'June'" /></xsl:when>
+			<xsl:when test="$str_in = '07' or $str_in = '7'"><xsl:value-of select="'July'" /></xsl:when>
+			<xsl:when test="$str_in = '08' or $str_in = '8'"><xsl:value-of select="'August'" /></xsl:when>
+			<xsl:when test="$str_in = '09' or $str_in = '9'"><xsl:value-of select="'September'" /></xsl:when>
+			<xsl:when test="$str_in = '10'"><xsl:value-of select="'October'" /></xsl:when>
+			<xsl:when test="$str_in = '11'"><xsl:value-of select="'November'" /></xsl:when>
+			<xsl:when test="$str_in = '12'"><xsl:value-of select="'December'" /></xsl:when>
+			<xsl:otherwise><xsl:value-of select="''" /></xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
 
 
     <!-- =====================================================================
