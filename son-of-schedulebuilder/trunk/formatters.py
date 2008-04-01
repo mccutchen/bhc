@@ -166,8 +166,9 @@ class CreditFormatter(BaseFormatter):
         """Returns the AP-formatted versions of the term's start and end
         dates."""
         term = FormatUtils.get_term(self.input['term'], self.input['start-date'])
-        start, end = FormatUtils.get_term_dates(term)
-        return '%s-%s' % (utils.apdate(start, False), utils.apdate(end, False))
+        # The formatted term dates are the third element in the 3-tuple in
+        # each value in the profile.terms dict
+        return profile.terms[term][2]
 
     def format_cross_listings(self, value):
         """Returns a list of cross-listings for the current class.  In some
@@ -604,7 +605,7 @@ class FormatUtils:
             
             # Loop through the terms in this profile, checking their start
             # and end dates with the start date of this class.
-            for term, (term_start, term_end) in profile.terms.items():
+            for term, (term_start, term_end, _) in profile.terms.items():
                 
                 # keep track of the earliest and latest term dates, in case
                 # we don't find a term to match this class
@@ -662,7 +663,7 @@ class FormatUtils:
         first."""
         assert term in profile.terms, \
             'Term %s not found in current profile\'s term dict.  Valid term names: %s' % (term, ', '.join(profile.terms.keys()))
-        start, end = profile.terms[term]
+        start, end, _ = profile.terms[term]
         return start, end
 
     @classmethod

@@ -215,7 +215,7 @@ class Fall05Proof(Fall05, Proof):
 class Spring06(Spring):
     input = 'data/2006-spring/latest.txt'
     terms = {
-        'Spring': (date(2005,12,1), date(2006,5,15)),
+        'Spring': (date(2005,12,1), date(2006,5,15), 'TERM DATES'),
     }
 
 class Spring06Proof(Spring06, Proof):
@@ -238,9 +238,9 @@ class Spring06Enrolling(Spring06, Spring06Web, Enrolling):
 class Summer06(Summer):
     input = 'data/2006-summer/latest.txt'
     terms = {
-        'Summer I/May Term': (date(2006,5,15), date(2006,6,2)),
-        'Summer I': (date(2006,6,5), date(2006,7,6)),
-        'Summer II': (date(2006,7,12), date(2006,8,10)),
+        'Summer I/May Term': (date(2006,5,15), date(2006,6,2), 'TERM DATES'),
+        'Summer I': (date(2006,6,5), date(2006,7,6), 'TERM DATES'),
+        'Summer II': (date(2006,7,12), date(2006,8,10), 'TERM DATES'),
     }
 
 class Summer06Proof(Summer06, Proof):
@@ -355,9 +355,9 @@ class Spring07NonCoreProof(NonCore, Spring07Proof):
 class Summer07(Summer):
     input = ('data/2007-summer/bh2007s1.txt', 'data/2007-summer/bh2007s2.txt')
     terms = {
-        'Summer I/May Term': (date(2007, 5, 14), date(2007, 6, 1)),
-        'Summer I':  (date(2007, 6, 4), date(2007, 7, 3)),
-        'Summer II':  (date(2007, 7, 9), date(2007, 8, 9)),
+        'Summer I/May Term': (date(2007, 5, 14), date(2007, 6, 1), 'TERM DATES'),
+        'Summer I':  (date(2007, 6, 4), date(2007, 7, 3), 'TERM DATES'),
+        'Summer II':  (date(2007, 7, 9), date(2007, 8, 9), 'TERM DATES'),
     }
 
 class Summer07Proof(Summer07, Proof):
@@ -386,7 +386,7 @@ class Summer07Enrolling(Enrolling, Summer07, Summer07Web):
 class Fall07(Fall):
     input = 'data/2007-fall/BH2007FA.TXT'
     terms = {
-        'Fall': (date(2007, 8, 27), date(2007, 12, 13)),
+        'Fall': (date(2007, 8, 27), date(2007, 12, 13), 'TERM DATES'),
     }
 
 class Fall07Proof(Fall07, Proof):
@@ -414,7 +414,7 @@ class Fall07Enrolling(Enrolling, Fall07, Fall07Web):
 class Spring08(Spring):
     input = 'data/2008-spring/BH2008SP.TXT'
     terms = {
-        'Spring': (date(2008, 1, 14), date(2008, 5, 8)),
+        'Spring': (date(2008, 1, 14), date(2008, 5, 8), 'TERM DATES'),
     }
 
 class Spring08Proof(Spring08, Proof):
@@ -459,9 +459,9 @@ class Summer08(Summer):
         # Summer I: 6/9 - 7/3
         # Summer II: 7/9 - 8/7
 
-        'Summer I/May Term': (date(2008, 5, 1), date(2008, 5, 30)),
-        'Summer I':  (date(2008, 6, 1), date(2008, 7, 6)),
-        'Summer II':  (date(2008, 7, 7), date(2008, 8, 8)),
+        'Summer I/May Term': (date(2008, 5, 1), date(2008, 5, 30), 'May 12-May 30'),
+        'Summer I':  (date(2008, 6, 1), date(2008, 7, 6), 'June 9-July 3'),
+        'Summer II':  (date(2008, 7, 7), date(2008, 8, 8), 'July 9-Aug. 7'),
     }
 
 class Summer08Proof(Summer08, Proof):
@@ -489,7 +489,7 @@ class Summer08Enrolling(Enrolling, Summer08, Summer08Web):
 class Fall08(Fall):
     input = 'data/2008-fall/BH2008FA.TXT'
     terms = {
-        'Fall': (date(2008, 8, 25), date(2008, 12, 11)),
+        'Fall': (date(2008, 8, 25), date(2008, 12, 11), 'Aug. 25-Dec. 11'),
     }
 
 class Fall08Proof(Fall08, Proof):
@@ -558,11 +558,13 @@ def validate_profile(profile):
     
     # make sure the terms dict is properly formatted
     try:
-        for term, (start, end) in profile.terms.items():
+        for term, (start, end, formatted_dates) in profile.terms.items():
             if not isinstance(start, date) or not isinstance(end, date):
                 raise ProfileError('Start and end dates in terms setting must be datetime.date objects.  Given %s and %s' % (type(start), type(end)))
+            if not isinstance(formatted_dates, basestring):
+                raise ProfileError('Formatted dates in terms setting must be a string.  Given %s' % type(formatted_dates))
     except (TypeError, ValueError):
-        raise ProfileError('Values in terms dict must be two datetime.date objects.')
+        raise ProfileError('Each value in a profile\'s terms dict must be a 3-tuple of start date, end date, and formatted dates.')
     except AttributeError:
         raise ProfileError('Each profile\'s terms setting must be a dict object.  Given %s' % type(profile.terms))
 
