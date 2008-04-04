@@ -280,11 +280,11 @@ class Fall06FullProof(Fall06, FullProof): pass
 class Fall06Rooms(Fall06, RoomCoordinator): pass
 class Fall06Print(Fall06, Print): pass
 class Fall06Web(Fall06, Web): pass
-class Fall06Enrolling(Enrolling, Fall06Web): pass
-class Fall06CorePrint(CoreOnly, Fall06Print): pass
-class Fall06CoreProof(CoreOnly, Fall06FullProof): pass
-class Fall06NonCorePrint(NonCore, Fall06Print): pass
-class Fall06NonCoreProof(NonCore, Fall06Proof): pass
+class Fall06Enrolling(Fall06Web, Enrolling): pass
+class Fall06CorePrint(Fall06Print, CoreOnly): pass
+class Fall06CoreProof(Fall06FullProof, CoreOnly): pass
+class Fall06NonCorePrint(Fall06Print, NonCore): pass
+class Fall06NonCoreProof(Fall06Proof, NonCore): pass
 class Fall06ForSpring07(Fall06Print):
     include_classes_after = date(2006, 11, 1)
 
@@ -302,11 +302,11 @@ class Spring07FullProof(Spring07, FullProof): pass
 class Spring07Rooms(Spring07, RoomCoordinator): pass
 class Spring07Print(Spring07, Print): pass
 class Spring07Web(Spring07, Web): pass
-class Spring07Enrolling(Enrolling, Spring07Web): pass
-class Spring07CorePrint(CoreOnly, Spring07Print): pass
-class Spring07CoreProof(CoreOnly, Spring07FullProof): pass
-class Spring07NonCorePrint(NonCore, Spring07Print): pass
-class Spring07NonCoreProof(NonCore, Spring07Proof): pass
+class Spring07Enrolling(Spring07Web, Enrolling): pass
+class Spring07CorePrint(Spring07Print, CoreOnly): pass
+class Spring07CoreProof(Spring07FullProof, CoreOnly): pass
+class Spring07NonCorePrint(Spring07Print, NonCore): pass
+class Spring07NonCoreProof(Spring07Proof, NonCore): pass
 
 # ===================================================================
 # Summer 2007 profiles
@@ -324,7 +324,7 @@ class Summer07Print(Summer07, Print): pass
 class Summer07Rooms(Summer07, RoomCoordinator): pass
 class Summer07FullProof(Summer07, FullProof): pass
 class Summer07Web(Summer07, Web): pass
-class Summer07Enrolling(Enrolling, Summer07Web): pass
+class Summer07Enrolling(Summer07Web, Enrolling): pass
 
 # ===================================================================
 # Fall 2007 profiles
@@ -340,7 +340,7 @@ class Fall07FullProof(Fall07, FullProof): pass
 class Fall07Rooms(Fall07, RoomCoordinator): pass
 class Fall07Print(Fall07, Print): pass
 class Fall07Web(Fall07, Web): pass
-class Fall07Enrolling(Enrolling, Fall07Web): pass
+class Fall07Enrolling(Fall07Web, Enrolling): pass
 # ===================================================================
 # Spring 2008 profiles
 # ===================================================================
@@ -354,11 +354,11 @@ class Spring08FullProof(Spring08, FullProof): pass
 class Spring08Rooms(Spring08, RoomCoordinator): pass
 class Spring08Print(Spring08, Print): pass
 class Spring08Web(Spring08, Web): pass
-class Spring08Enrolling(Enrolling, Spring08Web): pass
-class Spring08CorePrint(CoreOnly, Spring08Print): pass
-class Spring08CoreProof(CoreOnly, Spring08FullProof): pass
-class Spring08NonCorePrint(NonCore, Spring08Print): pass
-class Spring08NonCoreProof(NonCore, Spring08Proof): pass
+class Spring08Enrolling(Spring08Web, Enrolling): pass
+class Spring08CorePrint(Spring08Print, CoreOnly): pass
+class Spring08CoreProof(Spring08FullProof, CoreOnly): pass
+class Spring08NonCorePrint(Spring08Print, NonCore): pass
+class Spring08NonCoreProof(Spring08Proof, NonCore): pass
 
 # ===================================================================
 # Summer 2008 profiles
@@ -381,7 +381,7 @@ class Summer08Print(Summer08, Print): pass
 class Summer08Rooms(Summer08, RoomCoordinator): pass
 class Summer08FullProof(Summer08, FullProof): pass
 class Summer08Web(Summer08, Web): pass
-class Summer08Enrolling(Enrolling, Summer08Web): pass
+class Summer08Enrolling(Summer08Web, Enrolling): pass
 
 # ===================================================================
 # Fall 2008 profiles
