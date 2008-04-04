@@ -367,7 +367,159 @@
         </subject>
 
         <subject name="Music">
-			
+            <topic name="Music Appreciation">
+				<pattern match="MUSI 1306-2001" />
+				<pattern match="MUSI 1306-2002" />
+				<pattern match="MUSI 1306-2003" />
+				<pattern match="MUSI 1306-2004" />
+				<pattern match="MUSI 1306-2005" />
+				<pattern match="MUSI 1306-2006" />
+				<pattern match="MUSI 1306-2501" />
+				<pattern match="MUSI 1306-2426" />
+				<pattern match="MUSI 1306-2428" />
+				<pattern match="MUSI 1306-2429" />
+				<pattern match="MUSI 1306-2430" />
+				<pattern match="MUSI 1306-2431" />
+				<pattern match="MUSI 1306-2300" />
+            </topic>
+            <topic name="Music Theory">
+				<pattern match="MUSI 1311-2001" />
+				<pattern match="MUSI 2311-2001" />
+            </topic>
+            <topic name="Musicianship">
+				<pattern match="MUSI 1116-2001" />
+				<pattern match="MUSI 2116-2001" />
+            </topic>
+            <topic name="Music Literature">
+				<pattern match="MUSI 1308-2300" />
+				<pattern match="MUSI 1309-2300" />
+            </topic>
+            <topic name="Foundation Of Music">
+				<pattern match="MUSI 1300-2300" />
+				<pattern match="MUSI 1304-2300" />
+            </topic>
+            <topic name="Composition">
+				<pattern match="MUSI 1386-2300" />
+            </topic>
+            <topic name="Recital">
+				<pattern match="MUSI 9176-2001" />
+				<pattern match="MUSI 9176-2002" />
+            </topic>
+            <topic name="Digital">
+				<pattern match="MUSI 1390-2001" />
+            </topic>
+            <topic name="Piano For Music Majors">
+				<pattern match="MUSI 1181-2002" />
+				<pattern match="MUSI 1182-2002" />
+				<pattern match="MUSI 2181-2001" />
+				<pattern match="MUSI 2182-2001" />
+            </topic>
+            <topic name="Piano For Non Music Majors">
+				<pattern match="MUSI 1181-2001" />
+				<pattern match="MUSI 1181-2501" />
+				<pattern match="MUSI 1181-2502" />
+				<pattern match="MUSI 1182-2501" />
+            </topic>
+            <topic name="Guitar">
+				<pattern match="MUSI 1192-2001" />
+				<pattern match="MUSI 1192-2002" />
+            </topic>
+            <topic name="Voice">
+				<pattern match="MUSI 1183-2001" />
+				<pattern match="MUSI 1183-2501" />
+				<pattern match="MUSI 1183-2502" />
+            </topic>
+            <topic name="Music Ensembles">
+                <subtopic name="Flute Ensemble">
+					<pattern match="MUEN 1132-2001" />
+                </subtopic>
+                <subtopic name="Chamber Ensemble">
+					<pattern match="MUEN 1152-2001" />
+					<pattern match="MUEN 1152-2002" />
+					<pattern match="MUEN 1152-2750" />
+                </subtopic>
+                <subtopic name="Guitar Ensemble">
+					<pattern match="MUEN 1134-2001" />
+					<pattern match="MUEN 1134-2501" />
+                </subtopic>
+                <subtopic name="Keyboard Ensemble">
+					<pattern match="MUEN 1131-2001" />
+					<pattern match="MUEN 1131-2002" />
+                </subtopic>
+                <subtopic name="Handbell Ensemble">
+					<pattern match="MUEN 1135-2501" />
+					<pattern match="MUEN 1135-2250" />
+                </subtopic>
+                <subtopic name="Orchestra Ensemble">
+					<pattern match="MUEN 1121-2001" />
+                </subtopic>
+                <subtopic name="Percussion Ensemble">
+					<pattern match="MUEN 1135-2002" />
+                </subtopic>                
+                <subtopic name="Vocal Jazz / Lab Band">
+					<pattern match="MUEN 1151-2001" />
+					<pattern match="MUEN 2123-2001" />
+					<pattern match="MUEN 2123-2200" />
+					<pattern match="MUEN 2123-2002" />
+					<pattern match="MUEN 2123-2501" />
+                </subtopic>
+                <subtopic name="Windsong Vocal Ensemble">
+					<pattern match="MUEN 1153-2250" />
+					<pattern match="MUEN 1153 2200" />
+                </subtopic>
+                <subtopic name="Brookhaven Choral Society">
+					<pattern match="MUEN 2141-2501" />
+					<pattern match="MUEN 2141-2701" />
+                </subtopic>
+            </topic>
+            <topic name="Music - Private Lessons">
+                <subtopic name="Beginning">
+                    <comments>NOTE:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
+					<pattern match="MUAP 1101-2001" />
+					<pattern match="MUAP 1105-2001" />
+					<pattern match="MUAP 1115-2001" />
+					<pattern match="MUAP 1121-2001" />
+					<pattern match="MUAP 1125-2001" />
+					<pattern match="MUAP 1129-2001" />
+					<pattern match="MUAP 1129-2002" />
+					<pattern match="MUAP 1133-2001" />
+					<pattern match="MUAP 1133-2002" />
+					<pattern match="MUAP 1141-2001" />
+					<pattern match="MUAP 1145-2001" />
+					<pattern match="MUAP 1145-2002" />
+					<pattern match="MUAP 1153-2001" />
+					<pattern match="MUAP 1157-2001" />
+					<pattern match="MUAP 1157-2002" />
+					<pattern match="MUAP 1161-2001" />
+					<pattern match="MUAP 1161-2002" />
+					<pattern match="MUAP 1161-2003" />
+					<pattern match="MUAP 1169-2001" />
+					<pattern match="MUAP 1169-2002" />
+					<pattern match="MUAP 1169-2003" />
+					<pattern match="MUAP 1169-2004" />
+					<pattern match="MUAP 1181-2001" />
+					<pattern match="MUAP 1181-2002" />
+					<pattern match="MUAP 1181-2003" />
+					<pattern match="MUAP 1181-2004" />
+                </subtopic>
+                <subtopic name="Intermediate">
+                    <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
+					<pattern match="MUAP 2201-2001" />
+					<pattern match="MUAP 2209-2001" />
+					<pattern match="MUAP 2209-2002" />
+					<pattern match="MUAP 2217-2001" />
+					<pattern match="MUAP 2229-2001" />
+					<pattern match="MUAP 2233-2001" />
+					<pattern match="MUAP 2257-2001" />
+					<pattern match="MUAP 2261-2001" />
+					<pattern match="MUAP 2261-2002" />
+					<pattern match="MUAP 2261 2003" />
+					<pattern match="MUAP 2269-2001" />
+					<pattern match="MUAP 2269-2002" />
+					<pattern match="MUAP 2281-2001" />
+					<pattern match="MUAP 2281-2002" />
+                </subtopic>
+            </topic>
         </subject>
 
 
