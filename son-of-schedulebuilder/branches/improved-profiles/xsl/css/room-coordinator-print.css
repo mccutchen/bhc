@@ -1,0 +1,16 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body, table, th, td {
+    font-size: 7pt;
+}
+th, td {
+    padding: 0;
+}
+
+table tr.heading th, table tr.heading th.first {
+    border: none;
+    padding: 5px 0;
+}
