@@ -16,35 +16,14 @@ def main():
     xmldoc = xmlbuilder.build(classes)
 
     if profile.template:
-        # get any necessary Saxon parameters
-        params = saxon_parameters()
-        
         # transform the XML file (this will echo any Saxon output to
         # stderr and stdout)
         xmlutils.transform(profile.output_xml_path, profile.template,
-                           profile.saxon_path, params)
+                           profile.saxon_path, profile.saxon_params)
 
         print 'Finished.'
     else:
         print >> sys.stderr, ' ! Error: No XSL template defined in %s' % profile
-
-def saxon_parameters():
-    """Get the Saxon parameters for this build based on the
-    current profile."""
-
-    # the output directory
-    params = {'output-directory': profile.output_dir,}
-
-    # if we're only including classes after a certain date,
-    # make this an "Enrolling Now" type schedule
-    if profile.include_classes_after:
-        params['enrolling-now'] = 'true'
-
-    # add any params taken from the profile
-    if profile.saxon_params:
-        params.update(profile.saxon_params)
-
-    return params
 
 if __name__ == "__main__":
     main()
