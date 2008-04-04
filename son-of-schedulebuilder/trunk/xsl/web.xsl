@@ -25,14 +25,14 @@
 
          Used to control the generated output
          =========================================================================== -->
-    <!-- is this an "enrolling now" schedule? -->
-    <xsl:param name="enrolling-now" />
+    <!-- is this an "enrolling now" or "enrolling soon" schedule? -->
+    <xsl:param name="enrolling" />
 
     <!-- the schedule title -->
     <xsl:param name="schedule-title"><xsl:value-of select="//term[0]/@name" /> <xsl:value-of select="//term[0]/@year" /> Credit</xsl:param>
 
     <!-- the "real" schedule title (this is an ugly hack to be able to insert "Enrolling Now" into the schedule title if I need to) -->
-    <xsl:param name="real-schedule-title"><xsl:if test="$enrolling-now">Enrolling Now&#8212;</xsl:if><xsl:value-of select="$schedule-title" /></xsl:param>
+    <xsl:param name="real-schedule-title"><xsl:if test="$enrolling">Enrolling <xsl:value-of select="$enrolling" />&#8212;</xsl:if><xsl:value-of select="$schedule-title" /></xsl:param>
 
     <!-- the text for the channel-header on each schedule page -->
     <xsl:param name="channel-header"><xsl:value-of select="$real-schedule-title" /> Course Schedule</xsl:param>

@@ -246,10 +246,12 @@ class RoomCoordinator(CreditProfile, ProfileType):
 # These specialize the output of the profile types above.  These are also
 # used by the metaclass to generate profiles for each term.
 # ===========================================================================
-class Enrolling(CreditProfile, ProfileMixin):
+class EnrollingNow(CreditProfile, ProfileMixin):
     include_classes_after = date.today();
-    saxon_params = {'enrolling-now': 'true'}
+    saxon_params = {'enrolling': 'Now'}
     applies_to = [Web]
+class EnrollingSoon(EnrollingNow):
+    saxon_params = {'enrolling': 'Soon'}
 class CoreOnly(CreditProfile, ProfileMixin):
     core_only_schedule = True
     applies_to = [Proof, Print, Web]

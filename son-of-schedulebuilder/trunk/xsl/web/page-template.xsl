@@ -136,7 +136,7 @@
     <xsl:template name="aspx-meta">
         <xsl:param name="page-title" />
         <xsl:text disable-output-escaping="yes">
-            &lt;bhc:meta title="</xsl:text><xsl:if test="$enrolling-now">Enrolling Now&#8212;</xsl:if><xsl:value-of select="$page-title" /><xsl:text disable-output-escaping="yes">" runat="server" /&gt;</xsl:text>
+            &lt;bhc:meta title="</xsl:text><xsl:if test="$enrolling">Enrolling <xsl:value-of select="$enrolling" />&#8212;</xsl:if><xsl:value-of select="$page-title" /><xsl:text disable-output-escaping="yes">" runat="server" /&gt;</xsl:text>
     </xsl:template>
 
     <xsl:template name="aspx-header">
