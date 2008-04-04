@@ -353,6 +353,7 @@ class Spring08(Spring):
     terms = {
         'Spring': (date(2008, 1, 14), date(2008, 5, 8), 'TERM DATES'),
     }
+    saxon_params = {'schedule-title': 'Spring 2008 Credit'}
 
 # ===================================================================
 # Summer 2008 profiles
