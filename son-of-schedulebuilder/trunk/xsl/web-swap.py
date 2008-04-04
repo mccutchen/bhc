@@ -24,7 +24,7 @@ else:
         os.rename('web/page-template.xsl', 'web/page-template.soon.xsl')
         os.rename('web.now.xsl', 'web.xsl');
         os.rename('web/page-template.now.xsl', 'web/page-template.xsl')
-        print 'Enrolling Soon enabled';
+        print 'Enrolling Now enabled';
     elif (os.path.isfile('web.soon.xsl') and os.path.isfile('web/page-template.soon.xsl')):
         os.rename('web.xsl', 'web.now.xsl');
         os.rename('web/page-template.xsl', 'web/page-template.now.xsl')
