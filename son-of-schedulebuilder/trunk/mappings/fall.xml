@@ -357,10 +357,69 @@
     		</topic>
     	</subject>
 		
-		<subject name="Dance">
-			<comments>NOTE:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
-			
-		</subject>
+        <subject name="Dance">
+            <comments>NOTE:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
+            <topic name="Dance Appreciation">
+				<pattern match="DANC 2303-2001" />
+				<pattern match="DANC 2303-2501" />
+            </topic>
+            <topic name="Body Conditioning">
+				<pattern match="DANC 1141-2001" />
+				<pattern match="DANC 1142-2001" />
+            </topic>
+            <topic name="Tap">
+				<pattern match="DANC 1110-2001" />
+				<pattern match="DANC 1111-2001" />
+				<pattern match="DANC 2110-2001" />
+				<pattern match="DANC 2111-2001" />
+            </topic>
+            <topic name="Dance Practicum">
+				<pattern match="DANC 1351-2235" />
+				<pattern match="DANC 1351-2736" />
+				<pattern match="DANC 1352-2235" />
+				<pattern match="DANC 1352-2736" />
+				<pattern match="DANC 2351-2235" />
+				<pattern match="DANC 2351-2736" />
+				<pattern match="DANC 2352-2235" />
+				<pattern match="DANC 2352-2736" />
+            </topic>
+            <topic name="Hip Hop">
+				<pattern match="DANC 1222-2001" />
+				<pattern match="DANC 1222-2501" />
+				<pattern match="DANC 1223-2501" />
+				<pattern match="DANC 2222-2501" />
+				<pattern match="DANC 2223-2501" />
+            </topic>
+			<topic name="Jazz">
+				<pattern match="DANC 1247-2501" />
+				<pattern match="DANC 1248-2501" />
+			</topic>
+            <topic name="Ballet">
+				<pattern match="DANC 1341-2001" />
+				<pattern match="DANC 1342-2001" />
+				<pattern match="DANC 2341-2001" />
+				<pattern match="DANC 2342-2001" />
+				<pattern match="DANC 1341-2501" />
+				<pattern match="DANC 1342-2501" />
+				<pattern match="DANC 2341-2501" />
+				<pattern match="DANC 2342-2501" />
+            </topic>
+            <topic name="Ballet Technique">
+				<pattern match="DANC 2141-2001" />
+				<pattern match="DANC 2142-2250" />
+            </topic>
+            <topic name="Modern Dance">
+                <comments>Students must have had one semester of dance training for the following classes.</comments>
+				<pattern match="DANC 1245-2001" />
+				<pattern match="DANC 1246-2001" />
+				<pattern match="DANC 2245-2001" />
+				<pattern match="DANC 2246-2001" />
+				<pattern match="DANC 1245-2501" />
+				<pattern match="DANC 1246-2501" />
+				<pattern match="DANC 2245-2501" />
+				<pattern match="DANC 2246-2501" />
+            </topic>
+        </subject>
 
         <subject name="Drama">
         	
