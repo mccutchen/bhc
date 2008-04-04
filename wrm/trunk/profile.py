@@ -1,11 +1,22 @@
 import inspect, sys
 
-class ProfileError(Exception):
-    pass
-
 class BaseProfile(object):
     """A generic base profile class.  Any profiles you define must
     inherit from this class (or a subclass of this class)."""
+    pass
+
+class ProfileType(object):
+    """Base class for specifying broad profile types."""
+    pass
+
+class ProfileMixin(object):
+    """Base class for specifying profile mixins, which are used to
+    customize profile types."""
+    
+    # A list of profile classes that this mixin applies to
+    applies_to = []
+
+class ProfileError(Exception):
     pass
 
 def get_profile(objectdict, validator=lambda x: True):
