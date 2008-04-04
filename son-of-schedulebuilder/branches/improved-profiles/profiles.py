@@ -8,16 +8,18 @@ valid, working profile.  The generic Print, Web
 and RoomCoordinator profiles may be subclassed
 to provide semester- or term-specific profiles."""
 
-import glob, inspect, os, sys
+import glob, inspect, os, re, sys
 from datetime import date
 from wrm.profile import BaseProfile, ProfileError, get_profile
+
+PROFILES = {}
 
 class CreditProfileMeta(type):
     """Metaclass for CreditProfile classes."""
     
     def __init__(cls, name, bases, dct):
         super(CreditProfileMeta, cls).__init__(name, bases, dct)
-        
+            
         # automagically determine output_dir setting
         if len(bases) > 1:
             cls.output_dir = '-'.join(base.__name__.lower() for base in bases)
@@ -36,6 +38,37 @@ class CreditProfileMeta(type):
         params.update(dct.get('saxon_params', {}))
         cls.saxon_params = params
         
+        if re.match(r'^(Spring|Summer|Fall)\d{2}$', name):
+            PROFILES[name] = cls
+            cls.derive_profiles()
+    
+    def derive_profiles(cls):
+        name = cls.__name__
+        
+        def makeclass(name, concrete_base, other_base_name):
+            """Function that will create a new class with the given name and
+            which has two parent classes:  the concrete_base, a class object,
+            and another parent whose name is looked up in the globals()
+            dict.  Adds the created class to the global PROFILES dict."""
+            other_base = globals()[other_base_name]
+            c = type(name, (concrete_base, other_base), {})
+            PROFILES[c.__name__] = c
+            return c
+        
+        # Create the 'basic' profiles for this term
+        proof = makeclass('%sProof' % name, cls, 'Proof')
+        fullproof = makeclass('%sFullProof' % name, cls, 'FullProof')
+        rooms = makeclass('%sRooms' % name, cls, 'RoomCoordinator')
+        prnt = makeclass('%sPrint' % name, cls, 'Print')
+        web = makeclass('%sWeb' % name, cls, 'Web')
+        
+        # Create more profiles for this term based on the 'basic' profiles
+        # above.
+        enrolling = makeclass('%sEnrolling' % name, web, 'Enrolling')
+        coreproof = makeclass('%sCoreProof' % name, proof, 'CoreOnly')
+        coreprint = makeclass('%sCorePrint' % name, prnt, 'CoreOnly')
+        noncoreproof = makeclass('%sNonCoreProof' % name, proof, 'NonCore')
+        noncoreprint = makeclass('%sNonCorePrint' % name, prnt, 'NonCore')        
 
 
 class CreditProfile(BaseProfile):
@@ -200,21 +233,21 @@ class RoomCoordinator(CreditProfile):
     post_processors = ['base.xsl']
 
 # Base classes for specific terms
-class Fall:
+class Fall(CreditProfile):
     additional_mappings = 'fall.xml'
-class Spring:
+class Spring(CreditProfile):
     additional_mappings = 'spring.xml'
-class Summer:
+class Summer(CreditProfile):
     additional_mappings = 'summer.xml'
     minimester_threshold = None # Summer terms are too short to have minimesters
 
 # Base classes for certain specialty output types
-class Enrolling:
+class Enrolling(CreditProfile):
     include_classes_after = date.today();
     saxon_params = { 'enrolling-now': 'true', }
-class CoreOnly:
+class CoreOnly(CreditProfile):
     core_only_schedule = True
-class NonCore:
+class NonCore(CreditProfile):
     non_core_schedule = True
 
 
@@ -231,7 +264,6 @@ class Fall05(Fall):
     terms = {
         'Fall': (),
     }
-class Fall05Proof(Fall05, Proof): pass
 
 # ===================================================================
 # Spring 2006 profiles
@@ -242,10 +274,6 @@ class Spring06(Spring):
         'Spring': (date(2005,12,1), date(2006,5,15), 'TERM DATES'),
     }
     saxon_params = {'schedule-title': 'Spring 2006 Credit'}
-class Spring06Proof(Spring06, Proof): pass
-class Spring06Print(Spring06, Print): pass
-class Spring06Web(Spring06, Web): pass
-class Spring06Enrolling(Spring06Web, Enrolling): pass
 
 # ===================================================================
 # Summer 2006 profiles
@@ -258,13 +286,6 @@ class Summer06(Summer):
         'Summer II': (date(2006,7,12), date(2006,8,10), 'TERM DATES'),
     }
     saxon_params = {'schedule-title': 'Summer 2006 Credit'}
-class Summer06Proof(Summer06, Proof): pass
-class Summer06Print(Summer06, Print): pass
-class Summer06Rooms(Summer06, RoomCoordinator): pass
-class Summer06FullProof(Summer06, FullProof): pass
-class Summer06Web(Summer06, Web): pass
-class Summer06Enrolling(Summer06Web, Enrolling): pass
-
 
 # ===================================================================
 # Fall 2006 profiles
@@ -275,18 +296,6 @@ class Fall06(Fall):
         'Fall': (),
     }
     saxon_params = {'schedule-title': 'Fall 2006 Credit'}
-class Fall06Proof(Fall06, Proof): pass
-class Fall06FullProof(Fall06, FullProof): pass
-class Fall06Rooms(Fall06, RoomCoordinator): pass
-class Fall06Print(Fall06, Print): pass
-class Fall06Web(Fall06, Web): pass
-class Fall06Enrolling(Fall06Web, Enrolling): pass
-class Fall06CorePrint(Fall06Print, CoreOnly): pass
-class Fall06CoreProof(Fall06FullProof, CoreOnly): pass
-class Fall06NonCorePrint(Fall06Print, NonCore): pass
-class Fall06NonCoreProof(Fall06Proof, NonCore): pass
-class Fall06ForSpring07(Fall06Print):
-    include_classes_after = date(2006, 11, 1)
 
 # ===================================================================
 # Spring 2007 profiles
@@ -297,16 +306,6 @@ class Spring07(Spring):
         'Spring': (),
     }
     saxon_params = {'schedule-title': 'Spring 2007 Credit'}
-class Spring07Proof(Spring07, Proof): pass
-class Spring07FullProof(Spring07, FullProof): pass
-class Spring07Rooms(Spring07, RoomCoordinator): pass
-class Spring07Print(Spring07, Print): pass
-class Spring07Web(Spring07, Web): pass
-class Spring07Enrolling(Spring07Web, Enrolling): pass
-class Spring07CorePrint(Spring07Print, CoreOnly): pass
-class Spring07CoreProof(Spring07FullProof, CoreOnly): pass
-class Spring07NonCorePrint(Spring07Print, NonCore): pass
-class Spring07NonCoreProof(Spring07Proof, NonCore): pass
 
 # ===================================================================
 # Summer 2007 profiles
@@ -319,12 +318,6 @@ class Summer07(Summer):
         'Summer II':  (date(2007, 7, 9), date(2007, 8, 9), 'TERM DATES'),
     }
     saxon_params = {'schedule-title': 'Summer 2007 Credit'}
-class Summer07Proof(Summer07, Proof): pass
-class Summer07Print(Summer07, Print): pass
-class Summer07Rooms(Summer07, RoomCoordinator): pass
-class Summer07FullProof(Summer07, FullProof): pass
-class Summer07Web(Summer07, Web): pass
-class Summer07Enrolling(Summer07Web, Enrolling): pass
 
 # ===================================================================
 # Fall 2007 profiles
@@ -335,12 +328,7 @@ class Fall07(Fall):
         'Fall': (date(2007, 8, 27), date(2007, 12, 13), 'TERM DATES'),
     }
     saxon_params = {'schedule-title': 'Fall 2007 Credit'}
-class Fall07Proof(Fall07, Proof): pass
-class Fall07FullProof(Fall07, FullProof): pass
-class Fall07Rooms(Fall07, RoomCoordinator): pass
-class Fall07Print(Fall07, Print): pass
-class Fall07Web(Fall07, Web): pass
-class Fall07Enrolling(Fall07Web, Enrolling): pass
+
 # ===================================================================
 # Spring 2008 profiles
 # ===================================================================
@@ -349,16 +337,6 @@ class Spring08(Spring):
     terms = {
         'Spring': (date(2008, 1, 14), date(2008, 5, 8), 'TERM DATES'),
     }
-class Spring08Proof(Spring08, Proof): pass
-class Spring08FullProof(Spring08, FullProof): pass
-class Spring08Rooms(Spring08, RoomCoordinator): pass
-class Spring08Print(Spring08, Print): pass
-class Spring08Web(Spring08, Web): pass
-class Spring08Enrolling(Spring08Web, Enrolling): pass
-class Spring08CorePrint(Spring08Print, CoreOnly): pass
-class Spring08CoreProof(Spring08FullProof, CoreOnly): pass
-class Spring08NonCorePrint(Spring08Print, NonCore): pass
-class Spring08NonCoreProof(Spring08Proof, NonCore): pass
 
 # ===================================================================
 # Summer 2008 profiles
@@ -376,12 +354,6 @@ class Summer08(Summer):
         'Summer II':  (date(2008, 7, 7), date(2008, 8, 8), 'July 9-Aug. 7'),
     }
     saxon_params = {'schedule-title': 'Summer 2008 Credit'}
-class Summer08Proof(Summer08, Proof): pass
-class Summer08Print(Summer08, Print): pass
-class Summer08Rooms(Summer08, RoomCoordinator): pass
-class Summer08FullProof(Summer08, FullProof): pass
-class Summer08Web(Summer08, Web): pass
-class Summer08Enrolling(Summer08Web, Enrolling): pass
 
 # ===================================================================
 # Fall 2008 profiles
@@ -392,12 +364,6 @@ class Fall08(Fall):
         'Fall': (date(2008, 8, 25), date(2008, 12, 11), 'Aug. 25-Dec. 11'),
     }
     saxon_params = {'schedule-title': 'Fall 2008 Credit'}
-class Fall08Proof(Fall08, Proof): pass
-class Fall08FullProof(Fall08, FullProof): pass
-class Fall08Rooms(Fall08, RoomCoordinator): pass
-class Fall08Print(Fall08, Print): pass
-class Fall08Web(Fall08, Web): pass
-class Fall08Enrolling(Fall08Web, Enrolling): pass
 
 # ===================================================================
 # Profile validator
@@ -461,12 +427,14 @@ def validate_profile(profile):
 # The actual profile to use
 # ===================================================================
 #profile = get_profile(globals(), validate_profile)
-profile = Fall08Enrolling
+#profile = Fall08Enrolling
 
 
 
 if __name__ == '__main__':
     from pprint import pprint as pp
+    
+    pp(PROFILES)
     print 'Chosen profile: %s' % profile
     print profile.output_dir
     pp(profile.saxon_params)
