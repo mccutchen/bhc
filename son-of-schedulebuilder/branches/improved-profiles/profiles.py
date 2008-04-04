@@ -20,56 +20,78 @@ class CreditProfileMeta(type):
     def __init__(cls, name, bases, dct):
         super(CreditProfileMeta, cls).__init__(name, bases, dct)
             
-        # automagically determine output_dir setting
-        if len(bases) > 1:
-            cls.output_dir = '-'.join(base.__name__.lower() for base in bases)
-        elif len(bases) == 1:
-            cls.output_dir = '%s-%s' % (name.lower(), bases[0].__name__.lower())
-        else:
-            cls.output_dir = name.lower()
-        
-        # merge saxon_params dicts
+        # Set up Saxon params dict by merging the params defined in all of
+        # this class's base classes
         params = {}
         for base in bases:
             if hasattr(base, 'saxon_params'):
                 params.update(base.saxon_params)
-        # make sure to use this class's saxon_params last, so they take
+        # Make sure to use this class's saxon_params last, so they take
         # precedence.
         params.update(dct.get('saxon_params', {}))
+        
+        # Set the 'output-directory' Saxon param automagically
+        if len(bases) > 1:
+            output_dir = '-'.join(base.__name__.lower() for base in bases)
+        elif len(bases) == 1:
+            output_dir = '%s-%s' % (name.lower(), bases[0].__name__.lower())
+        else:
+            output_dir = name.lower()
+        params.update({'output-directory': output_dir})
+        
+        # Set the final Saxon params on the class
         cls.saxon_params = params
         
+        # If we are creating a basic term profile (eg Fall08), create a set
+        # of specialized profiles for that term as well
         if re.match(r'^(Spring|Summer|Fall)\d{2}$', name):
             PROFILES[name] = cls
             cls.derive_profiles()
     
     def derive_profiles(cls):
+        """Derives a set of specialized profiles for the given base profile,
+        which should be a basic term profile (eg, Spring07, Fall08)."""
         name = cls.__name__
         
-        def makeclass(name, concrete_base, other_base_name):
-            """Function that will create a new class with the given name and
-            which has two parent classes:  the concrete_base, a class object,
-            and another parent whose name is looked up in the globals()
-            dict.  Adds the created class to the global PROFILES dict."""
-            other_base = globals()[other_base_name]
-            c = type(name, (concrete_base, other_base), {})
-            PROFILES[c.__name__] = c
-            return c
-        
         # Create the 'basic' profiles for this term
-        proof = makeclass('%sProof' % name, cls, 'Proof')
-        fullproof = makeclass('%sFullProof' % name, cls, 'FullProof')
-        rooms = makeclass('%sRooms' % name, cls, 'RoomCoordinator')
-        prnt = makeclass('%sPrint' % name, cls, 'Print')
-        web = makeclass('%sWeb' % name, cls, 'Web')
+        proof = make_credit_profile('%sProof' % name, cls, 'Proof')
+        fullproof = make_credit_profile('%sFullProof' % name, cls, 'FullProof')
+        rooms = make_credit_profile('%sRooms' % name, cls, 'RoomCoordinator')
+        prnt = make_credit_profile('%sPrint' % name, cls, 'Print')
+        web = make_credit_profile('%sWeb' % name, cls, 'Web')
         
         # Create more profiles for this term based on the 'basic' profiles
         # above.
-        enrolling = makeclass('%sEnrolling' % name, web, 'Enrolling')
-        coreproof = makeclass('%sCoreProof' % name, proof, 'CoreOnly')
-        coreprint = makeclass('%sCorePrint' % name, prnt, 'CoreOnly')
-        noncoreproof = makeclass('%sNonCoreProof' % name, proof, 'NonCore')
-        noncoreprint = makeclass('%sNonCorePrint' % name, prnt, 'NonCore')        
+        enrolling = make_credit_profile('%sEnrolling' % name, web, 'Enrolling')
+        coreproof = make_credit_profile('%sCoreProof' % name, proof, 'CoreOnly')
+        coreprint = make_credit_profile('%sCorePrint' % name, prnt, 'CoreOnly')
+        noncoreproof = make_credit_profile('%sNonCoreProof' % name, proof, 'NonCore')
+        noncoreprint = make_credit_profile('%sNonCorePrint' % name, prnt, 'NonCore')        
 
+def make_credit_profile(name, *bases):
+    """Function that will create a new class with the given name and
+    with the given bases.  The base classes will be looked up in the
+    global PROFILES dict first, then in the globals() dict."""
+
+    def get_base(base):
+        if isinstance(base, basestring):
+            # Try to look up the base class in PROFILES and globals()
+            if base in PROFILES:
+                base = PROFILES[base]
+            elif base in globals():
+                base = globals()[base]
+            else:
+                raise ProfileError('Creating profile %s:  Could not find base class %s' % (name, base))
+        
+        # If we don't have a valid base profile here, something is wrong
+        if not isinstance(base, (CreditProfile, CreditProfileMeta)):
+            raise ProfileError('The given base class, %s, is not a valid base class (%s)' % (base, type(base)))
+        return base
+
+    base_objs = tuple(get_base(base) for base in bases)
+    c = type(name, base_objs, {})
+    PROFILES[c.__name__] = c
+    return c
 
 class CreditProfile(BaseProfile):
     """
@@ -86,9 +108,6 @@ class CreditProfile(BaseProfile):
     # the location of the template to be used to
     # transform the XML output
     template = None
-
-    # the directory to store the final output in
-    output_dir = None
 
     # the filename of the XML output to produce
     output_xml_path = 'base-schedule.xml'
@@ -176,7 +195,6 @@ class CreditProfile(BaseProfile):
     # their first initial.  Generated by the script
     # data/analyzers/teachernames.py
     duplicate_names = ['Adams', 'Anderson', 'Bright', 'Brooks', 'Brown', 'Burton', 'Campbell', 'Clark', 'Collins', 'Cross', 'Douglas', 'Evans', 'Fernandez', 'Fleming', 'Garcia', 'Gorman', 'Hammond', 'Hardy', 'Hathaway', 'Hueston', 'Jackson', 'Johnson', 'Jones','Lane', 'Lewis', 'Lynch', 'Martin', 'Maxey', 'Meyer', 'Milian', 'Miller', 'Moore', 'Nelson', 'Nguyen', 'Odom', 'Owens', 'Page', 'Riley', 'Robinson', 'Schmidt','Scott', 'Sims', 'Smith', 'Thomas', 'Thompson', 'Thornton', 'Walker', 'Weaver','Wood']
-
 
     # where to find the XSL post-processing templates
     post_processor_dir = 'xsl/post-processors/'
@@ -370,7 +388,7 @@ class Fall08(Fall):
 # ===================================================================
 
 # what attribute are required for this to be a valid profile?
-REQUIRED_ATTRS = 'input template output_dir output_xml_path mappings_dir terms'.split()
+REQUIRED_ATTRS = 'input template output_xml_path mappings_dir terms'.split()
 
 def validate_profile(profile):
     """Tests the given profile to see that it meets a minimum set of
@@ -426,15 +444,8 @@ def validate_profile(profile):
 # ===================================================================
 # The actual profile to use
 # ===================================================================
-#profile = get_profile(globals(), validate_profile)
-#profile = Fall08Enrolling
-
+profile = get_profile(PROFILES, validate_profile)
 
 
 if __name__ == '__main__':
-    from pprint import pprint as pp
-    
-    pp(PROFILES)
     print 'Chosen profile: %s' % profile
-    print profile.output_dir
-    pp(profile.saxon_params)
