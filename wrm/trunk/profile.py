@@ -3,7 +3,7 @@ import inspect, sys
 class ProfileError(Exception):
     pass
 
-class BaseProfile:
+class BaseProfile(object):
     """A generic base profile class.  Any profiles you define must
     inherit from this class (or a subclass of this class)."""
     pass
