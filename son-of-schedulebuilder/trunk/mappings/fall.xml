@@ -371,7 +371,7 @@
         </subject>
 
 
-
+    	
         <!-- =======================================================================
              CIT (Bill Hammerschlag)
              ======================================================================== -->
@@ -383,22 +383,8 @@
 				<pattern match="ITSC 1401-2422" />	
 				<pattern match="ITSC 1401-2300" />		
     		</topic>
-    		
-    	<!-- 
-	<topic name="Senior Adult Computer Courses"> <!-- Added topic 2/20 to try to fix Senior Adult unsorted problem - this is probably not the way this should be done, but it seems to work for now - sorta.  I'm not sure why the Topic Name isn't appearing. -->
-    			<pattern match="ITSC 1191-2201" />
-    			<pattern match="ITSC 1191-2202" />
-    			<pattern match="ITSC 1191-2203" />
-    			<pattern match="ITSC 1191-2204" />
-    			<pattern match="ITSC 1191-2205" />
-    			<pattern match="ITSC 1191-2206" />
-    			<pattern match="ITSC 1191-2207" />
-    			<pattern match="ITSC 1191-2208" />
-    			<pattern match="ITSC 1191-2209" />
-    		</topic>    		
- -->
- 
-    		<topic name="Cit Core">
+    		  		
+    		<topic name="CIT Core">
     			<pattern match="ITNW 1425-2001" />				  	
 				<pattern match="ITSC 2435-2001" />				  	
 				<pattern match="ITSC 1425-2501" />			
@@ -467,7 +453,7 @@
 				<pattern match="ITSE 2413-2426" />		
     		</topic>
     		<topic name="General Electives">
-    			<pattern match="ITNW 1380-2300" ?>		
+    			<pattern match="ITNW 1380-2300" />		
     		</topic>
     		<topic name="Application Software">
     			<pattern match="ITSC 1409-2001" />									
@@ -568,9 +554,9 @@
 				<pattern match="BCIS 1405-2422" />      	
 			</topic>
 			<topic name="Programming">
-				<pattern match="BCIS 2431-2501" />						  	
-    	</subject>
-
+				<pattern match="BCIS 2431-2501" />	
+			</topic>	
+    	</subject>        	
 
         <!-- =======================================================================
             EMS (Cletha Silas)
