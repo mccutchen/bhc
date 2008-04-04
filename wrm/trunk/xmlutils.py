@@ -1,4 +1,4 @@
-import os, re
+import os, re, sys
 
 try:
     from xml.etree import cElementTree as ET
