@@ -15,7 +15,9 @@ from wrm.profile import BaseProfile, ProfileError, get_profile
 PROFILES = {}
 
 class CreditProfileMeta(type):
-    """Metaclass for CreditProfile classes."""
+    """Metaclass for CreditProfile classes which correctly propagates the
+    saxon_params setting for inherited classes and derives a large set of 
+    specialized profiles for each term's base profile."""
     
     def __init__(cls, name, bases, dct):
         super(CreditProfileMeta, cls).__init__(name, bases, dct)
@@ -70,8 +72,9 @@ class CreditProfileMeta(type):
 
 def make_credit_profile(name, *bases):
     """Function that will create a new class with the given name and
-    with the given bases.  The base classes will be looked up in the
-    global PROFILES dict first, then in the globals() dict."""
+    with the given bases.  If the given bases are not already CreditProfile
+    objects, they will be looked up in the global PROFILES dict first, then
+    in the globals() dict."""
 
     def get_base(base):
         if isinstance(base, basestring):
@@ -262,16 +265,11 @@ class Summer(CreditProfile):
 # Base classes for certain specialty output types
 class Enrolling(CreditProfile):
     include_classes_after = date.today();
-    saxon_params = { 'enrolling-now': 'true', }
+    saxon_params = {'enrolling-now': 'true'}
 class CoreOnly(CreditProfile):
     core_only_schedule = True
 class NonCore(CreditProfile):
     non_core_schedule = True
-
-
-# Choose the default profile
-Default = BaseProfile
-
 
 
 # ===================================================================
@@ -382,6 +380,9 @@ class Fall08(Fall):
         'Fall': (date(2008, 8, 25), date(2008, 12, 11), 'Aug. 25-Dec. 11'),
     }
     saxon_params = {'schedule-title': 'Fall 2008 Credit'}
+
+
+
 
 # ===================================================================
 # Profile validator
