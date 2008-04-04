@@ -859,6 +859,8 @@
                 <subtopic name="First Play, Spring 2008">
                     <pattern match="DRAM 1221-2735" />
                 	<pattern match="DRAM 1221-2737" /> <!-- added 02/01/2008 - Theater Practicum II -->
+                	<pattern match="DRAM 1221-2738" /> <!-- added 04/04/2008 - Theater Practicum II -->
+                	<pattern match="DRAM 1221-2739" /> <!-- added 04/04/2008 - Theater Practicum II -->
                 </subtopic>
                 <subtopic name="Second Play, Spring 2008">
                     <pattern match="DRAM 1221-2736" />
