@@ -31,7 +31,6 @@ class Spring06(Spring):
     terms = {
         'Spring': (date(2005,12,1), date(2006,5,15), 'TERM DATES'),
     }
-    saxon_params = {'schedule-title': 'Spring 2006 Credit'}
 
 # ===================================================================
 # Summer 2006 profiles
@@ -53,7 +52,6 @@ class Fall06(Fall):
     terms = {
         'Fall': (),
     }
-    saxon_params = {'schedule-title': 'Fall 2006 Credit'}
 
 # ===================================================================
 # Spring 2007 profiles
@@ -63,7 +61,6 @@ class Spring07(Spring):
     terms = {
         'Spring': (),
     }
-    saxon_params = {'schedule-title': 'Spring 2007 Credit'}
 
 # ===================================================================
 # Summer 2007 profiles
@@ -85,7 +82,6 @@ class Fall07(Fall):
     terms = {
         'Fall': (date(2007, 8, 27), date(2007, 12, 13), 'TERM DATES'),
     }
-    saxon_params = {'schedule-title': 'Fall 2007 Credit'}
 
 # ===================================================================
 # Spring 2008 profiles
@@ -95,7 +91,6 @@ class Spring08(Spring):
     terms = {
         'Spring': (date(2008, 1, 14), date(2008, 5, 8), 'TERM DATES'),
     }
-    saxon_params = {'schedule-title': 'Spring 2008 Credit'}
 
 # ===================================================================
 # Summer 2008 profiles
@@ -103,11 +98,6 @@ class Spring08(Spring):
 class Summer08(Summer):
     input = ('data/2008-summer/bh2008s1.txt', 'data/2008-summer/bh2008s2.txt')
     terms = {
-        # original dates
-        # Mayterm: 5/12 - 5/30
-        # Summer I: 6/9 - 7/3
-        # Summer II: 7/9 - 8/7
-
         'Summer I/May Term': (date(2008, 5, 1), date(2008, 5, 30), 'May 12-May 30'),
         'Summer I':  (date(2008, 6, 1), date(2008, 7, 6), 'June 9-July 3'),
         'Summer II':  (date(2008, 7, 7), date(2008, 8, 8), 'July 9-Aug. 7'),
@@ -122,7 +112,6 @@ class Fall08(Fall):
     terms = {
         'Fall': (date(2008, 8, 25), date(2008, 12, 11), 'Aug. 25-Dec. 11'),
     }
-    saxon_params = {'schedule-title': 'Fall 2008 Credit'}
 
 # ===================================================================
 # The actual profile to use

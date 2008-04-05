@@ -29,7 +29,7 @@
     <xsl:param name="enrolling" />
 
     <!-- the schedule title -->
-    <xsl:param name="schedule-title"><xsl:value-of select="//term[0]/@name" /> <xsl:value-of select="//term[0]/@year" /> Credit</xsl:param>
+    <xsl:param name="schedule-title"><xsl:value-of select="//term[1]/@name" /><xsl:text> </xsl:text><xsl:value-of select="//term[1]/@year" /> Credit</xsl:param>
 
     <!-- the "real" schedule title (this is an ugly hack to be able to insert "Enrolling Now" into the schedule title if I need to) -->
     <xsl:param name="real-schedule-title"><xsl:if test="$enrolling">Enrolling <xsl:value-of select="$enrolling" />&#8212;</xsl:if><xsl:value-of select="$schedule-title" /></xsl:param>
