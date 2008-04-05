@@ -3,7 +3,8 @@ import inspect, sys
 class BaseProfile(object):
     """A generic base profile class.  Any profiles you define must
     inherit from this class (or a subclass of this class)."""
-    pass
+    def __str__(self):
+        return self.__name__
 
 class ProfileType(object):
     """Base class for specifying broad profile types."""
