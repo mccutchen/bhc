@@ -26,4 +26,11 @@ DEL %data_dir_in%%ys%*.xml
 DEL %data_dir_in%%ys%*.txt
 GOTO END
 
+:SYNTAX
+ECHO.
+ECHO Syntax: %0 {semester} {year}
+ECHO You may omit the semester and year to clean all files
+ECHO.
+
 :END
+@pause

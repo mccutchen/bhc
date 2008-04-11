@@ -2,7 +2,7 @@
 
 :: Step 1: Check Parameters
 ::----------------------------------------------
-IF NOT "%setup%"=="true" CALL setup %1 %2 %3
+IF NOT "%setup%"=="true" CALL setup %1 %2
 IF "%ys%"=="" GOTO SYNTAX
 
 

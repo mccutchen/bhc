@@ -6,9 +6,8 @@
     xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
     exclude-result-prefixes="xs utils fn">
 
-	<!--=====================================================================
-		Setup
-		======================================================================-->
+	<!--SETUP
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<xsl:include href="transform-utils.xsl" />
     <xsl:output
         method="xhtml"
@@ -19,9 +18,8 @@
         doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" />
     
     
-	<!--=====================================================================
-		Parameters
-		
+	<!--PARAMETERS
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		-highlighting:
 		turns highlighting on/off
 		
@@ -32,65 +30,137 @@
 		* If false, all of the possible documents are created, which
 		includes one for each term, each division, each special-section
 		and each subject, all stowed in appropriate directories.
-		======================================================================-->
-	<xsl:param name="with-highlighted-groups" select="'false'" />
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<xsl:param name="hilight" select="'false'" />
 	<xsl:param name="is-full" select="'false'" />
 	
 	
-	<!--=====================================================================
-		Globals
-		======================================================================-->
+	<!--GLOBALS
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<xsl:variable name="output-type" as="xs:string" select="if($is-full = 'true') then 'proof-full' else 'proof'" />
 	<xsl:variable name="ext"         as="xs:string" select="'html'"         />
 	<xsl:variable name="page-title"  as="xs:string" select="'Proof Report'" />
 
 
-	<!--=====================================================================
-		Stylesheet
-		======================================================================-->
+	<!--STYLESHEET
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <xsl:variable name="doc-css" select="document('includes/proof-css.xml')/styles" as="node()*" />
 
 
-    <!--=====================================================================
-    	Output document initialization
-    	
+
+    <!--INIT
+    	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     	Each template whose @mode="init" has only one purpose:  create an
     	appropriately-located <xsl:result-document /> into which it will
     	insert itself.
-    	====================================================================== -->
+    	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<xsl:template match="/schedule">
-		<!-- if this is a full proof -->
-		<xsl:if test="$is-full = 'true'">
-			<!-- initialize each term (create result document) -->
-			<xsl:apply-templates select="term" mode="init" />
-		</xsl:if>
+		<xsl:variable name="year" as="xs:string" select="@year"     />
+		<xsl:variable name="sem"  as="xs:string" select="@semester" />
 		
-		<!-- initialize each subject (create result document) -->
-		<xsl:apply-templates select="descendant::subject" mode="init" />
+		<!-- Pick the type of output desired -->
+		<xsl:choose>
+			
+			<!-- if this is a proof-full run -->
+			<xsl:when test="$is-full = 'true'">
+				<!-- initialize terms -->
+				<xsl:apply-templates select="term" mode="init">
+					<xsl:with-param name="path" tunnel="yes" select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" />
+				</xsl:apply-templates>
+			</xsl:when>
+			
+			<!-- if this is a simple proof run -->
+			<xsl:otherwise>
+				<!-- initialize subjects for simple output -->
+				<xsl:apply-templates select="term/division/subject" mode="init-simple">
+					<xsl:with-param name="path" tunnel="yes" select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" />
+				</xsl:apply-templates>
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:template>
 	
+	
+	<!-- proof-full chain -->
+	
 	<xsl:template match="term" mode="init">
-		<xsl:variable name="year" select="ancestor::schedule/@year" as="xs:string" />
-		<xsl:variable name="sem"  select="ancestor::schedule/@semester" as="xs:string" />
-		<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
-		<xsl:variable name="term" select="utils:make-url(@name)" as="xs:string" />
+		<xsl:param    name="path" as="xs:string" tunnel="yes" />
+		<xsl:variable name="term" as="xs:string" select="utils:make-url(@name)" />
 		
-		<xsl:result-document href="{$dir}/{$term}.{$ext}">
+		<!-- create term-level output: term/divisions/subjects + term/special-divisions/subjects + term/special-section/divsions/subjects -->
+		<xsl:result-document href="{$path}/{$term}.{$ext}">
 			<xsl:call-template name="page-template">
 				<xsl:with-param name="page-title" select="@name" />
+			</xsl:call-template>
+		</xsl:result-document>
+		
+		<!-- initialize divisions -->
+		<xsl:apply-templates select="division" mode="init">
+			<xsl:with-param name="path" tunnel="yes" select="concat($path,'/',$term)" />
+		</xsl:apply-templates>
+		
+		<!-- initialize special-sections -->
+		<xsl:apply-templates select="special-section" mode="init">
+			<xsl:with-param name="path" tunnel="yes" select="concat($path,'/',$term)" />
+		</xsl:apply-templates>
+	</xsl:template>
+	
+	<xsl:template match="division" mode="init">
+		<xsl:param name="path" as="xs:string" tunnel="yes" />
+		<xsl:variable name="div"  select="utils:make-url(@name)" as="xs:string" />
+		
+		<!-- create division-level output: division/subjects -->
+		<xsl:result-document href="{$path}/{$div}.{$ext}">
+			<xsl:call-template name="page-template">
+				<xsl:with-param name="page-title" select="@name" />
+			</xsl:call-template>
+		</xsl:result-document>
+		
+		<!-- create subject-level output -->
+		<xsl:apply-templates select="subject" mode="init">
+			<xsl:with-param name="path" tunnel="yes" select="concat($path,'/',$div)" />
+		</xsl:apply-templates>
+	</xsl:template>
+	
+	<xsl:template match="special-section[special-section]" mode="init">
+		<!-- if there's a child special section, drop it down another level -->
+		<xsl:apply-templates select="special-section" mode="init" />
+	</xsl:template>
+	
+	<xsl:template match="special-section" mode="init">
+		<xsl:param    name="path" as="xs:string" tunnel="yes" />
+		<xsl:variable name="name" as="xs:string" select="if(parent::special-section) then concat(parent::special-section/@name,' ',@name) else @name" />
+		<xsl:variable name="ss"   as="xs:string" select="utils:make-url($name)" />
+		
+		<!-- create special-section-level output: special-section/divisions/subjects -->
+		<xsl:result-document href="{$path}/{$ss}.{$ext}">
+			<xsl:call-template name="page-template">
+				<xsl:with-param name="page-title" select="$name" />
 			</xsl:call-template>
 		</xsl:result-document>
 	</xsl:template>
 	
 	<xsl:template match="subject" mode="init">
-		<xsl:variable name="year" select="ancestor::schedule/@year" as="xs:string" />
-		<xsl:variable name="sem"  select="ancestor::schedule/@semester" as="xs:string" />
-		<xsl:variable name="dir"  select="concat(utils:generate-outdir($year, $sem), '_', $output-type)" as="xs:string" />
-		<xsl:variable name="term" select="utils:make-url(ancestor::term/@name)" as="xs:string" />
-		<xsl:variable name="div"  select="utils:make-url(parent::division/@name)" as="xs:string" />
-		<xsl:variable name="file" select="utils:make-url(@name)" as="xs:string" />
+		<xsl:param    name="path" as="xs:string" tunnel="yes" />
+		<xsl:variable name="subj" as="xs:string" select="utils:make-url(@name)" />
 		
-		<xsl:result-document href="{$dir}/{$term}/{$div}/{$file}.{$ext}">
+		<!-- create division-level output: division/subjects -->
+		<xsl:result-document href="{$path}/{$subj}.{$ext}">
+			<xsl:call-template name="page-template">
+				<xsl:with-param name="page-title" select="@name" />
+			</xsl:call-template>
+		</xsl:result-document>
+	</xsl:template>
+	
+	
+	<!-- simple proof chain -->
+	
+	<xsl:template match="subject" mode="init-simple">
+		<xsl:param    name="path" as="xs:string" tunnel="yes" />
+		<xsl:variable name="term" as="xs:string" select="utils:make-url(ancestor::term/@name)" />
+		<xsl:variable name="div"  as="xs:string" select="utils:make-url(parent::division/@name)" />
+		<xsl:variable name="subj" as="xs:string" select="utils:make-url(@name)" />
+		
+		<xsl:result-document href="{$path}/{$term}/{$div}/{$subj}.{$ext}">
 			<xsl:call-template name="page-template">
 				<xsl:with-param name="page-title" select="@name" />
 			</xsl:call-template>
@@ -98,95 +168,79 @@
 	</xsl:template>
 	
 
-    <!--=====================================================================
-    	Document-building templates
-    	
-    	This is where the "real" work gets done, after the result-documents
-    	are created by the @mode="init" templates.
-    	====================================================================== -->
+    <!--CALL-BACKS
+    	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    	These templates are used to return from the page-template template,
+    	once the document shell has been created.
+    	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<xsl:template match="term" mode="page-callback">
-		<!-- display term header if applicable -->
-		<xsl:apply-templates select="." mode="output" />
+		<!-- display term header (if applicable) and child subjects -->
+		<xsl:call-template name="term-header" />
 		
-		<xsl:choose>
-			<xsl:when test="@display = 'false'">
-				<xsl:message>
-					<xsl:text>!Warning! Unsorted term: </xsl:text>
-					<xsl:value-of select="@name" />
-					<xsl:text>.</xsl:text>
-				</xsl:message>
-			</xsl:when>
-			<xsl:otherwise>
-				<xsl:message>
-					<xsl:text>Processing term: </xsl:text>
-					<xsl:value-of select="@name" />
-					<xsl:text>.</xsl:text>
-				</xsl:message>
-			</xsl:otherwise>
-		</xsl:choose>
+		<!-- display warning if this item has @display = 'false' -->
+		<xsl:call-template name="warning-display" />
+		
+		<!-- display message that this term is being processed -->
+		<xsl:call-template name="message-processing" />
 		
 		<!-- There are apparently some divisions' subjects that are handled a little differently -->
 		<xsl:variable name="special-divisions" select="'Senior Adult Education Office', 'School of the Arts'" as="xs:string*" />
 		
 		<!-- call normal child subjects -->
-		<xsl:apply-templates select="descendant::subject[not(parent::division/@name = $special-divisions)]">
+		<xsl:apply-templates select="division/subject[not(parent::division/@name = $special-divisions)]">
 			<xsl:sort select="@name" />
 		</xsl:apply-templates>
 		
-		<!-- call weeekend child subjects -->
-		<div class="special-section">
-			<h1 class="subject-header">WEEKEND COURSES</h1>
-			<xsl:call-template name="make-special-subjects">
-				<xsl:with-param name="classes" select="descendant::class[visibility/@is-w = 'true']" />
-			</xsl:call-template>
-		</div>
+		<!-- call special-section subjects -->
+		<xsl:apply-templates select="special-section" />
 		
-		<!-- call weekend-core child subjects -->
-		<div class="special-section">
-			<h1 class="subject-header">WEEKEND CORE CURRICULUM COURSES</h1>
-			<xsl:call-template name="make-special-subjects">
-				<xsl:with-param name="classes" select="descendant::class[visibility/@is-wcc = 'true']" />
-			</xsl:call-template>
-		</div>
-		
-		<!-- call special division subjects -->
-		<xsl:for-each-group select="descendant::subject[parent::division/@name = $special-divisions]" group-by="parent::division/@name">
-			<h1 class="division-header"><xsl:value-of select="current-grouping-key()" /></h1>
-			<xsl:apply-templates select="current-group()">
-				<xsl:sort select="@name" />
-			</xsl:apply-templates>
-		</xsl:for-each-group>
+		<!-- call abnormal child subjects -->
+		<xsl:apply-templates select="division/subject[parent::division/@name = $special-divisions]">
+			<xsl:sort select="@name" />
+		</xsl:apply-templates>
 	</xsl:template>
 	
-	<xsl:template match="term" mode="output">
-        <!-- only output the term header if there is more than one term -->
-        <xsl:if test="count(ancestor-or-self::schedule//term[@display = 'true']) &gt; 1">
-        	<xsl:variable name="dates" select="if(@date-end = 'NA' and @date-start = 'NA') then 'NA' else utils:long-dates(utils:format-dates(@date-start, @date-end))" as="xs:string" />
-            <h1 class="term-header">
-                <xsl:value-of select="concat(@name, ' ', parent::schedule/@year)" />
-                <span class="term-dates"><xsl:value-of select="$dates" /></span>
-            </h1>
-        </xsl:if>
-
+	<xsl:template match="division" mode="page-callback">
+		<!-- display warning if this item has @display = 'false' -->
+		<xsl:call-template name="warning-display" />
+		
 		<xsl:apply-templates select="subject" />
-    </xsl:template>
-
+	</xsl:template>
+	
+	<xsl:template match="special-section" mode="page-callback">
+		<div class="subject-section">
+			<h1 class="subject-header"><xsl:value-of select="upper-case(@name)" /></h1>
+			
+			<!-- handle non-flex special-sections -->
+			<xsl:apply-templates select="division/subject" mode="special" />
+			
+			<!-- handle flex terms... somehow... still figuring this one out -->
+			<xsl:apply-templates select="special-section" />
+		</div>
+	</xsl:template>
+	
 	<xsl:template match="subject" mode="page-callback">
 		<!-- display term header if applicable -->
-		<xsl:apply-templates select="ancestor::term" mode="output" />
+		<xsl:call-template name="term-header" />
 		
 		<xsl:apply-templates select="." />
 	</xsl:template>
 	
-	<xsl:template match="subject[@display = 'false']">
-		<xsl:message>
-			<xsl:text>!Warning! Unsorted subject: </xsl:text>
-			<xsl:value-of select="@name" />
-			<xsl:text>.</xsl:text>
-		</xsl:message>
-		<xsl:next-match />
+	
+	<!--NORMAL
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		Data is written to the result document, and children ARE processed
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<xsl:template match="special-section">
+		<h1 class="minimester-header"><xsl:value-of select="upper-case(@name)" /></h1>
+		
+		<xsl:apply-templates select="division/subject" mode="special" />
 	</xsl:template>
+	
 	<xsl:template match="subject">
+		<!-- display warning if this item has @display = 'false' -->
+		<xsl:call-template name="warning-display" />
+		
 		<!-- start div -->
         <div class="subject-section">
             <h1 class="subject-header"><xsl:value-of select="upper-case(@name)" /></h1>
@@ -206,7 +260,26 @@
         	<!-- include topic'd courses -->
         	<xsl:apply-templates select="topic" />
         </div>
-   </xsl:template>
+	</xsl:template>
+	
+	<xsl:template match="subject" mode="special">
+		<h1 class="special-subject-header"><xsl:value-of select="upper-case(@name)" /></h1>
+		
+		<!-- print the division info -->
+		<xsl:call-template name="division-info" />
+		
+		<!-- paste in comments -->
+		<xsl:apply-templates select="comments" />
+		
+		<!-- insert a list of the Core courses -->
+		<xsl:call-template name="make-core-list" />
+		
+		<!-- include non-topic'd courses -->
+		<xsl:apply-templates select="type" />
+		
+		<!-- include topic'd courses -->
+		<xsl:apply-templates select="topic" />
+	</xsl:template>
     
 	<xsl:template match="topic">
 		<!-- start div -->
@@ -347,14 +420,13 @@
     </xsl:template>
 
 
-    <!--=====================================================================
-    	Comments
-    	
+    <!--COMMENTS
+    	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     	Comments can have a small subset of HTML elements embedded within 
     	them, as well as the special elements <url> and <email>. The set of 
     	legal HTML for comments is:
     		h1, p, b, i, table, tr, td
-    	====================================================================== -->
+    	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
     <xsl:template match="comments">
         <!-- only include a row for comments if comments exist -->
         <div class="comments">
@@ -412,20 +484,26 @@
     </xsl:template>
 
 
-    <!--<xsl:template match="@sortkey | @default-sortkey"> -->
-        <!-- create an HTML comment for the sortkeys, for debugging purposes -->
-        <!-- <xsl:comment><xsl:value-of select="local-name()" />: <xsl:value-of select="." /></xsl:comment>
-    </xsl:template>-->
 
-
-
-    <!--=====================================================================
-    	Named templates
-    	
+    <!--NAMED TEMPLATES
+    	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     	Specialty templates to create the division-info and the HTML template
-    	for each page.
-    	======================================================================-->
-    <xsl:template name="division-info">
+    	for each page, display warnings, etc.
+    	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+	<xsl:template name="term-header">
+		<xsl:variable name="term" select="ancestor-or-self::term" as="element()" />
+		
+		<!-- only output the term header if there is more than one term -->
+		<xsl:if test="count(ancestor-or-self::schedule//term[@display = 'true']) &gt; 1">
+			<xsl:variable name="dates" select="if($term/@date-end = 'NA' and $term/@date-start = 'NA') then 'NA' else utils:long-dates(utils:format-dates($term/@date-start, $term/@date-end))" as="xs:string" />
+			<h1 class="term-header">
+				<xsl:value-of select="concat($term/@name, ' ', $term/parent::schedule/@year)" />
+				<span class="term-dates"><xsl:value-of select="$dates" /></span>
+			</h1>
+		</xsl:if>
+	</xsl:template>
+	
+	<xsl:template name="division-info">
         <!-- get a pointer to the division node -->
         <xsl:variable name="division" select="ancestor::division" />
         
@@ -512,34 +590,23 @@
         </xsl:for-each-group>
     </xsl:template>
 	
-	<xsl:template name="make-special-subjects">
-		<xsl:param name="classes" as="element()*" />
-		
-		<div class="subject-section">
-			<xsl:for-each-group select="$classes" group-by="ancestor::subject/@name">
-				<xsl:sort select="ancestor::subject/@name" />
-				<h1 class="special-subject-header"><xsl:value-of select="upper-case(current-grouping-key())" /></h1>
-				<p class="division-info"><xsl:value-of select="upper-case(ancestor::division/@name)" /></p>
-				
-				<xsl:for-each-group select="current-group()" group-by="ancestor::type/@id">
-					<div class="type-section {current-grouping-key()}">
-						
-						<xsl:for-each-group select="current-group()" group-by="concat(parent::class/@rubric, ' ', parent::class/@number)">
-							<xsl:variable name="is-core" select="if (current-group()/parent::class/@core-code) then 'core' else ''" as="xs:string" />
-							
-							<div class="course-section {$is-core}">
-								<table>
-									<xsl:apply-templates select="current-group()/meeting" />
-								</table>
-							</div>
-						</xsl:for-each-group>
-					</div>
-				</xsl:for-each-group>
-			</xsl:for-each-group>
-		</div>
+	<xsl:template name="warning-display">
+		<xsl:if test="@display = 'false'">
+			<xsl:message>
+				<xsl:text>!Warning! Unsorted: </xsl:text>
+				<xsl:value-of select="@name" />
+				<xsl:text>.</xsl:text>
+			</xsl:message>
+		</xsl:if>
 	</xsl:template>
-
-
+	<xsl:template name="message-processing">
+		<xsl:message>
+			<xsl:text>Processing: </xsl:text>
+			<xsl:value-of select="@name" />
+			<xsl:text>.</xsl:text>
+		</xsl:message>
+	</xsl:template>
+	
     <xsl:template name="page-template">
         <xsl:param name="page-title" />
         <html>
@@ -549,8 +616,8 @@
                 <!-- paste in the css -->
                 <style type="text/css">
                     <xsl:value-of select="$doc-css/text()" disable-output-escaping="yes" />
-                    <xsl:if test="$with-highlighted-groups = 'true' or $is-full = 'true'">
-                        <xsl:value-of select="$doc-css/conditional[@name = 'with-highlighted-groups']/text()" disable-output-escaping="yes" />
+                    <xsl:if test="$hilight = 'true' or $is-full = 'true'">
+                        <xsl:value-of select="$doc-css/conditional[@name = 'hilight']/text()" disable-output-escaping="yes" />
                     </xsl:if>
                 </style>
             </head>
@@ -563,9 +630,8 @@
     </xsl:template>
     
 
-	<!--=====================================================================
-		Functions
-		======================================================================-->
+	<!--FUNCTIONS
+		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 	<xsl:function name="fn:pick-times" as="xs:string">
         <xsl:param name="method" as="xs:string" />
         <xsl:param name="time-start" as="xs:string" />

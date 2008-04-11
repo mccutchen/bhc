@@ -29,15 +29,16 @@
 		lists only classes that fit within the enrolling window (ie, after the
 		supplied date)
 		======================================================================-->
-	<xsl:template match="schedule|term|division|subject|topic|subtopic|type|course">
+	<xsl:template match="schedule|term|special-subject|division|subject|topic|subtopic|type|course">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
+			<xsl:copy-of select="contact|comments" />
 			
 			<xsl:apply-templates select="*[descendant-or-self::class[utils:compare-dates(@date-start, $current-date) != -1]]" />
 		</xsl:copy>
 	</xsl:template>
 	
-	<xsl:template match="class|contact|comments">
+	<xsl:template match="class">
 		<xsl:copy-of select="." />
 	</xsl:template>
 	

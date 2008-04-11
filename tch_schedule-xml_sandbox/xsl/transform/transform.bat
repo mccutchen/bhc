@@ -11,10 +11,7 @@ IF "%type%"=="" GOTO SYNTAX
 :: Step 2: Check for correct data file
 ::----------------------------------------------
 IF EXIST %file% GOTO OUTPUT
-IF EXIST %final% GOTO SPLIT
-CALL %prep_bat%
-:SPLIT
-CALL %split_bat% %type%
+CALL %split_bat% %1 %2
 IF NOT EXIST %file% GOTO ERROR
 
 
@@ -42,19 +39,19 @@ GOTO CLEAN-UP
 SET xsl=%transform_dir_in%proof.xsl
 SET params="is-full=true"
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
+GOTO CLEAN-UP
 
 :enrolling-now
 SET params="schedule-type=Enrolling Now"
-GOTO ENROLL
-:enrolling-soon
-SET params="schedule-type=Enrolling Soon"
-GOTO ENROLL
-:ENROLL
 SET xsl=%transform_dir_in%web.xsl
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
 GOTO CLEAN-UP
 
-
+:enrolling-soon
+SET params="schedule-type=Enrolling Soon"
+SET xsl=%transform_dir_in%web.xsl
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
+GOTO CLEAN-UP
 
 GOTO END
 
@@ -63,7 +60,7 @@ ECHO Invalid syntax.
 ECHO Syntax: 3_generate-output {semester} {year} {type}
 ECHO where {semester} = Summer, Spring, or Fall
 ECHO and   {year} is a valid, 4-digit year
-ECHO and   {type} = rooms, print, InDesign-print, proof, proof-full, web, enrolling-now, enrolling-soon
+ECHO and   {type} = rooms, print, print-InDesign, proof, proof-full, web, enrolling-now, enrolling-soon
 ECHO.
 GOTO END
 

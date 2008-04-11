@@ -99,46 +99,41 @@ SET compare=%data%%ys%_compare.txt
 SET fixed=%data%%ys%_fixed.xml
 SET formed=%data%%ys%_formed.xml
 SET meetings=%data%%ys%_meetings.xml
-SET final=%meetings%
 
 SET trimmed=%data%%ys%_trimmed.xml
 SET split=%data%%ys%_split.xml
 SET sorted=%data%%ys%_sorted.xml
 SET linked=%data%%ys%_linked.xml
 SET sectioned=%data%%ys%_sectioned.xml
-SET enrolling=%data%%ys%_enrolling.xml
-SET enrolling-sectioned=%data%%ys%_enrolling-sectioned.xml
+SET enrolled=%data%%ys%_enrolled.xml
 
-SET rooms=%final%
-SET proof=%linked%
-SET print=%linked%
-SET web=%sectioned%
-SET enrolling-now=%enrolling-sectioned%
-SET enrolling-soon=%enrolling-sectioned%
+SET final=%meetings%
+SET current=%sectioned%
+SET enrolling=%enrolled%
 
 
 IF "%type%"=="" GOTO NO-FILE
 SET default-return=NO-FILE
 GOTO %type%
 :rooms
-SET file=%rooms%
+SET file=%final%
 GOTO END
 :print
 :print-InDesign
-SET file=%print%
+SET file=%current%
 GOTO END
 :proof
 :proof-full
-SET file=%proof%
+SET file=%current%
 GOTO END
 :web
-SET file=%web%
+SET file=%current%
 GOTO END
 :enrolling-now
-SET file=%enrolling-now%
+SET file=%enrolling%
 GOTO END
 :enrolling-soon
-SET file=%enrolling-soon%
+SET file=%enrolling%
 GOTO END
 
 :NO-FILE

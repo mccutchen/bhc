@@ -2,43 +2,41 @@
 
 :: Step 1: Check Parameters
 ::----------------------------------------------
-IF NOT "%setup%"=="true" CALL setup %1 %2 %3
+IF NOT "%setup%"=="true" CALL setup %1 %2
 IF "%ys%"=="" GOTO SYNTAX
-IF "%type%"=="" GOTO SYNTAX
 
 
+:: Step 2: Check if we're already done
+IF NOT EXIST %final% GOTO PREP
+IF NOT EXIST %current% GOTO SPLIT
+IF NOT EXIST %enrolling% GOTO SPLIT
+GOTO END
+
+
+
+:: Step 3: Call prep (if necessary)
+::----------------------------------------------
+
+:PREP
+CALL %prep_bat% %semester% %year%
+
+
+:: Step 4: Start splitting (if necessary)
+::----------------------------------------------
+
+:SPLIT
 ECHO.
 ECHO Splitting data for %semester% %year%
 
-:: Step 2: Determine Type
-::----------------------------------------------
-GOTO %type%
-
-: ROOMS
-::----------------------------------------------
-IF EXIST %rooms% GOTO ROOMS_END
-
-CALL %prep_bat% %semester% %year%
-
-:ROOMS_END
-IF NOT EXIST %rooms% GOTO ERROR
-IF "%type%"=="rooms" GOTO END
-
-
-:PRINT
-:PROOF
-:PROOF-FULL
-::----------------------------------------------
-IF EXIST %proof% GOTO PROOF_END
-IF NOT EXIST %rooms% GOTO ROOMS
-
+:: Trim
 SET xsl=%split_dir_in%trim.xsl
-SET source=%rooms%
+SET source=%final%
 SET dest=%trimmed%
 ECHO  - trimming
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %trimmed% GOTO ERROR
 
+:: Split
 SET xsl=%split_dir_in%split.xsl
 SET source=%trimmed%
 SET dest=%split%
@@ -46,6 +44,7 @@ ECHO  - splitting
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %split% GOTO ERROR
 
+:: Sort
 SET xsl=%split_dir_in%sort.xsl
 SET source=%split%
 SET dest=%sorted%
@@ -53,6 +52,7 @@ ECHO  - sorting
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %sorted% GOTO ERROR
 
+:: Link
 SET xsl=%split_dir_in%link.xsl
 SET source=%sorted%
 SET dest=%linked%
@@ -60,76 +60,32 @@ ECHO  - linking
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %linked% GOTO ERROR
 
-IF (%mode%)==(debug) GOTO PROOF_END
-DEL %split%
-DEL %sorted%
-
-:PROOF_END
-IF NOT EXIST %proof% GOTO ERROR
-IF "%type%"=="proof" GOTO END
-IF "%type%"=="proof-full" GOTO END
-
-
-:WEB
-::----------------------------------------------
-IF EXIST %web% GOTO WEB_END
-IF NOT EXIST %proof% GOTO PROOF
-
+:: Section
 SET xsl=%split_dir_in%section.xsl
-SET source=%proof%
+SET source=%linked%
 SET dest=%sectioned%
 ECHO  - sectioning
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %sectioned% GOTO ERROR
 
-:WEB_END
-IF NOT EXIST %web% GOTO ERROR
-IF "%type%"=="web" GOTO END
-
-
-:ENROLLING-NOW
-:ENROLLING-SOON
-::----------------------------------------------
-IF EXIST %enrolling-sectioned% GOTO ENROLLING_END
-IF NOT EXIST %proof% GOTO PROOF
-
+:: Enroll
 SET xsl=%split_dir_in%enroll.xsl
-SET source=%proof%
-SET dest=%enrolling%
+SET source=%sectioned%
+SET dest=%enrolled%
 ECHO  - enrolling
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
-IF NOT EXIST %enrolling% GOTO ERROR
+IF NOT EXIST %enrolled% GOTO ERROR
 
-SET xsl=%split_dir_in%section.xsl
-SET source=%enrolling%
-SET dest=%enrolling-sectioned%
-ECHO  - sectioning
-java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
-IF NOT EXIST %enrolling-sectioned% GOTO ERROR
-
-IF (%mode%)==(debug) GOTO ENROLLING_END
-DEL %enrolling%
-
-:ENROLLING_END
-IF NOT EXIST %enrolling-sectioned% GOTO ERROR
-IF "%type%"=="enrolling-now" GOTO END
-IF "%type%"=="enrolling-soon" GOTO END
-
-
-:default
-::----------------------------------------------
-ECHO Unknown type.
-GOTO END
-
-
-:ERROR
-ECHO Unable to split data.
-ECHO.
+IF (%mode%)==(debug) GOTO END
+DEL %trimmed%
+DEL %split%
+DEL %sorted%
+DEL %linked%
 GOTO END
 
 
 :SYNTAX
-ECHO Syntax: %0 {semester} {year} {format}
+ECHO Syntax: %0 {semester} {year}
 ECHO.
 GOTO END
 
