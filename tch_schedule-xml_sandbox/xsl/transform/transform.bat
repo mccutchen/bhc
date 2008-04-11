@@ -29,7 +29,7 @@ GOTO %type%
 
 :rooms
 :print
-:print-InDesign
+:print-quark
 :proof
 :web
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
@@ -38,6 +38,12 @@ GOTO CLEAN-UP
 :proof-full
 SET xsl=%transform_dir_in%proof.xsl
 SET params="is-full=true"
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
+GOTO CLEAN-UP
+
+:print-indesign
+SET xsl=%transform_dir_in%print.xsl
+SET params="format=indesign"
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
 GOTO CLEAN-UP
 

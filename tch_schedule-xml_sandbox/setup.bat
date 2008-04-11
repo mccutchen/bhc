@@ -37,6 +37,7 @@ IF NOT "%3"=="" GOTO %3
 GOTO NO-TYPE
 :rooms
 :print
+:print-quark
 :print-InDesign
 :proof
 :proof-full
@@ -119,6 +120,7 @@ GOTO %type%
 SET file=%final%
 GOTO END
 :print
+:print-Quark
 :print-InDesign
 SET file=%current%
 GOTO END

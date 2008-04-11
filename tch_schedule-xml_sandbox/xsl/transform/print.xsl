@@ -56,14 +56,15 @@
 
 	<!--SETUP
 		~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-		<xsl:template match="term" mode="setup">
+	<xsl:template match="term" mode="setup">
 		<!-- processing vars -->
-		<xsl:variable name="year" select="parent::schedule/@year"                   as="xs:string" />
-		<xsl:variable name="sem"  select="parent::schedule/@semester"               as="xs:string" />
-		<xsl:variable name="pre"  select="utils:generate-outdir($year, $sem)"       as="xs:string" />
-		<xsl:variable name="dir"  select="concat($pre, '_', $output-type)"          as="xs:string" />
-		<xsl:variable name="term" select="utils:make-url(@name)"                    as="xs:string" />
-		<xsl:variable name="path" select="concat($dir,'/',$term)"                   as="xs:string" />
+		<xsl:variable name="year" select="parent::schedule/@year"             as="xs:string" />
+		<xsl:variable name="sem"  select="parent::schedule/@semester"         as="xs:string" />
+		<xsl:variable name="pre"  select="utils:generate-outdir($year, $sem)" as="xs:string" />
+		<xsl:variable name="type" select="concat($output-type, '-', $format)" as="xs:string" />
+		<xsl:variable name="dir"  select="concat($pre, '_', $type)"           as="xs:string" />
+		<xsl:variable name="term" select="utils:make-url(@name)"              as="xs:string" />
+		<xsl:variable name="path" select="concat($dir,'/',$term)"             as="xs:string" />
 		
 		<!-- create single-file output -->
 		<xsl:apply-templates select="." mode="init">
