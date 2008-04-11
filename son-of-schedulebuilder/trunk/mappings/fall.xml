@@ -162,6 +162,7 @@
     	<subject name="Art">
     		<topic name="Problems in Contemporary Art">
     			<pattern match="ARTS 1170-2200" />
+    		</topic>
     		<topic name="Art Appreciation">
     			<pattern match="ARTS 1301-2001" />
     			<pattern match="ARTS 1301-2002" />
