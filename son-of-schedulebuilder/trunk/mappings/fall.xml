@@ -160,7 +160,9 @@
              School of the Arts (Fran Rhodes & Jill Williams
              ======================================================================== -->
     	<subject name="Art">
-    		<topic name="Art Appreciation - Day Courses">
+    		<topic name="Problems in Contemporary Art">
+    			<pattern match="ARTS 1170-2200" />
+    		<topic name="Art Appreciation">
     			<pattern match="ARTS 1301-2001" />
     			<pattern match="ARTS 1301-2002" />
     			<pattern match="ARTS 1301-2003" />
@@ -168,16 +170,10 @@
     			<pattern match="ARTS 1301-2005" />
     			<pattern match="ARTS 1301-2006" />
     			<pattern match="ARTS 1301-2007" />
-    		</topic>
-    		<topic name="Art Appreciation - Night Courses">
     			<pattern match="ARTS 1301-2501" />
     			<pattern match="ARTS 1301-2502" />
     			<pattern match="ARTS 1301-2503" />
-    		</topic>
-    		<topic name="Art Appreciation - Weekend Courses">
-    			<pattern match="ARTS 1301-2250" />
-    		</topic>
-    		<topic name="Art Appreciation - Distance Learning Courses">
+    		    <pattern match="ARTS 1301-2250" />
     			<pattern match="ARTS 1301-2420" />
     			<pattern match="ARTS 1301-2421" />
     		</topic>
@@ -207,6 +203,7 @@
     			<pattern match="ARTS 1316-2002" />
     			<pattern match="ARTS 1316-2003" />
     			<pattern match="ARTS 1317-2002" />
+    			<pattern match="ARTS 2311-2020" />
     			<pattern match="ARTS 1317-2001" />
     			<pattern match="ARTS 2311-2002" />
     			<pattern match="ARTS 2312-2011" />
@@ -271,6 +268,7 @@
     		</topic>
     		<topic name="Painting - Day Courses">
     			<pattern match="ARTS 2316-2001" />
+    			<pattern match="ARTS 2317-2001" />
     			<pattern match="ARTS 2311-2006" />
     			<pattern match="ARTS 2312-2004" />
     			<pattern match="ARTS 2316-2002" />
