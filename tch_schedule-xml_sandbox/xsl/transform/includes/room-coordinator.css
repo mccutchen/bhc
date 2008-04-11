@@ -1,0 +1,48 @@
+body, table, tr, td {
+    font: 11px Arial, sans-serif;
+    color: #000;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+h1 { font-size: 36px; }
+h2 {
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+th, td {
+    border-top: 1px solid #eee;
+    vertical-align: top;
+    padding: 10px;
+}
+th {
+    text-align: left;
+}
+.extra, tr.extra th, tr.extra td {
+    color: #666;
+    border: none;
+    padding-top: 0;
+}
+
+.DL, .DL th, .DL td {
+    color: #900;
+}
+
+tr.heading th {
+    background-color: #eee;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #ccc;
+}
+tr.heading th.first {
+    border-left: 1px solid #ddd;
+}
+
+tr.comments th, tr.comments td {
+    border-top: none;
+    padding-top: 0;
+    color: #666;
+}
