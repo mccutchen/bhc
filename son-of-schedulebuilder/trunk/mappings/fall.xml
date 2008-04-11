@@ -508,8 +508,9 @@
 					<pattern match="MUEN 1135-2501" />
 					<pattern match="MUEN 1135-2250" />
                 </subtopic>
-                <subtopic name="Orchestra Ensemble">
-					<pattern match="MUEN 1121-2001" />
+                <subtopic name="String Ensemble">
+					<pattern match="MUEN 1136-2001" />
+					<pattern match="MUEN 1136-2002" />
                 </subtopic>
                 <subtopic name="Percussion Ensemble">
 					<pattern match="MUEN 1135-2002" />
