@@ -178,28 +178,24 @@
     			<pattern match="ARTS 1301-2420" />
     			<pattern match="ARTS 1301-2421" />
     		</topic>
-    		<topic name="Art History - Day Courses">
+    		<topic name="Art History">
     			<pattern match="ARTS 1303-2001" />
     			<pattern match="ARTS 1303-2002" />
     			<pattern match="ARTS 1304-2001" />
-    		</topic>
-    		<topic name="Art History - Night Courses">
     			<pattern match="ARTS 1303-2501" />
     		</topic>
-    		<topic name="Design - Day Courses">
+    		<topic name="Design">
     			<pattern match="ARTS 1311-2001" />
     			<pattern match="ARTS 1311-2002" />
     			<pattern match="ARTS 1311-2003" />
     			<pattern match="ARTS 1312-2001" />
     			<pattern match="ARTS 1312-2002" />
-    		</topic>
-    		<topic name="Design - Night Courses">
     			<pattern match="ARTS 1311-2501" />
     			<pattern match="ARTS 2311-2519" />
     			<pattern match="ARTS 2312-2520" />
     			<pattern match="ARTS 1312-2501" />
     		</topic>
-    		<topic name="Drawing - Day Courses">
+    		<topic name="Drawing">
     			<pattern match="ARTS 1316-2001" />
     			<pattern match="ARTS 1316-2002" />
     			<pattern match="ARTS 1316-2003" />
@@ -212,8 +208,6 @@
     			<pattern match="ARTS 2324-2001" />
     			<pattern match="ARTS 2311-2008" />
     			<pattern match="ARTS 2312-2002" />
-    		</topic>
-    		<topic name="Drawing - Night Courses">
     			<pattern match="ARTS 1316-2501" />
     			<pattern match="ARTS 1317-2501" />
     			<pattern match="ARTS 2311-2502" />
@@ -222,24 +216,20 @@
     			<pattern match="ARTS 2324-2501" />
     			<pattern match="ARTS 2311-2508" />
     			<pattern match="ARTS 2312-2502" />
-    		</topic>
-    		<topic name="Drawing - Weekend Courses">
     			<pattern match="ARTS 1316-2250" />
     			<pattern match="ARTS 1317-2250" />
     			<pattern match="ARTS 2311-2250" />
     		</topic>
-    		<topic name="Art and Computers - Day Courses">
+    		<topic name="Art and Computers">
     			<pattern match="ARTS 2313-2001" />
     			<pattern match="ARTS 2314-2001" />
     			<pattern match="ARTS 2311-2004" />
     			<pattern match="ARTS 2348-2001" />
     			<pattern match="ARTS 2349-2001" />
-    		</topic>
-    		<topic name="Art and Computers - Night Courses">
     			<pattern match="ARTS 2313-2501" />
     			<pattern match="ARTS 2314-2501" />
     		</topic>
-    		<topic name="Ceramics - Day Courses">
+    		<topic name="Ceramics">
     			<pattern match="ARTS 2346-2001" />
     			<pattern match="ARTS 2311-2010" />
     			<pattern match="ARTS 2347-2002" />
@@ -250,8 +240,6 @@
     			<pattern match="ARTS 2347-2003" />
     			<pattern match="ARTS 2311-2018" />
     			<pattern match="ARTS 2312-2018" />
-    		</topic>
-    		<topic name="Ceramics - Night Courses">
     			<pattern match="ARTS 2346-2501" />
     			<pattern match="ARTS 2347-2501" />
     			<pattern match="ARTS 2311-2506" />
@@ -260,14 +248,12 @@
     			<pattern match="ARTS 2347-2502" />
     			<pattern match="ARTS 2311-2509" />
     			<pattern match="ARTS 2312-2509" />
-    		</topic>
-    		<topic name="Ceramics - Weekend Courses">
     			<pattern match="ARTS 2346-2250" />
     			<pattern match="ARTS 2347-2250" />
     			<pattern match="ARTS 2311-2252" />
     			<pattern match="ARTS 2312-2252" />
     		</topic>
-    		<topic name="Painting - Day Courses">
+    		<topic name="Painting">
     			<pattern match="ARTS 2316-2001" />
     			<pattern match="ARTS 2317-2001" />
     			<pattern match="ARTS 2311-2006" />
@@ -284,44 +270,36 @@
     			<pattern match="ARTS 2317-2004" />
     			<pattern match="ARTS 2311-2007" />
     			<pattern match="ARTS 2312-2017" />
-    		</topic>
-    		<topic name="Painting - Night Courses">
     			<pattern match="ARTS 2316-2501" />
     			<pattern match="ARTS 2317-2501" />
     			<pattern match="ARTS 2311-2504" />
     			<pattern match="ARTS 2312-2510" />
-    		</topic>
-    		<topic name="Painting - Weekend Courses">
     			<pattern match="ARTS 2316-2250" />
     			<pattern match="ARTS 2317-2250" />
     			<pattern match="ARTS 2311-2251" />
     			<pattern match="ARTS 2312-2251" />
     		</topic>
-    		<topic name="Sculpture - Day Courses">
+    		<topic name="Sculpture">
     			<pattern match="ARTS 2326-2001" />
     			<pattern match="ARTS 2327-2001" />
     			<pattern match="ARTS 2311-2001" />
     			<pattern match="ARTS 2312-2001" />
-    		</topic>
-    		<topic name="Sculpture - Night Courses">
     			<pattern match="ARTS 2326-2501" />
     			<pattern match="ARTS 2327-2501" />
     			<pattern match="ARTS 2311-2501" />
     			<pattern match="ARTS 2312-2501" />
     		</topic>
-    		<topic name="Printmaking - Day Courses">
+    		<topic name="Printmaking">
     			<pattern match="ARTS 2333-2001" />
     			<pattern match="ARTS 2334-2001" />
     			<pattern match="ARTS 2311-2009" />
     			<pattern match="ARTS 2312-2006" />
-    		</topic>
-    		<topic name="Printmaking - Night Courses">
     			<pattern match="ARTS 2333-2501" />
     			<pattern match="ARTS 2334-2501" />
     			<pattern match="ARTS 2311-2505" />
     			<pattern match="ARTS 2312-2504" />
     		</topic>
-    		<topic name="Art Metals - Day Courses">
+    		<topic name="Art Metals">
     			<pattern match="ARTS 2342-2003" />
     			<pattern match="ARTS 2311-2019" />
     			<pattern match="ARTS 2312-2008" />
@@ -329,26 +307,22 @@
     			<pattern match="ARTS 2342-2001" />
     			<pattern match="ARTS 2311-2013" />
     			<pattern match="ARTS 2312-2007" />
-    		</topic>
-    		<topic name="Art Metals - Night Courses">
     			<pattern match="ARTS 2341-2501" />
     			<pattern match="ARTS 2342-2501" />
     			<pattern match="ARTS 2311-2507" />
     			<pattern match="ARTS 2312-2507" />
     		</topic>
-    		<topic name="Photography - Day Courses">
+    		<topic name="Photography">
     			<pattern match="ARTS 2356-2001" />
     			<pattern match="ARTS 2357-2001" />
     			<pattern match="ARTS 2311-2003" />
     			<pattern match="ARTS 2312-2003" />
-    		</topic>
-    		<topic name="Photography - Night Courses">
     			<pattern match="ARTS 2356-2501" />
     			<pattern match="ARTS 2357-2501" />
     			<pattern match="ARTS 2311-2503" />
     			<pattern match="ARTS 2312-2503" />
     		</topic>
-    		<topic name="Watercolor - Day Courses">
+    		<topic name="Watercolor">
     			<pattern match="ARTS 2366-2001" />
     			<pattern match="ARTS 2367-2001" />
     			<pattern match="ARTS 2311-2016" />
@@ -619,8 +593,10 @@
             </topic>
         </subject>
 
-
-    	
+   <!-- =======================================================================
+            Business Studies Division
+        ======================================================================== -->
+        
         <!-- =======================================================================
              CIT (Bill Hammerschlag)
              ======================================================================== -->
@@ -805,8 +781,30 @@
 			<topic name="Programming">
 				<pattern match="BCIS 2431-2501" />	
 			</topic>	
-    	</subject>        	
+    	</subject>    
+    	
+        <!-- =======================================================================
+             Management Program (Marisa Walsdorf & Mary Lou Avera)
+             ======================================================================== -->
+        <subject name="Management Program">
+            <comments>NOTE:  Earn six credit hours, but attend class only one night per week for three hours.  For advisement, call the faculty members: Mary Lou Avera, 972-860-4179, marylou@dcccd.edu;  or Marisa Walsdorf, 972-860-4186, marisa_walsdorf@dcccd.edu.  Minimum requirements for enrollment:  A student must be currently employed in an appropriate job and meet the TSI requirements in reading and writing.  Credits are earned in a traditional on-campus course and in an on-the-job, cooperative education training course.  There are no course prerequisites, but students may enroll in only one co-op ed course per semester.  It is strongly recommended that interested students contact a faculty member before classes begin.  Visit us online at www.BrookhavenCollege.edu   then click on "M" for Management in the A-Z index.</comments>
+            <topic name="none">
+                <!-- the topic name "none" doesn't show up in the schedule, it just provides
+				a way to separate these Management Program courses -->
+            </topic>
+            <topic name="none">
+				<pattern match="HRPO 2301-2501"/>
+                <pattern match="BMGT 1383-2501"/>
+                <pattern match="HRPO 2307-2502"/>
+                <pattern match="BMGT 2382-2502"/>
+            </topic>
+        </subject>
+        
 
+   		<!-- =======================================================================
+            Health and Human Services
+        ======================================================================== -->
+        
         <!-- =======================================================================
             EMS (Cletha Silas)
         ======================================================================== -->
@@ -942,22 +940,7 @@
         </subject>
 
 
-        <!-- =======================================================================
-             Management Program (Marisa Walsdorf & Mary Lou Avera)
-             ======================================================================== -->
-        <subject name="Management Program">
-            <comments>NOTE:  Earn six credit hours, but attend class only one night per week for three hours.  For advisement, call the faculty members: Mary Lou Avera, 972-860-4179, marylou@dcccd.edu;  or Marisa Walsdorf, 972-860-4186, marisa_walsdorf@dcccd.edu.  Minimum requirements for enrollment:  A student must be currently employed in an appropriate job and meet the TSI requirements in reading and writing.  Credits are earned in a traditional on-campus course and in an on-the-job, cooperative education training course.  There are no course prerequisites, but students may enroll in only one co-op ed course per semester.  It is strongly recommended that interested students contact a faculty member before classes begin.  Visit us online at www.BrookhavenCollege.edu   then click on "M" for Management in the A-Z index.</comments>
-            <topic name="none">
-                <!-- the topic name "none" doesn't show up in the schedule, it just provides
-				a way to separate these Management Program courses -->
-            </topic>
-            <topic name="none">
-				<pattern match="HRPO 2301-2501"/>
-                <pattern match="BMGT 1383-2501"/>
-                <pattern match="HRPO 2307-2502"/>
-                <pattern match="BMGT 2382-2502"/>
-            </topic>
-        </subject>
+
 		
 		
 		<!-- THIS IS A TEMPORARY FIX -->
