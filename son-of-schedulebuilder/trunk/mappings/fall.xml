@@ -476,6 +476,7 @@
 				<pattern match="MUSI 1306-2430" />
 				<pattern match="MUSI 1306-2431" />
 				<pattern match="MUSI 1306-2300" />
+				<pattern match="MUSI 1306-2700" />
             </topic>
             <topic name="Music Theory">
 				<pattern match="MUSI 1311-2001" />
@@ -561,7 +562,7 @@
                 </subtopic>
                 <subtopic name="Windsong Vocal Ensemble">
 					<pattern match="MUEN 1153-2250" />
-					<pattern match="MUEN 1153 2200" />
+					<pattern match="MUEN 1153-2200" />
                 </subtopic>
                 <subtopic name="Brookhaven Choral Society">
 					<pattern match="MUEN 2141-2501" />
@@ -609,7 +610,7 @@
 					<pattern match="MUAP 2257-2001" />
 					<pattern match="MUAP 2261-2001" />
 					<pattern match="MUAP 2261-2002" />
-					<pattern match="MUAP 2261 2003" />
+					<pattern match="MUAP 2261-2003" />
 					<pattern match="MUAP 2269-2001" />
 					<pattern match="MUAP 2269-2002" />
 					<pattern match="MUAP 2281-2001" />
