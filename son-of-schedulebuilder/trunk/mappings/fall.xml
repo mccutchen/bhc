@@ -461,8 +461,6 @@
             </topic>
         </subject>
         	
-        </subject>
-
         <subject name="Music">
             <topic name="Music Appreciation">
 				<pattern match="MUSI 1306-2001" />
