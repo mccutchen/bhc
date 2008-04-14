@@ -11,6 +11,8 @@ importantly, that the number of <class> elements is identical.
 Making sure the number of <class> elements is identical tries to
 ensure that we're not dropping information."""
 
+import sys
+
 try:
     # Python 2.5 has ElementTree built in
     from xml.etree import cElementTree as ET
@@ -22,6 +24,20 @@ MUST_BE_ROOT = 'schedule'
 MUST_EXIST = 'term course class'.split()
 MUST_COUNT_EQUAL = 'class'.split()
 
+def reporterrors(testfunc):
+    def error_reporter(*args, **kwds):
+        try:
+            testfunc(*args, **kwds)
+            return True
+        except AssertionError, e:
+            print >> sys.stderr, '*** A test failed ***'
+            print >> sys.stderr, '*** Error message: %s' % e
+            return False
+    error_reporter.__name__ = testfunc.__name__
+    error_reporter.__doc__ = testfunc.__doc__
+    return error_reporter
+
+@reporterrors
 def test(old, new):
     old = ET.ElementTree(file=old)
     new = ET.ElementTree(file=new)
@@ -31,15 +47,15 @@ def test(old, new):
         new.getroot().tag == MUST_BE_ROOT, \
         'Wrong root element.  Expected <%s>' % MUST_BE_ROOT
 
-    # make sure each element that must be in the schedule
-    # is actually there
+    # make sure each element that must be in the schedule is actually
+    # there
     for tag in MUST_EXIST:
         xpath = '//%s' % tag
         assert old.findall(xpath) and new.findall(xpath), \
             'Element <%s> missing.' % tag
 
-    # make sure that each element which must show up an
-    # equal amount of times, does
+    # make sure that each element which must show up an equal amount
+    # of times, does
     for tag in MUST_COUNT_EQUAL:
         xpath = '//%s' % tag
         old_els = old.findall(xpath)
@@ -58,8 +74,4 @@ if __name__ == '__main__':
     assert len(sys.argv) == 3, \
         'The two files to compare must be given as arguments'
     a, b = sys.argv[1:]
-    try:
-        test(a, b)
-    except AssertionError, e:
-        print '*** A test failed ***'
-        print '*** Error message: %s' % e
+    test(a, b)
