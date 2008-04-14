@@ -431,8 +431,21 @@
 							<xsl:text> Classes do not fit into any term.</xsl:text>
 						</xsl:message>
 						
-						<xsl:for-each-group select="$classes" group-by="ancestor::course/@rubric">
-							<xsl:for-each-group select="current-group()" group-by="ancestor::course/@number">
+						<xsl:for-each-group select="$classes" group-by="parent::course/@rubric">
+							<xsl:for-each-group select="current-group()" group-by="parent::course/@number">								
+								<xsl:if test="count(current-group()/parent::course) != 1">
+									<xsl:message>
+										<xsl:text>!Warning! multiple courses for class group:</xsl:text><xsl:value-of select="'&#9;'" />
+										<xsl:text>COURSES (</xsl:text><xsl:value-of select="count(current-group()/parent::course)" /><xsl:text>)</xsl:text><xsl:value-of select="'&#9;'" />
+										<xsl:for-each select="current-group()/parent::course">
+											<xsl:value-of select="@rubric" /><xsl:text> </xsl:text><xsl:value-of select="@number" /><xsl:value-of select="'&#9;'" />
+										</xsl:for-each>
+										<xsl:text>CLASSES (</xsl:text><xsl:value-of select="count(current-group())" /><xsl:text>)</xsl:text><xsl:value-of select="'&#9;'" />
+										<xsl:for-each select="current-group()">
+											<xsl:value-of select="@synonym" /><xsl:text>, </xsl:text>
+										</xsl:for-each>
+									</xsl:message>
+								</xsl:if>
 								<xsl:variable name="course" select="current-group()/parent::course" as="element()" />
 								
 								<xsl:element name="course">

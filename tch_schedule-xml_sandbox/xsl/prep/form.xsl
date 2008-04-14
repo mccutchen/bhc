@@ -115,6 +115,8 @@
 		
 		<xsl:element name="subject">
 			<xsl:copy-of select="$subject/attribute()" />
+			<!-- ensure the Unknown Subjects are last -->
+			<xsl:if test="$subject/@display = 'false' and not($subject/@sortkey)"><xsl:attribute name="sortkey" select="'999'" /></xsl:if>
 			<xsl:copy-of select="$subject/contact"     />
 			<xsl:copy-of select="$subject/comments"    />
 			

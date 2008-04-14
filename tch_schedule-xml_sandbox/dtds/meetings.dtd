@@ -5,7 +5,7 @@ year 			CDATA #REQUIRED
 creation-date 	CDATA #REQUIRED
 creation-time 	CDATA #REQUIRED>
 
-<!ELEMENT term (division+)>
+<!ELEMENT term (division*)>
 <!ATTLIST term
 name 			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED
@@ -22,7 +22,8 @@ display 		(true|false) "true">
 <!ATTLIST subject
 name 			CDATA #REQUIRED
 ordered 		(true|false) "false"
-display 		(true|false) "true">
+display 		(true|false) "true"
+sortkey			CDATA #IMPLIED>
 
 <!ELEMENT topic (comments?, type*, subtopic*)>
 <!ATTLIST topic
