@@ -9,25 +9,18 @@
 		</topic>
 		<topic name="Third Semester Program Students">
 			<comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
-			<pattern match="RADR 2217-2001"/>
-			<pattern match="RADR 1166-2601"/>
-			<pattern match="RADR 1166-2602"/>
-			<pattern match="RADR 1166-2603"/>
-			<pattern match="RADR 2331-2001"/>
-			<pattern match="RADR 2331-2002"/>
-			<pattern match="RADR 2331-2003"/>
-			<pattern match="RADR 2331-2004"/>
-			<pattern match="RADR 2305-2001"/>
-			<pattern match="RADR 2305-2002"/>
-			<pattern match="RADR 2305-2003"/>
-			<pattern match="RADR 2305-2004"/>
+			<pattern match="RADR 1166" />
+			<pattern match="RADR 2305" />
+			<pattern match="RADR 2331" />
+			<pattern match="RADR 2217" />
+			<pattern match="RADR 2213" />
 		</topic>
 		<topic name="Sixth Semester Program Students">
 			<comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
-			<pattern match="RADR 1250-2001"/>
-			<pattern match="RADR 2235-2001"/>
-			<pattern match="RADR 2267-2601"/>
-			<pattern match="RADR 2267-2602"/>
+			<pattern match="RADR 2267" />
+			<pattern match="RADR 1250" />
+			<pattern match="RADR 2235" />
+			<pattern match="RADR 1291" />
 		</topic>
 	</subject>
 </mappings>

@@ -161,6 +161,8 @@
 			<pattern match="IMED"/>
 			<pattern match="PHTC"/>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -203,6 +205,8 @@
 		<subject name="College Learning Skills">
 			<pattern match="DCOM"/>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -223,6 +227,7 @@
 
 		<subject name="Education">
 			<pattern match="EDUC"/>
+			<pattern match="EDTC"/>
 		</subject>
 
 		<!--=======================================================================
@@ -275,6 +280,8 @@
 		<subject name="Radiologic Sciences - Unsorted" display="false">
 			<pattern match="RADR" priority="0"/>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -293,7 +300,8 @@
 					courses. Before registering, check the Catalog online or call the division
 					office for prerequisite information.</p>
 			</comments>
-			<file src="biology.xml"/>
+			<!-- no mappings
+			<file src="biology.xml"/>-->
 		</subject>
 		<subject name="Biology - Unsorted" display="false">
 			<pattern match="BIOL" priority="0"/>
@@ -343,15 +351,15 @@
 		</subject>
 
 		<subject name="Mathematics">
+			<comments>
+				<p>NOTE:  REQUIRED for all MATH courses: One of any version of the following Texas 
+					Instruments calculators: TI-83, TI-84 or TI-86.  NOTE:  All MATH courses are 
+					part of the Service-Learning Program; check with the instructor or e-mail 
+					bhcServiceLearning@dcccd.edu for more information.</p>
+			</comments>
 			<contact email="bhcMath@dcccd.edu"/>
 			<pattern match="MATH"/>
 			<pattern match="TECM"/>
-			<comments>
-				<p>NOTE: REQUIRED FOR ALL MATH COURSES: One of any version of the following Texas
-					Instruments calculators: TI-83, TI-84 or TI-86. NOTE: All MATH courses are part
-					of the Service-Learning Program, check with the instructor or e-mail
-					bhcServiceLearning@dcccd.edu for more information.</p>
-			</comments>
 		</subject>
 
 		<subject name="Physical Science">
@@ -364,6 +372,8 @@
 			<contact email="bhcScience@dcccd.edu"/>
 			<pattern match="PHYS [12]4[02][1256]"/>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -377,6 +387,8 @@
 		<subject name="Physical Education">
 			<pattern match="PHED"/>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -431,6 +443,8 @@
 			<pattern match="MUEN" priority="0"/>
 			<pattern match="MUAP" priority="0"/>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -450,6 +464,8 @@
 					up to six credit hours per semester.</p>
 			</comments>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -485,6 +501,7 @@
 		</subject>
 
 		<subject name="Human Development">
+			<comments>NOTE: Beginning the spring semester of 2008, if a first time in college, FTIC, student's assessment test scores indicate a placement into two or more developmental studies disciplines, the student will be required to take either developmental reading or human development 1300 or 1310.</comments>
 			<pattern match="HDEV"/>
 		</subject>
 
@@ -506,6 +523,8 @@
 		<subject name="Sociology">
 			<pattern match="SOCI"/>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -523,6 +542,9 @@
 		</subject>
 
 		<subject name="Languages" ordered="true">
+			<!--<comments>
+				<p>NOTE: New! Look for Linguistics in its own section following Languages.</p>
+			</comments>-->
 			<topic name="American Sign Language">
 				<pattern match="SGNL"/>
 			</topic>
@@ -592,10 +614,9 @@
 			<topic name="Vietnamese">
 				<pattern match="VIET"/>
 			</topic>
-			<comments>
-				<p>NOTE: New! Look for Linguistics in its own section following Languages.</p>
-			</comments>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 
 
@@ -610,5 +631,7 @@
 		<subject name="DCLS">
 			<pattern match="DCLS"/>
 		</subject>
+		
+		<subject name="Unknown Subject" display="false" />
 	</division>
 </mappings>

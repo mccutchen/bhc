@@ -56,9 +56,14 @@
             <pattern match="SCIT" priority="0" unsorted="true" />
         </subject>
         <subject name="Business">
-            <pattern match="BUSI" priority="0" unsorted="true" />
+            <!-- Ok, I'm going to try this. Basically, IBUS 1305 should follow BUSI 1305 -->
+            <pattern match="BUSI 130[0-5]" priority="1" />
+            <pattern match="IBUS 1305" priority="1" />
+            <pattern match="BUSI" priority="0" />
+            <pattern match="IBUS" priority="0" />
+        </subject>
+        <subject name="BCIS - Unsorted">
             <pattern match="BCIS" priority="0" unsorted="true" />
-            <pattern match="IBUS" priority="0" unsorted="true" />
         </subject>
         <subject name="CIT - COSC - Unsorted">
             <pattern match="COSC" priority="0" unsorted="true" />
@@ -150,6 +155,7 @@
         </subject>
         <subject name="Education">
             <pattern match="EDUC" priority="0" unsorted="true" />
+            <pattern match="EDTC" priority="0" unsorted="true" />
         </subject>
         <subject name="Emergency Medical Services - Unsorted">
             <pattern match="EMSP" priority="0" unsorted="true" />
@@ -197,6 +203,7 @@
             <pattern match="HIST" priority="0" unsorted="true" />
         </subject>
         <subject name="Human Development">
+            <comments>NOTE: Beginning the spring semester of 2008, if a first time in college, FTIC, student's assessment test scores indicate a placement into two or more developmental studies disciplines, the student will be required to take either developmental reading or human development 1300 or 1310.</comments>
             <pattern match="HDEV" priority="0" unsorted="true" />
         </subject>
         <subject name="Humanities">
@@ -232,7 +239,7 @@
             <pattern match="FSHN" priority="0" unsorted="true" />
         </subject>
         <subject name="Mathematics">
-            <comments>NOTE:  REQUIRED FOR ALL MATH COURSES: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86.  NOTE:  All MATH courses are part of the Service-Learning Program, check with the instructor or e-mail bhcServiceLearning@dcccd.edu for more information.</comments>
+            <comments>NOTE:  REQUIRED for all MATH courses: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86.  NOTE:  All MATH courses are part of the Service-Learning Program; check with the instructor or e-mail bhcServiceLearning@dcccd.edu for more information.</comments>
             <pattern match="MATH" priority="0" unsorted="true" />
             <pattern match="TECM" priority="0" unsorted="true" />
         </subject>
@@ -316,7 +323,9 @@
              Custom subject regroupings
              *********************************************************************** -->
         <subject name="Languages">
+<!-- 
             <comments>NOTE: New! Look for Linguistics in its own section following Languages.</comments>
+ -->
             <topic name="American Sign Language">
                 <pattern match="SGNL"/>
             </topic>
@@ -631,9 +640,10 @@
         <component name="Other">
             <pattern match="PHED 1164" />
             <pattern match="COSC 1300" />
+            <pattern match="BCIS 1405" />
         </component>
         <component name="Mathematics">
-            <pattern match="MATH (1314|1324|1332|1333|1348|1414|2342|2412|2442)" />
+            <pattern match="MATH (1314|1316|1324|1332|1333|1348|1414|2342|2412|2442)" />
         </component>
         <component name="Social and Behavioral Sciences">
             <pattern match="HIST 130[12]" />
