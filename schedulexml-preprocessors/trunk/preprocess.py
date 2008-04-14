@@ -21,7 +21,7 @@ SAXON_PATH = os.name == 'posix' \
 SCHEDULE_FILE = "schedule.xml"
 
 # The default ScheduleXMl file to preprocess
-DEFAULT_INPUT_PATH = "input/schedule-200-2007SP.xml"
+DEFAULT_INPUT_PATH = "input/schedule-200-2008fa.xml"
 
 # Try to get an input path from the command line
 try:
