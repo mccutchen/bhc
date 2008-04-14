@@ -22,27 +22,27 @@ MUST_BE_ROOT = 'schedule'
 MUST_EXIST = 'term course class'.split()
 MUST_COUNT_EQUAL = 'class'.split()
 
-def test(a, b):
-    a = ET.ElementTree(file=a)
-    b = ET.ElementTree(file=b)
+def test(old, new):
+    old = ET.ElementTree(file=old)
+    new = ET.ElementTree(file=new)
 
     # make sure we have the correct root element
-    assert a.getroot().tag == MUST_BE_ROOT and b.getroot().tag == MUST_BE_ROOT, 'Wrong root element.  Expected <%s>' % MUST_BE_ROOT
+    assert old.getroot().tag == MUST_BE_ROOT and new.getroot().tag == MUST_BE_ROOT, 'Wrong root element.  Expected <%s>' % MUST_BE_ROOT
 
     # make sure each element that must be in the schedule
     # is actually there
     for tag in MUST_EXIST:
         xpath = '//%s' % tag
-        assert a.findall(xpath) and b.findall(xpath), 'Element <%s> missing.' % tag
+        assert old.findall(xpath) and new.findall(xpath), 'Element <%s> missing.' % tag
 
     # make sure that each element which must show up an
     # equal amount of times, does
     for tag in MUST_COUNT_EQUAL:
         xpath = '//%s' % tag
-        a_els = a.findall(xpath)
-        b_els = b.findall(xpath)
+        old_els = old.findall(xpath)
+        new_els = new.findall(xpath)
 
-        assert len(a_els) == len(b_els), 'Element <%s> does not appear the same number of times (%d vs. %d).' % (tag, len(a_els), len(b_els))
+        assert len(old_els) == len(new_els), 'Element <%s> does not appear the same number of times (%d in old document vs. %d in new document).' % (tag, len(old_els), len(new_els))
     
     # all tests passed
     return True
