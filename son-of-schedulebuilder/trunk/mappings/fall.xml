@@ -500,25 +500,33 @@
 				<pattern match="MUSI 1183-2502" />
             </topic>
             <topic name="Music Ensembles">
-                <subtopic name="Flute Ensemble">
-					<pattern match="MUEN 1132-2001" />
+                <subtopic name="Brookhaven Choral Society">
+					<pattern match="MUEN 2141-2501" />
+					<pattern match="MUEN 2141-2701" />
+                </subtopic>
+                <subtopic name="Windsong Vocal Ensemble">
+					<pattern match="MUEN 1153-2250" />
+					<pattern match="MUEN 1153-2200" />
                 </subtopic>
                 <subtopic name="Chamber Ensemble">
 					<pattern match="MUEN 1152-2001" />
 					<pattern match="MUEN 1152-2002" />
 					<pattern match="MUEN 1152-2750" />
                 </subtopic>
+                <subtopic name="Flute Ensemble">
+					<pattern match="MUEN 1132-2001" />
+                </subtopic>
                 <subtopic name="Guitar Ensemble">
 					<pattern match="MUEN 1134-2001" />
 					<pattern match="MUEN 1134-2501" />
                 </subtopic>
-                <subtopic name="Keyboard Ensemble">
-					<pattern match="MUEN 1131-2001" />
-					<pattern match="MUEN 1131-2002" />
-                </subtopic>
                 <subtopic name="Handbell Ensemble">
 					<pattern match="MUEN 1135-2501" />
 					<pattern match="MUEN 1135-2250" />
+                </subtopic>
+                <subtopic name="Keyboard Ensemble">
+					<pattern match="MUEN 1131-2001" />
+					<pattern match="MUEN 1131-2002" />
                 </subtopic>
                 <subtopic name="String Ensemble">
 					<pattern match="MUEN 1136-2001" />
@@ -533,14 +541,6 @@
 					<pattern match="MUEN 2123-2200" />
 					<pattern match="MUEN 2123-2002" />
 					<pattern match="MUEN 2123-2501" />
-                </subtopic>
-                <subtopic name="Windsong Vocal Ensemble">
-					<pattern match="MUEN 1153-2250" />
-					<pattern match="MUEN 1153-2200" />
-                </subtopic>
-                <subtopic name="Brookhaven Choral Society">
-					<pattern match="MUEN 2141-2501" />
-					<pattern match="MUEN 2141-2701" />
                 </subtopic>
             </topic>
             <topic name="Music - Private Lessons">
