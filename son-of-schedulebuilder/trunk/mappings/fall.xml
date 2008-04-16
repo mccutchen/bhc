@@ -219,6 +219,7 @@
     			<pattern match="ARTS 1316-2250" />
     			<pattern match="ARTS 1317-2250" />
     			<pattern match="ARTS 2311-2250" />
+    			<pattern match="ARTS 2312-2250" />
     		</topic>
     		<topic name="Art and Computers">
     			<pattern match="ARTS 2313-2001" />
@@ -625,7 +626,7 @@
     			<pattern match="ITSE 1407-2001" />				  	
 				<pattern match="ITSE 1407-2002" />				  	
 				<pattern match="ITSE 2417-2001" />
-				<pattern match="INEW 2418-2501" />
+				<pattern match="INEW 2418-2501" /><!-- Course must be entered by DSC first.  Linda is waiting on it to be set up. -->
 				<pattern match="INEW 2438-2501" />				  	
 				<pattern match="ITSE 1407-2501" />				  	
 				<pattern match="ITSE 1430-2501" />					  	
