@@ -48,6 +48,9 @@ id_hails         = 4
 id_articles      = 5
 id_bodies        = 6  # <-- a list of strings
 
+# for error purposes
+cur_file = '';
+
 
 # Def: loads dates from file, or prompts user and creates file
 def SetDates():
@@ -136,6 +139,7 @@ def GetFilenames(dir_in):
 
 # Def: replaces special chars with their unicode entities
 def Format(line_in, replace = True):
+    global cur_file;
     char_map = {
         10:  '',        # newline
         38:  '&amp;',   # ampersand
@@ -153,10 +157,14 @@ def Format(line_in, replace = True):
         188: '&#188;',  # 1/4
         189: '&#189;',  # 1/2
         190: '&#190;',  # 3/4
+        224: '&#224;',  # lowercase a (accent: grave)
+        225: '&#225;',  # lowercase a (accent: acute)
         232: '&#232;',  # lowercase e (accent: grave)
         233: '&#233;',  # lowercase e (accent: acute)
         236: '&#236;',  # lowercase i (accent: grave)
         237: '&#237;',  # lowercase i (accent: acute)
+        242: '&#242;',  # lowercase o (accent: grave)
+        243: '&#243;',  # lowercase o (accent: acute)
         }
     char_list = list(line_in.strip())
     out_list  = []
@@ -172,9 +180,9 @@ def Format(line_in, replace = True):
                 else:
                     out_list.append(c)
         elif (n <= 31):
-            print '!Non-printable character (' + str(n) + ') skipped.';
+            print '!Non-printable character (' + str(n) + ') skipped in file ' + cur_file + '.';
         elif (n >= 128):
-            print '- Non-standard character (' + str(n) + ') found: ' + c + '.';
+            print '- Non-standard character (' + str(n) + ') found: ' + c + ' in file ' + cur_file + '.';
             out_list.append(c);
         else:
             out_list.append(c)
@@ -289,6 +297,8 @@ def ReadAnnouncements(fname):
     id_list   = []
     out_list  = []
     r_mode    = "title"
+    global cur_file;
+    cur_file = fname;
     
     in_file = open(fname, "r")
     for line in in_file:
@@ -327,6 +337,8 @@ def ReadEvents(fname):
     date_list  = ['',[]] # ['date',[event_list]]
     out_list   = []
     r_mode     = "title"
+    global cur_file;
+    cur_file = fname;
     
     in_file = open(fname, "r")
     for line in in_file:
@@ -382,6 +394,8 @@ def ReadAroundTown(fname):
     event_list = ['title',['location'],['date'],['description']]
     out_list   = []
     r_mode     = "title"
+    global cur_file;
+    cur_file = fname;
     
     in_file = open(fname, "r")
     for line in in_file:
@@ -420,6 +434,8 @@ def ReadBirthdays(fname):
     date_str  = ""
     name_str = ""
     out_list  = []
+    global cur_file;
+    cur_file = fname;
     
     in_file = open(fname, "r")
     for line in in_file:
@@ -435,6 +451,8 @@ def ReadHails(fname):
     type_list = ['',[]]
     out_list  = []
     r_mode    = "type"
+    global cur_file;
+    cur_file = fname;
 
     in_file = open(fname, "r")
     for line in in_file:
@@ -492,9 +510,11 @@ def ReadArticles(f_articles, f_bodies):
     body_list  = []
     out_list   = []
     r_mode     = "title"
+    global cur_file;
 
     # read intros
     in_file = open(f_articles, "r")
+    cur_file = in_file;
     for line in in_file:
         if (line.strip() == ""):
             if (r_mode == "intro"):
@@ -527,6 +547,7 @@ def ReadArticles(f_articles, f_bodies):
 
     # read bodies
     for fname in f_bodies:
+        cur_file = fname;
         in_file   = open(fname, "r")
         r_mode    = "title"
         title_str = ""
