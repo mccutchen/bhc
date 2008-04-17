@@ -569,6 +569,7 @@
 					<pattern match="MUAP 1169-2002" />
 					<pattern match="MUAP 1169-2003" />
 					<pattern match="MUAP 1169-2004" />
+					<pattern match="MUAP 1169-2005" />
 					<pattern match="MUAP 1181-2001" />
 					<pattern match="MUAP 1181-2002" />
 					<pattern match="MUAP 1181-2003" />
