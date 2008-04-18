@@ -401,6 +401,7 @@
     			<pattern match="MUAP 1157-2201" />
     			<pattern match="MUAP 1161-2200" />
     			<pattern match="MUAP 1161-2201" />
+    			<pattern match="MUAP 1161-2202" /> <!-- added 2008-04-18: Guitar -->
     			<pattern match="MUAP 1169-2200" />
     			<pattern match="MUAP 1169-2201" />
     			<pattern match="MUAP 1181-2201" />
