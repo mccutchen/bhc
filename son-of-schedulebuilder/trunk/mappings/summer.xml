@@ -485,6 +485,7 @@
 					<pattern match="EMSP 1501-2200" />
 					<pattern match="EMSP 1501-2201" />
 					<pattern match="EMSP 1501-2202" />
+					<pattern match="EMSP 1501-2244" /> <!-- added 04/18/2008: EM Techni-Basic. -->
 					
 					<pattern match="EMSP 1160" />
 				</subtopic>
