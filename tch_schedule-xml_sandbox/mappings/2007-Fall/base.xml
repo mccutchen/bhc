@@ -227,7 +227,7 @@
 
 		<subject name="Education">
 			<pattern match="EDUC"/>
-			<pattern match="EDTC"/>
+			<!--<pattern match="EDTC"/> duplicated in Child Dev -->
 		</subject>
 
 		<!--=======================================================================
@@ -392,8 +392,7 @@
 	</division>
 
 
-	<!--=======================================================================
-		School of the Arts (Fran Rhodes & Jill Williams
+	<!--School of the Arts (Fran Rhodes & Jill Williams)
 		========================================================================-->
 	<division name="School of the Arts">
 		<contact ext="4730" room="D123" email="BCSA@dcccd.edu"/>
@@ -528,8 +527,7 @@
 	</division>
 
 
-	<!--=======================================================================
-		World Languages (Joe Monroy)
+	<!--World Languages (Joe Monroy)
 		========================================================================-->
 	<division name="World Languages">
 		<contact ext="4770" room="L420" email="bhcWorldLanguages@dcccd.edu"/>
