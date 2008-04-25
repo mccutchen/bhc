@@ -232,7 +232,6 @@
     		</topic>
     		<topic name="Ceramics">
     			<pattern match="ARTS 2346-2001" />
-    			<pattern match="ARTS 2311-2010" />
     			<pattern match="ARTS 2347-2002" />
     			<pattern match="ARTS 2311-2011" />
     			<pattern match="ARTS 2312-2009" />
@@ -529,13 +528,13 @@
 					<pattern match="MUEN 1131-2001" />
 					<pattern match="MUEN 1131-2002" />
                 </subtopic>
+                <subtopic name="Percussion Ensemble">
+					<pattern match="MUEN 1135-2002" />
+                </subtopic>  
                 <subtopic name="String Ensemble">
 					<pattern match="MUEN 1136-2001" />
 					<pattern match="MUEN 1136-2002" />
                 </subtopic>
-                <subtopic name="Percussion Ensemble">
-					<pattern match="MUEN 1135-2002" />
-                </subtopic>                
                 <subtopic name="Vocal Jazz / Lab Band">
 					<pattern match="MUEN 1151-2001" />
 					<pattern match="MUEN 2123-2001" />
