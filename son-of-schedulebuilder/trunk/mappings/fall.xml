@@ -182,10 +182,12 @@
 				<pattern match="ITSW 1407-2001" />    	
 				<pattern match="ITSW 1410-2001" />					
 				<pattern match="ITSC 1191-2200" />			
-				<pattern match="ITSC 1191-2201" />			
-				<pattern match="ITSC 1191-2202" />			
-				<pattern match="ITSC 1191-2203" />		
-				<pattern match="ITSC 1191-2250" />
+<!-- 
+				<pattern match="ITSC 1191-2201" />	moved to senior adults		
+				<pattern match="ITSC 1191-2202" />	moved to senior adults	
+				<pattern match="ITSC 1191-2203" />	moved to senior adults
+				<pattern match="ITSC 1191-2250" /> moved to senior adults
+ -->
 				<pattern match="ITSC 1191-2229" /> <!-- added 4/18 - not sure if it's in the right place -->
 				<pattern match="ITSC 1191-2230" /> <!-- added 4/18 - not sure if it's in the right place -->
 				<pattern match="ITSC 1191-2231" /> <!-- added 4/18 - not sure if it's in the right place -->
@@ -222,6 +224,47 @@
 				<pattern match="ITSW 1407-2427" />				
 				<pattern match="ITSW 1410-2426" />			
 				<pattern match="ITSW 1410-2427" />			
+    		</topic>
+    		<topic name="Senior Adults">
+				<pattern match="ITSC 1191-2255" />	
+    			<pattern match="ITSC 1191-2216" />
+    			<pattern match="ITSC 1191-2213" />		
+    			<pattern match="ITSC 1191-2217" />	
+    			<pattern match="ITSC 1191-2205" />	
+    			<pattern match="ITSC 1191-2206" />
+    			<pattern match="ITSC 1191-2218" />		
+    			<pattern match="ITSC 1191-2219" />
+				<pattern match="ITSC 1191-2220" />	
+    			<pattern match="ITSC 1191-2221" />
+    			<pattern match="ITSC 1191-2222" />	
+    			<pattern match="ITSC 1191-2201" />		<!-- moved from app software -->
+    			<pattern match="ITSC 1191-2202" />		<!-- moved from app software -->
+    			<pattern match="ITSC 1191-2212" />
+    			<pattern match="ITSC 1191-2211" />	
+    			<pattern match="ITSC 1191-2207" />
+    			<pattern match="ITSC 1191-2208" />		
+    			<pattern match="ITSC 1191-2209" />
+				<pattern match="ITSC 1191-2210" />	
+    			<pattern match="ITSC 1191-2224" />
+    			<pattern match="ITSC 1191-2203" />	<!-- moved from app software -->
+    			<pattern match="ITSC 1191-2228" />		
+    			<pattern match="ITSC 1191-2225" />
+    			<pattern match="ITSC 1191-2204" />	
+    			<pattern match="ITSC 1191-2226" />
+    			<pattern match="ITSC 1191-2215" />		
+    			<pattern match="ITSC 1191-2214" />
+				<pattern match="ITSC 1191-2232" />	
+    			<pattern match="ITSC 1191-2227" />
+    			<pattern match="ITSC 1191-2252" />	
+    			<pattern match="ITSC 1191-2254" />
+				<pattern match="ITSC 1191-2250" /> <!-- moved from app software -->
+    			<pattern match="ITSC 1191-2251" />
+    			<pattern match="ITSC 1191-2253" />		
+    			<pattern match="ITSC 1191-2255" />    			
+<!-- 
+    			<pattern match="ITSC 1191-2252" />		
+    			<pattern match="ITSC 1191-2252" />
+ -->
     		</topic>
     	</subject>
     	<subject name="Computer Science">
