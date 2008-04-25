@@ -989,6 +989,7 @@
 		
 		
 		<!-- This note was here for fall 2007 - Since I copied over the nursing mappings from Spring 2008, I don't think we need this anymore, but I don't want to delete until I'm sure.  -SS -THIS IS A TEMPORARY FIX -->
+    	<!-- yeah, this was when we switched from not sorting Nursing to sorting Nursing. It should be safe to remove now. -->
 <!-- 
 		<subject name="Nursing">
             <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
