@@ -56,11 +56,15 @@
             <pattern match="SCIT" priority="0" unsorted="true" />
         </subject>
         <subject name="Business">
-            <!-- Ok, I'm going to try this. Basically, IBUS 1305 should follow BUSI 1305 -->
+            <!-- This was done in Fall 2006.  WM: "Ok, I'm going to try this. Basically, IBUS 1305 should follow BUSI 1305"  In Fall 2008, Ray Attner/Cindy Clem requested we pull IBUS back to its own section.  I am leaving this stuff here in case they flip flop back later.  - ss -->
+<!-- 
             <pattern match="BUSI 130[0-5]" priority="1" />
             <pattern match="IBUS 1305" priority="1" />
+ -->
             <pattern match="BUSI" priority="0" />
+<!-- 
             <pattern match="IBUS" priority="0" />
+ -->
         </subject>
         <subject name="BCIS - Unsorted">
             <pattern match="BCIS" priority="0" unsorted="true" />
@@ -212,6 +216,9 @@
         <subject name="Italian - Unsorted">
             <pattern match="ITAL" priority="0" unsorted="true" />
         </subject>
+        <subject name="International Business">  <!-- Added 4/29/08 -->
+            <pattern match="IBUS" priority="0" unsorted="true" />
+        </subject>        
         <subject name="Japanese - Unsorted">
             <pattern match="JAPN" priority="0" unsorted="true" />
         </subject>
