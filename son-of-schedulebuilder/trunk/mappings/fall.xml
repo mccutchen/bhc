@@ -461,7 +461,7 @@
         <subject name="Radiologic Sciences">
 			<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
             <topic name="none">
-                <pattern match="RADR 1201-2201"/>
+                <pattern match="RADR 1201"/>
             </topic>
             <topic name="Third Semester Program Students">
                 <comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
