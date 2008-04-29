@@ -164,7 +164,8 @@
 				<pattern match="ITSE 1301-2501" />
 				<pattern match="ITSE 1411-2501" />	
 				<pattern match="ITSE 2402-2501" />		 
-				<pattern match="IMED 1416-2426" />		
+				<pattern match="IMED 1416-2426" />	
+				<pattern match="IMED 1416-2502" />		<!-- Was in Vcom, trying to move it to CIT per Linda Hughes -->
 				<pattern match="INEW 1440-2426" />			 
 				<pattern match="ITSE 1301-2426" />			 
 				<pattern match="ITSE 1411-2426" />		
