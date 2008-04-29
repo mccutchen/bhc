@@ -1,5 +1,4 @@
 <mappings>
-	<!-- no mappings yet
 	<subject name="Biology" ordered="true">
 		<topic name="Directed Studies">
 			<pattern match="DIRS" />
@@ -47,5 +46,5 @@
 		<topic name="Botany">
 			<pattern match="BIOL 1411-2226" />
 		</topic>
-	</subject> -->
+	</subject>
 </mappings>
