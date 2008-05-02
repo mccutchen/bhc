@@ -106,6 +106,60 @@
             <xsl:apply-templates select="grouping[@type='type']">
                 <xsl:sort select="@sortkey" data-type="number" />
             </xsl:apply-templates>
+
+            <xsl:apply-templates select="grouping[@type='topic']">
+                <xsl:sort select="@sortkey" data-type="number" />
+                <xsl:sort select="@name" />
+            </xsl:apply-templates>
+        </div>
+    </xsl:template>
+
+
+    <xsl:template match="grouping[@type='topic']">
+        <div class="topic-section">
+            <xsl:apply-templates select="@sortkey" />
+            <xsl:apply-templates select="@name" />
+            <xsl:apply-templates select="comments" />
+
+            <!-- output any stand-alone types before topics or subtopics -->
+            <xsl:apply-templates select="grouping[@type='type']">
+                <xsl:sort select="@sortkey" data-type="number" />
+            </xsl:apply-templates>
+
+            <xsl:apply-templates select="grouping[@type='subtopic']">
+                <xsl:sort select="@sortkey" data-type="number" />
+                <xsl:sort select="@name" />
+            </xsl:apply-templates>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="grouping[@type='topic']/@name">
+        <xsl:variable name="classname">
+            <xsl:choose>
+                <xsl:when test="ancestor::special-section">special-topic-header</xsl:when>
+                <xsl:otherwise>topic-header</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <h2 class="{$classname}"><xsl:value-of select="upper-case(.)" /></h2>
+    </xsl:template>
+
+
+    <xsl:template match="grouping[@type='subtopic']">
+        <div class="subtopic-section">
+            <xsl:apply-templates select="@sortkey" />
+            <xsl:variable name="classname">
+                <xsl:choose>
+                    <xsl:when test="ancestor::special-section">special-subtopic-header</xsl:when>
+                    <xsl:otherwise>subtopic-header</xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+
+            <h3 class="{$classname}"><xsl:value-of select="upper-case(@name)" /></h3>
+            <xsl:apply-templates select="comments" />
+
+            <xsl:apply-templates select="type">
+                <xsl:sort select="@sortkey" data-type="number" />
+            </xsl:apply-templates>
         </div>
     </xsl:template>
 

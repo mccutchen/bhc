@@ -22,6 +22,7 @@ except ImportError:
 
 MUST_BE_ROOT = 'schedule'
 MUST_EXIST = 'term course class'.split()
+MUST_BE_NONEMPTY = 'schedule term grouping course'.split()
 MUST_COUNT_EQUAL = 'class'.split()
 
 def reporterrors(testfunc):
@@ -53,6 +54,13 @@ def test(old, new):
         xpath = '//%s' % tag
         assert old.findall(xpath) and new.findall(xpath), \
             'Element <%s> missing.' % tag
+    
+    # make sure each element that must not be empty has at least one
+    # child element
+    for tag in MUST_BE_NONEMPTY:
+        for el in new.findall('//%s' % tag):
+            assert len(el) > 0, \
+                'Element <%s> cannot be empty' % tag
 
     # make sure that each element which must show up an equal amount
     # of times, does
