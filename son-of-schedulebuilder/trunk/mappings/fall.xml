@@ -998,6 +998,8 @@
             <pattern match="RNSG" />
 		</subject>
  -->
-
+        <subject name="Visual Communications">
+            <pattern match="ITSE 1301-2427" />
+        </subject>
     </mapping>
 </mappings>

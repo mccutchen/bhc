@@ -326,7 +326,6 @@
             <pattern match="GRPH" priority="0" unsorted="true" />
             <pattern match="IMED" priority="0" unsorted="true" />
             <pattern match="PHTC" priority="0" unsorted="true" />
-            <pattern match="ITSE" priority="0" unsorted="true" /> <!-- Added 4/28/08 to see if this will pull ITSE 1301-2427 to VCom, but leave the other ITSE courses in CIT.  This could be a disaster. -->
         </subject>
 
 
