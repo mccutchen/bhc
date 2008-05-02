@@ -330,6 +330,13 @@
     	</subject>    
     	
         <!-- =======================================================================
+             Visual Communications - This is where to add courses that share CIT prefixes
+             ======================================================================== -->    	
+        <subject name="Visual Communications">
+            <pattern match="ITSE 1301-2427" />
+        </subject>
+        
+        <!-- =======================================================================
              Management Program (Marisa Walsdorf & Mary Lou Avera)
              ======================================================================== -->
         <subject name="Management Program">
@@ -1001,8 +1008,6 @@
             <pattern match="RNSG" />
 		</subject>
  -->
-        <subject name="Visual Communications">
-            <pattern match="ITSE 1301-2427" />
-        </subject>
+
     </mapping>
 </mappings>
