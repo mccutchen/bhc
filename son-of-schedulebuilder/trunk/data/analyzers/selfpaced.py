@@ -21,7 +21,7 @@ def extract(data, fields, strip=True):
             results[field] = results[field].strip()
     return results
 
-for line in file('../latest.txt'):
+for line in file('../2008-fall/BH2008FA.TXT'):
     data = extract(line, fields)
     if data['type'] in types:
         title = data['title']
@@ -38,4 +38,6 @@ rubriks = classtypes.keys()
 rubriks.sort()
 
 for rubrik in rubriks:
-    print rubrik
+    print rubrik 
+    print class_number
+    print synonym
