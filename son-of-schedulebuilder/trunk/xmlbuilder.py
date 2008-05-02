@@ -42,11 +42,15 @@ def build(classes=None):
             # threshold set in the profile
             if profile.minimester_threshold is not None:
                 get_minimester(term, class_data)
-            
-            # build the rest of the special sections
-            get_distance_learning(term, class_data)
-            get_weekend(term, class_data)
-            get_weekend(term, class_data, name='Weekend Core Curriculum', core_only=True)
+
+            special_section(term, 'Learning Community', class_data, topicfilter('LC'))
+            special_section(term, 'Distance Learning', class_data, typefilter('DL'), notype=True)
+            special_section(term, 'Weekend', class_data, typefilter('W'), notype=True)
+
+            # Another special section that only includes weekend core
+            # courses.
+            weekend_core_test = lambda data: typefilter('W')(data) and corefilter()(data)
+            special_section(term, 'Weekend Core Curriculum', class_data, weekend_core_test, notype=True)
     
     # report any errors encountered while building the XML
     report_errors(timestamp)
@@ -224,10 +228,7 @@ def get_minimester(parent, data):
         return None
 
     # First, create the 'special-section' element for all minimesters
-    name = 'Flex Term'
-    machine_name = get_machine_name(name)
-    attrs = dict(name=name, machine_name=machine_name)
-    special_section = xmlutils.add_element(parent, 'special-section', attrs)
+    special_section = make_special_section_el(parent, 'Flex Term')
 
     # Then, get the 'minimester' element for this minimester, which will
     # be a child of the <special-section> created above
@@ -239,34 +240,32 @@ def get_minimester(parent, data):
     el = xmlutils.add_element(special_section, 'minimester', attrs)
     return get_subject_element(el, data)
 
-def get_distance_learning(parent, data):
-    if data['type'] != 'DL':
-        return None
+def make_special_section_el(parent, name):
+    """Creates a special section element with the given name as a
+    child of the given parent element.  Uses the given name to create
+    the machine_name attribute."""
+    attrs = dict(name=name, machine_name=get_machine_name(name))
+    return xmlutils.add_element(parent, 'special-section', attrs)
 
-    name = 'Distance Learning'
-    machine_name = get_machine_name(name)
-    attrs = dict(name=name, machine_name=machine_name)
-    el = xmlutils.add_element(parent, 'special-section', attrs)
-    return get_subject_element(el, data, notype=True)
+def special_section(parent, name, data, test=lambda x: False, **kwargs):
+    """Creates a special section with the given name as a child of the
+    of the given parent element.  Works only if the given test
+    function returns True for the given data.  Passes the remaining
+    kwargs through to the get_subject_element function."""
+    if test(data):
+        el = make_special_section_el(parent, name)
+        return get_subject_element(el, data, **kwargs)
 
-def get_weekend(parent, data, name='Weekend', core_only=False):
-    """Creates the <special-section> for Weekend courses.  Will optionally
-    include only Weekend courses that are part of the Core Curriculum."""
-    
-    # If we don't have a weekend course, bail
-    if data['type'] != 'W':
-        return None
-    
-    # If we only want Core Curriculum courses and don't have one, bail
-    if core_only and not data['core-component']:
-        return None
-    
-    attrs = {
-        'name': name,
-        'machine_name': get_machine_name(name),
-    }
-    el = xmlutils.add_element(parent, 'special-section', attrs)
-    return get_subject_element(el, data, notype=True)
+# Functions that build filters that might be useful as test args to
+# the special_section function.
+def classfilter(key, *values):
+    return lambda data: data.get(key, '') in values
+def typefilter(*types):
+    return classfilter('type', *types)
+def topicfilter(*topics):
+    return classfilter('topic-code', *topics)
+def corefilter():
+    return lambda data: data.get('core-component','') not in ('', None)
 
 
 def post_process(outpath):
