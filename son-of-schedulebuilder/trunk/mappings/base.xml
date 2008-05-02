@@ -87,9 +87,12 @@
 		<subject name="CIT - ITCC - Unsorted">							<!-- added 2007-09-17: new rubric? -->
 			<pattern match="ITCC" priority="0" unsorted="true" />
 		</subject>
+<!-- Turned this off 4/30/08 to see if that would move ITSE 1301-2427 to VCom. It does, but this is probably a sloppy way to do that. -->
+<!-- 
         <subject name="CIT - ITSE - Unsorted">
             <pattern match="ITSE" priority="0" unsorted="true" />
         </subject>
+ -->
         <subject name="CIT - ITSW - Unsorted">
             <pattern match="ITSW" priority="0" unsorted="true" />
         </subject>
@@ -323,7 +326,7 @@
             <pattern match="GRPH" priority="0" unsorted="true" />
             <pattern match="IMED" priority="0" unsorted="true" />
             <pattern match="PHTC" priority="0" unsorted="true" />
-            <pattern match="ITSE" priority="1" unsorted="true" /> <!-- Added 4/28/08 to see if this will pull ITSE 1301-2427 to VCom, but leave the other ITSE courses in CIT.  It seems to work -->
+            <pattern match="ITSE" priority="0" unsorted="true" /> <!-- Added 4/28/08 to see if this will pull ITSE 1301-2427 to VCom, but leave the other ITSE courses in CIT.  This could be a disaster. -->
         </subject>
 
 
