@@ -6,7 +6,8 @@
   <!-- =======================================================================
             Coordinated Studies (Resi Douglas) There is no CS for Fall 2008, but I don't think leaving this in here will mess anything up and we might need it next fall.
         ======================================================================== -->
-        <subject name="Coordinated Studies">
+        <!-- 
+<subject name="Coordinated Studies">
             <comments>
                 <h1>AMERICA AT THE CROSSROADS</h1>
                 <p>The coordinated studies courses meet Monday through Thursday from 9-11:50 a.m.</p><!--  in Room XXX. -->
@@ -46,8 +47,10 @@
             </comments>
             <pattern match="ALCE" />
         </subject>
+ -->
 
         <!-- These are the courses that should have coordinated studies subheads.  They are sloppily out of any kind of order, but I don't think it matters. -->
+<!-- 
         <subject name="English">
             <topic name="Coordinated Studies">
                 <pattern match="ENGL 1301-2050" />
@@ -85,6 +88,7 @@
                 <pattern match="HIST 1301-2050" />
             </topic>
 		</subject>
+ -->
 
 
    <!-- =======================================================================
