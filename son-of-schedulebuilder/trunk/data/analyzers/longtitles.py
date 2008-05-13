@@ -21,7 +21,7 @@ def extract(data, fields, strip=True):
             results[field] = results[field].strip()
     return results
 
-for line in file('../2008-summer/BH2008S2.TXT'):
+for line in file('../2008-fall/BH2008FA.TXT'):
     data = extract(line, fields)
     if data['topic_code'] not in ('XX', 'YY'):
         if len(data['title']) > 27:
