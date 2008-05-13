@@ -360,6 +360,12 @@
     			<pattern match="MUSI 1306-2431" />
     			<pattern match="MUSI 1306-2432" />
     		</topic>
+			<topic name="Music Theory">
+				<pattern match="MUSI 1312-2201" />
+			</topic>
+			<topic name="Musicianship">
+				<pattern match="MUSI 2117-2200" />
+			</topic>
 			<topic name="Digital">
     			<pattern match="MUSI 1390-2200" />
     		</topic>    		
@@ -383,6 +389,9 @@
     			<subtopic name="Keyboard">
     				<pattern match="MUEN 1131-2202" />
     			</subtopic>
+				<subtopic name="String Ensemble">
+					<pattern match="MUEN 1136-2200" />
+				</subtopic>
     			<subtopic name="Vocal Jazz">
     				<pattern match="MUEN 1151-2250" />
     			</subtopic>
