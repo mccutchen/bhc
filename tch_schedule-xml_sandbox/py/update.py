@@ -70,7 +70,12 @@ def GetFilename(semester):
 def GetXML(semester, filename, outpath):
     # open the xml url and check to make sure it succeeded
     url = base_url[0] + semester + base_url[1] + filename;
-    xmlfile = urllib2.urlopen(url);
+    try:
+        xmlfile = urllib2.urlopen(url);
+    except:
+        print '    !Error! Unable to open url:', url;
+        return False;
+    
     if (not(xmlfile)):
         print '    !Error! Unable to open url:', url;
         return False;

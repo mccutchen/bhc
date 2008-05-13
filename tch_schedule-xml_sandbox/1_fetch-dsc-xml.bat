@@ -1,4 +1,5 @@
 @ECHO OFF
+IF "%pause%"=="" SET pause=fetch_pause
 
 :: Step 1: Set Variables
 
@@ -20,4 +21,4 @@ CD %py_dir_out%
 
 
 :END
-IF "%pause%"=="" PAUSE
+IF "%pause%"=="fetch_pause" PAUSE

@@ -125,12 +125,14 @@
 			<pattern match="DANC 2342-2201" />
 			<pattern match="DANC 1341-2701" />
 			<pattern match="DANC 1342-2701" />
-			<pattern match="DANC 2341-2701" />
-			<pattern match="DANC 2342-2701" />
+			<pattern match="DANC 2141-2202" />
+			<pattern match="DANC 2142-2702" />
 		</topic>
 		<topic name="Ballet Technique">
 			<pattern match="DANC 2141-2201" />
 			<pattern match="DANC 2142-2701" />
+			<pattern match="DANC 2341-2701" />
+			<pattern match="DANC 2342-2701" />
 		</topic>
 		<topic name="Dance Performance">
 			<pattern match="DANC 1351-2225" />
@@ -180,6 +182,12 @@
 			<pattern match="MUSI 1306-2431" />
 			<pattern match="MUSI 1306-2432" />
 		</topic>
+		<topic name="Music Theory">
+			<pattern match="MUSI 1312-2201" />
+		</topic>
+		<topic name="Musicianship">
+			<pattern match="MUSI 2117-2200" />
+		</topic>
 		<topic name="Digital">
 			<pattern match="MUSI 1390-2200" />
 		</topic>
@@ -203,12 +211,16 @@
 			<subtopic name="Keyboard">
 				<pattern match="MUEN 1131-2202" />
 			</subtopic>
+			<subtopic name="String Ensemble">
+				<pattern match="MUEN 1136-2200" />
+			</subtopic>
 			<subtopic name="Vocal Jazz">
 				<pattern match="MUEN 1151-2250" />
 			</subtopic>
 		</topic>
 		<topic name="Lab Band">
 			<pattern match="MUEN 2123-2700" />
+			<pattern match="MUEN 2123-2200" />
 		</topic>
 		<topic name="Piano for Non Music Majors">
 			<pattern match="MUSI 1181-2700" />
@@ -223,6 +235,7 @@
 			<pattern match="MUAP 1157-2201" />
 			<pattern match="MUAP 1161-2200" />
 			<pattern match="MUAP 1161-2201" />
+			<pattern match="MUAP 1161-2202" /> <!-- added 2008-04-18: Guitar -->
 			<pattern match="MUAP 1169-2200" />
 			<pattern match="MUAP 1169-2201" />
 			<pattern match="MUAP 1181-2201" />

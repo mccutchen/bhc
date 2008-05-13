@@ -33,4 +33,4 @@ ECHO You may omit the semester and year to clean all files
 ECHO.
 
 :END
-@pause
+IF "%pause%"=="" PAUSE
