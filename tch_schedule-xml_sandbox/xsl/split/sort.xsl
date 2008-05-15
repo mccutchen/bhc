@@ -100,7 +100,13 @@
 			<xsl:copy-of select="visibility" />
 			<xsl:copy-of select="comments"   />
 			
-			<xsl:apply-templates select="meeting">
+			<xsl:apply-templates select="meeting[@primary = 'true']">
+				<xsl:sort select="@sortkey"        data-type="number" />
+				<xsl:sort select="@sortkey-method" data-type="number" />
+				<xsl:sort select="@sortkey-days"   data-type="number" />
+				<xsl:sort select="@sortkey-times"  data-type="number" />
+			</xsl:apply-templates>
+			<xsl:apply-templates select="meeting[@primary = 'false']">
 				<xsl:sort select="@sortkey"        data-type="number" />
 				<xsl:sort select="@sortkey-method" data-type="number" />
 				<xsl:sort select="@sortkey-days"   data-type="number" />

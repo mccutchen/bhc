@@ -415,9 +415,10 @@
 	</xsl:template>
 	
 	<xsl:template match="faculty">
+		<xsl:value-of select="concat(upper-case(substring(@name-first, 1, 1)), '. ')" />
         <xsl:value-of select="@name-last" />
         <xsl:if test="position() != last()"><xsl:value-of select="', '" /></xsl:if>
-    </xsl:template>
+	</xsl:template>
 
 
     <!--COMMENTS
@@ -616,7 +617,7 @@
                 <!-- paste in the css -->
                 <style type="text/css">
                     <xsl:value-of select="$doc-css/text()" disable-output-escaping="yes" />
-                    <xsl:if test="$hilight = 'true' or $is-full = 'true'">
+                    <xsl:if test="$hilight = 'true'">
                         <xsl:value-of select="$doc-css/conditional[@name = 'hilight']/text()" disable-output-escaping="yes" />
                     </xsl:if>
                 </style>
