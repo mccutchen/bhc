@@ -63,6 +63,10 @@
 			-->
 		</subject>
 		
+		<subject name="International Business">  <!-- Added 4/29/08 -->
+			<pattern match="IBUS" priority="0" />
+		</subject>        
+		
 		<!--=======================================================================
 			CIT (Bill Hammerschlag)
 			========================================================================-->
@@ -163,6 +167,7 @@
 			<pattern match="GRPH"/>
 			<pattern match="IMED"/>
 			<pattern match="PHTC"/>
+			<pattern match="ITSE 1301-2427" priority="2" />
 		</subject>
 		
 		<subject name="Unknown Subject" display="false" />

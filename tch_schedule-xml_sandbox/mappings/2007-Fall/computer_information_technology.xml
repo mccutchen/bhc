@@ -74,6 +74,7 @@
 		<topic name="Www and E-commerce" ordered="true">
 			<pattern match="IMED 1416-2001" />
 			<pattern match="IMED 1416-2002" />
+			<pattern match="IMED 1416-2502" />		<!-- Was in Vcom, trying to move it to CIT per Linda Hughes -->
 			<pattern match="ITSE 2413-2001" />
 			<pattern match="INEW 1440-2501" />
 			<pattern match="INEW 2434-2501" />

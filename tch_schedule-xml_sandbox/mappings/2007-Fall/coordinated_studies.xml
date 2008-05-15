@@ -44,6 +44,7 @@
 	</subject>
 	
 	<!-- These are the courses that should have coordinated studies subheads.  They are sloppily out of any kind of order, but I don't think it matters. -->
+	<!--
 	<subject name="English">
 		<topic name="Coordinated Studies">
 			<pattern match="ENGL 1301-2050" />
@@ -81,4 +82,5 @@
 			<pattern match="HIST 1301-2050" />
 		</topic>
 	</subject>
+	-->
 </mappings>
