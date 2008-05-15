@@ -118,11 +118,12 @@
 		<xsl:param name="courses" as="element()*" />
 		
 		<xsl:copy>
-			<xsl:attribute name="name"       select="@name"                               />
-			<xsl:attribute name="date-start" select="utils:convert-date-std(@date-start)" />
-			<xsl:attribute name="date-end"   select="utils:convert-date-std(@date-end)"   />
-			<xsl:attribute name="display"    select="'true'" />
-			<xsl:attribute name="sortkey"    select="@sortkey" />
+			<xsl:attribute name="name"          select="@name"                               />
+			<xsl:attribute name="date-start"    select="utils:convert-date-std(@date-start)" />
+			<xsl:attribute name="date-end"      select="utils:convert-date-std(@date-end)"   />
+			<xsl:attribute name="dates-display" select="@dates-display" />
+			<xsl:attribute name="display"       select="'true'" />
+			<xsl:attribute name="sortkey"       select="@sortkey" />
 			
 			<xsl:apply-templates select="$courses">
 				<xsl:with-param name="date-min" select="@date-start" />

@@ -71,7 +71,9 @@
 			<xsl:for-each select="term[@display = 'true']">
 				<div class="term-section">
 					<a name="{utils:make-url(@name)}"></a>
-					<h2><a href="{utils:make-url(@name)}/"><xsl:value-of select="@name" /></a></h2>
+					<h2><a href="{utils:make-url(@name)}/"><xsl:value-of select="@name" /></a>
+						<xsl:text>&#160;&#8226;&#160;</xsl:text>
+						<span><xsl:value-of select="@dates-display" /></span></h2>
 					
 					<xsl:apply-templates select="." mode="index">
 						<xsl:with-param name="add-path" select="concat(utils:make-url(@name),'/')" tunnel="yes" />
@@ -96,8 +98,9 @@
 			
 			<div class="term-section">
 				<a name="{utils:make-url(@name)}"></a>
-				<h2>Regular Credit Courses</h2>
-				
+				<h2><xsl:value-of select="@name" /> Credit Courses
+					<xsl:text disable-output-escaping="yes">&#160;&#8226;&#160;</xsl:text>
+					<span><xsl:value-of select="@dates-display" /></span></h2>
 				<xsl:apply-templates select="." mode="index">
 					<xsl:with-param name="add-path"   select="''" tunnel="yes"/>
 				</xsl:apply-templates>

@@ -496,10 +496,9 @@
 		
 		<!-- only output the term header if there is more than one term -->
 		<xsl:if test="count(ancestor-or-self::schedule//term[@display = 'true']) &gt; 1">
-			<xsl:variable name="dates" select="if($term/@date-end = 'NA' and $term/@date-start = 'NA') then 'NA' else utils:long-dates(utils:format-dates($term/@date-start, $term/@date-end))" as="xs:string" />
 			<h1 class="term-header">
 				<xsl:value-of select="concat($term/@name, ' ', $term/parent::schedule/@year)" />
-				<span class="term-dates"><xsl:value-of select="$dates" /></span>
+				<span class="term-dates"><xsl:value-of select="$term/@dates-display" /></span>
 			</h1>
 		</xsl:if>
 	</xsl:template>

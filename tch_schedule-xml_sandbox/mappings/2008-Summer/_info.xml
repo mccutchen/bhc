@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <info>
-	<term name="May Term"  semester="Summer" year="2008" date-start="5/1/2008" date-end="5/30/2008" sortkey="1" />
-	<term name="Summer I"  semester="Summer" year="2008" date-start="6/1/2008"  date-end="7/6/2008" sortkey="2" />
-	<term name="Summer II" semester="Summer" year="2008" date-start="7/7/2008"  date-end="8/7/2008" sortkey="3" />
+	<term name="May Term"  semester="Summer" year="2008" date-start="5/1/2008" date-end="5/30/2008" dates-display="May 1-30" sortkey="1" />
+	<term name="Summer I"  semester="Summer" year="2008" date-start="6/1/2008"  date-end="7/6/2008" dates-display="June 1-July 6" sortkey="2" />
+	<term name="Summer II" semester="Summer" year="2008" date-start="7/7/2008"  date-end="8/7/2008" dates-display="July 7-Aug. 7" sortkey="3" />
 </info>
