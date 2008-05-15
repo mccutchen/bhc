@@ -1,0 +1,71 @@
+<!--=======================================================================
+	World Languages (Joe Monroy)
+	========================================================================-->
+<mappings>
+	<subject name="English for Speakers of Other Languages" ordered="true">
+		<!-- This is the way Will did this to put all of the 003* courses under a general heading
+			- Joe Monroy now wants them under specific categories, but I want to leave this here 
+			in case that changes.
+			<topic name="Listening/Speaking">
+			<pattern match="ESOL 003[1234]" />
+			</topic>
+		-->
+		<topic name="Listening/Speaking Level One">
+			<pattern match="ESOL 0031" />
+		</topic>
+		<topic name="Listening/Speaking Level Two">
+			<pattern match="ESOL 0032" />
+		</topic>
+		<topic name="Listening/Speaking Level Three">
+			<pattern match="ESOL 0033" />
+		</topic>
+		<topic name="Listening/Speaking Level Four">
+			<pattern match="ESOL 0034" />
+		</topic>                        
+		<topic name="Accent Reduction">
+			<!-- this pattern needs to override the previous one -->
+			<pattern match="ESOL 0034-2020" priority="1" />
+			<pattern match="ESOL 0034-2021" priority="1" />
+		</topic>
+		
+		<topic name="Reading Level One">
+			<pattern match="ESOL 0041" />
+		</topic>
+		<topic name="Reading Level Two">
+			<pattern match="ESOL 0042" />
+		</topic>
+		<topic name="Reading Level Three">
+			<pattern match="ESOL 0043" />
+		</topic>
+		<topic name="Reading Level Four">
+			<pattern match="ESOL 0044" />
+		</topic>
+		<topic name="Writing and Grammar Level One">
+			<pattern match="ESOL 00[56]1" />
+		</topic>
+		<topic name="Writing and Grammar Level Two">
+			<pattern match="ESOL 00[56]2" />
+		</topic>
+		<topic name="Writing and Grammar Level Three">
+			<pattern match="ESOL 00[56]3" />
+		</topic>
+		<topic name="Writing and Grammar Level Four">
+			<pattern match="ESOL 00[56]4" />
+		</topic>
+		<topic name="Level One Intensive English Program">
+			<pattern match="ESOL 0036" />
+		</topic>
+		<topic name="Level Two Intensive English Program">
+			<pattern match="ESOL 0066" />
+		</topic>
+		<topic name="Level Three Intensive English Program">
+			<pattern match="ESOL 0056" />
+			<subtopic name="ESOL Writing for ENGL 1301">
+				<pattern match="ESOL 0056-2028" priority="1" />
+			</subtopic> 
+		</topic>
+		<topic name="Level Four Intensive English Program">
+			<pattern match="ESOL 0046" />
+		</topic>
+	</subject>
+</mappings>
