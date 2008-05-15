@@ -1,0 +1,216 @@
+<!-- =======================================================================
+	CIT (Bill Hammerschlag)
+	======================================================================== -->
+<mappings>
+	<subject name="Computer Information Technology" ordered="true">
+		<pattern match="ITSC 1191-2781" /> <!-- Added 2007-09-17: Spc Tpc/Cmptr/Info Science,  - in the absence of any info from Bill Hammerschlag ("we're working on it") -->
+		<pattern match="ITSC 1291-2780" /> <!-- Added 2007-09-17: Spc Tpc/Cmptr/Info Science,  - in the absence of any info from Bill Hammerschlag ("we're working on it") -->
+		
+		<topic name="Introduction To Computing" ordered="true">
+			<comments>
+				<p>NOTE:  ITSC 1401 is a career technical education course required 
+					for certain certificate and associate degree plans.  It will not 
+					meet the Brookhaven College Core Curriculum and/or Associate in 
+					Arts or Associate in Science requirement and is not for transfer 
+					to a four-year school.</p>
+			</comments>
+			<pattern match="ITSC 1401-2501" />
+			<pattern match="ITSC 1401-2421" />
+			<pattern match="ITSC 1401-2422" />
+			<pattern match="ITSC 1401-2300" />
+		</topic>
+		<topic name="CIT Core" ordered="true">
+			<pattern match="ITNW 1425-2001" />
+			<pattern match="ITSC 2435-2001" />
+			<pattern match="ITSC 1425-2501" />
+			<pattern match="ITNW 1425-2426" />
+			<pattern match="ITSC 1405-2426" />
+			<pattern match="ITSC 2435-2426" />
+		</topic>
+		<topic name="Open Source Software - NEW!" ordered="true">
+			<pattern match="ITNW 2454-2501" />
+			<pattern match="ITSC 1416-2501" />
+		</topic>
+		<topic name="Programming" ordered="true">
+			<pattern match="ITSE 1407-2001" />
+			<pattern match="ITSE 1407-2002" />
+			<pattern match="ITSE 2417-2001" />
+			<pattern match="INEW 2418-2501" />
+			<pattern match="INEW 2438-2501" />
+			<pattern match="ITSE 1407-2501" />
+			<pattern match="ITSE 1430-2501" />
+			<pattern match="ITSE 2417-2502" />
+			<pattern match="ITSE 2434-2501" />
+		</topic>
+		<topic name="Game Design and Development" ordered="true">
+			<pattern match="GAME 1406-2501" />
+			<pattern match="GAME 1409-2501" />
+			<pattern match="GAME 1443-2502" />
+		</topic>
+		<topic name="Microsoft Academy" ordered="true">
+			<comments>NOTE:  Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for a Microsoft Certified Systems Administrator - MCSA, a Microsoft Certified Systems Engineer  - MCSE and a Microsoft Certified Database Administrator - MCDBA. For additional info call 972-860-4721.</comments>
+			<pattern match="ITMT 1400-2501" />
+			<pattern match="ITMT 1403-2501" />
+			<pattern match="ITMT 2403-2501" />
+			<pattern match="ITMT 2430-2501" />
+		</topic>
+		<topic name="Unix" ordered="true">
+			<pattern match="ITSC 1407-2001" />
+			<pattern match="ITSC 1407-2501" />
+			<pattern match="ITSC 1442-2426" />
+		</topic>
+		<topic name="Cisco Academy" ordered="true">
+			<pattern match="ITNW 1492-2001" />
+			<pattern match="ITNW 1492-2501" />
+			<pattern match="ITCC 1400-2250" />
+			<pattern match="ITCC 1440-2501" />
+		</topic>
+		<topic name="Information Security and LAN" ordered="true">
+			<pattern match="ITNW 1451-2426" />
+			<pattern match="ITSY 1400-2426" />
+			<pattern match="ITSY 2400-2426" />
+			<pattern match="ITSY 2430-2426" />
+		</topic>
+		<topic name="Www and E-commerce" ordered="true">
+			<pattern match="IMED 1416-2001" />
+			<pattern match="IMED 1416-2002" />
+			<pattern match="IMED 1416-2502" />		<!-- Was in Vcom, trying to move it to CIT per Linda Hughes -->
+			<pattern match="ITSE 2413-2001" />
+			<pattern match="INEW 1440-2501" />
+			<pattern match="INEW 2434-2501" />
+			<pattern match="ITSE 1301-2501" />
+			<pattern match="ITSE 1411-2501" />
+			<pattern match="ITSE 2402-2501" />
+			<pattern match="IMED 1416-2426" />
+			<pattern match="INEW 1440-2426" />
+			<pattern match="ITSE 1301-2426" />
+			<pattern match="ITSE 1411-2426" />
+			<pattern match="ITSE 2402-2426" />
+			<pattern match="ITSE 2413-2426" />
+		</topic>
+		<topic name="General Electives" ordered="true">
+			<pattern match="ITNW 1380-2300" />
+		</topic>
+		<topic name="Application Software" ordered="true">
+			<pattern match="ITSC 1409-2001" />
+			<pattern match="ITSC 2431-2300" />
+			<pattern match="ITSW 1401-2001" />
+			<pattern match="ITSW 1404-2001" />
+			<pattern match="ITSW 1407-2001" />
+			<pattern match="ITSW 1410-2001" />
+			<pattern match="ITSC 1191-2200" />
+			<pattern match="ITSC 1191-2201" />
+			<pattern match="ITSC 1191-2202" />
+			<pattern match="ITSC 1191-2203" />
+			<pattern match="ITSC 1191-2250" />
+			
+			<pattern match="ITSC 1191-2229" /> <!-- added 4/18 - not sure if it's in the right place -->
+			<pattern match="ITSC 1191-2230" /> <!-- added 4/18 - not sure if it's in the right place -->
+			<pattern match="ITSC 1191-2231" /> <!-- added 4/18 - not sure if it's in the right place -->
+			<pattern match="ITSC 1191-2260" /> <!-- added 4/18 - not sure if it's in the right place -->
+			<pattern match="ITSC 1191-2261" /> <!-- added 4/18 - not sure if it's in the right place -->
+			<pattern match="ITSC 1191-2262" /> <!-- added 4/18 - not sure if it's in the right place -->
+			
+			<pattern match="ITSC 1291-2200" />
+			<pattern match="ITSC 1409-2501" />
+			<pattern match="ITSC 2431-2780" />
+			<pattern match="ITSW 1401-2501" />
+			<pattern match="ITSW 1404-2501" />
+			<pattern match="ITSC 1191-2700" />
+			<pattern match="ITSC 1191-2701" />
+			<pattern match="ITSC 1191-2702" />
+			<pattern match="ITSC 1291-2700" />
+			<pattern match="ITSC 1291-2201" />	<!-- Added 4/25 because it seems logical -->
+			<pattern match="ITSC 1191-2426" />
+			<pattern match="ITSC 1191-2427" />
+			<pattern match="ITSC 1291-2426" />
+			<pattern match="ITSC 1291-2427" />
+			<pattern match="ITSC 1409-2426" />
+			<pattern match="ITSC 1409-2427" />
+			<pattern match="ITSC 1415-2426" />
+			<pattern match="ITSC 1415-2427" />
+			<pattern match="ITSC 2431-2426" />
+			<pattern match="ITSC 2431-2427" />
+			<pattern match="ITSC 2431-2428" />
+			<pattern match="ITSC 2431-2429" />
+			<pattern match="ITSW 1401-2426" />
+			<pattern match="ITSW 1401-2427" />
+			<pattern match="ITSW 1404-2426" />
+			<pattern match="ITSW 1404-2427" />
+			<pattern match="ITSW 1407-2002" /> <!-- added 4/18 - not sure if it's in the right place -->
+			<pattern match="ITSW 1407-2426" />
+			<pattern match="ITSW 1407-2427" />
+			<pattern match="ITSW 1410-2426" />
+			<pattern match="ITSW 1410-2427" />
+		</topic>
+	</subject>
+	
+	<subject name="Computer Science" ordered="true">
+		<topic name="Computer Literacy" ordered="true">
+			<comments>
+				<p>NOTE:  COSC 1300 will meet the Core Curriculum and/or Associate 
+					in Arts or Associate in Science requirement and may be used for 
+					transfer to a four-year school.</p>
+			</comments>
+			<pattern match="COSC 1300-2001" />
+			<pattern match="COSC 1300-2002" />
+			<pattern match="COSC 1300-2003" />
+			<pattern match="COSC 1300-2005" />
+			<pattern match="COSC 1300-2006" />
+			<pattern match="COSC 1300-2007" />
+			<pattern match="COSC 1401-2011" />
+			<pattern match="COSC 1401-2012" />
+			<pattern match="COSC 1300-2501" />
+			<pattern match="COSC 1300-2502" />
+			<pattern match="COSC 1300-2503" />
+			<pattern match="COSC 1401-2511" />
+			<pattern match="COSC 1401-2512" />
+			<pattern match="COSC 1300-2250" />
+			<pattern match="COSC 1300-2300" />
+			<pattern match="COSC 1401-2300" />
+			<pattern match="COSC 1300-2421" />
+			<pattern match="COSC 1300-2422" />
+			<pattern match="COSC 1300-2423" />
+			<pattern match="COSC 1300-2424" />
+			<pattern match="COSC 1300-2425" />
+			<pattern match="COSC 1401-2421" />
+			<pattern match="COSC 1401-2422" />
+		</topic>
+		<topic name="Programming" ordered="true">
+			<pattern match="COSC 1309-2001" />
+			<pattern match="COSC 1415-2001" />
+			<pattern match="COSC 1415-2002" />
+			<pattern match="COSC 1436-2001" />
+			<pattern match="COSC 1436-2002" />
+			<pattern match="COSC 1437-2001" />
+			<pattern match="COSC 1415-2501" />
+			<pattern match="COSC 1430-2501" />
+			<pattern match="COSC 1436-2501" />
+			<pattern match="COSC 1436-2502" />
+			<pattern match="COSC 1437-2501" />
+			<pattern match="COSC 1437-2502" />
+			<pattern match="COSC 2436-2501" />
+			<pattern match="COSC 1309-2426" />
+		</topic>
+	</subject>
+	
+	<subject name="Computer Studies - Business Computer Information Systems" ordered="true">
+		<topic name="Business Computer Applications" ordered="true">
+			<comments>
+				<p>NOTE:  BCIS courses are for those students wishing to take transferable 
+					courses in CIS/CIT. BCIS courses may be substituted for comparable 
+					courses in CIT degree programs.</p>
+			</comments>
+			<pattern match="BCIS 1405-2011" />
+			<pattern match="BCIS 1405-2012" />
+			<pattern match="BCIS 1405-2511" />
+			<pattern match="BCIS 1405-2512" />
+			<pattern match="BCIS 1405-2300" />
+			<pattern match="BCIS 1405-2421" />
+			<pattern match="BCIS 1405-2422" />
+		</topic>
+		<topic name="Programming" ordered="true">
+			<pattern match="BCIS 2431-2501" />
+		</topic>
+	</subject>
+</mappings>

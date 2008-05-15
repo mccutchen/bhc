@@ -1,0 +1,79 @@
+<!--=======================================================================
+	EMS (Cletha Silas)
+	========================================================================-->
+<mappings>
+	<subject name="Emergency Medical Services" ordered="true">
+		<comments>
+			<p>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/.  Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences.  International students are advised to contact the Brookhaven College Multicultural Center, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning  this requirement.</p>
+			<p>NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road.</p>
+			<p>NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. </p>
+			<p>NOTE:  All EMS courses require CPR certification for infant, child and adult.  This is the Healthcare Provider level by the American Heart Association or Professional Rescuer by the American Red Cross.  Students can register for the EMS course without having a current CPR card, but must be CPR certified by the mandatory orientation day.</p>
+		</comments>
+		<topic name="Emergency Medical Services, Basic" ordered="true">
+			<subtopic name="EMT-Basic Class #45, B-Shift" ordered="true">
+				<pattern match="EMSP 1501-2245" />
+				<pattern match="EMSP 1501-2202" />
+				<pattern match="EMSP 1501-2203" />
+				<pattern match="EMSP 1160-2245" />
+			</subtopic>
+			<subtopic name="EMT-Basic Class #46" ordered="true">
+				<pattern match="EMSP 1501-2246" />
+				<pattern match="EMSP 1501-2204" />
+				<pattern match="EMSP 1501-2205" />
+				<pattern match="EMSP 1160-2246" />
+			</subtopic>  
+			<subtopic name="EMT-Basic Class #47" ordered="true">
+				<pattern match="EMSP 1501-2547" /> <!-- Changed section # 4/24 per M Wenthold -->
+				<pattern match="EMSP 1501-2506" /> <!-- Changed section # 4/24 per M Wenthold -->
+				<pattern match="EMSP 1501-2507" /> <!-- Changed section # 4/24 per M Wenthold -->
+				<pattern match="EMSP 1160-2247" />
+			</subtopic>  
+			<subtopic name="EMT-Basic Class #48" ordered="true">
+				<pattern match="EMSP 1501-2248" />
+				<pattern match="EMSP 1501-2208" />
+				<pattern match="EMSP 1501-2209" />
+				<pattern match="EMSP 1160-2248" />
+			</subtopic>
+		</topic>
+		<topic name="Emergency Medical Services,  Paramedic" ordered="true">
+			<subtopic name="Paramedic Class #20, B-Shift" ordered="true">
+				<pattern match="EMSP 1355-2220" />
+				<pattern match="EMSP 1355-2201" />
+				<pattern match="EMSP 1355-2202" />
+				<pattern match="EMSP 2430-2220" />
+				<pattern match="EMSP 2430-2201" />
+				<pattern match="EMSP 2430-2202" />
+				<pattern match="EMSP 2261-2218" />
+				<pattern match="EMSP 2261-2220" />
+			</subtopic>
+			<subtopic name="Paramedic Class #21, C-Shift" ordered="true">
+				<pattern match="EMSP 1438-2221" />
+				<pattern match="EMSP 1438-2202" />
+				<pattern match="EMSP 1438-2203" />
+				<pattern match="EMSP 1356-2221" />
+				<pattern match="EMSP 1356-2202" />
+				<pattern match="EMSP 1356-2203" />
+				<pattern match="EMSP 2444-2221" />
+				<pattern match="EMSP 2444-2202" />
+				<pattern match="EMSP 2444-2203" />
+				<pattern match="EMSP 2444-2722" />
+				<pattern match="EMSP 2444-2705" />
+				<pattern match="EMSP 2444-2706" />
+				<pattern match="EMSP 2260-2221" />
+			</subtopic>
+			<subtopic name="Paramedic Class #22" ordered="true">
+				<pattern match="EMSP 1438-2722" />
+				<pattern match="EMSP 1438-2705" />
+				<pattern match="EMSP 1438-2706" />
+				<pattern match="EMSP 1356-2722" />
+				<pattern match="EMSP 1356-2705" />
+				<pattern match="EMSP 1356-2706" />
+				<pattern match="EMSP 2261-2619" />
+				<pattern match="EMSP 2260-2222" />
+			</subtopic>
+			<subtopic name="Mass Disaster Response, B-Shift" ordered="true">
+				<pattern match="EMSP 2332-2206" />
+			</subtopic>
+		</topic>
+	</subject>
+</mappings>
