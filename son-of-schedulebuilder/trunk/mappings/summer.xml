@@ -404,6 +404,7 @@
     			<pattern match="MUSI 1181-2700" />
     		</topic>
     		<topic name="Private Lessons">
+    			<pattern match="MUAP 1125-2201" />
     			<pattern match="MUAP 1109-2200" />
     			<pattern match="MUAP 1117-2200" />
     			<pattern match="MUAP 1129-2200" />
