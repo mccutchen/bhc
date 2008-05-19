@@ -2,7 +2,7 @@
 
 :: NOTE:
 :: Ok, so I can't find a way to remove the "Could Not Find" error on DEL.
-:: So I'm just going to pipe in a null file and that should fix it.
+:: So I'm just going to pipe it into a null file and that should fix it.
 
 :: Step 1: Check for params
 IF "%1"=="" GOTO CLEAN_ALL

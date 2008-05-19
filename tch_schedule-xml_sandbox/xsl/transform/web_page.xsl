@@ -200,7 +200,7 @@
 	
 	<xsl:template match="meeting">
 			<td class="days"><xsl:apply-templates select="@days" /></td>
-		<td class="times"><xsl:value-of select="replace(utils:format-times(@time-start, @time-end), '-', '&#8209;')" /></td>
+			<td class="times"><xsl:value-of select="replace(utils:format-times(@time-start, @time-end), '-', '&#8209;')" /></td>
 			<td class="format"><xsl:apply-templates select="@method" /></td>
 			<td class="room"><xsl:value-of select="@room" /></td>
 			<td class="faculty"><xsl:apply-templates select="faculty" /></td>

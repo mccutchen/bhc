@@ -85,7 +85,7 @@
 		Colleague is... yeah. 'Nuff said. Here's where we fix it so it doesn't pollute our system -->
 	<xsl:template match="meeting[@method = 'INET']/@method" priority="1">
 		<xsl:variable name="topic-code" select="ancestor::class/@topic-code" />
-		<xsl:variable name="method"     select="if($topic-code != '') then $topic-code else 'OL'" as="xs:string" />
+		<xsl:variable name="method"     select="if($topic-code = ('OL','OLC','OLP')) then $topic-code else 'OL'" as="xs:string" />
 		
 		<xsl:attribute name="method" select="$method" />
 	</xsl:template>
@@ -121,7 +121,7 @@
 		<xsl:attribute name="room" select="'OL'" />
 	</xsl:template>
 	
-	<!-- if it's not a weird, one just plug it in -->
+	<!-- if it's not a weird one, just plug it in -->
 	<xsl:template match="meeting/attribute()" priority="0">
 		<xsl:copy />
 	</xsl:template>
