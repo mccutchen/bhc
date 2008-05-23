@@ -127,5 +127,8 @@ class Spring09(Spring):
 # ===================================================================
 profile = get_profile(PROFILES, validate_profile)
 
+
+
 if __name__ == '__main__':
+    # Just tell us what profile was chosen
     print 'Chosen profile: %s' % profile
