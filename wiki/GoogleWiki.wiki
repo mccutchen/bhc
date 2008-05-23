@@ -1,0 +1,13 @@
+#a wiki?
+
+= Google Wiki? =
+
+I can't believe no one told me there's a Google Wiki!  What could possibly be better and more exciting than that?  
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
