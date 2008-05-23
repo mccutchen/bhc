@@ -1,17 +1,4 @@
-# $Id$
-
-import re, sys
-
-try:
-    from xml.etree import cElementTree as ElementTree
-except ImportError:
-    import cElementTree as ElementTree
-
-from wrm.decorators import cached
-from wrm.utils import files
-from profiles import profile
-
-"""mappings.py - Generates a dictionary-based set of mappings
+"""Generates a dictionary-based set of mappings
 based on a special mappings XML file (located at 'mappings.xml')
 and provides a simple API into the generated mappings in the form
 of one function:
@@ -25,8 +12,18 @@ the element of the matching mapping specified by the optional key
 argument.
 
 If more than one match is found, it returns the match with the
-highest priority, as defined in the mappings XML file.
-"""
+highest priority, as defined in the mappings XML file."""
+
+import re, sys
+
+try:
+    from xml.etree import cElementTree as ElementTree
+except ImportError:
+    import cElementTree as ElementTree
+
+from wrm.decorators import cached
+from wrm.utils import files
+from profiles import profile
 
 # where to find the default mappings file to use
 __defaultpath__ = 'base.xml'
