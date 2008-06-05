@@ -417,7 +417,6 @@
 					<pattern match="EMSP 2444-2221" />
 					<pattern match="EMSP 2444-2202" />
 					<pattern match="EMSP 2444-2203" />
-					<pattern match="EMSP 2444-2722" />
 					<pattern match="EMSP 2444-2705" />
 					<pattern match="EMSP 2444-2706" />
 					<pattern match="EMSP 2260-2221" />
@@ -430,6 +429,7 @@
 					<pattern match="EMSP 1356-2705" />
 					<pattern match="EMSP 1356-2706" />
 					<pattern match="EMSP 2261-2619" />
+					<pattern match="EMSP 2444-2722" />
 					<pattern match="EMSP 2260-2222" />
                 </subtopic>
 				<subtopic name="Mass Disaster Response, B-Shift">
