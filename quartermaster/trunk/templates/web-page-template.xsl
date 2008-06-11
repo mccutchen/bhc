@@ -33,6 +33,12 @@
                             <div id="page-header">
                                 <xsl:call-template name="make-breadcrumbs" />
                                 <h1><xsl:value-of select="$page-title" /></h1>
+								
+								<!-- only output the Youth Summer Program link if we're in the Youth Summer
+									 Program page -->
+								<xsl:if test="ancestor-or-self::division/@name = 'YOUTH SUMMER PROGRAM'">
+									<p><a href="/instruction/cce/youth-summer-program/">Click here for Youth Summer Program Brochure and Forms</a></p>
+								</xsl:if>
 
                                 <!-- only output the financial aid notice in the header if this page has
                                      financial aid courses or is the main schedule index. -->
