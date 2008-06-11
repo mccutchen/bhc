@@ -51,6 +51,11 @@ def build(classes=None):
             # courses.
             weekend_core_test = lambda data: typefilter('W')(data) and corefilter()(data)
             special_section(term, 'Weekend Core Curriculum', class_data, weekend_core_test, notype=True)
+
+            # Another special section that only includes classes that meet
+            # one day per week (the same day for all meetings)
+            one_day_test = lambda data: onedayfilter()(data)
+            special_section(term, 'One Day per Week', class_data, one_day_test, notype=True)
     
     # report any errors encountered while building the XML
     report_errors(timestamp)
@@ -266,6 +271,26 @@ def topicfilter(*topics):
     return classfilter('topic-code', *topics)
 def corefilter():
     return lambda data: data.get('core-component','') not in ('', None)
+def onedayfilter():
+    return lambda data: is_oneday(data);
+
+# This is what filters classes out of the One-Day section. It's not pretty,
+# but it works.
+def is_oneday(class_dict):
+    day_val = class_dict['session']['days'];
+
+    # too long: false
+    if (len(day_val) != 1): return False;
+
+    # no extra sessions: true
+    if (len(class_dict['extra-sessions']) == 0): return True;
+
+    # any extra sessions with a different day: false
+    for item in class_dict['extra-sessions']:
+        if (item['days'] != day_val): return False;
+
+    # if we got thru all this, we're golden
+    return False;
 
 
 def post_process(outpath):
