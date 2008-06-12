@@ -55,7 +55,7 @@ def build(classes=None):
             # Another special section that only includes classes that meet
             # one day per week (the same day for all meetings)
             one_day_test = lambda data: onedayfilter()(data)
-            special_section(term, 'One Day per Week', class_data, one_day_test, notype=True)
+            special_section(term, 'One-Day-Per-Week', class_data, one_day_test, notype=True)
     
     # report any errors encountered while building the XML
     report_errors(timestamp)
