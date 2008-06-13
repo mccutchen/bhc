@@ -101,6 +101,7 @@
     		</topic>
     		<topic name="Networking">
     			<pattern match="ITCC 1400-2250" />  <!-- added section 02/26/2008 per Bill -->
+    			<pattern match="ITCC 1400-2251" />  <!-- added section 02/26/2008 per Bill -->
     		</topic>
     		<topic name="Microsoft Academy">
     			<pattern match="ITMT 1400-2501" />
@@ -335,6 +336,7 @@
     			<pattern match="DANC 2246-2201" />
     			<pattern match="DANC 1245-2701" />
     			<pattern match="DANC 1246-2701" />
+    			<pattern match="DANC 1246-2702" />
     			<pattern match="DANC 2245-2701" />
     			<pattern match="DANC 2246-2701" />
     		</topic>
