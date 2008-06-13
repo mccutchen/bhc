@@ -49,13 +49,12 @@ def build(classes=None):
 
             # Another special section that only includes weekend core
             # courses.
-            weekend_core_test = lambda data: typefilter('W')(data) and corefilter()(data)
+            weekend_core_test = lambda data: typefilter('W')(data) and corefilter(data)
             special_section(term, 'Weekend Core Curriculum', class_data, weekend_core_test, notype=True)
 
             # Another special section that only includes classes that meet
             # one day per week (the same day for all meetings)
-            one_day_test = lambda data: onedayfilter()(data)
-            special_section(term, 'One-Day-Per-Week', class_data, one_day_test, notype=True)
+            special_section(term, 'One-Day-Per-Week', class_data, onedayfilter, notype=True)
     
     # report any errors encountered while building the XML
     report_errors(timestamp)
@@ -261,6 +260,21 @@ def special_section(parent, name, data, test=lambda x: False, **kwargs):
         el = make_special_section_el(parent, name)
         return get_subject_element(el, data, **kwargs)
 
+
+#######################################################################
+# Class filters
+# Used to only include certain classes in special sections
+#######################################################################
+def corefilter(data):
+    """Include only Core Curriculum classes"""
+    return data.get('core-component','') not in ('', None)
+
+def onedayfilter(data):
+    """Include only classes that meet on a single day"""
+    days = data['session']['days']
+    otherdays = [s['days'] for s in data['extra-sessions'] if s['days'] != days]
+    return len(days) == 1 and not otherdays
+
 # Functions that build filters that might be useful as test args to
 # the special_section function.
 def classfilter(key, *values):
@@ -269,28 +283,6 @@ def typefilter(*types):
     return classfilter('type', *types)
 def topicfilter(*topics):
     return classfilter('topic-code', *topics)
-def corefilter():
-    return lambda data: data.get('core-component','') not in ('', None)
-def onedayfilter():
-    return lambda data: is_oneday(data);
-
-# This is what filters classes out of the One-Day section. It's not pretty,
-# but it works.
-def is_oneday(class_dict):
-    day_val = class_dict['session']['days'];
-
-    # too long: false
-    if (len(day_val) != 1): return False;
-
-    # no extra sessions: true
-    if (len(class_dict['extra-sessions']) == 0): return True;
-
-    # any extra sessions with a different day: false
-    for item in class_dict['extra-sessions']:
-        if (item['days'] != day_val): return False;
-
-    # if we got thru all this, we're golden
-    return False;
 
 
 def post_process(outpath):
