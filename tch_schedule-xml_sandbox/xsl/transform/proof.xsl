@@ -355,13 +355,13 @@
 	                    <xsl:apply-templates select="$classes[$min-index]/comments" />
 	                    <xsl:apply-templates select="comments" />
 	                </div>
-	                <xsl:call-template name="group-comments">
-	                    <xsl:with-param name="is-core" select="$is-core" />
-	                    <xsl:with-param name="classes" select="$classes" />
-	                    <xsl:with-param name="min-index" select="$max-index" />
-	                    <xsl:with-param name="max-index" select="utils:max-comment-match($classes, $max-index) + 1" />
-	                </xsl:call-template>
             	</div>
+            	<xsl:call-template name="group-comments">
+                    <xsl:with-param name="is-core" select="$is-core" />
+                    <xsl:with-param name="classes" select="$classes" />
+                    <xsl:with-param name="min-index" select="$max-index" />
+                    <xsl:with-param name="max-index" select="utils:max-comment-match($classes, $max-index) + 1" />
+                </xsl:call-template>
             </xsl:otherwise>
         </xsl:choose>
     </xsl:template>
