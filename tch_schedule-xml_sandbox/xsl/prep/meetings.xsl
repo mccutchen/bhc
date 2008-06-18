@@ -82,16 +82,22 @@
 	</xsl:template>
 	
 	<!-- HACK!
-		Colleague is... yeah. 'Nuff said. Here's where we fix it so it doesn't pollute our system -->
+	Colleague is... yeah. 'Nuff said. Here's where we fix it so it doesn't pollute our system -->
+	<xsl:template match="meeting[@method = 'INET' and ancestor::class/@topic-code = ('OL','OLC','OLP')]/@method" priority="2">
+		<xsl:attribute name="method" select="'LEC'" /><!--ancestor::class/@topic-code" />-->
+	</xsl:template>
+	<xsl:template match="meeting[@method = 'INET' and ancestor::class/@topic-code = '' and @room='INET']/@method" priority="2">
+		<xsl:attribute name="method" select="'LEC'" />
+	</xsl:template>
 	<xsl:template match="meeting[@method = 'INET']/@method" priority="1">
-		<xsl:variable name="topic-code" select="ancestor::class/@topic-code" />
-		<xsl:variable name="method"     select="if($topic-code = ('OL','OLC','OLP')) then $topic-code else 'OL'" as="xs:string" />
-		
-		<xsl:attribute name="method" select="$method" />
+		<xsl:attribute name="method" select="'OL'" />
 	</xsl:template>
 	
 	<!-- the rest of these are just cosmetic. I don't know why we do it. -->
 	<!-- INET -->
+	<xsl:template match="meeting[@method = 'INET' and ancestor::class/@topic-code = '' and @room='INET']/@days" priority="2">
+		<xsl:attribute name="days" select="'TBA'" />
+	</xsl:template>
 	<xsl:template match="meeting[@method = 'INET']/@days" priority="1">
 		<xsl:attribute name="days" select="'NA'" />
 	</xsl:template>
@@ -116,6 +122,9 @@
 	</xsl:template>
 	<xsl:template match="meeting[@method = 'COOP' and @room = 'INET']/@days" priority="1">
 		<xsl:attribute name="days" select="'NA'" />
+	</xsl:template>
+	<xsl:template match="meeting[@method = 'COOP' and @room = 'TBA']/@room" priority="1">
+		<xsl:attribute name="room" select="'NA'" />
 	</xsl:template>
 	<xsl:template match="meeting[@method = ('LAB','COOP') and @room = 'INET']/@room" priority="1">
 		<xsl:attribute name="room" select="'OL'" />
@@ -144,7 +153,19 @@
 				<xsl:value-of select="1" />
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:value-of select="fn:find-first-meeting($meetings, 1)" />
+				<xsl:variable name="first-meeting"   as="xs:integer" select="fn:find-first-meeting($meetings, 1)"/>
+				<xsl:variable name="default-meeting" as="xs:integer" select="fn:find-default-meeting($meetings, 1)"/>
+				<xsl:choose>
+					<xsl:when test="$first-meeting &gt; 0">
+						<xsl:value-of select="$first-meeting" />
+					</xsl:when>
+					<xsl:when test="$default-meeting &gt; 0">
+						<xsl:value-of select="$default-meeting" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="1" />
+					</xsl:otherwise>
+				</xsl:choose>
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
@@ -158,13 +179,33 @@
 				<xsl:value-of select="-1" />
 			</xsl:when>
 			<xsl:when test="$index &gt; count($meetings)">
-				<xsl:value-of select="1" />
+				<xsl:value-of select="-1" />
 			</xsl:when>
 			<xsl:when test="$meetings[$index]/@method = ('LEC','')">
 				<xsl:value-of select="$index" />
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="fn:find-first-meeting($meetings, $index + 1)" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+	
+	<xsl:function name="fn:find-default-meeting" as="xs:integer">
+		<xsl:param name="meetings" as="element()*" />
+		<xsl:param name="index"    as="xs:integer" />
+		
+		<xsl:choose>
+			<xsl:when test="$index &lt; 1">
+				<xsl:value-of select="-1" />
+			</xsl:when>
+			<xsl:when test="$index &gt; count($meetings)">
+				<xsl:value-of select="-1" />
+			</xsl:when>
+			<xsl:when test="$meetings[$index]/@method = 'INET'">
+				<xsl:value-of select="$index" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="fn:find-default-meeting($meetings, $index + 1)" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>

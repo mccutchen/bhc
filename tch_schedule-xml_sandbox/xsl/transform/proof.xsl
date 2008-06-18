@@ -401,7 +401,7 @@
 	</xsl:template>
 	<xsl:template match="meeting[@primary = 'false']">
 		<tr class="extra-meeting">
-			<td class="method"><xsl:value-of select="@method" /></td>
+			<td class="method"><xsl:value-of select="if (@method != 'LEC') then @method else ''" /></td>
 			<td class="times"><xsl:value-of select="fn:pick-times(@method, @time-start, @time-end)" /></td>
 			<td class="days"><xsl:value-of select="@days" /></td>
 			<td class="room"><xsl:value-of select="@room" /></td>
@@ -415,8 +415,7 @@
 	</xsl:template>
 	
 	<xsl:template match="faculty">
-		<xsl:value-of select="concat(upper-case(substring(@name-first, 1, 1)), '. ')" />
-        <xsl:value-of select="@name-last" />
+		<xsl:value-of select="concat(@name-last, ', ', upper-case(substring(@name-first, 1, 1)))" />
         <xsl:if test="position() != last()"><xsl:value-of select="', '" /></xsl:if>
 	</xsl:template>
 

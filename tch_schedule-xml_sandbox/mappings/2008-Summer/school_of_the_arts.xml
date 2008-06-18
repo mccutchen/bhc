@@ -155,6 +155,7 @@
 			<pattern match="DANC 2246-2201" />
 			<pattern match="DANC 1245-2701" />
 			<pattern match="DANC 1246-2701" />
+			<pattern match="DANC 1246-2702" />
 			<pattern match="DANC 2245-2701" />
 			<pattern match="DANC 2246-2701" />
 		</topic>
@@ -167,7 +168,9 @@
 		</topic>
 		<topic name="Theater Practicum">
 			<pattern match="DRAM 1120-2735" />
+			<pattern match="DRAM 1120-2736" />
 			<pattern match="DRAM 1220-2735" />
+			<pattern match="DRAM 1220-2736" />
 		</topic>
 	</subject>
 	
@@ -226,8 +229,11 @@
 			<pattern match="MUSI 1181-2700" />
 		</topic>
 		<topic name="Private Lessons">
+			<pattern match="MUAP 1125-2201" />
 			<pattern match="MUAP 1109-2200" />
+			<pattern match="MUAP 1109-2201" />
 			<pattern match="MUAP 1117-2200" />
+			<pattern match="MUAP 1121-2200" />
 			<pattern match="MUAP 1129-2200" />
 			<pattern match="MUAP 1133-2200" />
 			<pattern match="MUAP 1133-2201" />
@@ -237,10 +243,6 @@
 			<pattern match="MUAP 1161-2201" />
 			<pattern match="MUAP 1161-2202" /> <!-- added 2008-04-18: Guitar -->
 			<pattern match="MUAP 1169-2200" />
-			<pattern match="MUAP 1169-2201" />
-			<pattern match="MUAP 1181-2201" />
-			<pattern match="MUAP 1181-2202" />
-			<pattern match="MUAP 1181-2203" />
 		</topic>
 	</subject>
 </mappings>

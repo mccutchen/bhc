@@ -2,26 +2,19 @@
 <mappings>
 	<!-- Business Studies -->
 	<division name="Business Studies">
-		<contact ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu"/>
+		<contact ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu" />
 
 		<subject name="Automotive Technology">
-			<contact ext="4189" room="Q100" email="bhcAutomotive@dcccd.edu"/>
-			<pattern match="AUMT"/>
+			<contact ext="4189" room="Q100" email="bhcAutomotive@dcccd.edu" />
+			<pattern match="AUMT" />
 		</subject>
 
 		<subject name="Accounting">
 			<comments>
-				<p><b>NOTE:</b> If you are working toward obtaining the Accounting Clerk Certificate
-					or the Accounting Assistant Certificate, you may take these courses even though
-					you have not taken the Texas Success Initiative exam. Obtain a TSI waiver form
-					online, or call 972-860-4160, for more information.</p>
+				<p><b>NOTE:</b> If you are working toward obtaining the Accounting Clerk Certificate or the Accounting Assistant Certificate, you may take these courses even though you have not taken the Texas Success Initiative exam. Obtain a TSI waiver form online, or call 972-860-4160, for more information.</p>
 				<h1>ACCOUNTING CLERK CERTIFICATE</h1>
-				<p>This program will allow you to obtain marketable job skills necessary for
-					entry-level accounting positions. The courses in this program will give you an
-					opportunity to acquire basic accounting, 10-key, spreadsheet, and word
-					processing skills.</p>
-				<p>The following five courses must be completed to receive this certificate. Upon
-					completion, you will have earned 16 college credits.</p>
+				<p>This program will allow you to obtain marketable job skills necessary for entry-level accounting positions. The courses in this program will give you an opportunity to acquire basic accounting, 10-key, spreadsheet, and word processing skills.</p>
+				<p>The following five courses must be completed to receive this certificate. Upon completion, you will have earned 16 college credits.</p>
 				<table border="0" cellpadding="5" cellspacing="0">
 					<tr>
 						<td>ACCT 2401 Prin of Accounting I</td>
@@ -33,34 +26,25 @@
 					</tr>
 					<tr>
 						<td>*ACNT 1380 Cooperative Ed.</td>
-						<td/>
+						<td></td>
 					</tr>
 				</table>
-				<p>*You must be employed to enroll in ACNT 1380. If you are not employed, select a
-					Business/Technical elective.</p>
+				<p>*You must be employed to enroll in ACNT 1380. If you are not employed, select a Business/Technical elective.</p>
 			</comments>
-			<pattern match="ACNT"/>
-			<pattern match="ACCT"/>
+			<pattern match="ACNT" />
+			<pattern match="ACCT" />
 		</subject>
 
 		<subject name="Business Office Systems and Support">
-			<contact email="bhcBOSS@dcccd.edu"/>
-			<pattern match="POFT"/>
-			<pattern match="POFI"/>
-			<pattern match="POFM"/>
-			<pattern match="MDCA"/>
+			<contact email="bhcBOSS@dcccd.edu" />
+			<pattern match="POFT" />
+			<pattern match="POFI" />
+			<pattern match="POFM" />
+			<pattern match="MDCA" />
 		</subject>
 
 		<subject name="Business" ordered="true">
-			<!-- This was done in Fall 2006.  WM: "Ok, I'm going to try this. Basically, IBUS 1305 should follow BUSI 1305"  In Fall 2008, Ray Attner/Cindy Clem requested we pull IBUS back to its own section.  I am leaving this stuff here in case they flip flop back later.  - ss -->
-			<!-- 
-				<pattern match="BUSI 130[0-5]" priority="1" />
-				<pattern match="IBUS 1305" priority="1" />
-			-->
 			<pattern match="BUSI" priority="0" />
-			<!-- 
-				<pattern match="IBUS" priority="0" />
-			-->
 		</subject>
 		
 		<subject name="International Business">  <!-- Added 4/29/08 -->
@@ -81,7 +65,7 @@
 			<pattern match="ITCC" priority="0"/>
 			<pattern match="ITNW" priority="0"/>
 			<pattern match="ITSC" priority="0"/>
-			<pattern match="ITSE" priority="0"/>
+			<!-- <pattern match="ITSE" priority="0"/>  Turned this off for some reason. -->
 			<pattern match="ITSW" priority="0"/>
 			<pattern match="ITSY" priority="0"/>
 			<pattern match="ITMC" priority="0"/>

@@ -65,7 +65,7 @@
 		ok, so dates and times in DSC XML are all over the place. Unfortunately,
 		the xs:date doesn't help at all, because it expects the innitialization
 		string to be in yyyy-mm-dd format. Which is dumb. If I know the format,
-		it's easier for me to pull the data out myself! What good is it having
+		it's easier for me to pull the data out myself. What good is it having
 		a date data type that doesn't do anything? So I don't use it.
 		======================================================================-->
 	<!-- convert-date-std
@@ -92,7 +92,7 @@
 	
 	<!-- convert-date-mdyy
 		 converts dates to a semi-standard m/d/yy 'cause most people don't like leading zeros. I guess that's more work for their poor eyes.
-		 and who needs to know what century and milinium we're referencing, anyway. They're all the same, right? :sigh: -->
+		 and who needs to know what century and milinium we're referencing, anyway. -->
 	<xsl:function name="utils:convert-date-mdyy" as="xs:string">
 		<xsl:param name="str_in" as="xs:string" />
 		<xsl:variable name="date"  select="tokenize(utils:convert-date-std($str_in), '/')" as="xs:string" />
