@@ -37,9 +37,11 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
                 <xsl:choose>
                     <xsl:when test="count(//term) &gt; 1">
                         <a href="{@machine_name}/"><xsl:value-of select="@name" /></a>
+                        <!-- removed on 17 June, 2008 as per Monica Taliaferro
                         <xsl:if test="@dates">
                             &#160;&#8226;&#160;<span><xsl:value-of select="@dates" /></span>
                         </xsl:if>
+                        -->
                     </xsl:when>
                     <xsl:otherwise>
                         Regular Credit Courses
