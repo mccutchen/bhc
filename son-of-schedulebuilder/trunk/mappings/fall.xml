@@ -918,6 +918,7 @@
 					<pattern match="MUAP 2215-2001" />
 					<pattern match="MUAP 2217-2001" />
 					<pattern match="MUAP 2229-2001" />
+					<pattern match="MUAP 2229-2002" />
 					<pattern match="MUAP 2233-2001" />
 					<pattern match="MUAP 2257-2001" />
 					<pattern match="MUAP 2261-2001" />

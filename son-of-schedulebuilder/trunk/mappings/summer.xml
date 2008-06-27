@@ -204,8 +204,11 @@
     		</topic>
     		<topic name="Art and Computers">
     			<pattern match="ARTS 2313-2001" />
+    			<pattern match="ARTS 2313-2002" />
     			<pattern match="ARTS 2314-2001" />
+    			<pattern match="ARTS 2314-2002" />
     			<pattern match="ARTS 2311-2007" />
+    			<pattern match="ARTS 2311-2012" />
     		</topic>
     		<topic name="Art Metals">
     			<pattern match="ARTS 2341-2225" />
@@ -317,9 +320,14 @@
 			</topic>
     		<topic name="Dance Performance">
     			<pattern match="DANC 1351-2225" />
+    			<pattern match="DANC 1351-2226" />
+    			<pattern match="DANC 1351-2227" />
     			<pattern match="DANC 1352-2225" />
+    			<pattern match="DANC 1352-2227" />
     			<pattern match="DANC 2351-2225" />
+    			<pattern match="DANC 2351-2227" />
     			<pattern match="DANC 2352-2225" />
+    			<pattern match="DANC 2352-2227" />
     		</topic>
     		<topic name="Hip Hop">
     			<pattern match="DANC 1122-2201" />
