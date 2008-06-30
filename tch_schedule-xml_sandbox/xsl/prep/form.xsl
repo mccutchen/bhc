@@ -272,9 +272,9 @@
 				<xsl:attribute name="sortkey" select="hierarchy/@sortkey" />
 			</xsl:if>
 			
-			<xsl:copy-of select="visibility" />
 			<xsl:copy-of select="comments" />
 			<xsl:copy-of select="meeting"  />
+			<xsl:copy-of select="visibility | cross-listing | corequisite" />
 		</xsl:copy>
 	</xsl:template>
 	

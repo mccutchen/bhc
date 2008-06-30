@@ -47,6 +47,17 @@
 			
 			<!-- tack on special sections -->
 			
+			<!-- one day per week -->
+			<xsl:if test="descendant::visibility[@is-odpw = 'true']">
+				<xsl:element name="special-section">
+					<xsl:attribute name="name" select="'One-Day-Per-Week'" />
+
+					<xsl:apply-templates select="*[descendant::class[visibility/@is-odpw = 'true']]">
+						<xsl:with-param name="type" select="'odpw'" tunnel="yes" />
+					</xsl:apply-templates>
+				</xsl:element>
+			</xsl:if>
+			
 			<!-- distance learning -->
 			<xsl:if test="descendant::visibility[@is-dl = 'true']">
 				<xsl:element name="special-section">
@@ -114,6 +125,9 @@
 			<xsl:copy-of select="attribute()" />
 			
 			<xsl:choose>
+				<xsl:when test="compare($type, 'odpw') = 0">
+					<xsl:apply-templates select="*[descendant-or-self::class[visibility/@is-odpw = 'true']] | contact | comments" />
+				</xsl:when>
 				<xsl:when test="compare($type, 'dl') = 0">
 					<xsl:apply-templates select="*[descendant-or-self::class[visibility/@is-dl = 'true']] | contact | comments" />
 				</xsl:when>

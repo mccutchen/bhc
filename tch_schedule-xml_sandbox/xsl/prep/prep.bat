@@ -94,7 +94,7 @@ java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 
 ECHO  - cleaning up
 IF (%mode%)==(debug) GOTO END
-DEL %mappings%
+:DEL %mappings%
 DEL %fixed%
 DEL %formed%
 GOTO END

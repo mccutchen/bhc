@@ -212,7 +212,9 @@
 			<h1 class="subject-header"><xsl:value-of select="upper-case(@name)" /></h1>
 			
 			<!-- handle non-flex special-sections -->
-			<xsl:apply-templates select="division/subject" mode="special" />
+			<xsl:apply-templates select="division/subject" mode="special">
+				<xsl:sort select="@name" />
+			</xsl:apply-templates>
 			
 			<!-- handle flex terms... somehow... still figuring this one out -->
 			<xsl:apply-templates select="special-section" />

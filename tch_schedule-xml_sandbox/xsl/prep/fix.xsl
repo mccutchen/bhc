@@ -182,6 +182,7 @@
 				the perfect solution, but it makes my life easier -->
 			<xsl:element name="visibility">
 				<xsl:attribute name="is-suppressed" select="@topic-code = ('XX','YY') or not(meeting)" />
+				<xsl:attribute name="is-odpw" select="fn:is-oneday(.)" />
 				<xsl:attribute name="is-dl" select="@schedule-type = 'DL'" />
 				<xsl:attribute name="is-w" select="@schedule-type = 'W'" />
 				<xsl:attribute name="is-wcc" select="@schedule-type = 'W' and ancestor::course/@core-code and ancestor::course/@core-code != ''" />
@@ -212,6 +213,22 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</xsl:element>
+			
+			<!-- if this is a learning community course, append the corequisites -->
+			<xsl:if test="@topic-code = 'LC'">
+				<xsl:for-each select="corequisite-section">
+					<xsl:element name="corequisite">
+						<xsl:copy-of select="@title | @synonym | @rubric | @section | @number" />
+					</xsl:element>
+				</xsl:for-each>
+			</xsl:if>
+			
+			<!-- appends any cross-listings -->
+			<xsl:for-each select="xlisting">
+				<xsl:element name="cross-listing">
+					<xsl:copy-of select="@title | @synonym | @rubric | @section | @number" />
+				</xsl:element>
+			</xsl:for-each>
 			
 			
 			<xsl:apply-templates select="description" />
@@ -565,5 +582,39 @@
 		<xsl:for-each select="$strings">
 			<xsl:value-of select="string-length(.)" />
 		</xsl:for-each>
+	</xsl:function>
+	
+	<!-- checks to see if this class meets only one day per week -->
+	<xsl:function name="fn:is-oneday">
+		<xsl:param name="class" as="element()" />
+
+		<xsl:choose>
+			<xsl:when test="count($class/meeting) &lt; 1">
+				<xsl:value-of select="'false'" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="fn:is-oneday($class/meeting[position() != 1], $class/meeting[1]/@days)" />
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:function>
+
+	<xsl:function name="fn:is-oneday">
+		<xsl:param name="meetings" as="element()*" />
+		<xsl:param name="day" as="xs:string" />
+
+		<xsl:choose>
+			<xsl:when test="string-length($day) != 1">
+				<xsl:value-of select="false()" />
+			</xsl:when>
+			<xsl:when test="count($meetings) = 0">
+				<xsl:value-of select="true()" />
+			</xsl:when>
+			<xsl:when test="compare($day, $meetings[1]/@days) != 0">
+				<xsl:value-of select="false()" />
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="fn:is-oneday($meetings[position() != 1], $day)" />
+			</xsl:otherwise>
+		</xsl:choose>
 	</xsl:function>
 </xsl:stylesheet>

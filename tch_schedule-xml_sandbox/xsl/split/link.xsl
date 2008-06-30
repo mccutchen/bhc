@@ -37,7 +37,7 @@
 		</xsl:copy>
 	</xsl:template>
 	
-	<xsl:template match="contact|meeting|visibility">
+	<xsl:template match="contact | meeting|visibility | cross-listing | corequisite">
 		<xsl:copy-of select="." />
 	</xsl:template>
 	

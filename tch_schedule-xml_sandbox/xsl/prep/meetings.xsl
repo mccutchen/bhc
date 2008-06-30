@@ -38,7 +38,7 @@
 		      * If a class has a teaching method of TV, TVP or IDL:
 		        replace its teaching method with VB
 		======================================================================-->
-	<xsl:template match="schedule|term|division|subject|topic|subtopic|type|course|faculty|visibility">
+	<xsl:template match="schedule|term|division|subject|topic|subtopic|type|course|faculty">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
@@ -61,13 +61,16 @@
 				<xsl:message>!Warning! No primary meeting found for class <xsl:value-of select="$cid" /></xsl:message>
 			</xsl:if>
 			
-			<xsl:apply-templates select="comments|visibility" />
+			<xsl:copy-of select="comments" />
+			
 			<xsl:apply-templates select="meeting[position() = $first-meeting]">
 				<xsl:with-param name="primary" select="'true'" />
 			</xsl:apply-templates>
 			<xsl:apply-templates select="meeting[position() != $first-meeting]">
 				<xsl:with-param name="primary" select="'false'" />
 			</xsl:apply-templates>
+			
+			<xsl:copy-of select="visibility | cross-listing | corequisite" />
 		</xsl:copy>
 	</xsl:template>
 	<xsl:template match="meeting" priority="2">

@@ -97,7 +97,6 @@
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
 			
-			<xsl:copy-of select="visibility" />
 			<xsl:copy-of select="comments"   />
 			
 			<xsl:apply-templates select="meeting[@primary = 'true']">
@@ -112,7 +111,10 @@
 				<xsl:sort select="@sortkey-days"   data-type="number" />
 				<xsl:sort select="@sortkey-times"  data-type="number" />
 			</xsl:apply-templates>
+			
+			<xsl:copy-of select="visibility | cross-listing | corequisite" />
 		</xsl:copy>
+
 	</xsl:template>
 	
 	<xsl:template match="meeting">

@@ -150,7 +150,7 @@
 				<xsl:value-of select="concat(utils:format-md($time[1]), ':', utils:format-mmdd($time[2]), ' a.m.')" />
 			</xsl:when>
 			<xsl:when test="contains(lower-case($time[3]), 'p')">
-				<xsl:value-of select="concat(utils:format-md($time[1]), ':', utils:format-mmdd($time[2]), ' p.m.')" />
+				<xsl:value-of select="concat(utils:format-md($time[1]), ':', utils:format-mmdd(normalize-space($time[2])), ' p.m.')" />
 			</xsl:when>
 			<xsl:when test="string-length(normalize-space($str_in)) = 0">
 				<xsl:value-of select="''" />
