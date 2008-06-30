@@ -84,7 +84,7 @@ def parse(data):
         # check for day of the month
         if (len(line) < 3 and re.match('[0-9]{1,2}', line)):
             if (day):
-                if (not(event.IsEmpty())):
+                if (not(event == None) and not(event.IsEmpty())):
                     day.AddEvent(event);
                     event = data_lib.Event();
                 cal.AddDay(day);
@@ -116,7 +116,8 @@ def parse(data):
                 if (line == ''): continue;
 
             # anything else just gets appended to the text portion
-            event.AddText(line);
+            if (event):
+                event.AddText(line);
 
     return cal;
 

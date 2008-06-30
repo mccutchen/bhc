@@ -93,7 +93,7 @@ class Day(object):
         self.events = [];
 
     def AddEvent(self, event):
-        assert(type(event) == Event), 'ERROR: event must be an Event object';
+        assert(type(event) == Event), 'ERROR: event must be an Event object (type = ' + str(type(event)) + ')';
 
         if(not(event.IsEmpty())):
             self.events.append(event);
@@ -139,7 +139,7 @@ class Calendar(object):
         assert(type(first) == str), 'ERROR: first day must be a string';
 
         first = first.lower();
-        if (not(first in day_list)): print 'ERROR: unknown first day: ' + day; return False;
+        if (not(first in day_list)): print 'ERROR: unknown first day: ' + first; return False;
 
         self.first = day_list.index(first);
         return True;
