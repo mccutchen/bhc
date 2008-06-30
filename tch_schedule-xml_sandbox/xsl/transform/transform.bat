@@ -38,6 +38,7 @@ GOTO CLEAN-UP
 :proof-full
 SET xsl=%transform_dir_in%proof.xsl
 SET params="is-full=true"
+SET params=%params% "hilight=true"
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl% %params%
 GOTO CLEAN-UP
 

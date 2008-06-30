@@ -169,14 +169,16 @@
 				<xsl:value-of select="-1" />
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:variable name="base" select="utils:normalize-space($classes[$index]/comments/text())" as="xs:string" />
-				<xsl:value-of select="utils:max-comment-match($base, $classes, $index + 1)" />
+				<xsl:variable name="base"  select="utils:normalize-space($classes[$index]/comments/text())" as="xs:string" />
+				<xsl:variable name="cross" select="utils:normalize-space($classes[$index]/@cross-group)"    as="xs:string" />
+				<xsl:value-of select="utils:max-comment-match($base, $cross, $classes, $index + 1)" />
 			</xsl:otherwise>
 		</xsl:choose>
 	</xsl:function>
 	
 	<xsl:function name="utils:max-comment-match" as="xs:integer">
 		<xsl:param name="base"    as="xs:string"  />
+		<xsl:param name="cross"   as="xs:string"  />
 		<xsl:param name="classes" as="element()*" />
 		<xsl:param name="index"   as="xs:integer" />
 		
@@ -184,8 +186,8 @@
 			<xsl:when test="$index &gt; count($classes)">
 				<xsl:value-of select="$index - 1" />
 			</xsl:when>
-			<xsl:when test="compare($base, utils:normalize-space($classes[$index]/comments/text())) = 0">
-				<xsl:value-of select="utils:max-comment-match($base, $classes, $index + 1)" />
+			<xsl:when test="compare($base, utils:normalize-space($classes[$index]/comments/text())) = 0 and compare($cross, utils:normalize-space($classes[$index]/@cross-group)) = 0">
+				<xsl:value-of select="utils:max-comment-match($base, $cross, $classes, $index + 1)" />
 			</xsl:when>
 			<xsl:otherwise>
 				<xsl:value-of select="$index - 1" />

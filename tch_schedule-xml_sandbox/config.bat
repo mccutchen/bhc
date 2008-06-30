@@ -43,6 +43,6 @@ SET transform_bat=%transform_dir_in%transform
 ::================================================::
 
 ::Set this to debug in order to keep intermediate files
-SET mode=release
-::SET mode=debug
+::SET mode=release
+SET mode=debug
 

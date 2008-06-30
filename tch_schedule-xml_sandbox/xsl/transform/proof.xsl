@@ -349,15 +349,16 @@
             
             <!-- otherwise, do it -->
             <xsl:otherwise>
-            	<div class="group-section">
-	                <div class="course-section{$is-core}">
+            	<!--<div class="group-section">-->
+				<xsl:variable name="is-group" select="if ($classes[position() = $min-index and position()]/@is-grouped = 'true') then ' group-section' else ''"  as="xs:string" />
+	                <div class="course-section{$is-core}{$is-group}">
 	                    <table>
 	                        <xsl:apply-templates select="$classes[position() &gt;= $min-index and position() &lt; $max-index]/meeting" />
 	                    </table>
 	                    <xsl:apply-templates select="$classes[$min-index]/comments" />
 	                    <xsl:apply-templates select="comments" />
 	                </div>
-            	</div>
+            	<!--</div>-->
             	<xsl:call-template name="group-comments">
                     <xsl:with-param name="is-core" select="$is-core" />
                     <xsl:with-param name="classes" select="$classes" />

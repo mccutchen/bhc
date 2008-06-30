@@ -52,9 +52,17 @@ ECHO  - sorting
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %sorted% GOTO ERROR
 
+:: Group
+SET xsl=%split_dir_in%group.xsl
+SET source=%sorted%
+SET dest=%grouped%
+ECHO  - grouping
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %grouped% GOTO ERROR
+
 :: Link
 SET xsl=%split_dir_in%link.xsl
-SET source=%sorted%
+SET source=%grouped%
 SET dest=%linked%
 ECHO  - linking
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%

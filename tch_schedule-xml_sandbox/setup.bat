@@ -104,6 +104,7 @@ SET meetings=%data%%ys%_meetings.xml
 SET trimmed=%data%%ys%_trimmed.xml
 SET split=%data%%ys%_split.xml
 SET sorted=%data%%ys%_sorted.xml
+SET grouped=%data%%ys%_grouped.xml
 SET linked=%data%%ys%_linked.xml
 SET sectioned=%data%%ys%_sectioned.xml
 SET enrolled=%data%%ys%_enrolled.xml

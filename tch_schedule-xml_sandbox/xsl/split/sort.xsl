@@ -111,7 +111,7 @@
 				<xsl:sort select="@sortkey-days"   data-type="number" />
 				<xsl:sort select="@sortkey-times"  data-type="number" />
 			</xsl:apply-templates>
-			
+
 			<xsl:copy-of select="visibility | cross-listing | corequisite" />
 		</xsl:copy>
 
