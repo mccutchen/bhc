@@ -10,6 +10,7 @@ creation-time 	CDATA #REQUIRED>
 name 			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED
 date-end 		CDATA #REQUIRED
+dates-display   CDATA #REQUIRED
 sortkey 		CDATA #REQUIRED
 display 		(true|false) "true">
 
@@ -21,7 +22,7 @@ credit-hours 	CDATA #REQUIRED
 core-code 		CDATA #IMPLIED
 core-name 		CDATA #IMPLIED>
 
-<!ELEMENT class (visibility, hierarchy, comments?, meeting*)>
+<!ELEMENT class (hierarchy, visibility, cross-listing*, corequisite*, comments?, meeting*)>
 <!ATTLIST class
 synonym 		CDATA #REQUIRED
 section 		CDATA #REQUIRED
@@ -33,15 +34,6 @@ topic-code 		CDATA #REQUIRED
 weeks 			CDATA #REQUIRED
 capacity 		CDATA #REQUIRED
 sortkey-dates	CDATA #REQUIRED>
-
-<!ELEMENT visibility EMPTY>
-<!ATTLIST visibility
-is-suppressed 	(true|false) "false"
-is-dl 			(true|false) "false"
-is-w  			(true|false) "false"
-is-wcc  		(true|false) "false"
-is-flex  		(true|false) "false"
-flex-month 		CDATA #IMPLIED>
 
 <!ELEMENT hierarchy EMPTY>
 <!ATTLIST hierarchy
@@ -62,6 +54,32 @@ time-end 		CDATA #REQUIRED
 sortkey-days 	CDATA #REQUIRED
 sortkey-times 	CDATA #REQUIRED
 sortkey-method 	CDATA #REQUIRED>
+
+<!ELEMENT visibility EMPTY>
+<!ATTLIST visibility
+is-suppressed 	(true|false) "false"
+is-odpw         (true|false) "false"
+is-dl 			(true|false) "false"
+is-w  			(true|false) "false"
+is-wcc  		(true|false) "false"
+is-flex  		(true|false) "false"
+flex-month 		CDATA #IMPLIED>
+
+<!ELEMENT cross-listing EMPTY>
+<!ATTLIST cross-listing
+title           CDATA #REQUIRED
+synonym         CDATA #REQUIRED
+rubric          CDATA #REQUIRED
+number          CDATA #REQUIRED
+section         CDATA #REQUIRED>
+
+<!ELEMENT corequisite EMPTY>
+<!ATTLIST corequisite
+title           CDATA #REQUIRED
+synonym         CDATA #REQUIRED
+rubric          CDATA #REQUIRED
+number          CDATA #REQUIRED
+section         CDATA #REQUIRED>
 
 <!ELEMENT faculty EMPTY>
 <!ATTLIST faculty

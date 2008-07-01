@@ -52,17 +52,9 @@ ECHO  - sorting
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %sorted% GOTO ERROR
 
-:: Group
-SET xsl=%split_dir_in%group.xsl
-SET source=%sorted%
-SET dest=%grouped%
-ECHO  - grouping
-java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
-IF NOT EXIST %grouped% GOTO ERROR
-
 :: Link
 SET xsl=%split_dir_in%link.xsl
-SET source=%grouped%
+SET source=%split%
 SET dest=%linked%
 ECHO  - linking
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
@@ -76,6 +68,14 @@ ECHO  - sectioning
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %sectioned% GOTO ERROR
 
+:: Group
+SET xsl=%split_dir_in%group.xsl
+SET source=%sectioned%
+SET dest=%sectioned-grouped%
+ECHO  - grouping sectioned
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %sectioned-grouped% GOTO ERROR
+
 :: Enroll
 SET xsl=%split_dir_in%enroll.xsl
 SET source=%sectioned%
@@ -83,6 +83,14 @@ SET dest=%enrolled%
 ECHO  - enrolling
 java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
 IF NOT EXIST %enrolled% GOTO ERROR
+
+:: Group
+SET xsl=%split_dir_in%group.xsl
+SET source=%enrolled%
+SET dest=%enrolled-grouped%
+ECHO  - grouping enrolled
+java -jar C:\saxon\saxon8.jar -o %dest% %source% %xsl%
+IF NOT EXIST %enrolled-grouped% GOTO ERROR
 
 IF (%mode%)==(debug) GOTO END
 DEL %trimmed%

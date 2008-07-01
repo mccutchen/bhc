@@ -107,11 +107,13 @@ SET sorted=%data%%ys%_sorted.xml
 SET grouped=%data%%ys%_grouped.xml
 SET linked=%data%%ys%_linked.xml
 SET sectioned=%data%%ys%_sectioned.xml
+SET sectioned-grouped=%data%%ys%_sectioned_grouped.xml
 SET enrolled=%data%%ys%_enrolled.xml
+SET enrolled-grouped=%data%%ys%_enrolled_grouped.xml
 
 SET final=%meetings%
-SET current=%sectioned%
-SET enrolling=%enrolled%
+SET current=%sectioned-grouped%
+SET enrolling=%enrolled-grouped%
 
 
 IF "%type%"=="" GOTO NO-FILE

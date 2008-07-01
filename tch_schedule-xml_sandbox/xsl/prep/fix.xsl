@@ -177,21 +177,6 @@
 			<!-- this one seems like it may be useful, but I'm not sure how yet
 			<xsl:attribute name="online-primary" select="@online-primary-class" /> -->
 			
-			<!-- these are some artificial attributes that I'm going to put in the data, 
-				since they are an integral part of how the output is produced. Maybe not
-				the perfect solution, but it makes my life easier -->
-			<xsl:element name="visibility">
-				<xsl:attribute name="is-suppressed" select="@topic-code = ('XX','YY') or not(meeting)" />
-				<xsl:attribute name="is-odpw" select="fn:is-oneday(.)" />
-				<xsl:attribute name="is-dl" select="@schedule-type = 'DL'" />
-				<xsl:attribute name="is-w" select="@schedule-type = 'W'" />
-				<xsl:attribute name="is-wcc" select="@schedule-type = 'W' and ancestor::course/@core-code and ancestor::course/@core-code != ''" />
-				<xsl:attribute name="is-flex" select="@schedule-type = ('FD','FN')" />
-				<xsl:if test="@schedule-type = ('FD','FN')">
-					<xsl:attribute name="flex-month" select="utils:month-name(tokenize(utils:convert-date-std(@start-date), '/')[1])" />
-				</xsl:if>
-			</xsl:element>
-			
 			<!-- figure out where it should be in the division structure -->
 			<xsl:element name="hierarchy">
 				<xsl:variable name="class-id" select="concat(parent::course/@rubric, ' ', parent::course/@number, '-', @section)" as="xs:string" />
@@ -212,6 +197,21 @@
 						</xsl:call-template>
 					</xsl:otherwise>
 				</xsl:choose>
+			</xsl:element>
+			
+			<!-- these are some artificial attributes that I'm going to put in the data, 
+				since they are an integral part of how the output is produced. Maybe not
+				the perfect solution, but it makes my life easier -->
+			<xsl:element name="visibility">
+				<xsl:attribute name="is-suppressed" select="@topic-code = ('XX','YY') or not(meeting)" />
+				<xsl:attribute name="is-odpw" select="fn:is-oneday(.)" />
+				<xsl:attribute name="is-dl" select="@schedule-type = 'DL'" />
+				<xsl:attribute name="is-w" select="@schedule-type = 'W'" />
+				<xsl:attribute name="is-wcc" select="@schedule-type = 'W' and ancestor::course/@core-code and ancestor::course/@core-code != ''" />
+				<xsl:attribute name="is-flex" select="@schedule-type = ('FD','FN')" />
+				<xsl:if test="@schedule-type = ('FD','FN')">
+					<xsl:attribute name="flex-month" select="utils:month-name(tokenize(utils:convert-date-std(@start-date), '/')[1])" />
+				</xsl:if>
 			</xsl:element>
 			
 			<!-- if this is a learning community course, append the corequisites -->

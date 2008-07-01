@@ -268,9 +268,6 @@
 	<xsl:template match="class">
 		<xsl:copy>
 			<xsl:copy-of select="attribute()" />
-			<xsl:if test="cross-listing">
-				<xsl:attribute name="cross-group" select="cross-listing/@synonym" />
-			</xsl:if>
 			<xsl:if test="hierarchy/@sortkey">
 				<xsl:attribute name="sortkey" select="hierarchy/@sortkey" />
 			</xsl:if>

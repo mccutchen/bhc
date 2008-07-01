@@ -10,6 +10,7 @@ creation-time 	CDATA #REQUIRED>
 name 			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED
 date-end 		CDATA #REQUIRED
+dates-display   CDATA #REQUIRED
 sortkey 		CDATA #REQUIRED
 display         (true|false) "true">
 
@@ -26,7 +27,8 @@ display 		(true|false) "true">
 <!ATTLIST subject
 name 			CDATA #REQUIRED
 ordered 		(true|false) "false"
-display 		(true|false) "true">
+display 		(true|false) "true"
+sortkey         CDATA #IMPLIED>
 
 <!ELEMENT topic (comments?, type*, subtopic*)>
 <!ATTLIST topic
@@ -55,7 +57,7 @@ core-code 		CDATA #IMPLIED
 core-name 		CDATA #IMPLIED
 sortkey 		CDATA #IMPLIED>
 
-<!ELEMENT class (visibility, comments?, meeting*)>
+<!ELEMENT class (comments?, meeting*, visibility, cross-listing*, corequisite*)>
 <!ATTLIST class
 synonym 		CDATA #REQUIRED
 section 		CDATA #REQUIRED
@@ -69,15 +71,6 @@ capacity 		CDATA #REQUIRED
 sortkey 		CDATA #IMPLIED
 sortkey-dates	CDATA #REQUIRED>
 
-<!ELEMENT visibility EMPTY>
-<!ATTLIST visibility
-is-suppressed 	(true|false) "false"
-is-dl 			(true|false) "false"
-is-w  			(true|false) "false"
-is-wcc  		(true|false) "false"
-is-flex  		(true|false) "false"
-flex-month 		CDATA #IMPLIED>
-
 <!ELEMENT meeting (faculty*)>
 <!ATTLIST meeting
 primary 		(true|false) "false"
@@ -90,6 +83,32 @@ time-end 		CDATA #REQUIRED
 sortkey-days 	CDATA #REQUIRED
 sortkey-times 	CDATA #REQUIRED
 sortkey-method 	CDATA #REQUIRED>
+
+<!ELEMENT visibility EMPTY>
+<!ATTLIST visibility
+is-suppressed 	(true|false) "false"
+is-odpw         (true|false) "false"
+is-dl 			(true|false) "false"
+is-w  			(true|false) "false"
+is-wcc  		(true|false) "false"
+is-flex  		(true|false) "false"
+flex-month 		CDATA #IMPLIED>
+
+<!ELEMENT cross-listing EMPTY>
+<!ATTLIST cross-listing
+title           CDATA #REQUIRED
+synonym         CDATA #REQUIRED
+rubric          CDATA #REQUIRED
+number          CDATA #REQUIRED
+section         CDATA #REQUIRED>
+
+<!ELEMENT corequisite EMPTY>
+<!ATTLIST corequisite
+title           CDATA #REQUIRED
+synonym         CDATA #REQUIRED
+rubric          CDATA #REQUIRED
+number          CDATA #REQUIRED
+section         CDATA #REQUIRED>
 
 <!ELEMENT faculty (#PCDATA)>
 <!ATTLIST faculty

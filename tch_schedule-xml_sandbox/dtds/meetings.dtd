@@ -11,6 +11,7 @@ name 			CDATA #REQUIRED
 date-start 		CDATA #REQUIRED
 date-end 		CDATA #REQUIRED
 sortkey 		CDATA #REQUIRED
+dates-display   CDATA #REQUIRED
 display 		(true|false) "true">
 
 <!ELEMENT division (contact?, subject+)>
@@ -52,7 +53,7 @@ core-code 		CDATA #IMPLIED
 core-name 		CDATA #IMPLIED
 sortkey 		CDATA #IMPLIED>
 
-<!ELEMENT class (visibility, comments?, meeting*)>
+<!ELEMENT class (comments?, meeting*, visibility, cross-listing*, corequisite*)>
 <!ATTLIST class
 synonym 		CDATA #REQUIRED
 section 		CDATA #REQUIRED
@@ -69,11 +70,28 @@ sortkey-dates	CDATA #REQUIRED>
 <!ELEMENT visibility EMPTY>
 <!ATTLIST visibility
 is-suppressed 	(true|false) "false"
+is-odpw         (true|false) "false"
 is-dl 			(true|false) "false"
 is-w  			(true|false) "false"
 is-wcc  		(true|false) "false"
 is-flex  		(true|false) "false"
 flex-month 		CDATA #IMPLIED>
+
+<!ELEMENT cross-listing EMPTY>
+<!ATTLIST cross-listing
+title           CDATA #REQUIRED
+synonym         CDATA #REQUIRED
+rubric          CDATA #REQUIRED
+number          CDATA #REQUIRED
+section         CDATA #REQUIRED>
+
+<!ELEMENT corequisite EMPTY>
+<!ATTLIST corequisite
+title           CDATA #REQUIRED
+synonym         CDATA #REQUIRED
+rubric          CDATA #REQUIRED
+number          CDATA #REQUIRED
+section         CDATA #REQUIRED>
 
 <!ELEMENT meeting (faculty*)>
 <!ATTLIST meeting
