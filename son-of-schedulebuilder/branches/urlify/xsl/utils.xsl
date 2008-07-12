@@ -52,6 +52,7 @@
         <xsl:value-of select="utils:urlify-helper(lower-case($s), $replacements/rule)" />
     </xsl:function>
     
+    <!-- Recursive function that does the actual urlification -->
     <xsl:function name="utils:urlify-helper" as="xs:string">
         <xsl:param name="s" as="xs:string" />
         <xsl:param name="rules" />
