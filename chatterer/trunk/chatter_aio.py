@@ -142,6 +142,7 @@ def Format(line_in, replace = True):
     global cur_file;
     char_map = {
         10:  '',        # newline
+        160: '',        # non-printable char
         38:  '&amp;',   # ampersand
         60:  '&lt;',    # less than
         62:  '&gt;',    # greater than

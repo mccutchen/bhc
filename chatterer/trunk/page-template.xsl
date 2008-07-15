@@ -61,7 +61,7 @@
                     </div>
                     </xsl:if>
                     
-                    <div id="page-content">
+                    <div id="page-content" class="fixed-width">
                         <!-- apply-templates to the element that called this template -->
                         <xsl:apply-templates select="." />
                     </div>
