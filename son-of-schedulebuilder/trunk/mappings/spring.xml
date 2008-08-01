@@ -568,6 +568,10 @@
                 <pattern match="MUSI 1306-2700" />
                 <pattern match="MUSI 1306-2300" />
                 <pattern match="MUSI 1306-2427" />
+                <pattern match="MUSI 1306-2429" />
+                <pattern match="MUSI 1306-2434" />
+                <pattern match="MUSI 1306-2432" />
+                <pattern match="MUSI 1306-2433" />
             </topic>
             <topic name="Music Theory">
                 <pattern match="MUSI 1312-2001" />
