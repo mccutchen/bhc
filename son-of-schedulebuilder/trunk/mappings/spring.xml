@@ -412,6 +412,7 @@
                 <pattern match="ARTS 1301-2250" />
                 <pattern match="ARTS 1301-2420" />
                 <pattern match="ARTS 1301-2421" />
+                <pattern match="ARTS 1301-2503" />
             </topic>
             <topic name="Art History">
                 <pattern match="ARTS 1303-2001" />
@@ -552,6 +553,12 @@
                 <pattern match="ARTS 2311-2501" />
                 <pattern match="ARTS 2312-2501" />
             </topic>
+            <topic name="Watercolor">
+                <pattern match="ARTS 2366-2001" />
+                <pattern match="ARTS 2367-2001" />
+                <pattern match="ARTS 2311-2021" />
+                <pattern match="ARTS 2312-2017" />
+            </topic>            
             <topic name="December Winter Flex Term Printmaking Workshop">
                 <pattern match="ARTS 2333-2200" />
                 <pattern match="ARTS 2334-2200" />
