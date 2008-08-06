@@ -773,14 +773,85 @@
                 <pattern match="DANC 2246-2501" />
             </topic>
         </subject>
-        <!--
-            <subject name="Drama">
-            </subject>
-        -->
-        <!--
-            <subject name="Humanities">
-            </subject>
-        -->
+        
+        <subject name="Drama">
+            <topic name="Introduction to Theatre">
+                <pattern match="DRAM 1310-2001" />
+                <pattern match="DRAM 1310-2002" />
+                <pattern match="DRAM 1310-2501" />
+            </topic>
+            <topic name="Film Appreciation">
+                <pattern match="DRAM 2366-2001" />
+                <pattern match="DRAM 2366-2002" />
+                <pattern match="DRAM 2366-2420" />
+                <pattern match="DRAM 2366-2421" />
+            </topic>
+            <topic name="Theatre Workshop">
+                <pattern match="DRAM 1323-2001" />
+            </topic>
+            <topic name="Stagecraft">
+                <pattern match="DRAM 1330-2001" />
+                <pattern match="DRAM 2331-2001" />
+            </topic>
+            <topic name="Acting">
+                <pattern match="DRAM 1351-2001" />
+                <pattern match="DRAM 1351-2002" />
+                <pattern match="DRAM 1352-2001" />
+                <pattern match="DRAM 1352-2002" />
+                <pattern match="DRAM 2351-2001" />
+                <pattern match="DRAM 2351-2002" />
+                <pattern match="DRAM 2352-2001" />
+                <pattern match="DRAM 2352-2002" />
+                <pattern match="DRAM 1351-2501" />
+                <pattern match="DRAM 1352-2501" />
+                <pattern match="DRAM 2351-2501" />
+                <pattern match="DRAM 2352-2501" />
+            </topic>
+            <topic name="Rehearsal">
+                <subtopic name="First Play, Spring 2009">
+                    <pattern match="DRAM 1221-2735" />
+                </subtopic>
+                <subtopic name="Second Play, Spring 2009">
+                    <pattern match="DRAM 1221-2736" />
+                </subtopic>
+            </topic>
+        </subject>
+        
+        <subject name="Humanities">
+            <pattern match="HUMA 1302-2001" />
+            <pattern match="HUMA 1315-2010" />
+            <pattern match="HUMA 1311-2001" />
+            <pattern match="HUMA 1315-2007" />
+            <pattern match="HUMA 1315-2001" />
+            <pattern match="HUMA 1315-2004" />
+            <pattern match="HUMA 1315-2009" />
+            <pattern match="HUMA 1315-2005" />
+            <pattern match="HUMA 1315-2002" />
+            <pattern match="HUMA 1315-2011" />
+            <pattern match="HUMA 1315-2008" />
+            <pattern match="HUMA 1315-2003" />
+            <pattern match="HUMA 1315-2503" />
+            <pattern match="HUMA 1315-2501" />
+            <pattern match="HUMA 1315-2502" />
+            <pattern match="HUMA 1315-2504" />
+            <pattern match="HUMA 1315-2221" />
+            <pattern match="HUMA 1315-2250" />
+            <pattern match="HUMA 1315-2400" />
+            <pattern match="HUMA 1315-2422" />
+            <pattern match="HUMA 1315-2423" />
+            <pattern match="HUMA 1315-2424" />
+            <pattern match="HUMA 1315-2425" />
+            <pattern match="HUMA 1315-2426" />
+            <pattern match="HUMA 1315-2427" />
+            <pattern match="HUMA 1315-2428" />
+            <pattern match="HUMA 1315-2430" />
+            <pattern match="HUMA 1315-2431" />
+            <pattern match="HUMA 1315-2432" />
+            <pattern match="HUMA 1315-2429" />
+            <topic name="December Winter Flex Term">
+                <pattern match="HUMA 1315-2420" />
+            </topic>
+        </subject>
         
     </mapping>
 </mappings>
