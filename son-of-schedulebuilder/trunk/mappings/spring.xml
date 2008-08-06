@@ -347,14 +347,18 @@
             <topic name="Coordinated Studies">
             <pattern match="PHIL 2306-2050" />
             </topic>
-            </subject>
+            </subject>-->
             
-            <subject name="Cultural Studies">
+        <subject name="Cultural Studies">
             <topic name="Coordinated Studies">
-            <pattern match="CUST 2370-2050" />
+                <pattern match="CUST 2370-2050" />
             </topic>
-            </subject>
-            
+            <topic name="DECEMBER WINTER FLEX TERM">
+                <pattern match="CUST 2370-2420" />
+            </topic>
+        </subject>
+        
+            <!--
             <subject name="History">
             <topic name="Coordinated Studies">
             <pattern match="HIST 1302-2050" />
