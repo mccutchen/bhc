@@ -149,7 +149,10 @@
 				<pattern match="ITNW 1492-2001" />			  	
 				<pattern match="ITNW 1492-2501" />				  	
 				<pattern match="ITCC 1400-2250" />		
-				<pattern match="ITCC 1440-2501" />			
+				<pattern match="ITCC 1440-2501" />
+    				<pattern match="ITCC 1401-2501" />	 
+    				<pattern match="ITCC 1404-2250" />	
+    				<pattern match="ITCC 2408-2501" />	
     		</topic>
     		<topic name="Information Security and LAN">
 				<pattern match="ITNW 1451-2426" />	
@@ -885,12 +888,16 @@
 					<pattern match="MUAP 1101-2001" />
 					<pattern match="MUAP 1105-2001" />
 					<pattern match="MUAP 1115-2001" />
+			                	<pattern match="MUAP 1117-2001" />
+                				<pattern match="MUAP 1117-2002" />
 					<pattern match="MUAP 1121-2001" />
 					<pattern match="MUAP 1125-2001" />
 					<pattern match="MUAP 1129-2001" />
 					<pattern match="MUAP 1129-2002" />
 					<pattern match="MUAP 1133-2001" />
-					<pattern match="MUAP 1133-2002" />
+                				<pattern match="MUAP 1133-2002" />
+			                	<pattern match="MUAP 1137-2001" />
+			                	<pattern match="MUAP 1137-2002" />
 					<pattern match="MUAP 1141-2001" />
 					<pattern match="MUAP 1145-2001" />
 					<pattern match="MUAP 1145-2002" />
@@ -908,7 +915,10 @@
 					<pattern match="MUAP 1181-2001" />
 					<pattern match="MUAP 1181-2002" />
 					<pattern match="MUAP 1181-2003" />
-					<pattern match="MUAP 1181-2004" />
+                				<pattern match="MUAP 1181-2004" />
+			               	<pattern match="MUAP 2217-2002" />
+                				<pattern match="MUAP 2237-2001" />
+			                	<pattern match="MUAP 2237-2002" />
                 </subtopic>
                 <subtopic name="Intermediate">
                     <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
