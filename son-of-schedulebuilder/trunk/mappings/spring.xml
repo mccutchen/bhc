@@ -855,10 +855,10 @@
             <pattern match="HUMA 1315-2426" />
             <pattern match="HUMA 1315-2427" />
             <pattern match="HUMA 1315-2428" />
+            <pattern match="HUMA 1315-2429" />
             <pattern match="HUMA 1315-2430" />
             <pattern match="HUMA 1315-2431" />
             <pattern match="HUMA 1315-2432" />
-            <pattern match="HUMA 1315-2429" />
             <topic name="December Winter Flex Term">
                 <pattern match="HUMA 1315-2420" />
             </topic>
