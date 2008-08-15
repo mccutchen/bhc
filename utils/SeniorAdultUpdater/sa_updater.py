@@ -3,7 +3,7 @@
 # e-mail: thaapala@dcccd.edu
 # extention: x4104
 # Creation Date: 26 June 07
-# Last Modified: 27 June 07
+# Last Modified: 15 August 08
 
 # Beta Version: stable and works with currently-available data
 #               please send me an email if you find any bugs
@@ -29,6 +29,12 @@
 # Final step: copy-paste the list from the output file into the senir-adult page. You're
 #   done. Split the columns how you choose.
 
+# Change Log:
+# v 1.1
+# - Added new ini attribute, 'recursive'
+#   This attribute controls whether the SA Updater checks directories recursively
+#   If true, will include entries for sub-folders (like special sections / flex terms)
+
 
 
 import os, sys, glob
@@ -36,7 +42,7 @@ import sa_util_lib as util_lib
 import sa_data_lib as data_lib
 
 # globals
-version_str    = '[sa_updater version=1.0]';
+version_str    = '[sa_updater version=1.1]';
 ini_path       = 'sa_updater.ini';
 ini            = None;
 fname_pattern  = 'senior_adult'
@@ -45,7 +51,7 @@ k_max_filesize = pow(2, 20);
 
 # additional class
 class iniData(object):
-    __limit__ = ['cr_path', 'nc_path', 'cr_url', 'nc_url', 'out_path', 'ind_str', 'lvl_int'];
+    __limit__ = ['cr_path', 'nc_path', 'cr_url', 'nc_url', 'recurse', 'out_path', 'ind_str', 'lvl_int'];
 
     def __init__(self):
         self.cr_path  = '';
@@ -67,6 +73,7 @@ class iniData(object):
         elif (label == 'nc_path' ): self.nc_path  = util_lib.ResolveDir(value);
         elif (label == 'cr_url'  ): self.cr_url   = util_lib.CleanURL(value);
         elif (label == 'nc_url'  ): self.nc_url   = util_lib.CleanURL(value);
+        elif (label == 'recurse' ): self.recurse  = (value.strip() == "true");
         elif (label == 'out_path'): self.out_path = util_lib.CleanPath(value);
         elif (label == 'ind_str' ):
             if (value == '\'\\t\''): self.ind_str = '\t';
@@ -83,6 +90,7 @@ class iniData(object):
         elif (label == 'cr_url'  ): return self.cr_url;
         elif (label == 'nc_url'  ): return self.nc_url;
         elif (label == 'out_path'): return self.out_path;
+        elif (label == 'recurse' ): return self.recurse;
         elif (label == 'ind_str' ): return self.ind_str;
         elif (label == 'lvl_int' ): return self.lvl_int;
         else: return None;
@@ -93,6 +101,7 @@ class iniData(object):
         if ((type(self.nc_path)  != str) or (self.nc_path  == '')): return False;
         if ((type(self.cr_url)   != str) or (self.cr_url   == '')): return False;
         if ((type(self.nc_url)   != str) or (self.nc_url   == '')): return False;
+        if ((type(self.recurse)  != bool)                        ): return False;
         if ((type(self.out_path) != str) or (self.out_path == '')): return False;
         if ((type(self.ind_str)  != str) or (self.ind_str  == '')): return False;
         if ((type(self.lvl_int)  != int) or (self.lvl_int  <  0 )): return False;
@@ -106,6 +115,9 @@ class iniData(object):
     
 
 def LoadINI():
+    global ini;
+    ini = iniData();
+    
     # make sure there is one
     if (not util_lib.ValidateFile(ini_path)): return False;
 
@@ -264,12 +276,24 @@ def QikMerge(url_in, path_in):
 
 def ScanForFilename(fname, root_dir):
     out_list = [];
-    for f in glob.glob(util_lib.CleanPath(root_dir) + '*'):
-        if os.path.isdir(f):
-            out_list = out_list + ScanForFilename(fname, f);
+    global ini;
+
+    # get a list of paths to search
+    path_list = glob.glob(util_lib.CleanPath(root_dir) + '*');
+
+    # loop through each path
+    for path in path_list:
+        # if this is a directory
+        if (os.path.isdir(path)):
+            # if recursion is enabled
+            if (ini.Get("recurse")):
+                out_list = out_list + ScanForFilename(fname, path);
+        # otherwise it's a file
         else:
-            if ((fname in f) and (not '_bak' in f)):
-                out_list.append(f);
+            if ((fname in path) and (not '_bak' in path)):
+                out_list.append(path);
+
+    # return what we've got
     return out_list;
 
 def ScanCredit(path_list):
@@ -387,7 +411,6 @@ if (__name__ == '__main__'):
     topic_list   = [];
 
     # load ini
-    ini = iniData();
     if (not LoadINI()):
         print '! Error: ' + ini_path + ' failed to load successfully.'
         sys.exit(0);
