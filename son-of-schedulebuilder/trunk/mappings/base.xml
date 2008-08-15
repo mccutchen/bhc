@@ -78,6 +78,9 @@
         <subject name="CIT - ITMC - Unsorted">
             <pattern match="ITMC" priority="0" unsorted="true" />
         </subject>
+        <subject name="CIT - ITMT - Unsorted">                        <!-- added 2008-08-15: new rubric? -->
+            <pattern match="ITMT" priority="0" unsorted="true" />
+        </subject>
         <subject name="CIT - ITNW - Unsorted">
             <pattern match="ITNW" priority="0" unsorted="true" />
         </subject>
@@ -88,11 +91,11 @@
 			<pattern match="ITCC" priority="0" unsorted="true" />
 		</subject>
 <!-- Turned this off 4/30/08 to see if that would move ITSE 1301-2427 to VCom. It does, but this is probably a sloppy way to do that. -->
-<!-- 
+<!-- Turned back on 2008-08-15 'cause it's spitting out the "Subject missing from mappings" error -->
         <subject name="CIT - ITSE - Unsorted">
             <pattern match="ITSE" priority="0" unsorted="true" />
         </subject>
- -->
+ <!-- -->
         <subject name="CIT - ITSW - Unsorted">
             <pattern match="ITSW" priority="0" unsorted="true" />
         </subject>

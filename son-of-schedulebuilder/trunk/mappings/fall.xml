@@ -336,9 +336,11 @@
     	
         <!-- =======================================================================
              Visual Communications - This is where to add courses that share CIT prefixes
-             ======================================================================== -->    	
+             ======================================================================== -->
+    	<!-- note: put a priority of 2, since these need to have a higher priority than the CIT mappings
+    		in order to pull them in here -->
         <subject name="Visual Communications">
-            <pattern match="ITSE 1301-2427" />
+            <pattern match="ITSE 1301-2427" priority="2" />
         </subject>
         
         <!-- =======================================================================
