@@ -255,6 +255,45 @@
                 <pattern match="COSC 1415-2426" />
                 <pattern match="COSC 1436-2426" />
             </topic>
+            
+            <!-- Senior Adult classes that will be yanked before this subject is processed -->
+            <topic name="Senior Adult Computer Classes">
+                <pattern match="ITSC 1191-2205" />
+                <pattern match="ITSC 1191-2206" />
+                <pattern match="ITSC 1191-2207" />
+                <pattern match="ITSC 1191-2208" />
+                <pattern match="ITSC 1191-2209" />
+                <pattern match="ITSC 1191-2210" />
+                <pattern match="ITSC 1191-2211" />
+                <pattern match="ITSC 1191-2212" />
+                <pattern match="ITSC 1191-2213" />
+                <pattern match="ITSC 1191-2214" />
+                <pattern match="ITSC 1191-2215" />
+                <pattern match="ITSC 1191-2216" />
+                <pattern match="ITSC 1191-2217" />
+                <pattern match="ITSC 1191-2218" />
+                <pattern match="ITSC 1191-2219" />
+                <pattern match="ITSC 1191-2220" />
+                <pattern match="ITSC 1191-2221" />
+                <pattern match="ITSC 1191-2222" />
+                <pattern match="ITSC 1191-2223" />
+                <pattern match="ITSC 1191-2224" />
+                <pattern match="ITSC 1191-2225" />
+                <pattern match="ITSC 1191-2226" />
+                <pattern match="ITSC 1191-2227" />
+                <pattern match="ITSC 1191-2228" />
+                <pattern match="ITSC 1191-2229" />
+                <pattern match="ITSC 1191-2230" />
+                <pattern match="ITSC 1191-2231" />
+                <pattern match="ITSC 1191-2232" />
+                <pattern match="ITSC 1191-2233" />
+                <pattern match="ITSC 1191-2253" />
+                <pattern match="ITSC 1191-2254" />
+                <pattern match="ITSC 1191-2255" />
+                <pattern match="ITSC 1191-2256" />
+                <pattern match="ITSC 1191-2257" />
+                <pattern match="ITSC 1191-2258" />
+            </topic>
         </subject>
         <subject name="Computer Studies - Business Computer Information Systems">
             <comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
@@ -722,9 +761,9 @@
                     <pattern match="MUAP 2281-2002" />
                 </subtopic>
             </topic>
-            <topic name="test: Senior Adult Music classes">
-                <pattern match="MUSI 1181-2006" priority="2" />
-                <pattern match="MUSI 1182-2007" priority="2" />
+            <topic name="Senior Adult Music Classes">
+                <pattern match="MUSI 1181-2006" />
+                <pattern match="MUSI 1182-2007" />
             </topic>
         </subject>
         
