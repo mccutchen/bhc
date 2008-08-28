@@ -412,12 +412,58 @@
             </subject> -->
         
         
-        <!-- Health and Human Services
-            ========================================================================
-            <subject name="Nursing">
+        <!-- =======================================================================
+            Nursing (Ann Cortez and Monica Wenthold as backup)
+            ======================================================================== -->
+        <subject name="Nursing">
             <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
-            </subject>
-            
+            <topic name="none">
+                <comments>NOTE: The following courses are available to anyone interested in the Nursing program. Acceptance into the program is NOT REQUIRED. For more information call 972-860-4754.</comments>
+                <pattern match="HPRS 1203-2001" />
+                <pattern match="RNSG 1108-2201" />
+                <pattern match="RNSG 1211-2001" />
+                <pattern match="RNSG 1301-2001" />
+            </topic>
+            <topic name="First Semester Program Students">
+                <comments>NOTE: The following courses are for students in the first semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RNSG 1413-2001" />
+                <pattern match="RNSG 1105-2001" />
+                <pattern match="RNSG 1105-2002" />
+                <pattern match="RNSG 1105-2003" />
+                <pattern match="RNSG 1105-2004" />
+                <pattern match="RNSG 1462-2601" />
+                <pattern match="RNSG 1462-2602" />
+                <pattern match="RNSG 1462-2603" />
+                <pattern match="RNSG 1462-2604" />
+            </topic>
+            <topic name="Second Semester Program Students">
+                <comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RNSG 1441-2201" />
+                <pattern match="RNSG 2213-2201" />
+                <pattern match="RNSG 1144-2001" />
+                <pattern match="RNSG 1144-2002" />
+                <pattern match="RNSG 1144-2003" />
+                <pattern match="RNSG 1144-2004" />
+                <pattern match="RNSG 1160-2601" />
+                <pattern match="RNSG 1160-2602" />
+                <pattern match="RNSG 1160-2604" />
+                <pattern match="RNSG 1160-2603" />
+                <pattern match="RNSG 2462-2601" />
+                <pattern match="RNSG 2462-2602" />
+                <pattern match="RNSG 2462-2603" />
+                <pattern match="RNSG 2462-2604" />
+            </topic>
+            <topic name="Fourth Semester Program Students">
+                <comments>NOTE: The following courses are for students in the first semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+                <pattern match="RNSG 1443-2001" />
+                <pattern match="RNSG 2560-2601" />
+                <pattern match="RNSG 2560-2602" />
+                <pattern match="RNSG 2560-2603" />
+                <pattern match="RNSG 2560-2604" />
+            </topic>		
+        </subject>
+        
+        <!--
             <subject name="Radiologic Sciences">
             <comments>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
             </subject> -->
