@@ -804,6 +804,9 @@
                 <pattern match="DANC 1223-2501" />
             </topic>
             <topic name="Jazz">
+                <pattern match="DANC 1247-2001" /> <!-- added 20080828 as per Jill Williams -->
+                <pattern match="DANC 1248-2001" /> <!-- added 20080828 as per Jill Williams -->
+                <pattern match="DANC 1247-2501" /> <!-- added 20080828 as per Jill Williams -->
                 <pattern match="DANC 1248-2501" />
                 <pattern match="DANC 2247-2501" />
                 <pattern match="DANC 2248-2501" />
