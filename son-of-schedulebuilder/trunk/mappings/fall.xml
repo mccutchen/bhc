@@ -570,6 +570,7 @@
     			<pattern match="ARTS 2313-2001" />
     			<pattern match="ARTS 2314-2001" />
     			<pattern match="ARTS 2311-2004" />
+    			<pattern match="ARTS 2311-2200" /> <!-- added 2008-08-29 -->
     			<pattern match="ARTS 2348-2001" />
     			<pattern match="ARTS 2349-2001" />
     			<pattern match="ARTS 2313-2501" />
@@ -647,6 +648,7 @@
     			<pattern match="ARTS 2311-2019" />
     			<pattern match="ARTS 2312-2008" />
     			<pattern match="ARTS 2341-2004" />
+    			<pattern match="ARTS 2341-2200" /> <!-- added 2008-08-29 -->
     			<pattern match="ARTS 2342-2001" />
     			<pattern match="ARTS 2311-2013" />
     			<pattern match="ARTS 2312-2007" />
@@ -715,6 +717,7 @@
 				<pattern match="DANC 1342-2001" />
 				<pattern match="DANC 2341-2001" />
 				<pattern match="DANC 2342-2001" />
+            	<pattern match="DANC 2342-2201" /> <!-- added 2008-08-29 -->
 				<pattern match="DANC 1341-2501" />
 				<pattern match="DANC 1342-2501" />
 				<pattern match="DANC 2341-2501" />
@@ -800,6 +803,7 @@
             	<pattern match="MUSI 1311-2001" />
             	<pattern match="MUSI 1311-2002" />
 				<pattern match="MUSI 2311-2001" />
+            	<pattern match="MUSI 2311-2200" /> <!-- added 2008-08-29 -->
             </topic>
             <topic name="Musicianship">
 				<pattern match="MUSI 1116-2001" />
@@ -894,42 +898,44 @@
             </topic>
             <topic name="Music - Private Lessons">
                 <subtopic name="Beginning">
-                    <comments>NOTE:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
-					<pattern match="MUAP 1101-2001" />
-					<pattern match="MUAP 1105-2001" />
-					<pattern match="MUAP 1115-2001" />
-			                	<pattern match="MUAP 1117-2001" />
-                				<pattern match="MUAP 1117-2002" />
-					<pattern match="MUAP 1121-2001" />
-					<pattern match="MUAP 1125-2001" />
-					<pattern match="MUAP 1129-2001" />
-					<pattern match="MUAP 1129-2002" />
-					<pattern match="MUAP 1133-2001" />
-                				<pattern match="MUAP 1133-2002" />
-			                	<pattern match="MUAP 1137-2001" />
-			                	<pattern match="MUAP 1137-2002" />
-					<pattern match="MUAP 1141-2001" />
-					<pattern match="MUAP 1145-2001" />
-					<pattern match="MUAP 1145-2002" />
-					<pattern match="MUAP 1153-2001" />
-					<pattern match="MUAP 1157-2001" />
-					<pattern match="MUAP 1157-2002" />
-					<pattern match="MUAP 1161-2001" />
-					<pattern match="MUAP 1161-2002" />
-                				<pattern match="MUAP 1161-2003" />
-                				<pattern match="MUAP 1161-2004" />
-					<pattern match="MUAP 1169-2001" />
-					<pattern match="MUAP 1169-2002" />
-					<pattern match="MUAP 1169-2003" />
-					<pattern match="MUAP 1169-2004" />
-					<pattern match="MUAP 1169-2005" />
-					<pattern match="MUAP 1181-2001" />
-					<pattern match="MUAP 1181-2002" />
-					<pattern match="MUAP 1181-2003" />
-                				<pattern match="MUAP 1181-2004" />
-			               	<pattern match="MUAP 2217-2002" />
-                				<pattern match="MUAP 2237-2001" />
-			                	<pattern match="MUAP 2237-2002" />
+                	<comments>NOTE:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
+                	<pattern match="MUAP 1101-2001" />
+                	<pattern match="MUAP 1105-2001" />
+                	<pattern match="MUAP 1109-2002" /> <!-- added 2008-08-29 -->
+                	<pattern match="MUAP 1115-2001" />
+                	<pattern match="MUAP 1117-2001" />
+                	<pattern match="MUAP 1117-2002" />
+                	<pattern match="MUAP 1121-2001" />
+                	<pattern match="MUAP 1125-2001" />
+                	<pattern match="MUAP 1125-2002" /> <!-- added 2008-08-29 -->
+                	<pattern match="MUAP 1129-2001" />
+                	<pattern match="MUAP 1129-2002" />
+                	<pattern match="MUAP 1133-2001" />
+                	<pattern match="MUAP 1133-2002" />
+                	<pattern match="MUAP 1137-2001" />
+                	<pattern match="MUAP 1137-2002" />
+                	<pattern match="MUAP 1141-2001" />
+                	<pattern match="MUAP 1145-2001" />
+                	<pattern match="MUAP 1145-2002" />
+                	<pattern match="MUAP 1153-2001" />
+                	<pattern match="MUAP 1157-2001" />
+                	<pattern match="MUAP 1157-2002" />
+                	<pattern match="MUAP 1161-2001" />
+                	<pattern match="MUAP 1161-2002" />
+                	<pattern match="MUAP 1161-2003" />
+                	<pattern match="MUAP 1161-2004" />
+                	<pattern match="MUAP 1169-2001" />
+                	<pattern match="MUAP 1169-2002" />
+                	<pattern match="MUAP 1169-2003" />
+                	<pattern match="MUAP 1169-2004" />
+                	<pattern match="MUAP 1169-2005" />
+                	<pattern match="MUAP 1181-2001" />
+                	<pattern match="MUAP 1181-2002" />
+                	<pattern match="MUAP 1181-2003" />
+                	<pattern match="MUAP 1181-2004" />
+                	<pattern match="MUAP 2217-2002" />
+                	<pattern match="MUAP 2237-2001" />
+                	<pattern match="MUAP 2237-2002" />
                 </subtopic>
                 <subtopic name="Intermediate">
                     <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
