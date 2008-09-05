@@ -566,6 +566,7 @@
                 <pattern match="ARTS 1303-2001" />
                 <pattern match="ARTS 1303-2002" />
                 <pattern match="ARTS 1304-2001" />
+				<pattern match="ARTS 1304-2002" />
                 <pattern match="ARTS 2373-2001" />
                 <pattern match="ARTS 1304-2501" />
             </topic>
@@ -621,11 +622,12 @@
                 <pattern match="ARTS 1316-2001" />
                 <pattern match="ARTS 1316-2003" />
                 <pattern match="ARTS 1316-2002" />
+                <pattern match="ARTS 1317-2002" />
+                <pattern match="ARTS 2311-2010" />
+                <pattern match="ARTS 2312-2018" />
                 <pattern match="ARTS 1317-2001" />
                 <pattern match="ARTS 2311-2002" />
                 <pattern match="ARTS 2312-2002" />
-                <pattern match="ARTS 1317-2002" />
-                <pattern match="ARTS 2311-2010" />
                 <pattern match="ARTS 2323-2001" />
                 <pattern match="ARTS 2324-2001" />
                 <pattern match="ARTS 2311-2008" />
@@ -721,6 +723,7 @@
                 <pattern match="MUSI 1306-2002" />
                 <pattern match="MUSI 1306-2003" />
                 <pattern match="MUSI 1306-2004" />
+                <pattern match="MUSI 1306-2005" />
                 <pattern match="MUSI 1306-2006" />
                 <pattern match="MUSI 1306-2501" />
                 <pattern match="MUSI 1306-2250" />
@@ -796,7 +799,7 @@
                     <pattern match="MUEN 1152-2750" />
                 </subtopic>
                 <subtopic name="Mariachi Band Ensemble">
-                    <pattern match="MUEN 1151-2503" />
+                    <pattern match="MUEN 1152-2503" />
                 </subtopic>                
                 <subtopic name="Flute Ensemble">
                     <pattern match="MUEN 1132-2001" />
@@ -872,6 +875,7 @@
                     <pattern match="MUAP 2217-2001" />
                     <pattern match="MUAP 2217-2002" />
                     <pattern match="MUAP 2229-2001" />
+                    <pattern match="MUAP 2229-2002" />
                     <pattern match="MUAP 2233-2001" />
                     <pattern match="MUAP 2237-2001" />
                     <pattern match="MUAP 2245-2001" />
@@ -937,6 +941,7 @@
                 <pattern match="DANC 2341-2001" />
                 <pattern match="DANC 2342-2001" />
                 <pattern match="DANC 1341-2501" />
+                <pattern match="DANC 1342-2502" />
                 <pattern match="DANC 1342-2501" />
                 <pattern match="DANC 2341-2501" />
                 <pattern match="DANC 2342-2501" />
