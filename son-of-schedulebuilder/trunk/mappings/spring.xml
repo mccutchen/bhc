@@ -761,17 +761,18 @@
                 <pattern match="MUSI 1390-2001" />
             </topic>
             <topic name="Piano for Music Majors">
+                <pattern match="MUSI 1181-2001" />
                 <pattern match="MUSI 1181-2002" />
                 <pattern match="MUSI 1182-2002" />
+                <pattern match="MUSI 1182-2003" />
                 <pattern match="MUSI 2181-2001" />
                 <pattern match="MUSI 2182-2001" />
             </topic>
             <topic name="Piano for Non Music Majors">
-                <pattern match="MUSI 1181-2001" />
                 <pattern match="MUSI 1181-2501" />
-                <pattern match="MUSI 1182-2502" />
-                <pattern match="MUSI 1181-2502" />
                 <pattern match="MUSI 1182-2501" />
+                <pattern match="MUSI 1181-2502" />
+                <pattern match="MUSI 1182-2502" />
             </topic>
             <topic name="Guitar">
                 <pattern match="MUSI 1192-2001" />
@@ -791,8 +792,12 @@
                 </subtopic>
                 <subtopic name="Chamber Ensemble">
                     <pattern match="MUEN 1152-2501" />
+                    <pattern match="MUEN 1152-2502" />
                     <pattern match="MUEN 1152-2750" />
                 </subtopic>
+                <subtopic name="Mariachi Band Ensemble">
+                    <pattern match="MUEN 1151-2503" />
+                </subtopic>                
                 <subtopic name="Flute Ensemble">
                     <pattern match="MUEN 1132-2001" />
                 </subtopic>
@@ -825,11 +830,13 @@
                     <pattern match="MUAP 1101-2001" />
                     <pattern match="MUAP 1105-2001" />
                     <pattern match="MUAP 1109-2001" />
+                    <pattern match="MUAP 1109-2002" />
                     <pattern match="MUAP 1115-2001" />
                     <pattern match="MUAP 1117-2001" />
                     <pattern match="MUAP 1117-2002" />
                     <pattern match="MUAP 1121-2001" />
                     <pattern match="MUAP 1125-2001" />
+                    <pattern match="MUAP 1125-2002" />
                     <pattern match="MUAP 1129-2001" />
                     <pattern match="MUAP 1129-2002" />
                     <pattern match="MUAP 1133-2001" />
@@ -838,6 +845,7 @@
                     <pattern match="MUAP 1137-2002" />
                     <pattern match="MUAP 1141-2001" />
                     <pattern match="MUAP 1145-2001" />
+                    <pattern match="MUAP 1145-2002" />
                     <pattern match="MUAP 1153-2001" />
                     <pattern match="MUAP 1157-2001" />
                     <pattern match="MUAP 1161-2001" />
@@ -860,12 +868,15 @@
                     <pattern match="MUAP 2201-2001" />
                     <pattern match="MUAP 2209-2001" />
                     <pattern match="MUAP 2209-2002" />
-                    <pattern match="MUAP 2217-2001" />
                     <pattern match="MUAP 2215-2001" />
+                    <pattern match="MUAP 2217-2001" />
+                    <pattern match="MUAP 2217-2002" />
                     <pattern match="MUAP 2229-2001" />
                     <pattern match="MUAP 2233-2001" />
                     <pattern match="MUAP 2237-2001" />
+                    <pattern match="MUAP 2245-2001" />
                     <pattern match="MUAP 2253-2001" />
+                    <pattern match="MUAP 2257-2001" />
                     <pattern match="MUAP 2261-2001" />
                     <pattern match="MUAP 2261-2002" />
                     <pattern match="MUAP 2269-2001" />
