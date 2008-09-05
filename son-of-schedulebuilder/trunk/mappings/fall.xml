@@ -267,7 +267,7 @@
 				<pattern match="ITSC 1191-2250" /> <!-- moved from app software -->
     			<pattern match="ITSC 1191-2251" />
     			<pattern match="ITSC 1191-2253" />		
-    			<pattern match="ITSC 1191-2255" />    			
+    			<!-- duplicate <pattern match="ITSC 1191-2255" />-->    			
 <!-- 
     			<pattern match="ITSC 1191-2252" />		
     			<pattern match="ITSC 1191-2252" />
@@ -902,7 +902,10 @@
                 	<pattern match="MUAP 1101-2001" />
                 	<pattern match="MUAP 1105-2001" />
                 	<pattern match="MUAP 1109-2002" /> <!-- added 2008-08-29 -->
+                	<pattern match="MUAP 1109-2200" /> <!-- added 2008-09-05 -->
+                	<pattern match="MUAP 1109-2201" /> <!-- added 2008-09-05 -->
                 	<pattern match="MUAP 1115-2001" />
+                	<pattern match="MUAP 1115-2200" /> <!-- added 2008-09-05 -->
                 	<pattern match="MUAP 1117-2001" />
                 	<pattern match="MUAP 1117-2002" />
                 	<pattern match="MUAP 1121-2001" />
@@ -943,7 +946,8 @@
 					<pattern match="MUAP 2209-2001" />
 					<pattern match="MUAP 2209-2002" />
 					<pattern match="MUAP 2215-2001" />
-					<pattern match="MUAP 2217-2001" />
+                	<pattern match="MUAP 2215-2200" /> <!-- added 2008-09-05 -->
+                	<pattern match="MUAP 2217-2001" />
 					<pattern match="MUAP 2229-2001" />
 					<pattern match="MUAP 2229-2002" />
 					<pattern match="MUAP 2233-2001" />
@@ -955,6 +959,7 @@
 					<pattern match="MUAP 2269-2002" />
 					<pattern match="MUAP 2281-2001" />
 					<pattern match="MUAP 2281-2002" />
+                	<pattern match="MUAP 2281-2200" /> <!-- added 2008-09-05 -->
                 </subtopic>
             </topic>
         </subject>
