@@ -406,10 +406,71 @@
         
         
         <!-- Emergency Medical Services (Cletha Silas)
-            ========================================================================
-            <subject name="Emergency Medical Services">
-            <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http:www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.  NOTE: REQUIRED:  Current CPR AHA Healthcare Provider or equivalent certification.</comments>
-            </subject> -->
+            ======================================================================== -->
+        <subject name="Emergency Medical Services">
+            <comments>
+                <p>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/.  Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences.  International students are advised to contact the Brookhaven College Multicultural Center, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning  this requirement.</p>
+                <p>NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road.</p>
+                <p>NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. </p>
+                <p>NOTE: All EMS courses require CPR certification for infant, child and adult.  This is the Healthcare Provider level by the American Heart Association or Professional Rescuer by the American Red Cross.  Students can register for the EMS course without having a current CPR card, but must be CPR certified by the mandatory orientation day.</p>
+            </comments>
+            <topic name="Emergency Medical Services, Basic">
+                <subtopic name="EMT-Basic Class #49, B-Shift">
+                    <pattern match="EMSP 1501-2249" />
+                    <pattern match="EMSP 1501-2210" />
+                    <pattern match="EMSP 1501-2211" />
+                    <pattern match="EMSP 1160-2249" />
+                </subtopic>
+                <subtopic name="EMT-Basic Class #51">
+                    <pattern match="EMSP 1501-2201" />
+                    <pattern match="EMSP 1501-2212" />
+                    <pattern match="EMSP 1501-2213" />
+                </subtopic>  
+                <subtopic name="EMT-Basic Class #50">
+                    <pattern match="EMSP 1501-2700" /> 
+                    <pattern match="EMSP 1501-2701" /> 
+                    <pattern match="EMSP 1501-2702" />
+                </subtopic>  
+            </topic>
+            <topic name="Emergency Medical Services,  Paramedic">
+                <subtopic name="Paramedic Class #20, B-Shift">
+                    <pattern match="EMSP 2338-2220" />
+                    <pattern match="EMSP 2338-2202" /> <!-- this one's also in Class #21, C-Shift, so I removed that one -->
+                    <pattern match="EMSP 2338-2203" />
+                    <pattern match="EMSP 2143-2201" />
+                    <pattern match="EMSP 2143-2202" />
+                    <pattern match="EMSP 2143-2220" />
+                    <pattern match="EMSP 2463-2220" />
+                </subtopic>
+                <subtopic name="Paramedic Class #21, C-Shift">
+                    <pattern match="EMSP 2434-2221" />
+                    <pattern match="EMSP 2434-2202" />
+                    <pattern match="EMSP 1355-2221" />
+                    <pattern match="EMSP 1355-2202" />
+                    <pattern match="EMSP 2430-2221" />
+                    <pattern match="EMSP 2430-2202" />
+                    <pattern match="EMSP 2338-2221" />
+                    <!-- <pattern match="EMSP 2338-2202" /> duplicated from Class #20, B-Shift -->
+                    <pattern match="EMSP 2261-2221" />
+                </subtopic>
+                <subtopic name="Paramedic Class #23">
+                    <pattern match="EMSP 1438-2223" />
+                    <pattern match="EMSP 1438-2201 " />
+                    <pattern match="EMSP 1438-2202" />
+                </subtopic>				
+                <subtopic name="Paramedic Class #22">
+                    <pattern match="EMSP 1355-2722" />
+                    <pattern match="EMSP 2434-2722" />
+                    <pattern match="EMSP 2430-2722" />
+                    <pattern match="EMSP 2338-2722" />
+                    <pattern match="EMSP 2261-2222" />
+                </subtopic>
+                <subtopic name="Mass Disaster Response, B-Shift">
+                    <pattern match="EMSP 2332-2207" />
+                    <pattern match="EMSP 2332-2201" />
+                </subtopic>
+            </topic>
+        </subject>
         
         
         <!-- =======================================================================
