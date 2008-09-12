@@ -391,9 +391,9 @@
                     <pattern match="EMSP 2338-2204" />
 					<!-- <pattern match="EMSP 2338-2202" />  --><!-- should be in class 21, per Ann Cortez -->
                     <pattern match="EMSP 2338-2203" />
+                    <pattern match="EMSP 2143-2220" />
                     <pattern match="EMSP 2143-2201" />
                     <pattern match="EMSP 2143-2202" />
-                    <pattern match="EMSP 2143-2220" />
                     <pattern match="EMSP 2463-2220" />
                 </subtopic>
                 <subtopic name="Paramedic Class #21, C-Shift">
