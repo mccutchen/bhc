@@ -538,7 +538,6 @@
             </topic>
             <topic name="First Semester Program Students">
                 <pattern match="RADR 1201-2001" />
-                <pattern match="RADR 1202-2001" />
                 <pattern match="RADR 1411-2001" />
                 <pattern match="RADR 1411-2002" />
                 <pattern match="RADR 1411-2003" />
@@ -552,6 +551,7 @@
                 <pattern match="RADR 1203-2004" />
             </topic>
             <topic name="Fourth Semester Program Students">
+                <pattern match="RADR 1202-2001" />
                 <pattern match="RADR 1266-2201" />
                 <pattern match="RADR 1266-2202" />
                 <pattern match="RADR 1266-2203" />
