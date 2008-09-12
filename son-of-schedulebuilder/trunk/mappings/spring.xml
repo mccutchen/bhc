@@ -456,7 +456,7 @@
                 </subtopic>
                 <subtopic name="Paramedic Class #23">
                     <pattern match="EMSP 1438-2223" />
-                    <pattern match="EMSP 1438-2201 " />
+                    <pattern match="EMSP 1438-2201" />
                     <pattern match="EMSP 1438-2202" />
                 </subtopic>				
                 <subtopic name="Paramedic Class #22">
