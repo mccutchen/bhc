@@ -538,6 +538,7 @@
             </topic>
             <topic name="First Semester Program Students">
                 <pattern match="RADR 1201-2001" />
+                <pattern match="RADR 1202-2001" />
                 <pattern match="RADR 1411-2001" />
                 <pattern match="RADR 1411-2002" />
                 <pattern match="RADR 1411-2003" />
