@@ -1,68 +1,11 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <mappings>
     <mapping type="subject">
-        <!-- World Languages (Joe Monroy)
+
+        <!-- Business Studies (Linda Hughes)
             ======================================================================== -->
-        <subject name="English for Speakers of Other Languages">
-            <topic name="Listening/Speaking Level One">
-                <pattern match="ESOL 0031" />
-            </topic>
-            <topic name="Listening/Speaking Level Two">
-                <pattern match="ESOL 0032" />
-            </topic>
-            <topic name="Listening/Speaking Level Three">
-                <pattern match="ESOL 0033" />
-            </topic>
-            <topic name="Listening/Speaking Level Four">
-                <pattern match="ESOL 0034" />
-            </topic>
-            <topic name="Accent Reduction">
-                <!-- this pattern needs to override the previous one, so it gets
-                    a priority of 2 -->
-                <pattern match="ESOL 0034-2020" priority="2" />
-                <pattern match="ESOL 0034-2021" priority="2" />
-            </topic>
-            <topic name="Reading Level One">
-                <pattern match="ESOL 0041" />
-            </topic>
-            <topic name="Reading Level Two">
-                <pattern match="ESOL 0042" />
-            </topic>
-            <topic name="Reading Level Three">
-                <pattern match="ESOL 0043" />
-            </topic>
-            <topic name="Reading Level Four">
-                <pattern match="ESOL 0044" />
-            </topic>
-            <topic name="Writing and Grammar Level One">
-                <pattern match="ESOL 00[56]1" />
-            </topic>
-            <topic name="Writing and Grammar Level Two">
-                <pattern match="ESOL 00[56]2" />
-            </topic>
-            <topic name="Writing and Grammar Level Three">
-                <pattern match="ESOL 00[56]3" />
-            </topic>
-            <topic name="Writing and Grammar Level Four">
-                <pattern match="ESOL 00[56]4" />
-            </topic>
-            <topic name="Level One Intensive English Program">
-                <pattern match="ESOL 0036" />
-            </topic>
-            <topic name="Level Two Intensive English Program">
-                <pattern match="ESOL 0066" />
-            </topic>
-            <topic name="Level Three Intensive English Program">
-                <pattern match="ESOL 0056" />
-            </topic>
-            <topic name="Level Four Intensive English Program">
-                <pattern match="ESOL 0046" />
-            </topic>
-        </subject>
-        
-        
-        
-        <!-- CIT (Bill Hammerschlag) -->
+            
+            <!-- CIT (Bill Hammerschlag) -->
             ========================================================================
             
         <subject name="Computer Information Technology">
@@ -291,6 +234,7 @@
                 <pattern match="ITSC 1191-2231" />
                 <pattern match="ITSC 1191-2232" />
                 <pattern match="ITSC 1191-2233" />
+                <pattern match="ITSC 1191-2234" />
                 <pattern match="ITSC 1191-2253" />
                 <pattern match="ITSC 1191-2254" />
                 <pattern match="ITSC 1191-2255" />
@@ -314,6 +258,17 @@
             </topic>
         </subject>
         
+        
+        <!-- Management Program (Mary Lou Avera and Marisa Walsdorf)
+            ======================================================================== -->
+            <subject name="Management Program">
+            <comments>NOTE:  Earn six credit hours, but attend class only one night per week for three hours. The program includes personal mentoring from a full-time management faculty member and small-group interaction and networking with other employed professionals.  For advisement call the faculty members: Mary Lou Avera, 972-860-4179, marylou@dcccd.edu; or Marisa Walsdorf, 972-860-4186, marisa_walsdorf@dcccd.edu.  Minimum requirements for enrollment:  A student must be currently employed in an appropriate job and meet the TSI requirements in reading and writing.  Credits are earned in a traditional on-campus course and in an on-the-job, cooperative education training course.  There are no course prerequisites, but students may enroll in only one co-op ed course per semester.   It is a requirement that any student taking a management co-op course at Brookhaven College for the first time must call the instructor for permission before registering in these courses.  Visit us online at www.BrookhavenCollege.edu/management.</comments>
+                <pattern match="BMGT 1301-2501" />
+                <pattern match="BMGT 1382-2501" />
+                <pattern match="HRPO 2301-2502" />
+                <pattern match="BMGT 1383-2502" />
+            </subject>
+                
         
         <!-- Coordinated Studies (Resi Douglas)
             ========================================================================
@@ -392,24 +347,18 @@
             </topic>
             </subject>-->
             
-        <subject name="Cultural Studies">
-            <topic name="Coordinated Studies">
-                <pattern match="CUST 2370-2050" />
-            </topic>
-            <topic name="DECEMBER WINTER FLEX TERM">
-                <pattern match="CUST 2370-2420" />
-            </topic>
-        </subject>
-        
+
             <!--
             <subject name="History">
             <topic name="Coordinated Studies">
             <pattern match="HIST 1302-2050" />
             </topic>
             </subject> -->
-        
-        
-        <!-- Emergency Medical Services (Cletha Silas)
+            
+            
+        <!-- Health and Human Services (Monica Wenthold)
+            ======================================================================== -->        
+        <!-- Emergency Medical Services (Debra Cox)
             ======================================================================== -->
         <subject name="Emergency Medical Services">
             <comments>
@@ -600,18 +549,9 @@
         
         
         
-        <!-- Management Program (Mary Lou Avera and Marisa Walsdorf)
-            ======================================================================== -->
-            <subject name="Management Program">
-            <comments>NOTE:  Earn six credit hours, but attend class only one night per week for three hours. The program includes personal mentoring from a full-time management faculty member and small-group interaction and networking with other employed professionals.  For advisement call the faculty members: Mary Lou Avera, 972-860-4179, marylou@dcccd.edu; or Marisa Walsdorf, 972-860-4186, marisa_walsdorf@dcccd.edu.  Minimum requirements for enrollment:  A student must be currently employed in an appropriate job and meet the TSI requirements in reading and writing.  Credits are earned in a traditional on-campus course and in an on-the-job, cooperative education training course.  There are no course prerequisites, but students may enroll in only one co-op ed course per semester.   It is a requirement that any student taking a management co-op course at Brookhaven College for the first time must call the instructor for permission before registering in these courses.  Visit us online at www.BrookhavenCollege.edu/management.</comments>
-                <pattern match="BMGT 1301-2501" />
-                <pattern match="BMGT 1382-2501" />
-                <pattern match="HRPO 2301-2502" />
-                <pattern match="BMGT 1383-2502" />
-            </subject>
+
         
-        
-        <!-- School of the Arts (Fran Rhodes & Jill Williams) -->
+        <!-- School of the Arts (Jill Williams) -->
             ========================================================================
         <subject name="Art">
             <topic name="Problems In Contemporary Art">
@@ -788,6 +728,162 @@
             </topic>
         </subject>
         
+        <subject name="Cultural Studies">
+            <topic name="Coordinated Studies">
+                <pattern match="CUST 2370-2050" />
+            </topic>
+            <topic name="DECEMBER WINTER FLEX TERM">
+                <pattern match="CUST 2370-2420" />
+            </topic>
+        </subject>
+                
+        <subject name="Dance">
+            <comments>Note:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
+            <topic name="Dance Appreciation">
+                <pattern match="DANC 2303-2001" />
+                <pattern match="DANC 2303-2501" />
+            </topic>
+            <topic name="Body Conditioning">
+                <pattern match="DANC 1141-2001" />
+                <pattern match="DANC 1142-2001" />
+            </topic>
+            <topic name="Tap">
+                <pattern match="DANC 1110-2001" />
+                <pattern match="DANC 1111-2001" />
+                <pattern match="DANC 2110-2001" />
+                <pattern match="DANC 2111-2001" />
+            </topic>
+            <topic name="Dance Practicum">
+                <pattern match="DANC 1351-2235" />
+                <pattern match="DANC 1351-2736" />
+                <pattern match="DANC 1352-2235" />
+                <pattern match="DANC 1352-2736" />
+                <pattern match="DANC 2351-2235" />
+                <pattern match="DANC 2351-2736" />
+                <pattern match="DANC 2352-2235" />
+                <pattern match="DANC 2352-2736" />
+            </topic>
+            <topic name="Hip Hop">
+                <pattern match="DANC 1222-2001" />
+                <pattern match="DANC 1223-2001" />
+                <pattern match="DANC 1222-2501" />
+                <pattern match="DANC 1223-2501" />
+            </topic>
+            <topic name="Jazz">
+                <pattern match="DANC 1247-2001" /> <!-- added 20080828 as per Jill Williams -->
+                <pattern match="DANC 1248-2001" /> <!-- added 20080828 as per Jill Williams -->
+                <pattern match="DANC 1247-2501" /> <!-- added 20080828 as per Jill Williams -->
+                <pattern match="DANC 1248-2501" />
+                <pattern match="DANC 2247-2501" />
+                <pattern match="DANC 2248-2501" />
+            </topic>
+            <topic name="Ballet">
+                <pattern match="DANC 1341-2001" />
+                <pattern match="DANC 1342-2001" />
+                <pattern match="DANC 2341-2001" />
+                <pattern match="DANC 2342-2001" />
+                <pattern match="DANC 1341-2501" />
+                <pattern match="DANC 1342-2502" />
+                <pattern match="DANC 1342-2501" />
+                <pattern match="DANC 2341-2501" />
+                <pattern match="DANC 2342-2501" />
+            </topic>
+            <topic name="Ballet Technique">
+                <pattern match="DANC 2141-2001" />
+                <pattern match="DANC 2142-2250" />
+            </topic>
+            <topic name="Modern Dance">
+                <comments>NOTE:  Students must have had one semester of dance training for the following classes.</comments>
+                <pattern match="DANC 1245-2001" />
+                <pattern match="DANC 1246-2001" />
+                <pattern match="DANC 2245-2001" />
+                <pattern match="DANC 2246-2001" />
+                <pattern match="DANC 1245-2501" />
+                <pattern match="DANC 1246-2501" />
+                <pattern match="DANC 2245-2501" />
+                <pattern match="DANC 2246-2501" />
+            </topic>
+        </subject>
+        
+        <subject name="Drama">
+            <topic name="Introduction to Theatre">
+                <pattern match="DRAM 1310-2001" />
+                <pattern match="DRAM 1310-2002" />
+                <pattern match="DRAM 1310-2501" />
+            </topic>
+            <topic name="Film Appreciation">
+                <pattern match="DRAM 2366-2001" />
+                <pattern match="DRAM 2366-2002" />
+                <pattern match="DRAM 2366-2420" />
+                <pattern match="DRAM 2366-2421" />
+            </topic>
+            <topic name="Theatre Workshop">
+                <pattern match="DRAM 1323-2001" />
+            </topic>
+            <topic name="Stagecraft">
+                <pattern match="DRAM 1330-2001" />
+                <pattern match="DRAM 2331-2001" />
+            </topic>
+            <topic name="Acting">
+                <pattern match="DRAM 1351-2001" />
+                <pattern match="DRAM 1351-2002" />
+                <pattern match="DRAM 1352-2001" />
+                <pattern match="DRAM 1352-2002" />
+                <pattern match="DRAM 2351-2001" />
+                <pattern match="DRAM 2351-2002" />
+                <pattern match="DRAM 2352-2001" />
+                <pattern match="DRAM 2352-2002" />
+                <pattern match="DRAM 1351-2501" />
+                <pattern match="DRAM 1352-2501" />
+                <pattern match="DRAM 2351-2501" />
+                <pattern match="DRAM 2352-2501" />
+            </topic>
+            <topic name="Rehearsal">
+                <subtopic name="First Play, Spring 2009">
+                    <pattern match="DRAM 1221-2735" />
+                </subtopic>
+                <subtopic name="Second Play, Spring 2009">
+                    <pattern match="DRAM 1221-2736" />
+                </subtopic>
+            </topic>
+        </subject>
+                
+        <subject name="Humanities">
+            <pattern match="HUMA 1302-2001" />
+            <pattern match="HUMA 1315-2010" />
+            <pattern match="HUMA 1311-2001" />
+            <pattern match="HUMA 1315-2007" />
+            <pattern match="HUMA 1315-2001" />
+            <pattern match="HUMA 1315-2004" />
+            <pattern match="HUMA 1315-2009" />
+            <pattern match="HUMA 1315-2005" />
+            <pattern match="HUMA 1315-2002" />
+            <pattern match="HUMA 1315-2011" />
+            <pattern match="HUMA 1315-2008" />
+            <pattern match="HUMA 1315-2003" />
+            <pattern match="HUMA 1315-2503" />
+            <pattern match="HUMA 1315-2501" />
+            <pattern match="HUMA 1315-2502" />
+            <pattern match="HUMA 1315-2504" />
+            <pattern match="HUMA 1315-2221" />
+            <pattern match="HUMA 1315-2250" />
+            <pattern match="HUMA 1315-2400" />
+            <pattern match="HUMA 1315-2422" />
+            <pattern match="HUMA 1315-2423" />
+            <pattern match="HUMA 1315-2424" />
+            <pattern match="HUMA 1315-2425" />
+            <pattern match="HUMA 1315-2426" />
+            <pattern match="HUMA 1315-2427" />
+            <pattern match="HUMA 1315-2428" />
+            <pattern match="HUMA 1315-2429" />
+            <pattern match="HUMA 1315-2430" />
+            <pattern match="HUMA 1315-2431" />
+            <pattern match="HUMA 1315-2432" />
+            <topic name="December Winter Flex Term">
+                <pattern match="HUMA 1315-2420" />
+            </topic>
+        </subject>
+                
         <subject name="Music">
             <topic name="Music Appreciation">
                 <pattern match="MUSI 1306-2001" />
@@ -966,153 +1062,69 @@
             </topic>
         </subject>
         
-        <subject name="Dance">
-            <comments>Note:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
-            <topic name="Dance Appreciation">
-                <pattern match="DANC 2303-2001" />
-                <pattern match="DANC 2303-2501" />
+
+
+        
+        <!-- World Languages (Joe Monroy)
+            ======================================================================== -->
+        <subject name="English for Speakers of Other Languages">
+            <topic name="Listening/Speaking Level One">
+                <pattern match="ESOL 0031" />
             </topic>
-            <topic name="Body Conditioning">
-                <pattern match="DANC 1141-2001" />
-                <pattern match="DANC 1142-2001" />
+            <topic name="Listening/Speaking Level Two">
+                <pattern match="ESOL 0032" />
             </topic>
-            <topic name="Tap">
-                <pattern match="DANC 1110-2001" />
-                <pattern match="DANC 1111-2001" />
-                <pattern match="DANC 2110-2001" />
-                <pattern match="DANC 2111-2001" />
+            <topic name="Listening/Speaking Level Three">
+                <pattern match="ESOL 0033" />
             </topic>
-            <topic name="Dance Practicum">
-                <pattern match="DANC 1351-2235" />
-                <pattern match="DANC 1351-2736" />
-                <pattern match="DANC 1352-2235" />
-                <pattern match="DANC 1352-2736" />
-                <pattern match="DANC 2351-2235" />
-                <pattern match="DANC 2351-2736" />
-                <pattern match="DANC 2352-2235" />
-                <pattern match="DANC 2352-2736" />
+            <topic name="Listening/Speaking Level Four">
+                <pattern match="ESOL 0034" />
             </topic>
-            <topic name="Hip Hop">
-                <pattern match="DANC 1222-2001" />
-                <pattern match="DANC 1223-2001" />
-                <pattern match="DANC 1222-2501" />
-                <pattern match="DANC 1223-2501" />
+            <topic name="Accent Reduction">
+                <!-- this pattern needs to override the previous one, so it gets
+                    a priority of 2 -->
+                <pattern match="ESOL 0034-2020" priority="2" />
+                <pattern match="ESOL 0034-2021" priority="2" />
             </topic>
-            <topic name="Jazz">
-                <pattern match="DANC 1247-2001" /> <!-- added 20080828 as per Jill Williams -->
-                <pattern match="DANC 1248-2001" /> <!-- added 20080828 as per Jill Williams -->
-                <pattern match="DANC 1247-2501" /> <!-- added 20080828 as per Jill Williams -->
-                <pattern match="DANC 1248-2501" />
-                <pattern match="DANC 2247-2501" />
-                <pattern match="DANC 2248-2501" />
+            <topic name="Reading Level One">
+                <pattern match="ESOL 0041" />
             </topic>
-            <topic name="Ballet">
-                <pattern match="DANC 1341-2001" />
-                <pattern match="DANC 1342-2001" />
-                <pattern match="DANC 2341-2001" />
-                <pattern match="DANC 2342-2001" />
-                <pattern match="DANC 1341-2501" />
-                <pattern match="DANC 1342-2502" />
-                <pattern match="DANC 1342-2501" />
-                <pattern match="DANC 2341-2501" />
-                <pattern match="DANC 2342-2501" />
+            <topic name="Reading Level Two">
+                <pattern match="ESOL 0042" />
             </topic>
-            <topic name="Ballet Technique">
-                <pattern match="DANC 2141-2001" />
-                <pattern match="DANC 2142-2250" />
+            <topic name="Reading Level Three">
+                <pattern match="ESOL 0043" />
             </topic>
-            <topic name="Modern Dance">
-                <comments>NOTE:  Students must have had one semester of dance training for the following classes.</comments>
-                <pattern match="DANC 1245-2001" />
-                <pattern match="DANC 1246-2001" />
-                <pattern match="DANC 2245-2001" />
-                <pattern match="DANC 2246-2001" />
-                <pattern match="DANC 1245-2501" />
-                <pattern match="DANC 1246-2501" />
-                <pattern match="DANC 2245-2501" />
-                <pattern match="DANC 2246-2501" />
+            <topic name="Reading Level Four">
+                <pattern match="ESOL 0044" />
+            </topic>
+            <topic name="Writing and Grammar Level One">
+                <pattern match="ESOL 00[56]1" />
+            </topic>
+            <topic name="Writing and Grammar Level Two">
+                <pattern match="ESOL 00[56]2" />
+            </topic>
+            <topic name="Writing and Grammar Level Three">
+                <pattern match="ESOL 00[56]3" />
+            </topic>
+            <topic name="Writing and Grammar Level Four">
+                <pattern match="ESOL 00[56]4" />
+            </topic>
+            <topic name="Level One Intensive English Program">
+                <pattern match="ESOL 0036" />
+            </topic>
+            <topic name="Level Two Intensive English Program">
+                <pattern match="ESOL 0066" />
+            </topic>
+            <topic name="Level Three Intensive English Program">
+                <pattern match="ESOL 0056" />
+            </topic>
+            <topic name="Level Four Intensive English Program">
+                <pattern match="ESOL 0046" />
             </topic>
         </subject>
         
-        <subject name="Drama">
-            <topic name="Introduction to Theatre">
-                <pattern match="DRAM 1310-2001" />
-                <pattern match="DRAM 1310-2002" />
-                <pattern match="DRAM 1310-2501" />
-            </topic>
-            <topic name="Film Appreciation">
-                <pattern match="DRAM 2366-2001" />
-                <pattern match="DRAM 2366-2002" />
-                <pattern match="DRAM 2366-2420" />
-                <pattern match="DRAM 2366-2421" />
-            </topic>
-            <topic name="Theatre Workshop">
-                <pattern match="DRAM 1323-2001" />
-            </topic>
-            <topic name="Stagecraft">
-                <pattern match="DRAM 1330-2001" />
-                <pattern match="DRAM 2331-2001" />
-            </topic>
-            <topic name="Acting">
-                <pattern match="DRAM 1351-2001" />
-                <pattern match="DRAM 1351-2002" />
-                <pattern match="DRAM 1352-2001" />
-                <pattern match="DRAM 1352-2002" />
-                <pattern match="DRAM 2351-2001" />
-                <pattern match="DRAM 2351-2002" />
-                <pattern match="DRAM 2352-2001" />
-                <pattern match="DRAM 2352-2002" />
-                <pattern match="DRAM 1351-2501" />
-                <pattern match="DRAM 1352-2501" />
-                <pattern match="DRAM 2351-2501" />
-                <pattern match="DRAM 2352-2501" />
-            </topic>
-            <topic name="Rehearsal">
-                <subtopic name="First Play, Spring 2009">
-                    <pattern match="DRAM 1221-2735" />
-                </subtopic>
-                <subtopic name="Second Play, Spring 2009">
-                    <pattern match="DRAM 1221-2736" />
-                </subtopic>
-            </topic>
-        </subject>
-        
-        <subject name="Humanities">
-            <pattern match="HUMA 1302-2001" />
-            <pattern match="HUMA 1315-2010" />
-            <pattern match="HUMA 1311-2001" />
-            <pattern match="HUMA 1315-2007" />
-            <pattern match="HUMA 1315-2001" />
-            <pattern match="HUMA 1315-2004" />
-            <pattern match="HUMA 1315-2009" />
-            <pattern match="HUMA 1315-2005" />
-            <pattern match="HUMA 1315-2002" />
-            <pattern match="HUMA 1315-2011" />
-            <pattern match="HUMA 1315-2008" />
-            <pattern match="HUMA 1315-2003" />
-            <pattern match="HUMA 1315-2503" />
-            <pattern match="HUMA 1315-2501" />
-            <pattern match="HUMA 1315-2502" />
-            <pattern match="HUMA 1315-2504" />
-            <pattern match="HUMA 1315-2221" />
-            <pattern match="HUMA 1315-2250" />
-            <pattern match="HUMA 1315-2400" />
-            <pattern match="HUMA 1315-2422" />
-            <pattern match="HUMA 1315-2423" />
-            <pattern match="HUMA 1315-2424" />
-            <pattern match="HUMA 1315-2425" />
-            <pattern match="HUMA 1315-2426" />
-            <pattern match="HUMA 1315-2427" />
-            <pattern match="HUMA 1315-2428" />
-            <pattern match="HUMA 1315-2429" />
-            <pattern match="HUMA 1315-2430" />
-            <pattern match="HUMA 1315-2431" />
-            <pattern match="HUMA 1315-2432" />
-            <topic name="December Winter Flex Term">
-                <pattern match="HUMA 1315-2420" />
-            </topic>
-        </subject>
-        
+                
     </mapping>
 </mappings>
 
