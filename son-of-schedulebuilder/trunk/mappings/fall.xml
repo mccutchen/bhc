@@ -150,9 +150,10 @@
 				<pattern match="ITNW 1492-2501" />				  	
 				<pattern match="ITCC 1400-2250" />		
 				<pattern match="ITCC 1440-2501" />
-    				<pattern match="ITCC 1401-2501" />	 
-    				<pattern match="ITCC 1404-2250" />	
-    				<pattern match="ITCC 2408-2501" />	
+    			<pattern match="ITCC 1401-2501" />	 
+    			<pattern match="ITCC 1404-2250" />	
+    			<pattern match="ITCC 2408-2501" />
+    			<pattern match="ITCC 2408-2750" /> <!-- added 2008-09-12 -->
     		</topic>
     		<topic name="Information Security and LAN">
 				<pattern match="ITNW 1451-2426" />	
@@ -703,6 +704,7 @@
             </topic>
             <topic name="Hip Hop">
 				<pattern match="DANC 1222-2001" />
+            	<pattern match="DANC 1222-2201" /> <!-- added 2008-09-12 -->
 				<pattern match="DANC 1222-2501" />
 				<pattern match="DANC 1223-2501" />
 				<pattern match="DANC 2222-2501" />
@@ -714,6 +716,7 @@
 			</topic>
             <topic name="Ballet">
 				<pattern match="DANC 1341-2001" />
+            	<pattern match="DANC 1341-2201" /> <!-- added 2008-09-12 -->
 				<pattern match="DANC 1342-2001" />
 				<pattern match="DANC 2341-2001" />
 				<pattern match="DANC 2342-2001" />
@@ -725,6 +728,7 @@
             </topic>
             <topic name="Ballet Technique">
 				<pattern match="DANC 2141-2001" />
+            	<pattern match="DANC 2142-2200" /> <!-- added 2008-09-12 -->
 				<pattern match="DANC 2142-2250" />
             </topic>
             <topic name="Modern Dance">
@@ -880,6 +884,7 @@
                 <subtopic name="Keyboard Ensemble">
 					<pattern match="MUEN 1131-2001" />
 					<pattern match="MUEN 1131-2002" />
+                	<pattern match="MUEN 1131-2200" /> <!-- added 2008-09-12 -->
                 </subtopic>
                 <subtopic name="Percussion Ensemble">
 					<pattern match="MUEN 1135-2002" />
@@ -890,6 +895,7 @@
                 </subtopic>
                 <subtopic name="Vocal Jazz / Lab Band">
 					<pattern match="MUEN 1151-2001" />
+                	<pattern match="MUEN 1151-2200" /> <!-- added 2008-09-12 -->
 					<pattern match="MUEN 2123-2001" />
 					<pattern match="MUEN 2123-2200" />
 					<pattern match="MUEN 2123-2002" />
