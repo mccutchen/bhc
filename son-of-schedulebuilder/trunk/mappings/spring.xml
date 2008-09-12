@@ -436,7 +436,8 @@
             <topic name="Emergency Medical Services,  Paramedic">
                 <subtopic name="Paramedic Class #20, B-Shift">
                     <pattern match="EMSP 2338-2220" />
-                    <pattern match="EMSP 2338-2202" /> <!-- this one's also in Class #21, C-Shift, so I removed that one -->
+                    <pattern match="EMSP 2338-2204" />
+					<!-- <pattern match="EMSP 2338-2202" />  --><!-- should be in class 21, per Ann Cortez -->
                     <pattern match="EMSP 2338-2203" />
                     <pattern match="EMSP 2143-2201" />
                     <pattern match="EMSP 2143-2202" />
@@ -451,7 +452,7 @@
                     <pattern match="EMSP 2430-2221" />
                     <pattern match="EMSP 2430-2202" />
                     <pattern match="EMSP 2338-2221" />
-                    <!-- <pattern match="EMSP 2338-2202" /> duplicated from Class #20, B-Shift -->
+                    <pattern match="EMSP 2338-2202" />
                     <pattern match="EMSP 2261-2221" />
                 </subtopic>
                 <subtopic name="Paramedic Class #23">
