@@ -149,6 +149,7 @@
                 <pattern match="ITNW 1356-2501" />
                 <pattern match="ITNW 1441-2501" />
                 <pattern match="IMED 2409-2501" />
+                <pattern match="IMED 2409-2426" /> <!-- Requested by Linda Hughes 9/11/08 (was in Vcom) -->
                 <pattern match="IMED 1416-2426" />
                 <pattern match="INEW 1440-2426" />
                 <pattern match="ITSE 1301-2426" />
