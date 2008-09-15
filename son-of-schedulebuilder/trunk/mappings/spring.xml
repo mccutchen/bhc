@@ -118,6 +118,7 @@
                 <pattern match="ITSC 1191-2701" />
                 <pattern match="ITSC 1191-2702" />
                 <pattern match="ITSC 1191-2703" />
+                <pattern match="ITSC 1191-2704" /> <!-- Added per Linda Hughes, 9/15 - seniors -->
                 <pattern match="ITSC 1291-2701" />
                 <pattern match="ITSC 1291-2702" />
                 <pattern match="ITSC 1409-2501" />
