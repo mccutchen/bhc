@@ -389,8 +389,9 @@
             <topic name="Emergency Medical Services,  Paramedic">
                 <subtopic name="Paramedic Class #20, B-Shift">
                     <pattern match="EMSP 2338-2220" />
+                    <pattern match="EMSP 2338-2203" /> <!-- reordered per e-mail from Debra Sept. 15 -->
                     <pattern match="EMSP 2338-2204" />
-					<!-- <pattern match="EMSP 2338-2202" />  --><!-- should be in class 21, per Ann Cortez -->
+					<!-- <pattern match="EMSP 2338-2202" />  --><!-- should be in class 21, per Debra Cox -->
                     <pattern match="EMSP 2338-2203" />
                     <pattern match="EMSP 2143-2220" />
                     <pattern match="EMSP 2143-2201" />
