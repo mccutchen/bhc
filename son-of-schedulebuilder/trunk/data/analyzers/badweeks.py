@@ -28,7 +28,7 @@ def extract(bounds, data):
     a, b = bounds
     return data[a:b]
 
-for line in file('../2008-spring/BH2008SP.TXT'):
+for line in file('../2009-spring/BH2009SP.TXT'):
     a, b = beginsfield
     begins = line[a:b].strip()
 
