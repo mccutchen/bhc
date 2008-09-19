@@ -86,18 +86,23 @@
                 <pattern match="ITSY 2401-2426" />
                 <pattern match="ITSY 2459-2426" />
             </topic>
-            <topic name="Www and E-commerce">
+            <topic name="Web Development and E-commerce">
+                <pattern match="IMED 1416-2002" />
                 <pattern match="INEW 1440-2001" />
                 <pattern match="ITSE 1301-2001" />
                 <pattern match="ITSE 1301-2002" />
                 <pattern match="ITSE 2402-2001" />
                 <pattern match="IMED 1416-2501" />
-                <pattern match="INEW 2434-2501" />
+                <pattern match="IMED 2315-2502" /> <!-- Added 9/19 -->
                 <pattern match="ITNW 1356-2501" />
                 <pattern match="ITNW 1441-2501" />
+                <pattern match="ITSE 1406-2701" /> <!-- Added 9/19 -->
+                <pattern match="ITSE 2413-2501" /> <!-- Added 9/19 -->
+                <pattern match="ITSW 1407-2701" /> <!-- Added 9/19 -->
                 <pattern match="IMED 2409-2501" />
                 <pattern match="IMED 2409-2426" /> <!-- Requested by Linda Hughes 9/11/08 (was in Vcom) -->
                 <pattern match="IMED 1416-2426" />
+                <pattern match="IMED 2315-2427" />  <!-- Added 9/19 -->
                 <pattern match="INEW 1440-2426" />
                 <pattern match="ITSE 1301-2426" />
                 <pattern match="ITSE 2402-2426" />
