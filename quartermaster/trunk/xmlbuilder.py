@@ -142,6 +142,7 @@ def create_class_element(parent, row):
         'room',
         'session',
         'start_date',
+        'term',
         'time_formatted',
         'time_sortkey',
         'tuition',

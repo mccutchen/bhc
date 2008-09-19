@@ -1,6 +1,7 @@
 from wrm.formatter import Formatter
 from wrm.decorators import excepting, stripped, uppercased, trace
 from profiles import profile
+import re
 
 class CCEFormatter(Formatter):
     """Performs custom-formatting of schedule data as it is parsed
@@ -81,6 +82,14 @@ class CCEFormatter(Formatter):
         has no change (e.g. $25.00), the trailing '.00' is removed."""
         d = u'$%1.2f' % data
         return d.replace('.00','')
+
+    @excepting(TypeError, None)
+    def format_term(self, data):
+        if (not re.search('[12][0-9]{3}(FA|S1|S2|SP)', data) ):
+            return ' ';
+        
+        d = u'%s' % data[4:].strip().upper();
+        return d;
 
     @excepting(AttributeError, False)
     def format_field_with_flag(self, data):

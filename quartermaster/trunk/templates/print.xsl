@@ -247,6 +247,9 @@
         <xsl:value-of select="@hours"/>hrs/<xsl:value-of select="@session"/>
     	<xsl:call-template name="sep" />
     	
+    	<!-- needs an extra seperator here -->
+        <xsl:call-template name="sep" />
+        
     	<!-- days -->
     	<xsl:value-of select="@days"/>
     	<xsl:call-template name="sep" />
@@ -280,7 +283,11 @@
     	
     	<!-- tuition -->
     	<xsl:value-of select="@tuition"/>
-    	
+        <xsl:call-template name="sep" />
+        
+        <!-- term -->
+        <xsl:value-of select="@term" />
+        
     	
     	<!-- newline -->
     	<xsl:call-template name="br" />

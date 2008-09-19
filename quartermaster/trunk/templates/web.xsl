@@ -287,6 +287,7 @@
                                 <th>Days</th>
                                 <th>Instructor</th>
                                 <th>Tuition</th>
+                                <th>Term</th>
                             </xsl:when>
                             <xsl:when test="@spanish">
                                 <xsl:if test="$with-number = 'true'">
@@ -300,6 +301,7 @@
                                 <th>Dias de clase</th>
                                 <th>Instructor</th>
                                 <th>Costo</th>
+                                <th> </th>
                             </xsl:when>
                         </xsl:choose>
                     </tr>
@@ -337,7 +339,7 @@
         <!-- Append a bullet point to the end of the course title of courses
              eligible for financial aid. -->
         <xsl:next-match />
-        <span class="financial-aid"> &#8226; Eligible for <a href="http://www.dcccd.edu/Continuing+Education/Paying+for+College/Financial+Aid/" target="_blank">Financial Aid</a></span>
+        <span class="financial-aid"> &#8226; Eligible for <a href="/instruction/cce/financial-aid/">Financial Aid</a></span>
     </xsl:template>
     
 
@@ -351,6 +353,7 @@
             <xsl:if test="$with-number = 'true'">
                 <td><xsl:apply-templates select="@class_number" /></td>
             </xsl:if>
+
 			<td><xsl:apply-templates select="@reg_num"/></td>
             <td><xsl:apply-templates select="@start_date"/> - <xsl:apply-templates select="@end_date"/></td>
             <td><xsl:apply-templates select="@hours"/> hrs / <xsl:apply-templates select="@session"/></td>
@@ -358,7 +361,8 @@
             <td><xsl:apply-templates select="@location"/>-<xsl:apply-templates select="@room"/></td>
             <td><xsl:apply-templates select="@days" /></td>
             <td><xsl:apply-templates select="@faculty"/></td>
-            <td class="last"><xsl:apply-templates select="@tuition"/></td>
+            <td><xsl:apply-templates select="@tuition"/></td>
+            <td class="last"><xsl:apply-templates select="@term" /></td>
         </tr>
     </xsl:template>
     

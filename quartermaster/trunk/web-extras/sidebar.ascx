@@ -9,7 +9,7 @@
         <li><a href="/instruction/cce/emergency-crisis-procedures.aspx">Class Cancellations</a></li>
         <li><a href="/instruction/cce/ce-units+awards-of-merit.aspx">CEUs and Awards of Merit</a></li>
         <li><a href="/instruction/cce/entrance-requirements.aspx">Entrance Requirements</a></li>
-        <li><a href="/studentsvcs/financial/types.aspx#cce">Financial Aid</a></li>
+        <li><a href="/instruction/cce/financial-aid/">Financial Aid</a></li>
         <li><a href="/instruction/cce/index.aspx#hoo">Hours of Operation</a></li>
         <li><a href="/instruction/cce/emergency-crisis-procedures.aspx ">Inclement Weather Procedures</a></li>
         <li><a href="/college/mission.aspx">Mission Statement</a></li>
@@ -33,6 +33,11 @@
         <tr><th>F</th><td>=</td><td>Friday / viernes</td></tr>
         <tr><th>S</th><td>=</td><td>Saturday / sabado</td></tr>
         <tr><th>U</th><td>=</td><td>Sunday / domingo</td></tr>
+        
+        <tr><th>SP</th><td>=</td><td>Spring</td></tr>
+        <tr><th>SU</th><td>=</td><td>Summer</td></tr>
+        <tr><th>FA</th><td>=</td><td>Fall</td></tr>
+        
         <tr><th>BHC</th><td>=</td><td>Brookhaven College main campus</td></tr>
         <tr><th>BHEC</th><td>=</td><td>East Center 1</td></tr>
         <tr><th>BHE2</th><td>=</td><td>East Center 2</td></tr>
