@@ -494,6 +494,7 @@
             <topic name="None">
                 <pattern match="RADR 1201-2002" />
                 <pattern match="RADR 1201-2003" />
+                <pattern match="RADR 1201-2501" />
             </topic>
             <topic name="First Semester Program Students">
                 <pattern match="RADR 1201-2001" />
