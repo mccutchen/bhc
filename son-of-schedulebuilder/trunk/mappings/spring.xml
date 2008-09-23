@@ -154,6 +154,7 @@
                 <pattern match="ITSW 1407-2427" />
                 <pattern match="ITSW 1410-2426" />
                 <pattern match="ITSW 1410-2427" />
+                <pattern match="ITSW 1410-2780" /> <!-- Added per Pat Byars, 9/23 -->
             </topic>
         </subject>
         <subject name="Computer Science">
