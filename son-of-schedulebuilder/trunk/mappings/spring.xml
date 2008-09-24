@@ -101,7 +101,7 @@
                 <pattern match="ITSW 1407-2701" /> <!-- Added 9/19 -->
                 <pattern match="IMED 2409-2501" />
                 <pattern match="IMED 2409-2426" /> <!-- Requested by Linda Hughes 9/11/08 (was in Vcom) -->
-                <pattern match="IMED 1416-2426" />
+                <pattern match="IMED 1416-2427" />  <!-- Requested by Linda Hughes 9/24/08 - sect 2426 goes in Vcom -->
                 <pattern match="IMED 2315-2427" />  <!-- Added 9/19 -->
                 <pattern match="INEW 1440-2426" />
                 <pattern match="ITSE 1301-2426" />
