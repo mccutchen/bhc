@@ -43,7 +43,7 @@ def build(classes=None):
             if profile.minimester_threshold is not None:
                 get_minimester(term, class_data)
 
-            special_section(term, 'Learning Community', class_data, topicfilter('LC'))
+            special_section(term, 'Learning Community - Interdisciplinary Studies', class_data, topicfilter('LC'))
             special_section(term, 'Distance Learning', class_data, typefilter('DL'), notype=True)
             special_section(term, 'Weekend', class_data, typefilter('W'), notype=True)
 

@@ -436,7 +436,7 @@
 
     <!-- Remove <comments> inside of <special-section>s (unless we're
          in a Learning Community special section) -->
-    <xsl:template match="comments[ancestor::special-section[not(@name = 'Learning Community')]]" />
+    <xsl:template match="comments[ancestor::special-section[not(@name = 'Learning Community - Interdisciplinary Studies')]]" />
 
     <xsl:template match="comments//p">
         <xsl:apply-templates />
