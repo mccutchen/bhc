@@ -15,15 +15,15 @@
                 <p>The following five courses must be completed to receive this certificate. Upon completion, you will have earned 16 college credits.</p>
                 <table border="0" cellpadding="5" cellspacing="0">
                     <tr>
-                        <td>ACCT 2401 Prin of Accounting I</td>
-                        <td>POFT 1325 Business Math &amp; Machine Appl.</td>
-                    </tr>
-                    <tr>
+                        <td>ACCT 2301 or ACCT 2401 Prin of Acct I</td>
                         <td>ACNT 1311 Intro to Comp Acct</td>
-                        <td>POFI 2301 Word Processing I</td>
                     </tr>
                     <tr>
-                        <td>*ACNT 1380 Cooperative Ed.</td>
+                        <td>POFT 1325 Bus Math &amp; Machine App</td>
+                        <td>POFI 1341 Comp App II or POFI 2301 Word Proc</td>
+                    </tr>
+                    <tr>
+                        <td>*ACNT 1380 Coop Ed</td>
                         <td></td>
                     </tr>
                 </table>
