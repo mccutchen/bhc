@@ -417,14 +417,14 @@
                     <pattern match="EMSP 2338-2202" />
                     <pattern match="EMSP 2261-2221" />
                 </subtopic>
-                <subtopic name="Paramedic Class #23">
+                <subtopic name="Paramedic Class #23, B-Shift">
                     <pattern match="EMSP 1438-2223" />
                     <pattern match="EMSP 1438-2201" />
                     <pattern match="EMSP 1438-2202" />
                 </subtopic>				
                 <subtopic name="Paramedic Class #22">
+                    <pattern match="EMSP 2434-2722" /> <!-- Rearranged per Debra 9/25 -->
                     <pattern match="EMSP 1355-2722" />
-                    <pattern match="EMSP 2434-2722" />
                     <pattern match="EMSP 2430-2722" />
                     <pattern match="EMSP 2338-2722" />
                     <pattern match="EMSP 2261-2222" />
