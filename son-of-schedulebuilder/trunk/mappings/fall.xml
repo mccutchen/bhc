@@ -234,6 +234,7 @@
 				<pattern match="ITSW 1410-2427" />			
     		</topic>
     		<topic name="Senior Adults">
+    			<pattern match="ITSC 1191-2233" /> <!-- added 2008-09-26 -->
 				<pattern match="ITSC 1191-2255" />	
     			<pattern match="ITSC 1191-2216" />
     			<pattern match="ITSC 1191-2213" />		
@@ -508,6 +509,7 @@
     	<subject name="Art">
     		<topic name="Problems in Contemporary Art">
     			<pattern match="ARTS 1170-2200" />
+    			<pattern match="ARTS 1170-2201" /> <!-- added 2008-09-26 -->
     		</topic>
     		<topic name="Art Appreciation">
     			<pattern match="ARTS 1301-2001" />
@@ -778,7 +780,8 @@
             </topic>
             <topic name="Rehearsal">
                 <subtopic name="First Play, Fall 2008">
-                   <pattern match="DRAM 1221-2735" />
+                    <pattern match="DRAM 1221-2735" />
+                	<pattern match="DRAM 1221-2737" /> <!-- added 2008-09-26 -->
                 </subtopic>
                 <subtopic name="Second Play, Fall 2008">
                     <pattern match="DRAM 1221-2736" />
