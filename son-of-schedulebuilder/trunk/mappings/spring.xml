@@ -168,6 +168,7 @@
                 <pattern match="COSC 1300-2005" />
                 <pattern match="COSC 1300-2006" />
                 <pattern match="COSC 1300-2007" />
+                <pattern match="COSC 1300-2010" /> <!-- added 2008-09-26 -->
                 <pattern match="COSC 1300-2200" /> <!-- Changed from section 2010, per Bill 9/12 -->
                 <pattern match="COSC 1401-2011" />
                 <pattern match="COSC 1401-2012" />
