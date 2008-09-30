@@ -621,6 +621,6 @@
     </xsl:template>
 
     <xsl:template name="quark-preamble">
-        <xsl:text>&lt;v6.50&gt;&lt;e0&gt;</xsl:text><xsl:call-template name="br" />
+        <xsl:text>&lt;v7.31&gt;&lt;e0&gt;</xsl:text><xsl:call-template name="br" />
     </xsl:template>
 </xsl:stylesheet>
