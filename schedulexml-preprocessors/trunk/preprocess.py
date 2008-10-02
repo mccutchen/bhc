@@ -45,10 +45,11 @@ print "%s => %s\n" % (INPUT_PATH, SCHEDULE_FILE)
 # PREPROCESSOR_ORDER
 print "Running preprocessors..."
 for p in file(PREPROCESSOR_ORDER):
-    p = p.strip()
-    print " - %s.xsl" % p
-    cmd = 'java -jar %s -o %s %s %s/%s.xsl' % \
-        (SAXON_PATH, SCHEDULE_FILE, SCHEDULE_FILE, PREPROCESSOR_PATH, p)
+    preprocessor  = '%s.xsl' % p.strip()
+    print ' - %s' % preprocessor
+    cmd = 'java -jar ' \
+        '%(SAXON_PATH)s -o %(SCHEDULE_FILE)s %(SCHEDULE_FILE)s ' \
+        '%(PREPROCESSOR_PATH)s/%(preprocessor)s' % locals()
     os.system(cmd)
 print "Finished.\n"
 
