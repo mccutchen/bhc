@@ -21,7 +21,7 @@ def extract(data, fields, strip=True):
             results[field] = results[field].strip()
     return results
 
-for line in file('../latest.txt'):
+for line in file('../2009-spring/BH2009SP.txt'):
     data = extract(line, fields)
     if data['type'] in types:
         title = data['title']
