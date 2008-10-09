@@ -270,10 +270,11 @@ def corefilter(data):
     return data.get('core-component','') not in ('', None)
 
 def onedayfilter(data):
-    """Include only classes that meet on a single day"""
+    """Include only classes that meet on a single day, but not RadTech, Nursing, or EMS"""
+    excluded_subjects = ('Radiologic Sciences', 'Nursing', 'Emergency Medical Services')
     days = data['session']['days']
     otherdays = [s['days'] for s in data['extra-sessions'] if s['days'] != days]
-    return len(days) == 1 and not otherdays
+    return (len(days) == 1) and (not otherdays) and (not (data.get('subject-name') in excluded_subjects))
 
 # Functions that build filters that might be useful as test args to
 # the special_section function.
