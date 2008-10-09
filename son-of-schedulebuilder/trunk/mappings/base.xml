@@ -573,7 +573,7 @@
         -->
         <division name="Business Studies" ext="4160" room="M110" email="bhcBusinessStudies@dcccd.edu" />
         <division name="Communications" ext="4555" room="L367" email="XX-MISSING" />
-        <division name="Health and Human Services" ext="4239" room="A219" email="bhcHHServices@dcccd.edu" />
+        <division name="Health and Human Services" ext="4870" room="A219" email="bhcHHServices@dcccd.edu" />
         <division name="Mathematics and Science" ext="4750" room="K224" email="XX-MISSING" />
         <division name="Physical Education, Athletics and Nutrition" ext="4120" room="T315" email="bhcPhysicalEd@dcccd.edu" />
         <division name="School of the Arts" ext="4730" room="D123" email="BCSA@dcccd.edu" />
@@ -598,6 +598,7 @@
 
         <!-- Health and Human Services Division -->
         <subject name="Child Development" ext="4144" room="K211" email="bhcChildDevelop@dcccd.edu" />
+        <subject name="Education" ext="4144" room="K211"></subject>
         <subject name="Emergency Medical Services" ext="7879" location="East Center #2" email="bhcEMS@dcccd.edu" />
         <subject name="Nursing" ext="4754" room="K224" email="bhcNursing@dcccd.edu" />
         <subject name="Radiologic Sciences" ext="4264" room="L107" email="bhcRadTech@dcccd.edu" />
