@@ -322,6 +322,9 @@ def ReadAnnouncements(fname):
     if (len(title_str) > 0):
         out_list.append([id_str, title_str, body_list])
 
+    if (len(out_list) > 0):
+        print "Processed Announcements";
+
     in_file.close()
     return out_list
 
@@ -382,6 +385,9 @@ def ReadEvents(fname):
     if (event_list[0] != 'title'):
         out_list.append([date_str, [event_list]])
 
+    if (len(out_list) > 0):
+        print "Processed Events";
+
     in_file.close()
     return out_list
 
@@ -427,6 +433,9 @@ def ReadAroundTown(fname):
     if (event_list[0] != 'title'):
         out_list.append(event_list)
 
+    if (len(out_list) > 0):
+        print "Processed Around Town";
+        
     in_file.close()
     return out_list
 
@@ -444,6 +453,9 @@ def ReadBirthdays(fname):
         if (pos >= 0):
             out_list.append([Format(line[:pos]), Format(line[pos+3:])])
 
+    if (len(out_list) > 0):
+        print "Processed Birthdays";
+        
     in_file.close()
     return out_list
 
@@ -495,6 +507,9 @@ def ReadHails(fname):
 
     if (len(type_list[1]) > 0):
         out_list.append(type_list)
+
+    if (len(out_list) > 0):
+        print "Processed Hails and Farewells";
 
     in_file.close()
     return out_list
@@ -596,6 +611,10 @@ def WriteArticles(indent, lvl, article_list):
         for intro in article[2]:
             out_str = out_str + indent*(lvl+2) + '<intro>' + intro + '</intro>\n'
 
+        # I'm adding this 'cause most of the time we have images. Easier to have a
+        # boiler plate already there
+        out_str = out_str + indent*(lvl+2) + '<img src="' + article[0] + '" alt="' + article[1] + '" />\n';
+        
         out_str = out_str + indent*(lvl+2) + '<body>\n'
         for body in article[3]:
             out_str = out_str + indent*(lvl+3) + '<p>' + body + '</p>\n'

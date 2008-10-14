@@ -26,7 +26,7 @@
 	
 	<!-- DEV NOTE: Replace these! -->
 	<xsl:param name="default-day">Wednesday</xsl:param>
-	<xsl:param name="year">07</xsl:param>
+	<xsl:param name="year">08</xsl:param>
 
 
 	<!-- set up the different output documents -->
@@ -181,6 +181,11 @@
 			<xsl:apply-templates select="node()|@*" />
 		</xsl:copy>
 	</xsl:template>
+	<xsl:template match="node()|@*" mode="index">
+		<xsl:copy>
+			<xsl:apply-templates select="node()|@*" />
+		</xsl:copy>
+	</xsl:template>
 
 	<xsl:template match="title">
 		<h2><xsl:value-of select="." /></h2>
@@ -203,21 +208,47 @@
 	</xsl:template>
 
 	<!-- images are output inside of <div class="photo"> elements, with their @src attributes automatically adjusted -->
+	<xsl:template match="img" mode="index">
+		<xsl:variable name="pos" select="count(ancestor::article/preceding-sibling::article)" as="xs:integer" />
+		<xsl:variable name="float" select="if ($pos mod 2 = 0) then 'float-right' else 'float-left'" as="xs:string" />
+		<div class="photo {$float}">
+			<a href="{ancestor::article/@id}{$output-extension}">
+				<xsl:copy>
+					<xsl:attribute name="height" select="120" />
+					<xsl:attribute name="width" select="120" />
+					
+					<xsl:apply-templates select="node()|@*" mode="index" />
+				</xsl:copy>
+				<xsl:if test="string-length(text()) &gt; 0">
+					<span><xsl:value-of select="text()" /></span>
+				</xsl:if>
+			</a>
+		</div>
+	</xsl:template>
 	<xsl:template match="img">
-		<span class="photo float-right">
+		<xsl:variable name="pos" select="count(ancestor::article/preceding-sibling::article)" as="xs:integer" />
+		<xsl:variable name="float" select="if ($pos mod 2 = 0) then 'float-right' else 'float-left'" as="xs:string" />
+		
+		<div class="photo {$float}">
 			<xsl:copy>
 				<xsl:apply-templates select="node()|@*" />
 			</xsl:copy>
-			<span><xsl:value-of select="@alt" /></span>
-		</span>
+			<xsl:if test="string-length(text()) &gt; 0">
+				<span><xsl:value-of select="text()" /></span>
+			</xsl:if>
+		</div>
 	</xsl:template>
-
+	
 	<!-- automatically adjust each img's @src -->
+	<xsl:template match="img/@src" mode="index">
+		<xsl:variable name="src-prefix" select="concat($chatter-image-url-prefix, ancestor::issue/@url, '/')" />
+		<xsl:attribute name="src"><xsl:value-of select="concat($src-prefix, ., '_thumb.jpg')" /></xsl:attribute>
+	</xsl:template>
 	<xsl:template match="img/@src">
 		<xsl:variable name="src-prefix" select="concat($chatter-image-url-prefix, ancestor::issue/@url, '/')" />
-		<xsl:attribute name="src"><xsl:value-of select="concat($src-prefix, .)" /></xsl:attribute>
+		<xsl:attribute name="src"><xsl:value-of select="concat($src-prefix, ., '.jpg')" /></xsl:attribute>
 	</xsl:template>
-
+	
 
 
 
