@@ -702,6 +702,7 @@
 				<pattern match="DANC 1352-2240" />
 				<pattern match="DANC 1352-2736" />
 				<pattern match="DANC 2351-2235" />
+            	<pattern match="DANC 2351-2241" /> <!-- added 2008-10-24 -->
 				<pattern match="DANC 2351-2736" />
 				<pattern match="DANC 2352-2235" />
 				<pattern match="DANC 2352-2736" />
@@ -869,6 +870,7 @@
                 <subtopic name="Windsong Vocal Ensemble">
 					<pattern match="MUEN 1153-2250" />
 					<pattern match="MUEN 1153-2200" />
+                	<pattern match="MUEN 1153-2201" /> <!-- added 2008-10-24 -->
                 </subtopic>
                 <subtopic name="Chamber Ensemble">
 					<pattern match="MUEN 1152-2001" />
