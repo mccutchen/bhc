@@ -306,8 +306,8 @@
     <xsl:template match="course">
         <xsl:apply-templates select="class">
             <xsl:sort select="@sortkey" data-type="number" />
-            <xsl:sort select="@sortkey-days" data-type="number" />
             <xsl:sort select="@sortkey-date" data-type="number" />
+            <xsl:sort select="@sortkey-days" data-type="number" />
 			<xsl:sort select="@sortkey-time" data-type="number" order="ascending" />
             <xsl:sort select="@section" />
         </xsl:apply-templates>
