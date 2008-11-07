@@ -509,8 +509,8 @@
         <type id="FN" name="Flex - Night" machine-name="flex-night" />
         <type id="FTD" name="Fast Track Day" machine-name="fast_track_day" />
         <type id="FTN" name="Fast Track Night" machine-name="fast_track_night" />
-        <type id="DL" name="Distance Learning" machine-name="distance_learning" />
         <type id="SP" name="Self-Paced" machine-name="self-paced" />
+        <type id="DL" name="Distance Learning" machine-name="distance_learning" />
         <type id="DC" name="Dual Credit" machine-name="dual-credit" />
         <type id="O" name="Off-Campus" machine-name="off_campus" />
         <type id="OC" name="Out of Country" machine-name="out_of_country" />
