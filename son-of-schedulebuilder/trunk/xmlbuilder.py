@@ -44,6 +44,7 @@ def build(classes=None):
                 get_minimester(term, class_data)
 
             special_section(term, 'Learning Community - Interdisciplinary Studies', class_data, topicfilter('LC'))
+            special_section(term, 'Self-Paced', class_data, typefilter('SP'), notype=True)
             special_section(term, 'Distance Learning', class_data, typefilter('DL'), notype=True)
             special_section(term, 'Weekend', class_data, typefilter('W'), notype=True)
 
