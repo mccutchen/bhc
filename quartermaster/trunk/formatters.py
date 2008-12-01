@@ -71,8 +71,17 @@ class CCEFormatter(Formatter):
         """Converts an integer input into a string.  Returns the
         string '0' if an error occurs."""
         return u'%d' % data
+    
+    @excepting(TypeError, u'0')
+    def format_hours(self, data):
+        """The hours truely is a float and shouldn't be truncated
+        to an int."""
+        temp = u'%#.2f' % data;
+        while temp.endswith('0'): temp = temp[:len(temp) - 1];
+        if (temp.endswith('.')): temp = temp[:len(temp) - 1];
+        return temp;
+        
     format_session = format_int
-    format_hours = format_int
     format_catalog_sort_order = format_int
     format_cluster_sort_order = format_int
 
