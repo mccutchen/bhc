@@ -247,6 +247,7 @@
                 <pattern match="ITSC 1191-2232" />
                 <pattern match="ITSC 1191-2233" />
                 <pattern match="ITSC 1191-2234" />
+                <pattern match="ITSC 1191-2235" />
                 <pattern match="ITSC 1191-2253" />
                 <pattern match="ITSC 1191-2254" />
                 <pattern match="ITSC 1191-2255" />
@@ -1069,6 +1070,7 @@
                     <pattern match="MUAP 2269-2002" />
                     <pattern match="MUAP 2281-2001" />
                     <pattern match="MUAP 2281-2002" />
+                    <pattern match="MUAP 2281-2003" />
                 </subtopic>
             </topic>
             <topic name="Senior Adult Music Classes">
