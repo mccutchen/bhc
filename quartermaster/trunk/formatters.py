@@ -74,12 +74,9 @@ class CCEFormatter(Formatter):
     
     @excepting(TypeError, u'0')
     def format_hours(self, data):
-        """The hours truely is a float and shouldn't be truncated
-        to an int."""
-        temp = u'%#.2f' % data;
-        while temp.endswith('0'): temp = temp[:len(temp) - 1];
-        if (temp.endswith('.')): temp = temp[:len(temp) - 1];
-        return temp;
+         """Remove trailing zeros (and the trailing decimal point
+         that might be left) from the hours, which is a float."""
+         return unicode('%f' % data).rstrip('0').rstrip('.')
         
     format_session = format_int
     format_catalog_sort_order = format_int
