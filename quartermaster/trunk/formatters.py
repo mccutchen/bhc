@@ -71,16 +71,15 @@ class CCEFormatter(Formatter):
         """Converts an integer input into a string.  Returns the
         string '0' if an error occurs."""
         return u'%d' % data
+    format_session = format_int
+    format_catalog_sort_order = format_int
+    format_cluster_sort_order = format_int
     
     @excepting(TypeError, u'0')
     def format_hours(self, data):
          """Remove trailing zeros (and the trailing decimal point
          that might be left) from the hours, which is a float."""
          return unicode('%f' % data).rstrip('0').rstrip('.')
-        
-    format_session = format_int
-    format_catalog_sort_order = format_int
-    format_cluster_sort_order = format_int
 
     @excepting(TypeError, None)
     def format_tuition(self, data):
