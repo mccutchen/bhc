@@ -129,7 +129,7 @@ class Summer09(Summer):
     input = ('data/2009-summer/bh2009s1.txt', 'data/2009-summer/bh2009s2.txt')
     terms = {
         'Summer I/May Term': (date(2009, 5, 1), date(2009, 5, 30), 'May 12-May 30'),
-        'Summer I':  (date(2009, 6, 1), date(2009, 7, 6), 'June 9-July 3'),
+        'Summer I':  (date(2009, 6, 1), date(2009, 7, 7), 'June 9-July 3'),
         'Summer II':  (date(2009, 7, 7), date(2009, 8, 8), 'July 9-Aug. 7'),
     }
     saxon_params = {'schedule-title': 'Summer 2009 Credit'}
