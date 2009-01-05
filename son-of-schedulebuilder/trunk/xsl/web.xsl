@@ -18,7 +18,11 @@
         doctype-public="-//W3C//DTD HTML 4.01//EN"
         doctype-system="http://www.w3.org/TR/html4/strict.dtd" />
 
-
+    <!-- for CIT self-paced course mods -->
+    <xsl:variable name="CIT_subjects" select="('Computer Information Technology',
+        'Computer Science',
+        'Computer Studies - Business Computer Information Systems')" />
+    
 
     <!-- ==========================================================================
          Parameters:
@@ -334,15 +338,22 @@
             <td><xsl:text>&#160;</xsl:text></td>
             <td><xsl:text>&#160;</xsl:text></td>
             <td><xsl:text>&#160;</xsl:text></td>
-            <td class="days"><xsl:value-of select="@days" /></td>
-            <td class="times"><xsl:value-of select="@formatted-times" /></td>
+            <td class="days"><xsl:apply-templates select="@days" /></td>
+            <td class="times"><xsl:apply-templates select="@formatted-times" /></td>
             <td class="method"><xsl:value-of select="@method" /></td>
             <td class="room"><xsl:value-of select="@room" /></td>
             <td class="faculty"><xsl:value-of select="@faculty-name" /></td>
         </tr>
     </xsl:template>
 
-
+    <!-- CIT self-paced mods -->
+    <xsl:template match="//extra[@method = ('LAB') and @formatted-times = 'TBA' and ancestor::subject/@name = $CIT_subjects]/@formatted-times">
+        <xsl:value-of select="'Self-Paced'" />
+    </xsl:template>
+    <xsl:template match="//extra[@method = ('LAB') and @formatted-times = 'TBA' and ancestor::subject/@name = $CIT_subjects]/@days">
+        <xsl:value-of select="'&#160;'" />
+    </xsl:template>
+    
 
 <!-- ==========================================================================
      Comments

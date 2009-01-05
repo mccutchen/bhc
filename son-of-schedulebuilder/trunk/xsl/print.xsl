@@ -25,7 +25,11 @@
     <!-- Include utility functions -->
     <xsl:include href="utils.xsl" />
 
-
+    <!-- for CIT self-paced course mods -->
+    <xsl:variable name="CIT_subjects" select="('Computer Information Technology',
+        'Computer Science',
+        'Computer Studies - Business Computer Information Systems')" />
+    
     <!-- =============================================================
          Parameters
          =============================================================
@@ -395,13 +399,21 @@
     <xsl:template match="extra">
         <xsl:value-of select="utils:xtag('Extra Class')" />
         <xsl:value-of select="@method" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@formatted-times" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@days" /><xsl:call-template name="sep" />
+        <xsl:apply-templates select="@formatted-times" /><xsl:call-template name="sep" />
+        <xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
         <xsl:value-of select="@room" /><xsl:call-template name="sep" />
         <xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
     </xsl:template>
 
-
+    <!-- CIT self-paced mods -->
+    <xsl:template match="//extra[@method = ('LAB') and @formatted-times = 'TBA' and ancestor::subject/@name = $CIT_subjects]/@formatted-times">
+        <xsl:value-of select="'Self-Paced'" />
+    </xsl:template>
+    <xsl:template match="//extra[@method = ('LAB') and @formatted-times = 'TBA' and ancestor::subject/@name = $CIT_subjects]/@days">
+        <xsl:value-of select="' '" />
+    </xsl:template>
+    
+    
     <!-- =============================================================
          <comments> element templates
          =============================================================
