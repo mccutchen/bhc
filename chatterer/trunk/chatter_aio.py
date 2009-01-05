@@ -142,6 +142,7 @@ def Format(line_in, replace = True):
     global cur_file;
     char_map = {
         10:  '',        # newline
+        13:  '\n',      # newline
         160: '',        # non-printable char
         38:  '&amp;',   # ampersand
         60:  '&lt;',    # less than
@@ -164,6 +165,7 @@ def Format(line_in, replace = True):
         233: '&#233;',  # lowercase e (accent: acute)
         236: '&#236;',  # lowercase i (accent: grave)
         237: '&#237;',  # lowercase i (accent: acute)
+        239: '&#239;',  # lowercase i (w/umlaut)
         242: '&#242;',  # lowercase o (accent: grave)
         243: '&#243;',  # lowercase o (accent: acute)
         }
