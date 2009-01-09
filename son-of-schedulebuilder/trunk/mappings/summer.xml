@@ -317,7 +317,7 @@
     			<pattern match="COSC 1300-2502" />						  	
     			<pattern match="COSC 1300-2503" />
 				
-				
+    			<pattern match="COSC 1401-2001" />	<!-- added 2009-01-09 -->	
     			<pattern match="COSC 1401-2011" />		
     			<pattern match="COSC 1401-2012" />
     			<pattern match="COSC 1401-2300" />
