@@ -107,6 +107,9 @@
     			<pattern match="INEW 2438-2501" />
     			<pattern match="INEW 2438-2502" /> <!-- modified 02/13/2008: from 2501 to 2502 -->
 				
+    			<pattern match="ITNW 1356-2501" /> <!-- moved 1/0/09 from Web Dev. Section -->
+    			<pattern match="ITNW 1441-2501" /> <!-- moved 1/0/09 from Web Dev. Section -->
+    			
     			<pattern match="ITSE 1346-2701" />
 				
     			<pattern match="ITSE 1407-2001" />				  	
@@ -162,9 +165,11 @@
     		<topic name="Cisco Academy">
     			<pattern match="ITNW 1492-2001" />			  	
     			<pattern match="ITNW 1492-2501" />
+    	
 				
     			<pattern match="ITCC 1400-2250" />		
-    			<pattern match="ITCC 1401-2501" />	 
+    			<pattern match="ITCC 1401-2501" /> 
+    			<pattern match="ITCC 1401-2250" />	<!-- added 2009-01-09 --> 
     			<pattern match="ITCC 1402-2501" />
     			<pattern match="ITCC 1404-2250" />
     			<pattern match="ITCC 1404-2001" />
@@ -204,8 +209,7 @@
     			<pattern match="INEW 1440-2501" />
     			<pattern match="INEW 2434-2501" />
 				
-    			<pattern match="ITNW 1356-2501" />
-    			<pattern match="ITNW 1441-2501" />
+
     			<pattern match="ITNW 1437-2426" />
 				
     			<pattern match="ITSE 1301-2001" />
@@ -223,6 +227,8 @@
     			<pattern match="ITSE 2413-2501" /> <!-- Added 9/19 -->
 				
     			<pattern match="ITSW 1407-2701" /> <!-- Added 9/19 -->
+    			<pattern match="ITSW 1407-2421" /> <!-- Added 1/9/09 -->
+
     		</topic>
     		<topic name="Application Software">
     			<pattern match="ITSC 1191-2001" />
@@ -321,6 +327,7 @@
     			<pattern match="COSC 1401-2423" /> <!-- added 2008-08-22 -->
     			<pattern match="COSC 1401-2426" />
     			<pattern match="COSC 1401-2427" /> <!-- Added 02/13/2008 - Computer Concepts/Applications -->
+    			<pattern match="COSC 1401-2501" />	<!-- added 2009-01-09 -->	
     			<pattern match="COSC 1401-2511" />		
     			<pattern match="COSC 1401-2512" />
     		</topic>
@@ -403,6 +410,7 @@
     	</subject>
     	<subject name="Computer Studies - Business Computer Information Systems">
     		<comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
+    		<pattern match="BCIS 1405-2001" /> <!-- added 2009-09-09 -->
     		<pattern match="BCIS 1405-2011" />
     		<pattern match="BCIS 1405-2012" />
     		<pattern match="BCIS 1405-2300" />
@@ -412,6 +420,7 @@
 			<pattern match="BCIS 1405-2423" /> <!-- added 2008-08-22 -->
 			<pattern match="BCIS 1405-2426" />
 			<pattern match="BCIS 1405-2427" /> <!-- Added 02/13/2008 - Business Computer Applications -->
+    		<pattern match="BCIS 1405-2501" /> <!-- added 2009-09-09 -->
     		<pattern match="BCIS 1405-2511" />
     		<pattern match="BCIS 1405-2512" />
     		
