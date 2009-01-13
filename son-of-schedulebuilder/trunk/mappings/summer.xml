@@ -502,7 +502,8 @@
             </topic>
             <topic name="Fifth Semester Program Students">
                 <comments>NOTE: The following courses are for students in the fifth semester of the Radiological Technology program. Acceptance into this program is REQUIRED.</comments>
-                <pattern match="RADR 1202" />
+            	<pattern match="RADR 1202" />
+            	<pattern match="RADR 1250" />
                 <pattern match="RADR 2266" />
             </topic>
         </subject>
