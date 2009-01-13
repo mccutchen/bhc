@@ -149,6 +149,7 @@ def Format(line_in, replace = True):
         62:  '&gt;',    # greater than
         145: '&#8216;', # left single quote
         146: '&#8217;', # right single quote
+        34:  '&quot;',  # straight quote
         147: '&#8220;', # left double quote
         148: '&#8221;', # right double quote
         133: '&#8230;', # elipsis
@@ -615,7 +616,7 @@ def WriteArticles(indent, lvl, article_list):
 
         # I'm adding this 'cause most of the time we have images. Easier to have a
         # boiler plate already there
-        out_str = out_str + indent*(lvl+2) + '<img src="' + article[0] + '" alt="' + article[1] + '" />\n';
+        out_str = out_str + indent*(lvl+2) + '<img src="' + article[0] + '" alt="' + Format(article[1]) + '" />\n';
         
         out_str = out_str + indent*(lvl+2) + '<body>\n'
         for body in article[3]:

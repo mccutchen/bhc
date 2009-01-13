@@ -20,13 +20,13 @@
 
 	<xsl:param name="output-extension">.aspx</xsl:param>
 	<xsl:param name="output-directory">chatter-output</xsl:param>
-	<xsl:param name="chatter-image-url-prefix">/images/bhc/chatter/07/</xsl:param>
+	<xsl:param name="chatter-image-url-prefix">/images/bhc/chatter/09/</xsl:param>
 	<xsl:param name="default-page-title" select="''" />
 	<xsl:param name="default-url-prefix" select="''" />
 	
 	<!-- DEV NOTE: Replace these! -->
 	<xsl:param name="default-day">Wednesday</xsl:param>
-	<xsl:param name="year">08</xsl:param>
+	<xsl:param name="year">09</xsl:param>
 
 
 	<!-- set up the different output documents -->
