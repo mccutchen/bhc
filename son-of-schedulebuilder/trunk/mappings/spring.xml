@@ -64,6 +64,7 @@
                 <pattern match="ITMT 1440-2501" />
                 <pattern match="ITMT 1455-2501" />
                 <pattern match="ITMT 2450-2501" />
+                <pattern match="ITMT 2450-2502" /> <!-- added 2009-01-20 -->
                 <pattern match="ITMT 1450-2250" />
             </topic>
             <topic name="Unix">
@@ -136,6 +137,9 @@
                 <pattern match="ITSW 1410-2501" />
                 <pattern match="ITSC 1191-2426" />
                 <pattern match="ITSC 1191-2427" />
+                <pattern match="ITSC 1191-2236" /> <!-- added 2009-01-20 -->
+                <pattern match="ITSC 1191-2237" /> <!-- added 2009-01-20 -->
+                <pattern match="ITSC 1191-2238" /> <!-- added 2009-01-20 -->
                 <pattern match="ITSC 1291-2426" />
                 <pattern match="ITSC 1291-2427" />
                 <pattern match="ITSC 1409-2426" />
@@ -190,6 +194,7 @@
                 <pattern match="COSC 1300-2426" /> <!-- added 2008-11-07 -->
                 <pattern match="COSC 1401-2421" />
                 <pattern match="COSC 1401-2422" />
+                <pattern match="COSC 1401-2423" /> <!-- added 2009-01-20 -->
             </topic>
             <topic name="Programming">
                 <pattern match="COSC 1415-2001" />
@@ -266,6 +271,7 @@
             <pattern match="BCIS 1405-2301" />
             <pattern match="BCIS 1405-2421" />
             <pattern match="BCIS 1405-2422" />
+            <pattern match="BCIS 1405-2423" /> <!-- added 2009-01-20 -->
             <topic name="General Electives">
                 <pattern match="BCIS 2390-2426" />
             </topic>
@@ -603,8 +609,12 @@
                 <pattern match="ARTS 2311-2017" />
                 <pattern match="ARTS 2348-2001" />
                 <pattern match="ARTS 2349-2001" />
+                <pattern match="ARTS 2311-2022" /> <!-- added 2009-01-20 -->
+                <pattern match="ARTS 2312-2022" /> <!-- added 2009-01-20 -->
                 <pattern match="ARTS 2313-2501" />
                 <pattern match="ARTS 2314-2501" />
+                <pattern match="ARTS 2311-2514" /> <!-- added 2009-01-20 -->
+                <pattern match="ARTS 2312-2514" /> <!-- added 2009-01-20 -->
             </topic>
             <topic name="Art Metals">
                 <pattern match="ARTS 2341-2001" />
@@ -919,6 +929,7 @@
                 <pattern match="MUSI 1306-2433" />
             </topic>
             <topic name="Music Theory">
+                <pattern match="MUSI 1311-2300" /> <!-- added 2009-01-20 -->
                 <pattern match="MUSI 1312-2001" />
                 <pattern match="MUSI 1312-2002" />
                 <pattern match="MUSI 2312-2001" />
