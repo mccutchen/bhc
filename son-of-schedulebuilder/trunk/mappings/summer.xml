@@ -448,21 +448,26 @@
     			<pattern match="ARTS 1301-2503" />
     		</topic>
     		<topic name="Art History">
-    			<pattern match="ARTS 1303-2701" />
     			<pattern match="ARTS 1303-2001" />
     			<pattern match="ARTS 1304-2002" />
     			<pattern match="ARTS 1304-2001" />
+    		</topic>
+    		<topic name="Art History Workshop">
+    			<pattern match="ARTS 1303-2701" />
     		</topic>
     		<topic name="Art and Computers">
     			<pattern match="ARTS 2313-2001" />
     			<pattern match="ARTS 2314-2001" />
     			<pattern match="ARTS 2311-2007" />
-    			<pattern match="ARTS 2312-2008" />
+    			<pattern match="ARTS 2311-2225" /> <!-- added 2009-01-29, Jill Williams -->
+    			<pattern match="ARTS 2312-2007" /> <!-- moved from 'Ceramics' 2009-01-29, Jill Williams -->
+    			<pattern match="ARTS 2312-2225" /> <!-- added 2009-01-29, Jill Williams -->
+    			<pattern match="ARTS 2348-2225" /> <!-- added 2009-01-29, Jill Williams -->
+    			<pattern match="ARTS 2349-2225" /> <!-- added 2009-01-29, Jill Williams -->
     		</topic>
     		<topic name="Art Metals">
     			<pattern match="ARTS 2341-2001" />
     			<pattern match="ARTS 2342-2001" />
-    			<pattern match="ARTS 2311-2001" />
     			<pattern match="ARTS 2312-2001" />
     		</topic>
     		<topic name="Ceramics">
@@ -477,11 +482,12 @@
     			<pattern match="ARTS 2346-2701" />
     			<pattern match="ARTS 2347-2701" />
     			<pattern match="ARTS 2311-2701" />
+    			<pattern match="ARTS 2311-2702" /> <!-- added 2009-01-29, Jill Williams -->
     			<pattern match="ARTS 2312-2702" />
     			<pattern match="ARTS 2346-2002" />
     			<pattern match="ARTS 2347-2002" />
     			<pattern match="ARTS 2311-2008" />
-    			<pattern match="ARTS 2312-2007" />
+    			<pattern match="ARTS 2312-2008" /> <!-- moved from 'Art and Computers' 2009-01-29, Jill Williams -->
     		</topic>
     		<topic name="Design">
     			<pattern match="ARTS 1311-2001" />
@@ -540,6 +546,8 @@
     			<pattern match="ARTS 2312-2229" />
     			<pattern match="ARTS 2326-2001" />
     			<pattern match="ARTS 2327-2001" />
+    			<pattern match="ARTS 2311-2001" /> <!-- added 2009-01-29, Jill Williams -->
+    			<pattern match="ARTS 2312-2003" /> <!-- added 2009-01-29, Jill Williams -->
     		</topic>
     	</subject>
     	<subject name="Dance">
