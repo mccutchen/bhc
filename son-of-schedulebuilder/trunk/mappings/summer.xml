@@ -616,7 +616,7 @@
     			<subtopic name="String">
     				<pattern match="MUEN 1136-2200" />
     			</subtopic>
-    			<subtopic name="Vocal Jazz / Lab Band">
+    			<subtopic name="Vocal Ensemble"> <!-- changed from 'Vocal Jazz / Lab Band' 2009-01-29, Jill Williams -->
     				<pattern match="MUEN 1151-2200" />
     				<pattern match="MUEN 2123-2200" />
     			</subtopic>
