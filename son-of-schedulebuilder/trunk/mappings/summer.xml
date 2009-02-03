@@ -587,6 +587,12 @@
     		</topic>
     	</subject>
     	<subject name="Drama">
+    		<topic name="Theater Practicum">
+    			<pattern match="DRAM 1120-2735" />
+    			<pattern match="DRAM 1120-2736" />
+    			<pattern match="DRAM 1220-2735" />
+    			<pattern match="DRAM 1220-2736" />
+    		</topic>
     	</subject>
     	<subject name="Music">
     		<topic name="Music Appreciartion">
