@@ -52,6 +52,7 @@
                 <pattern match="ITSE 2434-2501" />
                 <pattern match="ITSE 2437-2501" />
                 <pattern match="ITSE 2438-2501" />
+                <pattern match="ITSE 2453-2300" />
                 <pattern match="ITSE 2453-2501" />
                 <pattern match="ITSE 1407-2426" />
                 <pattern match="ITSE 1432-2426" />
@@ -119,6 +120,8 @@
                 <pattern match="ITSC 1409-2001" />
                 <pattern match="ITSC 2431-2300" />
                 <pattern match="ITSW 1401-2001" />
+                <pattern match="ITSW 1401-2428" />
+                <pattern match="ITSW 1401-2429" />
                 <pattern match="ITSW 1404-2001" />
                 <pattern match="ITSW 1407-2001" />
                 <pattern match="ITSW 1407-2002" />
@@ -792,6 +795,7 @@
             <topic name="Hip Hop">
                 <pattern match="DANC 1222-2001" />
                 <pattern match="DANC 1223-2001" />
+                <pattern match="DANC 1223-2002" />
                 <pattern match="DANC 1222-2501" />
                 <pattern match="DANC 1223-2501" />
             </topic>
@@ -800,6 +804,7 @@
                 <pattern match="DANC 1248-2001" /> <!-- added 20080828 as per Jill Williams -->
                 <pattern match="DANC 1247-2501" /> <!-- added 20080828 as per Jill Williams -->
                 <pattern match="DANC 1248-2501" />
+                <pattern match="DANC 2247-2002" />
                 <pattern match="DANC 2247-2501" />
                 <pattern match="DANC 2248-2501" />
             </topic>
@@ -811,6 +816,7 @@
                 <pattern match="DANC 1341-2501" />
                 <pattern match="DANC 1342-2502" />
                 <pattern match="DANC 1342-2501" />
+                <pattern match="DANC 2341-2002" />
                 <pattern match="DANC 2341-2501" />
                 <pattern match="DANC 2342-2501" />
             </topic>
@@ -870,6 +876,9 @@
                 </subtopic>
                 <subtopic name="Second Play, Spring 2009">
                     <pattern match="DRAM 1221-2736" />
+                </subtopic>
+                <subtopic name="Third Play, Spring 2009">
+                    <pattern match="DRAM 1221-2737" />
                 </subtopic>
             </topic>
         </subject>
@@ -1001,6 +1010,7 @@
                 <subtopic name="Guitar Ensemble">
                     <pattern match="MUEN 1134-2001" />
                     <pattern match="MUEN 1134-2501" />
+                    <pattern match="MUEN 1134-2701" />
                 </subtopic>
                 <subtopic name="Handbell Ensemble">
                     <pattern match="MUEN 1135-2500" />
@@ -1018,7 +1028,9 @@
                     <pattern match="MUEN 1151-2001" />
                     <pattern match="MUEN 2123-2001" />
                     <pattern match="MUEN 2123-2002" />
+                    <pattern match="MUEN 2123-2200" />
                     <pattern match="MUEN 2123-2501" />
+                    <pattern match="MUEN 2123-2700" />
                 </subtopic>
             </topic>
             <topic name="Music-private Lessons">
