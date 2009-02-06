@@ -602,11 +602,16 @@
     		</topic>
     	</subject>
     	<subject name="Drama">
+    		<topic name="Film Appreciation">
+    			<pattern match="DRAM 2366-2420" />
+    			<pattern match="DRAM 2366-2421" />
+    		</topic>    	
     		<topic name="Theater Practicum">
     			<pattern match="DRAM 1120-2735" />
     			<pattern match="DRAM 1120-2736" />
     			<pattern match="DRAM 1220-2735" />
     			<pattern match="DRAM 1220-2736" />
+    			<pattern match="DRAM 2366-2420" />
     		</topic>
     	</subject>
     	<subject name="Music">
