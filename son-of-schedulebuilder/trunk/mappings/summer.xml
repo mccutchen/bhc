@@ -707,21 +707,22 @@
 			</topic>
 			<topic name="Second Semester Program Students">
 				<comments>NOTE: The following courses are for students in the second semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
-				<pattern match="RNSG 1144" />
 				<pattern match="RNSG 1441" />
+				<pattern match="RNSG 1144" />
+				<pattern match="RNSG 2462" />
 				<pattern match="RNSG 2360" />
 			</topic>			
 			<topic name="Third Semester Program Students">
 				<comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
-				<pattern match="RNSG 1443" />
-				<pattern match="RNSG 2461" />
-			</topic>
-			<topic name="Fourth Semester Program Students">
-				<comments>NOTE: The following courses are for students in the fourth semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+				<pattern match="RNSG 2313" />
+				<pattern match="RNSG 1160" />
 				<pattern match="RNSG 2208" />
 				<pattern match="RNSG 2161" />
 				<pattern match="RNSG 2201" />
 				<pattern match="RNSG 2160" />
+			</topic>
+			<topic name="Fourth Semester Program Students">
+				<comments>NOTE: The following courses are for students in the fourth semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
 			</topic>		
 			</subject>
 
