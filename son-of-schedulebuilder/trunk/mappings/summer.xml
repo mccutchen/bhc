@@ -465,6 +465,11 @@
     			<pattern match="ARTS 2348-2225" /> <!-- added 2009-01-29, Jill Williams -->
     			<pattern match="ARTS 2349-2225" /> <!-- added 2009-01-29, Jill Williams -->
     		</topic>
+			<topic name="Art and Computers Workshop"><!-- added 2009-02-06, Jill Williams -->
+    			<pattern match="ARTS 2348-2225" /> <!-- added 2009-01-29, Jill Williams -->
+    			<pattern match="ARTS 2349-2225" /> <!-- added 2009-01-29, Jill Williams -->
+				<pattern match="ARTS 2311-2225" /> <!-- added 2009-01-29, Jill Williams -->
+    			<pattern match="ARTS 2312-2225" /> <!-- added 2009-01-29, Jill Williams -->    		</topic>    		
     		<topic name="Art Metals">
     			<pattern match="ARTS 2341-2001" />
     			<pattern match="ARTS 2342-2001" />
@@ -490,6 +495,12 @@
     			<pattern match="ARTS 2311-2008" />
     			<pattern match="ARTS 2312-2008" /> <!-- moved from 'Art and Computers' 2009-01-29, Jill Williams -->
     		</topic>
+			<topic name="Ceramics Workshop">
+    			<pattern match="ARTS 2346-2225" />
+    			<pattern match="ARTS 2347-2225" />
+    			<pattern match="ARTS 2311-2228" />
+    			<pattern match="ARTS 2312-2228" />
+    		</topic>    		
     		<topic name="Design">
     			<pattern match="ARTS 1311-2001" />
     			<pattern match="ARTS 1312-2001" />
@@ -515,8 +526,12 @@
     			<pattern match="ARTS 2317-2200" />
     			<pattern match="ARTS 2311-2200" />
     			<pattern match="ARTS 2312-2200" />
+    			<pattern match="ARTS 2316-2001" /><!-- added 2009-02-06, Jill Williams -->
+    			<pattern match="ARTS 2317-2001" /><!-- added 2009-02-06, Jill Williams -->
+    			<pattern match="ARTS 2311-2009" /><!-- added 2009-02-06, Jill Williams -->
+    			<pattern match="ARTS 2312-2009" /><!-- added 2009-02-06, Jill Williams -->
     		</topic>
-    		<topic name="Painting Workshop">        <!-- added 2009-01-30, Jull Williams -->
+    		<topic name="Painting Workshop">        <!-- added 2009-01-30, Jill Williams -->
     			<pattern match="ARTS 2316-2225" />
     			<pattern match="ARTS 2317-2225" />
     			<pattern match="ARTS 2311-2226" />
