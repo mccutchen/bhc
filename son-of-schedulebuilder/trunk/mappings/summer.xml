@@ -768,6 +768,8 @@
 		 		<subtopic name="Emt-basic Class #52">
 		 			<pattern match="EMSP 1501-2202" />
 		 			<pattern match="EMSP 1501-2201" />
+		 			<pattern match="EMSP 1501-2203" />
+		 			<pattern match="EMSP 1501-2204" />
 		 			<pattern match="EMSP 1160-2202" />
 		 		</subtopic>
 		 	</topic>
