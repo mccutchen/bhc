@@ -130,7 +130,8 @@
         <subject name="College Learning Skills">
             <pattern match="DCOM" priority="0" unsorted="true" />
         </subject>
-        <subject name="Coordinated Studies">
+        <subject name="Learning Communities"><!-- SS changed this from Coordinated Studies, 2/17/09 -->
+
             <pattern match="ALCE" priority="0" unsorted="true" />
         </subject>
         <subject name="Cultural Studies">
