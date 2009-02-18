@@ -555,6 +555,12 @@
     			<pattern match="ARTS 2311-2231" />
     			<pattern match="ARTS 2312-2230" />
     		</topic>
+			<topic name="Printmaking">
+    			<pattern match="ARTS 2333-2701" />
+    			<pattern match="ARTS 2334-2701" />
+    			<pattern match="ARTS 2311-2703" />
+    			<pattern match="ARTS 2312-2703" />
+    		</topic>    		
     		<topic name="Sculpture">
     			<pattern match="ARTS 2326-2225" />
     			<pattern match="ARTS 2327-2225" />
