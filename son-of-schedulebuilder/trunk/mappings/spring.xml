@@ -1011,6 +1011,7 @@
                     <pattern match="MUEN 1134-2001" />
                     <pattern match="MUEN 1134-2501" />
                     <pattern match="MUEN 1134-2701" />
+                    <pattern match="MUEN 1134-2702" />
                 </subtopic>
                 <subtopic name="Handbell Ensemble">
                     <pattern match="MUEN 1135-2500" />
@@ -1057,6 +1058,7 @@
                     <pattern match="MUAP 1145-2002" />
                     <pattern match="MUAP 1153-2001" />
                     <pattern match="MUAP 1157-2001" />
+                    <pattern match="MUAP 1157-2200" />
                     <pattern match="MUAP 1161-2001" />
                     <pattern match="MUAP 1161-2002" />
                     <pattern match="MUAP 1161-2003" />
@@ -1069,6 +1071,7 @@
                     <pattern match="MUAP 1181-2002" />
                     <pattern match="MUAP 1181-2003" />
                     <pattern match="MUAP 1181-2004" />
+                    <pattern match="MUAP 1181-2200" />
                 </subtopic>
             </topic>
             <topic name="Music-private Lessons">
