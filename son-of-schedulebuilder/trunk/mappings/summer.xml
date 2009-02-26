@@ -475,10 +475,6 @@
     			<pattern match="ARTS 2312-2001" />
     		</topic>
     		<topic name="Ceramics">
-    			<pattern match="ARTS 2346-2225" />
-    			<pattern match="ARTS 2347-2225" />
-    			<pattern match="ARTS 2311-2228" />
-    			<pattern match="ARTS 2312-2228" />
     			<pattern match="ARTS 2346-2001" />
     			<pattern match="ARTS 2347-2001" />
     			<pattern match="ARTS 2311-2006" />
