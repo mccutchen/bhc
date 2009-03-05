@@ -85,7 +85,7 @@ class CCEFormatter(Formatter):
     def format_tuition(self, data):
         """Formats the tuition according to AP style.  If the tuition
         has no change (e.g. $25.00), the trailing '.00' is removed."""
-        d = u'$%1.2f' % data
+        d = u'$%.2f' % data
         return d.replace('.00','')
 
     @excepting(TypeError, None)
