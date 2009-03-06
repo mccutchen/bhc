@@ -273,10 +273,10 @@
 				a way to separate these Management Program courses -->
             </topic>
             <topic name="none">
-                <pattern match="BMGT 2303-2501"/>
-                <pattern match="BMGT 2383-2501"/>
-                <pattern match="BMGT 1301-2502"/>
-                <pattern match="BMGT 1382-2502"/>
+                <pattern match="HRPO 2301-2501"/>
+                <pattern match="BMGT 1383-2501"/>
+                <pattern match="HRPO 2307-2502"/>
+                <pattern match="BMGT 2382-2502"/>
             </topic>
         </subject>
         
