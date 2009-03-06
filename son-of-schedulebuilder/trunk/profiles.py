@@ -135,6 +135,15 @@ class Summer09(Summer):
     saxon_params = {'schedule-title': 'Summer 2009 Credit'}
 
 # ===================================================================
+# Fall 2008 profiles
+# ===================================================================
+class Fall09(Fall):
+    input = 'data/2009-fall/BH2009FA.TXT'
+    terms = {
+        'Fall': (date(2009, 8, 25), date(2009, 12, 11), 'Aug. 25-Dec. 11'),
+    }
+
+# ===================================================================
 # The actual profile to use
 # ===================================================================
 profile = get_profile(PROFILES, validate_profile)
