@@ -3,91 +3,7 @@
     <mapping type="subject">
        
 
-  <!-- =======================================================================
-            Coordinated Studies (Resi Douglas) There is no CS for Fall 2008, but I don't think leaving this in here will mess anything up and we might need it next fall.
-        ======================================================================== -->
-        <subject name="Coordinated Studies">
-            <comments>
-                <h1>AMERICA AT THE CROSSROADS</h1>
-                <p>The coordinated studies courses meet Monday through Thursday from 9-11:50 a.m.</p><!--  in Room XXX. -->
-                <p>The program is a 12-credit-hour block of choices from <b>CORE CURRICULUM COURSES</b>, interrelated by the theme <b>"America at the Crossroads."</b>  </p>
-                <p>Students will hear diverse perspectives related to their course work from four different instructors. This learning community emphasizes interactive learning activities, community building and team work.  Through coordinating ideas students will develop critical thinking skills.  This program includes readings from popular sources.  The four program professors together meet with the entire group daily, so student-teacher interaction is enhanced. </p>
-                <p>Enrollment is limited to 90 students, so a true learning community is formed.  </p>
-                <p><b>To register for the Coordinated Studies Program, see an advisor in the Brookhaven College Advising and Counseling Center, Bldg. S, Room S113.</b></p>
-                <p><b>Choose four courses from the following list:</b></p>
-                <table margin="5" border="0" cellpadding="10" cellspacing="0">
-                    <tr>
-                        <td>Cultural Studies</td>
-                        <td>CUST 2370</td>
-                    </tr>                    <tr>
-                        <td>English Composition I OR II</td>
-                        <td>ENGL 1301 OR ENGL 1302</td>
-                    </tr>
-                    <tr>
-                        <td>American Government</td>
-                        <td>GOVT 2301</td>
-                    </tr>
-                    <tr>
-                        <td>History of the U.S.</td>
-                        <td>HIST 1301</td>
-                    </tr>
-                    <tr>
-                        <td>Philosophy</td>
-                        <td>PHIL 1301</td>
-                    </tr>      
-                    <tr>
-                        <td>Introduction to Speech OR Fundamentals of Public Speaking</td>
-                        <td>SPCH 1311 OR SPCH 1315</td></tr>
-                        <tr>
-                        <td>Students should be advised to choose between SPCH 1311 and 1315 based on their degree requirement.</td>
-                    </tr> 
-				</table>                    
-                <p>Students should take their paid registration summary to the first day of class. For more information, please contact Delryn Fleming at 972-860-4772 or e-mail Delryn@dcccd.edu.</p>
-            </comments>
-            <pattern match="ALCE" />
-        </subject>
-
-        <!-- These are the courses that should have coordinated studies subheads.  They are sloppily out of any kind of order, but I don't think it matters. -->
-<!-- 
-        <subject name="English">
-            <topic name="Coordinated Studies">
-                <pattern match="ENGL 1301-2050" />
-                <pattern match="ENGL 1302-2050" />
-            </topic>
-        </subject>
-        
-        <subject name="Speech">
-            <topic name="Coordinated Studies">
-                <pattern match="SPCH 1311-2050" />
-                <pattern match="SPCH 1315-2050" />
-            </topic>
-        </subject>
-        
-        <subject name="Government">
-            <topic name="Coordinated Studies">
-                <pattern match="GOVT 2301-2050" />
-            </topic>
-		</subject>
-		
-        <subject name="Philosophy">
-            <topic name="Coordinated Studies">
-                <pattern match="PHIL 1301-2050" />
-            </topic>
-		</subject>
-		
-        <subject name="Cultural Studies">
-            <topic name="Coordinated Studies">
-                <pattern match="CUST 2370-2050" />
-            </topic>
-		</subject>
-            
-        <subject name="History">
-            <topic name="Coordinated Studies">
-                <pattern match="HIST 1301-2050" />
-            </topic>
-		</subject>
- -->
-
+  
 
    <!-- =======================================================================
             Business Studies Division
@@ -372,7 +288,8 @@
         <!-- =======================================================================
             EMS (Monica Wenthold)
         ======================================================================== -->
-        <subject name="Emergency Medical Services">
+      <!-- 
+  <subject name="Emergency Medical Services">
             <comments>
                 <p>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/.  Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences.  International students are advised to contact the Brookhaven College Multicultural Center, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning  this requirement.</p>
                 <p>NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road.</p>
@@ -393,9 +310,9 @@
 					<pattern match="EMSP 1160-2246" />
                 </subtopic>  
                 <subtopic name="EMT-Basic Class #47">
-					<pattern match="EMSP 1501-2547" /> <!-- Changed section # 4/24 per M Wenthold -->
-                    <pattern match="EMSP 1501-2506" /> <!-- Changed section # 4/24 per M Wenthold -->
-					<pattern match="EMSP 1501-2507" /> <!-- Changed section # 4/24 per M Wenthold -->
+					<pattern match="EMSP 1501-2547" /> 
+                    <pattern match="EMSP 1501-2506" /> 
+					<pattern match="EMSP 1501-2507" /> 
 					<pattern match="EMSP 1160-2247" />
                 </subtopic>  
                 <subtopic name="EMT-Basic Class #48">
@@ -446,6 +363,7 @@
                 </subtopic>
             </topic>
         </subject>
+ -->
         
  <!-- =======================================================================
             Nursing (Monica Wenthold and Ann Cortez)
@@ -506,10 +424,11 @@
         <!-- =======================================================================
              School of the Arts (Fran Rhodes & Jill Williams
              ======================================================================== -->
+<!-- 
     	<subject name="Art">
     		<topic name="Problems in Contemporary Art">
     			<pattern match="ARTS 1170-2200" />
-    			<pattern match="ARTS 1170-2201" /> <!-- added 2008-09-26 -->
+    			<pattern match="ARTS 1170-2201" />
     		</topic>
     		<topic name="Art Appreciation">
     			<pattern match="ARTS 1301-2001" />
@@ -571,10 +490,10 @@
     		</topic>
     		<topic name="Art and Computers">
     			<pattern match="ARTS 2313-2001" />
-    			<pattern match="ARTS 2313-2701" /> <!-- added 2008-09-19 -->
+    			<pattern match="ARTS 2313-2701" />
     			<pattern match="ARTS 2314-2001" />
     			<pattern match="ARTS 2311-2004" />
-    			<pattern match="ARTS 2311-2200" /> <!-- added 2008-08-29 -->
+    			<pattern match="ARTS 2311-2200" />
     			<pattern match="ARTS 2348-2001" />
     			<pattern match="ARTS 2349-2001" />
     			<pattern match="ARTS 2313-2501" />
@@ -652,7 +571,7 @@
     			<pattern match="ARTS 2311-2019" />
     			<pattern match="ARTS 2312-2008" />
     			<pattern match="ARTS 2341-2004" />
-    			<pattern match="ARTS 2341-2200" /> <!-- added 2008-08-29 -->
+    			<pattern match="ARTS 2341-2200" />
     			<pattern match="ARTS 2342-2001" />
     			<pattern match="ARTS 2311-2013" />
     			<pattern match="ARTS 2312-2007" />
@@ -702,14 +621,14 @@
 				<pattern match="DANC 1352-2240" />
 				<pattern match="DANC 1352-2736" />
 				<pattern match="DANC 2351-2235" />
-            	<pattern match="DANC 2351-2241" /> <!-- added 2008-10-24 -->
+            	<pattern match="DANC 2351-2241" />
 				<pattern match="DANC 2351-2736" />
 				<pattern match="DANC 2352-2235" />
 				<pattern match="DANC 2352-2736" />
             </topic>
             <topic name="Hip Hop">
 				<pattern match="DANC 1222-2001" />
-            	<pattern match="DANC 1222-2201" /> <!-- added 2008-09-12 -->
+            	<pattern match="DANC 1222-2201" />
 				<pattern match="DANC 1222-2501" />
 				<pattern match="DANC 1223-2501" />
 				<pattern match="DANC 2222-2501" />
@@ -721,11 +640,11 @@
 			</topic>
             <topic name="Ballet">
 				<pattern match="DANC 1341-2001" />
-            	<pattern match="DANC 1341-2201" /> <!-- added 2008-09-12 -->
+            	<pattern match="DANC 1341-2201" />
 				<pattern match="DANC 1342-2001" />
 				<pattern match="DANC 2341-2001" />
 				<pattern match="DANC 2342-2001" />
-            	<pattern match="DANC 2342-2201" /> <!-- added 2008-08-29 -->
+            	<pattern match="DANC 2342-2201" />
 				<pattern match="DANC 1341-2501" />
 				<pattern match="DANC 1342-2501" />
 				<pattern match="DANC 2341-2501" />
@@ -733,7 +652,7 @@
             </topic>
             <topic name="Ballet Technique">
 				<pattern match="DANC 2141-2001" />
-            	<pattern match="DANC 2142-2200" /> <!-- added 2008-09-12 -->
+            	<pattern match="DANC 2142-2200" />
 				<pattern match="DANC 2142-2250" />
             </topic>
             <topic name="Modern Dance">
@@ -783,7 +702,7 @@
             <topic name="Rehearsal">
                 <subtopic name="First Play, Fall 2008">
                     <pattern match="DRAM 1221-2735" />
-                	<pattern match="DRAM 1221-2737" /> <!-- added 2008-09-26 -->
+                	<pattern match="DRAM 1221-2737" />
                 </subtopic>
                 <subtopic name="Second Play, Fall 2008">
                     <pattern match="DRAM 1221-2736" />
@@ -807,13 +726,13 @@
 				<pattern match="MUSI 1306-2431" />
 				<pattern match="MUSI 1306-2300" />
             	<pattern match="MUSI 1306-2700" />
-            	<pattern match="MUSI 1306-2250" /> <!-- added 2008-08-22 -->
+            	<pattern match="MUSI 1306-2250" />
             </topic>
             <topic name="Music Theory">
             	<pattern match="MUSI 1311-2001" />
             	<pattern match="MUSI 1311-2002" />
 				<pattern match="MUSI 2311-2001" />
-            	<pattern match="MUSI 2311-2200" /> <!-- added 2008-08-29 -->
+            	<pattern match="MUSI 2311-2200" />
             </topic>
             <topic name="Musicianship">
 				<pattern match="MUSI 1116-2001" />
@@ -870,7 +789,7 @@
                 <subtopic name="Windsong Vocal Ensemble">
 					<pattern match="MUEN 1153-2250" />
 					<pattern match="MUEN 1153-2200" />
-                	<pattern match="MUEN 1153-2201" /> <!-- added 2008-10-24 -->
+                	<pattern match="MUEN 1153-2201" /> 
                 </subtopic>
                 <subtopic name="Chamber Ensemble">
 					<pattern match="MUEN 1152-2001" />
@@ -891,7 +810,7 @@
                 <subtopic name="Keyboard Ensemble">
 					<pattern match="MUEN 1131-2001" />
 					<pattern match="MUEN 1131-2002" />
-                	<pattern match="MUEN 1131-2200" /> <!-- added 2008-09-12 -->
+                	<pattern match="MUEN 1131-2200" /> 
                 </subtopic>
                 <subtopic name="Percussion Ensemble">
 					<pattern match="MUEN 1135-2002" />
@@ -902,7 +821,7 @@
                 </subtopic>
                 <subtopic name="Vocal Jazz / Lab Band">
 					<pattern match="MUEN 1151-2001" />
-                	<pattern match="MUEN 1151-2200" /> <!-- added 2008-09-12 -->
+                	<pattern match="MUEN 1151-2200" />
 					<pattern match="MUEN 2123-2001" />
 					<pattern match="MUEN 2123-2200" />
 					<pattern match="MUEN 2123-2002" />
@@ -914,16 +833,16 @@
                 	<comments>NOTE:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
                 	<pattern match="MUAP 1101-2001" />
                 	<pattern match="MUAP 1105-2001" />
-                	<pattern match="MUAP 1109-2002" /> <!-- added 2008-08-29 -->
-                	<pattern match="MUAP 1109-2200" /> <!-- added 2008-09-05 -->
-                	<pattern match="MUAP 1109-2201" /> <!-- added 2008-09-05 -->
+                	<pattern match="MUAP 1109-2002" /> 
+                	<pattern match="MUAP 1109-2200" /> 
+                	<pattern match="MUAP 1109-2201" />
                 	<pattern match="MUAP 1115-2001" />
-                	<pattern match="MUAP 1115-2200" /> <!-- added 2008-09-05 -->
+                	<pattern match="MUAP 1115-2200" />
                 	<pattern match="MUAP 1117-2001" />
                 	<pattern match="MUAP 1117-2002" />
                 	<pattern match="MUAP 1121-2001" />
                 	<pattern match="MUAP 1125-2001" />
-                	<pattern match="MUAP 1125-2002" /> <!-- added 2008-08-29 -->
+                	<pattern match="MUAP 1125-2002" /> 
                 	<pattern match="MUAP 1129-2001" />
                 	<pattern match="MUAP 1129-2002" />
                 	<pattern match="MUAP 1133-2001" />
@@ -959,7 +878,7 @@
 					<pattern match="MUAP 2209-2001" />
 					<pattern match="MUAP 2209-2002" />
 					<pattern match="MUAP 2215-2001" />
-                	<pattern match="MUAP 2215-2200" /> <!-- added 2008-09-05 -->
+                	<pattern match="MUAP 2215-2200" /> 
                 	<pattern match="MUAP 2217-2001" />
 					<pattern match="MUAP 2229-2001" />
 					<pattern match="MUAP 2229-2002" />
@@ -972,10 +891,11 @@
 					<pattern match="MUAP 2269-2002" />
 					<pattern match="MUAP 2281-2001" />
 					<pattern match="MUAP 2281-2002" />
-                	<pattern match="MUAP 2281-2200" /> <!-- added 2008-09-05 -->
+                	<pattern match="MUAP 2281-2200" /> 
                 </subtopic>
             </topic>
         </subject>
+ -->
 
 
  <!-- =======================================================================
