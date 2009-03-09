@@ -140,7 +140,7 @@ class Summer09(Summer):
 class Fall09(Fall):
     input = 'data/2009-fall/BH2009FA.TXT'
     terms = {
-        'Fall': (date(2009, 8, 25), date(2009, 12, 11), 'Aug. 25-Dec. 11'),
+        'Fall': (date(2009, 8, 24), date(2009, 12, 10), 'Aug. 24-Dec. 10'),
     }
 
 # ===================================================================
