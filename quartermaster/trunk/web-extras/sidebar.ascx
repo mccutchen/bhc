@@ -4,14 +4,14 @@
     <ul>
         <li><a href="/studentsvcs/special-services/">Americans with Disabilities Act of 1990: Support / Special Services</a></li>
         <li><a href="/pdf/0817-0806_Cont_Ed_Registration_English.pdf">Continuing Education Registration Form</a> (English)</li>
-        <li><a href="/pdf/0817-0806_Cont_Ed_Registration_Spanish.pdf">Solicitud de Inscripción Educación Continua/Entrenamiento Laboral</a></li>
+        <li><a href="/pdf/0817-0806_Cont_Ed_Registration_Spanish.pdf">Solicitud de Inscripcin Educacin Continua/Entrenamiento Laboral</a></li>
         <li><a href="/maps/">Campus maps &amp; addresses</a></li>
         <li><a href="/instruction/cce/emergency-crisis-procedures.aspx">Class Cancellations</a></li>
         <li><a href="/instruction/cce/ce-units+awards-of-merit.aspx">CEUs and Awards of Merit</a></li>
         <li><a href="/instruction/cce/entrance-requirements.aspx">Entrance Requirements</a></li>
         <li><a href="/instruction/cce/financial-aid/">Financial Aid</a></li>
         <li><a href="/instruction/cce/index.aspx#hoo">Hours of Operation</a></li>
-        <li><a href="/instruction/cce/emergency-crisis-procedures.aspx ">Inclement Weather Procedures</a></li>
+        <li><a href="/weather/index.aspx ">Inclement Weather Procedures</a></li>
         <li><a href="/college/mission.aspx">Mission Statement</a></li>
         <li><a href="/instruction/cce/contact.aspx">Phone Numbers</a></li>
         <li><a href="/instruction/cce/refund-policy.aspx">Refund Policy / Pol&#237;tica de Reembolso</a></li>
