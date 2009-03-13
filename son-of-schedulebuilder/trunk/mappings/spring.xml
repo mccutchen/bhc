@@ -791,6 +791,7 @@
                 <pattern match="DANC 2351-2736" />
                 <pattern match="DANC 2352-2235" />
                 <pattern match="DANC 2352-2736" />
+                <pattern match="DANC 2352-2737" /> <!-- added 20090313 -->
             </topic>
             <topic name="Hip Hop">
                 <pattern match="DANC 1222-2001" />
@@ -872,13 +873,14 @@
             </topic>
             <topic name="Rehearsal">
                 <subtopic name="First Play, Spring 2009">
+                    <pattern match="DRAM 1221-2737" /> <!-- moved from Third Play on 20090313 -->
                     <pattern match="DRAM 1221-2735" />
                 </subtopic>
                 <subtopic name="Second Play, Spring 2009">
+                    <pattern match="DRAM 1221-2738" /> <!-- added 20090313 -->
                     <pattern match="DRAM 1221-2736" />
                 </subtopic>
                 <subtopic name="Third Play, Spring 2009">
-                    <pattern match="DRAM 1221-2737" />
                 </subtopic>
             </topic>
         </subject>
@@ -992,6 +994,7 @@
             <topic name="Music Ensembles">
                 <subtopic name="Brookhaven Choral Society">
                     <pattern match="MUEN 2141-2501" />
+                    <pattern match="MUEN 2141-2700" /> <!-- added 20090313 -->
                 </subtopic>
                 <subtopic name="Windsong Vocal Ensemble">
                     <pattern match="MUEN 1153-2250" />
