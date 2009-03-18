@@ -24,13 +24,13 @@
         <li><a href="/onlinesvcs/">Online Services</a></li>
     	<li><a href="/studentsvcs/bussrv/cashier-services-faq.aspx">Refund Policy</a></li>
     	<li><a href="/studentsvcs/admissions/registration.aspx">Registration</a></li>
-    	<li><a href="/studentsvcs/tuition/residency.html">Residency Requirements &amp; Your Tuition</a></li>
+    	<li><a href="/studentsvcs/tuition/residency.aspx">Residency Requirements &amp; Your Tuition</a></li>
     	<li><a href="/studentsvcs/admissions/schedule-changes.aspx">Schedule Changes: Adds, Drops, Withdrawals</a></li>
         <li><a href="/studentsvcs/financial/">Scholarships/Financial Aid</a></li>
     	<li><a href="/studentsvcs/police/smoking.html">Smoking Policy</a></li>
     	<li><a href="/studentsvcs/admissions/transcript.aspx">Transcripts</a></li>
     	<li><a href="/pdf/tsiwaiver.pdf">TSI Waiver Request Form</a>, PDF</li>
-    	<li><a href="/studentsvcs/tuition/paytuition.html">Tuition Payment Information</a></li>
+    	<li><a href="/studentsvcs/tuition/index.aspx">Tuition Payment Information</a></li>
         <li><a href="http://www.dcccd.edu/Current+Students/Paying+for+College/Third+Course+Attempt/" target="_blank"><b>Third Course Attempt Tuition</b></a></li>
         <li><a href="http://www.dcccd.edu/Espanol/Current+Students/Pagando+por+los+Estudios/Cursos+con+un+Tercer+Intento+de+Inscripcion/" target="_blank"><b>Cursos con un Tercer Intento de Inscripcion</b></a></li>
     </ul>
