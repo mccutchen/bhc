@@ -143,6 +143,8 @@
                 <pattern match="ITSC 1191-2236" /> <!-- added 2009-01-20 -->
                 <pattern match="ITSC 1191-2237" /> <!-- added 2009-01-20 -->
                 <pattern match="ITSC 1191-2238" /> <!-- added 2009-01-20 -->
+                <pattern match="ITSC 1191-2239" /> <!-- added 2009-03-20 -->
+                <pattern match="ITSC 1191-2240" /> <!-- added 2009-03-20 -->
                 <pattern match="ITSC 1291-2426" />
                 <pattern match="ITSC 1291-2427" />
                 <pattern match="ITSC 1409-2426" />
