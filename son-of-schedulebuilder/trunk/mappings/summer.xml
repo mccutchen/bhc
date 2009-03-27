@@ -613,6 +613,7 @@
     	<subject name="Music">
     		<topic name="Music Appreciation">
     			<pattern match="MUSI 1306-2001" />
+    			<pattern match="MUSI 1306-2002" />
     			<pattern match="MUSI 1306-2500" />
     			<pattern match="MUSI 1306-2700" />
     			<pattern match="MUSI 1306-2426" />
@@ -620,6 +621,9 @@
     			<pattern match="MUSI 1306-2431" />
     			<pattern match="MUSI 1306-2432" />
     			<pattern match="MUSI 1306-2433" />
+    		</topic>
+    		<topic name="Digital">
+    			<pattern match="MUSI 1390-2700" />
     		</topic>
     		<topic name="Music Ensembles">
     			<subtopic name="Chamber">
