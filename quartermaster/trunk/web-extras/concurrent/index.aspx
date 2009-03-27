@@ -35,14 +35,14 @@
         </div>
 
         <div id="page-content">
-            <p>Most Brookhaven College credit courses are available for noncredit enrollment. Enrollment in any course that is not for credit is completed through the <a href="/instruction/cce/">Corporate and Continuing Education Division</a>.</p>
+            <p>Most Brookhaven College credit courses are available for noncredit enrollment. Enrollment in any course that is not for credit is completed through the <a href="/instruction/cce/">Workforce and Continuing Education Division</a>.</p>
             <p>It is important to remember that enrollment is based upon space availability and, where applicable, completion of appropriate assessment and advising.</p>
             <p>Tuition is charged at the Dallas County Community College District&#8217;s credit tuition rate and lab costs may apply.</p>
             <p>For concurrent enrollment in a credit course, please follow the following procedure.</p>
             <ul>
                 <li><h3>STEP 1:</h3> Choose the credit course you want to take and determine the course and section number.</li>
-                <li><h3>STEP 2:</h3> Obtain a concurrent enrollment form in the Corporate and Continuing Education Division office. <strong>Important: some credit courses require division approval</strong>. The CCE Office will be able to advise you about which ones require advance approval from the instructional division.</li>
-                <li><h3>STEP 3:</h3> Bring your completed registration form to the Corporate and Continuing Education Division Office, Student Services Center, Building S, Room S022.</li>
+                <li><h3>STEP 2:</h3> Obtain a concurrent enrollment form in the Workforce and Continuing Education Division office. <strong>Important: some credit courses require division approval</strong>. The WCE Office will be able to advise you about which ones require advance approval from the instructional division.</li>
+                <li><h3>STEP 3:</h3> Bring your completed registration form to the Workforce and Continuing Education Division Office, Student Services Center, Building S, Room S022.</li>
                 <li><h3>STEP 4:</h3> Pay for your courses at the Cashier&#8217;s Office.  Your tuition receipt shows the class location and scheduled meeting time.  Please show your paid tuition receipt to the instructor at your class.</li>
             </ul>
             <p class="special-notice"><strong>IMPORTANT NOTE:</strong> Noncredit courses also are subject to the third-attempt tuition policy.</p>
