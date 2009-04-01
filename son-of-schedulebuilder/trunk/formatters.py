@@ -128,13 +128,13 @@ class CreditFormatter(BaseFormatter):
         the division to be overridden on a rubrik-by-rubrik basis, which lets
         us put PE and Nutrition courses in their proper division.
 
-        UGLY HACK: Since there isn't an actual Senior Adult Education division
+        UGLY HACK: Since there isn't an actual Students 50+ Education division
         defined, we put any classes with a topic-code of 'E' (for 'Emeritus')
-        in the Senior Adult Education Office pseudo-division."""
+        in the Students 50+ Education Office pseudo-division."""
 
         # UGLY HACK:  The should be a more elegant way to accomplish this
         if self.input.get('topic-code','').strip() == 'E':
-            return 'Senior Adult Education Office'
+            return 'Students 50+ Education Office'
         else:
             try:
                 # First, check using the rubrik, then fall back to the division code,

@@ -110,8 +110,8 @@
             </h1>
         </xsl:if>
 
-        <!-- first, output everything that's not in the School of the Arts or Senior Adult Education -->
-        <xsl:apply-templates select="division[@name != 'School of the Arts' and @name != 'Senior Adult Education Office']/subject | special-section">
+        <!-- first, output everything that's not in the School of the Arts or Students 50+ Education -->
+        <xsl:apply-templates select="division[@name != 'School of the Arts' and @name != 'Students 50+ Education Office']/subject | special-section">
             <xsl:sort select="@name" />
         </xsl:apply-templates>
 
@@ -122,8 +122,8 @@
         </xsl:apply-templates>
 
         <!-- output Senior Adults -->
-        <h1 class="division-header">Senior Adult Education Office</h1>
-        <xsl:apply-templates select="division[@name = 'Senior Adult Education Office']/subject">
+        <h1 class="division-header">Students 50+ Education Office</h1>
+        <xsl:apply-templates select="division[@name = 'Students 50+ Education Office']/subject">
             <xsl:sort select="@name" />
         </xsl:apply-templates>
     </xsl:template>
@@ -175,7 +175,7 @@
 
             <!-- if this is the Senior Adults subject, manually add a 'credit courses'
                  topic header -->
-            <xsl:if test="@name = 'Senior Adult Education Program'">
+            <xsl:if test="@name = 'Students 50+ Education Program'">
                 <h2 class="topic-header">CREDIT COURSES</h2>
             </xsl:if>
 
@@ -346,11 +346,11 @@
         (<xsl:value-of select="." />&#160;Wks)
     </xsl:template>
 
-    <xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@weeks" priority="1">
+    <xsl:template match="class[ancestor::subject/@name = 'Students 50+ Education Program']/@weeks" priority="1">
         <!-- don't output the number of weeks for Senior Adult courses -->
     </xsl:template>
 
-    <xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days">
+    <xsl:template match="class[ancestor::subject/@name = 'Students 50+ Education Program']/@days">
         <!-- spell out the days of the week for Senior Adult courses -->
         <xsl:value-of select="utils:senior-adult-days(.)" />
     </xsl:template>

@@ -7,9 +7,9 @@
     the special way they need to be handled in the schedule.
 
     They come out of the initial XML building stage in appropriate
-    subjects inside a division called Senior Adult Education Office.
+    subjects inside a division called Students 50+ Education Office.
 
-    To come out the right way in the schedule, a 'Senior Adult Education
+    To come out the right way in the schedule, a 'Students 50+ Education
     Program' subject needs to be added to the root of the division, and
     each real subject needs to be turned into a topic, because that's the
     way they are displayed.
@@ -25,16 +25,16 @@
     <xsl:include href="base.xsl" />
 
     <!-- the name of the division, used in template matching clauses -->
-    <xsl:variable name="senior-division-name">Senior Adult Education Office</xsl:variable>
+    <xsl:variable name="senior-division-name">Students 50+ Education Office</xsl:variable>
 
-    <!-- this inserts a subject called 'Senior Adult Education Program' into
+    <!-- this inserts a subject called 'Students 50+ Education Program' into
          the top level of the division, which all of the other subjects will
          be copied into -->
     <xsl:template match="division[@name=$senior-division-name]">
         <xsl:copy>
             <xsl:apply-templates select="@*" />
-            <subject name="Senior Adult Education Program" machine_name="senior_adult_education_program">
-                <comments>All courses listed under Senior Adult Education Program have been planned for adults who are 50 years or older.  For information and personal assistance with registration, please call DeBorah Whaley-Stephenson at 972-860-4807 or Janice Groeneman at 972-860-4698.  The Senior Adult Education offices are located in Building M, in rooms M203 and M211A. Are you eligible for FREE tuition?  If you are 65 years or older and reside in Dallas County (or own property in Dallas County subject to ad valorem taxation), tuition for credit classes is waived for up to six credit hours per semester.</comments>
+            <subject name="Students 50+ Education Program" machine_name="students_50_plus_education_program">
+                <comments>All courses listed under Students 50+ Education Program have been planned for adults who are 50 years or older.  For information and personal assistance with registration, please call DeBorah Whaley-Stephenson at 972-860-4807 or Janice Groeneman at 972-860-4698.  The Students 50+ Education offices are located in Building M, in rooms M203 and M211A. Are you eligible for FREE tuition?  If you are 65 years or older and reside in Dallas County (or own property in Dallas County subject to ad valorem taxation), tuition for credit classes is waived for up to six credit hours per semester.</comments>
                 <xsl:apply-templates select="node()" />
             </subject>
         </xsl:copy>

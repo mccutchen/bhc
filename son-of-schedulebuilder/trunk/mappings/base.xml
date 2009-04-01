@@ -579,7 +579,8 @@
         <division name="Mathematics and Science" ext="4750" room="K224" email="XX-MISSING" />
         <division name="Physical Education, Athletics and Nutrition" ext="4120" room="T315" email="bhcPhysicalEd@dcccd.edu" />
         <division name="School of the Arts" ext="4730" room="D123" email="BCSA@dcccd.edu" />
-        <division name="Senior Adult Education Office" ext="4807" room="M211A" extra-room="M203" email="bhcSeniorAdultEducation@dcccd.edu" />
+<!--    <division name="Senior Adult Education Office" ext="4807" room="M211A" extra-room="M203" email="bhcSeniorAdultEducation@dcccd.edu" /> -->
+        <division name="Students 50+ Education Office" ext="4807" room="M211A" extra-room="M203" email="bhc50Plus@dcccd.edu" />
         <division name="Social Science" ext="4130" room="K240" email="bhcSocialScience@dcccd.edu" />
         <division name="World Languages" ext="4770" room="L420" email="bhcWorldLanguages@dcccd.edu" />
 

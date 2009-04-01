@@ -310,11 +310,11 @@
         (<xsl:value-of select="." />&#160;Wks)
     </xsl:template>
 
-    <xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@weeks" priority="1">
+    <xsl:template match="class[ancestor::subject/@name = 'Students 50+ Education Program']/@weeks" priority="1">
         <!-- don't output the number of weeks for Senior Adult courses -->
     </xsl:template>
 
-    <xsl:template match="class[starts-with(ancestor::subject/@name, 'Senior Adult')]/@days">
+    <xsl:template match="class[ancestor::subject/@name = 'Students 50+ Education Program']/@days">
         <!-- spell out the days of the week for Senior Adult courses -->
         <xsl:value-of select="utils:senior-adult-days(.)" />
     </xsl:template>

@@ -22,7 +22,7 @@
 
     <!-- Regular expression which identifies a Senior Adult course
          section. -->
-    <xsl:variable name="senior-adult-regex">^senior\s+adult</xsl:variable>
+    <xsl:variable name="senior-adult-regex">^students\s+50</xsl:variable>
 
 
     <xsl:template match="group">
