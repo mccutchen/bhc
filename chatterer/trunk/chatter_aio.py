@@ -186,8 +186,7 @@ def Format(line_in, replace = True):
         elif (n <= 31):
             print '!Non-printable character (' + str(n) + ') skipped in file ' + cur_file + '.';
         elif (n >= 128):
-            print '- Non-standard character (' + str(n) + ') found: ' + c + ' in file ' + cur_file + '.';
-            out_list.append(c);
+            print '- Non-standard character (' + str(n) + ') skipped: ' + c + ' in file ' + cur_file + '.';
         else:
             out_list.append(c)
         index = index + 1
@@ -533,7 +532,7 @@ def ReadArticles(f_articles, f_bodies):
 
     # read intros
     in_file = open(f_articles, "r")
-    cur_file = in_file;
+    cur_file = f_articles;
     for line in in_file:
         if (line.strip() == ""):
             if (r_mode == "intro"):
