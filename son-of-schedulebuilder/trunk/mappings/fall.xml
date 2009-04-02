@@ -33,11 +33,13 @@
     		<topic name="General Electives">
     			<pattern match="ITNW 1380-2300" />
     		</topic>
+    		<!-- duplicates in Www and E-commerce Courses
     		<topic name="Open Source Software Courses">
     			<pattern match="ITSE 1406-2001" />
     			<pattern match="ITSW 1407-2010" />
     			<pattern match="ITSW 1407-2429" />
     		</topic>
+    		-->
     		<topic name="Programming Courses">
     			<pattern match="ITSE 1407-2001" />
     			<pattern match="ITSE 1407-2002" />
@@ -439,10 +441,7 @@
     			<pattern match="ARTS 2314-2501" />
     			<pattern match="ARTS 2313-2001" />
     			<pattern match="ARTS 2314-2001" />
-    			<pattern match="ARTS 2348-2001" />
     			<pattern match="ARTS 2349-2004" />
-    			<pattern match="ARTS 2311-2010" />
-    			<pattern match="ARTS 2312-2010" />
     		</topic>
     		<topic name="Ceramics">
     			<pattern match="ARTS 2346-2001" />
