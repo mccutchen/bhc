@@ -174,12 +174,16 @@ def get_course_element(parent, data, returnself=False):
     cross_listings = data.get('special-cross-listings') or \
                      ''.join(data.get('cross-listings'))
 
+    # UGLY HACK: they want LC courses to superceed Day/Night/Weekend/etc
+    temp_type = data['type'];
+    if (data['topic-code'] == 'LC'):
+        temp_type = data['topic-code'];
     attrs = {
         'title':          data['title'],
         'machine_name':   get_machine_name(data['title']),
         'rubrik':         data['rubrik'],
         'number':         data['number'],
-        'type':           data['type'],
+        'type':           temp_type,
         'core-component': data['core-component'],
         'cross-listings': cross_listings,
         'credit-hours':   data['credit-hours'],

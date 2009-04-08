@@ -504,6 +504,7 @@
          Class type mappings
          *********************************************************************** -->
     <mapping type="class-types">
+        <type id="LC" name="Learning Community" machine-name="learning-comunity"></type>
         <type id="D" name="Day" machine-name="day" />
         <type id="N" name="Night" machine-name="night" />
         <type id="W" name="Weekend" machine-name="weekend" />
