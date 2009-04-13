@@ -290,8 +290,8 @@
 					<pattern match="EMSP 2444-2702" />
 				</subtopic>
 				<subtopic name="Mass Disaster Response, B Shift">
-					<pattern match="EMSP 2332-2208" />
-					<pattern match="EMSP 2332-2201" />
+					<pattern match="EMSP 1391-2208" />
+					<pattern match="EMSP 1391-2201" />
 				</subtopic>
 			</topic>
         </subject>
