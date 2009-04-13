@@ -134,6 +134,9 @@
 
             <pattern match="ALCE" priority="0" unsorted="true" />
         </subject>
+        <subject name="Criminal Justice">
+            <pattern match="CRIJ" priority="0" unsorted="true" />
+        </subject>
         <subject name="Cultural Studies">
             <pattern match="CUST" priority="0" unsorted="true" />
         </subject>
