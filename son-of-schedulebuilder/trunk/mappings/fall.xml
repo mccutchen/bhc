@@ -92,7 +92,6 @@
     			<pattern match="ITSW 1407-2428" /> <!-- SS changed section number 4/13 per Bill's list -->
     		</topic>
     		<topic name="Application Software Courses">
-    			<comments>(Note to PI: POFI sections in here are also listed in the Office Technology area)</comments>
     			<pattern match="ITSC 1409-2001" />
     			<pattern match="ITSW 1401-2001" />
     			<pattern match="ITSW 1404-2001" />
