@@ -451,6 +451,8 @@
     			<pattern match="ARTS 2312-2509" />
     			<pattern match="ARTS 2346-2250" />
     			<pattern match="ARTS 2347-2250" />
+    			<pattern match="ARTS 2311-2252" />
+    			<pattern match="ARTS 2312-2252" />
     		</topic>
     		<topic name="Painting">
     			<pattern match="ARTS 2316-2001" />
@@ -481,7 +483,6 @@
     			<pattern match="ARTS 2317-2250" />
     			<pattern match="ARTS 2311-2251" />
     			<pattern match="ARTS 2312-2251" />
-    			
     		</topic>
     		<topic name="Sculpture">
     			<pattern match="ARTS 2326-2001" />
@@ -493,6 +494,9 @@
     			<pattern match="ARTS 2311-2021" />
     			<pattern match="ARTS 2312-2019" />
     			<pattern match="ARTS 2326-2501" />
+    			<pattern match="ARTS 2327-2501" />
+    			<pattern match="ARTS 2311-2511" />
+    			<pattern match="ARTS 2312-2511" />
     		</topic>
     		<topic name="Printmaking">
     			<pattern match="ARTS 2333-2001" />
@@ -509,6 +513,10 @@
     			<pattern match="ARTS 2311-2019" />
     			<pattern match="ARTS 2312-2008" />
     			<pattern match="ARTS 2341-2001" />
+    			<pattern match="ARTS 2341-2501" />
+    			<pattern match="ARTS 2342-2501" />
+    			<pattern match="ARTS 2311-2510" />
+    			<pattern match="ARTS 2312-2512" />
     		</topic>
     		<topic name="Photography">
     			<pattern match="ARTS 2356-2001" />
