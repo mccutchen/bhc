@@ -595,8 +595,8 @@
         	</topic>
         	<topic name="Film Appreciation">
         		<pattern match="DRAM 2366-2001" />
-        		<pattern match="DRAM 2366-2003" />
         		<pattern match="DRAM 2366-2002" />
+        		<pattern match="DRAM 2366-2003" />
         		<pattern match="DRAM 2366-2004" />
         		<pattern match="DRAM 2366-2420" />
         		<pattern match="DRAM 2366-2421" />
