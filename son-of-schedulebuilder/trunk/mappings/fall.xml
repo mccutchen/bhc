@@ -533,7 +533,8 @@
     	
     	
     	<subject name="Dance">
-    		<comments>NOTE:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
+    		<comments>NOTE:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.  Dance Performance classes are by audition only.  Audition dates are tentatively set for Sept. 17 at 8:30 p.m. and Sept. 19 at 1:30 p.m.  Auditions are open to dancers of all levels.
+ </comments>
     		<topic name="Dance Appreciation">
     			<pattern match="DANC 2303-2001" />
     			<pattern match="DANC 2303-2501" />
@@ -576,10 +577,10 @@
     		<topic name="Modern Dance">
     			<comments>Students must have had one semester of dance training for the following classes.</comments>
     			<pattern match="DANC 1245-2001" />
+    			<pattern match="DANC 1245-2002" />
     			<pattern match="DANC 1246-2001" />
     			<pattern match="DANC 2245-2001" />
     			<pattern match="DANC 2246-2001" />
-    			<pattern match="DANC 1245-2002" />
     			<pattern match="DANC 1245-2501" />
     			<pattern match="DANC 1246-2501" />
     			<pattern match="DANC 2245-2501" />
