@@ -353,6 +353,8 @@
                 <pattern match="RADR 1250" />
                 <pattern match="RADR 2235" />
                 <pattern match="RADR 1291" />
+                <pattern match="RADR 2233" />
+                <pattern match="RADR 2240" />
             </topic>
         </subject>
 
@@ -533,8 +535,7 @@
     	
     	
     	<subject name="Dance">
-    		<comments>NOTE:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.  Dance Performance classes are by audition only.  Audition dates are tentatively set for Sept. 17 at 8:30 p.m. and Sept. 19 at 1:30 p.m.  Auditions are open to dancers of all levels.
- </comments>
+    		<comments>NOTE:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.  Dance Performance classes are by audition only.  Audition dates are tentatively set for Sept. 17 at 8:30 p.m. and Sept. 19 at 1:30 p.m.  Auditions are open to dancers of all levels.</comments>
     		<topic name="Dance Appreciation">
     			<pattern match="DANC 2303-2001" />
     			<pattern match="DANC 2303-2501" />
@@ -741,9 +742,11 @@
     		<topic name="Music - Private Lessons">
     			<comments>NOTE:  These courses are private lesson courses, by audition only. Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
     			<subtopic name="Beginning">
+    				<pattern match="MUAP 1101-2001" />
     				<pattern match="MUAP 1191-2001" />
     				<pattern match="MUAP 1105-2001" />
     				<pattern match="MUAP 1109-2002" />
+    				<pattern match="MUAP 1115-2001" />
     				<pattern match="MUAP 1117-2002" />
     				<pattern match="MUAP 1121-2001" />
     				<pattern match="MUAP 1125-2001" />
@@ -751,6 +754,8 @@
     				<pattern match="MUAP 1129-2001" />
     				<pattern match="MUAP 1129-2002" />
     				<pattern match="MUAP 1133-2001" />
+    				<pattern match="MUAP 1137-2001" />
+    				<pattern match="MUAP 1137-2002" />
     				<pattern match="MUAP 1153-2001" />
     				<pattern match="MUAP 1157-2001" />
     				<pattern match="MUAP 1161-2001" />
@@ -770,15 +775,26 @@
     			<subtopic name="Intermediate">
     				<pattern match="MUAP 2201-2001" />
     				<pattern match="MUAP 2209-2001" />
+    				<pattern match="MUAP 2209-2002" />
+    				<pattern match="MUAP 2215-2001" />
+    				<pattern match="MUAP 2217-2001" />
+    				<pattern match="MUAP 2225-2001" />
+    				<pattern match="MUAP 2225-2002" />
+    				<pattern match="MUAP 2229-2001" />
     				<pattern match="MUAP 2229-2002" />
     				<pattern match="MUAP 2233-2001" />
+    				<pattern match="MUAP 2237-2001" />
+    				<pattern match="MUAP 2237-2002" />
+    				<pattern match="MUAP 2241-2001" />
+    				<pattern match="MUAP 2245-2001" />
     				<pattern match="MUAP 2257-2001" />
+    				<pattern match="MUAP 2261-2001" />
     				<pattern match="MUAP 2161-2001" />
     				<pattern match="MUAP 2261-2002" />
     				<pattern match="MUAP 2269-2001" />
     				<pattern match="MUAP 2281-2001" />
     				<pattern match="MUAP 2281-2002" />
-    				<pattern match="MUAP 2281-2004" />
+    				<pattern match="MUAP 2281-2003" />
     			</subtopic>
     		</topic>
         </subject>
