@@ -407,6 +407,7 @@
     			<pattern match="ARTS 2312-2252" />
     		</topic>
     		<topic name="Art and Computers">
+    			<pattern match="ARTS 1372-2001" />
     			<pattern match="ARTS 2348-2001" />
     			<pattern match="ARTS 2349-2001" />
     			<pattern match="ARTS 2311-2010" />
