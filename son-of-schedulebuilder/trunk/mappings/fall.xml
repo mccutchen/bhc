@@ -377,10 +377,12 @@
     			<pattern match="ARTS 1301-2250" />
     			<pattern match="ARTS 1301-2420" />
     			<pattern match="ARTS 1301-2421" />
+    			<pattern match="ARTS 1301-2422" />
     		</topic>
     		<topic name="Art History">
     			<pattern match="ARTS 1303-2001" />
     			<pattern match="ARTS 1303-2002" />
+    			<pattern match="ARTS 1303-2003" />
     			<pattern match="ARTS 1304-2001" />
     			<pattern match="ARTS 1303-2501" />
     		</topic>
@@ -456,6 +458,7 @@
     			<pattern match="ARTS 2311-2006" />
     			<pattern match="ARTS 2312-2004" />
     			<pattern match="ARTS 2316-2002" />
+    			<pattern match="ARTS 2317-2002" />
     			<pattern match="ARTS 2311-2015" />
     			<pattern match="ARTS 2312-2015" />
     			<pattern match="ARTS 2316-2003" />
@@ -466,6 +469,10 @@
     			<pattern match="ARTS 2317-2004" />
     			<pattern match="ARTS 2311-2007" />
     			<pattern match="ARTS 2312-2017" />
+    			<pattern match="ARTS 2366-2001" />
+    			<pattern match="ARTS 2367-2001" />
+    			<pattern match="ARTS 2311-2016" />
+    			<pattern match="ARTS 2312-2016" />
     			<pattern match="ARTS 2316-2501" />
     			<pattern match="ARTS 2317-2501" />
     			<pattern match="ARTS 2311-2504" />
@@ -474,6 +481,7 @@
     			<pattern match="ARTS 2317-2250" />
     			<pattern match="ARTS 2311-2251" />
     			<pattern match="ARTS 2312-2251" />
+    			
     		</topic>
     		<topic name="Sculpture">
     			<pattern match="ARTS 2326-2001" />
@@ -510,10 +518,6 @@
     			<pattern match="ARTS 2356-2501" />
     			<pattern match="ARTS 2357-2501" />
     			<pattern match="ARTS 2311-2507" />
-    		</topic>
-    		<topic name="Watercolor">
-    			<pattern match="ARTS 2366-2001" />
-    			<pattern match="ARTS 2311-2016" />
     		</topic>
     	</subject>
     	
