@@ -744,6 +744,7 @@
     				<pattern match="MUAP 1101-2001" />
     				<pattern match="MUAP 1191-2001" />
     				<pattern match="MUAP 1105-2001" />
+    				<pattern match="MUAP 1109-2001" />
     				<pattern match="MUAP 1109-2002" />
     				<pattern match="MUAP 1115-2001" />
     				<pattern match="MUAP 1117-2002" />
@@ -755,6 +756,7 @@
     				<pattern match="MUAP 1133-2001" />
     				<pattern match="MUAP 1137-2001" />
     				<pattern match="MUAP 1137-2002" />
+    				<pattern match="MUAP 1145-2002" />
     				<pattern match="MUAP 1153-2001" />
     				<pattern match="MUAP 1157-2001" />
     				<pattern match="MUAP 1161-2001" />
