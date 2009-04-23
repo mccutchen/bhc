@@ -575,7 +575,6 @@
     			<pattern match="DANC 2142-2250" />
     		</topic>
     		<topic name="Modern Dance">
-    			<comments>Students must have had one semester of dance training for the following classes.</comments>
     			<pattern match="DANC 1245-2001" />
     			<pattern match="DANC 1245-2002" />
     			<pattern match="DANC 1246-2001" />
