@@ -45,7 +45,7 @@ import sa_data_lib as data_lib
 version_str    = '[sa_updater version=1.1]';
 ini_path       = 'sa_updater.ini';
 ini            = None;
-fname_pattern  = 'senior_adult'
+fname_pattern  = 'students_50_'
 k_max_filesize = pow(2, 20);
 
 
@@ -297,6 +297,9 @@ def ScanForFilename(fname, root_dir):
     return out_list;
 
 def ScanCredit(path_list):
+    # globals
+    global fname_pattern;
+    
     # processing vars:
     topic_list   = [];
     file_list = [];
@@ -306,7 +309,7 @@ def ScanCredit(path_list):
 
     # if we didn't get any, we can't do anything
     if ((not file_list) or (len(file_list) < 1)):
-        print '! Warning: No credit filenames detected that match the pattern \'' + fname_str + '\'.'
+        print '! Warning: No credit filenames detected that match the pattern \'' + fname_pattern + '\'.'
         return None;
 
     # Otherwise, load each file
@@ -343,7 +346,7 @@ def ScanNonCredit(path):
 
     # if we didn't get any, we can't do anything
     if ((not file_list) or (len(file_list) < 1)):
-        print '! Warning: No non-credit filenames detected that match the pattern \'' + fname_str + '\'.'
+        print '! Warning: No non-credit filenames detected that match the pattern \'' + fname_pattern + '\'.'
         return None;
 
     # Otherwise, load each file
@@ -418,21 +421,29 @@ if (__name__ == '__main__'):
     # get semesters
     cr_path_list = GetSemesterList();
 
+    topic_list = [];
+    
     # CREDIT:
     print 'Scanning credit topics...';
     cr_list = ScanCredit(cr_path_list);
     if (not cr_list):
         print '! Warning: no credit topics found.';
+    else:
+        topic_list += cr_list;
 
     # NON-CREDIT:
     print 'Scanning non-credit topics...';
     nc_list = ScanNonCredit(ini.nc_path);
     if (not nc_list):
         print '! Warning: no credit topics found.';
+    else:
+        topic_list += nc_list;
 
-    # combine
-    topic_list = cr_list + nc_list;
-
+    # if we found nothing to output, just spit out an error
+    if (not cr_list and not nc_list):
+        print '! Warning: nothing to do.';
+        sys.exit(0);
+        
     # sort
     topic_list.sort(lambda x, y: cmp(x.title, y.title));
     for topic in topic_list:
