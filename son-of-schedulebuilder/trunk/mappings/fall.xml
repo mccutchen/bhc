@@ -14,7 +14,7 @@
              ======================================================================== -->
     	<subject name="Computer Information Technology">
     		<topic name="Introduction to Computing Courses">
-    			<comments>ITSC 1401 is a Technical/Occupational course required for certain Certificate and Associate Degree plans.  It will not meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and is not for transfer to a 4-year school.</comments>
+    			<comments>ITSC 1401 is a Technical/Occupational course required for certain Certificate and Associate Degree plans.  It will not meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and is not for transfer to a four-year school.</comments>
     			<pattern match="ITSC 1401-2521" />
     			<pattern match="ITSC 1401-2421" />
     			<pattern match="ITSC 1401-2300" />
@@ -135,7 +135,7 @@
     	</subject>
     	<subject name="Computer Science">
     		<topic name="Computer Literacy Courses">
-    			<comments>COSC 1300 will meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and may be used for transfer to a 4-year school.</comments>
+    			<comments>COSC 1300 will meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and may be used for transfer to a four-year school.</comments>
     			<pattern match="COSC 1300-2001" />
     			<pattern match="COSC 1300-2002" />
     			<pattern match="COSC 1300-2003" />
