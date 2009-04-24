@@ -56,6 +56,11 @@
             <!-- generate a "full" proof if it's not destined for the H: drive -->
             <xsl:apply-templates select="term | term/division | term/special-section" mode="init" />
         </xsl:if>
+        
+        <!-- even if this is for secretaries, output the LC list -->
+        <xsl:if test="$for-secretaries = 'true'">
+            <xsl:apply-templates select="term/special-section[@name = 'Learning Community - Interdisciplinary Studies']" mode="init" />
+        </xsl:if>
 
         <!-- either way, we need to apply this template -->
         <xsl:apply-templates select="term/division/subject" mode="init" />
