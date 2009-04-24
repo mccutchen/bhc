@@ -102,6 +102,12 @@
     			<pattern match="ITSC 1191-2250" />
     			<pattern match="ITSC 1291-2200" />
     			<pattern match="ITSC 1291-2201" />
+    			<pattern match="ITSC 1291-2203" /> <!-- Added on 04242009 -->
+    			<pattern match="ITSC 1291-2204" /> <!-- Added on 04242009 -->
+    			<pattern match="ITSC 1291-2205" /> <!-- Added on 04242009 -->
+    			<pattern match="ITSC 1291-2206" /> <!-- Added on 04242009 -->
+    			<pattern match="ITSC 1291-2207" /> <!-- Added on 04242009 -->
+    			<pattern match="ITSC 1291-2250" /> <!-- Added on 04242009 -->
     			<pattern match="ITSC 1409-2501" />
     			<pattern match="ITSW 1401-2501" />
     			<pattern match="ITSW 1404-2501" />
@@ -112,6 +118,7 @@
     			<pattern match="ITSC 1191-2703" />
     			<pattern match="ITSC 1291-2701" />
     			<pattern match="ITSC 1291-2702" />
+    			<pattern match="ITSC 1291-2703" /> <!-- Added on 04242009 -->
     			<pattern match="ITSC 1191-2426" />
     			<pattern match="ITSC 1191-2427" />
     			<pattern match="ITSC 1291-2426" />
@@ -119,6 +126,7 @@
     			<pattern match="ITSC 1409-2426" />
     			<pattern match="ITSC 1415-2426" />
     			<pattern match="ITSW 1401-2426" />
+    			<pattern match="ITSW 1401-2427" /> <!-- Added on 04242009 -->
     			<pattern match="ITSW 1404-2426" />
     			<pattern match="ITSW 1407-2426" />
     			<pattern match="ITSW 1410-2426" />

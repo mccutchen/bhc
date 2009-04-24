@@ -997,6 +997,7 @@
                 <subtopic name="Brookhaven Choral Society">
                     <pattern match="MUEN 2141-2501" />
                     <pattern match="MUEN 2141-2700" /> <!-- added 20090313 -->
+                    <pattern match="MUEN 2141-2701" /> <!-- added 20090424 -->
                 </subtopic>
                 <subtopic name="Windsong Vocal Ensemble">
                     <pattern match="MUEN 1153-2250" />
