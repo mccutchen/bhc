@@ -544,7 +544,8 @@
     	<subject name="Dance">
     		<comments>
     			<p>NOTE: For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For courses above the beginning level, placement counseling with the Dance Department is required. </p>
-    			<p style="margin-top: 10px; margin-bottom: 10px;">DANCE PRACTICUM: Dance Performance classes are by audition only.  Audition dates are tentatively set for Sept. 17 at 8:30 p.m. and Sept. 19 at 1:30 p.m.  Auditions are open to dancers of all levels.</p>
+    			<p style="margin-top: 10px; font-size: 125%; text-decoration: underline;">DANCE PRACTICUM:</p>
+    			<p style="margin-bottom: 10px;">Dance Performance classes are by audition only.  Audition dates are tentatively set for Sept. 17 at 8:30 p.m. and Sept. 19 at 1:30 p.m.  Auditions are open to dancers of all levels.</p>
     		</comments> 
     		<topic name="Dance Appreciation">
     			<pattern match="DANC 2303-2001" />
