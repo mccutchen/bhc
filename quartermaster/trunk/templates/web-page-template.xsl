@@ -36,8 +36,8 @@
 								
 								<!-- only output the Youth Summer Program link if we're in the Youth Summer
 									 Program page -->
-								<xsl:if test="ancestor-or-self::division/@name = 'YOUTH SUMMER PROGRAM'">
-									<p><a href="/instruction/cce/youth-summer-program/">Click here for Youth Summer Program Brochure and Forms</a></p>
+								<xsl:if test="ancestor-or-self::division/@name = 'YOUTH COURSES'">
+                  <p class="financial-aid">To find a printable PDF version of our Youth Program brochure or to complete the appropriate paperwork for enrolling a minor in a continuing education course, please see additional details on our <a href="/instruction/cce/youth-program/">Youth Programs</a> pages.</p>
 								</xsl:if>
 
                                 <!-- only output the financial aid notice in the header if this page has
