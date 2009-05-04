@@ -146,7 +146,8 @@
     </xsl:template>
 
     <xsl:template match="special-section">
-        <xsl:value-of select="utils:xtag('Subject Header')" /><xsl:value-of select="upper-case(@name)" /><xsl:text> COURSES</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="utils:xtag('Subject Header')" /><xsl:apply-templates select="." mode="subject-header" />
+        <xsl:apply-templates select="." mode="insert-header-text" />
         <xsl:call-template name="blank-line" />
 
         <xsl:apply-templates select="subject | minimester">
@@ -154,7 +155,39 @@
             <xsl:sort select="@name" />
         </xsl:apply-templates>
     </xsl:template>
-
+    
+    <xsl:template mode="subject-header" match="special-section[@name = 'Weekend Core Curriculum']">
+        <xsl:text>YOU CAN COMPLETE YOUR CORE CURRICULUM ON WEEKENDS!</xsl:text><xsl:call-template name="br" />
+    </xsl:template>
+    <xsl:template mode="subject-header" match="special-section">
+        <xsl:value-of select="upper-case(@name)" /><xsl:text> COURSES</xsl:text><xsl:call-template name="br" />
+    </xsl:template>
+    
+    <xsl:template mode="insert-header-text" match="special-section[@name = 'Distance Learning']">
+        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>For course annotations, turn to the alphabetical listing of the course in this publication, or contact the instructional division office.</xsl:text><xsl:call-template name="br" /> 
+        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:text>Distance learning courses provide instruction to students who are not at the same location as the instructors and can use various forms of technology - television, computer, telephone and the Internet.  Students must meet prerequisites or assessment scores where applicable.  Dallas County Community College District distance learning courses will transfer to other institutions.  Students who plan to transfer should consult the catalog of that institution and work with an advisor in planning their academic programs.  Campus-based distance courses are offered by all seven colleges of the Dallas County Community College District and may include some on-site instruction.</xsl:text><xsl:call-template name="br" />   
+        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:value-of select="utils:xtag-inline('SubjectHeaderSmallCommentBold','Online, OL')" /><xsl:text> - All content is delivered through computers and multimedia.  These courses use eCampus and may include CDs and audio/video streaming or publisher video cartridge.  No on-campus testing or activities are required; however, off-campus proctored exams may be required.</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:value-of select="utils:xtag-inline('SubjectHeaderSmallCommentBold','Online Partial, OLP')" /><xsl:text> - Most of the content is delivered through computers and multimedia. These courses use eCampus and may include CDs and audio/video streaming.  On-campus testing, orientation, and/or other activities may be required.</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:value-of select="utils:xtag-inline('SubjectHeaderSmallCommentBold','Online/Classroom, OLC')" /><xsl:text> - Content delivered through an even distribution (50 percent-50 percent) of online and classroom activities.  These courses use components of computer instruction, multimedia activities, and classroom time.  On-Campus classroom time is required.</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:value-of select="utils:xtag-inline('SubjectHeaderSmallCommentBold','Video-Based, VB')" /><xsl:text> - Content delivered through a local cable channel, CD, DVD, MP4 system, or VHS cassette.  On-campus testing or activities may be required.  Content is not delivered through computer Internet activities, but instructor may provide some communications, syllabus, orientation and test review by e-mail.</xsl:text><xsl:call-template name="br" /> 
+        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:text>If you have any questions about Distance Learning course formats, please call the division office for that course.</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:text>For further information concerning distance learning, please contact Sam Govea at 972-860-4216 or e-mail </xsl:text><xsl:value-of select="utils:xtag-inline('website', 'sGovea@dcccd.edu')" /><xsl:text>.</xsl:text><xsl:call-template name="br" />
+    </xsl:template>
+    <xsl:template mode="insert-header-text" match="special-section[@name = 'Flex Term']">
+        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>Previously called minimesters, the following classes meet for less than 15 weeks and are listed by the month in which they begin.</xsl:text><xsl:call-template name="br" /> 
+    </xsl:template>
+    <xsl:template mode="insert-header-text" match="special-section[@name = 'Learning Community']">
+        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>Learning communities are linked courses that students take together.  Ask your advisor if one of these communities fits into your academic plan!  Students who participate in learning communities have shown a higher success rate than those who take stand-alone courses.  See ads in the front and back sections of this schedule for paired courses and more information.</xsl:text><xsl:call-template name="br" />
+    </xsl:template>
+    <xsl:template mode="insert-header-text" match="special-section[@name = 'Weekend']">
+        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>Weekend courses meet on Friday, Saturday and Sunday, Saturday only, Sunday only and Saturday and Sunday.  For assistance in planning your degree plan to fit a weekend schedule, please see an academic advisor.</xsl:text><xsl:call-template name="br" />
+    </xsl:template>
+    <xsl:template mode="insert-header-text" match="special-section[@name = 'Weekend Core Curriculum']">
+        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>For assistance in planning your degree plan to fit a weekend schedule, please see an academic advisor.</xsl:text><xsl:call-template name="br" /> 
+    </xsl:template>
+    <xsl:template mode="insert-header-text" match="special-section">
+    </xsl:template>
+    
     <xsl:template match="minimester">
         <xsl:value-of select="utils:xtag('Minimester Header')" /><xsl:value-of select="upper-case(@name)" /><xsl:call-template name="br" />
         <xsl:apply-templates select="subject">
