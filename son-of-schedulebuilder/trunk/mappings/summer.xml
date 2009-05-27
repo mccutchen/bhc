@@ -623,6 +623,17 @@
     			<pattern match="MUSI 1306-2432" />
     			<pattern match="MUSI 1306-2433" />
     		</topic>
+    		<topic name="Music Theory">					<!-- added 15 May, 2009 -->
+    			<pattern match="MUSI 2311-2200" />
+    			<pattern match="MUSI 2312-2200" />
+    		</topic>
+    		<topic name="Musicianship">					<!-- added 15 May, 2009 -->
+    			<pattern match="MUSI 2117-2201" />
+    			<pattern match="MUSI 2116-2201" />
+    		</topic>
+    		<topic name="Composition">					<!-- added 15 May, 2009 -->
+    			<pattern match="MUSI 1386-2202" />
+    		</topic>
     		<topic name="Digital">
     			<pattern match="MUSI 1390-2700" />
     		</topic>
@@ -672,6 +683,7 @@
     			<pattern match="MUAP 1129-2201" />
     			<pattern match="MUAP 1133-2200" />
     			<pattern match="MUAP 1133-2201" />
+    			<pattern match="MUAP 1145-2200" /> <!-- added 15 May, 2009 -->
     			<pattern match="MUAP 1157-2200" />
     			<pattern match="MUAP 1161-2200" />
     			<pattern match="MUAP 1161-2201" />
