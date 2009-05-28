@@ -260,6 +260,9 @@
 					<pattern match="EMSP 1160-2704" />
 				</subtopic>
 			</topic>
+			<topic name="Emergency Medical Services, RN">
+				<pattern match="EMSP 2553" />
+			</topic>
 			<topic name="Emergency Medical Services, Paramedic">
 				<subtopic name="Paramedic Class #23, A Shift">
 					<pattern match="EMSP 2434-2223" />
