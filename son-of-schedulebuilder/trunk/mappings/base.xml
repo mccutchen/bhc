@@ -476,6 +476,7 @@
         <division name="Health and Human Services">
             <pattern match="HHS" priority="0" unsorted="true" />
             <pattern match="HLS" priority="0" unsorted="true" />
+            <pattern match="WECM" priority="0" unsorted="true" />
         </division>
         <division name="Mathematics and Science">
             <pattern match="SCMT" priority="0" unsorted="true" />
