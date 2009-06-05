@@ -578,6 +578,9 @@
     			<pattern match="DANC 2341-2701" />
     			<pattern match="DANC 2342-2701" />
     		</topic>
+    		<topic name="Dance Performance">
+    			<pattern match="DANC 1351-2201" />
+    		</topic>
     		<topic name="Hip Hop">
     			<pattern match="DANC 1122-2201" />
     			<pattern match="DANC 1123-2201" />
