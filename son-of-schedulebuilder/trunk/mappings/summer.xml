@@ -588,6 +588,7 @@
     		</topic>
     		<topic name="Jazz">
     			<pattern match="DANC 1247-2701" />
+    			<pattern match="DANC 1247-2702" />
     			<pattern match="DANC 1248-2701" />
     		</topic>
     		<topic name="Modern Dance">
@@ -655,6 +656,7 @@
     			</subtopic>
     			<subtopic name="Keyboard">
     				<pattern match="MUEN 1131-2202" />
+    				<pattern match="MUEN 1131-2205" />
     			</subtopic>
     			<subtopic name="String">
     				<pattern match="MUEN 1136-2200" />
@@ -771,6 +773,9 @@
         ======================================================================== -->
 		 <subject name="Emergency Medical Services">
 		    <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http:www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: All EMS classes meet at the Brookhaven College East Center 2 located at the northeast corner of Midway and Alpha Roads, 13614 Midway Road. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term.  NOTE: REQUIRED:  Current CPR AHA Healthcare Provider or equivalent certification.</comments>
+		 	<topic name="Instructor Training">
+		 		<pattern match="EMSP 2300" />
+		 	</topic>		 	
 		 	<topic name="Emergency Medical Services, Basic">
 		 		<subtopic name="Emt-basic Class #50">
 		 			<pattern match="EMSP 1160-2700" />
