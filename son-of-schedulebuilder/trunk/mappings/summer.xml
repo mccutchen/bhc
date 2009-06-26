@@ -589,7 +589,7 @@
     		</topic>
     		<topic name="Jazz">
     			<pattern match="DANC 1247-2701" />
-    			<pattern match="DANC 1247-2702" />
+    			<pattern match="DANC 1247-2702" /> <!-- added 2009-06-19 -->
     			<pattern match="DANC 1248-2701" />
     		</topic>
     		<topic name="Modern Dance">
@@ -611,7 +611,6 @@
     		<topic name="Theater Practicum">
     			<pattern match="DRAM 1120" />
     			<pattern match="DRAM 1220" />
-    			<pattern match="DRAM 2366-2420" />
     		</topic>
     	</subject>
     	<subject name="Music">
@@ -781,13 +780,9 @@
 		 		<subtopic name="Emt-basic Class #50">
 		 			<pattern match="EMSP 1160-2700" />
 		 		</subtopic>
-		 	</topic>
-		 	<topic name="Emergency Medical Services, Basic">
 		 		<subtopic name="Emt-basic Class #51">
 		 			<pattern match="EMSP 1160-2201" />
 		 		</subtopic>
-		 	</topic>
-		 	<topic name="Emergency Medical Services, Basic">
 		 		<subtopic name="Emt-basic Class #52">
 		 			<pattern match="EMSP 1501-2202" />
 		 			<pattern match="EMSP 1501-2201" />
@@ -801,14 +796,10 @@
 		 			<pattern match="EMSP 2143-2221" />
 		 			<pattern match="EMSP 2463-2221" />
 		 		</subtopic>
-		 	</topic>
-		 	<topic name="Emergency Medical Services, Paramedic">
 		 		<subtopic name="Paramedic Class #22">
 		 			<pattern match="EMSP 2143-2722" />
 		 			<pattern match="EMSP 2463-2722" />
 		 		</subtopic>
-		 	</topic>
-		 	<topic name="Emergency Medical Services, Paramedic">
 		 		<subtopic name="Paramedic Class #23, A-shift">
 		 			<pattern match="EMSP 1356-2223" />
 		 			<pattern match="EMSP 1356-2201" />
