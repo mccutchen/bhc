@@ -240,66 +240,21 @@
         <subject name="Radiologic Sciences">
             <comments>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
             <topic name="None">
-                <pattern match="RADR 1201-2002" />
-                <pattern match="RADR 1201-2003" />
-                <pattern match="RADR 1201-2501" />
+                <comments>NOTE: The following courses are available to anyone interested in the Radiologic Sciences Program. Acceptance into the program is NOT REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
+                <pattern match="RADR 1201" />
             </topic>
             <topic name="First Semester Program Students">
-                <pattern match="RADR 1201-2001" />
-                <pattern match="RADR 1411-2001" />
-                <pattern match="RADR 1411-2002" />
-                <pattern match="RADR 1411-2003" />
-                <pattern match="RADR 1411-2004" />
-                <pattern match="RADR 1411-2005" />
-                <pattern match="RADR 1411-2006" />
-                <pattern match="RADR 2309-2001" />
-                <pattern match="RADR 1203-2001" />
-                <pattern match="RADR 1203-2002" />
-                <pattern match="RADR 1203-2003" />
-                <pattern match="RADR 1203-2004" />
+            	<comments>NOTE:  The following courses are for students in the first semester of the Radiologic Sciences Program.  Acceptance into this program is REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
+                <pattern match="RADR 1411" />
+                <pattern match="RADR 2309" />
+                <pattern match="RADR 1203" />
             </topic>
             <topic name="Fourth Semester Program Students">
-                <pattern match="RADR 1202-2001" />
-                <pattern match="RADR 1266-2201" />
-                <pattern match="RADR 1266-2202" />
-                <pattern match="RADR 1266-2203" />
-                <pattern match="RADR 1266-2204" />
-                <pattern match="RADR 1266-2205" />
-                <pattern match="RADR 1266-2206" />
-                <pattern match="RADR 1266-2207" />
-                <pattern match="RADR 1266-2208" />
-                <pattern match="RADR 1266-2209" />
-                <pattern match="RADR 1266-2210" />
-                <pattern match="RADR 1266-2211" />
-                <pattern match="RADR 1266-2212" />
-                <pattern match="RADR 1266-2213" />
-                <pattern match="RADR 1266-2214" />
-                <pattern match="RADR 1266-2215" />
-                <pattern match="RADR 1266-2216" />
-                <pattern match="RADR 1266-2217" />
-                <pattern match="RADR 1266-2218" />
-                <pattern match="RADR 1266-2219" />
-                <pattern match="RADR 1267-2201" />
-                <pattern match="RADR 1267-2202" />
-                <pattern match="RADR 1267-2203" />
-                <pattern match="RADR 1267-2204" />
-                <pattern match="RADR 1267-2205" />
-                <pattern match="RADR 1267-2206" />
-                <pattern match="RADR 1267-2207" />
-                <pattern match="RADR 1267-2208" />
-                <pattern match="RADR 1267-2209" />
-                <pattern match="RADR 1267-2210" />
-                <pattern match="RADR 1267-2211" />
-                <pattern match="RADR 1267-2212" />
-                <pattern match="RADR 1267-2213" />
-                <pattern match="RADR 1267-2214" />
-                <pattern match="RADR 1267-2215" />
-                <pattern match="RADR 1267-2216" />
-                <pattern match="RADR 1267-2217" />
-                <pattern match="RADR 1267-2218" />
-                <pattern match="RADR 1267-2219" />
-                <pattern match="RADR 1202-2201" />
-                <pattern match="RADR 1291-2001" />
+            	<comments>The following courses are for students in the fourth semester of the Radiologic Sciences Program.  Acceptance into this program is REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
+                <pattern match="RADR 1266" />
+                <pattern match="RADR 1267" />
+                <pattern match="RADR 1202" />
+                <pattern match="RADR 2233" />
             </topic>
         </subject>
         
