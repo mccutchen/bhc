@@ -263,6 +263,7 @@
 			
 			<topic name="Emergency Medical Services, RN">
 				<pattern match="EMSP 2553" />
+				<pattern match="EMSP 2463" />
 			</topic>
 			
 			<topic name="Emergency Medical Services, Paramedic">
@@ -392,6 +393,7 @@
     			<pattern match="ARTS 1301-2420" />
     			<pattern match="ARTS 1301-2421" />
     			<pattern match="ARTS 1301-2422" />
+    			<pattern match="ARTS 1301-2423" />
     		</topic>
     		<topic name="Art History">
     			<pattern match="ARTS 1303-2001" />
