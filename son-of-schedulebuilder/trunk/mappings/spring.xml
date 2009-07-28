@@ -96,7 +96,6 @@
                 <pattern match="ITSE 1301-2426" />
                 <pattern match="ITSE 1406-2426" />
                 <pattern match="ITSE 2402-2426" />
-                <pattern match="ITSW 1407-2426" />
             </topic>
             <topic name="Application Software">
                 <pattern match="ITSC 1409-2001" />
