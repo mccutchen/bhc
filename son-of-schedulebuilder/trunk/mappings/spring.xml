@@ -551,9 +551,9 @@
         
         <subject name="Drama">
             <topic name="Introduction to Theatre">
-                <pattern match="DRAM 1310 2001" />
-                <pattern match="DRAM 1310 2002" />
-                <pattern match="DRAM 1310 2501" />
+                <pattern match="DRAM 1310-2001" />
+                <pattern match="DRAM 1310-2002" />
+                <pattern match="DRAM 1310-2501" />
             </topic>
             <topic name="Film Appreciation">
                 <pattern match="DRAM 2366-2001" />
