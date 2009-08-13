@@ -591,13 +591,14 @@
                 
         <subject name="Humanities">
             <pattern match="HUMA 1302-2001" />
-            <pattern match="HUMA 1315-2010" />
             <pattern match="HUMA 1311-2001" />
             <pattern match="HUMA 1315-2007" />
             <pattern match="HUMA 1315-2001" />
             <pattern match="HUMA 1315-2004" />
             <pattern match="HUMA 1315-2009" />
+            <pattern match="HUMA 1315-2010" />
             <pattern match="HUMA 1315-2005" />
+            <pattern match="HUMA 1315-2006" />
             <pattern match="HUMA 1315-2002" />
             <pattern match="HUMA 1315-2011" />
             <pattern match="HUMA 1315-2008" />
@@ -619,7 +620,6 @@
             <pattern match="HUMA 1315-2429" />
             <pattern match="HUMA 1315-2430" />
             <pattern match="HUMA 1315-2431" />
-            <pattern match="HUMA 1315-2432" />
 
             <topic name="December Winter Flex Term">
             </topic>
