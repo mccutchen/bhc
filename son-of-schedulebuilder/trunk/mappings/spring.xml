@@ -3,7 +3,76 @@
     <mapping type="subject">
 
         <!-- Business Studies (Cindy Clem)
-            ======================================================================== -->
+        ======================================================================== -->
+        <subject name="Business Office Systems and Support">
+            <topic name="Software Application Specialist Certificate">
+                <comments>This is an awesome certificate. You really want this certificate.</comments>
+                <subtopic name="Word Processing, Word">
+                    <pattern match="POFI 2301-2001" />
+                    <pattern match="POFI 2301-2501" />
+                    <pattern match="POFI 2301-2426" />
+                    <pattern match="POFI 2301-2427" />
+                </subtopic>
+                <subtopic name="Spreadsheets, Excel">
+                    <pattern match="POFI 1349-2001" />
+                    <pattern match="POFI 1349-2501" />
+                    <pattern match="POFI 1349-2426" />
+                </subtopic>
+                <subtopic name="Database, Access">
+                    <pattern match="POFI 1441-2001" />
+                    <pattern match="POFI 1441-2501" />
+                    <pattern match="POFI 1441-2426" />
+                </subtopic>
+                <subtopic name="Business Presentation, Powerpoint">
+                    <pattern match="POFT 1328-2780" />
+                    <pattern match="POFT 1328-2426" />
+                </subtopic>
+                <subtopic name="Desktop Publishing, Publisher">
+                    <pattern match="POFI 2331-2300" />
+                    <pattern match="POFI 2331-2426" />
+                </subtopic>
+                <subtopic name="Advanced Word">
+                    <pattern match="POFI 2340-2426" />
+                </subtopic>
+                <subtopic name="Project Management Applications">
+                    <pattern match="ITSC 1315-2426" />
+                </subtopic>
+            </topic>
+            <topic name="Office Assistant Certificate">
+                <comments>This is an awesome certificate. Your boss really wants you to have this certificate.</comments>
+                <subtopic name="Computer Applications I, Computer Basics">
+                    <pattern match="POFI 1301-2001" />
+                    <pattern match="POFI 1301-2501" />
+                    <pattern match="POFI 1301-2426" />
+                </subtopic>
+                <subtopic name="Business English">
+                    <pattern match="POFT 1301-2300" />
+                    <pattern match="POFT 1301-2780" />
+                    <pattern match="POFT 1301-2426" />
+                </subtopic>
+                <subtopic name="Administrative Office Procedures I">
+                    <pattern match="POFT 1309-2300" />
+                    <pattern match="POFT 1309-2780" />
+                    <pattern match="POFT 1309-2426" />
+                </subtopic>
+                <subtopic name="Computer Applications II (MS Office)">
+                    <pattern match="POFI 1341-2001" />
+                    <pattern match="POFI 1341-2501" />
+                    <pattern match="POFI 1341-2426" />
+                </subtopic>
+                <subtopic name="Beginning Keyboarding and Document Formatting">
+                    <comments>These courses are suggested for those who want to get a handle on the basics before moving on to more advanced topics.</comments>
+                    <pattern match="POFT 1329-2001" />
+                    <pattern match="POFT 1329-2200" />
+                    <pattern match="POFT 1329-2501" />
+                    <pattern match="POFT 1329-2502" />
+                    <pattern match="POFT 1329-2426" />
+                    <pattern match="POFT 1329-2427" />
+                </subtopic>
+            </topic>
+        </subject>
+        
+        
             
         <!-- CIT (Bill Hammerschlag)
             ======================================================================== -->
