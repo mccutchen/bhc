@@ -458,6 +458,7 @@
     			<pattern match="ARTS 2312-2002" />
     			<pattern match="ARTS 1316-2501" />
     			<pattern match="ARTS 1317-2501" />
+    			<pattern match="ARTS 2311-2512" />
     			<pattern match="ARTS 2323-2501" />
     			<pattern match="ARTS 2324-2501" />
     			<pattern match="ARTS 2311-2508" />
