@@ -609,9 +609,22 @@
         </subject>
         
         <subject name="Cultural Studies">
-            <topic name="Coordinated Studies">
-            </topic>
+			<pattern match="CUST 2370-2001" />
+			<pattern match="CUST 2370-2002" />
+			<pattern match="CUST 2370-2003" />
+			<pattern match="CUST 2370-2501" />
+			<pattern match="CUST 2370-2502" />
+			<pattern match="CUST 2370-2426" />
+			<pattern match="CUST 2370-2427" />
+			<pattern match="CUST 2370-2440" />
+			<pattern match="CUST 2370-2441" />
+			<pattern match="CUST 2370-2428" />
+			<pattern match="CUST 2370-2429" />
+			<pattern match="CUST 2370-2430" />
+			<pattern match="CUST 2370-2431" />
+			<pattern match="CUST 2370-2432" />
             <topic name="DECEMBER WINTER FLEX TERM">
+                <pattern match="CUST 2370-2420" />
             </topic>
         </subject>
                 
