@@ -756,6 +756,7 @@
             <pattern match="HUMA 1315-2431" />
 
             <topic name="December Winter Flex Term">
+            	<pattern match="HUMA 1315-2420" />
             </topic>
         </subject>
                 
