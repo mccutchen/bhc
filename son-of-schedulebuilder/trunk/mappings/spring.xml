@@ -472,8 +472,6 @@
                 <pattern match="ARTS 2312-2016" />
                 <pattern match="ARTS 2311-2005" />
                 <pattern match="ARTS 2312-2009" />
-                <pattern match="ARTS 2311-2005" />
-                <pattern match="ARTS 2312-2009" />
                 <pattern match="ARTS 2346-2501" />
                 <pattern match="ARTS 2347-2501" />
                 <pattern match="ARTS 2311-2506" />
