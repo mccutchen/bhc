@@ -466,12 +466,14 @@
                 <pattern match="ARTS 2312-2509" />
             </topic>
             <topic name="Ceramics">
-                <pattern match="ARTS 2311-2005" />
-                <pattern match="ARTS 2312-2009" />
                 <pattern match="ARTS 2346-2001" />
                 <pattern match="ARTS 2347-2001" />
                 <pattern match="ARTS 2311-2020" />
                 <pattern match="ARTS 2312-2016" />
+                <pattern match="ARTS 2311-2005" />
+                <pattern match="ARTS 2312-2009" />
+                <pattern match="ARTS 2346-2001" />
+                <pattern match="ARTS 2347-2001" />
                 <pattern match="ARTS 2311-2005" />
                 <pattern match="ARTS 2312-2009" />
                 <pattern match="ARTS 2346-2501" />
