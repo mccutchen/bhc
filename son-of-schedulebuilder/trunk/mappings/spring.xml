@@ -762,12 +762,22 @@
                 
         <subject name="Music">
             <topic name="Music Appreciation">
-                <pattern match="MUSI 1306-2427" />
+                <pattern match="MUSI 1306-2001" />
+                <pattern match="MUSI 1306-2002" />
+                <pattern match="MUSI 1306-2003" />
+                <pattern match="MUSI 1306-2004" />
+                <pattern match="MUSI 1306-2005" />
+				<pattern match="MUSI 1306-2501" />
+				<pattern match="MUSI 1306-2427" />
                 <pattern match="MUSI 1306-2429" />
                 <pattern match="MUSI 1306-2434" />
                 <pattern match="MUSI 1306-2432" />
                 <pattern match="MUSI 1306-2433" />
+                <pattern match="MUSI 1306-2435" />
+<!-- 
                 <pattern match="MUSI 1306-2700" />
+ -->
+                <pattern match="MUSI 1306-2300" />
             </topic>
             <topic name="Music Theory">
                 <pattern match="MUSI 1312-2001" />
@@ -821,6 +831,7 @@
             <topic name="Voice">
                 <pattern match="MUSI 1183-2001" />
                 <pattern match="MUSI 1183-2501" />
+                <pattern match="MUSI 1183-2502" />
             </topic>
             <topic name="Music Ensembles">
                 <subtopic name="Brookhaven Choral Society">
@@ -868,20 +879,25 @@
 					<pattern match="MUAP 1101-2001" />
 					<pattern match="MUAP 1105-2001" />
 					<pattern match="MUAP 1109-2001" />
+                	<pattern match="MUAP 1109-2002" />
 					<pattern match="MUAP 1115-2001" />
 					<pattern match="MUAP 1117-2001" />
 					<pattern match="MUAP 1121-2001" />
 					<pattern match="MUAP 1125-2001" />
 					<pattern match="MUAP 1125-2002" />
+                	<pattern match="MUAP 1129-2001" />
 					<pattern match="MUAP 1129-2002" />
 					<pattern match="MUAP 1133-2001" />
 					<pattern match="MUAP 1137-2001" />
 					<pattern match="MUAP 1137-2002" />
+					<pattern match="MUAP 1141-2001" />
+					<pattern match="MUAP 1145-2001" />					
 					<pattern match="MUAP 1145-2002" />
 					<pattern match="MUAP 1153-2001" />
 					<pattern match="MUAP 1157-2001" />
 					<pattern match="MUAP 1161-2001" />
 					<pattern match="MUAP 1161-2002" />
+                	<pattern match="MUAP 1161-2003" />
 					<pattern match="MUAP 1161-2004" />
 					<pattern match="MUAP 1169-2001" />
 					<pattern match="MUAP 1169-2002" />
@@ -897,11 +913,16 @@
                 <subtopic name="Intermediate">
                     <comments>Note:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
 					<pattern match="MUAP 2201-2001" />
+                	<pattern match="MUAP 2209-2001" />
 					<pattern match="MUAP 2209-2002" />
 					<pattern match="MUAP 2215-2001" />
+					<pattern match="MUAP 2217-2001" />
+					<pattern match="MUAP 2229-2001" />
 					<pattern match="MUAP 2229-2002" />
 					<pattern match="MUAP 2233-2001" />
+                	<pattern match="MUAP 2237-2001" />
 					<pattern match="MUAP 2245-2001" />
+                	<pattern match="MUAP 2253-2001" />
 					<pattern match="MUAP 2257-2001" />
 					<pattern match="MUAP 2261-2001" />
 					<pattern match="MUAP 2261-2002" />
