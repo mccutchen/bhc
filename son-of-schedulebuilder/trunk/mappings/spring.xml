@@ -414,6 +414,7 @@
             </topic>
             <topic name="Fourth Semester Program Students">
             	<comments>The following courses are for students in the fourth semester of the Radiologic Sciences Program.  Acceptance into this program is REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
+                <pattern match="RADR 1291" />
                 <pattern match="RADR 1266" />
                 <pattern match="RADR 1267" />
                 <pattern match="RADR 1202" />
