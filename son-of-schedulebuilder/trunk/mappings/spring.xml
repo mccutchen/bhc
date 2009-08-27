@@ -430,6 +430,7 @@
             ========================================================================
         <subject name="Art">
             <topic name="Problems In Contemporary Art">
+                <pattern match="ARTS 1170-2201" /><!-- This is a senior adult courses and appears in that section. -->
                 <pattern match="ARTS 1170-2200" />
             </topic>
             <topic name="Art Appreciation">
