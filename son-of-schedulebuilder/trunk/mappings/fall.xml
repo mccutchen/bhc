@@ -285,13 +285,16 @@
 					<pattern match="EMSP 1438-2224" />
 					<pattern match="EMSP 1438-2201" />
 					<pattern match="EMSP 1438-2202" />
+					<pattern match="EMSP 1438-2203" />
 					<pattern match="EMSP 1356-2224" />
 					<pattern match="EMSP 1356-2201" />
 					<pattern match="EMSP 1356-2202" />
+					<pattern match="EMSP 1356-2203" />
 					<pattern match="EMSP 2260-2224" />
 					<pattern match="EMSP 2444-2224" />
 					<pattern match="EMSP 2444-2201" />
 					<pattern match="EMSP 2444-2202" />
+					<pattern match="EMSP 2444-2203" />
 				</subtopic>
 				<subtopic name="Paramedic Class #25">
 					<pattern match="EMSP 1438-2725" />
