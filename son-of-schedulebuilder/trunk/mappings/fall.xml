@@ -145,12 +145,14 @@
     			<pattern match="COSC 1300-2010" />
     			<pattern match="COSC 1401-2011" />
     			<pattern match="COSC 1401-2012" />
+    			<pattern match="COSC 1401-2013" /><!-- Added Aug. 27 w/o div input -->
     			<pattern match="COSC 1300-2501" />
     			<pattern match="COSC 1300-2502" />
     			<pattern match="COSC 1300-2503" />
     			<pattern match="COSC 1401-2511" />
     			<pattern match="COSC 1401-2512" />
     			<pattern match="COSC 1401-2250" />
+    			<pattern match="COSC 1401-2424" /><!-- Added Aug. 27 w/o div input -->
     			<pattern match="COSC 1300-2300" />
     			<pattern match="COSC 1300-2301" />
     			<pattern match="COSC 1401-2300" />
@@ -186,6 +188,7 @@
     		<topic name="Business Computer Applications Courses">
     			<pattern match="BCIS 1405-2011" />
     			<pattern match="BCIS 1405-2012" />
+    			<pattern match="BCIS 1405-2013" /><!-- Added Aug. 27 w/o div input -->
     			<pattern match="BCIS 1405-2511" />
     			<pattern match="BCIS 1405-2512" />
     			<pattern match="BCIS 1405-2250" />
@@ -194,6 +197,7 @@
     			<pattern match="BCIS 1405-2421" />
     			<pattern match="BCIS 1405-2422" />
     			<pattern match="BCIS 1405-2423" />
+    			<pattern match="BCIS 1405-2424" /><!-- Added Aug. 27 w/o div input -->
     		</topic>
     		<topic name="Programming Courses">
     			<pattern match="BCIS 1431-2501" />
