@@ -429,6 +429,7 @@
     			<pattern match="ARTS 2347-2250" />
     			<pattern match="ARTS 2311-2252" />
     			<pattern match="ARTS 2312-2252" />
+    			<pattern match="ARTS 2347-2501" /><!-- Added Aug. 27 w/o div input -->
     		</topic>
     		<topic name="Art and Computers">
     			<pattern match="ARTS 1372-2001" />
@@ -587,6 +588,10 @@
     			<pattern match="DANC 1248-2001" />
     			<pattern match="DANC 1247-2501" />
     			<pattern match="DANC 1248-2501" />
+    			<pattern match="DANC 2247-2501" /><!-- Added Aug. 27 w/o div input -->
+    			<pattern match="DANC 2248-2501" /><!-- Added Aug. 27 w/o div input -->
+    			<pattern match="DANC 2347-2501" /><!-- Added Aug. 27 w/o div input -->   
+    			<pattern match="DANC 2348-2501" /><!-- Added Aug. 27 w/o div input -->
     		</topic>
     		<topic name="Ballet">
     			<pattern match="DANC 1341-2001" />
