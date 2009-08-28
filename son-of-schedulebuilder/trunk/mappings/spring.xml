@@ -157,9 +157,10 @@
                 <pattern match="ITSE 1301-2001" />
                 <pattern match="ITSE 1301-2002" />
                 <pattern match="ITSE 2402-2001" />
-                <pattern match="IMED 1416 2501" />
+                <pattern match="IMED 1416-2501" />
                 <pattern match="IMED 2409-2501" />
-                <pattern match="ITSE 1406-2501" />	
+                <pattern match="ITSE 1406-2501" />
+                <pattern match="ITSW 1407-2426" /><!-- Duplicated course in App Software - I stuck it here for now. -->
                 <pattern match="ITSW 1407-2510" />
                 <pattern match="IMED 1416-2426" />
                 <pattern match="IMED 2409-2426" />
@@ -184,7 +185,9 @@
                 <pattern match="ITSW 1401-2426" />
                 <pattern match="ITSW 1401-2427" />
                 <pattern match="ITSW 1404-2426" />
-                <pattern match="ITSW 1407-2426" />
+<!-- 
+                <pattern match="ITSW 1407-2426" />Needs new section number that's not a duplicate of a CIT course.
+ -->
                 <pattern match="ITSW 1410-2426" />
                 <pattern match="POFI 2440-2426" />
             </topic>
