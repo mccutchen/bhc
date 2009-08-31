@@ -191,9 +191,15 @@ def post_process(tree):
     buf.reset()
 
     regexes = [
+#        [   # urls w/display names
+#            r'(\[link:) "([A-Za-z0-9\- ]+)", "\<url\>((https?://|www\.)+(www\.)?[A-Za-z0-9\.\-]+\.{1}[A-Za-z]{3}[A-Za-z0-9\.\-\_/]*)\</url\>"\]',
+#            r'<debug>\1</debug><name>\2</name><url>\3</url>'],
         [   # urls
             r'((https?://|www\.)+(www\.)?[A-Za-z0-9\.\-]+\.{1}[A-Za-z]{3}[A-Za-z0-9\.\-\_/]*)\b',
             r'<url>\1</url>'],
+        [   # urls w/display names
+            r'\[link: "([A-Za-z0-9\- ]+)", "\<url\>((https?://|www\.)+(www\.)?[A-Za-z0-9\.\-]+\.{1}[A-Za-z]{3}[A-Za-z0-9\.\-\_/]*)\</url\>"\]',
+            r'<url display="\1">\2</url>'],
         [   # emails
             r'([A-Za-z0-9\.\_\-]+@[A-Za-z0-9\.\-]+\.{1}[A-Za-z]{3})\b',
             r'<email>\1</email>'],

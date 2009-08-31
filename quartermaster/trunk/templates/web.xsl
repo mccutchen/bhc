@@ -431,7 +431,17 @@
      		<xsl:if test="not(starts-with(current(), 'http://')) and not(starts-with(current(), 'https://'))">http://</xsl:if>
 	       <xsl:value-of select="current()" />
 		</xsl:variable>
-        <a href="{$address}" target="_blank"><xsl:value-of select="." /></a>
+        <xsl:variable name="display">
+            <xsl:choose>
+                <xsl:when test="exists(@display)">
+                    <xsl:value-of select="@display" />
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="." />
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <a href="{$address}" target="_blank"><xsl:value-of select="$display" /></a>
     </xsl:template>
 
     <xsl:template match="email">
