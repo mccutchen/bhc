@@ -275,7 +275,7 @@
             <pattern match="RNSG" priority="0" unsorted="true" />
         </subject>
         <subject name="Nutrition">
-        	<comments>NOTE:  The designation for NUTR 1322 has been changed to BIOL 1322.  Course content remains the same.</comment>
+        	<comments>NOTE:  The designation for NUTR 1322 has been changed to BIOL 1322.  Course content remains the same.</comments>
             <pattern match="NUTR" priority="0" unsorted="true" />
         </subject>
         <subject name="Business Office Systems and Support">
