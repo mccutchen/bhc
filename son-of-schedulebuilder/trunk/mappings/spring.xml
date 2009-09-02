@@ -105,24 +105,31 @@
                 <pattern match="ITNW 1380-2300" />
             </topic>
             <topic name="Open Source Software">
+                <pattern match="INEW 2434-2002" />	<!-- Added 9/2 per Bill -->
                 <pattern match="ITSE 1406-2502" />	
                 <pattern match="ITSW 1407-2511" />	
                 <pattern match="ITSE 1406-2427" />
                 <pattern match="ITSW 1407-2427" />
             </topic>
+            <topic name="Multimedia and Game Programming"><!-- Added 9/2 per Bill, GAME moved from Programming -->
+                <pattern match="GAME 1409-2502" />
+                <pattern match="GAME 1443-2502" />
+                <pattern match="GAME 1459-2501" />			
+                <pattern match="IMED 2351-2501" />
+            </topic>
             <topic name="Programming">
                 <pattern match="ITSE 1407-2001" />	
                 <pattern match="ITSE 1407-2002" />
                 <pattern match="ITSE 2417-2001" />
-                <pattern match="GAME 1409-2502" />
-                <pattern match="GAME 1443-2502" />
-                <pattern match="GAME 1459-2501" />			
-                <pattern match="INEW 2438-2501" />
+				<pattern match="INEW 2438-2501" />
                 <pattern match="ITNW 1441-2501" />
                 <pattern match="ITSE 1407-2501" />
+                <pattern match="ITSE 1391-2501" /><!-- Added 9/2 per Bill -->
                 <pattern match="ITSE 1430-2501" />  	
                 <pattern match="ITSE 1432-2501" />
-                <pattern match="ITSE 2417-2502" />
+                <pattern match="ITSE 2431-2501" />	
+                <pattern match="ITSE 2359-2501" /><!-- Added 9/2 per Bill -->
+                <pattern match="ITSE 2417-2502" />	
                 <pattern match="ITSE 2431-2501" />	
                 <pattern match="ITSE 2437-2501" />			  	
                 <pattern match="ITSE 2453-2501" />		  	
@@ -156,19 +163,19 @@
                 <pattern match="INEW 2434-2001" />
                 <pattern match="ITSE 1301-2001" />
                 <pattern match="ITSE 1301-2002" />
-                <pattern match="ITSE 2402-2001" />
                 <pattern match="IMED 1416-2501" />
                 <pattern match="IMED 2409-2501" />
                 <pattern match="ITSE 1406-2501" />
-                <pattern match="ITSW 1407-2426" /><!-- Duplicated course in App Software - I stuck it here for now. -->
+                <pattern match="ITSE 2402-2501" /><!-- Added 9/2 per Bill -->
                 <pattern match="ITSW 1407-2510" />
+                <pattern match="ITSW 1407-2426" /><!-- Duplicated course in App Software - I stuck it here for now. -->
                 <pattern match="IMED 1416-2426" />
                 <pattern match="IMED 2409-2426" />
                 <pattern match="INEW 1440-2426" />
-                <pattern match="INEW 2434-2426" />
                 <pattern match="ITSE 1301-2426" />
                 <pattern match="ITSE 1406-2426" />
-                <pattern match="ITSE 2402-2426" />
+                <pattern match="ITSE 2402-2426" /><!-- Added 9/2 per Bill -->
+                <pattern match="ITSW 1407-2426" />
             </topic>
             <topic name="Application Software">
                 <pattern match="ITSC 1409-2001" />
@@ -205,6 +212,7 @@
                 <pattern match="COSC 1300-2010" />			  
                 <pattern match="COSC 1401-2011" />	
                 <pattern match="COSC 1401-2012" />
+                <pattern match="COSC 1401-2013" /><!-- Added 9/2 per Bill -->
                 <pattern match="COSC 1300-2501" />			  
                 <pattern match="COSC 1300-2502" />			  	
                 <pattern match="COSC 1300-2503" />			  	
@@ -223,6 +231,8 @@
                 <pattern match="COSC 1401-2421" />	
                 <pattern match="COSC 1401-2422" />
                 <pattern match="COSC 1401-2423" />
+                <pattern match="COSC 1401-2424" /><!-- Added 9/2 per Bill -->
+                
             </topic>
             <topic name="Programming">
                 <pattern match="COSC 1415-2001" />			  	
@@ -255,6 +265,7 @@
             <comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
             <pattern match="BCIS 1405-2011" />
             <pattern match="BCIS 1405-2012" />
+            <pattern match="BCIS 1405-2013" /><!-- Added 9/2 per Bill -->
             <pattern match="BCIS 1405-2511" />					  	
             <pattern match="BCIS 1405-2512" />	
             <pattern match="BCIS 1405-2250" />					  	
@@ -262,7 +273,8 @@
             <pattern match="BCIS 1405-2301" />	
             <pattern match="BCIS 1405-2421" />
             <pattern match="BCIS 1405-2422" />
-            <pattern match="BCIS 1405-2423" />            
+            <pattern match="BCIS 1405-2423" /> 
+            <pattern match="BCIS 1405-2423" /><!-- Added 9/2 per Bill -->        
             <topic name="Programming">
                 <pattern match="BCIS 1431-2501" />			
                 <pattern match="BCIS 1431-2426" />
