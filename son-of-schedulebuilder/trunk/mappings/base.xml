@@ -146,6 +146,7 @@
             <pattern match="DANC" priority="0" unsorted="true" />
         </subject>
         <subject name="Developmental Mathematics">
+        	<comments>NOTE: Required for DMAT 0090, 0097, 0098 AND 0099: These courses will run using interactive software called MyMathLab.  Students must have access to a computer with Internet to complete the required work for these courses.  Students must purchase a new textbook or a MyMathLab access code.  Contact your instructor (listed in eConnect) for more information.</comments>
             <pattern match="DMAT" priority="0" unsorted="true" />
         </subject>
         <subject name="Developmental Reading">
