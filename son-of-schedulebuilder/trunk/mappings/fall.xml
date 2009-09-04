@@ -688,6 +688,7 @@
     			<pattern match="MUSI 1116-2001" />
     			<pattern match="MUSI 1116-2002" />
     			<pattern match="MUSI 2116-2001" />
+    			<pattern match="MUSI 2116-2200" /><!-- Added Sept. 4 w/o div input -->
     		</topic>
     		<topic name="Music Literature">
     			<pattern match="MUSI 1308-2300" />
@@ -749,6 +750,7 @@
     			<subtopic name="Guitar Ensemble">
     				<pattern match="MUEN 1134-2001" />
     				<pattern match="MUEN 1134-2501" />
+    				<pattern match="MUEN 1134-2700" /><!-- Added Sept. 4 w/o div input -->
     			</subtopic>
     			<subtopic name="Handbell Ensemble">
     				<pattern match="MUEN 1135-2501" />
