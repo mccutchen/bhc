@@ -3,7 +3,8 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:utils="http://www.brookhavencollege.edu/xml/utils"
-    exclude-result-prefixes="xs utils">
+    xmlns:fn="http://www.brookhavencollege.edu/xml/fn"
+    exclude-result-prefixes="xs utils fn">
 
     <!-- $Id$
 
@@ -51,7 +52,17 @@
     <xsl:param name="output-extension">.txt</xsl:param>
     <xsl:param name="target-platform">mac</xsl:param>
 
-
+    <!-- OUTPUT PARAMETERS
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        -format:
+        Determines whether output is formatted for QuarkXpress or InDesign.
+         - QuarkXpress: 'quark'
+         - InDesign:    'indesign'
+        Defaults to QuarkXpress.
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <xsl:param name="format" as="xs:string" select="'quark'" />
+    
+    
     <!-- =============================================================
          Output document initialization
          =============================================================
@@ -77,26 +88,42 @@
          <xsl:result-document> templates from #1, above. -->
 
     <xsl:template match="/schedule">
-        <xsl:apply-templates select="term | term/division/subject | term/special-section" mode="init" />
+        <!-- check params -->
+        <xsl:choose>
+            <xsl:when test="lower-case($format) = 'quark' or lower-case($format) = 'indesign'">
+                <xsl:apply-templates select="term | term/division/subject | term/special-section" mode="init" />           </xsl:when>
+            <xsl:otherwise>
+                <xsl:message>
+                    <xsl:text>You must choose either 'quark' or 'indesign' as the output format.</xsl:text>
+                </xsl:message>
+            </xsl:otherwise>
+        </xsl:choose>
+
     </xsl:template>
 
     <xsl:template match="term" mode="init">
         <xsl:result-document href="{$output-directory}/{@machine_name}{$output-extension}">
-            <xsl:call-template name="quark-preamble" />
+            <!-- preamble -->
+            <xsl:value-of select="fn:preamble()" />
+            
             <xsl:apply-templates select="." />
         </xsl:result-document>
     </xsl:template>
 
     <xsl:template match="subject" mode="init">
         <xsl:result-document href="{$output-directory}/{ancestor::term/@machine_name}/{ancestor::division/@machine_name}/{@machine_name}{$output-extension}">
-            <xsl:call-template name="quark-preamble" />
+            <!-- preamble -->
+            <xsl:value-of select="fn:preamble()" />
+            
             <xsl:apply-templates select="." />
         </xsl:result-document>
     </xsl:template>
 
     <xsl:template match="special-section" mode="init">
         <xsl:result-document href="{$output-directory}/{ancestor::term/@machine_name}/{@machine_name}{$output-extension}">
-            <xsl:call-template name="quark-preamble" />
+            <!-- preamble -->
+            <xsl:value-of select="fn:preamble()" />
+            
             <xsl:apply-templates select="." />
         </xsl:result-document>
     </xsl:template>
@@ -113,8 +140,8 @@
     <xsl:template match="term">
         <!-- only output the term header if there is more than one term -->
         <xsl:if test="count(/schedule/term) &gt; 1">
-            <xsl:value-of select="utils:xtag('Term Header')" /><xsl:value-of select="@name" /><xsl:call-template name="br" />
-            <xsl:value-of select="utils:xtag('Term Dates')" /><xsl:value-of select="@dates" /><xsl:call-template name="br" />
+            <xsl:value-of select="fn:p-tag('Term Header')" /><xsl:value-of select="@name" /><xsl:value-of select="fn:newline()" />
+            <xsl:value-of select="fn:p-tag('Term Dates')" /><xsl:value-of select="@dates" /><xsl:value-of select="fn:newline()" />
         </xsl:if>
 
         <!-- first, output everything that's not in the School of the Arts or Students 50+ Education -->
@@ -123,22 +150,16 @@
         </xsl:apply-templates>
 
         <!-- let it breathe! -->
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-
+        <xsl:value-of select="fn:br(4)" />
+        
         <!-- output School of the Arts -->
         <xsl:apply-templates select="division[@name = 'School of the Arts']/subject">
             <xsl:sort select="@name" />
         </xsl:apply-templates>
 
         <!-- let it breathe! -->
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-
+        <xsl:value-of select="fn:br(4)" />
+        
         <!-- output the Senior Adult courses -->
         <xsl:apply-templates select="division[@name = 'Students 50+ Education Office']/subject">
             <xsl:sort select="@name" />
@@ -146,10 +167,10 @@
     </xsl:template>
 
     <xsl:template match="special-section">
-        <xsl:value-of select="utils:xtag('Subject Header')" /><xsl:apply-templates select="." mode="subject-header" />
+        <xsl:value-of select="fn:p-tag('Subject Header')" /><xsl:apply-templates select="." mode="subject-header" />
         <xsl:apply-templates select="." mode="insert-header-text" />
-        <xsl:call-template name="blank-line" />
-
+        <xsl:value-of select="fn:br()" />
+        
         <xsl:apply-templates select="subject | minimester">
             <xsl:sort select="@sortkey" />
             <xsl:sort select="@name" />
@@ -157,39 +178,39 @@
     </xsl:template>
     
     <xsl:template mode="subject-header" match="special-section[@name = 'Weekend Core Curriculum']">
-        <xsl:text>YOU CAN COMPLETE YOUR CORE CURRICULUM ON WEEKENDS!</xsl:text><xsl:call-template name="br" />
+        <xsl:text>YOU CAN COMPLETE YOUR CORE CURRICULUM ON WEEKENDS!</xsl:text><xsl:value-of select="fn:newline()" />
     </xsl:template>
     <xsl:template mode="subject-header" match="special-section">
-        <xsl:value-of select="upper-case(@name)" /><xsl:text> COURSES</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="upper-case(@name)" /><xsl:text> COURSES</xsl:text><xsl:value-of select="fn:newline()" />
     </xsl:template>
     
     <xsl:template mode="insert-header-text" match="special-section[@name = 'Distance Learning']">
-        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>For course annotations, turn to the alphabetical listing of the course in this publication, or contact the instructional division office.</xsl:text><xsl:call-template name="br" /> 
-        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:text>Distance learning courses provide instruction to students who are not at the same location as the instructors and can use various forms of technology - television, computer, telephone and the Internet.  Students must meet prerequisites or assessment scores where applicable.  Dallas County Community College District distance learning courses will transfer to other institutions.  Students who plan to transfer should consult the catalog of that institution and work with an advisor in planning their academic programs.  Campus-based distance courses are offered by all seven colleges of the Dallas County Community College District and may include some on-site instruction.</xsl:text><xsl:call-template name="br" />   
-        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:value-of select="utils:xtag-inline('SubjectHeaderSmallCommentBold','Online, OL')" /><xsl:text> - All content is delivered through computers and multimedia.  These courses use eCampus and may include CDs and audio/video streaming or publisher video cartridge.  No on-campus testing or activities are required; however, off-campus proctored exams may be required.</xsl:text><xsl:call-template name="br" />
-        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:value-of select="utils:xtag-inline('SubjectHeaderSmallCommentBold','Online Partial, OLP')" /><xsl:text> - Most of the content is delivered through computers and multimedia. These courses use eCampus and may include CDs and audio/video streaming.  On-campus testing, orientation, and/or other activities may be required.</xsl:text><xsl:call-template name="br" />
-        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:value-of select="utils:xtag-inline('SubjectHeaderSmallCommentBold','Online/Classroom, OLC')" /><xsl:text> - Content delivered through an even distribution (50 percent-50 percent) of online and classroom activities.  These courses use components of computer instruction, multimedia activities, and classroom time.  On-Campus classroom time is required.</xsl:text><xsl:call-template name="br" />
-        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:value-of select="utils:xtag-inline('SubjectHeaderSmallCommentBold','Video-Based, VB')" /><xsl:text> - Content delivered through a local cable channel, CD, DVD, MP4 system, or VHS cassette.  On-campus testing or activities may be required.  Content is not delivered through computer Internet activities, but instructor may provide some communications, syllabus, orientation and test review by e-mail.</xsl:text><xsl:call-template name="br" /> 
-        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:text>If you have any questions about Distance Learning course formats, please call the division office for that course.</xsl:text><xsl:call-template name="br" />
-        <xsl:value-of select="utils:xtag('SubjectHeaderSmallComment')" /><xsl:text>For further information concerning distance learning, please contact Sam Govea at 972-860-4216 or e-mail </xsl:text><xsl:value-of select="utils:xtag-inline('website', 'sGovea@dcccd.edu')" /><xsl:text>.</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="fn:p-tag('SubjectHeaderLargeComment')" /><xsl:text>For course annotations, turn to the alphabetical listing of the course in this publication, or contact the instructional division office.</xsl:text><xsl:value-of select="fn:newline()" /> 
+        <xsl:value-of select="fn:p-tag('SubjectHeaderSmallComment')" /><xsl:text>Distance learning courses provide instruction to students who are not at the same location as the instructors and can use various forms of technology - television, computer, telephone and the Internet.  Students must meet prerequisites or assessment scores where applicable.  Dallas County Community College District distance learning courses will transfer to other institutions.  Students who plan to transfer should consult the catalog of that institution and work with an advisor in planning their academic programs.  Campus-based distance courses are offered by all seven colleges of the Dallas County Community College District and may include some on-site instruction.</xsl:text><xsl:value-of select="fn:newline()" />   
+        <xsl:value-of select="fn:p-tag('SubjectHeaderSmallComment')" /><xsl:value-of select="fn:c-tag('SubjectHeaderSmallCommentBold','Online, OL')" /><xsl:text> - All content is delivered through computers and multimedia.  These courses use eCampus and may include CDs and audio/video streaming or publisher video cartridge.  No on-campus testing or activities are required; however, off-campus proctored exams may be required.</xsl:text><xsl:value-of select="fn:newline()" />
+        <xsl:value-of select="fn:p-tag('SubjectHeaderSmallComment')" /><xsl:value-of select="fn:c-tag('SubjectHeaderSmallCommentBold','Online Partial, OLP')" /><xsl:text> - Most of the content is delivered through computers and multimedia. These courses use eCampus and may include CDs and audio/video streaming.  On-campus testing, orientation, and/or other activities may be required.</xsl:text><xsl:value-of select="fn:newline()" />
+        <xsl:value-of select="fn:p-tag('SubjectHeaderSmallComment')" /><xsl:value-of select="fn:c-tag('SubjectHeaderSmallCommentBold','Online/Classroom, OLC')" /><xsl:text> - Content delivered through an even distribution (50 percent-50 percent) of online and classroom activities.  These courses use components of computer instruction, multimedia activities, and classroom time.  On-Campus classroom time is required.</xsl:text><xsl:value-of select="fn:newline()" />
+        <xsl:value-of select="fn:p-tag('SubjectHeaderSmallComment')" /><xsl:value-of select="fn:c-tag('SubjectHeaderSmallCommentBold','Video-Based, VB')" /><xsl:text> - Content delivered through a local cable channel, CD, DVD, MP4 system, or VHS cassette.  On-campus testing or activities may be required.  Content is not delivered through computer Internet activities, but instructor may provide some communications, syllabus, orientation and test review by e-mail.</xsl:text><xsl:value-of select="fn:newline()" /> 
+        <xsl:value-of select="fn:p-tag('SubjectHeaderSmallComment')" /><xsl:text>If you have any questions about Distance Learning course formats, please call the division office for that course.</xsl:text><xsl:value-of select="fn:newline()" />
+        <xsl:value-of select="fn:p-tag('SubjectHeaderSmallComment')" /><xsl:text>For further information concerning distance learning, please contact Sam Govea at 972-860-4216 or e-mail </xsl:text><xsl:value-of select="fn:c-tag('website', 'sGovea@dcccd.edu')" /><xsl:text>.</xsl:text><xsl:value-of select="fn:newline()" />
     </xsl:template>
     <xsl:template mode="insert-header-text" match="special-section[@name = 'Flex Term']">
-        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>Previously called minimesters, the following classes meet for less than 15 weeks and are listed by the month in which they begin.</xsl:text><xsl:call-template name="br" /> 
+        <xsl:value-of select="fn:p-tag('SubjectHeaderLargeComment')" /><xsl:text>Previously called minimesters, the following classes meet for less than 15 weeks and are listed by the month in which they begin.</xsl:text><xsl:value-of select="fn:newline()" /> 
     </xsl:template>
     <xsl:template mode="insert-header-text" match="special-section[@name = 'Learning Community']">
-        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>Learning communities are linked courses that students take together.  Ask your advisor if one of these communities fits into your academic plan!  Students who participate in learning communities have shown a higher success rate than those who take stand-alone courses.  See ads in the front and back sections of this schedule for paired courses and more information.</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="fn:p-tag('SubjectHeaderLargeComment')" /><xsl:text>Learning communities are linked courses that students take together.  Ask your advisor if one of these communities fits into your academic plan!  Students who participate in learning communities have shown a higher success rate than those who take stand-alone courses.  See ads in the front and back sections of this schedule for paired courses and more information.</xsl:text><xsl:value-of select="fn:newline()" />
     </xsl:template>
     <xsl:template mode="insert-header-text" match="special-section[@name = 'Weekend']">
-        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>Weekend courses meet on Friday, Saturday and Sunday, Saturday only, Sunday only and Saturday and Sunday.  For assistance in planning your degree plan to fit a weekend schedule, please see an academic advisor.</xsl:text><xsl:call-template name="br" />
+        <xsl:value-of select="fn:p-tag('SubjectHeaderLargeComment')" /><xsl:text>Weekend courses meet on Friday, Saturday and Sunday, Saturday only, Sunday only and Saturday and Sunday.  For assistance in planning your degree plan to fit a weekend schedule, please see an academic advisor.</xsl:text><xsl:value-of select="fn:newline()" />
     </xsl:template>
     <xsl:template mode="insert-header-text" match="special-section[@name = 'Weekend Core Curriculum']">
-        <xsl:value-of select="utils:xtag('SubjectHeaderLargeComment')" /><xsl:text>For assistance in planning your degree plan to fit a weekend schedule, please see an academic advisor.</xsl:text><xsl:call-template name="br" /> 
+        <xsl:value-of select="fn:p-tag('SubjectHeaderLargeComment')" /><xsl:text>For assistance in planning your degree plan to fit a weekend schedule, please see an academic advisor.</xsl:text><xsl:value-of select="fn:newline()" /> 
     </xsl:template>
     <xsl:template mode="insert-header-text" match="special-section">
     </xsl:template>
     
     <xsl:template match="minimester">
-        <xsl:value-of select="utils:xtag('Minimester Header')" /><xsl:value-of select="upper-case(@name)" /><xsl:call-template name="br" />
+        <xsl:value-of select="fn:p-tag('Minimester Header')" /><xsl:value-of select="upper-case(@name)" /><xsl:value-of select="fn:newline()" />
         <xsl:apply-templates select="subject">
             <xsl:sort select="@name" />
         </xsl:apply-templates>
@@ -209,9 +230,9 @@
         <!-- if this is the Senior Adults subject, manually add a 'credit courses'
              topic header -->
         <xsl:if test="@name = 'Students 50+ Education Program'">
-            <xsl:value-of select="utils:xtag('Topic Header')" />
+            <xsl:value-of select="fn:p-tag('Topic Header')" />
             <xsl:text>CREDIT COURSES</xsl:text>
-            <xsl:call-template name="br" />
+            <xsl:value-of select="fn:newline()" />
         </xsl:if>
 
         <!-- Output any stand-alone types before topics or subtopics.  This allows some
@@ -234,9 +255,7 @@
         </xsl:apply-templates>
 
         <!-- each subject section should be followed by three blank lines -->
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
-        <xsl:call-template name="blank-line" />
+        <xsl:value-of select="fn:br(3)" />
     </xsl:template>
 
 
@@ -262,7 +281,8 @@
         </xsl:apply-templates>
 
         <xsl:if test="position() != last()">
-            <xsl:call-template name="blank-line" />
+            <xsl:value-of select="fn:br()" />
+            
         </xsl:if>
     </xsl:template>
 
@@ -283,7 +303,7 @@
         </xsl:apply-templates>
 
         <xsl:if test="position() != last()">
-            <xsl:call-template name="blank-line" />
+            <xsl:value-of select="fn:br()" />
         </xsl:if>
     </xsl:template>
 
@@ -295,9 +315,9 @@
             <xsl:if test="ancestor::special-section">Special </xsl:if>
             <xsl:value-of select="concat(upper-case(substring(../local-name(), 1,1)), lower-case(substring(../local-name(), 2)))" /> Header
         </xsl:variable>
-        <xsl:value-of select="utils:xtag($style-name)" />
+        <xsl:value-of select="fn:p-tag($style-name)" />
         <xsl:value-of select="upper-case(.)" />
-        <xsl:call-template name="br" />
+        <xsl:value-of select="fn:newline()" />
     </xsl:template>
 
 
@@ -312,14 +332,14 @@
 
         <!-- each type section should be followed by one blank line -->
         <xsl:if test="position() != last()">
-            <xsl:call-template name="blank-line" />
+            <xsl:value-of select="fn:br()" />
         </xsl:if>
     </xsl:template>
 
     <xsl:template match="type/@name">
         <!-- only output the type header if we're not in a special-section with the same name -->
         <xsl:if test="normalize-space(.) != normalize-space(ancestor::special-section[1]/@name)">
-            <xsl:value-of select="utils:xtag('Type Header')" /><xsl:value-of select="." /> Courses<xsl:call-template name="br" />
+            <xsl:value-of select="fn:p-tag('Type Header')" /><xsl:value-of select="." /> Courses<xsl:value-of select="fn:newline()" />
         </xsl:if>
     </xsl:template>
 
@@ -334,7 +354,7 @@
         <xsl:apply-templates select="comments" />
 
         <!-- each group section should be followed by one blank line -->
-        <xsl:call-template name="blank-line" />
+        <xsl:value-of select="fn:br()" />
     </xsl:template>
 
 
@@ -354,7 +374,7 @@
         <!-- only add a blank line after the comments if this is not the
              last course and if this isn't part of a <group> -->
         <xsl:if test="position() != last() and not(ancestor::group) and not(ancestor::special-section and following-sibling::course/@number = self::course/@number)">
-            <xsl:call-template name="blank-line" />
+            <xsl:value-of select="fn:br()" />
         </xsl:if>
     </xsl:template>
 
@@ -385,21 +405,21 @@
             </xsl:choose>
         </xsl:variable>
 
-        <xsl:value-of select="utils:xtag(concat($style-name, ' Class'))" />
+        <xsl:value-of select="fn:p-tag(concat($style-name, ' Class'))" />
 
         <!-- the class number is a composite of the course's @rubrik and @number and the class's @section -->
         <xsl:value-of select="../@rubrik" /><xsl:text> </xsl:text>
         <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
-        <xsl:value-of select="@section" /><xsl:call-template name="sep" />
+        <xsl:value-of select="@section" /><xsl:value-of select="fn:sep()" />
 
-        <xsl:value-of select="../@title" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@synonym" /><xsl:call-template name="sep" />
-        <xsl:value-of select="../@credit-hours" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@formatted-dates" /> <xsl:apply-templates select="@weeks" /><xsl:call-template name="br" />
-        <xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@formatted-times" /> / <xsl:value-of select="@method" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@room" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
+        <xsl:value-of select="../@title" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@synonym" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="../@credit-hours" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@formatted-dates" /> <xsl:apply-templates select="@weeks" /><xsl:value-of select="fn:newline()" />
+        <xsl:apply-templates select="@days" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@formatted-times" /> / <xsl:value-of select="@method" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@room" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@faculty-name" /><xsl:value-of select="fn:newline()" />
 
         <xsl:apply-templates select="extra">
             <xsl:sort select="@sortkey" />
@@ -423,19 +443,19 @@
 
 
     <xsl:template match="extra[@method = ('LEC','')]">
-        <xsl:value-of select="@days" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@formatted-times" /> / <xsl:value-of select="@method" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@room" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
+        <xsl:value-of select="@days" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@formatted-times" /> / <xsl:value-of select="@method" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@room" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@faculty-name" /><xsl:value-of select="fn:newline()" />
     </xsl:template>
 
     <xsl:template match="extra">
-        <xsl:value-of select="utils:xtag('Extra Class')" />
-        <xsl:value-of select="@method" /><xsl:call-template name="sep" />
-        <xsl:apply-templates select="@formatted-times" /><xsl:call-template name="sep" />
-        <xsl:apply-templates select="@days" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@room" /><xsl:call-template name="sep" />
-        <xsl:value-of select="@faculty-name" /><xsl:call-template name="br" />
+        <xsl:value-of select="fn:p-tag('Extra Class')" />
+        <xsl:value-of select="@method" /><xsl:value-of select="fn:sep()" />
+        <xsl:apply-templates select="@formatted-times" /><xsl:value-of select="fn:sep()" />
+        <xsl:apply-templates select="@days" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@room" /><xsl:value-of select="fn:sep()" />
+        <xsl:value-of select="@faculty-name" /><xsl:value-of select="fn:newline()" />
     </xsl:template>
 
     <!-- CIT self-paced mods -->
@@ -471,12 +491,12 @@
             </xsl:choose>
         </xsl:variable>
 
-        <xsl:value-of select="utils:xtag($style-name)" />
+        <xsl:value-of select="fn:p-tag($style-name)" />
 
         <xsl:apply-templates>
             <xsl:with-param name="comments-style" select="$style-name" tunnel="yes" />
         </xsl:apply-templates>
-        <xsl:call-template name="br" />
+        <xsl:value-of select="fn:newline()" />
     </xsl:template>
 
     <!-- Remove <comments> inside of <special-section>s (unless we're
@@ -486,50 +506,83 @@
     <xsl:template match="comments//p">
         <xsl:apply-templates />
         <xsl:if test="position() != last()">
-            <xsl:call-template name="br" />
+            <xsl:value-of select="fn:newline()" />
         </xsl:if>
     </xsl:template>
 
     <xsl:template match="comments//h1">
         <xsl:param name="comments-style" tunnel="yes" />
-        <xsl:value-of select="utils:xtag-inline(concat($comments-style, ' Header'), current())" />
-        <xsl:call-template name="br" />
+        <xsl:value-of select="fn:c-tag(concat($comments-style, ' Header'), current())" />
+        <xsl:value-of select="fn:newline()" />
     </xsl:template>
 
     <xsl:template match="comments//b | comments//i">
         <xsl:param name="comments-style" tunnel="yes" />
         <xsl:variable name="style-suffix" select="if (local-name() = 'b') then ' Bold' else ' Italic'" />
-        <xsl:value-of select="utils:xtag-inline(concat($comments-style, $style-suffix), current())" />
+        <xsl:value-of select="fn:c-tag(concat($comments-style, $style-suffix), current())" />
     </xsl:template>
 
-    <xsl:template match="comments//tr">
-        <xsl:if test="not(count(td) = (1, 2))">
-            <xsl:message>Error in <xsl:value-of select="ancestor::comments/parent::element()/@name" /> comments (from the custom mappings files): Tables must have either one or two columns</xsl:message>
-        </xsl:if>
-
+    <xsl:template match="comments//table">
         <xsl:choose>
-            <xsl:when test="count(td) = 2">
-                <!-- The following line sets the tabs for these two
-                     columns to be positioned at 125 pts, aligned
-                     left, and filled with blank spaces ("1 ") -->
-                <xsl:text>&lt;*t(125.0,0,"1 ")&gt;</xsl:text>
-                <xsl:apply-templates select="td[1]" />
-                <xsl:call-template name="sep" />
-                <xsl:apply-templates select="td[2]" />
+            <xsl:when test="$format = 'quark'"><xsl:apply-templates select="*" /></xsl:when>
+            <xsl:when test="$format = 'indesign'">
+                <xsl:value-of select="fn:TableStart(count(tr), count(tr[1]/td))" />
+                <xsl:apply-templates select="tr" />
+                <xsl:value-of select="fn:TableEnd()" />
+                <xsl:value-of select="fn:newline()" />
             </xsl:when>
-            <xsl:otherwise>
-                <xsl:apply-templates select="td[1]" />
-            </xsl:otherwise>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
         </xsl:choose>
-        <xsl:call-template name="br" />
     </xsl:template>
-
+    
+    <xsl:template match="comments//tr">
+        <xsl:choose>
+            <xsl:when test="$format = 'quark'">
+                <xsl:if test="not(count(td) = (1, 2))">
+                    <xsl:message>Error in <xsl:value-of select="ancestor::comments/parent::element()/@name" /> comments (from the custom mappings files): Tables must have either one or two columns</xsl:message>
+                </xsl:if>
+                
+                <xsl:choose>
+                    <xsl:when test="count(td) = 2">
+                        <!-- The following line sets the tabs for these two
+                            columns to be positioned at 125 pts, aligned
+                            left, and filled with blank spaces ("1 ") -->
+                        <xsl:text>&lt;*t(125.0,0,"1 ")&gt;</xsl:text>
+                        <xsl:apply-templates select="td[1]" />
+                        <xsl:value-of select="fn:sep()" />
+                        <xsl:apply-templates select="td[2]" />
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:apply-templates select="td[1]" />
+                    </xsl:otherwise>
+                </xsl:choose>
+                <xsl:value-of select="fn:newline()" />
+            </xsl:when>
+            <xsl:when test="$format = 'indesign'">
+                <xsl:value-of select="fn:RowStart()" />
+                <xsl:apply-templates select="td" />
+                <xsl:value-of select="fn:RowEnd()" />
+            </xsl:when>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
     <xsl:template match="comments//td">
-        <xsl:apply-templates />
+        <xsl:choose>
+            <xsl:when test="$format = 'quark'">
+                <xsl:apply-templates />
+            </xsl:when>
+            <xsl:when test="$format = 'indesign'">
+                <xsl:value-of select="fn:CellStart()" />
+                <xsl:apply-templates />
+                <xsl:value-of select="fn:CellEnd()" />
+            </xsl:when>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
-
+    
     <xsl:template match="url | email">
-        <xsl:value-of select="utils:xtag-inline('website', current())" />
+        <xsl:value-of select="fn:c-tag('website', current())" />
     </xsl:template>
 
 
@@ -543,7 +596,7 @@
          courses in each subject.  -->
 
     <xsl:template name="division-info">
-        <xsl:value-of select="utils:xtag('Division Info')" />
+        <xsl:value-of select="fn:p-tag('Division Info')" />
         <xsl:choose>
             <!-- if we're inside a division, print the full division contact info -->
             <xsl:when test="ancestor::division">
@@ -581,7 +634,7 @@
                         </xsl:if>
                     </xsl:otherwise>
                 </xsl:choose>
-                <xsl:call-template name="br" />
+                <xsl:value-of select="fn:newline()" />
 
                 <!-- email address -->
                 <xsl:text>E-MAIL:  </xsl:text><xsl:value-of select="$email" />
@@ -590,7 +643,7 @@
             <!-- otherwise (we're probably in a special-section), just try to print the division name -->
             <xsl:otherwise><xsl:value-of select="if (@division-name) then upper-case(@division-name) else 'UNKNOWN DIVISION'" /></xsl:otherwise>
         </xsl:choose>
-        <xsl:call-template name="br" />
+        <xsl:value-of select="fn:newline()" />
     </xsl:template>
 
 
@@ -601,17 +654,17 @@
         <xsl:if test="$core-courses and not(ancestor::special-section)">
             <xsl:variable name="core-component" select="lower-case((descendant::course/@core-component)[1])" />
 
-            <xsl:value-of select="utils:xtag('Core List Header')" />
+            <xsl:value-of select="fn:p-tag('Core List Header')" />
             <xsl:text>The following courses </xsl:text>
             <xsl:if test="$core-component = 'other'">in this subject </xsl:if>
             <xsl:text>are part of</xsl:text>
-            <xsl:call-template name="br" />
+            <xsl:value-of select="fn:newline()" />
             <xsl:text>the </xsl:text>
             <xsl:if test="$core-component != 'other'"><xsl:value-of select="$core-component" /> component of the </xsl:if>
             <xsl:text>Core Curriculum:</xsl:text>
-            <xsl:call-template name="br" />
+            <xsl:value-of select="fn:newline()" />
 
-            <xsl:value-of select="utils:xtag('Core List')" />
+            <xsl:value-of select="fn:p-tag('Core List')" />
             <xsl:for-each-group select="$core-courses" group-by="@rubrik">
                 <xsl:sort select="@rubrik" />
 
@@ -629,43 +682,181 @@
                 </xsl:if>
             </xsl:for-each-group>
 
-            <xsl:call-template name="br" />
-            <xsl:call-template name="blank-line" />
+            <xsl:value-of select="fn:newline()" />
+            <xsl:value-of select="fn:br()" />
         </xsl:if>
     </xsl:template>
 
 
-    <!-- =============================================================
-         Utility named templates
-         =============================================================
 
-         "Utility" type templates to help create the output text
-         files, including templates to insert line breaks, blank lines
-         and separators.  -->
-    <xsl:template name="blank-line">
-        <xsl:value-of select="utils:xtag('Normal Class')" />
-        <xsl:call-template name="br" />
-    </xsl:template>
 
-    <xsl:template name="br">
+    <!--PICK-FORMAT NAMED TEMPLATES
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        insert special characters into the output
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!-- insert preamble -->
+    <xsl:function name="fn:preamble" as="xs:string">
         <xsl:choose>
-            <xsl:when test="$target-platform = 'mac'">
+            <xsl:when test="$format = 'quark'">
+                <!-- quark preamble is <v7.31><e0>\r -->
+                <xsl:value-of select="concat('&lt;v7.31&gt;&lt;e0&gt;', fn:newline())" />
+            </xsl:when>
+            <xsl:when test="$format = 'indesign'">
+                <!-- InDesign preamble is <ASCII-MAC>\n<Version:3><FeatureSet:InDesign-Roman><ColorTable:=<Black:COLOR:CMYK:Process:0,0,0,1>>\n -->
+                <xsl:value-of select="concat('&lt;ASCII-MAC&gt;', fn:newline(), '&lt;Version:3&gt;', '&lt;FeatureSet:InDesign-Roman&gt;&lt;ColorTable:=&lt;Black:COLOR:CMYK:Process:0,0,0,1&gt;&gt;', fn:newline())" />
+            </xsl:when>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
+    <!-- insert one or more newline/return/etc characters -->
+    <xsl:function name="fn:newline" as="xs:string">
+        <xsl:choose>
+            <xsl:when test="$format = 'quark'">
+                <!-- quark requires mac-style line markers, '\r' -->
                 <xsl:text>&#13;</xsl:text>
             </xsl:when>
-            <xsl:when test="$target-platform = 'unix'">
+            <xsl:when test="$format = 'indesign'">
+                <!-- newline -->
                 <xsl:text>&#10;</xsl:text>
             </xsl:when>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:function name="fn:newline" as="xs:string">
+        <xsl:param name="count" as="xs:integer" />
+        
+        <xsl:choose>
+            <xsl:when test="$count &lt; 1"><xsl:value-of select="''" /></xsl:when>
             <xsl:otherwise>
-                <xsl:text>&#13;&#10;</xsl:text>
+                <xsl:choose>
+                    <xsl:when test="$format = 'quark'">
+                        <xsl:value-of select="concat(fn:newline(), fn:newline($count - 1))" />
+                    </xsl:when>
+                    <xsl:when test="$format = 'indesign'">
+                        <xsl:value-of select="concat(fn:newline(), fn:newline($count - 1))" />
+                    </xsl:when>
+                    <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+                </xsl:choose>
             </xsl:otherwise>
         </xsl:choose>
+    </xsl:function>
+    
+    <!-- insert seperater -->
+    <xsl:function name="fn:sep" as="xs:string">
+        <xsl:choose>
+            <xsl:when test="$format = ('quark', 'indesign')">
+                <xsl:text>&#9;</xsl:text>
+            </xsl:when>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
+    <!-- inserts a blank line into the output -->
+    <xsl:function name="fn:br" as="xs:string">		
+        <xsl:choose>
+            <xsl:when test="$format = 'quark'">
+                <xsl:value-of select="concat(fn:p-tag('Normal Class'), fn:newline())" />
+            </xsl:when>
+            <xsl:when test="$format = 'indesign'">
+                <xsl:value-of select="concat(fn:p-tag(''), fn:newline())" />
+            </xsl:when>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    <xsl:function name="fn:br" as="xs:string">
+        <xsl:param name="count" as="xs:integer" />
+        
+        <xsl:choose>
+            <xsl:when test="$count &lt; 1"><xsl:value-of select="''" /></xsl:when>
+            <xsl:otherwise>
+                <xsl:choose>
+                    <xsl:when test="$format = 'quark'">
+                        <xsl:value-of select="concat(fn:br(), fn:br($count - 1))" />
+                    </xsl:when>
+                    <xsl:when test="$format = 'indesign'">
+                        <xsl:value-of select="concat(fn:br(), fn:br($count - 1))" />
+                    </xsl:when>
+                    <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+                </xsl:choose>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
+    <!-- insert paragraph style -->
+    <xsl:function name="fn:p-tag" as="xs:string">
+        <xsl:param name="style-name" as="xs:string" />
+        
+        <xsl:choose>
+            <xsl:when test="$format = 'quark'">
+                <!-- looks like '@style:' -->
+                <xsl:value-of select="concat('@', normalize-space($style-name), ':')" />
+            </xsl:when>
+            <xsl:when test="$format = 'indesign'">
+                <!-- looks like '<ParaStyle:[name]>' -->
+                <xsl:value-of select="concat('&lt;ParaStyle:', normalize-space($style-name), '&gt;')" />
+            </xsl:when>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
+    <!-- insert character style -->
+    <xsl:function name="fn:c-tag" as="xs:string">
+        <xsl:param name="style-name"    as="xs:string" />
+        <xsl:param name="content"       as="xs:string" />
+        
+        <xsl:choose>
+            <xsl:when test="$format = 'quark'">
+                <!-- looks like '<@style>...<@$p>' -->
+                <xsl:value-of select="concat('&lt;@', normalize-space($style-name), '&gt;', $content, '&lt;@$p&gt;')" />
+            </xsl:when>
+            <xsl:when test="$format = 'indesign'">
+                <!-- looks like '<CharStyle:[name]>' -->
+                <xsl:value-of select="concat('&lt;CharStyle:', normalize-space($style-name), '&gt;', $content, '&lt;CharStyle:&gt;')" />
+            </xsl:when>
+            <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
+        </xsl:choose>
+    </xsl:function>
+    
+    <xsl:template name="no-such-format" as="xs:string">
+        <xsl:message>
+            <xsl:text>No format named </xsl:text>
+            <xsl:value-of select="$format" />
+            <xsl:text>.</xsl:text>
+        </xsl:message>
+        <xsl:value-of select="''" />
     </xsl:template>
-
-    <xsl:template name="sep">
-        <xsl:text>&#9;</xsl:text>
-    </xsl:template>
-
-    <xsl:template name="quark-preamble">
-        <xsl:text>&lt;v7.31&gt;&lt;e0&gt;</xsl:text><xsl:call-template name="br" />
-    </xsl:template>
+    
+    
+    <!--INDESIGN TABLE BUILDER FUNCTIONS
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        insert InDesign Tables into the output
+        table tags (look like '<TableStart><RowStart><CellStart><CellEnd><RowEnd><TableEnd>
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <xsl:function name="fn:TableStart" as="xs:string">
+        <xsl:param name="rows" as="xs:integer" />
+        <xsl:param name="cols" as="xs:integer" />
+        
+        <xsl:value-of select="concat(fn:p-tag(''), '&lt;TableStart:', $rows, ',', $cols, ':0:0&gt;')" />
+    </xsl:function>
+    
+    <xsl:function name="fn:TableEnd" as="xs:string">
+        <xsl:text>&lt;TableEnd:&gt;</xsl:text>
+    </xsl:function>
+    
+    <xsl:function name="fn:RowStart" as="xs:string">
+        <xsl:text>&lt;RowStart:&gt;</xsl:text>
+    </xsl:function>
+    
+    <xsl:function name="fn:RowEnd" as="xs:string">
+        <xsl:text>&lt;RowEnd:&gt;</xsl:text>
+    </xsl:function>
+    
+    <xsl:function name="fn:CellStart" as="xs:string">
+        <xsl:text>&lt;CellStart:1,1&gt;</xsl:text>
+    </xsl:function>
+    
+    <xsl:function name="fn:CellEnd" as="xs:string">
+        <xsl:text>&lt;CellEnd:&gt;</xsl:text>
+    </xsl:function>
 </xsl:stylesheet>
