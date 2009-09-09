@@ -611,7 +611,7 @@
         <subject name="Education" ext="4144" room="E142" />
         <subject name="Emergency Medical Services" ext="7879" room="X1082" email="bhcEMS@dcccd.edu" />
         <subject name="Nursing" ext="4754" room="K224" email="bhcNursing@dcccd.edu" />
-        <subject name="Radiologic Sciences" ext="4264" room="L107" email="bhcRadTech@dcccd.edu" />
+        <subject name="Radiologic Sciences" ext="4264" room="X3036" email="bhcRadTech@dcccd.edu" />
 
         <!-- Mathematics and Science Division -->
         <subject name="Astronomy" email="bhcScience@dcccd.edu" />
