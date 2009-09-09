@@ -428,7 +428,7 @@
             <pattern match="PHYS [12]4[02][1256]" unsorted="true" />
         </subject>
         <subject name="Biology">
-        	<comments>NOTE:  Meeting course prerequisites is very important to your success in science courses.  Before registering, check the Catalog online or call the division office for prerequisite information.</comments>
+        	<comments>NOTE:  Meeting course prerequisites is very important to your success in science courses.  Before registering, check the Catalog online or call the division office for prerequisite information.  Students in BIOL 1407, 2401, 2402 AND SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
             <topic name="Directed Studies">
                 <pattern match="DIRS" unsorted="true" />
             </topic>
@@ -437,15 +437,15 @@
                 <pattern match="BIOL 140[89]" unsorted="true" />
             </topic>
             <topic name="Majors Biology">
-                <comments>NOTE:  Biology 1406 and 1407 are courses for students majoring and/or minoring in biology or related disciplines.  It is recommended that students have recently had either high school biology or Biology 1408 or 1409.  It is also recommended that students have recently had high school chemistry or Chemistry 1405 before taking this course.</comments>
+                <comments>NOTE:  Biology 1406 and 1407 are courses for students majoring and/or minoring in biology or related disciplines.  It is recommended that students have recently had either high school biology or Biology 1408 or 1409.  It is also recommended that students have recently had high school chemistry or Chemistry 1405 before taking this course. Students in BIOL 1407, 2401, 2402 AND SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
                 <pattern match="BIOL 140[67]" unsorted="true" />
             </topic>
             <topic name="Anatomy &amp; Physiology for Nursing Majors">
-                <comments>NOTE:  Enrollment into SCIT 1407 will require an appropriate reading and writing score on one of the assessment instruments (THEA/TASP, etc.) taken within the last two years.  If your reading or writing score is below the minimum cutoff, you will be advised to enroll into an alternative biology course, such as BIOL 1408 or DIRS 9170.  SCIT 1407 is a prerequisite for the Nursing Program.</comments>
+                <comments>NOTE:  Enrollment into SCIT 1407 will require an appropriate reading and writing score on one of the assessment instruments (THEA/TASP, etc.) taken within the last two years.  If your reading or writing score is below the minimum cutoff, you will be advised to enroll into an alternative biology course, such as BIOL 1408 or DIRS 9170.  SCIT 1407 is a prerequisite for the Nursing Program. Students in BIOL 1407, 2401, 2402 AND SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
                 <pattern match="SCIT" unsorted="true" />
             </topic>
             <topic name="Honors Anatomy &amp; Physiology (Majors)">
-                <comments>NOTE: Biology 2401 and 2402 are anatomy and physiology courses for biology majors and for students wanting a transferable anatomy and physiology course, such as, Bachelor of Science, Nursing; physical therapy and kinesiology students. Please see the online Catalog for prerequisite information.</comments>
+                <comments>NOTE: Biology 2401 and 2402 are anatomy and physiology courses for biology majors and for students wanting a transferable anatomy and physiology course, such as, Bachelor of Science, Nursing; physical therapy and kinesiology students. Please see the online Catalog for prerequisite information. Students in BIOL 1407, 2401, 2402 AND SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
                 <pattern match="BIOL 240[12]" unsorted="true" />
             </topic>
             <topic name="Genetics">
