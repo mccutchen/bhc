@@ -837,7 +837,7 @@
         <xsl:param name="rows" as="xs:integer" />
         <xsl:param name="cols" as="xs:integer" />
         
-        <xsl:value-of select="concat(fn:p-tag(''), '&lt;TableStart:', $rows, ',', $cols, ':0:0&gt;')" />
+        <xsl:value-of select="concat('&lt;TableStart:', $rows, ',', $cols, ':0:0&gt;')" />
     </xsl:function>
     
     <xsl:function name="fn:TableEnd" as="xs:string">
