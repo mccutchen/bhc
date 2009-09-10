@@ -523,9 +523,11 @@
     </xsl:template>
 
     <xsl:template match="comments//table">
+        <xsl:param name="comments-style" tunnel="yes" />
         <xsl:choose>
             <xsl:when test="$format = 'quark'"><xsl:apply-templates select="*" /></xsl:when>
             <xsl:when test="$format = 'indesign'">
+                <xsl:value-of select="fn:TableStyle($comments-style)" />
                 <xsl:value-of select="fn:TableStart(count(tr), count(tr[1]/td))" />
                 <xsl:apply-templates select="tr" />
                 <xsl:value-of select="fn:TableEnd()" />
@@ -831,8 +833,12 @@
     <!--INDESIGN TABLE BUILDER FUNCTIONS
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         insert InDesign Tables into the output
-        table tags (look like '<TableStart><RowStart><CellStart><CellEnd><RowEnd><TableEnd>
+        table tags (look like '<TableStyle:StyleName><TableStart><RowStart><CellStart><CellEnd><RowEnd><TableEnd>')
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <xsl:function name="fn:TableStyle" as="xs:string">
+        <xsl:param name="style-name" as="xs:string" />
+        <xsl:value-of select="concat('&lt;TableStyle:', normalize-space($style-name), '&gt;')" />
+    </xsl:function>
     <xsl:function name="fn:TableStart" as="xs:string">
         <xsl:param name="rows" as="xs:integer" />
         <xsl:param name="cols" as="xs:integer" />
