@@ -383,7 +383,7 @@
                 </subtopic>
                 <subtopic name="Medical Front Office Co-Op Work Experience">
                     <comments>Students must be able to meet on the three required meeting dates: January 23, February 27, and March 27.</comments>
-                    <pattern match="POFM 1280--2251" />
+                    <pattern match="POFM 1280-2251" />
                 </subtopic>
             </topic>
         </subject>
