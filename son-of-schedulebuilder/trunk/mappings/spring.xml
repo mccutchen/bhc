@@ -6,7 +6,6 @@
         ======================================================================== -->
         <subject name="Business Office Systems and Support">
             <topic name="Software Application Specialist Certificate">
-                <comments>This is an awesome certificate. You really want this certificate.</comments>
                 <subtopic name="Word Processing, Word">
                     <pattern match="POFI 2301-2001" />
                     <pattern match="POFI 2301-2501" />
@@ -39,7 +38,6 @@
                 </subtopic>
             </topic>
             <topic name="Office Assistant Certificate">
-                <comments>This is an awesome certificate. Your boss really wants you to have this certificate.</comments>
                 <subtopic name="Computer Applications I, Computer Basics">
                     <pattern match="POFI 1301-2001" />
                     <pattern match="POFI 1301-2501" />
@@ -68,6 +66,47 @@
                     <pattern match="POFT 1329-2502" />
                     <pattern match="POFT 1329-2426" />
                     <pattern match="POFT 1329-2427" />
+                </subtopic>
+            </topic>
+            <topic name="Credit Classes - Electives">  <!-- topic added as per Pat Byars, 2009-09-10 -->
+                <subtopic name="Keyboarding Classes">
+                    <pattern match="POFT 1127-2200" />
+                    <pattern match="POFT 1127-2201" />
+                    <pattern match="POFT 1127-2202" />
+                    <pattern match="POFT 1127-2203" />
+                    <pattern match="POFT 1127-2250" />
+                    <pattern match="POFT 1127-2701" />
+                    <pattern match="POFT 1127-2703" />
+                    <pattern match="POFT 1127-2426" />
+                    <pattern match="POFT 1127-2427" />
+                </subtopic>
+                <subtopic name="Keyboarding / Speed / Accuracy">
+                    <pattern match="POFT 2203-2200" />
+                    <pattern match="POFT 2203-2201" />
+                    <pattern match="POFT 2203-2701" />
+                    <pattern match="POFT 2203-2426" />
+                    <pattern match="POFT 2203-2427" />
+                </subtopic>
+                <subtopic name="Business Math - Required for Aas Degree">
+                    <pattern match="POFT 1321-2501" />
+                    <pattern match="POFT 1321-2426" />
+                    <pattern match="POFT 1321-2427" />
+                </subtopic>
+                <subtopic name="Machine Application / Business Math - Required for Accounting">
+                    <pattern match="POFT 1325-2001" />
+                    <pattern match="POFT 1325-2200" />
+                    <pattern match="POFT 1325-2501" />
+                    <pattern match="POFT 1325-2426" />
+                    <pattern match="POFT 1325-2427" />
+                </subtopic>
+                <subtopic name="Records and Information Management - Required for AAS Degree">
+                    <pattern match="POFT 1319-2426" />
+                </subtopic>
+                <subtopic name="Cooperative Education - Required for AAS Degree">
+                    <pattern match="POFT 1382-2426" />
+                </subtopic>
+                <subtopic name="Business Communication / Correspondence - Required for AAS Degree">
+                    <pattern match="POFT 2312-2426" />
                 </subtopic>
             </topic>
         </subject>
@@ -294,7 +333,62 @@
             	<pattern match="BMGT 2303-2502" />
             	<pattern match="BMGT 2383-2502" />
             </subject>
-                          
+
+
+        <!-- Medical Front Office (Sharon Burton)
+            ======================================================================== -->
+        <subject name="Medical Office Management / Administration">
+            <topic name="Medical Front Office Assistant Marketable Skills Achievement Award - First Semester">
+                <comments>Note: The following courses are for students in the first semester of the medical front office assistant program.</comments>
+                <subtopic name="Computer Fundamentals">
+                    <pattern match="POFI 1104-2201" />
+                    <pattern match="POFI 1104-2701" />
+                </subtopic>
+                <subtopic name="Keyboarding, Beginning">
+                    <pattern match="POFT 1127-2204" />
+                    <pattern match="POFT 1127-2704" />
+                </subtopic>
+                <subtopic name="Medical Terminology">
+                    <pattern match="MDCA 1313-2251" />
+                    <pattern match="MDCA 1313-2426" />
+                    <pattern match="MDCA 1313-2427" />
+                </subtopic>
+                <subtopic name="Medical Office Procedures">
+                    <pattern match="POFM 1309-2200" />
+                    <pattern match="POFM 1309-2426" />
+                    <pattern match="POFM 1309-2701" />
+                </subtopic>
+                <subtopic name="Medical Software Applications, Medisoft">
+                    <pattern match="POFM 1302-2200" />
+                    <pattern match="POFM 1302-2701" />
+                </subtopic>
+                <subtopic name="Special Topics - Medical Office Simulation">
+                    <pattern match="POFM 1191-2200" />
+                    <pattern match="POFM 1191-2780" />
+                </subtopic>
+            </topic>
+            <topic name="Medical Front Office Assistant Certificate - Second Semester">
+                <comments>Note: The following courses are for students in the second semester of the medical front office assistant program.</comments>
+                <subtopic name="Medical Coding Basics">
+                    <pattern match="POFM 1300-2501" />
+                </subtopic>
+                <subtopic name="Medical Insurance">
+                    <pattern match="POFM 1327-2501" />
+                </subtopic>
+                <subtopic name="Business English">
+                    <pattern match="POFT 1301-2780" />
+                </subtopic>
+                <subtopic name="Medical Health Records">
+                    <pattern match="POFM 1370-2701" />
+                </subtopic>
+                <subtopic name="Medical Front Office Co-Op Work Experience">
+                    <comments>Students must be able to meet on the three required meeting dates: January 23, February 27, and March 27.</comments>
+                    <pattern match="POFM 1280--2251" />
+                </subtopic>
+            </topic>
+        </subject>
+        
+        
             
         <!-- Health and Human Services (Monica Wenthold)
             ======================================================================== -->        
