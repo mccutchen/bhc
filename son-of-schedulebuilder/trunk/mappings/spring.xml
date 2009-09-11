@@ -45,7 +45,7 @@
                 </subtopic>
                 <subtopic name="Business English">
                     <pattern match="POFT 1301-2300" />
-                    <pattern match="POFT 1301-2780" />
+                    <pattern match="POFT 1301-2780" /> <!-- duplicate - BOSS is aware -->
                     <pattern match="POFT 1301-2426" />
                 </subtopic>
                 <subtopic name="Administrative Office Procedures I">
@@ -166,7 +166,6 @@
                 <pattern match="ITSE 1391-2501" /><!-- Added 9/2 per Bill -->
                 <pattern match="ITSE 1430-2501" />  	
                 <pattern match="ITSE 1432-2501" />
-                <pattern match="ITSE 2431-2501" />	
                 <pattern match="ITSE 2359-2501" /><!-- Added 9/2 per Bill -->
                 <pattern match="ITSE 2417-2502" />	
                 <pattern match="ITSE 2431-2501" />	
@@ -214,7 +213,6 @@
                 <pattern match="ITSE 1301-2426" />
                 <pattern match="ITSE 1406-2426" />
                 <pattern match="ITSE 2402-2426" /><!-- Added 9/2 per Bill -->
-                <pattern match="ITSW 1407-2426" />
             </topic>
             <topic name="Application Software">
                 <pattern match="ITSC 1409-2001" />
@@ -312,7 +310,6 @@
             <pattern match="BCIS 1405-2301" />	
             <pattern match="BCIS 1405-2421" />
             <pattern match="BCIS 1405-2422" />
-            <pattern match="BCIS 1405-2423" /> 
             <pattern match="BCIS 1405-2423" /><!-- Added 9/2 per Bill -->        
             <topic name="Programming">
                 <pattern match="BCIS 1431-2501" />			
@@ -376,7 +373,7 @@
                     <pattern match="POFM 1327-2501" />
                 </subtopic>
                 <subtopic name="Business English">
-                    <pattern match="POFT 1301-2780" />
+                    <pattern match="POFT 1301-2780" /> <!-- duplicate - MFO is aware -->
                 </subtopic>
                 <subtopic name="Medical Health Records">
                     <pattern match="POFM 1370-2701" />
