@@ -310,7 +310,8 @@
             <pattern match="BCIS 1405-2301" />	
             <pattern match="BCIS 1405-2421" />
             <pattern match="BCIS 1405-2422" />
-            <pattern match="BCIS 1405-2423" /><!-- Added 9/2 per Bill -->        
+            <pattern match="BCIS 1405-2423" /><!-- Added 9/2 per Bill -->   
+            <pattern match="BCIS 1405-2424" /><!-- Added 9/12 per Bill's 9/2 request -->        
             <topic name="Programming">
                 <pattern match="BCIS 1431-2501" />			
                 <pattern match="BCIS 1431-2426" />
