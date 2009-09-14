@@ -147,7 +147,6 @@
                 <pattern match="ITSE 1406-2502" />	
                 <pattern match="ITSW 1407-2511" />	
                 <pattern match="ITSE 1406-2427" />
-                <pattern match="ITSW 1407-2427" />
             </topic>
             <topic name="Multimedia and Game Programming"><!-- Added 9/2 per Bill, GAME moved from Programming -->
                 <pattern match="GAME 1409-2502" />
@@ -228,6 +227,7 @@
                 <pattern match="ITSW 1401-2426" />
                 <pattern match="ITSW 1401-2427" />
                 <pattern match="ITSW 1404-2426" />
+                <pattern match="ITSW 1407-2427" /><!-- Moved from open source at Pat's request 9/14 -->
 <!-- 
                 <pattern match="ITSW 1407-2426" />Needs new section number that's not a duplicate of a CIT course.
  -->
