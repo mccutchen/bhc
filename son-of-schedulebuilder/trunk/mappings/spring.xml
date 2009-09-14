@@ -399,7 +399,7 @@
                 <p>NOTE: All EMS courses require CPR certification for infant, child and adult.  This is the Healthcare Provider level by the American Heart Association or Professional Rescuer by the American Red Cross.  Students can register for the EMS course without having a current CPR card, but must be CPR certified by the mandatory orientation day.</p>
             </comments>
             <topic name="Emergency Medical Services, Basic">
-                <subtopic name="EMT-Basic Class #55, A-Shift and C-Shift">
+                <subtopic name="EMT-Basic Class #55, A Shift and C Shift">
             		<pattern match="EMSP 1501-2205" />
             		<pattern match="EMSP 1501-2201" />
             		<pattern match="EMSP 1501-2202" />
@@ -413,12 +413,12 @@
             	</subtopic>  
             </topic>
             <topic name="Emergency Medical Services,  Paramedic">
-                <subtopic name="Paramedic Class #23, A-Shift">
+                <subtopic name="Paramedic Class #23, A Shift">
 					<pattern match="EMSP 2143-2223" /> 
 					<pattern match="EMSP 2143-2201" /> 
 					<pattern match="EMSP 2463-2223" /> 
                 </subtopic>
-                <subtopic name="Paramedic Class #24, C-Shift">
+                <subtopic name="Paramedic Class #24, C Shift">
 					<pattern match="EMSP 2434-2224" /> 
 					<pattern match="EMSP 2434-2201" /> 
 					<pattern match="EMSP 2434-2202" /> 
@@ -442,7 +442,7 @@
 					<pattern match="EMSP 2444-2701" /> 
 					<pattern match="EMSP 2260-2725" /> 
                 </subtopic>				
-                <subtopic name="Paramedic Class #26, A-Shift">
+                <subtopic name="Paramedic Class #26, A Shift">
 					<pattern match="EMSP 1438-2226" /> 
 					<pattern match="EMSP 1438-2201" />
 					<pattern match="EMSP 1438-2202" />
@@ -450,7 +450,7 @@
 					<pattern match="EMSP 1356-2201" /> 
 					<pattern match="EMSP 1356-2202" /> 
                 </subtopic>				                
-                <subtopic name="Mass Disaster Response, A-Shift">
+                <subtopic name="Mass Disaster Response, A Shift">
             		<pattern match="EMSP 1391-2209" />   
             		<pattern match="EMSP 1391-2201" />                
                 </subtopic>
