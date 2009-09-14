@@ -45,7 +45,6 @@
                 </subtopic>
                 <subtopic name="Business English">
                     <pattern match="POFT 1301-2300" />
-                    <pattern match="POFT 1301-2780" /> <!-- duplicate - BOSS is aware -->
                     <pattern match="POFT 1301-2426" />
                 </subtopic>
                 <subtopic name="Administrative Office Procedures I">
@@ -339,7 +338,7 @@
             <topic name="Medical Front Office Assistant Marketable Skills Achievement Award - First Semester">
                 <comments>Note: The following courses are for students in the first semester of the medical front office assistant program.</comments>
                 <subtopic name="Computer Fundamentals">
-                    <pattern match="POFI 1104-2201" />
+                    <pattern match="POFI 1104-2232" />
                     <pattern match="POFI 1104-2701" />
                 </subtopic>
                 <subtopic name="Keyboarding, Beginning">
@@ -374,7 +373,7 @@
                     <pattern match="POFM 1327-2501" />
                 </subtopic>
                 <subtopic name="Business English">
-                    <pattern match="POFT 1301-2780" /> <!-- duplicate - MFO is aware -->
+                    <pattern match="POFT 1301-2780" />
                 </subtopic>
                 <subtopic name="Medical Health Records">
                     <pattern match="POFM 1370-2701" />
