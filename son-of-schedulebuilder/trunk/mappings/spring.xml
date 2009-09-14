@@ -501,7 +501,7 @@
                 <pattern match="RNSG 2462-2264" />
             </topic>
             <topic name="Fourth Semester Program Students">
-                <comments>NOTE: The following courses are for students in the first semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+                <comments>NOTE: The following courses are for students in the fourth semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
                 <pattern match="RNSG 1443-2001" />
                 <pattern match="RNSG 2560-2261" />
                 <pattern match="RNSG 2560-2262" />
