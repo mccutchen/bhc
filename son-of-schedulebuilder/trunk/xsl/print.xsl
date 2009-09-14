@@ -761,7 +761,7 @@
                 <xsl:value-of select="concat(fn:p-tag('Normal Class'), fn:newline())" />
             </xsl:when>
             <xsl:when test="$format = 'indesign'">
-                <xsl:value-of select="concat(fn:p-tag(''), fn:newline())" />
+                <xsl:value-of select="concat(fn:p-tag('Empty Line'), fn:newline())" />
             </xsl:when>
             <xsl:otherwise><xsl:call-template name="no-such-format" /></xsl:otherwise>
         </xsl:choose>
