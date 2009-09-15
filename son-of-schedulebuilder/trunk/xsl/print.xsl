@@ -527,7 +527,7 @@
         <xsl:choose>
             <xsl:when test="$format = 'quark'"><xsl:apply-templates select="*" /></xsl:when>
             <xsl:when test="$format = 'indesign'">
-                <xsl:value-of select="fn:TableStyle($comments-style)" />
+                <xsl:value-of select="fn:TableStyle(concat(normalize-space($comments-style), ' Table'))" />
                 <xsl:value-of select="fn:TableStart(count(tr), count(tr[1]/td))" />
                 <xsl:apply-templates select="tr" />
                 <xsl:value-of select="fn:TableEnd()" />
@@ -570,12 +570,16 @@
     </xsl:template>
     
     <xsl:template match="comments//td">
+        <xsl:param name="comments-style" tunnel="yes" />
+        
         <xsl:choose>
             <xsl:when test="$format = 'quark'">
                 <xsl:apply-templates />
             </xsl:when>
             <xsl:when test="$format = 'indesign'">
+                <xsl:value-of select="fn:CellStyle(concat(normalize-space($comments-style), ' Cell'))" />
                 <xsl:value-of select="fn:CellStart()" />
+                <xsl:value-of select="fn:p-tag($comments-style)" />
                 <xsl:apply-templates />
                 <xsl:value-of select="fn:CellEnd()" />
             </xsl:when>
@@ -839,6 +843,12 @@
         <xsl:param name="style-name" as="xs:string" />
         <xsl:value-of select="concat('&lt;TableStyle:', normalize-space($style-name), '&gt;')" />
     </xsl:function>
+    
+    <xsl:function name="fn:CellStyle" as="xs:string">
+        <xsl:param name="style-name" as="xs:string" />
+        <xsl:value-of select="concat('&lt;CellStyle:', normalize-space($style-name), '&gt;')" />
+    </xsl:function>
+    
     <xsl:function name="fn:TableStart" as="xs:string">
         <xsl:param name="rows" as="xs:integer" />
         <xsl:param name="cols" as="xs:integer" />
