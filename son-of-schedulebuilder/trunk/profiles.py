@@ -144,12 +144,12 @@ class Fall09(Fall):
     }
     
 # ===================================================================
-# Spring 2010 profiles
+# Spring 2010 profiles - SS changed this from 1/20-5/14 to see if it would fix flex problem.
 # ===================================================================
 class Spring10(Spring):
     input = 'data/2010-spring/BH2010SP.TXT'
     terms = {
-        'Spring': (date(2010, 1, 20), date(2010, 5, 14), 'Jan. 20-May 14'),
+        'Spring': (date(2010, 1, 19), date(2010, 5, 13), 'Jan. 19-May 13'),
     }
 
 # ===================================================================
