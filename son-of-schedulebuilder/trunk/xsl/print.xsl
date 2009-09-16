@@ -579,7 +579,7 @@
             <xsl:when test="$format = 'indesign'">
                 <xsl:value-of select="fn:CellStyle(concat(normalize-space($comments-style), ' Cell'))" />
                 <xsl:value-of select="fn:CellStart()" />
-                <xsl:value-of select="fn:p-tag($comments-style)" />
+                <xsl:value-of select="fn:p-tag(concat(normalize-space($comments-style), ' TableText'))" />
                 <xsl:apply-templates />
                 <xsl:value-of select="fn:CellEnd()" />
             </xsl:when>
