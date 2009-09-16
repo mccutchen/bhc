@@ -60,7 +60,7 @@
          - InDesign:    'indesign'
         Defaults to QuarkXpress.
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <xsl:param name="format" as="xs:string" select="'quark'" />
+    <xsl:param name="format" as="xs:string" select="'indesign'" />
     
     
     <!-- =============================================================
