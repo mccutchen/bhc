@@ -277,7 +277,7 @@
         </subject>
         <subject name="Nutrition">
         	<comments>NOTE:  The designation for NUTR 1322 has been changed to BIOL 1322.  Course content remains the same.</comments>
-            <pattern match="NUTR" priority="0" unsorted="true" />
+            <pattern match="BIOL 1322" priority="1" unsorted="true" />
         </subject>
         <subject name="Business Office Systems and Support">
             <pattern match="POFT" priority="0" unsorted="true" />
@@ -499,8 +499,8 @@
         <!-- special division mapping, which needs to know the
              rubrik to work -->
         <division name="Physical Education, Athletics and Nutrition">
-            <pattern match="NUTR" key="rubrik" unsorted="true" />
-            <pattern match="PHED" key="rubrik" unsorted="true" />
+            <pattern match="BIOL 1322" unsorted="true" />
+            <pattern match="PHED" unsorted="true" />
         </division>
     </mapping>
 

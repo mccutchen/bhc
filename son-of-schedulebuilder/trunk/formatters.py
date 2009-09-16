@@ -137,10 +137,13 @@ class CreditFormatter(BaseFormatter):
             return 'Students 50+ Education Office'
         else:
             try:
-                # First, check using the rubrik, then fall back to the division code,
-                # which is what will be used in most cases.
+                # First, check using the rubrik and course number (for more
+                # flexibility in determining what courses belong in what 
+                # division), then fall back to the division code, which is
+                # what will be used in most cases.
+                first_key = '%(rubrik)s %(number)s' % self.input
                 division, comments, sortkey = \
-                    mappings.get(self.input.get('rubrik',''), 'division', 'division') or \
+                    mappings.get(first_key, 'division', 'division') or \
                     mappings.get(value.strip(), 'division', 'division')
                 return division
             except TypeError:
