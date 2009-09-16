@@ -91,7 +91,7 @@
                     <pattern match="POFT 1321-2426" />
                     <pattern match="POFT 1321-2427" />
                 </subtopic>
-                <subtopic name="Machine Application / Business Math - Required for Accounting">
+                <subtopic name="Machine Application / Business Math - Required for Accounting Certificates and AAS Degree">
                     <pattern match="POFT 1325-2001" />
                     <pattern match="POFT 1325-2200" />
                     <pattern match="POFT 1325-2501" />
