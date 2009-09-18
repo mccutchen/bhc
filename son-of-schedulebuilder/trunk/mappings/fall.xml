@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <mappings>
+    <!-- Keep sorting NUTR courses correctly in Fall 2009, even though
+         they've changed in the Spring -->
+    <mapping type="division">
+        <division name="Physical Education, Athletics and Nutrition">
+            <pattern match="NUTR" unsorted="true" />
+        </division>
+    </mapping>
+    
     <mapping type="subject">
-       
-
-  
+        <!-- Keep sorting NUTR courses correctly in Fall 2009 -->
+        <subject name="Nutrition">
+            <comments>NOTE:  The designation for NUTR 1322 has been changed to BIOL 1322.  Course content remains the same.</comments>
+            <pattern match="NUTR" priority="0" unsorted="true" />
+        </subject>
 
    <!-- =======================================================================
             Business Studies Division
