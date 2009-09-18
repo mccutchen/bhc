@@ -374,6 +374,9 @@
                 <subtopic name="Medical Insurance">
                     <pattern match="POFM 1327-2501" />
                 </subtopic>
+                <subtopic name="Medical Records Management">
+                    <pattern match="POFM 1370-2501" />
+                </subtopic>
                 <subtopic name="Business English">
                     <pattern match="POFT 1301-2780" />
                 </subtopic>
