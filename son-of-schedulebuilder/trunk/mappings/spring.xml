@@ -207,7 +207,7 @@
                 <pattern match="ITSE 2402-2501" /><!-- Added 9/2 per Bill -->
                 <pattern match="ITSW 1407-2510" />
                 <pattern match="ITSW 1407-2426" /><!-- Duplicated course in App Software - I stuck it here for now. -->
-                <pattern match="IMED 1416-2426" />
+                <pattern match="IMED 1416-2427" /><!-- Changed from sec 2426 per Cindy Clem's e-mail - trying to move it from VCom to CIT and 1416-2426 should be in VCOM. -->
                 <pattern match="IMED 2409-2426" />
                 <pattern match="INEW 1440-2426" />
                 <pattern match="ITSE 1301-2426" />
