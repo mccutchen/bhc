@@ -609,17 +609,14 @@
                 <pattern match="ARTS 2312-2252" />
             </topic>
             <topic name="Art and Computers">
-                <pattern match="ARTS 2311-2022" />
-                <pattern match="ARTS 2312-2022" />
-                <pattern match="ARTS 2313-2501" />
                 <pattern match="ARTS 2313-2001" />
                 <pattern match="ARTS 2314-2001" />
-                <pattern match="ARTS 2314-2501" />
                 <pattern match="ARTS 2311-2023" />
                 <pattern match="ARTS 2348-2001" />
                 <pattern match="ARTS 2349-2001" />
-                <pattern match="ARTS 2311-2514" />
-                <pattern match="ARTS 2312-2514" />
+                <pattern match="ARTS 2313-2501" />
+                <pattern match="ARTS 2314-2501" />
+                
             </topic>
             <topic name="Design">
                 <pattern match="ARTS 1311-2001" />
@@ -682,8 +679,9 @@
                 <pattern match="ARTS 2312-2006" />
                 <pattern match="ARTS 2366-2001" />
                 <pattern match="ARTS 2367-2001" />
-                <pattern match="ARTS 2311-2021" />
+                <pattern match="ARTS 2311-2017" />
                 <pattern match="ARTS 2312-2017" />
+                <pattern match="ARTS 2311-2021" />
                 <pattern match="ARTS 2316-2501" />
                 <pattern match="ARTS 2317-2501" />
                 <pattern match="ARTS 2311-2504" />
@@ -701,6 +699,7 @@
                 <pattern match="ARTS 2356-2501" />
                 <pattern match="ARTS 2357-2501" />
                 <pattern match="ARTS 2311-2513" />
+                <pattern match="ARTS 2312-2513" />
                 <pattern match="ARTS 2312-2510" />
             </topic>
             <topic name="Printmaking">
