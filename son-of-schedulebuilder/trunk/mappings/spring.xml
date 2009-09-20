@@ -566,13 +566,15 @@
                 <pattern match="ARTS 1301-2250" />
                 <pattern match="ARTS 1301-2420" />
                 <pattern match="ARTS 1301-2421" />  
-                <pattern match="ARTS 1301-2422" />            
+                <pattern match="ARTS 1301-2422" />   
+                <pattern match="ARTS 1301-2423" />            
             </topic>
             <topic name="Art History">
                 <pattern match="ARTS 1303-2001" />
                 <pattern match="ARTS 1303-2002" />
                 <pattern match="ARTS 1304-2001" />
                 <pattern match="ARTS 1304-2002" />
+                <pattern match="ARTS 1304-2501" />
                 <pattern match="ARTS 2373-2001" />          
             </topic>
             
@@ -607,12 +609,15 @@
                 <pattern match="ARTS 2312-2252" />
             </topic>
             <topic name="Art and Computers">
-                <pattern match="ARTS 2348-2001" />
-                <pattern match="ARTS 2349-2001" />
                 <pattern match="ARTS 2311-2022" />
                 <pattern match="ARTS 2312-2022" />
                 <pattern match="ARTS 2313-2501" />
+                <pattern match="ARTS 2313-2001" />
+                <pattern match="ARTS 2314-2001" />
                 <pattern match="ARTS 2314-2501" />
+                <pattern match="ARTS 2311-2023" />
+                <pattern match="ARTS 2348-2001" />
+                <pattern match="ARTS 2349-2001" />
                 <pattern match="ARTS 2311-2514" />
                 <pattern match="ARTS 2312-2514" />
             </topic>
@@ -623,6 +628,13 @@
                 <pattern match="ARTS 2311-2014" />
                 <pattern match="ARTS 1312-2001" />
                 <pattern match="ARTS 1312-2501" />
+                
+                <pattern match="ARTS 1311-2250" />
+                <pattern match="ARTS 1316-2251" />
+                <pattern match="ARTS 1317-2251" />
+                <pattern match="ARTS 2311-2253" />
+                <pattern match="ARTS 2312-2253" />
+                
             </topic>
             <topic name="Drawing">
                 <pattern match="ARTS 1316-2001" />
