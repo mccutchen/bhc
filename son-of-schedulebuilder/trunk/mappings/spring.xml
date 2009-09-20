@@ -897,6 +897,7 @@
                 <pattern match="MUSI 1306-2003" />
                 <pattern match="MUSI 1306-2004" />
                 <pattern match="MUSI 1306-2005" />
+                <pattern match="MUSI 1306-2006" />
 				<pattern match="MUSI 1306-2501" />
 				<pattern match="MUSI 1306-2427" />
                 <pattern match="MUSI 1306-2429" />
@@ -923,6 +924,7 @@
             </topic>
             <topic name="Foundation of Music">
                 <pattern match="MUSI 1304-2001" />
+                <pattern match="MUSI 1304-2300" />
                 <pattern match="MUSI 1300-2300" />
             </topic>
             <topic name="Composition">
@@ -1005,7 +1007,9 @@
                 <subtopic name="Beginning">
                     <comments>Note:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
 					<pattern match="MUAP 1101-2001" />
+					<pattern match="MUAP 1101-2002" />
 					<pattern match="MUAP 1105-2001" />
+					<pattern match="MUAP 1105-2002" />
 					<pattern match="MUAP 1109-2001" />
                 	<pattern match="MUAP 1109-2002" />
 					<pattern match="MUAP 1115-2001" />
@@ -1041,6 +1045,8 @@
                 <subtopic name="Intermediate">
                     <comments>Note:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
 					<pattern match="MUAP 2201-2001" />
+					<pattern match="MUAP 2201-2002" />
+					<pattern match="MUAP 2205-2001" />
                 	<pattern match="MUAP 2209-2001" />
 					<pattern match="MUAP 2209-2002" />
 					<pattern match="MUAP 2215-2001" />
