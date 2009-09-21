@@ -1011,7 +1011,9 @@
 					<pattern match="MUEN 1151-2001" />
 					<pattern match="MUEN 2123-2001" />
 					<pattern match="MUEN 2123-2002" />
+					<pattern match="MUEN 1151-2501" />
 					<pattern match="MUEN 2123-2501" />
+					<pattern match="MUEN 2123-2502" />
 	            </subtopic>
             </topic>
             <topic name="Music-private Lessons">
