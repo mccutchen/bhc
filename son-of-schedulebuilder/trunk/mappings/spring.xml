@@ -578,6 +578,16 @@
                 <pattern match="ARTS 2373-2001" />          
             </topic>
             
+            <topic name="Art and Computers">
+                <pattern match="ARTS 2313-2001" />
+                <pattern match="ARTS 2314-2001" />
+                <pattern match="ARTS 2311-2023" />
+                <pattern match="ARTS 2348-2001" />
+                <pattern match="ARTS 2349-2001" />
+                <pattern match="ARTS 2313-2501" />
+                <pattern match="ARTS 2314-2501" />
+            </topic>
+            
             <topic name="Art Metals">
                 <pattern match="ARTS 2341-2001" />
                 <pattern match="ARTS 2342-2001" />
@@ -608,16 +618,7 @@
                 <pattern match="ARTS 2311-2252" />
                 <pattern match="ARTS 2312-2252" />
             </topic>
-            <topic name="Art and Computers">
-                <pattern match="ARTS 2313-2001" />
-                <pattern match="ARTS 2314-2001" />
-                <pattern match="ARTS 2311-2023" />
-                <pattern match="ARTS 2348-2001" />
-                <pattern match="ARTS 2349-2001" />
-                <pattern match="ARTS 2313-2501" />
-                <pattern match="ARTS 2314-2501" />
-                
-            </topic>
+
             <topic name="Design">
                 <pattern match="ARTS 1311-2001" />
                 <pattern match="ARTS 2311-2019" />
