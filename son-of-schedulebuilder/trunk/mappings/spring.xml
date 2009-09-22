@@ -47,6 +47,7 @@
                     <pattern match="POFT 1301-2300" />
                     <pattern match="POFT 1301-2426" />
                     <pattern match="POFT 1301-2501" />
+                    <pattern match="POFT 1301-2781" />
                 </subtopic>
                 <subtopic name="Administrative Office Procedures I">
                     <pattern match="POFT 1309-2300" />
