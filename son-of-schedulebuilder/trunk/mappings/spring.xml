@@ -618,7 +618,6 @@
                 <pattern match="ARTS 2311-2252" />
                 <pattern match="ARTS 2312-2252" />
             </topic>
-
             <topic name="Design">
                 <pattern match="ARTS 1311-2001" />
                 <pattern match="ARTS 2311-2019" />
@@ -626,13 +625,7 @@
                 <pattern match="ARTS 2311-2014" />
                 <pattern match="ARTS 1312-2001" />
                 <pattern match="ARTS 1312-2501" />
-                
                 <pattern match="ARTS 1311-2250" />
-                <pattern match="ARTS 1316-2251" />
-                <pattern match="ARTS 1317-2251" />
-                <pattern match="ARTS 2311-2253" />
-                <pattern match="ARTS 2312-2253" />
-                
             </topic>
             <topic name="Drawing">
                 <pattern match="ARTS 1316-2001" />
@@ -660,6 +653,10 @@
                 <pattern match="ARTS 1317-2250" />
                 <pattern match="ARTS 2311-2250" />
                 <pattern match="ARTS 2312-2250" />
+                <pattern match="ARTS 1316-2251" />
+                <pattern match="ARTS 1317-2251" />
+                <pattern match="ARTS 2311-2253" />
+                <pattern match="ARTS 2312-2253" />
             </topic>
             <topic name="Painting">
                 <pattern match="ARTS 2316-2001" />
