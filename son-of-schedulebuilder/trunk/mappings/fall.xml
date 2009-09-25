@@ -620,6 +620,8 @@
     		<topic name="Dance Performance"> <!-- added 2009-09-11 -->
     			<pattern match="DANC 1351-2235" />
     			<pattern match="DANC 2351-2235" />
+    			<pattern match="DANC 1351-2715" /><!-- added 9/25/09 -->
+    			<pattern match="DANC 2351-2715" />
     		</topic>
     		<topic name="Modern Dance">
     			<pattern match="DANC 1245-2001" />
