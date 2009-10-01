@@ -863,7 +863,7 @@
                 <pattern match="DRAM 2352-2501" />
             </topic>
             <topic name="Rehearsal">
-                <subtopic name="First Play, Spring 2009">
+                <subtopic name="First Play, Spring 2010">
                 	<pattern match="DRAM 1221-2735" />
                 	<pattern match="DRAM 1221-2736" />
                 </subtopic>
