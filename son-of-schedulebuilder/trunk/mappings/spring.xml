@@ -865,6 +865,7 @@
             <topic name="Rehearsal">
                 <subtopic name="First Play, Spring 2010">
                 	<pattern match="DRAM 1221-2735" />
+                <subtopic name="Second Play, Spring 2010">
                 	<pattern match="DRAM 1221-2736" />
                 </subtopic>
             </topic>
