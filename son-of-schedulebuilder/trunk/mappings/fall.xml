@@ -118,6 +118,7 @@
     			<pattern match="ITSC 1291-2206" /> <!-- Added on 04242009 -->
     			<pattern match="ITSC 1291-2207" /> <!-- Added on 04242009 -->
     			<pattern match="ITSC 1291-2250" /> <!-- Added on 04242009 -->
+    			<pattern match="ITSC 1291-2704" /> <!-- Added on 10/01/09 -->
     			<pattern match="ITSC 1409-2501" />
     			<pattern match="ITSW 1401-2501" />
     			<pattern match="ITSW 1404-2501" />
