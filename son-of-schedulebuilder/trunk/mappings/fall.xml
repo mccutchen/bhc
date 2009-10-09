@@ -618,11 +618,13 @@
     			<pattern match="DANC 2141-2001" />
     			<pattern match="DANC 2142-2250" />
     		</topic>
-    		<topic name="Dance Performance"> <!-- added 2009-09-11 -->
+    		<topic name="Dance Practicum"> <!-- added 2009-09-11, changed from Perf. to Prac. per Jill 10/9/09 -->
     			<pattern match="DANC 1351-2235" />
     			<pattern match="DANC 2351-2235" />
     			<pattern match="DANC 1351-2715" /><!-- added 9/25/09 -->
     			<pattern match="DANC 2351-2715" />
+    			<pattern match="DANC 1351-2716" /> <!-- added 10/08/09 -->
+    			<pattern match="DANC 2351-2716" /> <!-- added 10/08/09 -->
     		</topic>
     		<topic name="Modern Dance">
     			<pattern match="DANC 1245-2001" />
@@ -739,6 +741,7 @@
     			<pattern match="MUSI 1181-2501" />
     			<pattern match="MUSI 1182-2501" />
     			<pattern match="MUSI 1181-2502" />
+    			<pattern match="MUSI 1181-2701" /> <!-- added 2009-10-08 -->
     			<pattern match="MUSI 1182-2502" />
     		</topic>
     		<topic name="Guitar">
