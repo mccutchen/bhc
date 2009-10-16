@@ -625,6 +625,8 @@
     			<pattern match="DANC 2351-2715" />
     			<pattern match="DANC 1351-2716" /> <!-- added 10/08/09 -->
     			<pattern match="DANC 2351-2716" /> <!-- added 10/08/09 -->
+    			<pattern match="DANC 2351-2717" /> <!-- added 10/15/09 -->
+    			
     		</topic>
     		<topic name="Modern Dance">
     			<pattern match="DANC 1245-2001" />
