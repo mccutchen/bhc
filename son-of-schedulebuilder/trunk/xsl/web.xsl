@@ -264,6 +264,7 @@
                     <th class="format">Format</th>
                     <th class="room">Room</th>
                     <th class="instructor">Instructor</th>
+                    <th class="search">Search</th>
                 </tr>
                 <xsl:apply-templates select="class">
                     <xsl:sort select="@sortkey" data-type="number" />
@@ -291,6 +292,7 @@
             <td class="format"><xsl:apply-templates select="@method" /></td>
             <td class="room"><xsl:value-of select="@room" /></td>
             <td class="faculty"><xsl:value-of select="@faculty-name" /></td>
+            <td class="search"><xsl:call-template name="SearchLink" /></td>
         </tr>
         <xsl:apply-templates select="extra">
             <xsl:sort select="@sortkey" />
@@ -304,6 +306,36 @@
             <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
             <xsl:value-of select="@section" />
         </a>
+    </xsl:template>
+    <xsl:template name="SearchLink">
+        <xsl:variable name="course-rubric" select="../@rubrik" />
+        <xsl:variable name="course-number" select="../@number" />
+        <xsl:variable name="year" select="ancestor::term/@year" />
+        
+        <xsl:variable name="term-abbr">
+            <xsl:choose>
+                <xsl:when test="ancestor::term/@name = 'Fall'">FA</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Spring'">SP</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Summer I/May Term'">S1</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Summer I'">S1</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Summer II'">S2</xsl:when>
+                <xsl:otherwise>
+                    <xsl:message>Unknown term: <xsl:value-of select="ancestor::term/@name" />.</xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        
+        <xsl:variable name="econnect" select="'https://econnect.dcccd.edu/eConnect/eConnect'" />
+        <xsl:variable name="const" select="'CONSTITUENCY=WBST'" />
+        <xsl:variable name="type" select="'type=P'" />
+        <xsl:variable name="pid" select="'pid=ST-WESTS12A'" />
+        <xsl:variable name="WT" select="'WT.svl=LBCS'" />
+        <xsl:variable name="course" select="concat('course=',$course-rubric)" />
+        <xsl:variable name="number" select="concat('number=',$course-number)" />
+        <xsl:variable name="term" select="concat('term=',$year,$term-abbr)" />
+        <xsl:variable name="loc" select="'loc=BHC'" />
+        <a href="{$econnect}?{$const}&amp;{$type}&amp;{$pid}&amp;{$WT}&amp;{$course}&amp;{$number}&amp;{$term}&amp;{$loc}"
+            target="_blank">Find Course</a>
     </xsl:template>
 
     <xsl:template match="class/@weeks">
@@ -343,6 +375,7 @@
             <td class="method"><xsl:value-of select="@method" /></td>
             <td class="room"><xsl:value-of select="@room" /></td>
             <td class="faculty"><xsl:value-of select="@faculty-name" /></td>
+            <td><xsl:text>&#160;</xsl:text></td>
         </tr>
     </xsl:template>
 
@@ -487,5 +520,4 @@
         </xsl:choose>
         </p>
     </xsl:template>
-
 </xsl:stylesheet>
