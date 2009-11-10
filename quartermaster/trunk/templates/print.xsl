@@ -25,7 +25,7 @@
         - InDesign:    'indesign'
         Defaults to QuarkXpress.
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-    <xsl:param name="format" as="xs:string" select="'indesign'" />
+    <xsl:param name="format" as="xs:string" select="'quark'" />
     <!-- other params -->
     <xsl:param name="output-directory">print-output</xsl:param>
     <xsl:param name="output-extension">.txt</xsl:param>
