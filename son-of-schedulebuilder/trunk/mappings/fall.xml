@@ -344,6 +344,7 @@
 				<pattern match="RNSG 1413" />
 				<pattern match="RNSG 1105" />
 				<pattern match="RNSG 1462" />
+				<pattern match="RNSG 1144" /><!-- added 11/12/09 - guessed at placement so it's probably wrong -->
 			</topic>
 			<topic name="Third Semester Program Students">
 				<comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
@@ -680,6 +681,8 @@
         		</subtopic>
         		<subtopic name="Second Play, Fall 2009">
         			<pattern match="DRAM 1221-2736" />
+        			<pattern match="DRAM 1221-2738" /><!-- added 11/12/09 -->
+        			<pattern match="DRAM 1221-2740" /><!-- added 11/12/09 -->
         		</subtopic>
         	</topic>
         </subject>
