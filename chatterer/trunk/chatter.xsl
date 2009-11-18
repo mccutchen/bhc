@@ -20,7 +20,7 @@
 
 	<xsl:param name="output-extension">.aspx</xsl:param>
 	<xsl:param name="output-directory">chatter-output</xsl:param>
-	<xsl:param name="chatter-image-url-prefix">/images/bhc/chatter/09/</xsl:param>
+	<xsl:param name="chatter-image-url-prefix">_images/</xsl:param>
 	<xsl:param name="default-page-title" select="''" />
 	<xsl:param name="default-url-prefix" select="''" />
 	
@@ -214,9 +214,6 @@
 		<div class="photo {$float}">
 			<a href="{ancestor::article/@id}{$output-extension}">
 				<xsl:copy>
-					<xsl:attribute name="height" select="120" />
-					<xsl:attribute name="width" select="120" />
-					
 					<xsl:apply-templates select="node()|@*" mode="index" />
 				</xsl:copy>
 				<xsl:if test="string-length(text()) &gt; 0">
@@ -241,12 +238,10 @@
 	
 	<!-- automatically adjust each img's @src -->
 	<xsl:template match="img/@src" mode="index">
-		<xsl:variable name="src-prefix" select="concat($chatter-image-url-prefix, ancestor::issue/@url, '/')" />
-		<xsl:attribute name="src"><xsl:value-of select="concat($src-prefix, ., '_thumb.jpg')" /></xsl:attribute>
+		<xsl:attribute name="src"><xsl:value-of select="concat($chatter-image-url-prefix, ., '_thumb.jpg')" /></xsl:attribute>
 	</xsl:template>
 	<xsl:template match="img/@src">
-		<xsl:variable name="src-prefix" select="concat($chatter-image-url-prefix, ancestor::issue/@url, '/')" />
-		<xsl:attribute name="src"><xsl:value-of select="concat($src-prefix, ., '.jpg')" /></xsl:attribute>
+		<xsl:attribute name="src"><xsl:value-of select="concat($chatter-image-url-prefix, ., '.jpg')" /></xsl:attribute>
 	</xsl:template>
 	
 

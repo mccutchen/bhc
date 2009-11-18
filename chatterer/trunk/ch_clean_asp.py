@@ -68,6 +68,37 @@ intag_map = {
     '&lt;'  : '<' ,
     '&gt;'  : '>' };
 
+# invalid doctype constants
+hr_doctype = '<!DOCTYPE hr\n  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">';
+div_doctype = '<!DOCTYPE div\n  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">';
+# valid doctype constant
+html_doctype = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">';
+
+fix_map = {
+    div_doctype : '<%@ Page Language="C#"%>',
+    hr_doctype : '<%@ Control Language="C#" %>',
+    '></link>' : ' />',
+    '></hr>' : ' />',
+    '></br>' : ' />',
+    '></img>' : ' />',
+    '&lt;strong&gt;' : '<strong>',
+    '&lt;/strong&gt;' : '</strong>',
+    '&lt;b&gt;' : '<strong>',
+    '&lt;/b&gt;' : '</strong>',
+    '<b>' : '<strong>',
+    '</b>' : '</strong>',
+    '&lt;em&gt;' : '<em>',
+    '&lt;/em&gt;' : '</em>',
+    '&lt;i&gt;' : '<em>',
+    '&lt;/i&gt;' : '</em>',
+    '<i>' : '<em>',
+    '</i>' : '</em>',
+    '<html>' : '\n\n' + html_doctype + '\n<html>',
+    '</head>' : '</head>\n',
+    '.jpg"' : '.png"',
+    '   ' : '\t'};
+    
+
 
 # Def: GetFilenames()
 # recursively check dir_in for files with extensions in ext_list
@@ -169,6 +200,22 @@ def FindReplace(str_in):
     # return the modified input
     return str_in;
 
+# DEF: FixScrewUps()
+# fixes the stupid XSL screw-ups
+# IN: the string to be fixed
+# OUT: the string with replacements made
+def FixScrewUps(str_in):
+    temp_str = str_in;
+    
+    # for each key in fix_map
+    for bad_str in fix_map.keys():
+        good_str = fix_map[bad_str];
+
+        temp_str = temp_str.replace(bad_str, good_str);
+
+    # return what we've got
+    return temp_str;
+
 
 # Def: write output
 # writes the passed string to file (replaces contents of file)
@@ -235,8 +282,13 @@ if (__name__ == '__main__'):
         if ((not out_str) or (len(out_str) == 0)):
             print 'Unable to perform replacements on \'' + path + '\'.';
             continue;
+
+        # 3) fix the stupid XSL screw-ups
+        out_str = FixScrewUps(out_str);
+        if ((not out_str) or (len(out_str) == 0)):
+            print 'Unable to fix XSL screw-ups on \'' + path + '\'.';
             
-        # 3) write the modified string back to file
+        # 4) write the modified string back to file
         if (not WriteString(path, out_str)):
             print '  Error: cannot write file \'' + path + '\'.';
 
