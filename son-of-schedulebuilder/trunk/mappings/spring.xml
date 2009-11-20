@@ -146,6 +146,7 @@
             </topic>
             <topic name="Open Source Software">
                 <pattern match="INEW 2434-2002" />	<!-- Added 9/2 per Bill -->
+                <pattern match="ITSC 1416-2501" /><!-- Added 11/19 -->		
                 <pattern match="ITSE 1406-2502" />	
                 <pattern match="ITSW 1407-2511" />	
                 <pattern match="ITSE 1406-2427" />
@@ -181,19 +182,15 @@
                 <pattern match="ITMT 1345-2501" />
                 <pattern match="ITMT 1400-2501" />
                 <pattern match="ITMT 1440-2501" />
+				<pattern match="ITMT 1450-2700" /><!-- Added 11/19 -->
                 <pattern match="ITMT 1455-2501" />
+				<pattern match="ITMT 2400-2700" /><!-- Added 11/19 -->
                 <pattern match="ITMT 2450-2501" />
                 <pattern match="ITMT 1450-2250" />
-				<pattern match="ITMT 1450-2700" /><!-- Added 11/19 -->
-				<pattern match="ITMT 2400-2700" /><!-- Added 11/19 -->
-
             </topic>
             <topic name="Unix">
                 <pattern match="ITSC 1407-2501" />		
             </topic>
-            <topic name="Linux">
-                <pattern match="ITSC 1416-2501" /><!-- Added 11/19 - new subject added -->		
-            </topic>            
             <topic name="Cisco Academy">
                 <pattern match="ITCC 2408-2700" />
                 <pattern match="ITCC 2410-2700" />
