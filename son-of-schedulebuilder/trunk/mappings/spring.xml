@@ -1006,10 +1006,10 @@
                 <subtopic name="Guitar Ensemble">
 					<pattern match="MUEN 1134-2001" />
 					<pattern match="MUEN 1134-2501" />
+					<pattern match="MUEN 1134-2700" /><!-- added 11/19/09 -->
 	            </subtopic>
                 <subtopic name="Handbell Ensemble">
 					<pattern match="MUEN 1135-2500" />
-					<pattern match="MUEN 1134-2700" /><!-- added 11/19/09 -->
 					<pattern match="MUEN 1135-2250" />
 	            </subtopic>
                 <subtopic name="Keyboard Ensemble">
