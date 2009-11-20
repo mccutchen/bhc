@@ -152,6 +152,17 @@ class Spring10(Spring):
         'Spring': (date(2010, 1, 19), date(2010, 5, 13), 'Jan. 19-May 13'),
     }
 
+# Summer 2010 profiles
+# ===================================================================
+class Summer10(Summer):
+    input = ('data/2010-summer/bh2010s1.txt', 'data/2010-summer/bh2010s2.txt')
+    terms = {
+        'Summer I/May Term': (date(2010, 5, 1), date(2010, 5, 30), 'May 12-May 30'),
+        'Summer I':  (date(2010, 6, 1), date(2010, 7, 7), 'June 9-July 3'),
+        'Summer II':  (date(2010, 7, 7), date(2010, 8, 8), 'July 9-Aug. 7'),
+    }
+    saxon_params = {'schedule-title': 'Summer 2010 Credit'}
+
 # ===================================================================
 # The actual profile to use
 # ===================================================================
