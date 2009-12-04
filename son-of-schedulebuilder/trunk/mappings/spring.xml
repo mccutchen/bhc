@@ -480,6 +480,7 @@
                 <comments>NOTE: The following courses are available to anyone interested in the Nursing program. Acceptance into the program is NOT REQUIRED. For more information call 972-860-4754.</comments>
                 <pattern match="HPRS 1203-2001" />
                 <pattern match="RNSG 1108-2001" />
+                <pattern match="RNSG 1108-2250" /><!-- added 12/09 w/o instruction from nursing -->
                 <pattern match="RNSG 1211-2001" />
                 <pattern match="RNSG 1301-2001" />
             </topic>
