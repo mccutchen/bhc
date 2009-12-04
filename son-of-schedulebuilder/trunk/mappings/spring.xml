@@ -828,6 +828,7 @@
                 <pattern match="DANC 1246-2001" />
                 <pattern match="DANC 2245-2001" />
                 <pattern match="DANC 2246-2001" />
+                <pattern match="DANC 1245-2002" /><!-- Added 12/3 - no BCSA instruction -->
                 <pattern match="DANC 1245-2501" />
                 <pattern match="DANC 1246-2501" />
                 <pattern match="DANC 2245-2501" />
