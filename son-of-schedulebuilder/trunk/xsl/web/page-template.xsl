@@ -66,7 +66,7 @@
     </xsl:template>
 
     <xsl:template name="special-notice">
-        <p class="special-notice">For a live version of the Credit Course Schedule, use <a href="http://econnect.dcccd.edu" target="_blank">eConnect</a>.</p>
+        <p class="special-notice">For a live version of the Credit Course Schedule, use <a href="https://eConnect.dcccd.edu/eConnect/eConnect" target="_blank">eConnect</a>.</p>
     </xsl:template>
 
     <xsl:template name="preview-special-notice">
