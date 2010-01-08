@@ -447,7 +447,7 @@
 					<pattern match="EMSP 2430-2201" /> 
 					<pattern match="EMSP 2430-2202" /> 
 					<pattern match="EMSP 2261-2224" />   
-                    <pattern match="EMSP 2338-2223" />  <!-- added 20100108 -->
+                    <pattern match="EMSP 2338-2223" /> <!-- added 20100108 -->
                     <pattern match="EMSP 2338-2224" /> 
                     <pattern match="EMSP 2338-2201" /> 
 					<pattern match="EMSP 2338-2202" />
