@@ -477,6 +477,10 @@
             </topic>
         </subject>
         
+        <subject name="Journalism">
+            <comments>NOTE: Journalism 1307 surveys the field of mass communications. Journalism 2311 is a reporting course. Students may enroll in Journalism 2311 without having taken Journalism 1307. Room B212 is the student newspaper office.</comments>
+            <pattern match="JOUR" priority="0" unsorted="true" />
+        </subject>
         
         <!-- =======================================================================
             Nursing (Ann Cortez and Monica Wenthold as backup)
