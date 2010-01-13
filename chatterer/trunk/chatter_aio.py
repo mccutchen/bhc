@@ -169,8 +169,8 @@ def Format(line_in, replace = True):
         239: '&#239;',  # lowercase i (w/umlaut)
         242: '&#242;',  # lowercase o (accent: grave)
         243: '&#243;',  # lowercase o (accent: acute)
-        165: '&#209;',  # uppercase N (tilde)
-        164: '&#241;',  # lowercase n (tilde)
+        209: '&#209;',  # uppercase N (tilde)
+        241: '&#241;',  # lowercase n (tilde)
         }
     char_list = list(line_in.strip())
     out_list  = []
