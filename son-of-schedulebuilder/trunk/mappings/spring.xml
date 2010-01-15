@@ -456,11 +456,14 @@
                 <subtopic name="Paramedic Class #25">
 					<pattern match="EMSP 1438-2725" /> 
 					<pattern match="EMSP 1438-2701" /> 
-					<pattern match="EMSP 1356-2725" /> 
+                    <pattern match="EMSP 1438-2702" /> <!-- added 20100115 -->
+                    <pattern match="EMSP 1356-2725" /> 
 					<pattern match="EMSP 1356-2701" /> 
-					<pattern match="EMSP 2444-2725" /> 
-					<pattern match="EMSP 2444-2701" /> 
-					<pattern match="EMSP 2260-2725" /> 
+                    <pattern match="EMSP 1356-2702" /> <!-- added 20100115 -->
+                    <pattern match="EMSP 2444-2725" /> 
+					<pattern match="EMSP 2444-2701" />
+                    <pattern match="EMSP 2444-2702" /> <!-- added 20100115 -->
+					<pattern match="EMSP 2260-2725" />
                 </subtopic>				
                 <subtopic name="Paramedic Class #26, A Shift">
 					<pattern match="EMSP 1438-2226" /> 
@@ -542,7 +545,7 @@
             ======================================================================== -->
         <subject name="Radiologic Sciences">
             <comments>NOTE: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
-            <topic name="None">
+            <topic name="">
                 <comments>NOTE: The following courses are available to anyone interested in the Radiologic Sciences Program. Acceptance into the program is NOT REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
                 <pattern match="RADR 1201" />
             </topic>
@@ -559,6 +562,7 @@
                 <pattern match="RADR 1267" />
                 <pattern match="RADR 1202" />
                 <pattern match="RADR 2233" />
+                <pattern match="RADR 2266" /> <!-- added 20100115 -->
             </topic>
         </subject>
         
@@ -941,6 +945,7 @@
                 <pattern match="MUSI 1306-2006" />
 				<pattern match="MUSI 1306-2501" />
 				<pattern match="MUSI 1306-2427" />
+                <pattern match="MUSI 1306-2428" /> <!-- added 20100115 -->
                 <pattern match="MUSI 1306-2429" />
                 <pattern match="MUSI 1306-2434" />
                 <pattern match="MUSI 1306-2432" />
@@ -1114,6 +1119,7 @@
 					<pattern match="MUAP 2281-2002" />
 					<pattern match="MUAP 2281-2003" />
                     <pattern match="MUAP 2269-2002" /> <!-- added 20100108 -->
+                    <pattern match="MUAP 2229-2003" /> <!-- added 20100115 -->
                 </subtopic>
             </topic>
             <topic name="Senior Adult Music Classes">
