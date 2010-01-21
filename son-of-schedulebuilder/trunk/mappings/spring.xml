@@ -842,6 +842,7 @@
  -->
                 <pattern match="DANC 1245-2001" />
                 <pattern match="DANC 1246-2001" />
+                <pattern match="DANC 1246-2002" />
                 <pattern match="DANC 2245-2001" />
                 <pattern match="DANC 2246-2001" />
                 <pattern match="DANC 1245-2002" /><!-- Added 12/3 - no BCSA instruction -->
@@ -1005,6 +1006,9 @@
 				<pattern match="MUSI 1181-2502" />
 				<pattern match="MUSI 1182-2502" />
 				<pattern match="MUSI 1181-2503" />
+				<pattern match="MUSI 1182-2503" /><!-- added 1/21/10 -->
+				
+				
             </topic>
             <topic name="Guitar">
                 <pattern match="MUSI 1192-2001" />
