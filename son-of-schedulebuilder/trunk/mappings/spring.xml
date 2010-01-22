@@ -143,6 +143,7 @@
                 <pattern match="ITSC 2439-2426" />
                 <pattern match="ITSE 1350-2426" />
                 <pattern match="ITNW 1380-2300" />
+                <pattern match="ITNW 1356-2426" />  <!-- Added 2010-01-22 -->
             </topic>
             <topic name="Open Source Software">
                 <pattern match="ITNW 2454-2501" />	<!-- Added 12/7 per Bill -->
@@ -182,6 +183,7 @@
                 <comments>NOTE:  Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for a Microsoft Certified Systems Administrator - MCSA, a Microsoft Certified Systems Engineer  - MCSE, and a Microsoft Certified Database Administrator MCDBA. For additional information, call 972-860-4721.</comments>
                 <pattern match="ITMC 2437-2501" />
                 <pattern match="ITMT 1345-2501" />
+                <pattern match="ITMT 1345-2426" />
                 <pattern match="ITMT 1400-2501" />
                 <pattern match="ITMT 1440-2501" />
 				<pattern match="ITMT 1450-2700" /><!-- Added 11/19 -->
@@ -457,12 +459,15 @@
 					<pattern match="EMSP 1438-2725" /> 
 					<pattern match="EMSP 1438-2701" /> 
                     <pattern match="EMSP 1438-2702" /> <!-- added 20100115 -->
+					<pattern match="EMSP 1438-2703" /> <!-- added 20100122 -->
                     <pattern match="EMSP 1356-2725" /> 
 					<pattern match="EMSP 1356-2701" /> 
                     <pattern match="EMSP 1356-2702" /> <!-- added 20100115 -->
+					<pattern match="EMSP 1356-2703" /> <!-- added 20100122 -->
                     <pattern match="EMSP 2444-2725" /> 
 					<pattern match="EMSP 2444-2701" />
                     <pattern match="EMSP 2444-2702" /> <!-- added 20100115 -->
+					<pattern match="EMSP 2444-2703" /> <!-- added 20100122 -->
 					<pattern match="EMSP 2260-2725" />
                 </subtopic>				
                 <subtopic name="Paramedic Class #26, A Shift">
