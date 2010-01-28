@@ -406,10 +406,39 @@
     		<topic name="Programming">
     			<pattern match="BCIS 2431-2501" />	
     		</topic>	
-    	</subject>  
+    	</subject>
 
-    	
-    	<!-- =======================================================================
+      <!-- Medical Front Office (Sharon Burton)
+            ======================================================================== -->
+      <subject name="Medical Office Management / Administration">
+        <topic name="Medical Front Office Assistant Marketable Skills Achievement Award - First Semester">
+          <comments>Note: This is an awesome award. Take the following courses to build a foundation of entry-level medical office skills.</comments>
+          <subtopic name="Computer Fundamentals">
+            <pattern match="POFI 1104-2426" />
+          </subtopic>
+          <subtopic name="Keyboarding, Beginning">
+            <pattern match="POFT 1127-2301" />
+            <pattern match="POFT 1127-2427" />
+          </subtopic>
+          <subtopic name="Medical Terminology">
+            <pattern match="MDCA 1313-2251" />
+            <pattern match="MDCA 1313-2426" />
+          </subtopic>
+          <subtopic name="Medical Office Procedures">
+            <pattern match="POFM 1309-2426" />
+          </subtopic>
+        </topic>
+        <topic name="Medical Front Office Assistant Certificate - Second Semester">
+          <comments>Note: This is an awesome certificate. Your office manager really wants you to have this certificate.</comments>
+          <subtopic name="Business English">
+            <pattern match="POFT 1301-2301" />
+            <pattern match="POFT 1301-2427" />
+          </subtopic>
+        </topic>
+      </subject>
+
+
+      <!-- =======================================================================
     		School of the Arts (Fran Rhodes & Jill Williams)
     		======================================================================== -->
 		
