@@ -458,18 +458,15 @@
                 <pattern match="ARTS 2312-2501" />
             </topic>
 
-          <topic name="Ceramics Workshop">
-            <pattern match="ARTS 2346-2225" />
-            <pattern match="ARTS 2347-2225" />
-            <pattern match="ARTS 2311-2228" />
-            <pattern match="ARTS 2312-2228" />
-          </topic>
-
           <topic name="Ceramics">
                 <pattern match="ARTS 2346-2001" />
                 <pattern match="ARTS 2347-2001" />
+                <pattern match="ARTS 2346-2225" />
+                <pattern match="ARTS 2347-2225" />
                 <pattern match="ARTS 2311-2001" />
                 <pattern match="ARTS 2312-2001" />
+                <pattern match="ARTS 2311-2228" />
+                <pattern match="ARTS 2312-2228" />
                 <pattern match="ARTS 2346-2701" />
                 <pattern match="ARTS 2347-2701" />
                 <pattern match="ARTS 2311-2702" />
@@ -527,7 +524,7 @@
                 <pattern match="ARTS 2312-2230" />
             </topic>
 
-          <topic name="Printmaking Workshop">
+          <topic name="Printmaking">
                 <pattern match="ARTS 2333-2225" />
                 <pattern match="ARTS 2334-2225" />
                 <pattern match="ARTS 2311-2226" />
