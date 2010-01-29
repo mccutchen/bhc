@@ -641,7 +641,7 @@
         <topic name="Theater Practicum">
           <pattern match="DRAM 1120-2737" />
           <pattern match="DRAM 1120-2738" />
-          <pattern match="DRAM 1220 2737" />
+          <pattern match="DRAM 1220-2737" />
           <pattern match="DRAM 1220-2738" />
         </topic>
       </subject>
