@@ -804,6 +804,7 @@
             <topic name="Tap">
                 <pattern match="DANC 1110-2001" />
                 <pattern match="DANC 1111-2001" />
+                <pattern match="DANC 1111-2201" />  <!-- added 1-29-10  -->
                 <pattern match="DANC 2110-2001" />
                 <pattern match="DANC 2111-2001" />
             </topic>
@@ -825,6 +826,7 @@
                 <pattern match="DANC 1248-2501" />
                 <pattern match="DANC 2247-2501" />
                 <pattern match="DANC 2248-2501" />
+                <pattern match="DANC 2247-2701" />    <!-- added 1-29-10  -->
             </topic>
             <topic name="Ballet">
                 <pattern match="DANC 1341-2001" />
@@ -836,6 +838,7 @@
                 <pattern match="DANC 1342-2501" />
                 <pattern match="DANC 2341-2501" />
                 <pattern match="DANC 2342-2501" />
+                <pattern match="DANC 1341-2701" />  <!-- added 1-29-10  -->
             </topic>
             <topic name="Ballet Technique">
                 <pattern match="DANC 2141-2001" />
@@ -1079,13 +1082,14 @@
 					<pattern match="MUAP 1105-2001" />
 					<pattern match="MUAP 1105-2002" />
 					<pattern match="MUAP 1109-2001" />
-                	<pattern match="MUAP 1109-2002" />
-					<pattern match="MUAP 1115-2001" />
+         	<pattern match="MUAP 1109-2002" />
+          <pattern match="MUAP 1113-2200" />      <!-- added 1/29/10 -->
+          <pattern match="MUAP 1115-2001" />
 					<pattern match="MUAP 1117-2001" />
 					<pattern match="MUAP 1121-2001" />
 					<pattern match="MUAP 1125-2001" />
 					<pattern match="MUAP 1125-2002" />
-                	<pattern match="MUAP 1129-2001" />
+          <pattern match="MUAP 1129-2001" />
 					<pattern match="MUAP 1129-2002" />
 					<pattern match="MUAP 1133-2001" />
 					<pattern match="MUAP 1137-2001" />
@@ -1097,7 +1101,7 @@
 					<pattern match="MUAP 1157-2001" />
 					<pattern match="MUAP 1161-2001" />
 					<pattern match="MUAP 1161-2002" />
-                	<pattern match="MUAP 1161-2003" />
+          <pattern match="MUAP 1161-2003" />
 					<pattern match="MUAP 1161-2004" />
 					<pattern match="MUAP 1169-2001" />
 					<pattern match="MUAP 1169-2002" />
@@ -1107,7 +1111,7 @@
 					<pattern match="MUAP 1181-2002" />
 					<pattern match="MUAP 1181-2003" />
 					<pattern match="MUAP 1181-2004" />
-                    <pattern match="MUAP 1169-2005" /> <!-- added 20100108 -->
+          <pattern match="MUAP 1169-2005" /> <!-- added 20100108 -->
                 </subtopic>
 
                 <subtopic name="Intermediate">
@@ -1115,9 +1119,10 @@
 					<pattern match="MUAP 2201-2001" />
 					<pattern match="MUAP 2201-2002" />
 					<pattern match="MUAP 2205-2001" />
-                	<pattern match="MUAP 2209-2001" />
+          <pattern match="MUAP 2209-2001" />
 					<pattern match="MUAP 2209-2002" />
-					<pattern match="MUAP 2215-2001" />
+          <pattern match="MUAP 2213-2200" />  <!-- added 01-29-10 -->
+          <pattern match="MUAP 2215-2001" />
 					<pattern match="MUAP 2217-2001" />
 					<pattern match="MUAP 2229-2001" />
 					<pattern match="MUAP 2229-2002" />
