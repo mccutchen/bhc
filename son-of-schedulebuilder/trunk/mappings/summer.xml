@@ -655,6 +655,7 @@
           <pattern match="MUSI 1306-2427" />
           <pattern match="MUSI 1306-2428" />
           <pattern match="MUSI 1306-2003" />
+          <pattern match="MUSI 1306-2004" />
           <pattern match="MUSI 1306-2431" />
           <pattern match="MUSI 1306-2432" />
           <pattern match="MUSI 1306-2433" />
