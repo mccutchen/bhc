@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <mappings>
     <mapping type="subject">
-        <!-- =======================================================================
+      <!-- =======================================================================
+            Chemistry Note change requested by Evvone Clark 2010-02-02
+        ======================================================================== -->
+      <subject name="Chemistry">
+        <pattern match="CHEM" priority="1" unsorted="true" />
+        <comments>
+          <p>NOTE:  Meeting course prerequisites is very important to your success in chemistry courses.  Before registering, check the Catalog online or call the division office for prerequisite information.</p>
+          <p>NOTE:  All chemistry labs will meet as scheduled the first week of class whether the lecture class has met or not.  It is MANDATORY to attend Safety Lab, which is the subject of the first lab meeting.</p>
+        </comments>
+      </subject>
+
+      <!-- =======================================================================
             World Languages (Joe Monroy)
         ======================================================================== -->
         <subject name="English for Speakers of Other Languages">
