@@ -120,7 +120,15 @@
           <pattern match="ITSW 1410-2426" />
           <pattern match="POFI 2440-2426" />
         </topic>
-    	</subject>
+
+        <!-- Senior Adult classes that will be yanked before this subject is processed -->
+        <topic name="Students 50+ Computer Classes">
+          <pattern match="ITSC 1191-2211" />
+          <pattern match="ITSC 1291-2201" />
+          <pattern match="ITSC 1291-2202" />
+          <pattern match="ITSC 1291-2203" />
+        </topic>
+      </subject>
 
       <subject name="Computer Science">
         <topic name="Computer Literacy">
