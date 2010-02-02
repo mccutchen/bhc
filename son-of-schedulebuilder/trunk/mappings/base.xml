@@ -108,7 +108,7 @@
             <pattern match="CHEM" priority="0" unsorted="true" />
             <comments>
             	<p>NOTE:  Meeting course prerequisites is very important to your success in chemistry courses.  Before registering, check the Catalog online or call the division office for prerequisite information.</p>
-            	<p>NOTE:  All chemistry labs will meet as scheduled the first week of class whether the lecture class has met or not.  It is MANDATORY to attend Safety Lab, which is offered only the first week at the scheduled lab time for your section.</p>
+            	<p>NOTE:  All chemistry labs will meet as scheduled the first week of class whether the lecture class has met or not.  It is MANDATORY to attend Safety Lab, which is the subject of the first lab meeting.</p>
             </comments>
         </subject>
         <subject name="Cherokee - Unsorted">
