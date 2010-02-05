@@ -247,7 +247,7 @@
                 <pattern match="ARTS 1301-2422" />
                 <pattern match="ARTS 1301-2423" />
                 <pattern match="ARTS 1301-2004" />
-				        <pattern match="ARTS 1301-2005" />
+				<pattern match="ARTS 1301-2005" />
                 <pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2424" />
                 <pattern match="ARTS 1301-2425" />
@@ -550,7 +550,7 @@
 			</topic>
 
       <topic name="Second Semester Program Students">
-				<pattern match="RSNG 1441-2201" />
+				<pattern match="RNSG 1441-2201" />
 				<pattern match="RNSG 1144-2201" />
 				<pattern match="RNSG 1144-2202" />
 				<pattern match="RNSG 1144-2203" />
@@ -676,6 +676,7 @@
 		 			<pattern match="EMSP 2434-2226" />
 		 			<pattern match="EMSP 2434-2201" />
 		 			<pattern match="EMSP 2434-2202" />
+		 			<pattern match="EMSP 2260-2226" />
 		 		</subtopic>
 		 	</topic>
      </subject>
