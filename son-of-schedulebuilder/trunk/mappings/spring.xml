@@ -800,9 +800,9 @@
             </topic>
             <topic name="Dance Practicum">
                 <pattern match="DANC 1351-2235" />
-                <pattern match="DANC 1351-2701" />
-                <pattern match="DANC 1352-2701" />
-                <pattern match="DANC 2352-2701" />
+                <pattern match="DANC 1351-2701" />              <!-- added per linda 2010-02-08  -->
+                <pattern match="DANC 1352-2701" />              <!-- added per linda 2010-02-08  -->
+                <pattern match="DANC 2352-2701" />              <!-- added per linda 2010-02-08  -->
             </topic>
             <topic name="Tap">
                 <pattern match="DANC 1110-2001" />
@@ -899,6 +899,7 @@
             <topic name="Rehearsal">
                 <subtopic name="First Play, Spring 2010">
                 	<pattern match="DRAM 1221-2735" />
+                  <pattern match="DRAM 1221-2737" />  <!-- added per linda 2010-02-08  -->
                 </subtopic>
                 <subtopic name="Second Play, Spring 2010">
                 	<pattern match="DRAM 1221-2736" />
