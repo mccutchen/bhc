@@ -192,7 +192,7 @@
         </subject>
         <subject name="Geology">
             <comments>
-   NOTE: GEOL 1401,1403, 1404 and 1445 are four-credit-hour Core Curriculum lab sciences. Students should bring textbook and lab manual to their first class meeting. For text information, visit the bookstore or call the geology lab at 972-860-4713. Several local field trips will be open to GEOL students.</comments>
+   NOTE: GEOL 1401, 1403, 1404 and 1445 are four-credit-hour Core Curriculum lab sciences. Students should bring textbook and lab manual to their first class meeting. For text information, visit the bookstore or call the geology lab at 972-860-4713. Several local field trips will be open to GEOL students.</comments>
             <pattern match="GEOL" priority="0" unsorted="true" />
         </subject>
         <subject name="Geospatial Technology">
