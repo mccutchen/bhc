@@ -239,29 +239,30 @@
 		
         <subject name="Art">
             <topic name="Art Appreciation">
-                <pattern match="ARTS 1301-2201" />
                 <pattern match="ARTS 1301-2700" />
                 <pattern match="ARTS 1301-2001" />
+                <pattern match="ARTS 1301-2502" />
                 <pattern match="ARTS 1301-2420" />
                 <pattern match="ARTS 1301-2421" />
                 <pattern match="ARTS 1301-2422" />
                 <pattern match="ARTS 1301-2423" />
                 <pattern match="ARTS 1301-2004" />
-				<pattern match="ARTS 1301-2005" />
-                <pattern match="ARTS 1301-2503" />
+        				<pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2424" />
                 <pattern match="ARTS 1301-2425" />
-                <pattern match="ARTS 1301-2426" />  
-                <pattern match="ARTS 1301-2427" />   
+                <pattern match="ARTS 1301-2426" />
+                <pattern match="ARTS 1301-2427" />  
             </topic>
 
           <topic name="Art History">
+                <pattern match="ARTS 1303-2201" />
                 <pattern match="ARTS 1303-2001" />
-                <pattern match="ARTS 1304-2001" />
                 <pattern match="ARTS 1304-2002" />
-            </topic>
-            
-            <topic name="Art and Computers">
+                <pattern match="ARTS 1303-2002" />
+                <pattern match="ARTS 1304-2001" />
+          </topic>
+
+          <topic name="Art and Computers">
                 <pattern match="ARTS 2313-2001" />
                 <pattern match="ARTS 2314-2001" />
                 <pattern match="ARTS 2311-2003" />
