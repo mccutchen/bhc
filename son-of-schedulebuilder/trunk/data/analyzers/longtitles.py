@@ -4,7 +4,7 @@ from schema import schema
 """
 Checks to see how many classes have titles longer
 than 27 characters, which can cause them to break
-the layout in Quark.
+the layout in the page layout program.
 """
 
 longtitles = {}
