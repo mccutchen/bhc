@@ -47,7 +47,7 @@ class Spring10(Spring):
 class Summer10(Summer):
     input = ('data/2010-summer/bh2010s1.txt', 'data/2010-summer/bh2010s2.txt')
     terms = {
-        'Summer I/May Term': (date(2010, 5, 1), date(2010, 5, 30), 'May 14-June 6'),
+        'Summer I/May Term': (date(2010, 5, 1), date(2010, 5, 30), 'May 17-June 3'),
         'Summer I':  (date(2010, 6, 1), date(2010, 7, 7), 'June 7-July 8'),
         'Summer II':  (date(2010, 7, 7), date(2010, 8, 8), 'July 13-Aug. 12'),
     }
