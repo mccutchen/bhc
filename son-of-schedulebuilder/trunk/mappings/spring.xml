@@ -803,6 +803,7 @@
                 <pattern match="DANC 1351-2701" />              <!-- added per linda 2010-02-08  -->
                 <pattern match="DANC 1352-2701" />              <!-- added per linda 2010-02-08  -->
                 <pattern match="DANC 2352-2701" />              <!-- added per linda 2010-02-08  -->
+                <pattern match="DANC 1352-2702" />              <!-- added per linda 2010-03-02  -->
             </topic>
             <topic name="Tap">
                 <pattern match="DANC 1110-2001" />
