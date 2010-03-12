@@ -239,6 +239,7 @@
                 <pattern match="ITSC 1415-2426" />
                 <pattern match="ITSW 1401-2426" />
                 <pattern match="ITSW 1401-2427" />
+                <pattern match="ITSW 1401-2428" />  <!-- added 3-12-10 -->
                 <pattern match="ITSW 1404-2426" />
                 <pattern match="ITSW 1407-2428" /><!-- Changed to 2428 from 2427 9/16 - Moved from open source at Pat's request 9/14 -->
 <!-- 
