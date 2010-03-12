@@ -904,6 +904,7 @@
                 </subtopic>
                 <subtopic name="Second Play, Spring 2010">
                 	<pattern match="DRAM 1221-2736" />
+                  <pattern match="DRAM 1221-2738" />
                 </subtopic>
             </topic>
         </subject>
