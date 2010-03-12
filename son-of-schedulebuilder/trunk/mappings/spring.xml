@@ -529,6 +529,9 @@
                 <pattern match="RNSG 1160-2262" />
                 <pattern match="RNSG 1160-2263" />
                 <pattern match="RNSG 1160-2264" />
+
+                <pattern match="RNSG 2160-2601" /> <!-- addeed 3-10 -->
+
                 <pattern match="RNSG 2462-2261" />
                 <pattern match="RNSG 2462-2262" />
                 <pattern match="RNSG 2462-2263" />
