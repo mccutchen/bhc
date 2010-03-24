@@ -945,8 +945,9 @@
             <pattern match="HUMA 1315-2429" />
             <pattern match="HUMA 1315-2430" />
             <pattern match="HUMA 1315-2431" />
+            <pattern match="HUMA 1315-2432" /> <!-- added 2010-03-24 per linda -->
 
-            <topic name="December Winter Flex Term">
+          <topic name="December Winter Flex Term">
             	<pattern match="HUMA 1315-2420" />
             </topic>
         </subject>
