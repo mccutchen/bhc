@@ -386,7 +386,7 @@
         </topic>
       </subject>
 
-
+      <!-- Added 2010-03-25  -->
       <subject name="Dance">
         <comments>
           <p>NOTE: For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For courses above the beginning level, placement counseling with the Dance Department is required. </p>
@@ -454,7 +454,50 @@
         </topic>
       </subject>
 
+      <!-- Added 2010-03-25  -->
+      <subject name="Drama">
+        <topic name="Introduction to Theatre">
+          <pattern match="DRAM 1310-2001" />
+          <pattern match="DRAM 1310-2002" />
+          <pattern match="DRAM 1310-2501" />
+        </topic>
+        <topic name="Film Appreciation">
+          <pattern match="DRAM 2366-2001" />
+          <pattern match="DRAM 2366-2002" />
+          <pattern match="DRAM 2366-2003" />
+          <pattern match="DRAM 2366-2004" />
+          <pattern match="DRAM 2366-2420" />
+          <pattern match="DRAM 2366-2421" />
+        </topic>
 
+        <topic name="Stagecraft">
+          <pattern match="DRAM 1330-2001" />
+          <pattern match="DRAM 2331-2001" />
+        </topic>
+        <topic name="Acting">
+          <pattern match="DRAM 1351-2001" />
+          <pattern match="DRAM 1351-2002" />
+          <pattern match="DRAM 1352-2001" />
+          <pattern match="DRAM 1352-2002" />
+          <pattern match="DRAM 2351-2001" />
+          <pattern match="DRAM 2351-2002" />
+          <pattern match="DRAM 2352-2001" />
+          <pattern match="DRAM 2352-2002" />
+          <pattern match="DRAM 1351-2501" />
+          <pattern match="DRAM 1352-2501" />
+          <pattern match="DRAM 2351-2501" />
+          <pattern match="DRAM 2352-2501" />
+        </topic>
+
+        <topic name="Rehearsal">
+          <subtopic name="First Play, Fall 2010">
+            <pattern match="DRAM 1221-2735" />
+            <pattern match="DRAM 1221-2736" />
+          </subtopic>
+        </topic>
+      </subject>
+      
+      
       <!-- =======================================================================
              World Languages (Joe Monroy)
              ======================================================================== -->
