@@ -217,28 +217,6 @@
       </subject>
 
 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-
-
-
-
-
-
-
       <!-- =======================================================================
              Visual Communications - This is where to add courses that share CIT prefixes
              ======================================================================== -->
@@ -601,6 +579,7 @@
         <topic name="Dance Appreciation">
           <pattern match="DANC 2303-2001" />
           <pattern match="DANC 2303-2501" />
+          <pattern match="DANC 2304-2421" />
         </topic>
         <topic name="Body Conditioning">
           <pattern match="DANC 1141-2001" />
