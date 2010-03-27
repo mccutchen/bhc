@@ -156,7 +156,9 @@
             <pattern match="DWRI" priority="0" unsorted="true" />
         </subject>
         <subject name="Drama - Unsorted">
+        	<comments>NOTE:  The designation for DRAM 2366 has been changed to COMM 2366.  Course content remains the same.</comments>
             <pattern match="DRAM" priority="0" unsorted="true" />
+            <pattern match="COMM 2366" priority="0" unsorted="true" /> <!-- added 03/26/2010 by SS -->
         </subject>
         <subject name="Economics">
             <comments>
@@ -243,6 +245,10 @@
         <subject name="Latin - Unsorted">
             <pattern match="LATI" priority="0" unsorted="true" />
         </subject>
+        <subject name="Learning Frameworks"> <!-- added 03/26/2010 by SS - note needs to be changed -->
+            <comments>NOTE: EDUC 1300 is a pre-Core Curriculum course.</comments>
+            <pattern match="EDUC 1300" priority="1" unsorted="true" /> <!-- Does designating this as priority 1 pull it out of Education and put it under Learning Frameworks instead? -->
+        </subject>        
         <subject name="Linguistics">
             <pattern match="LING" priority="0" unsorted="true" />
         </subject>
@@ -288,7 +294,9 @@
             <pattern match="PHIL" priority="0" unsorted="true" />
         </subject>
         <subject name="Photography">
+        	<comments>NOTE:  The designation for PHOT 1316 and PHOT 1318 has been changed to COMM 1316 and COMM 1318.  Course content remains the same.</comments>
             <pattern match="PHOT" priority="0" unsorted="true" />
+            <pattern match="COMM (1316|1318)" priority="0" unsorted="true" /> <!-- added 03/26/2010 by SS -->
         </subject>
         <subject name="Physical Education">
             <pattern match="PHED" priority="0" unsorted="true" />
