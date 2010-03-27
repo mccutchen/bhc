@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="us-ascii"?>
 <mappings>
     <!-- ***********************************************************************
-         Basic subject mappings
-
+         Basic subject mappings - 
+         
+         This is a list of subjects that appear in the course schedule that links them to the appropriate course prefixes. If a new prefix is added, you need to add the subject it belongs to here. If you add a new subject, you also need add it to the division mappings below.
+         You also add NOTES (comments/unlinked annotations) that apply to the subject every semester here.
          Any subject mapping whose name contains "Unsorted" is expected to be
          regrouped by more specific mappings.
          *********************************************************************** -->
