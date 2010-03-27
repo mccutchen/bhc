@@ -349,7 +349,9 @@
 
 
         <!-- ***********************************************************************
-             Custom subject regroupings
+             Custom subject regroupings 
+             
+             This list contains subjects that have sub-topics in the schedule.
              *********************************************************************** -->
         <subject name="Languages">
 <!-- 
@@ -641,7 +643,12 @@
         <subject name="Dance" ext="4122" room="T129" email="bhcDance@dcccd.edu" />
         <subject name="Humanities" email="bhcHumanities@dcccd.edu" />
         <subject name="Music" email="bhcMusic@dcccd.edu" />
+        
+        <!-- Social Science -->
+        <subject name="Learning Frameworks" room="K240" email="bhcSocialScience@dcccd.edu" /> <!-- Added 03/26/2010 by SS -->
     </mapping>
+    
+    
 
 
     <!-- ***********************************************************************
