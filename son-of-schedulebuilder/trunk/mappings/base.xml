@@ -238,8 +238,15 @@
         <subject name="Japanese - Unsorted">
             <pattern match="JAPN" priority="0" unsorted="true" />
         </subject>
-        <subject name="Journalism">
+        <subject name="Journalism"><!--  Added COMM designations 3-31-2010 - SS -->
+        	<comments>NOTE:  The designation JOUR has been changed to COMM.  Course content remains the same.</comments>
             <pattern match="JOUR" priority="0" unsorted="true" />
+			<pattern match="COMM 11(29|30)" priority="0" unsorted="true" />
+			<pattern match="COMM 13(07|35)" priority="0" unsorted="true"/>
+			<pattern match="COMM 21(29|30)" priority="0" unsorted="true"/>
+			<pattern match="COMM 22(09|10)" priority="0" unsorted="true"/>
+			<pattern match="COMM 23(0[235]|1[15]|2[7-9]|3[0129])" priority="0" unsorted="true"/>
+			<!-- Raw course list - COMM 1129, 1130, 1307, 1335, 2129, 2130, 2209, 2210, 2302, 2303, 2305, 2311, 2315, 2327, 2328, 2329, 2330, 2331, 2332, 2339 -->
         </subject>
         <subject name="Korean - Unsorted">
             <pattern match="KORE" priority="0" unsorted="true" />
@@ -312,9 +319,13 @@
         <subject name="Radiologic Sciences - Unsorted">
             <pattern match="RADR" priority="0" unsorted="true" />
         </subject>
-        <subject name="Religion">
+   		<subject name="Religion"> <!-- SS added specific courses 3-31-2010 - not sure about priority 1 - will check when courses are entered-->
+			<comments>NOTE:  The designation RELI has been changed to PHIL.  Course content remains the same.</comments>
             <pattern match="RELI" priority="0" unsorted="true" />
-        </subject>
+            <pattern match="PHIL 13(04|16|17) " priority="1" unsorted="true" />
+            <pattern match="PHIL 2321" priority="1" unsorted="true" />
+			<!-- Raw course list -  Phil 1304, 1316, 1317 and 2321 -->
+        </subject> 
         <subject name="Sociology">
             <pattern match="SOCI" priority="0" unsorted="true" />
         </subject>
