@@ -927,7 +927,115 @@
             <topic name="Level Four Intensive English Program">
                 <pattern match="ESOL 0046" />
             </topic>
-        </subject>
-		
+        </subject>		
+    </mapping>
+
+
+    <!-- ***********************************************************************
+         Core Curriculum, updated for Fall 2010.  Once the Spring and Summer
+         2010 schedules are done, these should be moved into the base mappings.
+         *********************************************************************** -->
+    <mapping type="core">
+        <component name="Critical Reading and Writing, Tier 1, Core Foundations">
+            <pattern match="ENGL 1301" />
+            <pattern match="HIST 1301" />
+        </component>
+
+        <component name="Speaking and Listening, Tier 1, Core Foundations">
+            <pattern match="SPCH 13(11|15|21)" />
+            <pattern match="ARAB (1311|1312|1411|1412)" />
+            <pattern match="CHIN (1311|1312|1411|1412)" />
+            <pattern match="FREN (1311|1312|1411|1412)" />
+            <pattern match="GERM (1311|1312|1411|1412)" />
+            <pattern match="GREE (1311|1312|1411|1412)" />
+            <pattern match="ITAL (1311|1312|1411|1412)" />
+            <pattern match="JAPN (1311|1312|1411|1412)" />
+            <pattern match="KORE (1311|1312|1411|1412)" />
+            <pattern match="LATI (1311|1312|1411|1412)" />
+            <pattern match="PORT (1311|1312|1411|1412)" />
+            <pattern match="RUSS (1311|1312|1411|1412)" />
+            <pattern match="SGNL (1301|1302)" />
+            <pattern match="SPAN (1311|1312|1411|1412)" />
+            <pattern match="VIET (1311|1312|1411|1412)" />		
+        </component>
+
+        <component name="Quantitative Reasoning, Tier 1, Core Foundations">
+            <pattern match="MATH 13(14|16|24|25|32|33|48|50|51)" />
+            <pattern match="MATH 14(14|25)" />
+            <pattern match="MATH 23(05|15|18|20|21|42)" />
+            <pattern match="MATH 24(12|14|18|20|21|42)" />
+            <pattern match="MATH 2513" />
+            <!-- raw list:
+            MATH 1314/1414, 1316, 1324, 1325/1425, 1332, 1333, 1348, 1350, 1351, 2321/2421, 2342/2442, 2412, 2513, 2414, 2315, 2318/2418, 2320/2420, 2305 -->
+        </component> 
+
+        <component name="Wellness and the Human Experience, Tier 1, Core Foundations">
+            <pattern match="PHED (1100|1101|1102|1104|1105|1106|1107|1108|1109|1110|1111|1112|1113|1114|1115|1116|1117|1118|1119|1120|1121|1122|1123|1124|1125|1126|1127|1128|1129|1164|1165|1251|1304|1306|1346)" />
+            <pattern match="BIOL (1322)" />
+            <pattern match="COMM (1316|1318)" />
+            <pattern match="BUSI (1307)" />
+            <pattern match="ECON (1303)" />
+            <pattern match="SOCI (2301|2340)" />
+            <pattern match="SPCH (2341)" />
+            <pattern match="ARTS (1311|1312|1313|1316|2313|2316|2326|2333|2336|2341|2346|2348|2356|2366)" />
+            <pattern match="DANC (1245|1341|1347|1351)" />
+            <pattern match="DRAM (1322|1330|1351)" />
+            <pattern match="MUEN (1122|1131|1132|1133|1134|1135|1136|1137|115111521153|2123|2141)" />
+            <pattern match="MUSI (1116|1181|1183|1192|1263)" />
+        </component>
+
+        <component name="Qualitative Reasoning, Literacy, and Research, Tier 2, Core Domains">
+            <pattern match="ENGL 1302" />
+        </component>
+
+        <component name="Self and Society, Tier 2, Core Domains">
+            <pattern match="ANTH (2302|2346|2351)" />
+            <pattern match="COMM (1307)" />
+            <pattern match="CRIJ (1301|1307)" />
+            <pattern match="ECON (2301|2302|2311)" />
+            <pattern match="GEOG (1302|1303|2312)" />
+            <pattern match="GOVT (2301|2304|2311)" />
+            <pattern match="HIST (1302|2301|2328|2381|2321|2322|2327)" />
+            <pattern match="PSYC (2301|2306|2314|2316)" />
+            <pattern match="SOCI (1301|1306|2306|2319|2336)" />
+            <pattern match="TECA (1303|1354)" />  
+        </component>    
+
+        <component name="Humanity, Creativity, and the Aesthetic Experience, Tier 2, Core Domains">
+            <pattern match="ARTS (1301|1303|1304)" />
+            <pattern match="DANC (2303)" />
+            <pattern match="DRAM (1310|2361|2366)" />
+            <pattern match="HUMA (1311|1315)" />
+            <pattern match="MUSI (1306|1308|1309|1310)" />
+            <pattern match="CUST (2370)" />
+            <pattern match="ENGL (2321|2322|2323|2326|2327|2328|2331|2332|2333|2342|2343|2351)" />
+            <pattern match="HUMA (1305|2319)" />
+            <pattern match="PHIL (1301|1304|1316|1317|2303|2306|2307|2316|2317|2318|2321)" />
+            <pattern match="ARAB (2311|2312)" />
+            <pattern match="CHIN (2311|2312)" />
+            <pattern match="FREN (2311|2312)" />
+            <pattern match="GERM (2311|2312)" />
+            <pattern match="GREE (2311|2312)" />
+            <pattern match="ITAL (2311|2312)" />
+            <pattern match="JAPN (2311|2312)" />
+            <pattern match="KORE (2311|2312)" />
+            <pattern match="LATI (2311|2312)" />
+            <pattern match="PORT (2311|2312)" />
+            <pattern match="RUSS (2311|2312)" />
+            <pattern match="SPAN (2311|2312|2321|2322|2323|2324)" />
+            <pattern match="VIET (2311|2312)" />
+        </component>        
+
+        <component name="Scientific Discovery and Sustainability, Tier 2, Core Domains">
+            <pattern match="ANTH (2401)" />
+            <pattern match="BIOL (1406|1407|1408|1409|1411|2401|2402|2406|2416|2420|2421)" />
+            <pattern match="CHEM (1405|1406|1407|1411|1412|2423|2425)" />
+            <pattern match="ENVR (14011402|GEOL|1401|1402|1403|1404|1405|1445|1447)" />
+            <pattern match="PHYS (1401|1402|1405|1407|1411|1412|1415|1417|2425|2426)" />       
+        </component>
+
+        <component name="Critical Issues in Local, National, and Global Contexts, Tier 3, Integrative Learning">
+            <pattern match="GOVT 2302" />
+        </component>
     </mapping>
 </mappings>
