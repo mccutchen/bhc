@@ -658,7 +658,7 @@
     <xsl:template name="make-core-list">
         <xsl:variable name="core-courses" select="descendant::course[@core-component and @core-component != '']" />
         <xsl:if test="$core-courses and not(ancestor::special-section)">
-            <xsl:variable name="core-component" select="lower-case((descendant::course/@core-component)[1])" />
+            <xsl:variable name="core-component" select="(descendant::course/@core-component)[1]" />
 
             <xsl:value-of select="fn:p-tag('Core List Header')" />
             <xsl:text>The following courses </xsl:text>
