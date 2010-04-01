@@ -491,6 +491,13 @@
          Division mappings
          *********************************************************************** -->
     <mapping type="division">
+        <!--
+            Maps courses into the appropriate divisions.  By default, the
+            patterns below are matched against the division field in the
+            Colleague input data.  The default mapping for a given course
+            can be overridden by specifying a different key="" attribute,
+            which picks a different field from the schema to match against.
+        --> 
         <division name="Business Studies">
             <pattern match="BUWF" priority="0" unsorted="true" />
             <pattern match="COAT" priority="0" unsorted="true" />
