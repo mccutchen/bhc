@@ -424,8 +424,31 @@
           <pattern match="ARTS 1303-2003" />
           <pattern match="ARTS 1304-2001" />
           <pattern match="ARTS 1303-2501" />
+          <pattern match="ARTS 1303-2420" />
         </topic>
-        
+
+        <topic name="Art and Computers">
+          <pattern match="ARTS 2313-2001" />
+          <pattern match="ARTS 2314-2001" />
+          <pattern match="ARTS 2348-2001" />
+          <pattern match="ARTS 2349-2001" />
+          <pattern match="ARTS 2311-2010" />
+          <pattern match="ARTS 2312-2010" />
+          <pattern match="ARTS 2313-2501" />
+          <pattern match="ARTS 2314-2501" />
+        </topic>
+
+        <topic name="Art Metals">
+          <pattern match="ARTS 2341-2001" />
+          <pattern match="ARTS 2342-2003" />
+          <pattern match="ARTS 2311-2019" />
+          <pattern match="ARTS 2312-2008" />
+          <pattern match="ARTS 2341-2501" />
+          <pattern match="ARTS 2342-2501" />
+          <pattern match="ARTS 2311-2510" />
+          <pattern match="ARTS 2312-2512" />
+        </topic>
+
         <topic name="Ceramics">
           <pattern match="ARTS 2346-2001" />
           <pattern match="ARTS 2347-2002" />
@@ -448,17 +471,6 @@
           <pattern match="ARTS 2312-2252" />
         </topic>
 
-        <topic name="Art and Computers">
-          <pattern match="ARTS 2313-2001" />
-          <pattern match="ARTS 2314-2001" />
-          <pattern match="ARTS 2348-2001" />
-          <pattern match="ARTS 2349-2001" />
-          <pattern match="ARTS 2311-2010" />
-          <pattern match="ARTS 2312-2010" />
-          <pattern match="ARTS 2313-2501" />
-          <pattern match="ARTS 2314-2501" />
-        </topic>
-
         <topic name="Design">
           <pattern match="ARTS 1311-2001" />
           <pattern match="ARTS 1311-2002" />
@@ -475,9 +487,11 @@
           <pattern match="ARTS 2311-2020" />
           <pattern match="ARTS 1317-2001" />
           <pattern match="ARTS 2311-2002" />
+          <pattern match="ARTS 2312-2020" />
           <pattern match="ARTS 2323-2001" />
           <pattern match="ARTS 2324-2001" />
           <pattern match="ARTS 2311-2008" />
+          <pattern match="ARTS 2312-2021" />
           <pattern match="ARTS 1316-2501" />
           <pattern match="ARTS 1317-2501" />
           <pattern match="ARTS 2311-2512" />
@@ -491,19 +505,10 @@
           <pattern match="ARTS 2312-2250" />
           <pattern match="ARTS 1316-2251" />
           <pattern match="ARTS 1317-2251" />
+          <pattern match="ARTS 2311-2253" />
+          <pattern match="ARTS 2312-2253" />
         </topic>
-
-        <topic name="Art Metals">
-          <pattern match="ARTS 2341-2001" />
-          <pattern match="ARTS 2342-2003" />
-          <pattern match="ARTS 2311-2019" />
-          <pattern match="ARTS 2312-2008" />
-          <pattern match="ARTS 2341-2501" />
-          <pattern match="ARTS 2342-2501" />
-          <pattern match="ARTS 2311-2510" />
-          <pattern match="ARTS 2312-2512" />
-        </topic>
-
+        
         <topic name="Painting">
           <pattern match="ARTS 2316-2001" />
           <pattern match="ARTS 2317-2001" />
@@ -541,7 +546,9 @@
           <pattern match="ARTS 2311-2003" />
           <pattern match="ARTS 2312-2003" />
           <pattern match="ARTS 2356-2501" />
+          <pattern match="ARTS 2357-2501" />
           <pattern match="ARTS 2311-2507" />
+          <pattern match="ARTS 2312-2513" />
         </topic>
 
         <topic name="Printmaking">
@@ -710,7 +717,9 @@
           <pattern match="MUSI 1116-2002" />
           <pattern match="MUSI 1117-2001" />
           <pattern match="MUSI 2116-2001" />
+          <pattern match="MUSI 2117-2300" />
         </topic>
+
         <topic name="Music Literature">
           <pattern match="MUSI 1308-2300" />
           <pattern match="MUSI 1309-2300" />
@@ -798,13 +807,12 @@
             <pattern match="MUEN 1136-2201" />
           </subtopic>
           <subtopic name="Vocal Jazz / Lab Band">
-            <pattern match="MUEN 2123-2001" />
             <pattern match="MUEN 2123-2002" />
             <pattern match="MUEN 1151-2501" />
+            <pattern match="MUEN 2123-2502" />
             <pattern match="MUEN 2123-2501" />
           </subtopic>
         </topic>
-
 
         <topic name="Music - Private Lessons">
           <subtopic name="Beginning">
@@ -817,10 +825,15 @@
             <pattern match="MUAP 1109-2002" />
             <pattern match="MUAP 1113-2001" />
             <pattern match="MUAP 1115-2001" />
+            <pattern match="MUAP 1117-2001" />
+            <pattern match="MUAP 1125-2001" />
+            <pattern match="MUAP 1125-2002" />
             <pattern match="MUAP 1129-2001" />
             <pattern match="MUAP 1133-2001" />
             <pattern match="MUAP 1137-2001" />
             <pattern match="MUAP 1137-2002" />
+            <pattern match="MUAP 1141-2001" />
+            <pattern match="MUAP 1145-2001" />
             <pattern match="MUAP 1153-2001" />
             <pattern match="MUAP 1157-2001" />
             <pattern match="MUAP 1161-2001" />
@@ -834,14 +847,16 @@
             <pattern match="MUAP 1181-2003" />
             <pattern match="MUAP 1181-2004" />
           </subtopic>
-
-          
+         
           <subtopic name="Intermediate">
             <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance. An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level. Please call the Music Office at 972-860-4563 for more information.</comments>
             <pattern match="MUAP 2201-2001" />
             <pattern match="MUAP 2205-2001" />
             <pattern match="MUAP 2209-2001" />
             <pattern match="MUAP 2209-2002" />
+            <pattern match="MUAP 2217-2001" />
+            <pattern match="MUAP 2225-2001" />
+            <pattern match="MUAP 2225-2002" />
             <pattern match="MUAP 2229-2001" />
             <pattern match="MUAP 2233-2001" />
             <pattern match="MUAP 2337-2001" />
@@ -853,11 +868,10 @@
             <pattern match="MUAP 2269-2001" />
             <pattern match="MUAP 2281-2001" />
             <pattern match="MUAP 2281-2002" />
+            <pattern match="MUAP 2281-2003" />
           </subtopic>
         </topic>
       </subject>
-
-
 
       <!-- =======================================================================
              World Languages (Joe Monroy)
