@@ -522,7 +522,8 @@
             <pattern match="SOSC" priority="0" unsorted="true" />
             <pattern match="GEOG" key="rubrik" priority="0" unsorted="true" />
             <pattern match="SSHS" key="rubrik" priority="0" unsorted="true" />
-        </division>
+			<pattern match="EDUC 1300" unsorted="true" />  <!--  Added by SS 4-1-10 to assign Learning Frameworks classes to Social Science.  -->
+		</division>
         <division name="World Languages">
             <pattern match="WLNG" priority="0" unsorted="true" />
         </division>
