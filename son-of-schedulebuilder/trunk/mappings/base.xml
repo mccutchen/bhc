@@ -322,7 +322,7 @@
    		<subject name="Religion"> <!-- SS added specific courses 3-31-2010 - not sure about priority 1 - will check when courses are entered-->
 			<comments>NOTE:  The designation RELI has been changed to PHIL.  Course content remains the same.</comments>
             <pattern match="RELI" priority="0" unsorted="true" />
-            <pattern match="PHIL 13(04|16|17) " priority="1" unsorted="true" />
+            <pattern match="PHIL 13(04|16|17)" priority="1" unsorted="true" />
             <pattern match="PHIL 2321" priority="1" unsorted="true" />
 			<!-- Raw course list -  Phil 1304, 1316, 1317 and 2321 -->
         </subject> 

@@ -7,7 +7,7 @@ schedule building program.
 names = dict()
 nameslices = [(94,124), (124,154), (154,184), (184,214), (214,244)]
 
-for line in file('../2006-fall/latest.txt'):
+for line in file('../2010-fall/bh2010fa.txt'):
     for start,stop in nameslices:
         name = line[start:stop].strip()
         if name:
