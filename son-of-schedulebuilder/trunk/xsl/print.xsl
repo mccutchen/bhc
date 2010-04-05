@@ -667,7 +667,7 @@
             <xsl:value-of select="fn:newline()" />
             <xsl:text>the </xsl:text>
             <xsl:if test="$core-component != 'other'"><xsl:value-of select="$core-component" /> component of the </xsl:if>
-            <xsl:text>Core Curriculum:</xsl:text>
+            <xsl:text>Core Curriculum.</xsl:text>
             <xsl:value-of select="fn:newline()" />
 
             <xsl:value-of select="fn:p-tag('Core List')" />

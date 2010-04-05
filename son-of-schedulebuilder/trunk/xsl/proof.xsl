@@ -516,7 +516,7 @@
                     <xsl:if test="$core-component = 'other'">in this subject</xsl:if>
                     are part of the
                     <xsl:if test="$core-component != 'other'"><xsl:value-of select="$core-component" /> component of the</xsl:if>
-                    Core Curriculum:
+                    Core Curriculum.
                 </h2>
                 <p>
                     <xsl:for-each-group select="$core-courses" group-by="@rubrik">
