@@ -708,6 +708,8 @@
           <pattern match="MUSI 1306-2429" />
           <pattern match="MUSI 1306-2430" />
           <pattern match="MUSI 1306-2431" />
+          <pattern match="MUSI 1306-2432" /> <!-- added 2010-04-06 jill -->
+
         </topic>        
         <topic name="Music Theory">
           <pattern match="MUSI 1311-2001" />
