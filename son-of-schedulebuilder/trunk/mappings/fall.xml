@@ -90,6 +90,7 @@
         </topic>
         <topic name="Cisco Academy Courses">
           <pattern match="ITCC 1401-2426" />
+          <pattern match="ITCC 1401-2501" />  <!-- added 2010-04-06 bill  -->
           <pattern match="ITCC 1404-2426" />
         </topic>
         <topic name="Information Security and Lan Courses">
@@ -156,6 +157,7 @@
           <pattern match="COSC 1300-2502" />
           <pattern match="COSC 1300-2503" />
           <pattern match="COSC 1401-2511" />
+          <pattern match="COSC 1401-2512" /> <!--  added 2010-04-06 bill  -->
           <pattern match="COSC 1401-2250" />
           <pattern match="COSC 1300-2300" />
           <pattern match="COSC 1300-2301" />
