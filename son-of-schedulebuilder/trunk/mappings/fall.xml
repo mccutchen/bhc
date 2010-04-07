@@ -605,7 +605,9 @@
         </topic>
         <topic name="Hip Hop">
           <pattern match="DANC 1222-2001" />
+          <pattern match="DANC 1222-2002" />	  
           <pattern match="DANC 1223-2001" />
+          <pattern match="DANC 1223-2002" />
           <pattern match="DANC 2222-2001" />
           <pattern match="DANC 2223-2001" />
           <pattern match="DANC 1222-2501" />
