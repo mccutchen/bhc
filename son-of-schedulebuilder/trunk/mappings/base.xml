@@ -117,7 +117,7 @@
             <pattern match="CHER" priority="0" unsorted="true" />
         </subject>
         <subject name="Child Development">
-            <comments>NOTE: All students enrolling in child development courses must submit to a criminal background check. For additional information call Johnny Castro at 972-860-4136.</comments>
+            <comments>NOTE: All students enrolling in child development courses must submit to a criminal background check.</comments>
             <pattern match="EDTC" priority="0" unsorted="true" />
             <pattern match="CDEC" priority="0" unsorted="true" />
             <pattern match="TECA" priority="0" unsorted="true" />
@@ -172,7 +172,7 @@
             <pattern match="ECON" priority="0" unsorted="true" />
         </subject>
         <subject name="Education">
-            <comments>NOTE: All students enrolling in child development courses must submit to a criminal background check. For additional information call Johnny Castro at 972-860-4136.</comments>
+            <comments>NOTE: All students enrolling in child development courses must submit to a criminal background check.</comments>
             <pattern match="EDUC" priority="0" unsorted="true" />
             <pattern match="EDTC" priority="0" unsorted="true" />
         </subject>
