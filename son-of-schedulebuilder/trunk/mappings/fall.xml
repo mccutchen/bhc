@@ -244,13 +244,22 @@
                 <pattern match="BMGT 2382-2502"/>
             </topic>
         </subject>
-        
-		
-		
-		
-		
-		
-        <!-- Medical Front Office (Sharon Burton)
+
+
+      <!-- =======================================================================
+             Biology Created by RI 2010-04-08
+             ======================================================================== -->
+      <subject name="Biology - Microbiology">
+        <topic name="Microbiology">
+          <pattern match="BIOL 2421-2001"/>
+        </topic>
+      </subject>
+
+
+
+
+
+      <!-- Medical Front Office (Sharon Burton)
             ======================================================================== -->
         <subject name="Medical Office Management / Administration">
             <topic name="Medical Front Office Assistant Marketable Skills Achievement Award - First Semester">
