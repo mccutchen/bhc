@@ -245,8 +245,70 @@
             </topic>
         </subject>
         
+		
+		
+		
+		
+		
+        <!-- Medical Front Office (Sharon Burton)
+            ======================================================================== -->
+        <subject name="Medical Office Management / Administration">
+            <topic name="Medical Front Office Assistant Marketable Skills Achievement Award - First Semester">
+                <comments>Note: Before you enroll, you must attend one of the following information sessions: April 27, 5:30-6:30 p.m.; June 29, 5:30-6:30 p.m.; July 20, 9-10 a.m. or 5:30-6:30 p.m.; Aug. 17, 9-10 a.m. or 5:30-6:30 p.m. in Bldg. M, Room M122.</comments>
+                <subtopic name="Computer Basics">
+                    <pattern match="POFI 1104-2201" />
+                    <pattern match="POFI 1104-2701" />
+                    <pattern match="POFI 1104-2426" />
+                </subtopic>
+                <subtopic name="Keyboarding, Beginning">
+                    <pattern match="POFT 1127-2201" />
+                    <pattern match="POFT 1127-2702" />
+                    <pattern match="POFT 1127-2427" />
+                </subtopic>
+                <subtopic name="Medical Terminology">
+                    <pattern match="MDCA 1313-2001" />
+                    <pattern match="MDCA 1313-2250" />
+                    <pattern match="MDCA 1313-2426" />
+                    <pattern match="MDCA 1313-2427" />
+                </subtopic>
+                <subtopic name="Medical Office Procedures">
+                    <pattern match="POFM 1309-2201" />
+                    <pattern match="POFM 1309-2501" />
+                </subtopic>              
+                <subtopic name="Medical Software Applications, Medisoft">
+                    <pattern match="POFM 1302-2201" />
+                    <pattern match="POFM 1302-2501" />
+                </subtopic>              
+                <subtopic name="Special Topics - Medical Office Simulation">
+                    <pattern match="POFM 1191-2201" />
+                    <pattern match="POFM 1191-2701" />
+                </subtopic>              
+            </topic>
+            <topic name="Medical Front Office Assistant Certificate - Second Semester">
+                <comments>Note: To enroll in the second semester, you must:1) have successfully completed the courses above with a minimum final grade of C in each course and 2) attend one of the following information sessions: April 27, 6:45-7:45 p.m.; June 29, 6:45-7:45 p.m.; July 20, 10:45-11:45 a.m. or 6:45-7:45 p.m.; Aug. 17, 10:45-11:45 a.m. or 6:45-7:45 p.m. in Bldg. M, Room M122.</comments>
+                <subtopic name="Medical Coding Basics">
+                    <pattern match="POFM 1300-2501" />
+                </subtopic>
+                <subtopic name="Medical Insurance">
+                    <pattern match="POFM 1327-2501" />
+                </subtopic>
+                <subtopic name="Business English">
+                    <pattern match="POFT 1301-2301" />
+                    <pattern match="POFT 1301-2781" />
+                    <pattern match="POFT 1301-2427" />
+                </subtopic>
+                <subtopic name="Medical Health Records">
+                    <pattern match="POFM 1370-2501" />
+                </subtopic>
+                <subtopic name="Medical Front Office Co-Op Work Experience">
+                    <comments>Students must be able to meet on four required meeting dates: Aug. 28, Sept. 25, Oct. 30 and Dec. 4.</comments>
+                    <pattern match="POFM 1280-2250" />
+                </subtopic>
+            </topic>
+        </subject>
 
-   		<!-- =======================================================================
+
+      <!-- =======================================================================
             Health and Human Services
         ======================================================================== -->
         
