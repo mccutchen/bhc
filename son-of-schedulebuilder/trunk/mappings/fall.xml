@@ -228,23 +228,16 @@
             <pattern match="ITSE 1301-2427" priority="2" />
         </subject>
         
-        <!-- =======================================================================
-             Management Program (Marisa Walsdorf & Mary Lou Avera)
-             ======================================================================== -->
-        <subject name="Management Program">
-        	<comments>NOTE: Complete two courses one night per week. Be mentored by full-time business faculty. Class format includes small-group discussions and networking with other employed professionals.   Students taking management co-op courses at Brookhaven College for the first time must be advised by their faculty member before they register. Call Mary Lou Avera, 972-860-4179, marylou@dcccd.edu; or Marisa Walsdorf, 972-860-4186, mWalsdorf@dcccd.edu.  Visit us online at www.BrookhavencCollege.edu/management</comments>
-            <topic name="none">
-                <!-- the topic name "none" doesn't show up in the schedule, it just provides
-				a way to separate these Management Program courses -->
-            </topic>
-            <topic name="none">
-                <pattern match="HRPO 2301-2501"/>
-                <pattern match="BMGT 1383-2501"/>
-                <pattern match="HRPO 2307-2502"/>
-                <pattern match="BMGT 2382-2502"/>
-            </topic>
-        </subject>
 
+      <!-- =======================================================================
+             Management Program (Mary Lou Avera)  2010-04-08 RI
+            ======================================================================== -->
+      <subject name="Management Program">
+        <comments>
+          NOTE: Complete two courses one night per week. Be mentored by full-time business faculty. Class format includes small-group discussions and networking with other employed professionals. Students taking management program courses at Brookhaven College for the first time must be advised by their faculty member before they register. Call Mary Lou Avera 972-860-4179, marylou@dcccd.edu. For more information: www.brookhavencollege.edu/management.</comments>
+        <pattern match="BMGT 2303-2501" />
+        <pattern match="BMGT 2383-2501" />
+      </subject>
 
       <!-- =======================================================================
              Biology Created by RI 2010-04-08
@@ -254,9 +247,6 @@
           <pattern match="BIOL 2421-2001"/>
         </topic>
       </subject>
-
-
-
 
 
       <!-- Medical Front Office (Sharon Burton)
