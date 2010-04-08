@@ -808,6 +808,7 @@
         </topic>
         <topic name="Digital">
           <pattern match="MUSI 1390-2001" />
+          <pattern match="MUSI 1391-2501" />
         </topic>
         <topic name="Piano for Music Majors">
           <pattern match="MUSI 1181-2002" />
