@@ -272,8 +272,9 @@
             <pattern match="FSHN" priority="0" unsorted="true" />
         </subject>
         <subject name="Mathematics">
-            <comments>NOTE:  REQUIRED for all MATH courses: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86.</comments>
-            <pattern match="MATH" priority="0" unsorted="true" />
+            <comments>NOTE: REQUIRED for all MATH courses: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86.</comments>
+            <comments>NOTE: Required for all MATH 1414 beginning Fall 2010:  This course will run using interactive software called MyMathLab.  Students must have access to a computer with Internet to complete the required work for this course.  Students must purchase a new textbook or a MyMathLab access code.  Contact your instructor (listed in eConnect) for more information.</comments>
+          <pattern match="MATH" priority="0" unsorted="true" />
             <pattern match="TECM" priority="0" unsorted="true" />
         </subject>
         <subject name="Music - Ensembles - Unsorted">
