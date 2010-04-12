@@ -18,8 +18,113 @@
    <!-- =======================================================================
             Business Studies Division
         ======================================================================== -->
+
+      <subject name="Business Office Systems and Support">
+        <topic name="Office Assistant Certificate">
+          <subtopic name="Introduction To Computers">
+            <pattern match="POFI 1301-2001" />
+            <pattern match="POFI 1301-2501" />
+            <pattern match="POFI 1301-2426" />
+          </subtopic>
+          <subtopic name="Business English">
+            <pattern match="POFT 1301-2300" />
+            <pattern match="POFT 1301-2780" />
+            <pattern match="POFT 1301-2426" />
+          </subtopic>
+          <subtopic name="Administrative Office Procedures">
+            <pattern match="POFT 1309-2300" />
+            <pattern match="POFT 1309-2780" />
+            <pattern match="POFT 1309-2426" />
+          </subtopic>          
+          <subtopic name="Interated Software - MS Office 2007">
+            <pattern match="POFI 1341-2001" />
+            <pattern match="POFI 1341-2501" />
+            <pattern match="POFI 1341-2426" />
+          </subtopic>
+          <subtopic name="Beginning Keyboarding and Document Formatting">
+            <pattern match="POFT 1329-2001" />
+            <pattern match="POFT 1329-2501" />
+            <pattern match="POFT 1329-2701" />
+            <pattern match="POFT 1329-2426" />
+            <pattern match="POFT 1329-2427" />
+          </subtopic>
+        </topic>        
+
+        <topic name="Software Application Specialist Certificate">
+          <subtopic name="Microsoft Word 2003/2007">
+            <pattern match="POFI 2301-2001" />
+            <pattern match="POFI 2301-2501" />
+            <pattern match="POFI 2301-2426" />
+            <pattern match="POFI 2301-2427" />
+            <pattern match="POFI 2301-2428" />
+          </subtopic>
+          <subtopic name="Excel 2007">
+            <pattern match="POFI 1349-2001" />
+            <pattern match="POFI 1349-2501" />
+            <pattern match="POFI 1349-2426" />
+          </subtopic>
+          <subtopic name="Microsoft Access 2007">
+            <pattern match="POFI 1441-2501" />
+            <pattern match="POFI 1441-2426" />
+          </subtopic>
+          <subtopic name="Microsoft Powerpoint 2007">
+            <pattern match="POFT 1328-2001" />
+            <pattern match="POFT 1328-2426" />
+          </subtopic>
+          <subtopic name="Microsoft Publisher 2007">
+            <pattern match="POFI 2331-2426" />
+          </subtopic>
+        </topic>
         
-        <!-- =======================================================================
+        <topic name="Credit Classes - Electives">
+          <subtopic name="Microsoft Advanced Word 2007 - May be substituted for POFI 2331-Software Specialist Application Certificate.">
+            <pattern match="POFI 2340-2426" />
+          </subtopic>
+          <subtopic name="Keyboarding Classes">
+            <pattern match="POFT 1127-2200" />
+            <pattern match="POFT 1127-2202" />
+            <pattern match="POFT 1127-2203" />
+            <pattern match="POFT 1127-2701" />
+            <pattern match="POFT 1127-2703" />
+            <pattern match="POFT 1127-2704" />
+            <pattern match="POFT 1127-2705" />
+            <pattern match="POFT 1127-2426" />
+            <pattern match="POFT 1127-2428" />
+          </subtopic>
+          <subtopic name="Records and Information Management - May be substituted for POFI 1301-Office Assistant Certificate.">
+            <pattern match="POFT 1319-2426" />
+          </subtopic>
+          <subtopic name="Business Math">
+            <pattern match="POFT 1321-2001" />
+            <pattern match="POFT 1321-2426" />
+            <pattern match="POFT 1321-2427" />
+          </subtopic>
+          <subtopic name="Business Math and Machine Applications - Required for Accounting Certificates">
+            <pattern match="POFT 1325-2001" />
+            <pattern match="POFT 1325-2501" />
+            <pattern match="POFT 1325-2426" />
+            <pattern match="POFT 1325-2427" />
+          </subtopic>
+          <subtopic name="Cooperative Education - Required for AAS Degree">
+            <pattern match="POFT 1382-2426" />
+          </subtopic>
+
+          <subtopic name="Speed Accuracy / Beginning Keyboarding">
+            <pattern match="POFT 2203-2426" />
+            <pattern match="POFT 2203-2427" />
+          </subtopic>
+          <subtopic name="Business Communication / Correspondence - Required for AAS Degree">
+            <pattern match="POFT 2312-2426" />
+          </subtopic>
+
+
+        </topic>
+      </subject>
+
+
+
+
+      <!-- =======================================================================
              CIT (Bill Hammerschlag)
              ======================================================================== -->
 
