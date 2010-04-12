@@ -376,11 +376,11 @@
                     <pattern match="MDCA 1313-2427" />
                 </subtopic>
                 <subtopic name="Medical Office Procedures">
-                    <pattern match="POFM 1309-2201" />
+                    <pattern match="POFM 1309-2001" />
                     <pattern match="POFM 1309-2501" />
                 </subtopic>              
                 <subtopic name="Medical Software Applications, Medisoft">
-                    <pattern match="POFM 1302-2201" />
+                    <pattern match="POFM 1302-2001" />
                     <pattern match="POFM 1302-2501" />
                 </subtopic>              
                 <subtopic name="Special Topics - Medical Office Simulation">
