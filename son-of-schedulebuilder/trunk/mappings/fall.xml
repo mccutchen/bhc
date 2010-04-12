@@ -336,12 +336,26 @@
 					<pattern match="EMSP 1501-2704" />
 					<pattern match="EMSP 1501-2701" />
 					<pattern match="EMSP 1501-2702" />
-    				<pattern match="EMSP 1501-2703" />
+    			<pattern match="EMSP 1501-2703" />
 					<pattern match="EMSP 1160-2704" />
 				</subtopic>
-			</topic>
-			
-			<topic name="Emergency Medical Services, RN">
+        <subtopic name="Emt-basic Class #58, A Shift">
+          <pattern match="EMSP 1501-2208" />
+          <pattern match="EMSP 1501-2201" />
+          <pattern match="EMSP 1501-2202" />
+          <pattern match="EMSP 1501-2203" />
+          <pattern match="EMSP 1160-2208" />
+        </subtopic>
+        <subtopic name="Emt-basic Class #59">
+          <pattern match="EMSP 1501-2709" />
+          <pattern match="EMSP 1501-2701" />
+          <pattern match="EMSP 1501-2702" />
+          <pattern match="EMSP 1501-2703" />
+          <pattern match="EMSP 1160-2709" />
+        </subtopic>
+      </topic>
+
+      <topic name="Emergency Medical Services, RN">
 				<pattern match="EMSP 2553" />
 				<pattern match="EMSP 2463" />
 			</topic>
@@ -382,16 +396,44 @@
 					<pattern match="EMSP 2444-2725" />
 					<pattern match="EMSP 2444-2701" />
 					<pattern match="EMSP 2444-2702" />
-				</subtopic>
-				<subtopic name="Mass Disaster Response, B Shift">
-					<pattern match="EMSP 1391-2208" />
+          <pattern match="EMSP 2338-2725" />
+          <pattern match="EMSP 2338-2701" />
+          <pattern match="EMSP 2338-2702" />
+          <pattern match="EMSP 2143-2725" />
+          <pattern match="EMSP 2143-2701" />
+          <pattern match="EMSP 2143-2702" />
+          <pattern match="EMSP 2463-2725" />
+        </subtopic>
+
+        <subtopic name="Paramedic Class #26, A Shift">
+          <pattern match="EMSP 1355-2226" />
+          <pattern match="EMSP 1355-2201" />
+          <pattern match="EMSP 2430-2226" />
+          <pattern match="EMSP 2430-2201" />
+          <pattern match="EMSP 2261-2226" />
+        </subtopic>
+
+        <subtopic name="Paramedic Class #27, C Shift">
+          <pattern match="EMSP 1356-2227" />
+          <pattern match="EMSP 1356-2201" />
+          <pattern match="EMSP 1356-2203" />
+          <pattern match="EMSP 2260-2727" />
+        </subtopic>
+
+        <subtopic name="RN to Paramedic Class #2">
+          <pattern match="EMSP 2553-2202" />
+          <pattern match="EMSP 2237-2202" />
+          <pattern match="EMSP 2463-2202" />
+        </subtopic>
+        <subtopic name="Mass Disaster Response">
+					<pattern match="EMSP 1391-2210" />
 					<pattern match="EMSP 1391-2201" />
 				</subtopic>
 			</topic>
         </subject>
+      
 
-        
- <!-- =======================================================================
+      <!-- =======================================================================
             Nursing (Monica Wenthold and Ann Cortez)
         ======================================================================== -->
 		<subject name="Nursing">
