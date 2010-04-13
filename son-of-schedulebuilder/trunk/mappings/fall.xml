@@ -563,7 +563,7 @@
 				<pattern match="RNSG 1144" /><!-- added 11/12/09 - guessed at placement so it's probably wrong -->
 			</topic>
 			<topic name="Third Semester Program Students">
-				<comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+				<comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is MANDATORY.</comments>
 				<pattern match="RNSG 2201" />
 				<pattern match="RNSG 2208" />
 				<pattern match="RNSG 2213" />
@@ -572,7 +572,7 @@
 				<pattern match="RNSG 2161" />
 			</topic>
 			<topic name="Fourth Semester Program Students">
-				<comments>NOTE: The following courses are for students in the fourth semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+				<comments>NOTE: The following courses are for students in the fourth semester of the Nursing program. Acceptance into this program is MANDATORY.</comments>
 				<pattern match="RNSG 1443" />
 				<pattern match="RNSG 2560" />
 			</topic>
