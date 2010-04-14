@@ -35,7 +35,7 @@
                and each subject, all stowed in appropriate directories.
         -->
     </xsl:param>
-    
+
     <!-- for CIT self-paced course mods -->
     <xsl:variable name="CIT_subjects" select="('Computer Information Technology',
                                                'Computer Science',
@@ -56,7 +56,7 @@
             <!-- generate a "full" proof if it's not destined for the H: drive -->
             <xsl:apply-templates select="term | term/division | term/special-section" mode="init" />
         </xsl:if>
-        
+
         <!-- even if this is for secretaries, output the LC list -->
         <xsl:if test="$for-secretaries = 'true'">
             <xsl:apply-templates select="term/special-section[@name = 'Learning Community - Interdisciplinary Studies']" mode="init" />
@@ -370,7 +370,7 @@
             <td class="faculty" colspan="2"><xsl:value-of select="@faculty-name" /></td>
         </tr>
     </xsl:template>
-    
+
     <!-- CIT self-paced mods -->
     <xsl:template match="//extra[@method = ('LAB') and @formatted-times = 'TBA' and ancestor::subject/@name = $CIT_subjects]/@formatted-times">
         <xsl:value-of select="'Self-Paced'" />
@@ -378,7 +378,7 @@
     <xsl:template match="//extra[@method = ('LAB') and @formatted-times = 'TBA' and ancestor::subject/@name = $CIT_subjects]/@days">
         <xsl:value-of select="' '" />
     </xsl:template>
-    
+
     <xsl:template match="extra">
         <tr class="extra-meeting">
             <td class="method"><xsl:value-of select="@method" /></td>
@@ -504,12 +504,12 @@
     </xsl:template>
 
 
-    <!-- the next two templates create the list of Core Curriculum courses
-         at the top of each subject -->
+    <!-- the next template creates the list of Core Curriculum courses at the
+         top of each subject -->
     <xsl:template name="make-core-list">
         <xsl:variable name="core-courses" select="descendant::course[@core-component and @core-component != '']" />
-        <xsl:if test="$core-courses and not(ancestor::special-section)">
-            <xsl:variable name="core-component" select="(descendant::course/@core-component)[1]" />
+        <xsl:for-each-group select="$core-courses" group-by="@core-component">
+            <xsl:variable name="core-component" select="current-grouping-key()" />
             <div class="core-list">
                 <h2>
                     The following courses
@@ -519,27 +519,17 @@
                     Core Curriculum.
                 </h2>
                 <p>
-                    <xsl:for-each-group select="$core-courses" group-by="@rubrik">
-                        <xsl:sort select="@rubrik" />
-
-                        <xsl:for-each-group select="current-group()" group-by="@number">
-                            <xsl:sort select="@number" />
-                            <xsl:value-of select="concat(@rubrik, ' ', @number)" />
-
-                            <xsl:if test="position() != last()">
-                                <xsl:value-of select="', '" />
-                            </xsl:if>
-                        </xsl:for-each-group>
-
+                    <xsl:for-each-group select="current-group()" group-by="concat(@rubrik, ' ', @number)">
+                        <xsl:sort select="current-grouping-key()" />
+                        <xsl:value-of select="current-grouping-key()" />
                         <xsl:if test="position() != last()">
                             <xsl:value-of select="', '" />
                         </xsl:if>
                     </xsl:for-each-group>
                 </p>
             </div>
-        </xsl:if>
+        </xsl:for-each-group>
     </xsl:template>
-
 
     <xsl:template name="page-template">
         <xsl:param name="page-title" />

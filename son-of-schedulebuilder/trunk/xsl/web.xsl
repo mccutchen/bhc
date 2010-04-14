@@ -22,7 +22,7 @@
     <xsl:variable name="CIT_subjects" select="('Computer Information Technology',
         'Computer Science',
         'Computer Studies - Business Computer Information Systems')" />
-    
+
 
     <!-- ==========================================================================
          Parameters:
@@ -311,7 +311,7 @@
         <xsl:variable name="course-rubric" select="../@rubrik" />
         <xsl:variable name="course-number" select="../@number" />
         <xsl:variable name="year" select="ancestor::term/@year" />
-        
+
         <xsl:variable name="term-abbr">
             <xsl:choose>
                 <xsl:when test="ancestor::term/@name = 'Fall'">FA</xsl:when>
@@ -324,7 +324,7 @@
                 </xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
-        
+
         <xsl:variable name="econnect" select="'https://econnect.dcccd.edu/eConnect/eConnect'" />
         <xsl:variable name="const" select="'CONSTITUENCY=WBST'" />
         <xsl:variable name="type" select="'type=P'" />
@@ -386,7 +386,7 @@
     <xsl:template match="//extra[@method = ('LAB') and @formatted-times = 'TBA' and ancestor::subject/@name = $CIT_subjects]/@days">
         <xsl:value-of select="'&#160;'" />
     </xsl:template>
-    
+
 
 <!-- ==========================================================================
      Comments
@@ -468,10 +468,12 @@
     </xsl:template>
 
 
+    <!-- this template creates the list of Core Curriculum courses at the top
+         of each subject -->
     <xsl:template name="make-core-list">
         <xsl:variable name="core-courses" select="descendant::course[@core-component and @core-component != '']" />
-        <xsl:if test="$core-courses">
-            <xsl:variable name="core-component" select="(descendant::course/@core-component)[1]" />
+        <xsl:for-each-group select="$core-courses" group-by="@core-component">
+            <xsl:variable name="core-component" select="current-grouping-key()" />
             <div class="core-list">
                 <p>
                     The following courses
@@ -481,27 +483,18 @@
                     <a href="/course-schedules/credit/core/">Core Curriculum</a>.
                     <br />
 
-                    <xsl:for-each-group select="$core-courses" group-by="@rubrik">
-                        <xsl:sort select="@rubrik" />
-
-                        <xsl:for-each-group select="current-group()" group-by="@number">
-                            <xsl:sort select="@number" />
-                            <a href="#{@rubrik}-{@number}-{class[1]/@section}">
-                                <xsl:value-of select="concat(@rubrik, ' ', @number)" />
-                            </a>
-
-                            <xsl:if test="position() != last()">
-                                <xsl:value-of select="', '" />
-                            </xsl:if>
-                        </xsl:for-each-group>
-
+                    <xsl:for-each-group select="current-group()" group-by="concat(@rubrik, ' ', @number)">
+                        <xsl:sort select="current-grouping-key()" />
+                        <a href="#{@rubrik}-{@number}-{class[1]/@section}">
+                            <xsl:value-of select="current-grouping-key()" />
+                        </a>
                         <xsl:if test="position() != last()">
                             <xsl:value-of select="', '" />
                         </xsl:if>
                     </xsl:for-each-group>
                 </p>
             </div>
-        </xsl:if>
+        </xsl:for-each-group>
     </xsl:template>
 
 
