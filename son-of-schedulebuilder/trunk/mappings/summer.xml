@@ -194,6 +194,7 @@
           <pattern match="BCIS 1405-2501" />
           <pattern match="BCIS 1405-2428" />
           <pattern match="BCIS 1405-2429" />
+          <pattern match="BCIS 1405-2430" />
           <pattern match="BCIS 1405-2309" />
         </topic>
 
