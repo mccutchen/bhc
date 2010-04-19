@@ -247,7 +247,8 @@
                 <pattern match="ARTS 1301-2422" />
                 <pattern match="ARTS 1301-2423" />
                 <pattern match="ARTS 1301-2004" />
-        				<pattern match="ARTS 1301-2503" />
+                <pattern match="ARTS 1301-2005" />
+                <pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2424" />
                 <pattern match="ARTS 1301-2425" />
                 <pattern match="ARTS 1301-2426" />
