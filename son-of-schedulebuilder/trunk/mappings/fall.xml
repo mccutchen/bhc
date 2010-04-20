@@ -425,8 +425,22 @@
     		<comments>NOTE: Journalism 1307 surveys the field of mass communications. Journalism 2311 is a reporting course. Students may enroll in Journalism 2311 without having taken Journalism 1307. Room B212 is the student newspaper office.</comments>
     		<pattern match="JOUR" priority="0" unsorted="true" />
     	</subject>
-    	
-    	<!-- =======================================================================
+
+
+
+      <subject name="Photography">
+        <comments>NOTE:  The designation PHOT has been changed to COMM. Course content remains the same.</comments>
+        <pattern match="PHOT" priority="0" unsorted="true" />
+        <pattern match="COMM 1317-2001" />
+        <pattern match="COMM 1317-2501" />
+        <pattern match="COMM 1319-2001" />
+        <pattern match="COMM 1319-2501" />
+        <pattern match="COMM 2325-2001" />
+        <pattern match="COMM 2326-2001" />
+      </subject>
+
+
+      <!-- =======================================================================
             EMS (Monica Wenthold)
         ======================================================================== -->
 		<subject name="Emergency Medical Services">
