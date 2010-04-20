@@ -1191,7 +1191,7 @@
             <pattern match="MUSI (1306|1308|1309|1310)" />
             <pattern match="CUST (2370)" />
             <pattern match="ENGL (2321|2322|2323|2326|2327|2328|2331|2332|2333|2342|2343|2351)" />
-            <pattern match="HUMA (1305|2319)" />
+            <pattern match="HUMA (1302|1305|2319)" />
             <pattern match="PHIL (1301|1304|1316|1317|2303|2306|2307|2316|2317|2318|2321)" />
             <pattern match="ARAB (2311|2312)" />
             <pattern match="CHIN (2311|2312)" />
