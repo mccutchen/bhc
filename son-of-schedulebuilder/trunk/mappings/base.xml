@@ -305,7 +305,8 @@
         <subject name="Photography">
         	<comments>NOTE:  The designation for PHOT 1316 and PHOT 1318 has been changed to COMM 1316 and COMM 1318.  Course content remains the same.</comments>
             <pattern match="PHOT" priority="0" unsorted="true" />
-            <pattern match="COMM (1316|1318)" priority="0" unsorted="true" /> <!-- added 03/26/2010 by SS -->
+            <pattern match="COMM 13(16-19)" priority="0" unsorted="true" /> <!-- added 03/26/2010 by SS -->
+            <pattern match="COMM 23(25-26)" priority="0" unsorted="true" /> <!-- added 03/26/2010 by SS -->
         </subject>
         <subject name="Physical Education">
             <pattern match="PHED" priority="0" unsorted="true" />
