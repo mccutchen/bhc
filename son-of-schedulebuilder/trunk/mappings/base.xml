@@ -305,9 +305,8 @@
         <subject name="Photography">
         	<comments>NOTE:  The designation PHOT has been changed to COMM. Course content remains the same.</comments>
             <pattern match="PHOT" priority="0" unsorted="true" />
-            <pattern match="COMM 13(16-19)" priority="0" unsorted="true" /> <!-- added 03/26/2010 by SS -->
-            <pattern match="COMM 23(25-26)" priority="0" unsorted="true" /> <!-- added 03/26/2010 by SS -->
-       
+            <pattern match="COMM 13(16|17|18|19)" priority="0" unsorted="true" /> <!-- updated 4/21/10 by SS -->
+            <pattern match="COMM 23(25|26)" priority="0" unsorted="true" /> <!-- updated 4/21/10 by SS -->
        </subject>
         <subject name="Physical Education">
             <pattern match="PHED" priority="0" unsorted="true" />
