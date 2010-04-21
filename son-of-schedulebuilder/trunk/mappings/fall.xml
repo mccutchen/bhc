@@ -182,7 +182,7 @@
         </topic>
         <topic name="Microsoft Academy Courses">
           <comments>
-            NOTE: Brookhaven College is a Microsoft IT Academy and offers courses and curricula preparing students to take and pass Microsoft certification exams and to fulfill the requirements for a Networking Administration and Support AAS as a Microsoft Certified IT Professional (MCITP) Server Administrator and a MCITP Enterprise Administrator. For additional information call 972-860-4721.</comments>
+            NOTE: Brookhaven College is a Microsoft IT Academy and offers courses and curricula preparing students to take and pass Microsoft certification exams and to fulfill the requirements for a Networking Administration and Support AAS as a Microsoft Certified IT Professional (MCITP) Server Administrator and a MCITP Enterprise Administrator.</comments>
           <pattern match="ITMT 1402-2701" />
           <pattern match="ITMT 1470-2701" />
           <pattern match="ITMT 1472-2701" />
