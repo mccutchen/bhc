@@ -473,7 +473,10 @@
         <topic name="Piano for Non Music Majors">
           <pattern match="MUSI 1181-2700" />
         </topic>
-        
+        <topic name="Voice">
+          <pattern match="MUSI 1183-2501" />
+        </topic>
+
         <topic name="Music Ensembles">
           <subtopic name="Handbell Ensemble">
             <pattern match="MUEN 1135-2700" />
