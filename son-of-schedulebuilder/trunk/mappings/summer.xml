@@ -475,6 +475,7 @@
         </topic>
         <topic name="Voice">
           <pattern match="MUSI 1183-2001" />
+          <pattern match="MUSI 1183-2002" />
         </topic>
 
         <topic name="Music Ensembles">
