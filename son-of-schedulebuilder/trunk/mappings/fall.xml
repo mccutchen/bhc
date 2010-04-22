@@ -349,16 +349,6 @@
         <pattern match="BMGT 2383-2501" />
       </subject>
 
-      <!-- =======================================================================
-             Biology Created by RI 2010-04-08
-             ======================================================================== -->
-      <subject name="Biology - Microbiology">
-        <topic name="Microbiology">
-          <pattern match="BIOL 2421-2001"/>
-        </topic>
-      </subject>
-
-
       <!-- Medical Front Office (Sharon Burton)
             ======================================================================== -->
         <subject name="Medical Office Management / Administration">

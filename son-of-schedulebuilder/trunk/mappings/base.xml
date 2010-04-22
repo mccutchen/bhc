@@ -479,6 +479,7 @@
             </topic>
             <topic name="Microbiology">
                 <pattern match="BIOL 2420" unsorted="true" />
+                <pattern match="BIOL 2421" unsorted="true" />
             </topic>
             <topic name="Botany">
                 <pattern match="BIOL 1411-2226" />
