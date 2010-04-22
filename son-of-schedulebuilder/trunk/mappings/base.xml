@@ -523,6 +523,7 @@
         </division>
         <division name="School of the Arts">
             <pattern match="FAPE" priority="0" unsorted="true" />
+            <pattern match="COMM 2366" priority="0" unsorted="true" /> <!-- added 03/26/2010 by SS -->
             
         </division>
         <division name="Social Science">
