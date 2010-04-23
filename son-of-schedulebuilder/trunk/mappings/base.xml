@@ -222,7 +222,7 @@
             <pattern match="HIST" priority="0" unsorted="true" />
         </subject>
         <subject name="Human Development">
-            <comments>NOTE: Beginning in the spring semester of 2008, if a first-time-in-college, FTIC, student's assessment test scores indicate a placement into two or more developmental studies disciplines, the student will be required to take either developmental reading or human development 0092, 1300 or 1310.</comments>
+            <comments>NOTE: Beginning in the spring semester of 2008, if a first-time-in-college, FTIC, student's assessment test scores indicate a placement into two or more developmental studies disciplines, the student will be required to take human development 0092.</comments>
             <pattern match="HDEV" priority="0" unsorted="true" />
         </subject>
         <subject name="Humanities">
