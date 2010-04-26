@@ -253,8 +253,8 @@
         <subject name="Latin - Unsorted">
             <pattern match="LATI" priority="0" unsorted="true" />
         </subject>
-        <subject name="Learning Frameworks"> <!-- added 03/26/2010 by SS - note needs to be changed -->
-            <comments>NOTE: EDUC 1300 is a pre-Core Curriculum course.</comments>
+        <subject name="Learning Frameworks"> <!-- added 03/26/2010 by SS - note changed 04-26-2010 Aly's intruction -->
+            <comments>NOTE: Learning Frameworks is a required pre-Core course for many new college students. Please see your academic advisor for details.</comments>
             <pattern match="EDUC 1300" priority="1" unsorted="true" /> <!-- Does designating this as priority 1 pull it out of Education and put it under Learning Frameworks instead? -->
         </subject>        
         <subject name="Linguistics">
@@ -673,7 +673,7 @@
         <subject name="Music" email="bhcMusic@dcccd.edu" />
         
         <!-- Social Science -->
-        <subject name="Learning Frameworks" room="K240" email="bhcSocialScience@dcccd.edu" /> <!-- Added 03/26/2010 by SS -->
+        <subject name="Learning Frameworks" room="K240" email="bhcFrameworks@dcccd.edu" /> <!-- Added 03/26/2010 by SS -->
     </mapping>
       
     <!-- ***********************************************************************
