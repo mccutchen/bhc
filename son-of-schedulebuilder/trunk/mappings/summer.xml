@@ -554,7 +554,9 @@
 				<comments>NOTE: The following courses are available to anyone interested in the Nursing Program.  Acceptance into the program is NOT required. For more information call 972-860-4754.</comments>
 				<pattern match="RNSG 1108-2201" />
 				<pattern match="HPRS 1203-2201" />
-			</topic>
+        <pattern match="RNSG 1301-2201" />
+
+      </topic>
 
       <topic name="Second Semester Program Students">
 				<pattern match="RNSG 1441-2201" />
@@ -581,14 +583,6 @@
         <pattern match="RNSG 2161-2604" />
 			</topic>
 		</subject>
-
-
-
-      
-
-
-
-
 
 
       <!--=======================================================================
