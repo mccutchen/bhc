@@ -1136,6 +1136,7 @@
             <pattern match="SPCH 13(11|15|21)" />
             <pattern match="ARAB (1311|1312|1411|1412)" />
             <pattern match="CHIN (1311|1312|1411|1412)" />
+            <pattern match="CZEC (1311|1312|1411|1412)" />
             <pattern match="FREN (1311|1312|1411|1412)" />
             <pattern match="GERM (1311|1312|1411|1412)" />
             <pattern match="GREE (1311|1312|1411|1412)" />
@@ -1171,8 +1172,8 @@
             <pattern match="ARTS (1311|1312|1313|1316|2313|2316|2326|2333|2336|2341|2346|2348|2356|2366)" />
             <pattern match="DANC (1245|1341|1347|1351)" />
             <pattern match="DRAM (1322|1330|1351)" />
-            <pattern match="MUEN (1122|1131|1132|1133|1134|1135|1136|1137|115111521153|2123|2141)" />
-            <pattern match="MUSI (1116|1181|1183|1192|1263)" />
+            <pattern match="MUEN (1122|1131|1132|1133|1134|1135|1136|1137|1151|1152|1153|2123|2141)" />
+            <pattern match="MUSI (1116|1181|1183|1192|1263|1300)" />
         </component>
 
         <component name="Qualitative Reasoning, Literacy, and Research, Tier 2, Core Domains">
@@ -1204,6 +1205,7 @@
             <pattern match="PHIL (1301|1304|1316|1317|2303|2306|2307|2316|2317|2318|2321)" />
             <pattern match="ARAB (2311|2312)" />
             <pattern match="CHIN (2311|2312)" />
+            <pattern match="CZEC (2311|2312)" />
             <pattern match="FREN (2311|2312)" />
             <pattern match="GERM (2311|2312)" />
             <pattern match="GREE (2311|2312)" />
@@ -1221,7 +1223,8 @@
             <pattern match="ANTH (2401)" />
             <pattern match="BIOL (1406|1407|1408|1409|1411|2401|2402|2406|2416|2420|2421)" />
             <pattern match="CHEM (1405|1406|1407|1411|1412|2423|2425)" />
-            <pattern match="ENVR (14011402|GEOL|1401|1402|1403|1404|1405|1445|1447)" />
+            <pattern match="ENVR (1401|1402)" />
+            <pattern match="GEOL (1401|1402|1403|1404|1405|1445|1447)" />
             <pattern match="PHYS (1401|1402|1405|1407|1411|1412|1415|1417|2425|2426)" />       
         </component>
 
