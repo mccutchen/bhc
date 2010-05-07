@@ -186,9 +186,10 @@
                 <pattern match="ITMT 1345-2426" />
                 <pattern match="ITMT 1400-2501" />
                 <pattern match="ITMT 1440-2501" />
-				<pattern match="ITMT 1450-2700" /><!-- Added 11/19 -->
+        				<pattern match="ITMT 1450-2700" /><!-- Added 11/19 -->
                 <pattern match="ITMT 1455-2501" />
-				<pattern match="ITMT 2400-2700" /><!-- Added 11/19 -->
+				        <pattern match="ITMT 2400-2300" />              <!-- Added 2010/05/07 -->
+                <pattern match="ITMT 2400-2700" />              <!--  Added 11/19 -->
                 <pattern match="ITMT 2450-2501" />
                 <pattern match="ITMT 1450-2250" />
             </topic>
