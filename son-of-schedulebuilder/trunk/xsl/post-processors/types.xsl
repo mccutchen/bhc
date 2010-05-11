@@ -44,14 +44,19 @@
                 <xsl:variable name="id" select="current-grouping-key()" as="xs:string" />
                 <!-- figure out which element in the $type-map this type maps to -->
                 <xsl:variable name="mapping" select="if ($type-map/type[@id = $id])
-													 then $type-map/type[@id = $id]
-													 else $type-map/type[@default = 'true']" />
+                                                     then $type-map/type[@id = $id]
+                                                     else $type-map/type[@default = 'true']" />
                 <!-- get this type's name out of the mapping -->
                 <xsl:variable name="name" select="$mapping/@name" as="xs:string" />
                 <!-- get this type's machine-name out of the mapping -->
                 <xsl:variable name="machine-name" select="$mapping/@machine-name" as="xs:string" />
                 <!-- and calculate its sortkey -->
                 <xsl:variable name="sortkey" select="index-of($type-map/type/@id, $id)[1]" />
+
+                <!-- If we got an unknown type name, report that fact -->
+                <xsl:if test="$name = $type-map/type[@default='true']/@name">
+                    <xsl:message>Unknown schedule type "<xsl:value-of select="$id"/>" for class<xsl:if test="count(current-group()) &gt; 1">es</xsl:if><xsl:text> </xsl:text><xsl:value-of select="current-group()/class/@synonym" separator=", "/></xsl:message>
+                </xsl:if>
 
                 <!-- add the <type> element for this group, and then copy over its contents -->
                 <type id="{$id}" name="{$name}" machine_name="{$machine-name}" sortkey="{if ($sortkey) then $sortkey else $default-sortkey}">
