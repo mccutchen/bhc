@@ -4,16 +4,28 @@
 #   program itself.
 
 To use:
- 1. put all of the input files (.txt) into the source/ directory (create it if it does not already exist)
- 2. run the chatter_aio_txt-xml.bat
-   a. enter date when prompted (or create issue-date.txt in the source/ directory and put the date on first line of the file). Date *must* be in 6-digit or 8-digit format: mmddyy or mmddyyyy.
-   b. if you get errors (and you probably will, since the formatting has to be fairly exact), check the chatterer_aio_readme.txt to verify the formatting
-   c. repeat steps a and b until you do not get errors
- 4. run the chatterer_aio_xml-html.bat to generate the html in the chatterer-output/ directory
- 5. copy the contents of the chatterer-output/ directory into the [dev server]:/chatter/[year] directory (ie for my current setup, that is B:/chatter/07/)
- 6. add in the pictures and any fancy formatting you like (note: <hr /> is disabled on the bhc web, so use a <div> with a border to acheive the same effect)
- 7. do not forget that there are two index.html files (one at [YY]/index.html and one at [YY]/[MMDD]/index.html) These two are NOT the same, but should look the same (the links are all relative, so their positions require different hyperlinks)
- 8. Once things look good, send it live (just the [YY]/index.html and [YY]/[MMDD]/). Don't forget to copy the images used in the chatter to [live server]:/images/bhc/chatter/[YY]/[MMDD]/.
+
+ 1. put all of the input files (.txt) into the "/source/" directory (create it if it does not already exist)
+
+ 2. Add "article.txt" into the /source/ directory.
+
+ 3. Create or modify issue-date.txt.
+   a. put the date on first line of the file. Date *must* be in 6-digit or 8-digit format: mmddyy or mmddyyyy.
+   b. if you get errors, check the chatterer_aio_readme.txt to verify the formatting
+
+ 4. run the chatter_aio_txt-xml.bat
+
+ 5. run the chatterer_aio_xml-html.bat to generate the html in the chatterer-output/ directory
+ 
+ 5.5 delete "<%@ Page Language="C#"%>" in the sidebar.ascx.
+
+ 6. copy the contents of the chatterer-output/ directory into the [dev server]:/chatter/[year] directory (ie for my current setup, that is B:/chatter/07/)
+
+ 7. add in the pictures and any fancy formatting you like (note: <hr /> is disabled on the bhc web, so use a <div> with a border to acheive the same effect)
+
+ 8. do not forget that there are two index.html files (one at [YY]/index.html and one at [YY]/[MMDD]/index.html) These two are NOT the same, but should look the same (the links are all relative, so their positions require different hyperlinks)
+
+ 9. Once things look good, send it live (just the [YY]/index.html and [YY]/[MMDD]/). Don't forget to copy the images used in the chatter to [live server]:/images/bhc/chatter/[YY]/[MMDD]/.
 
 
 Special notes:
