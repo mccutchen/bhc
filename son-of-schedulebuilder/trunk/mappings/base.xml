@@ -438,6 +438,7 @@
 
         <subject name="Astronomy">
             <pattern match="PHYS 141[12]" unsorted="true" />
+            <pattern match="PHYS 1111" unsorted="true" />
         </subject>
         <subject name="Physical Science">
             <pattern match="PHYS 1415" unsorted="true" />
