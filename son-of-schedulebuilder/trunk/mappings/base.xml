@@ -438,7 +438,7 @@
 
         <subject name="Astronomy">
             <pattern match="PHYS 141[12]" unsorted="true" />
-            <pattern match="PHYS 1111" unsorted="true" />
+            <pattern match="PHYS 1111" unsorted="true" /> <!-- Added by SS 5/14/10 b/c this appeared in the data. Seems a bit strange, so it may need to be deleted later if division deletes the course. -->
         </subject>
         <subject name="Physical Science">
             <pattern match="PHYS 1415" unsorted="true" />
