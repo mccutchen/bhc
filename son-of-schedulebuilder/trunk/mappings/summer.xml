@@ -446,8 +446,10 @@
 
       <subject name="Music">
         <topic name="Music Appreciation">
+          <pattern match="MUSI 1304-2200" />  <!--  added ri 2010-05-21  -->
           <pattern match="MUSI 1306-2001" />
           <pattern match="MUSI 1306-2002" />
+          <pattern match="MUSI 1306-2200" />  <!--  added ri 2010-05-21  -->
           <pattern match="MUSI 1306-2500" />
           <pattern match="MUSI 1306-2426" />
           <pattern match="MUSI 1306-2427" />
