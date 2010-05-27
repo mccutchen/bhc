@@ -497,6 +497,7 @@
           
           <subtopic name="Guitar Ensemble">
             <pattern match="MUEN 1134-2201" />
+            <pattern match="MUEN 1134-2202" />            <!-- added 2010-05-27 per Jill  -->
           </subtopic>
 
           <subtopic name="Keyboard Ensemble">
