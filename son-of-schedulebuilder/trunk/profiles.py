@@ -16,40 +16,14 @@ from baseprofiles import Spring, Summer, Fall, PROFILES, validate_profile
 
 
 # ===================================================================
-# Spring 2009 profiles
-# ===================================================================
-class Spring09(Spring):
-    input = 'data/2009-spring/BH2009SP.TXT'
-    terms = {
-        'Spring': (date(2009, 1, 20), date(2009, 5, 14), 'Jan. 20-May 14'),
-    }
-
-# ===================================================================
-# Fall 2009 profiles
-# ===================================================================
-class Fall09(Fall):
-    input = 'data/2009-fall/BH2009FA.TXT'
-    terms = {
-        'Fall': (date(2009, 8, 24), date(2009, 12, 10), 'Aug. 24-Dec. 10'),
-    }
-    
-# ===================================================================
-# Spring 2010 profiles - SS changed this from 1/20-5/14 to see if it would fix flex problem.
-# ===================================================================
-class Spring10(Spring):
-    input = 'data/2010-spring/BH2010SP.TXT'
-    terms = {
-        'Spring': (date(2010, 1, 19), date(2010, 5, 13), 'Jan. 19-May 13'),
-    }
-
 # Summer 2010 profiles
 # ===================================================================
 class Summer10(Summer):
     input = ('data/2010-summer/bh2010s1.txt', 'data/2010-summer/bh2010s2.txt')
     terms = {
-        'Summer I/May Term': (date(2010, 5, 1), date(2010, 5, 30), 'May 17-June 3'),
-        'Summer I':  (date(2010, 6, 1), date(2010, 7, 7), 'June 7-July 8'),
-        'Summer II':  (date(2010, 7, 7), date(2010, 8, 8), 'July 13-Aug. 12'),
+        'Summer I/May Term': (date(2010, 5, 17), date(2010, 6, 3), 'May 17-June 3'),
+        'Summer I':  (date(2010, 6, 7), date(2010, 7, 8), 'June 7-July 8'),
+        'Summer II':  (date(2010, 7, 13), date(2010, 8, 12), 'July 13-Aug. 12'),
     }
     saxon_params = {'schedule-title': 'Summer 2010 Credit'}
 
@@ -61,7 +35,17 @@ class Fall10(Fall):
     terms = {
         'Fall': (date(2010, 8, 23), date(2010, 12, 9), 'Aug. 23-Dec. 9'),
     }
-    
+
+
+# ===================================================================
+# Spring 2011 profiles
+# ===================================================================
+class Spring11(Spring):
+    input = 'data/2011-spring/BH2011SP.TXT'
+    terms = {
+        'Spring': (date(2011, 1, 18), date(2011, 5, 12), 'Jan. 18-May 12'),
+    }
+   
 # ===================================================================
 # The actual profile to use
 # ===================================================================
