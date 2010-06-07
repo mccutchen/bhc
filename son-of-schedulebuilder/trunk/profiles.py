@@ -21,9 +21,9 @@ from baseprofiles import Spring, Summer, Fall, PROFILES, validate_profile
 class Summer10(Summer):
     input = ('data/2010-summer/bh2010s1.txt', 'data/2010-summer/bh2010s2.txt')
     terms = {
-        'Summer I/May Term': (date(2010, 5, 17), date(2010, 6, 3), 'May 17-June 3'),
-        'Summer I':  (date(2010, 6, 7), date(2010, 7, 8), 'June 7-July 8'),
-        'Summer II':  (date(2010, 7, 13), date(2010, 8, 12), 'July 13-Aug. 12'),
+        'Summer I/May Term': (date(2010, 5, 1), date(2010, 5, 30), 'May 17-June 3'),
+        'Summer I':  (date(2010, 6, 1), date(2010, 7, 7), 'June 7-July 8'),
+        'Summer II':  (date(2010, 7, 7), date(2010, 8, 8), 'July 13-Aug. 12'),
     }
     saxon_params = {'schedule-title': 'Summer 2010 Credit'}
 
