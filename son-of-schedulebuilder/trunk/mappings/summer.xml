@@ -533,6 +533,7 @@
             <pattern match="MUAP 1117-2200" />
             <pattern match="MUAP 1125-2200" />
             <pattern match="MUAP 1133-2200" />
+            <pattern match="MUAP 1137-2200" />
             <pattern match="MUAP 1145-2200" />
             <pattern match="MUAP 1157-2200" />
             <pattern match="MUAP 1161-2200" />
