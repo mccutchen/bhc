@@ -411,6 +411,7 @@
 
         <topic name="Ballet">
           <pattern match="DANC 1342-2201" />
+          <pattern match="DANC 1342-2202" />  <!--  added per Linda 2010-06-09  -->
           <pattern match="DANC 2341-2201" />
           <pattern match="DANC 2342-2201" />
           <pattern match="DANC 1341-2701" />
