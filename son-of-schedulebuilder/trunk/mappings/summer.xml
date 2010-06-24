@@ -399,6 +399,7 @@
           <pattern match="DANC 1222-2201" />
           <pattern match="DANC 1223-2201" />
           <pattern match="DANC 1222-2701" />
+          <pattern match="DANC 1222-2702" /> <!--  added per Linda 2010-06-24  -->
           <pattern match="DANC 1223-2701" />
           <pattern match="DANC 2222-2701" />
           <pattern match="DANC 2223-2701" />
