@@ -133,7 +133,11 @@
              CIT (Bill Hammerschlag)
              ======================================================================== -->
 
-      <subject name="Computer Information Technology">
+      <subject name="Computer Information Technology"> <!-- SS Note 6/24/10: These are courses I've never seen before and I have no idea where they should go, so I'm sticking them here. -->
+        <topic name="Skills Enhancements Courses">
+          <pattern match="ITSC 1171" />
+        </topic>
+
         <topic name="Introduction to Computing Courses">
           <comments>NOTE: ITSC 1401 is a Technical/Occupational course required for certain Certificate and Associate Degree plans. It will not meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and is not for transfer to a four-year school.</comments>
           <pattern match="ITSC 1401-2021" />
@@ -259,6 +263,7 @@
           <pattern match="COSC 1300-2005" />
           <pattern match="COSC 1300-2007" />
           <pattern match="COSC 1300-2010" />
+          <pattern match="COSC 1300-2284" /> <!-- Added by SS 6/24/10 w/no input from BusStudies - this should probably be coded as XX since it's for ECHS only -->
           <pattern match="COSC 1401-2011" />
           <pattern match="COSC 1401-2012" />
           <pattern match="COSC 1401-2013" />
