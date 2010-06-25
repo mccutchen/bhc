@@ -446,9 +446,12 @@
         <topic name="Theater Practicum">
           <pattern match="DRAM 1120-2737" />
           <pattern match="DRAM 1120-2738" />
+          <pattern match="DRAM 1120-2739" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
+          <pattern match="DRAM 1120-2740" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
           <pattern match="DRAM 1220-2737" />
           <pattern match="DRAM 1220-2738" />
-        </topic>
+          <pattern match="DRAM 1220-2739" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
+          <pattern match="DRAM 1220-2740" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->        </topic>
       </subject>
 
       <subject name="Music">
