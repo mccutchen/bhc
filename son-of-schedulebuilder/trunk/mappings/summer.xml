@@ -392,7 +392,9 @@
         </topic>
 
         <topic name="Dance Performance">
-          <pattern match="DANC 1351-2735" />
+          <pattern match="DANC 1351" /> <!-- SS Note 6/24/10 - left this generic for now since I don't know the order they want. -->
+          <pattern match="DANC 2351" /> <!-- SS Note 6/24/10 - left this generic for now since I don't know the order they want. -->
+
         </topic>
 
         <topic name="Hip Hop">
@@ -408,9 +410,12 @@
         <topic name="Jazz">
           <pattern match="DANC 1247-2701" />
           <pattern match="DANC 1248-2701" />
+          <pattern match="DANC 1248-2702" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
+          
         </topic>
 
         <topic name="Ballet">
+          <pattern match="DANC 1341-2202" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
           <pattern match="DANC 1342-2201" />
           <pattern match="DANC 1342-2202" />  <!--  added per Linda 2010-06-09  -->
           <pattern match="DANC 2341-2201" />
