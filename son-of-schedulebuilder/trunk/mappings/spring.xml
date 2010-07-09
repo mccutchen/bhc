@@ -821,6 +821,7 @@
             </topic>
             <topic name="Hip Hop">
                 <pattern match="DANC 1222-2001" />
+                <pattern match="DANC 1222-2002" />  <!--  added ri 2010-07-09  -->
                 <pattern match="DANC 1223-2002" />
                 <pattern match="DANC 1223-2001" />
                 <pattern match="DANC 2222-2001" />
@@ -1104,17 +1105,21 @@
 					<pattern match="MUAP 1121-2001" />
 					<pattern match="MUAP 1125-2001" />
 					<pattern match="MUAP 1125-2002" />
+          <pattern match="MUAP 1125-2012" />      <!-- added RI 7/9/10 -->
           <pattern match="MUAP 1129-2001" />
 					<pattern match="MUAP 1129-2002" />
+          <pattern match="MUAP 1129-2013" />                  <!-- added RI 7/9/10 -->                  
 					<pattern match="MUAP 1133-2001" />
 					<pattern match="MUAP 1137-2001" />
 					<pattern match="MUAP 1137-2002" />
 					<pattern match="MUAP 1141-2001" />
 					<pattern match="MUAP 1145-2001" />					
 					<pattern match="MUAP 1145-2002" />
-					<pattern match="MUAP 1153-2001" />
+          <pattern match="MUAP 1149-2001" />                  <!-- added RI 7/9/10 -->
+          <pattern match="MUAP 1153-2001" />
 					<pattern match="MUAP 1157-2001" />
-					<pattern match="MUAP 1161-2001" />
+          <pattern match="MUAP 1157-2002" />                  <!-- added RI 7/9/10 -->
+          <pattern match="MUAP 1161-2001" />
 					<pattern match="MUAP 1161-2002" />
           <pattern match="MUAP 1161-2003" />
 					<pattern match="MUAP 1161-2004" />
@@ -1129,7 +1134,7 @@
           <pattern match="MUAP 1169-2005" /> <!-- added 20100108 -->
                 </subtopic>
 
-                <subtopic name="Intermediate">
+              <subtopic name="Intermediate">
                     <comments>Note:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
 					<pattern match="MUAP 2201-2001" />
 					<pattern match="MUAP 2201-2002" />
@@ -1139,12 +1144,17 @@
           <pattern match="MUAP 2213-2200" />  <!-- added 01-29-10 -->
           <pattern match="MUAP 2215-2001" />
 					<pattern match="MUAP 2217-2001" />
-					<pattern match="MUAP 2229-2001" />
+          <pattern match="MUAP 2221-2001" />                <!-- added RI 7/9/10 -->
+          <pattern match="MUAP 2225-2001" />                <!-- added RI 7/9/10 -->
+          <pattern match="MUAP 2225-2002" />                <!-- added RI 7/9/10 -->
+          <pattern match="MUAP 2229-2001" />
 					<pattern match="MUAP 2229-2002" />
-					<pattern match="MUAP 2233-2001" />
-                	<pattern match="MUAP 2237-2001" />
+          <pattern match="MUAP 2229-2004" />                <!-- added RI 7/9/10 -->
+          <pattern match="MUAP 2233-2001" />
+         	<pattern match="MUAP 2237-2001" />
 					<pattern match="MUAP 2245-2001" />
-                	<pattern match="MUAP 2253-2001" />
+          <pattern match="MUAP 2249-2001" />                <!-- added RI 7/9/10 -->
+          <pattern match="MUAP 2253-2001" />
 					<pattern match="MUAP 2257-2001" />
 					<pattern match="MUAP 2261-2001" />
 					<pattern match="MUAP 2261-2002" />
