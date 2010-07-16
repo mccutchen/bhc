@@ -265,6 +265,7 @@
           <pattern match="COSC 1300-2008" /> <!-- added RI 7/2/2010  -->
           <pattern match="COSC 1300-2010" />
           <pattern match="COSC 1300-2284" /> <!-- Added by SS 6/24/10 w/no input from BusStudies - this should probably be coded as XX since it's for ECHS only -->
+          <pattern match="COSC 1300-2287" /> <!-- Added by RI 7/16/10 w/no input from BusStudies -->
           <pattern match="COSC 1401-2011" />
           <pattern match="COSC 1401-2012" />
           <pattern match="COSC 1401-2013" />
@@ -1046,6 +1047,7 @@
             <pattern match="MUAP 2237-2002" />
             <pattern match="MUAP 2241-2001" />
             <pattern match="MUAP 2245-2001" />
+            <pattern match="MUAP 2253-2001" />  <!--  added RI 7/16/10 w/o input -->
             <pattern match="MUAP 2257-2001" />
             <pattern match="MUAP 2261-2001" />
             <pattern match="MUAP 2261-2002" />
