@@ -629,6 +629,7 @@
             <topic name="Art History">
                 <pattern match="ARTS 1303-2001" />
                 <pattern match="ARTS 1303-2002" />
+                <pattern match="ARTS 1303-2420" />  <!-- added RI 2010-07-30 self -->				
                 <pattern match="ARTS 1304-2001" />
                 <pattern match="ARTS 1304-2002" />
                 <pattern match="ARTS 1304-2501" />
@@ -989,17 +990,19 @@
                 <pattern match="MUSI 1306-2004" />
                 <pattern match="MUSI 1306-2005" />
                 <pattern match="MUSI 1306-2006" />
-        				<pattern match="MUSI 1306-2501" />
-				        <pattern match="MUSI 1306-2427" />
+		        <pattern match="MUSI 1306-2007" /><!-- added 11/12/09 -->
+				<pattern match="MUSI 1306-2008" /><!-- added ri 07/30/10 -->
+   				<pattern match="MUSI 1306-2501" />
+		        <pattern match="MUSI 1306-2427" />
                 <pattern match="MUSI 1306-2428" /> <!-- added 20100115 -->
                 <pattern match="MUSI 1306-2429" />
                 <pattern match="MUSI 1306-2434" />
                 <pattern match="MUSI 1306-2432" />
                 <pattern match="MUSI 1306-2433" />
                 <pattern match="MUSI 1306-2435" />
-				        <pattern match="MUSI 1306-2700" />
-				        <pattern match="MUSI 1306-2300" />
-				        <pattern match="MUSI 1306-2007" /><!-- added 11/12/09 -->
+		        <pattern match="MUSI 1306-2700" />
+		        <pattern match="MUSI 1306-2300" />
+
             </topic>
             <topic name="Music Theory">
                 <pattern match="MUSI 1311-2200" /><!-- added 1/19/10 -->
@@ -1058,6 +1061,7 @@
                 <pattern match="MUSI 1192-2001" />
                 <pattern match="MUSI 1192-2002" />
                 <pattern match="MUSI 1192-2200" />    <!-- added 2/11/10 Linda -->
+                <pattern match="MUSI 1193-2001" />	<!-- added 2010-07-30 RI -->		
             </topic>
             <topic name="Voice">
                 <pattern match="MUSI 1183-2001" />
@@ -1100,6 +1104,8 @@
                 <subtopic name="String Ensemble">
 					<pattern match="MUEN 1136-2001" />
 					<pattern match="MUEN 1136-2002" />
+					<pattern match="MUEN 1136-2200" />  <!-- added by RI 07/30/2010 -->
+					<pattern match="MUEN 1136-2201" />  <!-- added by RI 07/30/2010 -->
 	            </subtopic>
                 <subtopic name="Vocal Jazz / Lab Band">
 					<pattern match="MUEN 1151-2001" />
@@ -1119,17 +1125,18 @@
 					<pattern match="MUAP 1105-2001" />
 					<pattern match="MUAP 1105-2002" />
 					<pattern match="MUAP 1109-2001" />
-         	<pattern match="MUAP 1109-2002" />
-          <pattern match="MUAP 1113-2200" />      <!-- added 1/29/10 -->
-          <pattern match="MUAP 1115-2001" />
+		         	<pattern match="MUAP 1109-2002" />
+        			<pattern match="MUAP 1113-2001" />      <!-- added by RI 07/30/10 -->
+					<pattern match="MUAP 1113-2200" />      <!-- added 1/29/10 -->
+			        <pattern match="MUAP 1115-2001" />
 					<pattern match="MUAP 1117-2001" />
 					<pattern match="MUAP 1121-2001" />
 					<pattern match="MUAP 1125-2001" />
 					<pattern match="MUAP 1125-2002" />
-          <pattern match="MUAP 1125-2012" />      <!-- added RI 7/9/10 -->
-          <pattern match="MUAP 1129-2001" />
+			        <pattern match="MUAP 1125-2012" />      <!-- added RI 7/9/10 -->
+          			<pattern match="MUAP 1129-2001" />
 					<pattern match="MUAP 1129-2002" />
-          <pattern match="MUAP 1129-2013" />                  <!-- added RI 7/9/10 -->                  
+          			<pattern match="MUAP 1129-2013" />                  <!-- added RI 7/9/10 -->                  
 					<pattern match="MUAP 1133-2001" />
 					<pattern match="MUAP 1137-2001" />
 					<pattern match="MUAP 1137-2002" />
@@ -1162,7 +1169,8 @@
 					<pattern match="MUAP 2205-2001" />
           <pattern match="MUAP 2209-2001" />
 					<pattern match="MUAP 2209-2002" />
-          <pattern match="MUAP 2213-2200" />  <!-- added 01-29-10 -->
+			        <pattern match="MUAP 2213-2001" />  <!-- added RI 07-30-10 -->
+					<pattern match="MUAP 2213-2200" />  <!-- added 01-29-10 -->
           <pattern match="MUAP 2215-2001" />
 					<pattern match="MUAP 2217-2001" />
           <pattern match="MUAP 2221-2001" />                <!-- added RI 7/9/10 -->
