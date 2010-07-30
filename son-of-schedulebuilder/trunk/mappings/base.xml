@@ -316,6 +316,11 @@
         <subject name="Radiologic Sciences - Unsorted">
             <pattern match="RADR" priority="0" unsorted="true" />
         </subject>
+
+        <subject name="Rad Tech">
+            <pattern match="CTMT" priority="0" unsorted="true" />
+        </subject>
+
    		<subject name="Religion"> <!-- SS added specific courses 3-31-2010 - not sure about priority 1 - will check when courses are entered-->
 			<comments>NOTE:  The designation RELI has been changed to PHIL.  Course content remains the same.</comments>
             <pattern match="RELI" priority="0" unsorted="true" />
