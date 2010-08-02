@@ -891,6 +891,7 @@
         <topic name="Musicianship">
           <pattern match="MUSI 1116-2002" />
           <pattern match="MUSI 1117-2001" />
+          <pattern match="MUSI 1117-2200" /> <!-- Added per linda 2010-08-02 -->
           <pattern match="MUSI 2116-2001" />
           <pattern match="MUSI 2117-2300" />
         </topic>
