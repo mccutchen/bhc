@@ -1013,6 +1013,7 @@
             <pattern match="MUAP 1137-2001" />
             <pattern match="MUAP 1137-2002" />
             <pattern match="MUAP 1141-2001" />
+            <pattern match="MUAP 1141-2200" /> <!-- added per Linda 2010/08/05 -->
             <pattern match="MUAP 1145-2001" />
             <pattern match="MUAP 1153-2001" />
             <pattern match="MUAP 1157-2001" />
