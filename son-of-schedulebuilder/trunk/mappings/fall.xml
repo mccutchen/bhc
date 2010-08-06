@@ -260,9 +260,12 @@
           <pattern match="COSC 1300-2001" />
           <pattern match="COSC 1300-2002" />
           <pattern match="COSC 1300-2003" />
+          <pattern match="COSC 1300-2004" /> <!-- added RI 8/6/2010  -->
           <pattern match="COSC 1300-2005" />
+          <pattern match="COSC 1300-2006" />          <!-- added RI 8/6/2010  -->
           <pattern match="COSC 1300-2007" />
           <pattern match="COSC 1300-2008" /> <!-- added RI 7/2/2010  -->
+          <pattern match="COSC 1300-2009" />          <!-- added RI 8/6/2010  -->
           <pattern match="COSC 1300-2010" />
           <pattern match="COSC 1300-2284" /> <!-- Added by SS 6/24/10 w/no input from BusStudies - this should probably be coded as XX since it's for ECHS only -->
           <pattern match="COSC 1300-2287" /> <!-- Added by RI 7/16/10 w/no input from BusStudies -->
