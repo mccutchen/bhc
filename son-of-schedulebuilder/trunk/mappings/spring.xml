@@ -978,37 +978,35 @@
                 
         <subject name="Music">
             <topic name="">
-                <pattern match="MUSI 1263-2001" /> <!-- added 20100108 -->
+                <pattern match="MUSI 1263-2001" /> <!-- added 20100812 -->
             </topic>
             <topic name="Music Appreciation">
-                <pattern match="MUSI 1306-2001" />
                 <pattern match="MUSI 1306-2002" />
-                <pattern match="MUSI 1306-2003" />
                 <pattern match="MUSI 1306-2004" />
                 <pattern match="MUSI 1306-2005" />
                 <pattern match="MUSI 1306-2006" />
-		        <pattern match="MUSI 1306-2007" /><!-- added 11/12/09 -->
-				<pattern match="MUSI 1306-2008" /><!-- added ri 07/30/10 -->
-   				<pattern match="MUSI 1306-2501" />
-		        <pattern match="MUSI 1306-2427" />
-                <pattern match="MUSI 1306-2428" /> <!-- added 20100115 -->
+                <pattern match="MUSI 1306-2006" />
+                <pattern match="MUSI 1306-2003" />
+    		        <pattern match="MUSI 1306-2501" />
+		        		<pattern match="MUSI 1306-2502" />
+         				<pattern match="MUSI 1306-2700" />
+		            <pattern match="MUSI 1306-2300" />
+                <pattern match="MUSI 1306-2427" /> 
+                <pattern match="MUSI 1306-2428" />
                 <pattern match="MUSI 1306-2429" />
                 <pattern match="MUSI 1306-2434" />
                 <pattern match="MUSI 1306-2432" />
-                <pattern match="MUSI 1306-2433" />
-                <pattern match="MUSI 1306-2435" />
-		        <pattern match="MUSI 1306-2700" />
-		        <pattern match="MUSI 1306-2300" />
-
+                <pattern match="MUSI 1306 2433" />
+		            <pattern match="MUSI 1306 2435" />
             </topic>
             <topic name="Music Theory">
-                <pattern match="MUSI 1311-2200" /><!-- added 1/19/10 -->
+                <pattern match="MUSI 1311-2001" />
                 <pattern match="MUSI 1312-2001" />
-                <pattern match="MUSI 1312-2002" />
-                <pattern match="MUSI 2311-2200" /><!-- added 1/19/10 -->
-                <pattern match="MUSI 2312-2001" />
             </topic>
-            <topic name="Musicianship">
+          
+          
+
+          <topic name="Musicianship">
                 <pattern match="MUSI 1116-2200" /><!-- added 1/19/10 -->
                 <pattern match="MUSI 1117-2001" />
                 <pattern match="MUSI 1117-2002" />
@@ -1038,23 +1036,23 @@
             <topic name="Piano for Music Majors">
 				        <pattern match="MUSI 1181-2002" />
 				        <pattern match="MUSI 1182-2002" />
-				        <pattern match="MUSI 1182-2003" />
 				        <pattern match="MUSI 2181-2001" />
 				        <pattern match="MUSI 2182-2001" />
             </topic>
-            <topic name="Piano for Non Music Majors">
+             <topic name="Piano for Non Music Majors">
               	<pattern match="MUSI 1181-2006" />
 				        <pattern match="MUSI 1182-2006" />
 				        <pattern match="MUSI 1181-2001" />
+				        <pattern match="MUSI 1182-2503" />
 				        <pattern match="MUSI 1181-2501" />
 				        <pattern match="MUSI 1182-2501" />
 				        <pattern match="MUSI 1181-2502" />
-				        <pattern match="MUSI 1182-2502" />
-				        <pattern match="MUSI 1181-2503" />
-				        <pattern match="MUSI 1182-2503" /><!-- added 1/21/10 -->
-                <pattern match="MUSI 1181-2504" /> <!-- added 2010-07-23 RI -->
-            </topic>
-            <topic name="Guitar">
+	  		        <pattern match="MUSI 1181-2504" />
+              </topic>
+              <topic name="JAZZ/ROCK">
+                <pattern match="MUSI 1310-2001" />
+              </topic>
+          <topic name="Guitar">
                 <pattern match="MUSI 1192-2001" />
                 <pattern match="MUSI 1192-2002" />
                 <pattern match="MUSI 1192-2200" />    <!-- added 2/11/10 Linda -->
@@ -1072,12 +1070,11 @@
                 <subtopic name="Windsong Vocal Ensemble">
 					<pattern match="MUEN 1153-2250" />
                 </subtopic>
-                <subtopic name="Chamber Ensemble">
-					<pattern match="MUEN 1152-2501" />
-					<pattern match="MUEN 1152-2502" />
-					<pattern match="MUEN 1152-2750" />
-				</subtopic>
-                <subtopic name="Mariachi Band Ensemble">
+                 <subtopic name="Chamber Ensemble">
+					          <pattern match="MUEN 1152-2501" />
+					          <pattern match="MUEN 1152-2750" />
+      				</subtopic>
+              <subtopic name="Mariachi Band Ensemble">
                 </subtopic>                
                 <subtopic name="Flute Ensemble">
 					<pattern match="MUEN 1132-2001" />
@@ -1085,8 +1082,9 @@
                 <subtopic name="Guitar Ensemble">
 					<pattern match="MUEN 1134-2001" />
 					<pattern match="MUEN 1134-2501" />
-					<pattern match="MUEN 1134-2700" /><!-- added 11/19/09 -->
+					<pattern match="MUEN 1134-2700" />
 	            </subtopic>
+              
                 <subtopic name="Handbell Ensemble">
 					<pattern match="MUEN 1135-2500" />
 					<pattern match="MUEN 1135-2250" />
@@ -1095,14 +1093,15 @@
 					<pattern match="MUEN 1131-2001" />
 					<pattern match="MUEN 1131-2002" />
 				</subtopic>
-                <subtopic name="Percussion Ensemble"><!-- added 11/12/09 -->
-					<pattern match="MUEN 1135-2200" />
+              
+                <subtopic name="Percussion Ensemble - African Drumming">
+        					<pattern match="MUEN 1135-2200" />
                 </subtopic>				
                 <subtopic name="String Ensemble">
 					<pattern match="MUEN 1136-2001" />
 					<pattern match="MUEN 1136-2002" />
-					<pattern match="MUEN 1136-2200" />  <!-- added by RI 07/30/2010 -->
-					<pattern match="MUEN 1136-2201" />  <!-- added by RI 07/30/2010 -->
+					<pattern match="MUEN 1136-2200" />  
+					<pattern match="MUEN 1136-2201" />  
 	            </subtopic>
                 <subtopic name="Vocal Jazz / Lab Band">
 					<pattern match="MUEN 1151-2001" />
@@ -1116,7 +1115,7 @@
             </topic>
             <topic name="Music-private Lessons">
                 <subtopic name="Beginning">
-                    <comments>Note:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
+                    <comments>Note:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
 					<pattern match="MUAP 1101-2001" />
 					<pattern match="MUAP 1101-2002" />
 					<pattern match="MUAP 1105-2001" />
@@ -1160,7 +1159,7 @@
                 </subtopic>
 
               <subtopic name="Intermediate">
-                    <comments>Note:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4102 for more information.</comments>
+                    <comments>Note:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4563 for more information.</comments>
 					<pattern match="MUAP 2201-2001" />
 					<pattern match="MUAP 2201-2002" />
 					<pattern match="MUAP 2205-2001" />
