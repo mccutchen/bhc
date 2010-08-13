@@ -887,11 +887,13 @@
         </topic>        
         <topic name="Music Theory">
           <pattern match="MUSI 1311-2001" />
+          <pattern match="MUSI 1311-2002" /> <!-- Added per Linda 2010-08-13 -->
           <pattern match="MUSI 1312-2001" />
           <pattern match="MUSI 2311-2001" />
           <pattern match="MUSI 2312-2300" />
         </topic>
         <topic name="Musicianship">
+          <pattern match="MUSI 1116-2001" />          <!-- Added per Linda 2010-08-13 -->
           <pattern match="MUSI 1116-2002" />
           <pattern match="MUSI 1117-2001" />
           <pattern match="MUSI 1117-2200" /> <!-- Added per linda 2010-08-02 -->
