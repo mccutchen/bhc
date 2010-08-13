@@ -618,7 +618,7 @@
                 <pattern match="ARTS 1301-2006" />
                 <pattern match="ARTS 1301-2007" />
                 <pattern match="ARTS 1301-2008" />
-				<pattern match="ARTS 1301-2502" />
+			        	<pattern match="ARTS 1301-2502" />
                 <pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2250" />
                 <pattern match="ARTS 1301-2420" />
@@ -981,6 +981,7 @@
                 <pattern match="MUSI 1263-2001" /> <!-- added 20100812 -->
             </topic>
             <topic name="Music Appreciation">
+                <pattern match="MUSI 1306-2001" />              <!-- added 20100813 -->
                 <pattern match="MUSI 1306-2002" />
                 <pattern match="MUSI 1306-2004" />
                 <pattern match="MUSI 1306-2005" />
@@ -996,12 +997,14 @@
                 <pattern match="MUSI 1306-2429" />
                 <pattern match="MUSI 1306-2434" />
                 <pattern match="MUSI 1306-2432" />
-                <pattern match="MUSI 1306 2433" />
-		            <pattern match="MUSI 1306 2435" />
+                <pattern match="MUSI 1306-2433" />
+		            <pattern match="MUSI 1306-2435" />
             </topic>
             <topic name="Music Theory">
                 <pattern match="MUSI 1311-2001" />
                 <pattern match="MUSI 1312-2001" />
+                <pattern match="MUSI 2311-2001" />
+                <pattern match="MUSI 2312-2001" />
             </topic>
           
           
@@ -1121,18 +1124,19 @@
 					<pattern match="MUAP 1105-2001" />
 					<pattern match="MUAP 1105-2002" />
 					<pattern match="MUAP 1109-2001" />
-		         	<pattern match="MUAP 1109-2002" />
-        			<pattern match="MUAP 1113-2001" />      <!-- added by RI 07/30/10 -->
+         	<pattern match="MUAP 1109-2002" />
+     			<pattern match="MUAP 1113-2001" />      <!-- added by RI 07/30/10 -->
 					<pattern match="MUAP 1113-2200" />      <!-- added 1/29/10 -->
-			        <pattern match="MUAP 1115-2001" />
+	        <pattern match="MUAP 1115-2001" />
 					<pattern match="MUAP 1117-2001" />
 					<pattern match="MUAP 1121-2001" />
 					<pattern match="MUAP 1125-2001" />
 					<pattern match="MUAP 1125-2002" />
-			        <pattern match="MUAP 1125-2012" />      <!-- added RI 7/9/10 -->
-          			<pattern match="MUAP 1129-2001" />
+	        <pattern match="MUAP 1125-2012" />      <!-- added RI 7/9/10 -->
+     			<pattern match="MUAP 1129-2001" />
 					<pattern match="MUAP 1129-2002" />
-          			<pattern match="MUAP 1129-2013" />                  <!-- added RI 7/9/10 -->                  
+          <pattern match="MUAP 1129-2003" /> <!-- added RI Self 2010-08-13 -->
+          <pattern match="MUAP 1129-2013" />                  <!-- added RI 7/9/10 -->                  
 					<pattern match="MUAP 1133-2001" />
 					<pattern match="MUAP 1137-2001" />
 					<pattern match="MUAP 1137-2002" />
