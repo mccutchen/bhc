@@ -272,7 +272,8 @@
           <pattern match="COSC 1401-2011" />
           <pattern match="COSC 1401-2012" />
           <pattern match="COSC 1401-2013" />
-          <pattern match="COSC 1401-2014" />          
+          <pattern match="COSC 1401-2014" />
+          <pattern match="COSC 1401-2015" /> <!-- added RI self 2010-08-13 -->
           <pattern match="COSC 1300-2501" />
           <pattern match="COSC 1300-2502" />
           <pattern match="COSC 1300-2503" />
@@ -318,6 +319,7 @@
           <pattern match="BCIS 1405-2012" />
           <pattern match="BCIS 1405-2013" />
           <pattern match="BCIS 1405-2014" />
+          <pattern match="BCIS 1405-2015" /> <!-- added by RI self 2010-08-13 -->
           <pattern match="BCIS 1405-2511" />
           <pattern match="BCIS 1405-2512" />
           <pattern match="BCIS 1405-2250" />
