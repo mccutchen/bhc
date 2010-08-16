@@ -633,7 +633,8 @@
                 <pattern match="ARTS 1304-2001" />
                 <pattern match="ARTS 1304-2002" />
                 <pattern match="ARTS 1304-2501" />
-                <pattern match="ARTS 2373-2001" />          
+                <pattern match="ARTS 2373-2001" />
+                <pattern match="ARTS 2374-2001" />
             </topic>
             
             <topic name="Art and Computers">
