@@ -793,28 +793,28 @@
         </subject>
         
         <subject name="Cultural Studies">
-			<pattern match="CUST 2370-2001" />
-			<pattern match="CUST 2370-2002" />
-			<pattern match="CUST 2370-2003" />
-			<pattern match="CUST 2370-2004" /><!-- added 11/12/09 -->
-			<pattern match="CUST 2370-2501" />
-			<pattern match="CUST 2370-2502" />
-			<pattern match="CUST 2370-2426" />
-			<pattern match="CUST 2370-2431" />
-			<pattern match="CUST 2370-2427" />
-			<pattern match="CUST 2370-2428" />
-			<pattern match="CUST 2370-2429" />
-			<pattern match="CUST 2370-2430" />
-			<pattern match="CUST 2370-2432" />
-			<pattern match="CUST 2370-2440" />
-			<pattern match="CUST 2370-2441" />
-			<pattern match="CUST 2370-2250" /><!-- added 11/12/09 -->
-			<topic name="DECEMBER WINTER FLEX TERM">
-                <pattern match="CUST 2370-2420" />
-            </topic>
+			    <pattern match="CUST 2370-2001" />
+			    <pattern match="CUST 2370-2002" />
+			    <pattern match="CUST 2370-2003" />
+			    <pattern match="CUST 2370-2004" />
+			    <pattern match="CUST 2370-2501" />
+			    <pattern match="CUST 2370-2502" />
+			    <pattern match="CUST 2370-2426" />
+			    <pattern match="CUST 2370-2427" />
+			    <pattern match="CUST 2370-2428" />
+			    <pattern match="CUST 2370-2429" />
+			    <pattern match="CUST 2370-2430" />
+          <pattern match="CUST 2370-2431" />
+          <pattern match="CUST 2370-2432" />
+			    <pattern match="CUST 2370-2440" />
+			    <pattern match="CUST 2370-2441" />
+			    <pattern match="CUST 2370-2250" /><!-- added 11/12/09 -->
+    			<topic name="DECEMBER WINTER FLEX TERM">
+             <pattern match="CUST 2370-2420" />
+          </topic>
         </subject>
-                
-        <subject name="Dance">
+
+      <subject name="Dance">
             <comments>Note:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
             <topic name="Dance Appreciation">
                 <pattern match="DANC 2303-2001" />
@@ -927,11 +927,11 @@
                 <pattern match="DRAM 2352-2501" />
             </topic>
             <topic name="Rehearsal">
-                <subtopic name="First Play, Spring 2010">
+                <subtopic name="First Play, Spring 2011">
                 	<pattern match="DRAM 1221-2735" />
                   <pattern match="DRAM 1221-2737" />  <!-- added per linda 2010-02-08  -->
                 </subtopic>
-                <subtopic name="Second Play, Spring 2010">
+                <subtopic name="Second Play, Spring 2011">
                 	<pattern match="DRAM 1221-2736" />
                   <pattern match="DRAM 1221-2738" />
                 </subtopic>
