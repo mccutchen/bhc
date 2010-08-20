@@ -881,6 +881,7 @@
           <pattern match="MUSI 1306-2502" />
           <pattern match="MUSI 1306-2700" />
           <pattern match="MUSI 1306-2426" />
+          <pattern match="MUSI 1306-2427" />
           <pattern match="MUSI 1306-2428" />
           <pattern match="MUSI 1306-2429" />
           <pattern match="MUSI 1306-2430" />
@@ -994,6 +995,7 @@
           </subtopic>
           <subtopic name="Vocal Jazz / Lab Band">
             <pattern match="MUEN 2123-2002" />
+            <pattern match="MUEN 1151-2200" />  <!-- added by RI 2010-08-20 -->
             <pattern match="MUEN 1151-2501" />
             <pattern match="MUEN 2123-2502" />
             <pattern match="MUEN 2123-2501" />
