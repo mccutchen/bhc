@@ -977,6 +977,7 @@
           </subtopic>
           <subtopic name="Guitar Ensemble">
             <pattern match="MUEN 1134-2001" />
+            <pattern match="MUEN 1134-2200" />  <!-- Added per Linda 2010-08-24 -->
             <pattern match="MUEN 1134-2700" />
           </subtopic>
           <subtopic name="Handbell Ensemble">
