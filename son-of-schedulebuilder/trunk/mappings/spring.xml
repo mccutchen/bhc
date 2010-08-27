@@ -313,11 +313,13 @@
             <pattern match="COSC 1401-2014" />
             <pattern match="COSC 1401-2015" />
             <pattern match="COSC 1401-2016" />
+            <pattern match="COSC 1401-2250" />
             <pattern match="COSC 1300-2501" />
             <pattern match="COSC 1300-2502" />
             <pattern match="COSC 1300-2503" />
             <pattern match="COSC 1300-2504" />
             <pattern match="COSC 1401-2511" />
+            <pattern match="COSC 1401-2512" />
             <pattern match="COSC 1300-2421" />
             <pattern match="COSC 1300-2422" />
             <pattern match="COSC 1300-2423" />
@@ -337,8 +339,10 @@
             <pattern match="COSC 1436-2002" />
             <pattern match="COSC 1437-2001" />
             <pattern match="COSC 1309-2501" />
+            <pattern match="COSC 1415-2426" />
             <pattern match="COSC 1415-2501" />
             <pattern match="COSC 1430-2501" />
+            <pattern match="COSC 1436-2426" />
             <pattern match="COSC 1436-2501" />	
             <pattern match="COSC 1437-2501" />		  	
             <pattern match="COSC 1437-2502" />		
@@ -359,12 +363,14 @@
               <pattern match="BCIS 1405-2014" />
               <pattern match="BCIS 1405-2015" />
               <pattern match="BCIS 1405-2016" />
-              <pattern match="BCIS 1405-2511" />
+              <pattern match="BCIS 1405-2250" />
+              <pattern match="BCIS 1405-2300" />
               <pattern match="BCIS 1405-2421" />
               <pattern match="BCIS 1405-2422" />
               <pattern match="BCIS 1405-2423" />
               <pattern match="BCIS 1405-2424" />            
-              <pattern match="BCIS 1405-2300" />
+              <pattern match="BCIS 1405-2511" />
+              <pattern match="BCIS 1405-2512" />
             </topic>
             <topic name="Programming">
                 <pattern match="BCIS 1431-2501" />			
