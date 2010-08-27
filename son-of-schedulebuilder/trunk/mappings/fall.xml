@@ -267,6 +267,7 @@
           <pattern match="COSC 1300-2008" /> <!-- added RI 7/2/2010  -->
           <pattern match="COSC 1300-2009" />          <!-- added RI 8/6/2010  -->
           <pattern match="COSC 1300-2010" />
+          <pattern match="COSC 1300-2250" />           <!-- added RI self 2010-08-27 -->
           <pattern match="COSC 1300-2284" /> <!-- Added by SS 6/24/10 w/no input from BusStudies - this should probably be coded as XX since it's for ECHS only -->
           <pattern match="COSC 1300-2287" /> <!-- Added by RI 7/16/10 w/no input from BusStudies -->
           <pattern match="COSC 1401-2011" />
@@ -277,6 +278,7 @@
           <pattern match="COSC 1300-2501" />
           <pattern match="COSC 1300-2502" />
           <pattern match="COSC 1300-2503" />
+          <pattern match="COSC 1300-2504" /> <!-- added RI self 2010-08-27 -->
           <pattern match="COSC 1401-2511" />
           <pattern match="COSC 1401-2512" /> <!--  added 2010-04-06 bill  -->
           <pattern match="COSC 1401-2250" />
@@ -287,7 +289,8 @@
           <pattern match="COSC 1300-2421" />
           <pattern match="COSC 1300-2422" />
           <pattern match="COSC 1300-2423" />
-          <pattern match="COSC 1300-2424" />          
+          <pattern match="COSC 1300-2424" />
+          <pattern match="COSC 1300-2425" /> <!-- added RI self 2010-08-27 -->
           <pattern match="COSC 1401-2421" />
           <pattern match="COSC 1401-2422" />
           <pattern match="COSC 1401-2423" />
@@ -766,6 +769,7 @@
         </topic>
         <topic name="Body Conditioning">
           <pattern match="DANC 1141-2001" />
+          <pattern match="DANC 1141-2202" />            <!-- Added RI 2010-08-27 -->
           <pattern match="DANC 1142-2001" />
         </topic>
         <topic name="Tap">
@@ -791,6 +795,7 @@
         <topic name="Jazz">
           <pattern match="DANC 1247-2001" />
           <pattern match="DANC 1248-2001" />
+          <pattern match="DANC 1248-2202" />            <!-- Added RI 2010-08-27 -->
           <pattern match="DANC 1247-2501" />
           <pattern match="DANC 1248-2501" />
           <pattern match="DANC 2247-2501" />
@@ -799,6 +804,7 @@
 
         <topic name="Ballet">
           <pattern match="DANC 1341-2001" />
+          <pattern match="DANC 1341-2002" /> <!-- Added RI 2010-08-27 -->
           <pattern match="DANC 1342-2001" />
           <pattern match="DANC 2341-2001" />
           <pattern match="DANC 2342-2001" />
@@ -903,6 +909,7 @@
           <pattern match="MUSI 1117-2001" />
           <pattern match="MUSI 1117-2200" /> <!-- Added per linda 2010-08-02 -->
           <pattern match="MUSI 2116-2001" />
+          <pattern match="MUSI 2116-2200" /> <!-- added ri 2010-08-27 -->
           <pattern match="MUSI 2117-2300" />
         </topic>
 
