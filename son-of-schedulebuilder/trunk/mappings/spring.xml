@@ -121,11 +121,26 @@
                 <pattern match="ITSC 1291" />
             </topic>
             <topic name="Introduction to Computing">
-                <comments>NOTE:  ITSC 1401 is a career technical education course required for certain certificate and associate degree plans.  It will not meet the Brookhaven College Core Curriculum and/or Associate in Arts or Associate in Science requirement and is not for transfer to a four-year school.</comments>
+                <comments>NOTE: ITSC 1401 is a Technical/Occupational course required for certain certificate and associate degree plans. It is not for transfer to a four-year school.</comments>
                 <pattern match="ITSC 1401-2021" />
                 <pattern match="ITSC 1401-2421" />
                 <pattern match="ITSC 1401-2300" />
                 <pattern match="ITSC 1401-2301" />
+            </topic>
+            <topic name="Computing Skills Enhancement">
+                <comments>NOTE: These courses are designed for students who have not passed one or more sections of the Accuplacer CSP exam. Students enrolling in self-paced skills courses are required to attend orientation in Bldg. K, Room K103, during regular hours the first week of class.</comments>
+                <pattern match="ITSC 1171-2201" />
+                <pattern match="ITSC 1171-2202" />
+                <pattern match="ITSC 1171-2203" />
+                <pattern match="ITSC 1171-2204" />
+                <pattern match="ITSC 1171-2205" />
+                <pattern match="ITSC 1171-2206" />
+                <pattern match="ITSC 1171-2207" />
+                <pattern match="ITSC 1171-2208" />
+                <pattern match="ITSC 1171-2301" />
+                <pattern match="ITSC 1171-2302" />
+                <pattern match="ITSC 1171-2303" />
+                <pattern match="ITSC 1171-2304" />
             </topic>
             <topic name="Cit Core">
                 <pattern match="ITSC 1405-2001" />
@@ -185,7 +200,7 @@
 
 
           <topic name="Microsoft Academy">
-                <comments>Note: Brookhaven College is a Microsoft IT Academy and offers courses that prepare students for Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for either a Microsoft Certified Systems Administrator, a Microsoft Certified Systems Engineer  or a Microsoft Certified Database Administrator. For additional information, call 972-860-4721.</comments>
+                <comments>Note: Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for a Microsoft Certified Systems Administrator - MCSA, a Microsoft Certified Systems Engineer - MCSE and a Microsoft Certified Database Administrator - MCDBA. For more information, call 972-860-4721.</comments>
                 <pattern match="ITMC 2437-2501" />
                 <pattern match="ITMT 1345-2501" />
                 <pattern match="ITMT 1345-2426" />
@@ -202,16 +217,16 @@
                 <pattern match="ITNW 1408-2501" />
                 <pattern match="ITMT 1472-2700" />
                 <pattern match="ITMT 2401-2700" />
-        				<pattern match="ITMT 1471-2700" />
+        		<pattern match="ITMT 1471-2700" />
                 <pattern match="ITMT 2451-2700" />
-				        <pattern match="ITMT 1402-2426" />
+				<pattern match="ITMT 1402-2426" />
                 <pattern match="ITMT 1470-2426" />
                 <pattern match="ITNW 1408-2426" />
             </topic>
             <topic name="Unix">
+                <pattern match="ITSC 2437-2501" />
                 <pattern match="ITSC 1407-2501" />
                 <pattern match="ITSC 1442-2501" />            <!-- Added 12/7 -->
-                <pattern match="ITSC 2437-2501" />		
             </topic>
             <topic name="Cisco Academy">
                 <pattern match="ITCC 1401-2426" />                <!-- Added 12/7 -->
@@ -285,70 +300,72 @@
             <pattern match="COSC 1300-2001" />
             <pattern match="COSC 1300-2002" />
             <pattern match="COSC 1300-2003" />
+            <pattern match="COSC 1300-2004" />
             <pattern match="COSC 1300-2005" />
             <pattern match="COSC 1300-2006" />
             <pattern match="COSC 1300-2007" />
-            <pattern match="COSC 1300-2010" />
+            <pattern match="COSC 1300-2008" />
+            <pattern match="COSC 1300-2009" />
+            <pattern match="COSC 1300-2010" />            
             <pattern match="COSC 1401-2011" />
             <pattern match="COSC 1401-2012" />
-            <pattern match="COSC 1401-2013" />            <!-- Added 9/2 per Bill -->
+            <pattern match="COSC 1401-2013" />
+            <pattern match="COSC 1401-2014" />
+            <pattern match="COSC 1401-2015" />
+            <pattern match="COSC 1401-2016" />
             <pattern match="COSC 1300-2501" />
             <pattern match="COSC 1300-2502" />
             <pattern match="COSC 1300-2503" />
+            <pattern match="COSC 1300-2504" />
             <pattern match="COSC 1401-2511" />
-            <pattern match="COSC 1401-2512" />
-            <pattern match="COSC 1401-2250" />
-            <pattern match="COSC 1300-2300" />
-            <pattern match="COSC 1300-2301" />
-            <pattern match="COSC 1401-2300" />
-            <pattern match="COSC 1401-2301" />
             <pattern match="COSC 1300-2421" />
             <pattern match="COSC 1300-2422" />
             <pattern match="COSC 1300-2423" />
             <pattern match="COSC 1300-2424" />
-            <pattern match="COSC 1300-2425" />
             <pattern match="COSC 1401-2421" />
             <pattern match="COSC 1401-2422" />
             <pattern match="COSC 1401-2423" />
-            <pattern match="COSC 1401-2424" />            <!-- Added 9/2 per Bill -->
+            <pattern match="COSC 1401-2424" />
+            <pattern match="COSC 1300-2300" />
+            <pattern match="COSC 1300-2301" />
+            <pattern match="COSC 1401-2300" />
           </topic>
-
-          <topic name="Programming">
+         <topic name="Programming">
             <pattern match="COSC 1415-2001" />			  	
             <pattern match="COSC 1415-2002" />
             <pattern match="COSC 1436-2001" />		  
             <pattern match="COSC 1436-2002" />
             <pattern match="COSC 1437-2001" />
-            <pattern match="COSC 1415-2426" />
-            <pattern match="COSC 1436-2426" />
             <pattern match="COSC 1309-2501" />
-            <pattern match="COSC 1415-2501" />	
-            <pattern match="COSC 1430-2501" />		  	
-            <pattern match="COSC 1436-2501" />		
-            <pattern match="COSC 1437-2501" />
-            <pattern match="COSC 1437-2502" />		  	
+            <pattern match="COSC 1415-2501" />
+            <pattern match="COSC 1430-2501" />
+            <pattern match="COSC 1436-2501" />	
+            <pattern match="COSC 1437-2501" />		  	
+            <pattern match="COSC 1437-2502" />		
             <pattern match="COSC 2425-2501" />
-            <pattern match="COSC 2430-2501" />			  
+            <pattern match="COSC 2430-2501" />		  	
             <pattern match="COSC 2436-2501" />
-            <pattern match="COSC 1309-2426" />
+            <pattern match="COSC 1309-2426" />			  
           </topic>
         </subject>
              
         <subject name="Computer Studies - Business Computer Information Systems">
-            <comments>Note: BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
+            <comments>Note: BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs. </comments>
+
+            <topic name="Business Computer Applications">
               <pattern match="BCIS 1405-2011" />
               <pattern match="BCIS 1405-2012" />
-              <pattern match="BCIS 1405-2013" />              <!-- Added 9/2 per Bill -->
+              <pattern match="BCIS 1405-2013" />            
+              <pattern match="BCIS 1405-2014" />
+              <pattern match="BCIS 1405-2015" />
+              <pattern match="BCIS 1405-2016" />
               <pattern match="BCIS 1405-2511" />
-              <pattern match="BCIS 1405-2512" />
-              <pattern match="BCIS 1405-2250" />
-              <pattern match="BCIS 1405-2300" />
-              <pattern match="BCIS 1405-2301" />
               <pattern match="BCIS 1405-2421" />
               <pattern match="BCIS 1405-2422" />
-              <pattern match="BCIS 1405-2423" />              <!-- Added 9/2 per Bill -->
-              <pattern match="BCIS 1405-2424" />
-          <!-- Added 9/12 per Bill's 9/2 request -->          
+              <pattern match="BCIS 1405-2423" />
+              <pattern match="BCIS 1405-2424" />            
+              <pattern match="BCIS 1405-2300" />
+            </topic>
             <topic name="Programming">
                 <pattern match="BCIS 1431-2501" />			
                 <pattern match="BCIS 1431-2426" />
