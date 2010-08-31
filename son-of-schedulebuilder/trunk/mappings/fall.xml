@@ -788,6 +788,8 @@
           <pattern match="DANC 1223-2001" /> 		  
           <pattern match="DANC 2222-2001" />
           <pattern match="DANC 2223-2001" />
+          <pattern match="DANC 1222-2202" />  <!-- add per linda 2010-08-31 -->
+          <pattern match="DANC 1222-2203" />  <!-- add per linda 2010-08-31 -->
           <pattern match="DANC 1222-2501" />
           <pattern match="DANC 1223-2501" />
         </topic>
@@ -800,6 +802,7 @@
           <pattern match="DANC 1248-2501" />
           <pattern match="DANC 2247-2501" />
           <pattern match="DANC 2248-2501" />
+          <pattern match="DANC 1248-2702" />            <!-- add per linda 2010-08-31 -->
         </topic>
 
         <topic name="Ballet">
@@ -810,6 +813,7 @@
           <pattern match="DANC 2342-2001" />
           <pattern match="DANC 1341-2501" />
           <pattern match="DANC 1342-2501" />
+          <pattern match="DANC 2342-2202" />            <!-- add per linda 2010-08-31 -->
           <pattern match="DANC 2341-2501" />
           <pattern match="DANC 2342-2501" />
         </topic>
@@ -825,6 +829,7 @@
           <pattern match="DANC 1246-2001" />
           <pattern match="DANC 2245-2001" />
           <pattern match="DANC 2246-2001" />
+          <pattern match="DANC 1245-2202" />            <!-- add per linda 2010-08-31 -->
           <pattern match="DANC 1245-2501" />
           <pattern match="DANC 1246-2501" />
           <pattern match="DANC 2245-2501" />
