@@ -814,6 +814,7 @@
           <pattern match="DANC 1341-2501" />
           <pattern match="DANC 1342-2501" />
           <pattern match="DANC 2342-2202" />            <!-- add per linda 2010-08-31 -->
+          <pattern match="DANC 2342-2203" />            <!-- add ri 2010-09-03 -->
           <pattern match="DANC 2341-2501" />
           <pattern match="DANC 2342-2501" />
         </topic>
