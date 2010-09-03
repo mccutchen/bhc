@@ -1072,6 +1072,7 @@
             <topic name="Digital">
                 <pattern match="MUSI 1390-2001" />
                 <pattern match="MUSI 1391-2500" /><!-- added 11/12/09 -->
+                <pattern match="MUSI 1391-2501" /><!-- added 2010/09/03 -->                
             </topic>
             <topic name="Piano for Music Majors">
 		        <pattern match="MUSI 1181-2002" />
