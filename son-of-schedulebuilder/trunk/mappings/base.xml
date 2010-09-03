@@ -641,7 +641,8 @@
         <subject name="Computer Studies - Business Computer Information Systems" email="bhcCIT@dcccd.edu" />
         <subject name="Business Office Systems and Support" email="bhcBOSS@dcccd.edu" />
         <subject name="Visual Communications" email="bhcVCOM@dcccd.edu" />
-
+        <subject name="Medical Office Management / Administration" email="bhcMedOffice@dcccd.edu" />
+        
         <!-- Communications division -->
         <subject name="Developmental Reading" email="bhcReadingWriting@dcccd.edu" />
         <subject name="Developmental Writing" email="bhcReadingWriting@dcccd.edu" />
