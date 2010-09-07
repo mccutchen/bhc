@@ -386,12 +386,12 @@
       <!-- Management Program (Mary Lou Avera)
             ======================================================================== -->
             <subject name="Management Program">
-            	<comments>NOTE: Complete two courses one night per week. Be mentored by full-time business faculty. Class format includes small-group discussions and networking with other employed professionals.   Students taking management co-op courses at Brookhaven College for the first time must receive advisement from their faculty member before they register. Contact Mary Lou Avera, 972-860-4179, marylou@dcccd.edu.  Visit us online at www.BrookhavenCollege.edu/management.</comments>
-            	<pattern match="HRPO 2307-2501" />
-            	<pattern match="BMGT 2382-2501" />
-            	<pattern match="BMGT 2303-2502" />
-            	<pattern match="BMGT 2383-2502" />
+            	<comments>NOTE: Students will complete two courses in one night per week and will be mentored by a full-time business faculty member. Class format includes small-group discussions and networking with other employed professionals.  Students taking management program courses at Brookhaven College for the first time must be advised by their faculty member before registering. For advising, contact Mary Lou Avera at 972-860-417 or, MaryLou@dcccd.edu. For more information, visit www.BrookhavenCollege.edu/management.</comments>
+                <pattern match="BMGT 1301-2501" />
+                <pattern match="BMGT 1382-2501" />
             </subject>
+        
+        
 
 
         <!-- Medical Front Office (Sharon Burton) Updated - Spring2011
