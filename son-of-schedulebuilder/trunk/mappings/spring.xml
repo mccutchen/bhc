@@ -1037,6 +1037,7 @@
                 <pattern match="MUSI 1306-2428" />
                 <pattern match="MUSI 1306-2429" />
                 <pattern match="MUSI 1306-2434" />
+                <pattern match="MUSI 1306-2430" />                
                 <pattern match="MUSI 1306-2432" />
                 <pattern match="MUSI 1306-2433" />
 	            <pattern match="MUSI 1306-2435" />
@@ -1047,9 +1048,6 @@
                 <pattern match="MUSI 2311-2001" />
                 <pattern match="MUSI 2312-2001" />
             </topic>
-          
-          
-
           <topic name="Musicianship">
                 <pattern match="MUSI 1116-2200" /><!-- added 1/19/10 -->
                 <pattern match="MUSI 1117-2001" />
@@ -1117,8 +1115,9 @@
 					<pattern match="MUEN 1153-2250" />
                 </subtopic>
                  <subtopic name="Chamber Ensemble">
-			          <pattern match="MUEN 1152-2501" />
-			          <pattern match="MUEN 1152-2750" />
+		             <pattern match="MUEN 1152-2501" />
+                     <pattern match="MUEN 1152-2502" />
+                     <pattern match="MUEN 1152-2750" />
    				</subtopic>
               <subtopic name="Mariachi Band Ensemble">
                 </subtopic>                
