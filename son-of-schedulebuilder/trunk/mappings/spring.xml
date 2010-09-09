@@ -848,9 +848,10 @@
             <topic name="Dance Appreciation">
                 <pattern match="DANC 2303-2001" />
                 <pattern match="DANC 2303-2501" />
-                <pattern match="DANC 2304-2421" /> <!-- Jill 10-09-02 -->
-            </topic>
-            <topic name="Body Conditioning">
+                <pattern match="DANC 2303-2421" />
+                <pattern match="DANC 2304-2422" />
+            </topic>          
+          <topic name="Body Conditioning">
                 <pattern match="DANC 1141-2001" />
                 <pattern match="DANC 1142-2001" />
             </topic>
@@ -872,11 +873,14 @@
           <topic name="Tap">
                 <pattern match="DANC 1110-2001" />
                 <pattern match="DANC 1111-2001" />
-                <pattern match="DANC 1111-2201" />  <!-- added 1-29-10  -->
                 <pattern match="DANC 2110-2001" />
                 <pattern match="DANC 2111-2001" />
-            </topic>
-            <topic name="Hip Hop">
+                <pattern match="DANC 1110-2501" />
+                <pattern match="DANC 1111-2501" />
+                <pattern match="DANC 2110-2501" />
+                <pattern match="DANC 2111-2501" />
+          </topic>
+          <topic name="Hip Hop">
                 <pattern match="DANC 1222-2001" />
                 <pattern match="DANC 1223-2001" />  <!--  added ri 2010-07-09  -->
                 <pattern match="DANC 1222-2002" />
