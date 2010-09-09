@@ -823,6 +823,7 @@
           <pattern match="DANC 2141-2001" />
           <pattern match="DANC 2141-2202" />  <!-- per linda 2010-09-07 -->
           <pattern match="DANC 2142-2250" />
+          <pattern match="DANC 2142-2251" />    <!-- per Linda 2010-09-09 -->      
         </topic>
 
         <topic name="Modern Dance">
