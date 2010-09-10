@@ -617,6 +617,7 @@
                 <pattern match="RADR 1267" />
                 <pattern match="RADR 1202" />
                 <pattern match="RADR 2233" />
+                <pattern match="RADR 2240" /> <!-- added ri 2010-09-09 -->
                 <pattern match="RADR 2266" /> <!-- added 20100115 -->
             </topic>
         </subject>
