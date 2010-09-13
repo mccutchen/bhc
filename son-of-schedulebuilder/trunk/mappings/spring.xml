@@ -689,6 +689,7 @@
                 <pattern match="ARTS 2312-2016" />
                 <pattern match="ARTS 2311-2005" />
                 <pattern match="ARTS 2312-2009" />
+                <pattern match="ARTS 2347-2003" />  <!-- Jill 2010-09-13 -->             
                 <pattern match="ARTS 2311-2021" />  <!-- Jill 10-09-02 -->
                 <pattern match="ARTS 2312-2021" />  <!-- Jill 10-09-02 -->
                 <pattern match="ARTS 2346-2501" />
@@ -712,6 +713,7 @@
                 <pattern match="ARTS 1312-2001" />
                 <pattern match="ARTS 1312-2501" />
                 <pattern match="ARTS 1311-2250" />
+                <pattern match="ARTS 2311-2255" />  <!-- Jill 2010-09-13 -->
             </topic>
             <topic name="Drawing">
                 <pattern match="ARTS 1316-2001" />
