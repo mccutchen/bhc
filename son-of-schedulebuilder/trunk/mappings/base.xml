@@ -143,7 +143,7 @@
             <pattern match="DANC" priority="0" unsorted="true" />
         </subject>
         <subject name="Developmental Mathematics">
-        	<comments>NOTE: Required for DMAT 0090, 0097, 0098 and 0099: These courses will run using interactive software called MyMathLab.  Students must have access to a computer with Internet to complete the required work for these courses.  Students must purchase a new textbook or a MyMathLab access code.  Contact your instructor (listed in eConnect) for more information.</comments>
+        	<comments>NOTE: Required for DMAT 0090, 0097, 0098 and 0099: These courses will run using interactive software called MyLabsPlus. Students must have access to a computer with Internet to complete the required work for these courses. Students must purchase a new textbook or a MyLabsPlus access code. Contact your instructor (listed in eConnect) for more information.</comments>
             <pattern match="DMAT" priority="0" unsorted="true" />
         </subject>
         <subject name="Developmental Reading">
@@ -158,10 +158,10 @@
         </subject>
         <subject name="Economics">
             <comments>
-                <p><b>NOTE:</b> The courses shown below include a high level of learning support for each student. This high level of support is provided to help students build success at each step in their course. To help build this success students enrolling initially in ECON 2301 will be enrolled in ECON 1303 (self-paced/online) with the same section number. This concurrent enrollment is required unless the student has completed ECON 1303 in a previous semester or is enrolling in a Distance Learning section of ECON 2301.</p>
+                <p><b>NOTE:</b> The courses shown below include a high level of learning support for each student. This high level of support is provided to help students build success at each step during their course. To help build this success students enrolling initially in ECON 2301 will be enrolled in ECON 1303 (self-paced/online) with the same section number. This concurrent enrollment is required unless the student has completed ECON 1303 in a previous semester or is enrolling in a Distance Learning section of ECON 2301.</p>
                 <p>The concurrent ECON 1303 course provides the student with the high level HelpLab support and provides the self-paced preparation ("prepare-as-you-go" course) for ECON 2301. The enhanced HelpLab support includes personal one-to-one tutoring, group test review sessions, multimedia study materials and online practice tests along with personal assistance by telephone and e-mail.</p>
                 <p>ECON 1303 is a transferable credit course, is a Core Curriculum course and can be taken independently online (see Distance Learning section below) or, as indicated above, will be taken concurrently with ECON 2301.</p>
-                <p>The orientation for the concurrent ECON 1303 is part of the orientation for the ECON 2301 course carrying the same section number. If there are any questions, please come by the ECON HelpLab, Room M130, call 972-860-4169 or 972-860-4164, or e-mail Gus Herring at gHerring@dcccd.edu with a copy to Bob Smith at bSmith1@dcccd.edu.</p>
+                <p>The orientation for the concurrent ECON 1303 is part of the orientation for the ECON 2301 course carrying the same section number. If there are any questions, please come by the Economics HelpLab in Bldg. M, Room M130, call 972-860-4169 or 972-860-4164, or e-mail Gus Herring at gHerring@dcccd.edu with a copy to Bob Smith at bSmith1@dcccd.edu.</p>
             </comments>
             <pattern match="ECON" priority="0" unsorted="true" />
         </subject>
@@ -190,7 +190,8 @@
         </subject>
         <subject name="Geology">
             <comments>
-   NOTE: GEOL 1401, 1403, 1404 and 1445 are four-credit-hour Core Curriculum lab sciences. Students should bring textbook and lab manual to their first class meeting. For text information, visit the bookstore or call the geology lab at 972-860-4713. Several local field trips will be open to GEOL students.</comments>
+                NOTE: GEOL 1401, 1403, 1404 and 1445 are four-credit-hour Core Curriculum lab sciences. Students should bring textbook and lab manual to their first class meeting. For text information, visit the bookstore or call the geology lab at 972-860-4713. Several local field trips will be open to GEOL students. Some field trips may require minimal admission fees ranging from $5-$10.
+            </comments>
             <pattern match="GEOL" priority="0" unsorted="true" />
         </subject>
         <subject name="Geospatial Technology">
@@ -217,7 +218,10 @@
             <pattern match="HIST" priority="0" unsorted="true" />
         </subject>
         <subject name="Human Development">
-            <comments>NOTE: Beginning in the fall semester of 2010, if a first-time-in-college, FTIC, student's assessment test scores indicate a placement into two or more developmental studies disciplines, the student will be required to take human development 0092.</comments>
+            <comments>
+                NOTE: Beginning fall 2010, if a first-time-in-college, student's assessment test scores indicate a placement into two or more
+                developmental studies disciplines, the student will be required to take HDEV 0092.
+            </comments>
             <pattern match="HDEV" priority="0" unsorted="true" />
         </subject>
         <subject name="Humanities">
@@ -267,8 +271,7 @@
             <pattern match="FSHN" priority="0" unsorted="true" />
         </subject>
         <subject name="Mathematics">
-            <comments>NOTE: MANDATORY for all MATH courses: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86.</comments>
-            <comments>NOTE: MANDATORY for all MATH 1414 beginning Fall 2010:  This course will run using interactive software called MyMathLab.  Students must have access to a computer with Internet to complete the required work for this course.  Students must purchase a new textbook or a MyMathLab access code.  Contact your instructor (listed in eConnect) for more information.</comments>
+            <comments>NOTE: MANDATORY for all MATH courses: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86. MATH 1414 will use an interactive software program called MyMathLab. Students must purchase a new textbook or a MyMathLab access code. Contact your instruction (listed in eConnect) for more information.</comments>
           <pattern match="MATH" priority="0" unsorted="true" />
             <pattern match="TECM" priority="0" unsorted="true" />
         </subject>
@@ -286,7 +289,6 @@
             <pattern match="RNSG" priority="0" unsorted="true" />
         </subject>
         <subject name="Nutrition">
-        	<comments>NOTE:  The designation for NUTR 1322 has been changed to BIOL 1322.  Course content remains the same.</comments>
             <pattern match="BIOL 1322" priority="1" unsorted="true" />
         </subject>
         <subject name="Business Office Systems and Support">
@@ -462,11 +464,11 @@
                 <pattern match="BIOL 140[89]" unsorted="true" />
             </topic>
             <topic name="Majors Biology">
-                <comments>NOTE:  Biology 1406 and 1407 are courses for students majoring and/or minoring in biology or related disciplines.  It is recommended that students have recently had either high school biology or Biology 1408 or 1409.  It is also recommended that students have recently had high school chemistry or Chemistry 1405 before taking this course. Students in BIOL 1407, 2401, 2402 and SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
+                <comments>NOTE:  BIOL 1406 and 1407 are courses for students majoring and/or minoring in biology or related disciplines. It is recommended that students have recently had either high school biology or BIOL 1408 or 1409. It is also recommended that students have recently had high school chemistry or CHEM 1405 before taking this course. Students in BIOL 1407, 2401, 2402 and SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
                 <pattern match="BIOL 140[67]" unsorted="true" />
             </topic>
             <topic name="Applied Anatomy &amp; Physiology"> <!--  changed from Anatomy &amp; Physiology for Nursing Majors 2010-07-23 per MD -->
-                <comments>NOTE:  Enrollment into SCIT 1407 will require an appropriate reading and writing score on one of the assessment instruments (THEA/TASP, etc.) taken within the last two years.  If your reading or writing score is below the minimum cutoff, you will be advised to enroll into an alternative biology course, such as BIOL 1408 or DIRS 9170.  SCIT 1407 is a prerequisite for the Nursing Program. Students in BIOL 1407, 2401, 2402 and SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
+                <comments>NOTE:  Enrollment into SCIT 1407 will require an appropriate reading and writing score on one of the assessment instruments (THEA/TASP, etc.) taken within the last two years. If your reading or writing score is below the minimum cut-off, you will be advised to enroll into an alternative biology course, such as BIOL1408 or DIRS 9170. SCIT 1407 is a prerequisite for the Nursing Program. Students in BIOL 1407, 2401, 2402 and SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
                 <pattern match="SCIT" unsorted="true" />
             </topic>
             <topic name="Honors Anatomy &amp; Physiology (Majors)">
