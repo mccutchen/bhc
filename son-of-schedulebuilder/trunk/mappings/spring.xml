@@ -73,7 +73,7 @@
                     <pattern match="POFT 1329-2427" />
                 </subtopic>
             </topic>
-            <topic name="Credit Classes - Electives">  <!-- topic added as per Pat Byars, 2009-09-10 -->
+            <topic name="Credit Classes - Electives">  
                 <subtopic name="Keyboarding Classes">
                     <pattern match="POFT 1127-2200" />
                     <pattern match="POFT 1127-2201" />
