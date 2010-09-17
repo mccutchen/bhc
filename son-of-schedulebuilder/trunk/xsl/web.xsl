@@ -39,7 +39,7 @@
     <xsl:param name="real-schedule-title"><xsl:if test="$enrolling">Enrolling <xsl:value-of select="$enrolling" />&#8212;</xsl:if><xsl:value-of select="$schedule-title" /></xsl:param>
 
     <!-- the text for the channel-header on each schedule page -->
-    <xsl:param name="channel-header"><xsl:value-of select="$real-schedule-title" /> Course Schedule</xsl:param>
+    <xsl:param name="channel-header"><xsl:value-of select="$real-schedule-title" /> Class Schedule</xsl:param>
 
     <!-- output file parameters -->
     <xsl:param name="output-directory">web-output</xsl:param>
