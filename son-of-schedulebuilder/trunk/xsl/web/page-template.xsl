@@ -66,7 +66,8 @@
     </xsl:template>
 
     <xsl:template name="special-notice">
-        <p class="special-notice">For a live version of the Credit Course Schedule, use <a href="https://eConnect.dcccd.edu/eConnect/eConnect" target="_blank">eConnect</a>.</p>
+        <p class="special-notice">
+            For a live version of the Credit Class Schedule, use <a href="https://eConnect.dcccd.edu/eConnect/eConnect" target="_blank">eConnect</a>.</p>
     </xsl:template>
 
     <xsl:template name="preview-special-notice">
@@ -87,7 +88,7 @@
 
         <div id="breadcrumbs">
             <a href="/">Home</a>&#160;&#160;&#187;&#160;
-            <a href="/course-schedules/">Course Schedules</a>&#160;&#160;&#187;&#160;
+            <a href="/course-schedules/">Class Schedules</a>&#160;&#160;&#187;&#160;
 
             <!-- Every set of breadcrumbs will start off with a link
                  to this schedule's root or index page.  We just have

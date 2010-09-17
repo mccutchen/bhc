@@ -44,7 +44,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
                         -->
                     </xsl:when>
                     <xsl:otherwise>
-                        Regular Credit Courses
+                        Regular Credit Classes
                     </xsl:otherwise>
                 </xsl:choose>
             </h2>
@@ -86,10 +86,10 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
 
             <xsl:choose>
                 <xsl:when test="$page-type = 'subindex'">
-                    <h2><xsl:value-of select="@name" /> Courses</h2>
+                    <h2><xsl:value-of select="@name" /> Classes</h2>
                 </xsl:when>
                 <xsl:otherwise>
-                    <h3><xsl:value-of select="@name" /> Courses</h3>
+                    <h3><xsl:value-of select="@name" /> Classes</h3>
                 </xsl:otherwise>
             </xsl:choose>
 
@@ -175,10 +175,10 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
             <xsl:sort select="@name" />
             <xsl:choose>
                 <xsl:when test="minimester">
-                    <a href="#minimester">Flex Term Courses</a>
+                    <a href="#minimester">Flex Term Classes</a>
                 </xsl:when>
                 <xsl:otherwise>
-                    <a href="#{@machine_name}"><xsl:value-of select="@name" /> Courses</a>
+                    <a href="#{@machine_name}"><xsl:value-of select="@name" /> Classes</a>
                 </xsl:otherwise>
             </xsl:choose>
             <xsl:if test="position() != last()"><xsl:text>&#160;&#160;|&#160;&#160;</xsl:text></xsl:if>
@@ -189,7 +189,7 @@ $Id: indexer.xsl 2055 2006-06-21 20:27:06Z wrm2110 $
 
     <xsl:template name="core-notice">
         <p class="core-notice">
-            Look for <a href="/course-schedules/credit/core/">Core Curriculum</a> courses highlighted in gold.
+            Look for <a href="/course-schedules/credit/core/">Core Curriculum</a> Classes highlighted in gold.
         </p>
     </xsl:template>
 </xsl:stylesheet>
