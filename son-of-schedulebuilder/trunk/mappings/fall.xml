@@ -449,6 +449,7 @@
           <pattern match="EMSP 1501-2202" />
           <pattern match="EMSP 1501-2203" />
           <pattern match="EMSP 1160-2208" />
+          <pattern match="EMSP 1160-2249" />
         </subtopic>
         <subtopic name="Emt-basic Class #59">
           <pattern match="EMSP 1501-2709" />
@@ -905,10 +906,12 @@
 
         </topic>        
         <topic name="Music Theory">
-          <pattern match="MUSI 1311-2001" />
+          <pattern match="MUSI 1311-2001" />          
           <pattern match="MUSI 1311-2002" /> <!-- Added per Linda 2010-08-13 -->
           <pattern match="MUSI 1312-2001" />
+          <pattern match="MUSI 1312-2200" />          
           <pattern match="MUSI 2311-2001" />
+          <pattern match="MUSI 2311-2200" />
           <pattern match="MUSI 2312-2300" />
         </topic>
         <topic name="Musicianship">
@@ -963,6 +966,7 @@
         <topic name="Guitar">
           <pattern match="MUSI 1192-2001" />
           <pattern match="MUSI 1192-2002" />
+          <pattern match="MUSI 1192-2200" />
         </topic>
         <topic name="Voice">
           <pattern match="MUSI 1183-2001" />
