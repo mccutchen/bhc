@@ -74,7 +74,7 @@
         <!-- full schedule index -->
         <xsl:result-document href="{$output-directory}/index{$output-extension}">
             <xsl:call-template name="page-template">
-                <xsl:with-param name="page-title"><xsl:value-of select="$real-schedule-title" /> Course Index</xsl:with-param>
+                <xsl:with-param name="page-title"><xsl:value-of select="$real-schedule-title" /> Class Index</xsl:with-param>
             </xsl:call-template>
         </xsl:result-document>
 
@@ -87,7 +87,7 @@
         <xsl:if test="count(//term) &gt; 1">
             <xsl:result-document href="{$output-directory}/{@machine_name}/index{$output-extension}">
                 <xsl:call-template name="page-template">
-                    <xsl:with-param name="page-title"><xsl:value-of select="@name" /> Course Index</xsl:with-param>
+                    <xsl:with-param name="page-title"><xsl:value-of select="@name" /> Class Index</xsl:with-param>
                 </xsl:call-template>
             </xsl:result-document>
         </xsl:if>
@@ -110,7 +110,7 @@
 
         <xsl:result-document href="{$path-root}index{$output-extension}">
             <xsl:call-template name="page-template">
-                <xsl:with-param name="page-title"><xsl:value-of select="@name" /> Course Index</xsl:with-param>
+                <xsl:with-param name="page-title"><xsl:value-of select="@name" /> Class Index</xsl:with-param>
                 <xsl:with-param name="page-type" tunnel="yes">subindex</xsl:with-param>
                 <xsl:with-param name="path-root" select="$path-root" tunnel="yes" />
             </xsl:call-template>
@@ -216,7 +216,7 @@
     <xsl:template match="type">
         <a name="{@machine_name}" />
         <div class="schedule-type-section {@machine_name}">
-            <h2 class="schedule-type"><xsl:value-of select="@name" /> Courses</h2>
+            <h2 class="schedule-type"><xsl:value-of select="@name" /> Classes</h2>
 
             <xsl:apply-templates select="group | course">
                 <xsl:sort select="@sortkey" data-type="number" />
@@ -335,7 +335,7 @@
         <xsl:variable name="term" select="concat('term=',$year,$term-abbr)" />
         <xsl:variable name="loc" select="'loc=BHC'" />
         <a href="{$econnect}?{$const}&amp;{$type}&amp;{$pid}&amp;{$WT}&amp;{$course}&amp;{$number}&amp;{$term}&amp;{$loc}"
-            target="_blank">Find Course</a>
+            target="_blank">Find Class</a>
     </xsl:template>
 
     <xsl:template match="class/@weeks">
@@ -445,7 +445,7 @@
             <div class="summary">
                 <xsl:choose>
                     <xsl:when test="topic">
-                        <p>Course topics in this subject:</p>
+                        <p>Class topics in this subject:</p>
                         <ul>
                             <xsl:for-each select="topic">
                                 <xsl:sort select="@name" />
@@ -454,7 +454,7 @@
                         </ul>
                     </xsl:when>
                     <xsl:when test="type">
-                        <p>Course types offered in this subject:</p>
+                        <p>Class types offered in this subject:</p>
                         <ul>
                             <xsl:for-each select="type">
                                 <xsl:sort select="@sortkey" />
@@ -476,7 +476,7 @@
             <xsl:variable name="core-component" select="current-grouping-key()" />
             <div class="core-list">
                 <p>
-                    The following courses
+                    The following classes
                     <xsl:if test="$core-component = 'other'">in this subject</xsl:if>
                     are part of the
                     <xsl:if test="$core-component != 'other'"><xsl:value-of select="$core-component" /> component of the </xsl:if>
@@ -499,8 +499,9 @@
 
 
     <xsl:template name="other-terms">
-        <p>If you don't find the course you're looking for in this term, try
-        <xsl:choose>
+        <p>
+            If you don't find the class you're looking for in this term, try
+            <xsl:choose>
             <xsl:when test="ancestor::term/@name = 'Summer I/May Term'">
                 <a href="../summer_i/">Summer I</a> or <a href="../summer_ii/">Summer II</a>.
             </xsl:when>
