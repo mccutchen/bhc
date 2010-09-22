@@ -39,9 +39,6 @@
                 </subtopic>
             </topic>
             
-            
-            
-
             <topic name="Office Assistant Certificate">
                 <subtopic name="Computer Applications I, Computer Basics">
                     <pattern match="POFI 1301-2001" />
@@ -81,9 +78,15 @@
                     <pattern match="POFT 1127-2203" />
                     <pattern match="POFT 1127-2250" />
                     <pattern match="POFT 1127-2701" />
+                    <pattern match="POFT 1127-2702" />
                     <pattern match="POFT 1127-2703" />
+                    <pattern match="POFT 1127-2704" />
                     <pattern match="POFT 1127-2426" />
                     <pattern match="POFT 1127-2427" />
+
+
+
+
                 </subtopic>
                 <subtopic name="Keyboarding / Speed / Accuracy">
                     <pattern match="POFT 2203-2200" />
@@ -300,7 +303,7 @@
         
         <subject name="Computer Science">
           <topic name="Computer Literacy">
-            <comments>NOTE:  COSC 1300 will meet the Core Curriculum and/or Associate in Arts or Associate in Science requirement and may be used for transfer to a four-year school.</comments>
+           
             <pattern match="COSC 1300-2001" />
             <pattern match="COSC 1300-2002" />
             <pattern match="COSC 1300-2003" />
