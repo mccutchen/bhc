@@ -22,6 +22,8 @@
                     <pattern match="POFI 1349-2426" />
                 </subtopic>
                 <subtopic name="Database, Access">
+                    <pattern match="ITSW 1407-2429" />
+                    <pattern match="ITSW 1407-2502" />
                     <pattern match="POFI 1441-2501" />
                     <pattern match="POFI 1441-2426" />
                     <pattern match="POFT 1328-2780" />
