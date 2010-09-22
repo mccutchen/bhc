@@ -6,8 +6,8 @@
         ======================================================================== -->
         <subject name="Business Office Systems and Support">
             <topic name="BOSS Electives">
-                <pattern match="POFT 1127-2702" />
-                <pattern match="POFT 1127-2704" />                           
+                <pattern match="POFI 1127-2702" />
+                <pattern match="POFI 1127-2704" />                           
             </topic>
             <topic name="Software Application Specialist Certificate">
                 <subtopic name="Word Processing, Word">
@@ -406,7 +406,7 @@
                 <subtopic name="Computer Fundamentals">
                     <pattern match="POFI 1104-2201" />
                     <pattern match="POFI 1104-2701" />
-                    <pattern match="POFT 1104-2426" />
+                    <pattern match="POFI 1104-2426" />
                 </subtopic>
                 <subtopic name="Keyboarding, Beginning">
                     <pattern match="POFT 1127-2201" />
@@ -419,6 +419,7 @@
                     <pattern match="MDCA 1313-2251" />
                     <pattern match="MDCA 1313-2426" />
                     <pattern match="MDCA 1313-2427" />
+                    <pattern match="MDCA 1313-2428" />
                     <pattern match="MDCA 1313-2250" />
                 </subtopic>
                 <subtopic name="Medical Office Procedures">
