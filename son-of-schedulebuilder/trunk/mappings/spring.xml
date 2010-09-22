@@ -72,10 +72,8 @@
             </topic>
             <topic name="Credit Classes - Electives">  
                 <subtopic name="Keyboarding Classes">
-                    <pattern match="POFT 1127-2200" />
-                    <pattern match="POFT 1127-2201" />
-                    <pattern match="POFT 1127-2202" />
-                    <pattern match="POFT 1127-2203" />
+                    <pattern match="POFT 1127-2200" />                  
+                    <pattern match="POFT 1127-2202" />                  
                     <pattern match="POFT 1127-2250" />
                     <pattern match="POFT 1127-2701" />
                     <pattern match="POFT 1127-2702" />
@@ -83,10 +81,6 @@
                     <pattern match="POFT 1127-2704" />
                     <pattern match="POFT 1127-2426" />
                     <pattern match="POFT 1127-2427" />
-
-
-
-
                 </subtopic>
                 <subtopic name="Keyboarding / Speed / Accuracy">
                     <pattern match="POFT 2203-2200" />
