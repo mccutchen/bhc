@@ -407,9 +407,9 @@
                 </subtopic>
                 <subtopic name="Keyboarding, Beginning">
                     <pattern match="POFT 1127-2201" />
-                    <pattern match="POFT 1127-2703" />
                     <pattern match="POFT 1127-2428" />
                     <pattern match="POFT 1127-2429" />
+                    <pattern match="POFT 1127-2703" />
                 </subtopic>
                 <subtopic name="Medical Terminology">
                     <pattern match="MDCA 1313-2001" />
