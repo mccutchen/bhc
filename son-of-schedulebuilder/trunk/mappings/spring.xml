@@ -180,7 +180,7 @@
                 <pattern match="GAME 1409-2502" />
                 <pattern match="GAME 1443-2502" />
                 <pattern match="GAME 1459-2501" />
-                <pattern match="IMED 2351-2501" />
+                <pattern match="IMED 1491-2501" />
             </topic>
             <topic name="Programming">
                 <pattern match="ITSE 1407-2001" />
