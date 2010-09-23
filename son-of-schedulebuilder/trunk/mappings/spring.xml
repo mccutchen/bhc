@@ -26,8 +26,8 @@
                     <pattern match="ITSW 1407-2502" />
                     <pattern match="POFI 1441-2501" />
                     <pattern match="POFI 1441-2426" />
-                    <pattern match="POFT 1328-2780" />
                     <pattern match="POFT 1328-2426" />
+                    <pattern match="POFT 1328-2780" />
                 </subtopic>
                 <subtopic name="Desktop Publishing, Publisher">
                     <pattern match="POFI 2331-2300" />
