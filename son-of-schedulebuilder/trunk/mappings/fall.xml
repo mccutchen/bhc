@@ -782,9 +782,13 @@
         <topic name="Dance Practicum">
           <pattern match="DANC 1351-2235" />
           <pattern match="DANC 1351-2702" />
+          <pattern match="DANC 1351-2703" />          
           <pattern match="DANC 1352-2702" />
+          <pattern match="DANC 1352-2703" />
           <pattern match="DANC 2351-2702" />
-          <pattern match="DANC 2352-2702" />          
+          <pattern match="DANC 2351-2703" />          
+          <pattern match="DANC 2352-2702" />
+          <pattern match="DANC 2352-2703" />          
         </topic>
           <topic name="Hip Hop">
           <pattern match="DANC 1222-2001" />
