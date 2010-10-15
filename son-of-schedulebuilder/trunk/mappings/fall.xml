@@ -788,7 +788,8 @@
           <pattern match="DANC 2351-2702" />
           <pattern match="DANC 2351-2703" />          
           <pattern match="DANC 2352-2702" />
-          <pattern match="DANC 2352-2703" />          
+          <pattern match="DANC 2352-2703" />
+          <pattern match="DANC 2352-2704" />     <!-- added RI 2010-10-15 -->     
         </topic>
           <topic name="Hip Hop">
           <pattern match="DANC 1222-2001" />
