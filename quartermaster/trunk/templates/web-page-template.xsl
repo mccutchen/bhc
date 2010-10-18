@@ -43,7 +43,7 @@
                                 <!-- only output the financial aid notice in the header if this page has
                                      financial aid courses or is the main schedule index. -->
                                 <xsl:if test="current()//course[@financial_aid] or current()/self::schedule">
-                                    <p class="financial-aid">Look for courses eligible for <a href="/instruction/cce/financial-aid">Financial Aid</a> highlighted in green.<br />
+                                    <p class="financial-aid">Look for classes eligible for <a href="/instruction/cce/financial-aid">Financial Aid</a> highlighted in green.<br />
                                         <strong>NOTE:</strong> When filing for financial aid, note the term in which the class is offered. Class term and financial aid terms MUST match.</p>
                                 </xsl:if>
                             </div>
