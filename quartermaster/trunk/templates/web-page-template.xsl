@@ -64,7 +64,7 @@
 
     <xsl:template name="make-breadcrumbs">
         <div id="breadcrumbs">
-            <a href="/course-schedules/">Course Schedules</a>&#160;&#160;&#187;&#160;
+            <a href="/course-schedules/">Class Schedules</a>&#160;&#160;&#187;&#160;
             <xsl:choose>
                 <xsl:when test="not(@machine_name)">
                     <a href="/course-schedules/non-credit/" class="selected">Workforce &amp; Continuing Education</a>
