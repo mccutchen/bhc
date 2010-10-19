@@ -663,6 +663,16 @@ class FormatUtils:
                     ("Target date %s not found in the current profile's "
                     "terms.") % target_date)
 
+            # Make sure the class in question doesn't start way too early or
+            # way too late, where "way" is more than 6 weeks.
+            max_date_diff = datetime.timedelta(days=7*6)
+            if earliest - class_start > max_date_diff:
+                print '\n\nWARNING: Class starting more than 6 weeks before',
+                print 'any terms: %s' % class_start
+            elif class_start - latest > max_date_diff:
+                print '\n\nWARNING: Class starting more than 6 weeks after',
+                print 'any terms: %s' % class_start
+
             # Figure out if we should put this class in the earliest or
             # latest term.
             if class_start < earliest:
