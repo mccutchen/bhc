@@ -626,68 +626,57 @@ class FormatUtils:
         Otherwise, we just use the one term named in the current profile's
         terms dict."""
 
-        # If we have more than one term in this profile, we have to check each
-        # term's start and end dates to see which term contains this class.
-        if len(profile.terms) > 1:
-            # make sure we have a date
-            if not isinstance(class_start, datetime.date):
-                class_start = utils.parsedate(class_start)
+        # make sure we have a date
+        if not isinstance(class_start, datetime.date):
+            class_start = utils.parsedate(class_start)
 
-            earliest = None
-            latest = None
+        earliest = None
+        latest = None
 
-            # Loop through the terms in this profile, checking their start and
-            # end dates with the start date of this class.
-            for term, (term_start, term_end, _) in profile.terms.items():
+        # Loop through the terms in this profile, checking their start and
+        # end dates with the start date of this class.
+        for term, (term_start, term_end, _) in profile.terms.items():
 
-                # keep track of the earliest and latest term dates, in case we
-                # don't find a term to match this class
-                if earliest is None or term_start < earliest:
-                    earliest = term_start
-                if latest is None or term_end > latest:
-                    latest = term_end
+            # keep track of the earliest and latest term dates, in case we
+            # don't find a term to match this class
+            if earliest is None or term_start < earliest:
+                earliest = term_start
+            if latest is None or term_end > latest:
+                latest = term_end
 
-                # if this class starts between the start and end date of the
-                # term we're looking at, return that term
-                if term_start <= class_start < term_end:
-                    return term
+            # if this class starts between the start and end date of the
+            # term we're looking at, return that term
+            if term_start <= class_start < term_end:
+                return term
 
-            # We didn't find a matching term, so we stuff this class in the
-            # earliest or latest term we can find.
-            else:
-                print ('Class start date %s is not in any of the terms in '
-                       'this profile.') % class_start
-
-                def find_term(start_or_end, target_date):
-                    """Search through the profile's terms to find one that
-                    contains the given target date as either its start or end
-                    date.  Parameter start_or_end must be either 0 or 1."""
-                    for term, dates in profile.terms.items():
-                        if dates[start_or_end] == target_date:
-                            return term
-                    raise AssertionError(
-                        ("Target date %s not found in the current profile's "
-                        "terms.") % target_date)
-
-                # Figure out if we should put this class in the earliest or
-                # latest term.
-                if class_start < earliest:
-                    return find_term(0, earliest)
-                elif class_start > latest:
-                    return find_term(1, latest)
-
-                # Something is wrong here.
-                else:
-                    raise AssertionError(
-                        'Class starting on %s falls between the earliest '
-                        'and latest term dates but is not contained in any '
-                        'the current profile\'s terms.  This is probably a '
-                        'problem in the current profile\'s term dates.')
-
-        # Otherwise, we only have one term in the profile, so we just return
-        # its name, regardless of any dates.
+        # We didn't find a matching term, so we stuff this class in the
+        # earliest or latest term we can find.
         else:
-            return profile.terms.keys()[0]
+            def find_term(start_or_end, target_date):
+                """Search through the profile's terms to find one that
+                contains the given target date as either its start or end
+                date.  Parameter start_or_end must be either 0 or 1."""
+                for term, dates in profile.terms.items():
+                    if dates[start_or_end] == target_date:
+                        return term
+                raise AssertionError(
+                    ("Target date %s not found in the current profile's "
+                    "terms.") % target_date)
+
+            # Figure out if we should put this class in the earliest or
+            # latest term.
+            if class_start < earliest:
+                return find_term(0, earliest)
+            elif class_start > latest:
+                return find_term(1, latest)
+
+            # Something is wrong here.
+            else:
+                raise AssertionError(
+                    'Class starting on %s falls between the earliest '
+                    'and latest term dates but is not contained in any '
+                    'the current profile\'s terms.  This is probably a '
+                    'problem in the current profile\'s term dates.')
 
     @classmethod
     @cached
