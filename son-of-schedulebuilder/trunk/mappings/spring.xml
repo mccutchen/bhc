@@ -849,6 +849,7 @@
 			    <pattern match="CUST 2370-2002" />
 			    <pattern match="CUST 2370-2003" />
 			    <pattern match="CUST 2370-2004" />
+                <pattern match="CUST 2370-2005" /> <!-- per Jill 2010-10-29  -->   			    
 			    <pattern match="CUST 2370-2501" />
 			    <pattern match="CUST 2370-2502" />
                 <pattern match="CUST 2370-2503" />  <!-- added per Jill 2010-09-02 -->
