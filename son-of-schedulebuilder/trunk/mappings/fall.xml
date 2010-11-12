@@ -889,7 +889,8 @@
           <subtopic name="First Play, Fall 2010">
             <pattern match="DRAM 1221-2735" />
             <pattern match="DRAM 1221-2736" />
-            <pattern match="DRAM 1221-2737" />      <!-- per Jill 2010-09-24  -->       
+            <pattern match="DRAM 1221-2737" />      <!-- per Jill 2010-09-24  -->
+            <pattern match="DRAM 1221-2738" />
           </subtopic>
         </topic>
       </subject>
