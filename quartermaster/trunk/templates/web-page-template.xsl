@@ -40,6 +40,26 @@
                   <p class="financial-aid">To find a printable PDF version of our Youth Program brochure or to complete the appropriate paperwork for enrolling a minor in a continuing education course, please see additional details on our <a href="/instruction/cce/youth-program/">Youth Programs</a> pages.</p>
 								</xsl:if>
 
+
+                                <!-- only output the Fund Your Training Through Grants link if we're in the WORKFORCE TRAINING Program page -->
+                                <xsl:if test="ancestor-or-self::division/@name = 'WORKFORCE TRAINING'">
+                                    <p class="financial-aid">
+                                        <b>Fund Your Training Through Grants</b>
+                                        <ul>
+                                            <li>
+                                                <a href="/instruction/cce/corp/funding.aspx#skills">Skills Development Fund</a>
+                                            </li>
+                                            <li>
+                                                <a href="/instruction/cce/corp/funding.aspx#self">Self-Sufficiency Fund</a>
+                                            </li>
+                                        </ul>
+                                    </p>
+                                </xsl:if>
+
+
+
+
+
                                 <!-- only output the financial aid notice in the header if this page has
                                      financial aid courses or is the main schedule index. -->
                                 <xsl:if test="current()//course[@financial_aid] or current()/self::schedule">
