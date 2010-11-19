@@ -43,8 +43,9 @@
 
                                 <!-- only output the Fund Your Training Through Grants link if we're in the WORKFORCE TRAINING Program page -->
                                 <xsl:if test="ancestor-or-self::division/@name = 'WORKFORCE TRAINING'">
-                                    <p class="financial-aid">
-                                        <b>Fund Your Training Through Grants</b>
+                                    <p class="fundgrant">
+
+                                        <b>FUND YOUR TRAINING THROUGH GRANTS</b>
                                         <ul>
                                             <li>
                                                 <a href="/instruction/cce/corp/funding.aspx#skills">Skills Development Fund</a>
