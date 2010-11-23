@@ -42,7 +42,7 @@
 
 
                                 <!-- only output the Fund Your Training Through Grants link if we're in the WORKFORCE TRAINING Program page -->
-                                <xsl:if test="ancestor-or-self::division/@name = 'WORKFORCE TRAINING'">
+                                <xsl:if test="ancestor-or-self::division/@name = 'WORKFORCE EDUCATION AND TRAINING'">
                                     <p class="fundgrant">
 
                                         <b>FUND YOUR TRAINING THROUGH GRANTS</b>
