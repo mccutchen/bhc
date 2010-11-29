@@ -646,7 +646,7 @@ class FormatUtils:
 
             # if this class starts between the start and end date of the
             # term we're looking at, return that term
-            if term_start <= class_start < term_end:
+            if term_start <= class_start <= term_end:
                 return term
 
         # We didn't find a matching term, so we stuff this class in the
