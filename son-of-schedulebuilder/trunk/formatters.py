@@ -682,11 +682,12 @@ class FormatUtils:
 
             # Something is wrong here.
             else:
-                raise AssertionError(
-                    'Class starting on %s falls between the earliest '
-                    'and latest term dates but is not contained in any '
-                    'the current profile\'s terms.  This is probably a '
-                    'problem in the current profile\'s term dates.')
+                msg = ('Class starting on %s falls between the earliest '
+                       'and latest term dates but is not contained in any '
+                       'the current profile\'s terms.  This is probably a '
+                       'problem in the current profile\'s term dates.')\
+                       % class_start
+                raise RuntimeError(msg)
 
     @classmethod
     @cached
