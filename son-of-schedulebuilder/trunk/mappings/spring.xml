@@ -145,6 +145,11 @@
                 <pattern match="ITSC 1171-2302" />
                 <pattern match="ITSC 1171-2303" />
                 <pattern match="ITSC 1171-2304" />
+                <pattern match="ITSC 1171-2426" />
+                <pattern match="ITSC 1171-2427" />
+                <pattern match="ITSC 1171-2428" />
+                <pattern match="ITSC 1171-2429" />
+
             </topic>
             <topic name="Cit Core">
                 <pattern match="ITSC 1405-2001" />
@@ -310,7 +315,10 @@
             <pattern match="COSC 1300-2007" />
             <pattern match="COSC 1300-2008" />
             <pattern match="COSC 1300-2009" />
-            <pattern match="COSC 1300-2010" />            
+            <pattern match="COSC 1300-2010" />
+            <pattern match="COSC 1300-2011" />
+            <pattern match="COSC 1300-2012" />
+            <pattern match="COSC 1300-2013" />
             <pattern match="COSC 1401-2011" />
             <pattern match="COSC 1401-2012" />
             <pattern match="COSC 1401-2013" />
@@ -328,6 +336,8 @@
             <pattern match="COSC 1300-2422" />
             <pattern match="COSC 1300-2423" />
             <pattern match="COSC 1300-2424" />
+            <pattern match="COSC 1300-2425" />
+            <pattern match="COSC 1300-2426" />
             <pattern match="COSC 1401-2421" />
             <pattern match="COSC 1401-2422" />
             <pattern match="COSC 1401-2423" />
