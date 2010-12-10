@@ -319,6 +319,7 @@
             <pattern match="COSC 1300-2011" />
             <pattern match="COSC 1300-2012" />
             <pattern match="COSC 1300-2013" />
+            <pattern match="COSC 1300-2014" />            
             <pattern match="COSC 1401-2011" />
             <pattern match="COSC 1401-2012" />
             <pattern match="COSC 1401-2013" />
@@ -338,10 +339,13 @@
             <pattern match="COSC 1300-2424" />
             <pattern match="COSC 1300-2425" />
             <pattern match="COSC 1300-2426" />
+            <pattern match="COSC 1300-2427" />
+            <pattern match="COSC 1300-2428" />                          
             <pattern match="COSC 1401-2421" />
             <pattern match="COSC 1401-2422" />
             <pattern match="COSC 1401-2423" />
             <pattern match="COSC 1401-2424" />
+            <pattern match="COSC 1401-2425" />            
             <pattern match="COSC 1300-2300" />
             <pattern match="COSC 1300-2301" />
             <pattern match="COSC 1401-2300" />
@@ -382,7 +386,8 @@
               <pattern match="BCIS 1405-2421" />
               <pattern match="BCIS 1405-2422" />
               <pattern match="BCIS 1405-2423" />
-              <pattern match="BCIS 1405-2424" />            
+              <pattern match="BCIS 1405-2424" />
+              <pattern match="BCIS 1405-2425" />                       
               <pattern match="BCIS 1405-2511" />
               <pattern match="BCIS 1405-2512" />
             </topic>
@@ -572,8 +577,10 @@
             <topic name="none">
                 <comments>NOTE: The following courses are available to anyone interested in the Nursing Program. Acceptance into the program is not required. For more information, call 972-860-4754.</comments>
                 <pattern match="RNSG 1108-2001" />
+                <pattern match="RNSG 1108-2002" />                
                 <pattern match="HPRS 1203-2001" />
                 <pattern match="RNSG 1211-2001" />
+                <pattern match="RNSG 1211-2002" />                
                 <pattern match="RNSG 1301-2001" />
             </topic>
             <topic name="First Semester Program Students">
