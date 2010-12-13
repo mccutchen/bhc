@@ -75,67 +75,73 @@
 
     	
     	<!-- =======================================================================
-    		CIT (Bill Hammerschlag)
+    		2011 CIT (Bill Hammerschlag)
     		======================================================================== -->
     	
     	<subject name="Computer Information Technology">
 
+
         <topic name="Introduction to Computing">
-          <comments>NOTE:  ITSC 1401 is a technical/occupational course required for certain certificate and associate degree plans.  It will not meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirements, and is not for transfer to a four-year school.</comments>
-          <pattern match="ITSC 1401-2001" />
-          <pattern match="ITSC 1401-2300" />
-          <pattern match="ITSC 1401-2309" />
+            <comments>NOTE:  ITSC 1401 is a technical/occupational course required for certain certificate and associate degree plans.  It will not meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirements, and is not for transfer to a four-year school.</comments>
+            <pattern match="ITSC 1401-2501" />
         </topic>
 
+
+       <topic name="CIT CORE">
+         <pattern match="ITSE 1429-2501" />
+       </topic>
+            
         <topic name="Programming">
-          <pattern match="GAME 1336-2701" />
-          <pattern match="INEW 2334-2701" />
-          <pattern match="ITSE 1346-2701" />
-          <pattern match="ITSE 1407-2701" />
-          <pattern match="ITSE 2318-2701" />
           <pattern match="ITSE 1430-2501" />
           <pattern match="ITSE 2417-2502" />
           <pattern match="ITSE 1407-2426" />
-          <pattern match="ITSE 1432-2426" />
+          <pattern match="INEW 2334-2745" />
+          <pattern match="ITSE 1407-2745" />
+          <pattern match="ITSE 2318-2745" />
+          <pattern match="COSC 1415-2745" />
+          <pattern match="COSC 1436-2745" />
           <pattern match="INEW 2438-2502" />
           <pattern match="ITSE 2453-2501" />
-        </topic>
+       </topic>
 
         <topic name="Cisco Academy">
-          <pattern match="ITCC 2408-2426" />
-          <pattern match="ITCC 2410-2426" />
+          <pattern match="ITCC 1401-2426" />
         </topic>
 
         <topic name="Microsoft Academy">
           <pattern match="ITMT 1402-2501" />
-          <pattern match="ITMT 1408-2501" />
           <pattern match="ITMT 1470-2501" />
-          <pattern match="ITMT 1471-2501" />
-          <pattern match="ITMT 2401-2501" />
-        </topic>
-
-        <topic name="Web Development and E-commerce">
-          <pattern match="ITSW 1407-2421" />
-        </topic>
-
-
-        <topic name="Application Software">
-          <pattern match="ITSC 1409-2426" />
-          <pattern match="ITSW 1401-2426" />
-          <pattern match="ITSW 1401-2427" />
-          <pattern match="ITSW 1404-2426" />
-          <pattern match="ITSW 1407-2426" />
-          <pattern match="ITSW 1410-2426" />
-          <pattern match="POFI 2440-2426" />
+          <pattern match="ITNW 1408-2501" />
+          <pattern match="ITMT 1402-2426" />
+          <pattern match="ITMT 1470-2426" />
+          <pattern match="ITNW 1408-2426" />
         </topic>
 
         <topic name="Web Development and E-commerce">
           <pattern match="ITSE 1301-2001" />
           <pattern match="IMED 1416-2427" />
+          <pattern match="ITSE 1303-2426" />
+          <pattern match="ITSE 1346-2426" />
         </topic>
 
+        <topic name="Application Software">
+          <pattern match="ITSC 1409-2426" />
+          <pattern match="ITSW 1401-2426" />
+          <pattern match="ITSW 1404-2426" />
+          <pattern match="ITSW 1407-2427" />
+          <pattern match="ITSW 1410-2426" />
+          <pattern match="POFI 2440-2426" />
+        </topic>
 
-        <!-- Senior Adult classes that will be yanked before this subject is processed -->
+        <topic name="Computer Literacy">
+          <pattern match="COSC 1300-2489" />
+          <pattern match="COSC 1300-2490" />
+          <pattern match="COSC 1401-2491" />
+          <pattern match="COSC 1300-2301" />
+        </topic>
+            
+
+     <!-- ??2011 Senior Adult classes that will be yanked before this subject is processed -->
         <topic name="Students 50+ Computer Classes">
           <pattern match="ITSC 1191-2211" />
           <pattern match="ITSC 1291-2201" />
@@ -147,10 +153,7 @@
       <subject name="Computer Science">
         <topic name="Computer Literacy">
           <comments>NOTE:  COSC 1300 will meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and may be used for transfer to a four-year school.</comments>
-          <pattern match="COSC 1300-2421" />
-          <pattern match="COSC 1300-2422" />
-          <pattern match="COSC 1401-2421" />
-          <pattern match="COSC 1300-2301" />
+          <pattern match="COSC 1300-2001" />
           <pattern match="COSC 1401-2001" />
           <pattern match="COSC 1300-2501" />
           <pattern match="COSC 1300-2426" />
@@ -158,20 +161,20 @@
           <pattern match="COSC 1401-2426" />
           <pattern match="COSC 1401-2427" />
           <pattern match="COSC 1300-2300" />
-          <pattern match="COSC 1401-2300" />
-          <pattern match="COSC 1300-2001" />
           <pattern match="COSC 1401-2501" />
           <pattern match="COSC 1300-2428" />
           <pattern match="COSC 1300-2429" />
+          <pattern match="COSC 1301-2428" />
+          <pattern match="COSC 1301-2429" />
           <pattern match="COSC 1401-2428" />
           <pattern match="COSC 1401-2429" />
           <pattern match="COSC 1300-2309" />
+          <pattern match="COSC 1301-2309" />
           <pattern match="COSC 1401-2309" />
         </topic>
 
         <topic name="Programming">
-          <pattern match="COSC 1415-2701" />
-          <pattern match="COSC 1436-2701" />
+          <pattern match="COSC 1309-2501" />
           <pattern match="COSC 1430-2501" />
           <pattern match="COSC 1437-2501" />
           <pattern match="COSC 1437-2502" />
@@ -186,25 +189,28 @@
         <comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
 
         <topic name="Business Computer Applications">
-          <pattern match="BCIS 1405-2421" />
+          <pattern match="BCIS 1405-2491" />
           <pattern match="BCIS 1405-2001" />
           <pattern match="BCIS 1405-2426" />
           <pattern match="BCIS 1405-2427" />
-          <pattern match="BCIS 1405-2300" />
           <pattern match="BCIS 1405-2501" />
           <pattern match="BCIS 1405-2428" />
           <pattern match="BCIS 1405-2429" />
-          <pattern match="BCIS 1405-2430" />
           <pattern match="BCIS 1405-2309" />
         </topic>
 
-        <topic name="Programming">
-          <pattern match="BCIS 1431-2426" />
-        </topic>
       </subject>
 
-      
-      <!-- Medical Front Office (Sharon Burton)
+        
+        
+        
+        
+        
+        
+        
+        
+
+        <!-- Medical Front Office (Sharon Burton)
             ======================================================================== -->
       <subject name="Medical Office Management / Administration">
         <topic name="Medical Front Office Assistant - First Semester">
