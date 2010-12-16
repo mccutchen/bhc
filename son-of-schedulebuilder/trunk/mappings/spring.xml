@@ -1120,6 +1120,7 @@
             </topic>
             <topic name="Piano for Music Majors">
 		        <pattern match="MUSI 1181-2002" />
+                <pattern match="MUSI 1181-2003" />	<!-- 2010-12-16 Linda -->	        
 		        <pattern match="MUSI 1182-2002" />
 		        <pattern match="MUSI 2181-2001" />
 		        <pattern match="MUSI 2182-2001" />
