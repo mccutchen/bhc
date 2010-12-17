@@ -23,7 +23,7 @@ class Summer11(Summer):
     terms = {
         'Summer I/May Term': (date(2011, 5, 11), date(2011, 6, 5), 'May 11-June 5'),
         'Summer I':  (date(2011, 6, 6), date(2011, 7, 7), 'June 6-July 7'),
-        'Summer II':  (date(2011, 7, 12), date(2011, 8, 11), 'July 12-Aug. 11'),
+        'Summer II':  (date(2011, 7, 12), date(2011, 8, 11), 'July 11-Aug. 11'),
     }
     saxon_params = {'schedule-title': 'Summer 2011 Credit'}
 
