@@ -319,7 +319,8 @@
             <pattern match="COSC 1300-2011" />
             <pattern match="COSC 1300-2012" />
             <pattern match="COSC 1300-2013" />
-            <pattern match="COSC 1300-2014" />            
+            <pattern match="COSC 1300-2014" />
+            <pattern match="COSC 1300-2015" />  <!-- ri 2010-12-17 -->
             <pattern match="COSC 1401-2011" />
             <pattern match="COSC 1401-2012" />
             <pattern match="COSC 1401-2013" />
@@ -340,12 +341,15 @@
             <pattern match="COSC 1300-2425" />
             <pattern match="COSC 1300-2426" />
             <pattern match="COSC 1300-2427" />
-            <pattern match="COSC 1300-2428" />                          
+            <pattern match="COSC 1300-2428" />
+            <pattern match="COSC 1300-2429" />              <!-- ri 2010-12-17 -->
+            <pattern match="COSC 1300-2430" />              <!-- ri 2010-12-17 -->
             <pattern match="COSC 1401-2421" />
             <pattern match="COSC 1401-2422" />
             <pattern match="COSC 1401-2423" />
             <pattern match="COSC 1401-2424" />
-            <pattern match="COSC 1401-2425" />            
+            <pattern match="COSC 1401-2425" />
+            <pattern match="COSC 1401-2426" />              <!-- ri 2010-12-17 -->
             <pattern match="COSC 1300-2300" />
             <pattern match="COSC 1300-2301" />
             <pattern match="COSC 1401-2300" />
@@ -387,7 +391,8 @@
               <pattern match="BCIS 1405-2422" />
               <pattern match="BCIS 1405-2423" />
               <pattern match="BCIS 1405-2424" />
-              <pattern match="BCIS 1405-2425" />                       
+              <pattern match="BCIS 1405-2425" />
+              <pattern match="BCIS 1405-2426" /> <!-- RI 2010-12-17 -->
               <pattern match="BCIS 1405-2511" />
               <pattern match="BCIS 1405-2512" />
             </topic>
