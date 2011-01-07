@@ -734,6 +734,7 @@
                 <pattern match="ARTS 2312-2009" />
                 <pattern match="ARTS 2347-2003" />  <!-- Jill 2010-09-13 -->             
                 <pattern match="ARTS 2311-2021" />  <!-- Jill 10-09-02 -->
+                <pattern match="ARTS 2311-2025" />   <!-- ri 2011-01-07 -->
                 <pattern match="ARTS 2312-2021" />  <!-- Jill 10-09-02 -->
                 <pattern match="ARTS 2346-2501" />
                 <pattern match="ARTS 2347-2501" />
@@ -1165,6 +1166,7 @@
                  <subtopic name="Chamber Ensemble">
 		             <pattern match="MUEN 1152-2501" />
                      <pattern match="MUEN 1152-2502" />
+                     <pattern match="MUEN 1152-2503" /> <!--  ri 2011-01-07 -->                                         
                      <pattern match="MUEN 1152-2750" />
    				</subtopic>
               <subtopic name="Mariachi Band Ensemble">
@@ -1232,6 +1234,7 @@
 					<pattern match="MUAP 1137-2001" />
 					<pattern match="MUAP 1137-2002" />
 					<pattern match="MUAP 1141-2001" />
+                    <pattern match="MUAP 1141-2002" /> <!-- ri 11-01-07 -->					
 					<pattern match="MUAP 1145-2001" />					
 					<pattern match="MUAP 1145-2002" />
                     <pattern match="MUAP 1149-2001" />                  <!-- added RI 7/9/10 -->
