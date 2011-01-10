@@ -575,17 +575,17 @@
         
         <topic name="Music-private Lessons">
           <subtopic name="Beginning">
-            <comments>Note:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4102 for more information.</comments>
+            <comments>Note:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
             <pattern match="MUAP 1101-2200" />
             <pattern match="MUAP 1109-2200" />
             <pattern match="MUAP 1109-2201" />
             <pattern match="MUAP 1109-2202" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
             <pattern match="MUAP 1115-2200" />
-            <pattern match="MUAP 1117-2200" />
             <pattern match="MUAP 1125-2200" />
             <pattern match="MUAP 1129-2200" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
             <pattern match="MUAP 1133-2200" />
             <pattern match="MUAP 1137-2200" />
+            <pattern match="MUAP 1137-2201" /> <!-- Jill 20110110 -->
             <pattern match="MUAP 1145-2200" />
             <pattern match="MUAP 1157-2200" />
             <pattern match="MUAP 1161-2200" />
@@ -601,11 +601,8 @@
           </subtopic>
         </topic>
       </subject>
-
-
-
-
-      <!--=======================================================================
+       
+        <!--=======================================================================
     		Health and Human Services - Nursing (Ann Cortez and Monica Wenthold)
     		========================================================================-->
 		<subject name="Nursing">
