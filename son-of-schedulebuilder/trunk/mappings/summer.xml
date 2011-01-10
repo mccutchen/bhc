@@ -248,6 +248,7 @@
             <topic name="Art Appreciation">
                 <pattern match="ARTS 1301-2700" />
                 <pattern match="ARTS 1301-2001" />
+                <pattern match="ARTS 1301-2501" /> <!-- jill 20110110 -->
                 <pattern match="ARTS 1301-2502" />
                 <pattern match="ARTS 1301-2420" />
                 <pattern match="ARTS 1301-2421" />
@@ -269,18 +270,24 @@
                 <pattern match="ARTS 1303-2002" />
                 <pattern match="ARTS 1304-2001" />
                 <pattern match="ARTS 1303-2426" />  <!-- jill 20110110 -->
-
+                <pattern match="ARTS 1303-2427" />  <!-- jill 20110110 -->
               
           </topic>
 
-          <topic name="Art and Computers">
+          <topic name="Computer Graphics Workshop"> <!-- Jill 20110110 -->
+                <pattern match="ARTS 2313-2225" />
+                <pattern match="ARTS 2314-2225" />
+                <pattern match="ARTS 2311-2200" />
+                <pattern match="ARTS 2312-2200" />
+            </topic>
+            <topic name="Art and Computers">
                 <pattern match="ARTS 2313-2001" />
                 <pattern match="ARTS 2314-2001" />
                 <pattern match="ARTS 2311-2003" />
                 <pattern match="ARTS 2312-2003" />
             </topic>
 
-          <topic name="Art Metals Workshop">
+            <topic name="Art Metals Workshop">
             <pattern match="ARTS 2341-2225" />
             <pattern match="ARTS 2342-2225" />
             <pattern match="ARTS 2311-2225" />
@@ -380,7 +387,7 @@
                 <pattern match="ARTS 2312-2004" />
           </topic>
 
-          <topic name="Printmaking">
+          <topic name="Printmaking Workshop">
                 <pattern match="ARTS 2333-2225" />
                 <pattern match="ARTS 2334-2225" />
                 <pattern match="ARTS 2311-2226" />
@@ -496,6 +503,7 @@
           <pattern match="MUSI 1306-2426" />
           <pattern match="MUSI 1306-2427" />
           <pattern match="MUSI 1306-2428" />
+          <pattern match="MUSI 1306-2429" />  <!-- Jill 20110110 -->
           <pattern match="MUSI 1306-2003" />
           <pattern match="MUSI 1306-2004" />
           <pattern match="MUSI 1306-2431" />
