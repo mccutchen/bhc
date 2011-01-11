@@ -1148,6 +1148,7 @@
           <topic name="Guitar">
                 <pattern match="MUSI 1192-2001" />
                 <pattern match="MUSI 1192-2002" />
+                <pattern match="MUSI 1192-2003" />    <!-- linda 20110111 -->            
                 <pattern match="MUSI 1192-2200" />    <!-- added 2/11/10 Linda -->
                 <pattern match="MUSI 1193-2001" />	<!-- added 2010-07-30 RI -->		
             </topic>
@@ -1176,6 +1177,7 @@
                 </subtopic>
                 <subtopic name="Guitar Ensemble">
 					<pattern match="MUEN 1134-2001" />
+                    <pattern match="MUEN 1134-2200" />		 <!-- linda 20110111 -->			
 					<pattern match="MUEN 1134-2501" />
 					<pattern match="MUEN 1134-2700" />
 	            </subtopic>
