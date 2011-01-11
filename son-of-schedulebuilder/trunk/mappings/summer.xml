@@ -527,7 +527,11 @@
         <topic name="Piano for Non Music Majors">
           <pattern match="MUSI 1181-2700" />
         </topic>
-        <topic name="Voice">
+          <topic name="JAZZ/ROCK">
+              <pattern match="MUSI 1310-2001" />
+          </topic>
+
+          <topic name="Voice">
           <pattern match="MUSI 1183-2001" />
           <pattern match="MUSI 1183-2002" />
         </topic>
