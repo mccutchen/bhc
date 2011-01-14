@@ -331,7 +331,7 @@
 
             <topic name="Design">
                 <pattern match="ARTS 1311-2001" />             
-                <pattern match="ARTS 1312-2001" />
+                
             </topic>
 
           <topic name="Drawing Workshop">
@@ -356,18 +356,12 @@
                 <pattern match="ARTS 2312-2006" />
             </topic>
 
+
           <topic name="Painting">
                 <pattern match="ARTS 2316-2200" />
                 <pattern match="ARTS 2317-2200" />
                 <pattern match="ARTS 2311-2200" />
                 <pattern match="ARTS 2312-2200" />
-            </topic>
-
-            <topic name="Painting Workshop">
-                <pattern match="ARTS 2316-2230" />
-                <pattern match="ARTS 2317-2230" />
-                <pattern match="ARTS 2311-2230" />
-                <pattern match="ARTS 2312-2230" />
                 <pattern match="ARTS 2316-2001" />
                 <pattern match="ARTS 2317-2001" />
                 <pattern match="ARTS 2311-2002" />
@@ -378,6 +372,12 @@
                 <pattern match="ARTS 2312-2007" />
             </topic>
 
+            <topic name="Painting Workshop">
+                <pattern match="ARTS 2316-2230" />
+                <pattern match="ARTS 2317-2230" />
+                <pattern match="ARTS 2311-2230" />
+                <pattern match="ARTS 2312-2230" />
+            </topic>
             <topic name="Photography">
                 <pattern match="ARTS 2356-2001" />
                 <pattern match="ARTS 2357-2001" />
@@ -419,6 +419,7 @@
             <pattern match="ARTS 2327-2001" />
             <pattern match="ARTS 2311-2005" />
             <pattern match="ARTS 2312-2005" />
+            <pattern match="ARTS 1312-2001" />              <!-- jill 2011-01-14 -->
           </topic>
         </subject>
 
