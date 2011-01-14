@@ -277,8 +277,7 @@
           <topic name="Computer Graphics Workshop"> <!-- Jill 20110110 -->
                 <pattern match="ARTS 2313-2225" />
                 <pattern match="ARTS 2314-2225" />
-                <pattern match="ARTS 2311-2200" />
-                <pattern match="ARTS 2312-2200" />
+                <pattern match="ARTS 2311-2200" />                
             </topic>
             <topic name="Art and Computers">
                 <pattern match="ARTS 2313-2001" />
@@ -357,11 +356,14 @@
                 <pattern match="ARTS 2312-2006" />
             </topic>
 
-          <topic name="Painting Workshop">
+          <topic name="Painting">
                 <pattern match="ARTS 2316-2200" />
                 <pattern match="ARTS 2317-2200" />
                 <pattern match="ARTS 2311-2200" />
                 <pattern match="ARTS 2312-2200" />
+            </topic>
+
+            <topic name="Painting Workshop">
                 <pattern match="ARTS 2316-2230" />
                 <pattern match="ARTS 2317-2230" />
                 <pattern match="ARTS 2311-2230" />
@@ -373,9 +375,8 @@
                 <pattern match="ARTS 2316-2001" />
                 <pattern match="ARTS 2317-2001" />
                 <pattern match="ARTS 2311-2007" />
-                <pattern match="ARTS 2312-2007" />              
+                <pattern match="ARTS 2312-2007" />
             </topic>
-
 
             <topic name="Photography">
                 <pattern match="ARTS 2356-2001" />
