@@ -320,7 +320,8 @@
             <pattern match="COSC 1300-2012" />
             <pattern match="COSC 1300-2013" />
             <pattern match="COSC 1300-2014" />
-            <pattern match="COSC 1300-2015" />  <!-- ri 2010-12-17 -->
+            <pattern match="COSC 1300-2015" />            <!-- ri 2010-12-17 -->
+            <pattern match="COSC 1300-2016" />              <!-- ri 2011-01-14 -->
             <pattern match="COSC 1401-2011" />
             <pattern match="COSC 1401-2012" />
             <pattern match="COSC 1401-2013" />
@@ -344,6 +345,7 @@
             <pattern match="COSC 1300-2428" />
             <pattern match="COSC 1300-2429" />              <!-- ri 2010-12-17 -->
             <pattern match="COSC 1300-2430" />              <!-- ri 2010-12-17 -->
+            <pattern match="COSC 1300-2431" />              <!-- ri 2011-01-14  -->
             <pattern match="COSC 1401-2421" />
             <pattern match="COSC 1401-2422" />
             <pattern match="COSC 1401-2423" />
@@ -662,6 +664,7 @@
                 <pattern match="RADR 2233" />
                 <pattern match="RADR 2240" /> <!-- added ri 2010-09-09 -->
                 <pattern match="RADR 2266" /> <!-- added 20100115 -->
+                <pattern match="RADR 2267" />  <!--  ri 2011-01-14 -->
             </topic>
         </subject>
         
@@ -1102,6 +1105,7 @@
                 <pattern match="MUSI 1117-2002" />
                 <pattern match="MUSI 2116-2200" /><!-- added 1/19/10 -->
                 <pattern match="MUSI 2117-2001" />
+                <pattern match="MUSI 2117-2200" /> <!-- ri 2011-01-14 -->
             </topic>
             <topic name="Music Literature">
                 <pattern match="MUSI 1308-2300" />
