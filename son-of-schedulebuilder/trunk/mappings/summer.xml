@@ -283,7 +283,6 @@
             <topic name="Art and Computers">
                 <pattern match="ARTS 2313-2001" />
                 <pattern match="ARTS 2314-2001" />
-                <pattern match="ARTS 2311-2003" />
                 <pattern match="ARTS 2312-2003" />
             </topic>
 
@@ -305,7 +304,14 @@
                 <pattern match="ARTS 2312-2001" />
           </topic>
 
-          <topic name="Ceramics Workshop">
+            <topic name="Ceramics">
+                <pattern match="ARTS 2346-2701" />
+                <pattern match="ARTS 2347-2701" />
+                <pattern match="ARTS 2311-2702" />
+                <pattern match="ARTS 2312-2702" />
+            </topic>
+
+            <topic name="Ceramics Workshop">
                 <pattern match="ARTS 2346-2225" />
                 <pattern match="ARTS 2347-2225" />
                 <pattern match="ARTS 2311-2228" />
@@ -318,17 +324,13 @@
                 <pattern match="ARTS 2347-2001" />
                 <pattern match="ARTS 2311-2001" />
                 <pattern match="ARTS 2312-2001" />
-                <pattern match="ARTS 2346-2701" />
-                <pattern match="ARTS 2347-2701" />
-                <pattern match="ARTS 2311-2702" />
-                <pattern match="ARTS 2312-2702" />
                 <pattern match="ARTS 2346-2004" />
                 <pattern match="ARTS 2347-2004" />
                 <pattern match="ARTS 2311-2008" />
                 <pattern match="ARTS 2312-2008" />
             </topic>
 
-          <topic name="Design">
+            <topic name="Design">
                 <pattern match="ARTS 1311-2001" />             
                 <pattern match="ARTS 1312-2001" />
             </topic>
@@ -346,7 +348,7 @@
                 <pattern match="ARTS 2311-2704" />
                 <pattern match="ARTS 2312-2704" />
                 <pattern match="ARTS 1316-2001" />
-                <pattern match="ARTS 1317-2001" />
+                <pattern match="ARTS 1317-2001" />                
                 <pattern match="ARTS 2311-2003" />
                 <pattern match="ARTS 2312-2003" />
                 <pattern match="ARTS 1316-2002" />
@@ -375,27 +377,30 @@
             </topic>
 
 
-
-          <topic name="Photography Workshop">
-                <pattern match="ARTS 2356-2225" />
-                <pattern match="ARTS 2357-2225" />
-                <pattern match="ARTS 2311-2230" />
-                <pattern match="ARTS 2312-2230" />
+            <topic name="Photography">
                 <pattern match="ARTS 2356-2001" />
                 <pattern match="ARTS 2357-2001" />
                 <pattern match="ARTS 2311-2004" />
                 <pattern match="ARTS 2312-2004" />
+            </topic>
+
+            <topic name="Photography Workshop">
+                <pattern match="ARTS 2356-2225" />
+                <pattern match="ARTS 2357-2225" />
           </topic>
 
-          <topic name="Printmaking Workshop">
-                <pattern match="ARTS 2333-2225" />
-                <pattern match="ARTS 2334-2225" />
-                <pattern match="ARTS 2311-2226" />
-                <pattern match="ARTS 2312-2226" />
+            <topic name="Printmaking">
                 <pattern match="ARTS 2333-2701" />
                 <pattern match="ARTS 2334-2701" />
                 <pattern match="ARTS 2311-2703" />
                 <pattern match="ARTS 2312-2703" />
+            </topic>
+
+            <topic name="Printmaking Workshop">
+                <pattern match="ARTS 2333-2225" />
+                <pattern match="ARTS 2334-2225" />
+                <pattern match="ARTS 2311-2226" />
+                <pattern match="ARTS 2312-2226" />
                 <pattern match="ARTS 2333-2226" />
                 <pattern match="ARTS 2334-2226" />
                 <pattern match="ARTS 2311-2210" />
@@ -405,8 +410,7 @@
           <topic name="Sculpture Workshop">
                 <pattern match="ARTS 2326-2225" />
                 <pattern match="ARTS 2327-2225" />
-                <pattern match="ARTS 2311-2229" />
-                <pattern match="ARTS 2312-2229" />
+                <pattern match="ARTS 2311-2229" />                
             </topic>
 
           <topic name="Sculpture">
@@ -427,9 +431,6 @@
           <pattern match="DANC 2303-2001" />
         </topic>
 
-          <topic name="Summer Dance Intensive">
-              <pattern match="DANC 2389-2201" /> <!-- Jill 2011-01-12 -->
-          </topic>
 
           <topic name="Dance Performance">
           <pattern match="DANC 1351-2735" /> <!-- added by Guess - 6/28/10 RI  -->          
@@ -438,23 +439,6 @@
           <pattern match="DANC 2351-2736" /> <!-- RI 6/28/10 added specific course - SS Note 6/24/10 - left this generic for now since I don't know the order they want. -->
           <pattern match="DANC 2351-2737" /> <!-- RI 6/28/10 added per Linda -->
 
-        </topic>
-
-        <topic name="Hip Hop">
-          <pattern match="DANC 1222-2201" />
-          <pattern match="DANC 1223-2201" />
-          <pattern match="DANC 1222-2701" />
-          <pattern match="DANC 1222-2702" /> <!--  added per Linda 2010-06-24  -->
-          <pattern match="DANC 1223-2701" />
-          <pattern match="DANC 2222-2701" />
-          <pattern match="DANC 2223-2701" />
-        </topic>
-
-        <topic name="Jazz">
-          <pattern match="DANC 1247-2701" />
-          <pattern match="DANC 1248-2701" />
-          <pattern match="DANC 1248-2702" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
-          
         </topic>
 
         <topic name="Ballet">
@@ -469,7 +453,26 @@
           <pattern match="DANC 2342-2701" />
         </topic>
 
-        <topic name="Modern Dance">
+          <topic name="Jazz">
+              <pattern match="DANC 1247-2701" />
+              <pattern match="DANC 1248-2701" />
+              <pattern match="DANC 1248-2702" />              <!-- Added by SS 6/24/10 w/no input from BCSA -->
+          </topic>
+
+          <topic name="Hip Hop">
+              <pattern match="DANC 1222-2201" />
+              <pattern match="DANC 1223-2201" />
+              <pattern match="DANC 1222-2701" />
+              <pattern match="DANC 1222-2702" />              <!--  added per Linda 2010-06-24  -->
+              <pattern match="DANC 1223-2701" />
+              <pattern match="DANC 2222-2701" />
+              <pattern match="DANC 2223-2701" />
+          </topic>
+          <topic name="Summer Dance Intensive">
+              <pattern match="DANC 2389-2201" />              <!-- Jill 2011-01-12 -->
+          </topic>
+
+          <topic name="Modern Dance">
           <pattern match="DANC 1245-2201" />
           <pattern match="DANC 1246-2201" />
           <pattern match="DANC 2245-2201" />
