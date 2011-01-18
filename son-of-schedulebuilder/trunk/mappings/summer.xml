@@ -277,7 +277,7 @@
           <topic name="Computer Graphics Workshop"> <!-- Jill 20110110 -->
                 <pattern match="ARTS 2313-2225" />
                 <pattern match="ARTS 2314-2225" />
-                <pattern match="ARTS 2311-2200" />
+                <pattern match="ARTS 2311-2206" /> <!-- jill 2011-01-18  -->
                 <pattern match="ARTS 2312-2200" />              
             </topic>
             <topic name="Art and Computers">
@@ -322,7 +322,7 @@
                 <pattern match="ARTS 2312-2229" />
                 <pattern match="ARTS 2346-2001" />
                 <pattern match="ARTS 2347-2001" />
-                <pattern match="ARTS 2311-2001" />
+
                 <pattern match="ARTS 2312-2001" />
                 <pattern match="ARTS 2346-2004" />
                 <pattern match="ARTS 2347-2004" />
@@ -411,8 +411,7 @@
 
           <topic name="Sculpture Workshop">
                 <pattern match="ARTS 2326-2225" />
-                <pattern match="ARTS 2327-2225" />
-                <pattern match="ARTS 2311-2229" />                
+                <pattern match="ARTS 2327-2225" />               
             </topic>
 
           <topic name="Sculpture">
