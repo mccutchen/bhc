@@ -1171,8 +1171,10 @@
                  <subtopic name="Chamber Ensemble">
 		             <pattern match="MUEN 1152-2501" />
                      <pattern match="MUEN 1152-2502" />
-                     <pattern match="MUEN 1152-2503" /> <!--  ri 2011-01-07 -->                                         
-                     <pattern match="MUEN 1152-2750" />
+                     <pattern match="MUEN 1152-2503" /> <!--  ri 2011-01-07 -->                    
+					 <pattern match="MUEN 1152-2700" /> <!-- jill 2011-1-18 -->                    
+                     <pattern match="MUEN 1152-2701" /><!-- jill 2011-1-18 -->
+					 <pattern match="MUEN 1152-2750" />
    				</subtopic>
               <subtopic name="Mariachi Band Ensemble">
                 </subtopic>                
