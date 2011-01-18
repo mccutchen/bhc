@@ -248,7 +248,9 @@
             <a name="{@rubrik}-{@number}-{min(class/@section)}" />
             <a name="{@rubrik}-{@number}-{min(class/@section)}-{@machine_name}" />
             <h3>
-                <xsl:value-of select="@title" />
+                <a href="https://www1.dcccd.edu/catalog/coursedescriptions/detail.cfm?course={@rubrik}&amp;number={@number}&amp;loc=2" target="_blank">
+                <xsl:value-of select="@title" /></a>
+
                 <xsl:if test="@core-component and @core-component != ''">
                     <span class="core">&#160;&#8226;&#160;Core Curriculum</span>
                 </xsl:if>
@@ -300,8 +302,29 @@
     </xsl:template>
 
     <xsl:template name="class-number">
+        <xsl:variable name="course-rubric" select="../@rubrik" />
+        <xsl:variable name="course-number" select="../@number" />
+        <xsl:variable name="section-number" select="@section" />
+        <xsl:variable name="year" select="ancestor::term/@year" />
+
+        <xsl:variable name="term-abbr">
+            <xsl:choose>
+                <xsl:when test="ancestor::term/@name = 'Fall'">FA</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Spring'">SP</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Summer I/May Term'">S1</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Summer I'">S1</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Summer II'">S2</xsl:when>
+                <xsl:otherwise>
+                    <xsl:message>Unknown term: <xsl:value-of select="ancestor::term/@name" />.</xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+
+        <xsl:variable name="term" select="concat($year,$term-abbr)" />
+
         <xsl:if test="ancestor::course/@core-component and ancestor::course/@core-component != ''"><span>+&#160;</span></xsl:if>
-        <a href="https://www1.dcccd.edu/catalog/coursedescriptions/detail.cfm?course={../@rubrik}&amp;number={../@number}&amp;loc=2" target="_blank">
+        <a href="http://hb2504.dcccd.edu/Syllabi/{$term}-{$course-rubric}-{$course-number}-{$section-number}.pdf" target="_blank">
+        
             <xsl:value-of select="../@rubrik" /><xsl:text>&#160;</xsl:text>
             <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
             <xsl:value-of select="@section" />
