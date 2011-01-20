@@ -106,6 +106,7 @@
 
         <topic name="Cisco Academy">
           <pattern match="ITCC 1401-2426" />
+          <pattern match="ITCC 1404-2426" />            <!-- aly 2011-01-20 -->
         </topic>
 
         <topic name="Microsoft Academy">
@@ -263,8 +264,12 @@
                 <pattern match="ARTS 1301-2427" />  
             </topic>
 
-          <topic name="Art History">
+
+            <topic name="Art History Workshop">        <!-- jill 2011-01-20  -->
                 <pattern match="ARTS 1303-2201" />
+            </topic>
+
+            <topic name="Art History">
                 <pattern match="ARTS 1303-2001" />
                 <pattern match="ARTS 1304-2002" />
                 <pattern match="ARTS 1303-2002" />
