@@ -373,8 +373,10 @@
             <pattern match="COSC 2425-2501" />
             <pattern match="COSC 2430-2501" />		  	
             <pattern match="COSC 2436-2501" />
-            <pattern match="COSC 1309-2426" />			  
-          </topic>
+            <pattern match="COSC 1309-2426" />
+            <pattern match="COSC 1415-2700" />             <!-- ri 2010-01-21  -->
+            <pattern match="COSC 1436-2700" />             <!-- ri 2010-01-21  -->
+         </topic>
         </subject>
              
         <subject name="Computer Studies - Business Computer Information Systems">
@@ -713,6 +715,7 @@
                 <pattern match="ARTS 2349-2001" />
                 <pattern match="ARTS 2313-2001" /> <!-- added by RI 2010-08-20 -->
                 <pattern match="ARTS 2314-2001" /> <!-- added by RI 2010-08-20 -->
+                <pattern match="ARTS 2313-2200" />                <!-- ri 2011-01-21 -->
                 <pattern match="ARTS 2313-2501" />
                 <pattern match="ARTS 2314-2501" />
             </topic>
