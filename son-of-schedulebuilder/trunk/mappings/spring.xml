@@ -953,6 +953,7 @@
                 <pattern match="DANC 1248-2501" />
                 <pattern match="DANC 2247-2501" />
                 <pattern match="DANC 2248-2501" />
+                <pattern match="DANC 1247-2701" />                <!-- ri 2011-01-24- -->
                 <pattern match="DANC 2247-2701" />    <!-- added 1-29-10  -->
             </topic>
             <topic name="Ballet">
@@ -960,6 +961,7 @@
                 <pattern match="DANC 1342-2001" />
                 <pattern match="DANC 2341-2001" />
                 <pattern match="DANC 2342-2001" />
+                <pattern match="DANC 1341-2201" />                <!-- ri 2011-01-24 -->
                 <pattern match="DANC 1341-2501" />
                 <pattern match="DANC 1342-2502" />
                 <pattern match="DANC 1342-2501" />
@@ -1142,7 +1144,8 @@
               	<pattern match="MUSI 1181-2006" />
 		        <pattern match="MUSI 1182-2006" />
 		        <pattern match="MUSI 1181-2001" />
-		        <pattern match="MUSI 1182-2503" />
+                <pattern match="MUSI 1182-2200" />                 <!-- ri 2011-01-24 -->
+                <pattern match="MUSI 1182-2503" />
 		        <pattern match="MUSI 1181-2501" />
 		        <pattern match="MUSI 1182-2501" />
 		        <pattern match="MUSI 1181-2502" />
