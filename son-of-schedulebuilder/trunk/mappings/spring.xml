@@ -1103,6 +1103,9 @@
                 <pattern match="MUSI 1312-2001" />
                 <pattern match="MUSI 2311-2001" />
                 <pattern match="MUSI 2312-2001" />
+                <pattern match="MUSI 1311-2200" />                <!-- Linda 2011-01-25  -->
+                <pattern match="MUSI 2311-2200" />                <!-- Linda 2011-01-25  -->
+                <pattern match="MUSI 2312-2200" />                <!-- Linda 2011-01-25  -->
             </topic>
           <topic name="Musicianship">
                 <pattern match="MUSI 1116-2200" /><!-- added 1/19/10 -->
@@ -1122,6 +1125,7 @@
                 <pattern match="MUSI 1300-2300" />
             </topic>
             <topic name="Composition">
+                <pattern match="MUSI 1386-2200" />                <!-- Linda 2011-01-25  -->                
                 <pattern match="MUSI 1386-2300" />
             </topic>
             <topic name="Recital">
@@ -1166,6 +1170,7 @@
                 <pattern match="MUSI 1183-2001" />
                 <pattern match="MUSI 1183-2501" />
                 <pattern match="MUSI 1183-2502" />
+                <pattern match="MUSI 1183-2701" />                <!-- Linda 2011-01-25  -->
             </topic>
             <topic name="Music Ensembles">
                 <subtopic name="Brookhaven Choral Society">
@@ -1219,7 +1224,8 @@
 					<pattern match="MUEN 2123-2002" />
                     <pattern match="MUEN 2123-2003" /> <!-- added Jill 10-09-02 -->
                     <pattern match="MUEN 1151-2501" />
-					<pattern match="MUEN 2123-2501" />
+                    <pattern match="MUEN 2123-2200" />                    <!-- linda 2011-01-25  -->
+                    <pattern match="MUEN 2123-2501" />
 					<pattern match="MUEN 2123-2502" />
 	            </subtopic>
             </topic>
