@@ -463,6 +463,9 @@
               <pattern match="DANC 1248-2701" />
               <pattern match="DANC 1248-2702" />              <!-- Added by SS 6/24/10 w/no input from BCSA -->
           </topic>
+          <topic name="Aerial Dance">
+              <pattern match="DANC 1113-2701" />              <!-- Jill 2011-01-25  -->
+          </topic>
 
           <topic name="Hip Hop">
               <pattern match="DANC 1222-2201" />
