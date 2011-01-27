@@ -331,7 +331,7 @@
             </topic>
 
             <topic name="Design">
-
+                <pattern match="ARTS 1311-2001" />                <!-- jill 2011-01-27 -->
             </topic>
             <topic name="Drawing Workshop">
                 <pattern match="ARTS 1316-2225" />
@@ -343,7 +343,6 @@
             <topic name="Drawing">
                 <pattern match="ARTS 1316-2701" />
                 <pattern match="ARTS 1317-2701" />
-                <pattern match="ARTS 2311-2704" />
                 <pattern match="ARTS 2312-2704" />
                 <pattern match="ARTS 1316-2001" />
                 <pattern match="ARTS 1317-2001" />
