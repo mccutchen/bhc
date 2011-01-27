@@ -143,7 +143,7 @@
             <pattern match="DANC" priority="0" unsorted="true" />
         </subject>
         <subject name="Developmental Mathematics">
-        	<comments>NOTE: Required for DMAT 0090, 0097, 0098 and 0099: These courses will run using interactive software called MyLabsPlus. Students must have access to a computer with Internet to complete the required work for these courses. Students must purchase a new textbook or a MyLabsPlus access code. Contact your instructor (listed in eConnect) for more information.</comments>
+        	<comments>NOTE: Required for DMAT 0090, 0097, 0098 and 0099 - These classes will run using interactive software called MyLabsPlus. Students must have access to a computer with Internet to complete the required work for these classes.  Students must purchase a new textbook bundle or a MyLabsPlus access code. Contact your instructor (listed in eConnect) for more information.</comments>
             <pattern match="DMAT" priority="0" unsorted="true" />
         </subject>
         <subject name="Developmental Reading">
@@ -271,7 +271,7 @@
             <pattern match="FSHN" priority="0" unsorted="true" />
         </subject>
         <subject name="Mathematics">
-            <comments>NOTE: MANDATORY for all MATH courses: One of any version of the following Texas Instruments calculators: TI-83, TI-84 or TI-86. MATH 1414 will use an interactive software program called MyMathLab. Students must purchase a new textbook or a MyMathLab access code. Contact your instruction (listed in eConnect) for more information.</comments>
+            <comments>NOTE: MANDATORY for all MATH Classes - One of any version of the following Texas Instruments calculators is mandatory: TI-83, TI-84 or TI-86.  MATH 1324 and MATH 1414 will use an interactive software program called MyMathLab. Students must have access to a computer with Internet to complete the required work for these classes. Students must purchase a new textbook bundle or a MyMathLab access code. Contact your instructor (listed in eConnect) for more information.</comments>
           <pattern match="MATH" priority="0" unsorted="true" />
             <pattern match="TECM" priority="0" unsorted="true" />
         </subject>
