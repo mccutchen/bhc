@@ -689,20 +689,42 @@
 				<pattern match="RADR 1201" />
             </topic>
             <topic name="Second Semester Program Students">
-                <comments>NOTE: The following courses are for students in the second semester of the Radiologic Sciences Program. Acceptance into this program is required.</comments>
+                <comments>NOTE: The following courses are for students in the second semester of the Radiologic Sciences Program. Acceptance into this program is required. For more information call Christi Carter at 972-860-4285.</comments>
                 <pattern match="RADR 1313" />
                 <pattern match="RADR 2301" />
             </topic>
             <topic name="Fifth Semester Program Students">
-                <comments>NOTE: The following courses are for students in the fifth semester of the Radiologic Sciences Program. Acceptance into this program is required.</comments>
+                <comments>NOTE: The following courses are for students in the fifth semester of the Radiologic Sciences Program. Acceptance into this program is required.  For more information call Christi Carter at 972-860-4285.</comments>
             	<pattern match="RADR 1202" />
             	<pattern match="RADR 1250" />
                 <pattern match="RADR 2266" />
             </topic>
+
+            <topic name="Computed Tomography">
+                <comments>NOTE: The following courses are for students admitted to the Computed Tomography Program.  Acceptance into the program is  REQUIRED.  For more information call Valerie Martin at 972-860-4264.</comments>
+                <pattern match="CTMT 1391-2001" />
+                <pattern match="CTMT 2367-2201" />
+                <pattern match="CTMT 2367-2202" />
+                <pattern match="CTMT 2367-2203" />
+                <pattern match="CTMT 2367-2204" />
+                <pattern match="CTMT 2367-2205" />
+                <pattern match="CTMT 2367-2206" />
+                <pattern match="CTMT 2367-2207" />
+                <pattern match="CTMT 2367-2208" />
+                <pattern match="CTMT 2367-2209" />
+                <pattern match="CTMT 2367-2210" />
+                <pattern match="CTMT 2367-2211" />
+                <pattern match="CTMT 2367-2212" />
+                <pattern match="CTMT 2367-2213" />
+                <pattern match="CTMT 2367-2214" />
+                <pattern match="CTMT 2367-2215" />
+                <pattern match="CTMT 2367-2216" />
+                <pattern match="CTMT 2367-2217" />
+                <pattern match="CTMT 2367-2218" />
+            </topic>
         </subject>
 		
-
-		 
+	 
    <!-- =======================================================================
             Health and Human Services - Emergency Medical Services (Monica Wenthold)
         ======================================================================== -->
