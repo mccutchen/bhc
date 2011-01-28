@@ -146,7 +146,7 @@
 
       <subject name="Computer Science">
         <topic name="Computer Literacy">
-          <comments>NOTE:  COSC 1300 will meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and may be used for transfer to a four-year school.</comments>
+          
           <pattern match="COSC 1300-2489" />
           <pattern match="COSC 1300-2490" />
           <pattern match="COSC 1401-2491" />
