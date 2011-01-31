@@ -764,10 +764,12 @@
                     <pattern match="EMSP 2434-2227" />
 		 			<pattern match="EMSP 2434-2201" />
                     <pattern match="EMSP 2434-2202" />
-                    <pattern match="EMSP 1355-2227" />
+                    <pattern match="EMSP 1355-2227" />                    
                     <pattern match="EMSP 2355-2728" />                    <!-- Nancy 2011-01-31  -->
                     <pattern match="EMSP 1355-2701" />                    <!-- Nancy 2011-01-31  -->
                     <pattern match="EMSP 1355-2201" />
+                    <pattern match="EMSP 1355-2725" />                    <!-- ri 2011-01-31  -->
+                    <pattern match="EMSP 1355-2728" />                    <!-- ri 2011-01-31  -->
                     <pattern match="EMSP 1355-2202" />
                     <pattern match="EMSP 2430-2227" />
                     <pattern match="EMSP 2430-2201" />
