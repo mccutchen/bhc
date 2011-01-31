@@ -734,6 +734,7 @@
 		 	<topic name="Emergency Medical Services, Basic">
 		 		<subtopic name="Emt-basic Class #60, A shift">
 		 			<pattern match="EMSP 1501-2210" />
+                    <pattern match="EMSP 1501-2262" />                    <!-- Nancy 2011-01-31  -->
 		 			<pattern match="EMSP 1501-2201" />
 		 			<pattern match="EMSP 1501-2202" />
 		 			<pattern match="EMSP 1501-2203" />
@@ -753,14 +754,19 @@
 		 			<pattern match="EMSP 2338-2226" />
 		 			<pattern match="EMSP 2338-2203" />
                     <pattern match="EMSP 2143-2226" />
+                    <pattern match="EMSP 2143-2227" />                    <!-- Nancy 2011-01-31  -->              
                     <pattern match="EMSP 2143-2201" />
                     <pattern match="EMSP 2463-2726" />
                 </subtopic>
 		 		<subtopic name="Paramedic Class #27, C shift">
-		 			<pattern match="EMSP 2434-2227" />
+                    <pattern match="EMSP 2434-2728" />                    <!-- Nancy 2011-01-31  -->
+                    <pattern match="EMSP 2434-2701" />                    <!-- Nancy 2011-01-31  -->
+                    <pattern match="EMSP 2434-2227" />
 		 			<pattern match="EMSP 2434-2201" />
                     <pattern match="EMSP 2434-2202" />
                     <pattern match="EMSP 1355-2227" />
+                    <pattern match="EMSP 2355-2728" />                    <!-- Nancy 2011-01-31  -->
+                    <pattern match="EMSP 1355-2701" />                    <!-- Nancy 2011-01-31  -->
                     <pattern match="EMSP 1355-2201" />
                     <pattern match="EMSP 1355-2202" />
                     <pattern match="EMSP 2430-2227" />
