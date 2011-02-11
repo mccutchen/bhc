@@ -1224,6 +1224,7 @@
 	            </subtopic>
                 <subtopic name="Vocal Jazz / Lab Band">
 					<pattern match="MUEN 1151-2001" />
+                    <pattern match="MUEN 1151-2200" />                    <!-- Linda 2011-02-11  -->
                     <pattern match="MUEN 1151-2700" /> <!-- added 1/22/2010  VOCAL ENSEMBLE -->
                     <pattern match="MUEN 2123-2001" />
 					<pattern match="MUEN 2123-2002" />
