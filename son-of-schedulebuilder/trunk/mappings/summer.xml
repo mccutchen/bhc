@@ -216,6 +216,8 @@
           <subtopic name="Medical Terminology">
             <pattern match="MDCA 1313-2251" />
             <pattern match="MDCA 1313-2426" />
+            <pattern match="MDCA 1313-2427" />              <!-- Pat 2011-02-11  -->
+            <pattern match="MDCA 1313-2700" />              <!-- Pat 2011-02-11  -->
           </subtopic>
           <subtopic name="Medical Office Procedures">
             <pattern match="POFM 1309-2426" />
