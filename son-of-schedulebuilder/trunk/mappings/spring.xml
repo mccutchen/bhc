@@ -1025,7 +1025,11 @@
             <topic name="Rehearsal">
                 <subtopic name="First Play, Spring 2011">
                 	<pattern match="DRAM 1221-2735" />
-                  <pattern match="DRAM 1221-2737" />  <!-- added per linda 2010-02-08  -->
+                    <pattern match="DRAM 1221-2737" />  <!-- added per linda 2010-02-08  -->
+                    <pattern match="DRAM 1221-2739" />                    <!-- ri 2011-02-11  -->
+                    <pattern match="DRAM 1221-2741" />                    <!-- ri 2011-02-11  -->
+                    
+                    
                 </subtopic>
                 <subtopic name="Second Play, Spring 2011">
                 	<pattern match="DRAM 1221-2736" />
