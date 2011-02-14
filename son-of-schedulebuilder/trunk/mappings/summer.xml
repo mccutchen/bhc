@@ -656,8 +656,8 @@
 				<comments>NOTE: The following courses are available to anyone interested in the Nursing Program.  Acceptance into the program is NOT required. For more information call 972-860-4754.</comments>
 				<pattern match="RNSG 1108-2201" />
 				<pattern match="HPRS 1203-2201" />
-        <pattern match="RNSG 1301-2201" />
-
+                <pattern match="RNSG 1211-2201" />
+                <pattern match="RNSG 1301-2201" />
       </topic>
 
       <topic name="Second Semester Program Students">
@@ -665,11 +665,11 @@
 				<pattern match="RNSG 1144-2201" />
 				<pattern match="RNSG 1144-2202" />
 				<pattern match="RNSG 1144-2203" />
-        <pattern match="RNSG 1144-2204" />
-        <pattern match="RNSG 2462-2601" />
-        <pattern match="RNSG 2462-2602" />
-        <pattern match="RNSG 2462-2603" />
-        <pattern match="RNSG 2462-2604" />
+                <pattern match="RNSG 1144-2204" />
+                <pattern match="RNSG 2462-2601" />
+                <pattern match="RNSG 2462-2602" />
+                <pattern match="RNSG 2462-2603" />
+                <pattern match="RNSG 2462-2604" />
       </topic>			
 
       <topic name="Third Semester Program Students">
@@ -677,13 +677,17 @@
 				<pattern match="RNSG 2160-2601" />
 				<pattern match="RNSG 2160-2602" />
 				<pattern match="RNSG 2160-2603" />
-        <pattern match="RNSG 2160-2604" />
-        <pattern match="RNSG 2208-2201" />
-        <pattern match="RNSG 2161-2601" />
-        <pattern match="RNSG 2161-2602" />
-        <pattern match="RNSG 2161-2603" />
-        <pattern match="RNSG 2161-2604" />
-			</topic>
+                <pattern match="RNSG 2160-2604" />
+                <pattern match="RNSG 2160-2605" />
+                <pattern match="RNSG 2160-2606" />
+                <pattern match="RNSG 2208-2201" />
+                <pattern match="RNSG 2161-2601" />
+                <pattern match="RNSG 2161-2602" />
+                <pattern match="RNSG 2161-2603" />
+                <pattern match="RNSG 2161-2604" />
+                <pattern match="RNSG 2161-2605" />
+                <pattern match="RNSG 2161-2606" />
+      </topic>
 		</subject>
 
 
