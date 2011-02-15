@@ -911,12 +911,15 @@
             </topic>
             <topic name="Dance Practicum">
                 <pattern match="DANC 1351-2235" />
-                <pattern match="DANC 1351-2701" />              <!-- added per linda 2010-02-08  -->
-                <pattern match="DANC 1352-2701" />              <!-- added per linda 2010-02-08  -->
-                <pattern match="DANC 1352-2702" />              <!-- added per linda 2010-03-02  -->
-                <pattern match="DANC 1352-2703" />              <!-- added unsorted RI 2010-04-05  -->
-                <pattern match="DANC 2351-2703" />              <!-- added per linda 2010-04-01  -->
-                <pattern match="DANC 2352-2701" />              <!-- added per linda 2010-02-08  -->
+                <pattern match="DANC 1351-2701" />
+                <pattern match="DANC 1351-2702" />
+                <pattern match="DANC 1352-2701" />             
+                <pattern match="DANC 1352-2702" />             
+                <pattern match="DANC 1352-2703" />
+                <pattern match="DANC 2351-2702" />
+                <pattern match="DANC 2351-2703" />             
+                <pattern match="DANC 2352-2701" />
+                <pattern match="DANC 2352-2702" />
             </topic>
           <topic name="Repertoire">
                 <pattern match="DANC 1305-2200" /> <!-- Jill 10-09-02 -->
