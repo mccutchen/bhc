@@ -744,7 +744,7 @@
 		    <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. REQUIRED:  Current CPR AHA Healthcare Provider or equivalent certification.</comments>
 
 		 	<topic name="Emergency Medical Services, Basic">
-		 		<subtopic name="Emt-basic Class #60">
+		 		<subtopic name="Emt-basic Class #62">
 		 			<pattern match="EMSP 1501-2210" />
                     <pattern match="EMSP 1501-2262" />                    <!-- Nancy 2011-01-31  -->
 		 			<pattern match="EMSP 1501-2201" />
@@ -762,7 +762,7 @@
                 </subtopic>
             </topic>
 		 	<topic name="Emergency Medical Services, Paramedic">
-		 		<subtopic name="Paramedic Class #27, C shift">
+		 		<subtopic name="Paramedic Class #29, B shift">
 		 			<pattern match="EMSP 2338-2226" />
 		 			<pattern match="EMSP 2338-2203" />
                     <pattern match="EMSP 2143-2226" />
@@ -770,7 +770,7 @@
                     <pattern match="EMSP 2143-2201" />
                     <pattern match="EMSP 2463-2726" />
                 </subtopic>
-		 		<subtopic name="Paramedic Class #27, C shift">
+		 		<subtopic name="Paramedic Class #29, B shift">
                     <pattern match="EMSP 2434-2227" />
 		 			<pattern match="EMSP 2434-2201" />
                     <pattern match="EMSP 2434-2202" />
@@ -786,8 +786,10 @@
                     <pattern match="EMSP 2338-2201" />
                     <pattern match="EMSP 2338-2202" />
                     <pattern match="EMSP 2261-2227" />
+                    <pattern match="EMSP 2434-2203" />
+                    <pattern match="EMSP 2434-2229" />
                 </subtopic>
-
+                
                 <subtopic name="Paramedic Class #28, Night Class">
                     <pattern match="EMSP 2434-2728" />                    <!-- Nancy 2011-01-31  -->
                     <pattern match="EMSP 2434-2701" />                    <!-- Nancy 2011-01-31  -->
@@ -821,6 +823,15 @@
                     <pattern match="EMSP 1356-2201" />
                     <pattern match="EMSP 1356-2202" />
                     <pattern match="EMSP 1356-2203" />
+                </subtopic>
+
+                <subtopic name="Paramedic Class #29, B shift">
+                    <pattern match="EMSP 1160-2262" />
+                    <pattern match="EMSP 2260-2229" />
+                    <pattern match="EMSP 2444-2229" />
+                    <pattern match="EMSP 2444-2201" />
+                    <pattern match="EMSP 2444-2202" />
+                    <pattern match="EMSP 2444-2203" />
                 </subtopic>
 
                 <subtopic name="RN to Paramedic Class #2">
