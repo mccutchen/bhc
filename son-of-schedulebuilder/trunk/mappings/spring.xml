@@ -566,9 +566,20 @@
                     <pattern match="EMSP 2463-2202" />
                 </subtopic>
 
+                <subtopic name="Clinical - Emergency Medical Technology/Technician">                    <!-- ri 2011-02-25  -->
+                    <pattern match="EMSP 1160-2281" />
+                    <pattern match="EMSP 1160-2282" />
+                    <pattern match="EMSP 1160-2283" />
+                    <pattern match="EMSP 1160-2284" />
+                </subtopic>
+
                 <subtopic name="Mass Disaster Response, A Shift">
             		<pattern match="EMSP 1391-2211" />   
-            		<pattern match="EMSP 1391-2201" />                
+            		<pattern match="EMSP 1391-2201" />
+                    <pattern match="EMSP 1391-2281" />
+                    <pattern match="EMSP 1391-2282" />
+                    <pattern match="EMSP 1391-2283" />
+                    <pattern match="EMSP 1391-2284" />            		
                 </subtopic>
             </topic>
         </subject>
@@ -923,6 +934,7 @@
             </topic>
           <topic name="Repertoire">
                 <pattern match="DANC 1305-2200" /> <!-- Jill 10-09-02 -->
+                <pattern match="DANC 1305-2201" /> <!-- ri 11-02-25 -->
           </topic>
           <topic name="Aerial Dance">
                 <pattern match="DANC 1113-2001" /> <!-- jill 10-09-02 -->
@@ -1031,7 +1043,7 @@
                     <pattern match="DRAM 1221-2737" />  <!-- added per linda 2010-02-08  -->
                     <pattern match="DRAM 1221-2739" />                    <!-- ri 2011-02-11  -->
                     <pattern match="DRAM 1221-2741" />                    <!-- ri 2011-02-11  -->
-                    
+                    <pattern match="DRAM 1221-2743" />                    <!-- ri 2011-02-25  -->
                     
                 </subtopic>
                 <subtopic name="Second Play, Spring 2011">
