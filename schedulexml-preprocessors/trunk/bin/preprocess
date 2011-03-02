@@ -2,7 +2,7 @@
 
 INPUT=$1
 OUTPUT="schedule.xml"
-PIPELINE="preprocess.xpl"
+PIPELINE="xproc/preprocess.xpl"
 
 # Set the classpath (TODO: Make this more generic)
 CLASSPATH="/Users/will/lib/java/saxon9he.jar:/Users/will/lib/java/calabash.jar"
@@ -16,4 +16,4 @@ java \
     xmllint -format - > $OUTPUT
 
 echo "\nRunning tests..."
-python "test.py" $INPUT $OUTPUT
+python "preprocessors/test.py" $INPUT $OUTPUT

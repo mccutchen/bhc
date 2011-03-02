@@ -5,7 +5,7 @@
     xmlns:bhc="http://www.brookhavencollege.edu/xml/xproc">
 
     <!-- This provides the <bhc:xslt> step used below. -->
-    <p:import href="xproc/bhc-xslt.xpl"/>
+    <p:import href="bhc-xslt.xpl"/>
 
     <!-- The sequence of transformations we need to apply. -->
     <bhc:xslt stylesheet="remove-locations.xsl"/>

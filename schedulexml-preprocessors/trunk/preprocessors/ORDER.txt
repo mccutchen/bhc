@@ -1,9 +1,0 @@
-remove-locations
-divisions-1
-divisions-2
-subjects-1
-subjects-2
-types-1
-types-2
-core
-consolidate-descriptions
