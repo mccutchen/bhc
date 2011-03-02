@@ -17,6 +17,11 @@
     <!-- get the mapping into a variable -->
     <xsl:variable name="components" select="document('../mappings/core.xml')//component" />
 
+    <xsl:template match="/">
+        <xsl:message>Preprocessor: <xsl:value-of select="base-uri(document(''))" /></xsl:message>
+        <xsl:apply-templates />
+    </xsl:template>
+
     <!-- we only need to mess with <course>s which actually have a @core-code
          attribute -->
     <xsl:template match="course[@core-code]">

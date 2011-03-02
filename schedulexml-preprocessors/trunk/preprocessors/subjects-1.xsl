@@ -32,6 +32,11 @@ CONSOLIDATE-DESCRIPTIONS MUST BE RUN SOME TIME AFTER THIS PREPROCESSOR.
     <!-- Pull all of the patterns out of the mappings -->
     <xsl:variable name="patterns" select="$mappings//pattern" />
 
+    <xsl:template match="/">
+        <xsl:message>Preprocessor: <xsl:value-of select="base-uri(document(''))" /></xsl:message>
+        <xsl:apply-templates />
+    </xsl:template>
+
     <!-- Remove each "rubric" grouping, including only its children.
          These will be replaced by "subject" groupings in the next
          step. -->

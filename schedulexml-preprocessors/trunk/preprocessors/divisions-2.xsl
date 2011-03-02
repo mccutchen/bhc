@@ -17,6 +17,11 @@ MUST BE RUN AFTER DIVISIONS-1.
 
     <xsl:include href="base.xsl" />
 
+    <xsl:template match="/">
+        <xsl:message>Preprocessor: <xsl:value-of select="base-uri(document(''))" /></xsl:message>
+        <xsl:apply-templates />
+    </xsl:template>
+
     <xsl:template match="*[grouping[@type='division']]">
         <!-- make sure we include the element that contains
              the subject grouping -->

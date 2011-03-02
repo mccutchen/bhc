@@ -27,6 +27,11 @@ DIVISIONS-2 MUST BE RUN IMMEDIATELY AFTER THIS PREPROCESSOR.
     <!-- get the mapping into a variable -->
     <xsl:variable name="patterns" select="document('../mappings/divisions.xml')//division/pattern" />
 
+    <xsl:template match="/">
+        <xsl:message>Preprocessor: <xsl:value-of select="base-uri(document(''))" /></xsl:message>
+        <xsl:apply-templates />
+    </xsl:template>
+
     <xsl:template match="grouping[@type='rubric']">
         <xsl:variable name="rubric" select="@name" />
         <xsl:variable name="matching-patterns" select="$patterns[matches($rubric, @match)]" />

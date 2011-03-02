@@ -18,6 +18,11 @@ MUST BE RUN IMMEDIATELY AFTER SUBJECTS-1.
     <xsl:include href="base.xsl" />
     <xsl:include href="subjects-common.xsl" />
 
+    <xsl:template match="/">
+        <xsl:message>Preprocessor: <xsl:value-of select="base-uri(document(''))" /></xsl:message>
+        <xsl:apply-templates />
+    </xsl:template>
+
     <!-- Any element that contains courses must be matched, so we can
          rebuild the course and class structure based on the subjects,
          topics and subtopics contained therein. -->
