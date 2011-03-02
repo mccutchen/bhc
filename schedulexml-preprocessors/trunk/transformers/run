@@ -1,2 +1,2 @@
 #!/bin/sh
-java -jar ~/src/saxon/saxon8.jar ../schedule.xml $1
+java -jar ~/lib/java/saxon9he.jar ../schedule.xml $1
