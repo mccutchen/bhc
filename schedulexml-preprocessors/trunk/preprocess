@@ -1,0 +1,19 @@
+#!/bin/sh
+
+INPUT=$1
+OUTPUT="schedule.xml"
+PIPELINE="preprocess.xpl"
+
+# Set the classpath (TODO: Make this more generic)
+CLASSPATH="/Users/will/lib/java/saxon9he.jar:/Users/will/lib/java/calabash.jar"
+
+# Run the preprocess pipeline on the given input document
+echo "Running preprocessor pipeline..."
+java \
+    -Djava.util.logging.config.file=xproc/logging.config \
+    com.xmlcalabash.drivers.Main \
+    -isource=$INPUT -oresult="-" $PIPELINE | \
+    xmllint -format - > $OUTPUT
+
+echo "\nRunning tests..."
+python "test.py" $INPUT $OUTPUT
