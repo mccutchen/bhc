@@ -1,2 +1,0 @@
-#!/bin/sh
-java -jar ~/lib/java/saxon9he.jar ../schedule.xml $1

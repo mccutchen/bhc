@@ -1,0 +1,11 @@
+#!/bin/sh
+
+INPUT=$1
+TRANSFORMER=$2
+
+# Preprocess the input file
+bin/preprocess $INPUT
+
+# Run it through the given transformer
+echo "\nGenerating schedule output..."
+java -jar ~/lib/java/saxon9he.jar schedule.xml $TRANSFORMER
