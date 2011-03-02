@@ -1,57 +1,20 @@
 <?xml version="1.0"?>
-<p:pipeline version="1.0" xmlns:p="http://www.w3.org/ns/xproc">
-    <p:xslt name="remove-locations">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/remove-locations.xsl"/>
-        </p:input>
-    </p:xslt>
+<p:pipeline
+    version="1.0"
+    xmlns:p="http://www.w3.org/ns/xproc"
+    xmlns:bhc="http://www.brookhavencollege.edu/xml/xproc">
 
-    <p:xslt name="divisions-1">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/divisions-1.xsl"/>
-        </p:input>
-    </p:xslt>
+    <!-- This provides the <bhc:xslt> step used below. -->
+    <p:import href="xproc/bhc-xslt.xpl"/>
 
-    <p:xslt name="divisions-2">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/divisions-2.xsl"/>
-        </p:input>
-    </p:xslt>
-
-    <p:xslt name="subjects-1">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/subjects-1.xsl"/>
-        </p:input>
-    </p:xslt>
-
-    <p:xslt name="subjects-2">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/subjects-2.xsl"/>
-        </p:input>
-    </p:xslt>
-
-    <p:xslt name="types-1">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/types-1.xsl"/>
-        </p:input>
-    </p:xslt>
-
-    <p:xslt name="types-2">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/types-2.xsl"/>
-        </p:input>
-    </p:xslt>
-
-    <p:xslt name="core">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/core.xsl"/>
-        </p:input>
-    </p:xslt>
-
-    <p:xslt name="consolidate-descriptions">
-        <p:input port="stylesheet">
-            <p:document href="preprocessors/consolidate-descriptions.xsl"/>
-        </p:input>
-    </p:xslt>
+    <!-- The sequence of transformations we need to apply. -->
+    <bhc:xslt stylesheet="remove-locations.xsl"/>
+    <bhc:xslt stylesheet="divisions-1.xsl"/>
+    <bhc:xslt stylesheet="divisions-2.xsl"/>
+    <bhc:xslt stylesheet="subjects-1.xsl"/>
+    <bhc:xslt stylesheet="subjects-2.xsl"/>
+    <bhc:xslt stylesheet="types-1.xsl"/>
+    <bhc:xslt stylesheet="types-2.xsl"/>
+    <bhc:xslt stylesheet="core.xsl"/>
+    <bhc:xslt stylesheet="consolidate-descriptions.xsl" />
 </p:pipeline>
-
