@@ -200,6 +200,7 @@ class FullProfile(CreditProfile):
         'senior-adults.xsl',
         'special-sections.xsl',
         'sortkeys.xsl',
+        'vita.xsl',
     ]
 
 

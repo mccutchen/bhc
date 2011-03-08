@@ -19,16 +19,17 @@
         doctype-system="http://www.w3.org/TR/html4/strict.dtd" />
 
     <!-- for CIT self-paced course mods -->
-    <xsl:variable name="CIT_subjects" select="('Computer Information Technology',
-        'Computer Science',
-        'Computer Studies - Business Computer Information Systems')" />
+    <xsl:variable name="CIT_subjects"
+                  select="('Computer Information Technology',
+                          'Computer Science',
+                          'Computer Studies - Business Computer Information Systems')" />
 
 
-    <!-- ==========================================================================
+    <!-- =====================================================================
          Parameters:
 
          Used to control the generated output
-         =========================================================================== -->
+         ================================================================= -->
     <!-- is this an "enrolling now" or "enrolling soon" schedule? -->
     <xsl:param name="enrolling" />
 
@@ -49,23 +50,23 @@
 
 
 
-    <!-- ==========================================================================
+    <!-- =====================================================================
          Includes:
 
          Include other required stylesheets
-         =========================================================================== -->
+         ================================================================= -->
     <xsl:include href="web/page-template.xsl" />
     <xsl:include href="web/indexer.xsl" />
 
 
 
 
-    <!-- ==========================================================================
+    <!-- =====================================================================
          Initialization:
 
          This section creates all of the result documents for this schedule
          by using the xsl:result-document facility.
-         =========================================================================== -->
+         ================================================================= -->
     <xsl:template match="/">
         <xsl:apply-templates select="schedule" mode="init" />
     </xsl:template>
@@ -142,12 +143,12 @@
 
 
 
-    <!-- ==========================================================================
+    <!-- =====================================================================
          Normal templates:
 
-         These templates are responsible for building the subject page content. The
-         index pages are built by the included indexer.xsl.
-         =========================================================================== -->
+         These templates are responsible for building the subject page
+         content. The index pages are built by the included indexer.xsl.
+         ================================================================= -->
     <xsl:template match="subject">
         <div class="subject">
             <xsl:apply-templates select="comments" />
@@ -202,8 +203,9 @@
                 <xsl:sort select="@name" />
             </xsl:apply-templates>
 
-            <!-- the type-specific special sections (like Distance Learning) don't have
-                 <type> elements, so this will apply to their courses. -->
+            <!-- the type-specific special sections (like Distance Learning)
+                 don't have <type> elements, so this will apply to their
+                 courses. -->
             <xsl:apply-templates select="group | course">
                 <xsl:sort select="@sortkey" data-type="number" />
                 <xsl:sort select="@default-sortkey" />
@@ -293,7 +295,7 @@
             <td class="times"><xsl:value-of select="@formatted-times" /></td>
             <td class="format"><xsl:apply-templates select="@method" /></td>
             <td class="room"><xsl:value-of select="@room" /></td>
-            <td class="faculty"><xsl:value-of select="@faculty-name" /></td>
+            <td class="faculty"><xsl:apply-templates select="@faculty-name"/></td>
             <td class="search"><xsl:call-template name="SearchLink" /></td>
         </tr>
         <xsl:apply-templates select="extra">
@@ -324,7 +326,7 @@
 
         <xsl:if test="ancestor::course/@core-component and ancestor::course/@core-component != ''"><span>+&#160;</span></xsl:if>
         <a href="http://hb2504.dcccd.edu/Syllabi/{$term}-{$course-rubric}-{$course-number}-{$section-number}.pdf" target="_blank">
-        
+
             <xsl:value-of select="../@rubrik" /><xsl:text>&#160;</xsl:text>
             <xsl:value-of select="../@number" /><xsl:text>-</xsl:text>
             <xsl:value-of select="@section" />
@@ -397,7 +399,7 @@
             <td class="times"><xsl:apply-templates select="@formatted-times" /></td>
             <td class="method"><xsl:value-of select="@method" /></td>
             <td class="room"><xsl:value-of select="@room" /></td>
-            <td class="faculty"><xsl:value-of select="@faculty-name" /></td>
+            <td class="faculty"><xsl:apply-templates select="@faculty-name" /></td>
             <td><xsl:text>&#160;</xsl:text></td>
         </tr>
     </xsl:template>
@@ -411,15 +413,29 @@
     </xsl:template>
 
 
-<!-- ==========================================================================
-     Comments
+    <!-- link to vitas where possible -->
+    <xsl:template match="class/@faculty-name | extra/@faculty-name">
+        <xsl:variable name="el" select="ancestor::element()"/>
+        <xsl:choose>
+            <xsl:when test="$el/@vita-id">
+                <a href="http://hb2504.dcccd.edu/vita/{$el/@vita-id}.pdf"><xsl:value-of select="."/></a>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 
-     Comments can have a small subset of HTML elements embedded within them,
-     as well as the special elements <url> and <email>.  The set of legal
-     HTML for comments is:
 
-     h1, p, b, i, table, tr, td
-=========================================================================== -->
+    <!-- =====================================================================
+         Comments
+
+         Comments can have a small subset of HTML elements embedded within
+         them, as well as the special elements <url> and <email>.  The set of
+         legal HTML for comments is:
+
+         h1, p, b, i, table, tr, td
+         ================================================================= -->
     <xsl:template match="comments">
         <div class="comments">
             <xsl:choose>
@@ -457,12 +473,12 @@
 
 
 
-<!-- ==========================================================================
-     Named templates
+    <!-- =====================================================================
+         Named templates
 
-     Specialty templates to create the division-info and the HTML template
-     for each page.
-=========================================================================== -->
+         Specialty templates to create the division-info and the HTML template
+         for each page.
+         ================================================================= -->
     <xsl:template name="subject-summary">
         <xsl:if test="type or topic">
             <div class="summary">
