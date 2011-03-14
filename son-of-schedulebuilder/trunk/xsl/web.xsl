@@ -36,7 +36,8 @@
     <!-- the schedule title -->
     <xsl:param name="schedule-title"><xsl:value-of select="//term[1]/@name" /><xsl:text> </xsl:text><xsl:value-of select="//term[1]/@year" /> Credit</xsl:param>
 
-    <!-- the "real" schedule title (this is an ugly hack to be able to insert "Enrolling Now" into the schedule title if I need to) -->
+    <!-- the "real" schedule title (this is an ugly hack to be able to insert
+         "Enrolling Now" into the schedule title if I need to) -->
     <xsl:param name="real-schedule-title"><xsl:if test="$enrolling">Enrolling <xsl:value-of select="$enrolling" />&#8212;</xsl:if><xsl:value-of select="$schedule-title" /></xsl:param>
 
     <!-- the text for the channel-header on each schedule page -->
@@ -274,7 +275,7 @@
                     <xsl:sort select="@sortkey" data-type="number" />
                     <xsl:sort select="@sortkey-date" data-type="number" />
                     <xsl:sort select="@sortkey-days" data-type="number" />
-					<xsl:sort select="@sortkey-time" data-type="number" order="ascending" />
+                    <xsl:sort select="@sortkey-time" data-type="number" order="ascending" />
                     <xsl:sort select="@section" />
                 </xsl:apply-templates>
             </table>
@@ -415,7 +416,7 @@
 
     <!-- link to vitas where possible -->
     <xsl:template match="class/@faculty-name | extra/@faculty-name">
-        <xsl:variable name="el" select="ancestor::element()"/>
+        <xsl:variable name="el" select="parent::element()"/>
         <xsl:choose>
             <xsl:when test="$el/@vita-id">
                 <a href="http://hb2504.dcccd.edu/vita/{$el/@vita-id}.pdf"><xsl:value-of select="."/></a>
