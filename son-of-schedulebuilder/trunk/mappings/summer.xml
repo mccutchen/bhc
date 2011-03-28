@@ -96,6 +96,7 @@
 
 
         <topic name="Programming">
+          <pattern match="INEW 2318-2745" />        
           <pattern match="INEW 2334-2745" />
           <pattern match="ITSE 1407-2745" />
           <pattern match="ITSE 2318-2745" />
@@ -107,7 +108,8 @@
        </topic>
 
         <topic name="CIT CORE">
-            <pattern match="ITSE 1429-2501" />
+        <pattern match="ITSE 1429-2426" />        
+        <pattern match="ITSE 1429-2501" />
         </topic>
 
 
@@ -182,7 +184,8 @@
        <topic name="Programming">
           <pattern match="COSC 1415-2745" />
           <pattern match="COSC 1436-2745" />
-          <pattern match="COSC 1309-2501" />
+          <pattern match="COSC 1309-2426" />
+          <pattern match="COSC 1309-2501" />          
           <pattern match="COSC 1430-2501" />
           <pattern match="COSC 1437-2501" />
           <pattern match="COSC 1437-2502" />
@@ -482,6 +485,9 @@
           <pattern match="DANC 1342-2701" />
           <pattern match="DANC 2341-2701" />
           <pattern match="DANC 2342-2701" />
+            <pattern match="DANC 2301-2201" />
+            <pattern match="DANC 2301-2701" />          
+          
         </topic>
 
           <topic name="Jazz">
