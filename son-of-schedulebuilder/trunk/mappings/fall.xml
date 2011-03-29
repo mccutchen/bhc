@@ -658,8 +658,10 @@
           <pattern match="ARTS 1312-2001" />
           <pattern match="ARTS 1312-2501" />
           <pattern match="ARTS 1311-2250" />
+          <pattern match="ARTS 1312-2250" />
         </topic>
-
+          
+          
         <topic name="Drawing">
           <pattern match="ARTS 1316-2001" />
           <pattern match="ARTS 1316-2002" />
@@ -695,8 +697,7 @@
         <topic name="Painting">
           <pattern match="ARTS 2316-2001" />
           <pattern match="ARTS 2317-2001" />
-          <pattern match="ARTS 2311-2006" />
-          <pattern match="ARTS 2312-2004" />
+          <pattern match="ARTS 2311-2013" />
           <pattern match="ARTS 2316-2002" />
           <pattern match="ARTS 2317-2002" />
           <pattern match="ARTS 2311-2015" />
@@ -713,16 +714,10 @@
           <pattern match="ARTS 2367-2001" />
           <pattern match="ARTS 2311-2016" />
           <pattern match="ARTS 2312-2016" />
-          <pattern match="ARTS 2316-2501" />
-          <pattern match="ARTS 2317-2501" />
-          <pattern match="ARTS 2311-2504" />
-          <pattern match="ARTS 2312-2510" />
-          <pattern match="ARTS 2316-2250" />
-          <pattern match="ARTS 2317-2250" />
-          <pattern match="ARTS 2311-2251" />
-          <pattern match="ARTS 2312-2251" />
         </topic>
 
+          
+          
         <topic name="Photography">
           <pattern match="ARTS 2356-2001" />
           <pattern match="ARTS 2357-2001" />
@@ -1031,19 +1026,19 @@
             <pattern match="MUEN 1136-2201" />
           </subtopic>
           <subtopic name="Vocal Jazz / Lab Band">
-            <pattern match="MUEN 2123-2002" />
-            <pattern match="MUEN 1151-2200" />  <!-- added by RI 2010-08-20 -->
-            <pattern match="MUEN 1151-2501" />
-            <pattern match="MUEN 2123-2502" />
-            <pattern match="MUEN 2123-2501" />
+            <pattern match="MUEN 1151-2001" />
+            <pattern match="MUEN 2123-2200" />  
+            <pattern match="MUEN 2123-2003" />
+            <pattern match="MUEN 2123-2700" />
           </subtopic>
         </topic>
 
-        <topic name="Music - Private Lessons">
+
+       <topic name="Music - Private Lessons">
           <subtopic name="Beginning">
             <comments>NOTE:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
             <pattern match="MUAP 1101-2001" />
-            <pattern match="MUAP 1101-2002" />
+            <pattern match="MUAP 1101 2002" />
             <pattern match="MUAP 1105-2001" />
             <pattern match="MUAP 1105-2002" />
             <pattern match="MUAP 1109-2001" />
@@ -1051,58 +1046,43 @@
             <pattern match="MUAP 1113-2001" />
             <pattern match="MUAP 1115-2001" />
             <pattern match="MUAP 1117-2001" />
-            <pattern match="MUAP 1121-2001" />
             <pattern match="MUAP 1125-2001" />
-            <pattern match="MUAP 1125-2002" />
             <pattern match="MUAP 1129-2001" />
-            <pattern match="MUAP 1129-2002" />
-            <pattern match="MUAP 1129-2003" />
             <pattern match="MUAP 1133-2001" />
             <pattern match="MUAP 1137-2001" />
             <pattern match="MUAP 1137-2002" />
             <pattern match="MUAP 1141-2001" />
-            <pattern match="MUAP 1141-2200" /> <!-- added per Linda 2010/08/05 -->
+            <pattern match="MUAP 1141-2002" />
             <pattern match="MUAP 1145-2001" />
             <pattern match="MUAP 1153-2001" />
             <pattern match="MUAP 1157-2001" />
-            <pattern match="MUAP 1161-2001" />
+            <pattern match="MUAP 1161-2001" /> 
             <pattern match="MUAP 1161-2002" />
             <pattern match="MUAP 1161-2003" />
             <pattern match="MUAP 1169-2001" />
             <pattern match="MUAP 1169-2002" />
             <pattern match="MUAP 1169-2003" />
-            <pattern match="MUAP 1169-2004" />
             <pattern match="MUAP 1181-2001" />
             <pattern match="MUAP 1181-2002" />
             <pattern match="MUAP 1181-2003" />
-            <pattern match="MUAP 1181-2004" />
-          </subtopic>
-         
+          </subtopic> 
+              
+
           <subtopic name="Intermediate">
             <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance. An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level. Please call the Music Office at 972-860-4563 for more information.</comments>
             <pattern match="MUAP 2201-2001" />
-            <pattern match="MUAP 2205-2001" />
             <pattern match="MUAP 2209-2001" />
             <pattern match="MUAP 2209-2002" />
-            <pattern match="MUAP 2213-2001" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
-            <pattern match="MUAP 2215-2001" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
             <pattern match="MUAP 2217-2001" />
-            <pattern match="MUAP 2225-2001" />
-            <pattern match="MUAP 2225-2002" />
-            <pattern match="MUAP 2229-2001" />
-            <pattern match="MUAP 2229-2002" />
-            <pattern match="MUAP 2229-2003" />
-            <pattern match="MUAP 2229-2004" /> <!-- added per linda 2010-08-11  -->
+            <pattern match="MUAP 2229-2001" /> 
+            <pattern match="MUAP 2229-2002" /> 
             <pattern match="MUAP 2233-2001" />
             <pattern match="MUAP 2237-2001" />
-            <pattern match="MUAP 2237-2002" />
-            <pattern match="MUAP 2241-2001" />
             <pattern match="MUAP 2245-2001" />
-            <pattern match="MUAP 2253-2001" />  <!--  added RI 7/16/10 per Linda -->
-            <pattern match="MUAP 2257-2001" />
+            <pattern match="MUAP 2253-2001" />
             <pattern match="MUAP 2261-2001" />
             <pattern match="MUAP 2261-2002" />
-            <pattern match="MUAP 2269-2001" />
+            <pattern match="MUAP 2269-2001" /> 
             <pattern match="MUAP 2269-2002" />
             <pattern match="MUAP 2281-2001" />
             <pattern match="MUAP 2281-2002" />
