@@ -772,23 +772,34 @@
           <pattern match="DANC 1141-2202" />            <!-- Added RI 2010-08-27 -->
           <pattern match="DANC 1142-2001" />
         </topic>
-        <topic name="Tap">
+        <topic name="Dance Practicum">
+          <pattern match="DANC 1351-2235" />
+          <pattern match="DANC 1351-2702" />
+          <pattern match="DANC 1351-2703" />
+          <pattern match="DANC 1352-2702" />
+          <pattern match="DANC 1352-2703" />
+          <pattern match="DANC 2351-2702" />
+          <pattern match="DANC 2351-2703" />
+          <pattern match="DANC 2352-2702" />
+          <pattern match="DANC 2352-2703" />
+          <pattern match="DANC 2352-2704" />
+        </topic>
+
+        <topic name="Improvisation">
+          <pattern match="DANC 1113-2501" />
+        </topic>
+
+        <topic name="Aerial Dance">
+          <pattern match="DANC 1101-2001" />
+          <pattern match="DANC 1101-2501" />
+          <pattern match="DANC 1101-2700" />
+        </topic>          
+
+          <topic name="Tap">
           <pattern match="DANC 1110-2001" />
           <pattern match="DANC 1111-2001" />
           <pattern match="DANC 2110-2001" />
           <pattern match="DANC 2111-2001" />
-        </topic>
-        <topic name="Dance Practicum">
-          <pattern match="DANC 1351-2235" />
-          <pattern match="DANC 1351-2702" />
-          <pattern match="DANC 1351-2703" />          
-          <pattern match="DANC 1352-2702" />
-          <pattern match="DANC 1352-2703" />
-          <pattern match="DANC 2351-2702" />
-          <pattern match="DANC 2351-2703" />          
-          <pattern match="DANC 2352-2702" />
-          <pattern match="DANC 2352-2703" />
-          <pattern match="DANC 2352-2704" />     <!-- added RI 2010-10-15 -->     
         </topic>
           <topic name="Hip Hop">
           <pattern match="DANC 1222-2001" />
@@ -806,26 +817,21 @@
         <topic name="Jazz">
           <pattern match="DANC 1247-2001" />
           <pattern match="DANC 1248-2001" />
-          <pattern match="DANC 1248-2202" />            <!-- Added RI 2010-08-27 -->
-          <pattern match="DANC 1247-2501" />
+          <pattern match="DANC 1247-2501" />           
+          <pattern match="DANC 1247-2502" />
           <pattern match="DANC 1248-2501" />
           <pattern match="DANC 2247-2501" />
           <pattern match="DANC 2248-2501" />
-          <pattern match="DANC 1248-2702" />            <!-- add per linda 2010-08-31 -->
+          <pattern match="DANC 1248-2202" />
+          <pattern match="DANC 1248-2702" />
         </topic>
-
+          
         <topic name="Ballet">
           <pattern match="DANC 1341-2001" />
-          <pattern match="DANC 1341-2002" /> <!-- Added RI 2010-08-27 -->
+          <pattern match="DANC 1341-2200" /> 
           <pattern match="DANC 1342-2001" />
           <pattern match="DANC 2341-2001" />
           <pattern match="DANC 2342-2001" />
-          <pattern match="DANC 1341-2501" />
-          <pattern match="DANC 1342-2501" />
-          <pattern match="DANC 2342-2202" />            <!-- add per linda 2010-08-31 -->
-          <pattern match="DANC 2342-2203" />            <!-- add ri 2010-09-03 -->
-          <pattern match="DANC 2341-2501" />
-          <pattern match="DANC 2342-2501" />
         </topic>
 
         <topic name="Ballet Technique">
@@ -835,7 +841,7 @@
           <pattern match="DANC 2142-2251" />    <!-- per Linda 2010-09-09 -->      
         </topic>
 
-        <topic name="Modern Dance">
+        <topic name="Contemporary/Modern Dance">
           <pattern match="DANC 1245-2001" />
           <pattern match="DANC 1245-2002" /> <!-- per linda 2010-08-17 -->
           <pattern match="DANC 1246-2001" />
@@ -993,8 +999,12 @@
           </subtopic>
           <subtopic name="Brookhaven Choral Society">
             <pattern match="MUEN 2141-2501" />
+            <pattern match="MUEN 2141-2700" />
             <pattern match="MUEN 2141-2701" />
           </subtopic>
+
+
+
           <subtopic name="Vivace Vocal Ensemble">
             <pattern match="MUEN 1153-2200" />
           </subtopic>
