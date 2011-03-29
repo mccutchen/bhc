@@ -598,13 +598,17 @@
         <topic name="Art History">
           <pattern match="ARTS 1303-2001" />
           <pattern match="ARTS 1303-2002" />
-          <pattern match="ARTS 1303-2003" />
           <pattern match="ARTS 1304-2001" />
           <pattern match="ARTS 1303-2501" />
           <pattern match="ARTS 1303-2420" />
+          <pattern match="ARTS 1303-2421" />
+          <pattern match="ARTS 1303-2422" />
+          <pattern match="ARTS 1304-2420" />
         </topic>
+          
+          
 
-        <topic name="Art and Computers">
+          <topic name="Art and Computers">
           <pattern match="ARTS 2313-2001" />
           <pattern match="ARTS 2314-2001" />
           <pattern match="ARTS 2348-2001" />
