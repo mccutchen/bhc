@@ -16,7 +16,7 @@ from baseprofiles import Spring, Summer, Fall, PROFILES, validate_profile
 
 
 # ===================================================================
-# Summer 2011 profiles
+# Summer 2011 profile
 # ===================================================================
 class Summer11(Summer):
     input = ('data/2011-summer/bh2011s1.txt', 'data/2011-summer/bh2011s2.txt')
