@@ -911,7 +911,22 @@
         </topic>
       </subject>
 
-    <!--  added 2010-03-31 Jill -->
+        <!-- Jill 2011-03-30  -->
+        <subject name="Humanities">
+            <pattern match="HUMA 1315-2400" />
+            <pattern match="HUMA 1315-2422" />
+            <pattern match="HUMA 1315-2423" />
+            <pattern match="HUMA 1315-2424" />
+            <pattern match="HUMA 1315-2425" />
+            <pattern match="HUMA 1315-2426" />
+            <pattern match="HUMA 1315-2427" />
+            <pattern match="HUMA 1315-2431" />
+            <pattern match="HUMA 1315-2428" />
+            <pattern match="HUMA 1315-2429" />
+            <pattern match="HUMA 1315-2430" />
+        </subject>
+
+        <!--  added 2010-03-31 Jill -->
       <subject name="Music">
         <topic name="Music Appreciation">
           <pattern match="MUSI 1306-2001" />
