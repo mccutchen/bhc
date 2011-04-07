@@ -362,6 +362,9 @@
           NOTE: Complete two courses one night per week. Be mentored by full-time business faculty. Class format includes small-group discussions and networking with other employed professionals. Students taking management program courses at Brookhaven College for the first time must be advised by their faculty member before they register. Call Mary Lou Avera at 972-860-4179, e-mail her at MaryLou@dcccd.edu or visit www.BrookhavenCollege.edu/management.</comments>
         <pattern match="BMGT 2303-2501" />
         <pattern match="BMGT 2383-2501" />
+        
+        <pattern match="BMGT 1383-2501" />          <!-- added 2011-04-07 fall 2011 syllabi -->
+        <pattern match="HRPO 2301-2501" />          <!-- added 2011-04-07 fall 2011 syllabi -->
       </subject>
 
       <!-- Medical Front Office (Sharon Burton)
