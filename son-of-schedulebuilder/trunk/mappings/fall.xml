@@ -1067,14 +1067,20 @@
           </subtopic>
           <subtopic name="Vocal Jazz / Lab Band">
             <pattern match="MUEN 1151-2001" />
-            <pattern match="MUEN 2123-2200" />  
+            <pattern match="MUEN 2123-2002" />  
             <pattern match="MUEN 2123-2003" />
-            <pattern match="MUEN 2123-2700" />
+            <pattern match="MUEN 2123-2200" />
+            <pattern match="MUEN 2123-2700" />            
           </subtopic>
         </topic>
+          
+          
+          
+          
+          
 
 
-       <topic name="Music - Private Lessons">
+          <topic name="Music - Private Lessons">
           <subtopic name="Beginning">
             <comments>NOTE:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
             <pattern match="MUAP 1101-2001" />
