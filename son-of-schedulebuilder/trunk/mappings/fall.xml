@@ -292,6 +292,14 @@
           <pattern match="ITSW 1404-2501" />
           <pattern match="ITSW 1404-2701" />
           <pattern match="ITSW 1407-2501" />
+          <pattern match="ITSC 1409-2426" />
+          <pattern match="ITSC 1415-2426" />
+          <pattern match="ITSW 1401-2426" />
+          <pattern match="ITSW 1401-2427" />
+          <pattern match="ITSW 1401-2428" />
+          <pattern match="ITSW 1404-2426" />
+          <pattern match="ITSW 1407-2426" />
+          <pattern match="ITSW 1410-2426" />
           <pattern match="ITSW 1407-2701" />
           <pattern match="ITSW 1410-2501" />
           <pattern match="ITSW 1410-2701" />
