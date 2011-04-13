@@ -676,18 +676,19 @@
           <pattern match="ARTS 2314-2001" />
           <pattern match="ARTS 2348-2001" />
           <pattern match="ARTS 2349-2001" />
+          <pattern match="ARTS 2348-2201" />          
           <pattern match="ARTS 2311-2010" />
           <pattern match="ARTS 2312-2010" />
           <pattern match="ARTS 2313-2501" />
           <pattern match="ARTS 2314-2501" />
-            <pattern match="ARTS 2311-2251" />
-            <pattern match="ARTS 2311-2504" />
-            <pattern match="ARTS 2312-2251" />
-            <pattern match="ARTS 2312-2510" />
-            <pattern match="ARTS 2316-2250" />
-            <pattern match="ARTS 2316-2501" />
-            <pattern match="ARTS 2317-2250" />
-            <pattern match="ARTS 2317-2501" />
+          <pattern match="ARTS 2311-2251" />
+          <pattern match="ARTS 2311-2504" />
+          <pattern match="ARTS 2312-2251" />
+          <pattern match="ARTS 2312-2510" />
+          <pattern match="ARTS 2316-2250" />
+          <pattern match="ARTS 2316-2501" />
+          <pattern match="ARTS 2317-2250" />
+          <pattern match="ARTS 2317-2501" />
         </topic>
 
         <topic name="Art Metals">
