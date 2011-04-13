@@ -355,7 +355,7 @@
           <pattern match="COSC 1436-2001" />
           <pattern match="COSC 1436-2002" />
           <pattern match="COSC 1415-2501" />
-          <pattern match="COSC 1415-2502 />
+          <pattern match="COSC 1415-2502" />
           <pattern match="COSC 1430-2501" />
           <pattern match="COSC 1436-2501" />
           <pattern match="COSC 1436-2502" />
