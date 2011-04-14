@@ -865,6 +865,8 @@
           <pattern match="ARTS 2334-2501" />
           <pattern match="ARTS 2311-2505" />
           <pattern match="ARTS 2312-2504" />
+          <pattern match="ARTS 2333-2701" />
+
         </topic>
 
         <topic name="Sculpture">
