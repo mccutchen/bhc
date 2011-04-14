@@ -1123,6 +1123,7 @@
         <topic name="Guitar">
           <pattern match="MUSI 1192-2001" />
           <pattern match="MUSI 1192-2002" />
+          <pattern match="MUSI 1193-2001" />                      
           <pattern match="MUSI 1192-2200" />
         </topic>
         <topic name="Voice">
