@@ -753,12 +753,14 @@
 		 	<topic name="Emergency Medical Services, Basic">
 		 		<subtopic name="Emt-basic Class #62">
 		 			<pattern match="EMSP 1501-2210" />
+                    <pattern match="EMSP 1501-2212" />
                     <pattern match="EMSP 1501-2262" />                    <!-- Nancy 2011-01-31  -->
 		 			<pattern match="EMSP 1501-2201" />
 		 			<pattern match="EMSP 1501-2202" />
 		 			<pattern match="EMSP 1501-2203" />
 		 			<pattern match="EMSP 1160-2210" />
-		 		</subtopic>
+                    <pattern match="EMSP 1160-2212" />
+                </subtopic>
 
                 <subtopic name="Emt-basic Class #61">
                     <pattern match="EMSP 1501-2511" />
@@ -793,6 +795,7 @@
                     <pattern match="EMSP 2338-2201" />
                     <pattern match="EMSP 2338-2202" />
                     <pattern match="EMSP 2261-2227" />
+                    <pattern match="EMSP 2261-2228" />
                     <pattern match="EMSP 2434-2203" />
                     <pattern match="EMSP 2434-2229" />
                 </subtopic>
