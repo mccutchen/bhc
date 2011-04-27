@@ -425,6 +425,8 @@
                     <pattern match="POFT 1301-2301" />
                     <pattern match="POFT 1301-2781" />
                     <pattern match="POFT 1301-2427" />
+                    <pattern match="POFT 1301-2502" />
+                    <pattern match="POFT 1302-2402" />                    
                 </subtopic>
                 <subtopic name="Medical Health Records">
                     <pattern match="POFM 1370-2501" />
