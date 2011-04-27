@@ -478,14 +478,14 @@
       </topic>
 		
       <topic name="Emergency Medical Services, Paramedic">
-				<subtopic name="Paramedic Class #25">
-					<pattern match="EMSP 2338-2725" />
-					<pattern match="EMSP 2338-2701" />
-					<pattern match="EMSP 2338-2702" />
-					<pattern match="EMSP 2143-2725" />
-					<pattern match="EMSP 2143-2701" />
-					<pattern match="EMSP 2143-2702" />
-					<pattern match="EMSP 2463-2725" />
+		<subtopic name="Paramedic Class #25">
+			<pattern match="EMSP 2338-2725" />
+			<pattern match="EMSP 2338-2701" />
+			<pattern match="EMSP 2338-2702" />
+			<pattern match="EMSP 2143-2725" />
+			<pattern match="EMSP 2143-2701" />
+			<pattern match="EMSP 2143-2702" />
+			<pattern match="EMSP 2463-2725" />
         </subtopic>        
         <subtopic name="Paramedic Class #26, A Shift">
           <pattern match="EMSP 1355-2226" />
@@ -584,6 +584,26 @@
                 <pattern match="RADR 2233" />
                 <pattern match="RADR 2240" />
             </topic>
+
+            <topic name="Computed Tomography">
+                <pattern match="CTMT" unsorted="true" /> 
+            </topic>
+
+            <topic name="Vascular Interventional Technology">
+                <pattern match="RADR 2170-2261" />
+                <pattern match="RADR 2170-2262" />
+                <pattern match="RADR 2170-2263" />
+                <pattern match="RADR 2170-2264" />
+                <pattern match="RADR 2170-2265" />
+                <pattern match="RADR 2170-2266" />
+                <pattern match="RADR 2170-2267" />
+                <pattern match="RADR 2170-2268" />
+                <pattern match="RADR 2170-2269" />
+                <pattern match="RADR 2170-2270" />
+                <pattern match="RADR 2370-2501" />
+                <pattern match="RADR 2371-2501" />
+            </topic>
+
         </subject>
 
 
