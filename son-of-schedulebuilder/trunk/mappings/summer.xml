@@ -581,7 +581,8 @@
           <topic name="Voice">
           <pattern match="MUSI 1183-2001" />
           <pattern match="MUSI 1183-2002" />
-        </topic>
+          <pattern match="MUSI 1183-2201" />
+          </topic>
 
         <topic name="Music Ensembles">
           <subtopic name="Handbell Ensemble">
@@ -632,6 +633,7 @@
             <pattern match="MUAP 1109-2200" />
             <pattern match="MUAP 1109-2201" />
             <pattern match="MUAP 1109-2202" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
+            <pattern match="MUAP 1113-2200" />            
             <pattern match="MUAP 1115-2200" />
             <pattern match="MUAP 1125-2200" />
             <pattern match="MUAP 1129-2200" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
