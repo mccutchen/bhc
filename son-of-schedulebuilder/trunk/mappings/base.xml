@@ -233,7 +233,7 @@
         <subject name="Human Development">
             <comments>
                 NOTE: Beginning fall 2010, if a first-time-in-college, student's assessment test scores indicate a placement into two or more
-                developmental studies disciplines, the student will be required to take HDEV 0092.
+                developmental studies disciplines, the student will be required to take HDEV 0092. This course provides an opportunity for students to learn, practice and adopt strategies to support his/her success in college and career exploration.
             </comments>
             <pattern match="HDEV" priority="0" unsorted="true" />
         </subject>
