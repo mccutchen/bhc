@@ -401,7 +401,10 @@
                     <pattern match="MDCA 1313-2250" />
                     <pattern match="MDCA 1313-2426" />
                     <pattern match="MDCA 1313-2427" />
-                </subtopic>
+                    <pattern match="MDCA 1313-2401" />
+                    <pattern match="MDCA 1313-2402" />
+                    <pattern match="MDCA 1313-2441" />
+                </subtopic>                
                 <subtopic name="Medical Office Procedures">
                     <pattern match="POFM 1309-2001" />
                     <pattern match="POFM 1309-2501" />
@@ -419,6 +422,9 @@
                 <comments>Note: To enroll in the second semester, you must:1) have successfully completed the courses above with a minimum final grade of C in each course and 2) attend one of the following information sessions: April 27, 6:45-7:45 p.m.; June 29, 6:45-7:45 p.m.; July 20, 10:45-11:45 a.m. or 6:45-7:45 p.m.; Aug. 17, 10:45-11:45 a.m. or 6:45-7:45 p.m. in Bldg. M, Room M122.</comments>
                 <subtopic name="Medical Coding Basics">
                     <pattern match="POFM 1300-2501" />
+                    <pattern match="POFM 1300-2001" />
+                    <pattern match="POFM 1327-2001" />
+                    <pattern match="POFM 1370-2001" />
                 </subtopic>
                 <subtopic name="Medical Insurance">
                     <pattern match="POFM 1327-2501" />
@@ -428,6 +434,7 @@
                     <pattern match="POFT 1301-2781" />
                     <pattern match="POFT 1301-2427" />
                     <pattern match="POFT 1301-2502" />
+                    <pattern match="POFT 1301-2402" />
                     <pattern match="POFT 1302-2402" />                    
                 </subtopic>
                 <subtopic name="Medical Health Records">
