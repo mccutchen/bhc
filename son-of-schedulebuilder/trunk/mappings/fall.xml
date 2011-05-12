@@ -154,7 +154,7 @@
           <pattern match="ITSE 1411-2501" />
           <pattern match="IMED 1416-2401" />
           <pattern match="INEW 1440-2401" />
-          <pattern match="IMED 1416-2426" />
+
           <pattern match="INEW 1440-2426" />
           <pattern match="INEW 2434-2426" />
           <pattern match="ITSE 1301-2401" />
