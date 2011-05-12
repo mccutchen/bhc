@@ -655,7 +655,8 @@
       <!-- Added 2010-03-24  -->
       <subject name="Art">
         <topic name="Problems In Contemporary Art">
-          <pattern match="ARTS 1170-2200" />
+          <pattern match="ARTS 1170-2200" />        
+          <pattern match="ARTS 1170-2201" />
         </topic>
         <topic name="Art Appreciation">
           <pattern match="ARTS 1301-2001" />
