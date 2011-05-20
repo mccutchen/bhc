@@ -562,6 +562,7 @@
           <pattern match="MUSI 2312-2200" />
         </topic>
         <topic name="Musicianship">
+          <pattern match="MUSI 1117-2200" />
           <pattern match="MUSI 2117-2201" />
         </topic>
         <topic name="Composition">
@@ -640,6 +641,7 @@
             <pattern match="MUAP 1133-2200" />
             <pattern match="MUAP 1137-2200" />
             <pattern match="MUAP 1137-2201" /> <!-- Jill 20110110 -->
+            <pattern match="MUAP 1141-2200" />
             <pattern match="MUAP 1145-2200" />
             <pattern match="MUAP 1157-2200" />
             <pattern match="MUAP 1161-2200" />
