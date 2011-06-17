@@ -38,12 +38,12 @@ class Fall11(Fall):
 
 
 # ===================================================================
-# Spring 2011 profiles
+# Spring 2012 profiles
 # ===================================================================
-class Spring11(Spring):
-    input = 'data/2011-spring/BH2011SP.TXT'
+class Spring12(Spring):
+    input = 'data/2012-spring/BH2012SP.TXT'
     terms = {
-        'Spring': (date(2011, 1, 18), date(2011, 5, 12), 'Jan. 18-May 12'),
+        'Spring': (date(2012, 1, 18), date(2012, 5, 12), 'Jan. 18-May 12'),
     }
    
 # ===================================================================
