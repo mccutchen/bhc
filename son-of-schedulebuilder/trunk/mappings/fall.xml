@@ -624,11 +624,13 @@
                 <pattern match="RADR 2235" />
                 <pattern match="RADR 1291" />
                 <pattern match="RADR 2233" />
-                <pattern match="RADR 2240" />
             </topic>
 
             <topic name="Computed Tomography">
-                <pattern match="CTMT" unsorted="true" /> 
+                <pattern match="CTMT" unsorted="true" />
+                <pattern match="RADR 2240-2400" />
+
+                
             </topic>
 
             <topic name="Vascular Interventional Technology">
