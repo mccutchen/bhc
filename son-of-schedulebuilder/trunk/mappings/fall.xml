@@ -1112,6 +1112,7 @@
           <pattern match="MUSI 1181-2501" />
           <pattern match="MUSI 1182-2501" />
           <pattern match="MUSI 1181-2502" />
+          <pattern match="MUSI 1181-2700" />
         </topic>
         <topic name="Jazz/Rock">
           <pattern match="MUSI 1263-2001" />
