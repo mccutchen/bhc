@@ -944,14 +944,22 @@
           
         <topic name="Ballet">
           <pattern match="DANC 1341-2001" />
-          <pattern match="DANC 1341-2200" /> 
+          <pattern match="DANC 1341-2200" />
+          <pattern match="DANC 1341-2701" />
+          <pattern match="DANC 1342-2701" />
           <pattern match="DANC 1342-2001" />
+          <pattern match="DANC 1342-2002" />
+          <pattern match="DANC 1342-2202" />
           <pattern match="DANC 2341-2001" />
           <pattern match="DANC 2342-2001" />
           <pattern match="DANC 1341-2501" />
           <pattern match="DANC 1342-2501" />
           <pattern match="DANC 2341-2501" />
           <pattern match="DANC 2342-2501" />
+          <pattern match="DANC 2341-2202" />
+          <pattern match="DANC 2341-2701" />
+          <pattern match="DANC 2342-2701" />
+          <pattern match="DANC 2342-2202" />
         </topic>
 
         <topic name="Ballet Technique">
