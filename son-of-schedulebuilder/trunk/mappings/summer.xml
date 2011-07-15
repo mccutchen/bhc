@@ -511,15 +511,9 @@
           <topic name="Summer Dance Intensive">
               <pattern match="DANC 2389-2201" />              <!-- Jill 2011-01-12 -->
           </topic>
-
-
-
-
-
-              <pattern match="DANC 1306-2201" />
-
-              <pattern match="DANC 2112-2201" />
-
+          <pattern match="DANC 1306-2201" />
+          <pattern match="DANC 2112-2201" />
+          <pattern match="DANC 2112-2202" />
 
 
 
