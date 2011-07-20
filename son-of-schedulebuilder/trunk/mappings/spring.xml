@@ -1310,7 +1310,9 @@
             </topic>
             <topic name="Music-private Lessons">
                 <subtopic name="Beginning">
-                    <comments>Note:  These courses are private lesson courses, by audition only.  Students are required to audition in advance to be placed at the correct level.  An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
+                    <comments>
+                        Note:  Since enrollment in a music ensemble is required for all students who are accepted into private lesson courses, students may be required to audition in advance to be placed at the correct level.  An accompanist fee may be required. Please call the Music Office at 972-860-4563 for more information.
+                    </comments>
 					<pattern match="MUAP 1101-2001" />
 					<pattern match="MUAP 1101-2002" />
 					<pattern match="MUAP 1105-2001" />
