@@ -765,7 +765,10 @@
             <topic name="Art History">
                 <pattern match="ARTS 1303-2001" />
                 <pattern match="ARTS 1303-2002" />
-                <pattern match="ARTS 1303-2420" />  <!-- added RI 2010-07-30 self -->				
+                <pattern match="ARTS 1303-2420" />
+                <pattern match="ARTS 1303-2421" />
+                <pattern match="ARTS 1303-2422" />
+                <pattern match="ARTS 1304-2420" />
                 <pattern match="ARTS 1304-2001" />
                 <pattern match="ARTS 1304-2002" />
                 <pattern match="ARTS 1304-2501" />
