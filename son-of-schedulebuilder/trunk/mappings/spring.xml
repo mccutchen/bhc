@@ -827,7 +827,9 @@
                 <pattern match="ARTS 1312-2001" />
                 <pattern match="ARTS 1312-2501" />
                 <pattern match="ARTS 1311-2250" />
-                <pattern match="ARTS 2311-2255" />  <!-- Jill 2010-09-13 -->
+                <pattern match="ARTS 2311-2255" />
+                <pattern match="ARTS 2312-2255" />
+
             </topic>
             <topic name="Drawing">
                 <pattern match="ARTS 1316-2001" />
@@ -1323,8 +1325,10 @@
 					<pattern match="MUAP 1113-2200" />      <!-- added 1/29/10 -->
 	                <pattern match="MUAP 1115-2001" />
 					<pattern match="MUAP 1117-2001" />
-					<pattern match="MUAP 1121-2001" />
-					<pattern match="MUAP 1125-2001" />
+                    <pattern match="MUAP 1117-2002" />
+                    <pattern match="MUAP 1121-2001" />
+                    <pattern match="MUAP 1121-2002" />
+                    <pattern match="MUAP 1125-2001" />
 					<pattern match="MUAP 1125-2002" />
 	                <pattern match="MUAP 1125-2012" />      <!-- added RI 7/9/10 -->
      			    <pattern match="MUAP 1129-2001" />
@@ -1332,7 +1336,8 @@
                     <pattern match="MUAP 1129-2003" /> <!-- added RI Self 2010-08-13 -->
                     <pattern match="MUAP 1129-2013" />                  <!-- added RI 7/9/10 -->                  
 					<pattern match="MUAP 1133-2001" />
-					<pattern match="MUAP 1137-2001" />
+                    <pattern match="MUAP 1133-2002" />
+                    <pattern match="MUAP 1137-2001" />
 					<pattern match="MUAP 1137-2002" />
 					<pattern match="MUAP 1141-2001" />
                     <pattern match="MUAP 1141-2002" /> <!-- ri 11-01-07 -->					
@@ -1368,6 +1373,7 @@
 					<pattern match="MUAP 2213-2200" />  <!-- added 01-29-10 -->
                     <pattern match="MUAP 2215-2001" />
 					<pattern match="MUAP 2217-2001" />
+                    <pattern match="MUAP 2217-2002" />
                     <pattern match="MUAP 2221-2001" />                <!-- added RI 7/9/10 -->
                     <pattern match="MUAP 2225-2001" />                <!-- added RI 7/9/10 -->
                     <pattern match="MUAP 2225-2002" />                <!-- added RI 7/9/10 -->
@@ -1377,7 +1383,8 @@
                     <pattern match="MUAP 2229-2004" />                <!-- added RI 7/9/10 -->
                     <pattern match="MUAP 2233-2001" />
                 	<pattern match="MUAP 2237-2001" />
-					<pattern match="MUAP 2245-2001" />
+                    <pattern match="MUAP 2241-2001" />
+                    <pattern match="MUAP 2245-2001" />
                     <pattern match="MUAP 2249-2001" />                <!-- added RI 7/9/10 -->
                     <pattern match="MUAP 2253-2001" />
 					<pattern match="MUAP 2257-2001" />
