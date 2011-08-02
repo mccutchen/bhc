@@ -1000,7 +1000,11 @@
                 <pattern match="DANC 1305-2201" /> <!-- ri 11-02-25 -->
           </topic>
           <topic name="Aerial Dance">
-                <pattern match="DANC 1113-2001" /> <!-- jill 10-09-02 -->
+                <pattern match="DANC 1113-2001" />
+                <pattern match="DANC 1101-2001" />
+                <pattern match="DANC 1102-2001" />
+                <pattern match="DANC 1101-2501" />
+                <pattern match="DANC 1102-2501" />
           </topic>
           <topic name="Tap">
                 <pattern match="DANC 1110-2001" />
