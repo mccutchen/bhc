@@ -1207,8 +1207,8 @@
             </topic>
             <topic name="Foundation of Music">
                 <pattern match="MUSI 1304-2001" />
-                <pattern match="MUSI 1304-2300" />
                 <pattern match="MUSI 1300-2300" />
+                <pattern match="MUSI 1304-2300" />
             </topic>
             <topic name="Composition">
                 <pattern match="MUSI 1386-2200" />                <!-- Linda 2011-01-25  -->                
@@ -1289,7 +1289,6 @@
                 <subtopic name="Handbell Ensemble">
 					<pattern match="MUEN 1135-2500" />
 					<pattern match="MUEN 1135-2250" />
-                    <pattern match="MUEN 1135-2201" />                    <!-- Linda 2011-02-11  -->
                 </subtopic>
                 <subtopic name="Keyboard Ensemble">
 					<pattern match="MUEN 1131-2001" />
@@ -1297,7 +1296,8 @@
 				</subtopic>
               
                 <subtopic name="Percussion Ensemble - African Drumming">
-        					<pattern match="MUEN 1135-2200" />
+   					<pattern match="MUEN 1135-2200" />
+                    <pattern match="MUEN 1135-2201" />
                 </subtopic>				
                 <subtopic name="String Ensemble">
 					<pattern match="MUEN 1136-2001" />
