@@ -953,10 +953,10 @@
                 <pattern match="CUST 2370-2503" />  <!-- added per Jill 2010-09-02 -->
                 <pattern match="CUST 2370-2426" />
 			    <pattern match="CUST 2370-2427" />
-			    <pattern match="CUST 2370-2428" />
+                <pattern match="CUST 2370-2431" />
+                <pattern match="CUST 2370-2428" />
 			    <pattern match="CUST 2370-2429" />
 			    <pattern match="CUST 2370-2430" />
-                <pattern match="CUST 2370-2431" />
                 <pattern match="CUST 2370-2432" />
 			    <pattern match="CUST 2370-2440" />
 			    <pattern match="CUST 2370-2441" />
@@ -1141,7 +1141,6 @@
             <pattern match="HUMA 1315-2221" />
             <pattern match="HUMA 1315-2250" />
             <pattern match="HUMA 1315-2400" />
-            <pattern match="HUMA 1315-2421" /><!-- Added 11/23 per Linda -->
             <pattern match="HUMA 1315-2422" />
             <pattern match="HUMA 1315-2423" />
             <pattern match="HUMA 1315-2424" />
@@ -1155,8 +1154,9 @@
             <pattern match="HUMA 1315-2432" /> <!-- added 2010-03-24 per linda -->
 
           <topic name="December Winter Flex Term">
-            	<pattern match="HUMA 1315-2420" />
-            </topic>
+           	<pattern match="HUMA 1315-2420" />
+            <pattern match="HUMA 1315-2421" />
+          </topic>
         </subject>
                 
         <subject name="Music">
