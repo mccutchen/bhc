@@ -252,6 +252,7 @@
           <pattern match="COSC 1301-2009" />         
           <pattern match="COSC 1301-2010" />
           <pattern match="COSC 1301-2011" />
+          <pattern match="COSC 1301-2012" />
           <pattern match="COSC 1300-2250" />           
           <pattern match="COSC 1300-2284" />
           <pattern match="COSC 1300-2287" />
