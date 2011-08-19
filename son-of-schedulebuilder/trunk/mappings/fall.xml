@@ -1214,10 +1214,12 @@
             <pattern match="MUAP 1113-2001" />
             <pattern match="MUAP 1115-2001" />
             <pattern match="MUAP 1117-2001" />
+            <pattern match="MUAP 1117-2002" />
             <pattern match="MUAP 1121-2001" />
             <pattern match="MUAP 1121-2002" />
             <pattern match="MUAP 1125-2001" />
             <pattern match="MUAP 1129-2001" />
+            <pattern match="MUAP 1129-2002" />
             <pattern match="MUAP 1129-2003" />            
             <pattern match="MUAP 1133-2001" />
             <pattern match="MUAP 1133-2002" />
