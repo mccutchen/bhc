@@ -670,6 +670,7 @@
           <pattern match="ARTS 1301-2005" />
           <pattern match="ARTS 1301-2006" />
           <pattern match="ARTS 1301-2007" />
+          <pattern match="ARTS 1301-2009" />
           <pattern match="ARTS 1301-2501" />
           <pattern match="ARTS 1301-2502" />
           <pattern match="ARTS 1301-2250" />
