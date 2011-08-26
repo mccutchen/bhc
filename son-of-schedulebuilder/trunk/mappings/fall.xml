@@ -267,6 +267,7 @@
           <pattern match="COSC 1301-2502" />
           <pattern match="COSC 1301-2503" />
           <pattern match="COSC 1301-2504" />
+          <pattern match="COSC 1301-2505" />          
           <pattern match="COSC 1401-2511" />
           <pattern match="COSC 1401-2512" />
           <pattern match="COSC 1301-2250" />          
@@ -287,6 +288,7 @@
           <pattern match="COSC 1301-2404" />
           <pattern match="COSC 1301-2405" />
           <pattern match="COSC 1301-2406" />
+          <pattern match="COSC 1301-2407" />
           <pattern match="COSC 1401-2401" />
           <pattern match="COSC 1401-2402" />
           <pattern match="COSC 1401-2403" />
@@ -919,7 +921,8 @@
           <pattern match="DANC 1111-2001" />
           <pattern match="DANC 2110-2001" />
           <pattern match="DANC 2111-2001" />
-        </topic>
+          <pattern match="DANC 1110-2202" />
+          </topic>
           <topic name="Hip Hop">
           <pattern match="DANC 1222-2001" />
           <pattern match="DANC 1222-2002" />	  
@@ -983,6 +986,7 @@
           <pattern match="DANC 1246-2501" />
           <pattern match="DANC 2245-2501" />
           <pattern match="DANC 2246-2501" />
+          <pattern match="DANC 1245-2702" />          
         </topic>
       </subject>
 
