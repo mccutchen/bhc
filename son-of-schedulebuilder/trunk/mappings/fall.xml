@@ -945,9 +945,10 @@
           <pattern match="DANC 2247-2501" />
           <pattern match="DANC 2248-2501" />
           <pattern match="DANC 1248-2202" />
+          <pattern match="DANC 1247-2702" />
           <pattern match="DANC 1248-2702" />
         </topic>
-          
+
         <topic name="Ballet">
           <pattern match="DANC 1341-2001" />
           <pattern match="DANC 1341-2200" />
