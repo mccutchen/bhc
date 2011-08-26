@@ -1058,6 +1058,7 @@
           <pattern match="MUSI 1306-2004" />
           <pattern match="MUSI 1306-2005" />
           <pattern match="MUSI 1306-2006" />
+          <pattern match="MUSI 1306-2200" />
           <pattern match="MUSI 1306-2501" />
           <pattern match="MUSI 1306-2502" />
           <pattern match="MUSI 1306-2700" />
@@ -1095,7 +1096,8 @@
           <pattern match="MUSI 1309-2300" />
         </topic>
         <topic name="Foundation of Music">
-          <pattern match="MUSI 1300-2300" />
+          <pattern match="MUSI 1300-2200" />
+          <pattern match="MUSI 1300-2300" />          
           <pattern match="MUSI 1304-2300" />
         </topic>
         <topic name="Composition">
