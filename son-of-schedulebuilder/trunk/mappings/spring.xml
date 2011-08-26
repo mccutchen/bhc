@@ -961,9 +961,10 @@
 			    <pattern match="CUST 2370-2440" />
 			    <pattern match="CUST 2370-2441" />
 			    <pattern match="CUST 2370-2250" /><!-- added 11/12/09 -->
-    			<topic name="DECEMBER WINTER FLEX TERM">
-             <pattern match="CUST 2370-2420" />
-          </topic>
+    	   <topic name="DECEMBER WINTER FLEX TERM">
+                <pattern match="CUST 2370-2420" />
+                <pattern match="CUST 2370-2421" />
+           </topic>
         </subject>
 
       <subject name="Dance">
