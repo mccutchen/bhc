@@ -9,22 +9,17 @@
                 <pattern match="POFI 1127-2702" />
                 <pattern match="POFI 1127-2704" />                           
             </topic>
-            <topic name="Software Application Specialist Certificate">
+            <topic name="">
                 <subtopic name="Word Processing, Word">
-                    <pattern match="POFI 2301-2001" />
-                    <pattern match="POFI 2301-2501" />
                     <pattern match="POFI 2301-2426" />
                     <pattern match="POFI 2301-2427" />
                 </subtopic>
-                <subtopic name="Spreadsheets, Excel">
-                    <pattern match="POFI 1349-2001" />
-                    <pattern match="POFI 1349-2501" />
+                <subtopic name="">
                     <pattern match="POFI 1349-2426" />
                 </subtopic>
                 <subtopic name="Database, Access">
                     <pattern match="ITSW 1407-2429" />
                     <pattern match="ITSW 1407-2502" />
-                    <pattern match="POFI 1441-2501" />
                     <pattern match="POFI 1441-2426" />
                 </subtopic>
                 <subtopic name="Powerpoint">
@@ -45,13 +40,11 @@
             
             <topic name="Office Assistant Certificate">
                 <subtopic name="Computer Applications I, Computer Basics">
-                    <pattern match="POFI 1301-2001" />
-                    <pattern match="POFI 1301-2501" />
+
                     <pattern match="POFI 1301-2426" />
                 </subtopic>
                 <subtopic name="Business English">
                     <pattern match="POFT 1301-2780" />
-                    <pattern match="POFT 1301-2300" />
                     <pattern match="POFT 1301-2426" />
                 </subtopic>
                 <subtopic name="Administrative Office Procedures I">
@@ -60,28 +53,20 @@
                     <pattern match="POFT 1309-2426" />
                 </subtopic>
                 <subtopic name="Computer Applications II (MS Office)">
-                    <pattern match="POFI 1341-2001" />
-                    <pattern match="POFI 1341-2501" />
+
                     <pattern match="POFI 1341-2426" />
                 </subtopic>
                 <subtopic name="Beginning Keyboarding and Document Formatting">
                     <comments>These courses are suggested for those who want to get a handle on the basics before moving on to more advanced topics.</comments>
-                    <pattern match="POFT 1329-2001" />
                     <pattern match="POFT 1329-2200" />
-                    <pattern match="POFT 1329-2501" />
-                    <pattern match="POFT 1329-2502" />
                     <pattern match="POFT 1329-2426" />
                     <pattern match="POFT 1329-2427" />
                 </subtopic>
             </topic>
-            <topic name="Credit Classes - Electives">  
+            <topic name="">  
                 <subtopic name="Keyboarding Classes">
-                    <pattern match="POFT 1127-2200" />                  
-                    <pattern match="POFT 1127-2202" />                  
+                    <pattern match="POFT 1127-2200" />                                   
                     <pattern match="POFT 1127-2250" />
-                    <pattern match="POFT 1127-2701" />
-                    <pattern match="POFT 1127-2702" />
-                    <pattern match="POFT 1127-2704" />
                     <pattern match="POFT 1127-2426" />
                     <pattern match="POFT 1127-2427" />
                 </subtopic>
@@ -92,15 +77,14 @@
                     <pattern match="POFT 2203-2426" />
                     <pattern match="POFT 2203-2427" />
                 </subtopic>
+
                 <subtopic name="Business Math - Required for Aas Degree">
-                    <pattern match="POFT 1321-2501" />
                     <pattern match="POFT 1321-2426" />
                     <pattern match="POFT 1321-2427" />
                 </subtopic>
                 <subtopic name="Machine Application / Business Math - Required for Accounting Certificates and AAS Degree">
-                    <pattern match="POFT 1325-2001" />
                     <pattern match="POFT 1325-2200" />
-                    <pattern match="POFT 1325-2501" />
+
                     <pattern match="POFT 1325-2426" />
                     <pattern match="POFT 1325-2427" />
                 </subtopic>
@@ -222,7 +206,7 @@
 
 
           <topic name="Microsoft Academy">
-                <comments>Note: Brookhaven College is a Microsoft IT Academy and offers courses preparing students to take and pass Microsoft certification tests and to fulfill the requirements for a Networking Administration and Support AAS for either a Microsoft Certified Systems Administrator - MCSA, a Microsoft Certified Systems Engineer - MCSE or a Microsoft Certified Database Administrator - MCDBA. For more information, call 972-860-4721.</comments>
+                <comments>Note: Brookhaven College is a Microsoft IT Academy and offers courses and curricula preparing students to pass Microsoft certification exams and to fulfill the requirements for a Networking Administration and Support AAS as a Microsoft Certified IT Professional (MCITP) Server Administrator and a MCITP Enterprise Administrator.</comments>
                 <pattern match="ITMC 2437-2501" />
                 <pattern match="ITMT 1345-2501" />
                 <pattern match="ITMT 1345-2426" />
@@ -273,6 +257,7 @@
                 <pattern match="ITSY 2459-2401" />
             </topic>        
             <topic name="Web Development and E-commerce">
+                <comments>Note: For more information about Web and E-Commerce Courses, call 972-860-4329 or e-mail bhcCITWeb@dcccd.edu.</comments>
                 <pattern match="IMED 2449-2001" />
                 <pattern match="INEW 1440-2001" />
                 <pattern match="ITSE 1301-2001" />
@@ -328,11 +313,18 @@
                 <pattern match="ITSW 1407-2428" />             
                 <pattern match="ITSW 1410-2426" />
                 <pattern match="POFI 2440-2426" />
-          </topic>
+                <pattern match="POFI 2440-2001" />
+                <pattern match="POFI 2440-2201" />
+                <pattern match="POFI 2440-2501" />
+                <pattern match="POFI 2440-2401" />
+                <pattern match="POFI 2440-2402" />
+                <pattern match="POFI 2440-2441" />
+                <pattern match="POFI 2440-2442" />
+            </topic>
         </subject>
-        
+
         <subject name="Computer Science">
-          <topic name="Computer Literacy">
+          <topic name="Introduction to Computing">
             <pattern match="COSC 1301-2001" />
             <pattern match="COSC 1301-2002" />
             <pattern match="COSC 1301-2003" />
@@ -487,16 +479,21 @@
                 </subtopic>
                 <subtopic name="Keyboarding, Beginning">
                     <pattern match="POFT 1127-2201" />
+                    <pattern match="POFT 1127-2422" />
                     <pattern match="POFT 1127-2428" />
                     <pattern match="POFT 1127-2429" />
+                    <pattern match="POFT 1127-2702" />
                     <pattern match="POFT 1127-2703" />
                 </subtopic>
                 <subtopic name="Medical Terminology">
                     <pattern match="MDCA 1313-2001" />
                     <pattern match="MDCA 1313-2251" />
+                    <pattern match="MDCA 1313-2401" />
+                    <pattern match="MDCA 1313-2402" />
                     <pattern match="MDCA 1313-2426" />
                     <pattern match="MDCA 1313-2427" />
                     <pattern match="MDCA 1313-2428" />
+                    <pattern match="MDCA 1313-2441" />
                     <pattern match="MDCA 1313-2250" />
                 </subtopic>
                 <subtopic name="Medical Office Procedures">
@@ -516,6 +513,9 @@
           <topic name="Medical Front Office Assistant Certificate - Second Semester">
                 <comments>Note: To enroll in the second semester, you must have successfully completed the courses above as college credit with a minimum final grade of "C" in each course. </comments>
                 <subtopic name="Medical Coding Basics">
+                    <pattern match="POFM 1300-2001" />
+                    <pattern match="POFM 1327-2001" />
+                    <pattern match="POFM 1370-2001" />
                     <pattern match="POFM 1300-2501" />
                 </subtopic>
                 <subtopic name="Medical Insurance">
@@ -523,6 +523,7 @@
                 </subtopic>
                 <subtopic name="Business English">
                     <pattern match="POFT 1301-2781" />
+                    <pattern match="POFT 1301-2402" />
                     <pattern match="POFT 1301-2427" />
                 </subtopic>
                 <subtopic name="Medical Health Records">
