@@ -283,7 +283,7 @@
                 <pattern match="IMED 1416-2427" />
                 <pattern match="ITSW 1407-2510" />
                 <pattern match="ITSW 1407-2426" />
-                <pattern match="IMED 1416-2401" />
+
                 <pattern match="IMED 2409-2401" />
                 <pattern match="INEW 1440-2401" />
                 <pattern match="ITSE 1301-2401" />
