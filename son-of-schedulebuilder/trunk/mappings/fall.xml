@@ -295,6 +295,7 @@
           <pattern match="COSC 1401-2404" />
           <pattern match="COSC 1401-2405" />
           <pattern match="COSC 1401-2406" />
+          <pattern match="COSC 1401-2407" />
           <pattern match="COSC 1401-2421" />
           <pattern match="COSC 1401-2422" />
           <pattern match="COSC 1401-2423" />
@@ -344,6 +345,7 @@
           <pattern match="BCIS 1405-2404" />
           <pattern match="BCIS 1405-2405" />
           <pattern match="BCIS 1405-2406" />
+          <pattern match="BCIS 1405-2407" />
           <pattern match="BCIS 1405-2421" />
           <pattern match="BCIS 1405-2422" />
           <pattern match="BCIS 1405-2423" />
@@ -1143,6 +1145,7 @@
           <pattern match="MUSI 1192-2002" />
           <pattern match="MUSI 1193-2001" />                      
           <pattern match="MUSI 1192-2200" />
+          <pattern match="MUSI 1193-2200" />
         </topic>
         <topic name="Voice">
           <pattern match="MUSI 1183-2001" />
@@ -1193,6 +1196,7 @@
             <pattern match="MUEN 1136-2002" />
             <pattern match="MUEN 1136-2200" />
             <pattern match="MUEN 1136-2201" />
+            <pattern match="MUEN 1136-2202" />
           </subtopic>
           <subtopic name="Vocal Jazz / Lab Band">
             <pattern match="MUEN 1151-2001" />
