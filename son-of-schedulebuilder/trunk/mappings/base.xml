@@ -284,7 +284,12 @@
         <subject name="Linguistics">
             <pattern match="LING" priority="0" unsorted="true" />
         </subject>
-        <subject name="Management">
+        <subject name="Management Program">
+            <comments>
+                NOTE: Complete two courses one night per week. Be mentored by full-time business professor. Class format includes small-group discussions and networking with other employed professionals.   Students taking management program courses at Brookhaven for the first time must be advised by their professor before they register. Call Mary Lou Avera 972-860-4179, marylou@dcccd.edu.
+                For more information and an explanation video:   www.brookhavencollege.edu/management
+                NOTE:  The following courses must be taken together.
+            </comments>        
             <pattern match="HRPO" priority="0" unsorted="true" />
             <pattern match="BMGT" priority="0" unsorted="true" />
             <pattern match="BUSG" priority="0" unsorted="true" />
