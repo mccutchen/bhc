@@ -798,7 +798,8 @@
                 <pattern match="ARTS 1301-2006" />
                 <pattern match="ARTS 1301-2007" />
                 <pattern match="ARTS 1301-2008" />
-			    <pattern match="ARTS 1301-2502" />
+                <pattern match="ARTS 1301-2009" />
+                <pattern match="ARTS 1301-2502" />
                 <pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2250" />
                 <pattern match="ARTS 1301-2420" />
@@ -1301,6 +1302,7 @@
             </topic>
             <topic name="Voice">
                 <pattern match="MUSI 1183-2001" />
+                <pattern match="MUSI 1183-2002" />
                 <pattern match="MUSI 1183-2501" />
                 <pattern match="MUSI 1183-2502" />
                 <pattern match="MUSI 1183-2701" />                <!-- Linda 2011-01-25  -->
