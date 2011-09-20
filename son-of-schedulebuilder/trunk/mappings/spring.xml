@@ -7,6 +7,7 @@
         <subject name="Business Office Systems and Support">
             <topic name="BOSS Electives">
                 <pattern match="POFI 1127-2702" />
+                <pattern match="POFT 1127-2703" />
                 <pattern match="POFI 1127-2704" />                           
             </topic>
             <topic name="">
@@ -331,8 +332,10 @@
                 <pattern match="ITSW 1410-2426" />
                 <pattern match="POFI 2440-2426" />
                 <pattern match="POFI 2440-2001" />
+                <pattern match="POFI 2440-2200" />
                 <pattern match="POFI 2440-2201" />
                 <pattern match="POFI 2440-2501" />
+                <pattern match="POFI 2440-2701" />
                 <pattern match="POFI 2440-2401" />
                 <pattern match="POFI 2440-2402" />
                 <pattern match="POFI 2440-2441" />
@@ -514,7 +517,7 @@
             ======================================================================== -->
         <subject name="Medical Office Management / Administration">
             <topic name="Medical Front Office Assistant Marketable Skills Achievement Award - First Semester">
-                <comments>Note: Before you enroll, you must attend one of the following information sessions: Oct. 26, Nov. 16, Jan. 5 or Jan. 11 from 5:30-6:30 p.m. in Bldg M, Room M122.</comments>
+                <comments>Note: Before you enroll as a new student in the Medical Front Office Assistant program, you must attend one of the following information sessions: Oct. 25, Nov. 29, or Jan. 10 from 5:30-6:30 p.m. in Bldg M, Room M122.</comments>
                 <subtopic name="Computer Fundamentals">
                     <pattern match="POFI 1104-2201" />
                     <pattern match="POFI 1104-2701" />
@@ -526,11 +529,12 @@
                     <pattern match="POFT 1127-2428" />
                     <pattern match="POFT 1127-2429" />
                     <pattern match="POFT 1127-2702" />
-                    <pattern match="POFT 1127-2703" />
                 </subtopic>
                 <subtopic name="Medical Terminology">
                     <pattern match="MDCA 1313-2001" />
                     <pattern match="MDCA 1313-2251" />
+                    <pattern match="MDCA 1313-2350" />
+                    <pattern match="MDCA 1313-2351" />
                     <pattern match="MDCA 1313-2401" />
                     <pattern match="MDCA 1313-2402" />
                     <pattern match="MDCA 1313-2426" />
@@ -573,7 +577,6 @@
                     <pattern match="POFM 1370-2501" />
                 </subtopic>
                 <subtopic name="Medical Front Office Co-Op Work Experience">
-                    <comments>Note: Students must be able to work 160 hours in a medical office, clinic or hospital and meet on four required meeting dates: Jan. 29, Feb. 26, March 26 and April 30.</comments>
                     <pattern match="POFM 1280-2250" />
                 </subtopic>
             </topic>
