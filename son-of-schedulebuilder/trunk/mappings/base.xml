@@ -540,12 +540,6 @@
             <pattern match="BUWF" priority="0" unsorted="true" />
             <pattern match="COAT" priority="0" unsorted="true" />
             <pattern match="AUTO" priority="0" unsorted="true" />
-            <pattern match="COMM 11(29|30)" priority="1" unsorted="true" />
-			<pattern match="COMM 13(07|35)" priority="1" unsorted="true"/>
-			<pattern match="COMM 21(29|30)" priority="1" unsorted="true"/>
-			<pattern match="COMM 22(09|10)" priority="1" unsorted="true"/>
-			<pattern match="COMM 23(0[235]|1[15]|2[7-9]|3[0129])" priority="1"
-                     unsorted="true"/>
         </division>
         <division name="Communications">
             <pattern match="COMM" priority="0" unsorted="true" />
