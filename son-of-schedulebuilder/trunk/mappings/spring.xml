@@ -597,14 +597,14 @@
                 <p>NOTE: All EMS courses require CPR certification for infant, child and adult.  This is the Healthcare Provider level by the American Heart Association or Professional Rescuer by the American Red Cross.  Students can register for the EMS course without having a current CPR card, but must be CPR certified by the mandatory orientation day.</p>
             </comments>
             <topic name="Emergency Medical Services, Basic">
-                <subtopic name="EMT-Basic Class #60, A Shift">
+                <subtopic name="EMT-Class #65, A Shift">
             		<pattern match="EMSP 1501-2210" />
             		<pattern match="EMSP 1501-2201" />
             		<pattern match="EMSP 1501-2202" />
             		<pattern match="EMSP 1501-2203" />
                     <pattern match="EMSP 1160-2210" />
                 </subtopic>
-                <subtopic name="EMT-Basic Class #61">
+                <subtopic name="EMT-Class #66">
             		<pattern match="EMSP 1501-2511" />
             		<pattern match="EMSP 1501-2501" />
             		<pattern match="EMSP 1501-2502" />
@@ -613,14 +613,14 @@
             	</subtopic>  
             </topic>
             <topic name="Emergency Medical Services,  Paramedic">
-                <subtopic name="Paramedic Class #26, A Shift">
+                <subtopic name="Paramedic Class #29, B Shift">
 					<pattern match="EMSP 2338-2226" /> 
 					<pattern match="EMSP 2338-2203" /> 
 					<pattern match="EMSP 2143-2226" />
                     <pattern match="EMSP 2143-2201" />
                     <pattern match="EMSP 2463-2726" />
                 </subtopic>
-                <subtopic name="Paramedic Class #27, C Shift">
+                <subtopic name="Paramedic Class #30, C Shift">
 					<pattern match="EMSP 2434-2227" /> 
 					<pattern match="EMSP 2434-2201" /> 
 					<pattern match="EMSP 2434-2202" /> 
@@ -635,7 +635,7 @@
                     <pattern match="EMSP 2338-2202" /> 
                     <pattern match="EMSP 2261-2227" /> 
 				</subtopic>
-                <subtopic name="Paramedic Class #28">
+                <subtopic name="Paramedic Class #31">
 					<pattern match="EMSP 1438-2728" /> 
 					<pattern match="EMSP 1438-2701" /> 
                     <pattern match="EMSP 1438-2702" /> 
@@ -650,7 +650,7 @@
 					<pattern match="EMSP 2444-2703" /> 
 					<pattern match="EMSP 2260-2228" />
                 </subtopic>
-                <subtopic name="Paramedic Class #29, A Shift">
+                <subtopic name="Paramedic Class #32, B Shift">
 					<pattern match="EMSP 1438-2229" /> 
 					<pattern match="EMSP 1438-2201" />
 					<pattern match="EMSP 1438-2202" />
