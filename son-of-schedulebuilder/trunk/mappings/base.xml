@@ -475,6 +475,7 @@
             <!-- Added by SS 5/14/10 b/c this appeared in the data. Seems a
                  bit strange, so it may need to be deleted later if division
                  deletes the course. -->
+            <pattern match="PHYS 140[34]" unsorted="true" />  <!-- ri 2011-10-13  -->
             <pattern match="PHYS 1111" unsorted="true" />
         </subject>
         <subject name="Physical Science">
