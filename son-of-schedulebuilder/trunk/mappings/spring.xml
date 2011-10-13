@@ -603,10 +603,18 @@
             		<pattern match="EMSP 1501-2202" />
             		<pattern match="EMSP 1501-2203" />
                     <pattern match="EMSP 1160-2210" />
+                    <pattern match="EMSP 1160-2215" />
+                    <pattern match="EMSP 1160-2216" />
+                    <pattern match="EMSP 2260-2231" />
+                    <pattern match="EMSP 2261-2230" />
+                    <pattern match="EMSP 2463-2229" />
                 </subtopic>
+
                 <subtopic name="EMT-Class #66">
-            		<pattern match="EMSP 1501-2511" />
-            		<pattern match="EMSP 1501-2501" />
+            		<pattern match="EMSP 1501-2215" />
+                    <pattern match="EMSP 1501-2511" />
+                    <pattern match="EMSP 1501-2516" />
+                    <pattern match="EMSP 1501-2501" />
             		<pattern match="EMSP 1501-2502" />
             		<pattern match="EMSP 1501-2503" />
             		<pattern match="EMSP 1160-2211" />                
@@ -617,35 +625,45 @@
 					<pattern match="EMSP 2338-2226" /> 
 					<pattern match="EMSP 2338-2203" /> 
 					<pattern match="EMSP 2143-2226" />
+                    <pattern match="EMSP 2143-2229" />
                     <pattern match="EMSP 2143-2201" />
                     <pattern match="EMSP 2463-2726" />
                 </subtopic>
                 <subtopic name="Paramedic Class #30, C Shift">
-					<pattern match="EMSP 2434-2227" /> 
-					<pattern match="EMSP 2434-2201" /> 
+					<pattern match="EMSP 2434-2227" />
+                    <pattern match="EMSP 2434-2230" />
+                    <pattern match="EMSP 2434-2201" /> 
 					<pattern match="EMSP 2434-2202" /> 
-					<pattern match="EMSP 1355-2227" /> 
-					<pattern match="EMSP 1355-2201" /> 
+					<pattern match="EMSP 1355-2227" />
+                    <pattern match="EMSP 1355-2230" />
+                    <pattern match="EMSP 1355-2201" /> 
 					<pattern match="EMSP 1355-2202" /> 	
-					<pattern match="EMSP 2430-2227" /> 
-					<pattern match="EMSP 2430-2201" /> 
+					<pattern match="EMSP 2430-2227" />
+                    <pattern match="EMSP 2430-2230" />
+                    <pattern match="EMSP 2430-2201" /> 
 					<pattern match="EMSP 2430-2202" /> 
 					<pattern match="EMSP 2338-2227" />   
                     <pattern match="EMSP 2338-2201" /> 
-                    <pattern match="EMSP 2338-2202" /> 
+                    <pattern match="EMSP 2338-2202" />
+                    <pattern match="EMSP 2338-2230" />
                     <pattern match="EMSP 2261-2227" /> 
 				</subtopic>
                 <subtopic name="Paramedic Class #31">
-					<pattern match="EMSP 1438-2728" /> 
-					<pattern match="EMSP 1438-2701" /> 
+					<pattern match="EMSP 1438-2232" />
+                    <pattern match="EMSP 1438-2728" />
+                    <pattern match="EMSP 1438-2731" />
+                    <pattern match="EMSP 1438-2701" /> 
                     <pattern match="EMSP 1438-2702" /> 
 					<pattern match="EMSP 1438-2703" /> 
-                    <pattern match="EMSP 1356-2728" /> 
-					<pattern match="EMSP 1356-2701" /> 
+                    <pattern match="EMSP 1356-2232" />
+                    <pattern match="EMSP 1356-2728" />
+                    <pattern match="EMSP 1356-2731" />
+                    <pattern match="EMSP 1356-2701" /> 
                     <pattern match="EMSP 1356-2702" /> 
 					<pattern match="EMSP 1356-2703" /> 
-                    <pattern match="EMSP 2444-2728" /> 
-					<pattern match="EMSP 2444-2701" />
+                    <pattern match="EMSP 2444-2728" />
+                    <pattern match="EMSP 2444-2731" />
+                    <pattern match="EMSP 2444-2701" />
                     <pattern match="EMSP 2444-2702" /> 
 					<pattern match="EMSP 2444-2703" /> 
 					<pattern match="EMSP 2260-2228" />
@@ -674,8 +692,9 @@
                 </subtopic>
 
                 <subtopic name="Mass Disaster Response, A Shift">
-            		<pattern match="EMSP 1391-2211" />   
-            		<pattern match="EMSP 1391-2201" />
+            		<pattern match="EMSP 1391-2211" />
+                    <pattern match="EMSP 1391-2213" />
+                    <pattern match="EMSP 1391-2201" />
                     <pattern match="EMSP 1391-2281" />
                     <pattern match="EMSP 1391-2282" />
                     <pattern match="EMSP 1391-2283" />
@@ -683,7 +702,7 @@
                 </subtopic>
             </topic>
         </subject>
-        
+
         <subject name="Journalism">
             <comments>NOTE: Journalism 1307 surveys the field of mass communications. Journalism 2311 is a reporting course. Students may enroll in Journalism 2311 without having taken Journalism 1307. Room B212 is the student newspaper office.</comments>
             <pattern match="JOUR" priority="0" unsorted="true" />
