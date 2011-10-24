@@ -549,6 +549,9 @@
             <pattern match="HHS" priority="0" unsorted="true" />
             <pattern match="HLS" priority="0" unsorted="true" />
             <pattern match="WECM" priority="0" unsorted="true" />
+            <!-- Added per MD 2011-10-24 to assign Learning Frameworks classes to
+                 Health and Human Services.  -->
+            <pattern match="EDUC 1300" unsorted="true" />
         </division>
         <division name="Mathematics and Science">
             <pattern match="SCMT" priority="0" unsorted="true" />
@@ -564,8 +567,8 @@
             <pattern match="GEOG" key="rubrik" priority="0" unsorted="true" />
             <pattern match="SSHS" key="rubrik" priority="0" unsorted="true" />
             <!-- Added by SS 4-1-10 to assign Learning Frameworks classes to
-                 Social Science.  -->
-			<pattern match="EDUC 1300" unsorted="true" />
+                 Social Science. 
+			<pattern match="EDUC 1300" unsorted="true" />   -->
 		</division>
         <division name="World Languages">
             <pattern match="WLNG" priority="0" unsorted="true" />
