@@ -682,6 +682,9 @@
                     <pattern match="EMSP 2553-2202" />
                     <pattern match="EMSP 2237-2202" />
                     <pattern match="EMSP 2463-2202" />
+                    <pattern match="EMSP 2237-2203" />
+                    <pattern match="EMSP 2463-2203" />
+                    <pattern match="EMSP 2553-2203" />
                 </subtopic>
 
                 <subtopic name="Clinical - Emergency Medical Technology/Technician">                    <!-- ri 2011-02-25  -->
