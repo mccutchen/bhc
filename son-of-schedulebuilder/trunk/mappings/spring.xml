@@ -1103,6 +1103,8 @@
                 <pattern match="DANC 2110-2501" />
                 <pattern match="DANC 2111-2501" />
           </topic>
+
+
           <topic name="Hip Hop">
                 <pattern match="DANC 1222-2001" />
                 <pattern match="DANC 1223-2001" />  <!--  added ri 2010-07-09  -->
@@ -1158,7 +1160,17 @@
                 <pattern match="DANC 2245-2501" />
                 <pattern match="DANC 2246-2501" />
             </topic>
-        </subject>
+
+          <!-- Senior Adult classes  -->
+          <topic name="Students 50+ Dance Classes">
+              <pattern match="DANC 1110-2002" />
+              <pattern match="DANC 1111-2002" />
+              <pattern match="DANC 2110-2002" />
+              <pattern match="DANC 2111-2002" />
+              <pattern match="DANC 2212-2002" />
+              <pattern match="DANC 2213-2002" />
+          </topic>
+      </subject>
         
         <subject name="Drama">
             <topic name="Introduction to Theatre">
