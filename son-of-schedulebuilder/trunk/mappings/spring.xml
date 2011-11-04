@@ -166,7 +166,9 @@
             <topic name="Open Source Software">
                 <pattern match="ITNW 2454-2501" />           
                 <pattern match="ITSE 1416-2501" />           
-                <pattern match="INEW 2434-2002" />           
+                <pattern match="INEW 2434-2002" />
+                <pattern match="INEW 2434-2401" />
+                <pattern match="INEW 2434-2501" />
                 <pattern match="ITSC 1416-2501" />
                 <pattern match="ITSE 1303-2502" />
                 <pattern match="ITSE 1346-2502" />
@@ -179,6 +181,8 @@
                 <pattern match="ITSE 1406-2427" />                    
                 <pattern match="ITSW 1407-2427" />            
             </topic>
+
+
             <topic name="Game, Media and Mobile Programming">
                 <pattern match="ITSE 1301-2003" />
                 <pattern match="ITSE 1301-2004" />
@@ -188,7 +192,12 @@
                 <pattern match="ITSE 1407-2001" />
                 <pattern match="ITSE 1407-2002" />
                 <pattern match="ITSE 2417-2001" />
+                <pattern match="INEW 2430-2350" />
                 <pattern match="INEW 2438-2501" />
+
+
+                
+
                 <pattern match="ITNW 1441-2501" />
                 <pattern match="ITSE 1407-2501" />
                 <pattern match="ITSE 1391-2501" />           
@@ -1307,9 +1316,12 @@
             </topic>
             <topic name="Foundation of Music">
                 <pattern match="MUSI 1304-2001" />
+                <pattern match="MUSI 1304-2002" />
+                <pattern match="MUSI 1304-2003" />
                 <pattern match="MUSI 1300-2300" />
                 <pattern match="MUSI 1304-2300" />
             </topic>
+
             <topic name="Composition">
                 <pattern match="MUSI 1386-2200" />                <!-- Linda 2011-01-25  -->                
                 <pattern match="MUSI 1386-2300" />
