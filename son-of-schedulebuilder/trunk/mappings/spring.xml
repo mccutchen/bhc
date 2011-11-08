@@ -792,18 +792,6 @@
             <topic name="">
                 <comments>NOTE: The following courses are available to anyone interested in the Radiologic Sciences Program. Acceptance into the program is NOT REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
                 <pattern match="RADR 1201" />
-                <pattern match="RADR 2372-2501" />
-                <pattern match="RADR 2373-2501" />
-                <pattern match="RADR 2374-2261" />
-                <pattern match="RADR 2374-2262" />
-                <pattern match="RADR 2374-2263" />
-                <pattern match="RADR 2374-2264" />
-                <pattern match="RADR 2374-2265" />
-                <pattern match="RADR 2374-2266" />
-                <pattern match="RADR 2374-2267" />
-                <pattern match="RADR 2374-2268" />
-                <pattern match="RADR 2374-2269" />
-                <pattern match="RADR 2374-2270" />
             </topic>
             <topic name="First Semester Program Students">
             	<comments>NOTE:  The following courses are for students in the first semester of the Radiologic Sciences Program.  Acceptance into this program is REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
@@ -823,7 +811,20 @@
                 <pattern match="RADR 2267" />  <!--  ri 2011-01-14 -->
                 <pattern match="RADR 2272" />
                 <pattern match="RADR 2273" />
-
+            </topic>
+            <topic name="Vascular Interventional Technology">
+                <pattern match="RADR 2372-2501" />
+                <pattern match="RADR 2373-2501" />
+                <pattern match="RADR 2374-2261" />
+                <pattern match="RADR 2374-2262" />
+                <pattern match="RADR 2374-2263" />
+                <pattern match="RADR 2374-2264" />
+                <pattern match="RADR 2374-2265" />
+                <pattern match="RADR 2374-2266" />
+                <pattern match="RADR 2374-2267" />
+                <pattern match="RADR 2374-2268" />
+                <pattern match="RADR 2374-2269" />
+                <pattern match="RADR 2374-2270" />
             </topic>
         </subject>
         
