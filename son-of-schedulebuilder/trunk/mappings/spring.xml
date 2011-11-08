@@ -269,6 +269,7 @@
             <topic name="Web Development and E-commerce">
                 <comments>Note: For more information about Web and E-Commerce Courses, call 972-860-4329 or e-mail bhcCITWeb@dcccd.edu.</comments>
                 <pattern match="IMED 2449-2001" />
+                <pattern match="IMED 2449-2350" />                
                 <pattern match="INEW 1440-2001" />
                 <pattern match="ITSE 1301-2001" />
                 <pattern match="ITSE 1301-2002" />
