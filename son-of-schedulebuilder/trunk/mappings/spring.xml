@@ -608,7 +608,8 @@
             </comments>
             <topic name="Emergency Medical Services, Basic">
                 <subtopic name="EMT-Class #65, A Shift">
-            		<pattern match="EMSP 1501-2210" />
+                    <pattern match="EMSP 1501-2215" />
+                    <pattern match="EMSP 1501-2210" />
             		<pattern match="EMSP 1501-2201" />
             		<pattern match="EMSP 1501-2202" />
             		<pattern match="EMSP 1501-2203" />
@@ -621,7 +622,6 @@
                 </subtopic>
 
                 <subtopic name="EMT-Class #66">
-            		<pattern match="EMSP 1501-2215" />
                     <pattern match="EMSP 1501-2511" />
                     <pattern match="EMSP 1501-2516" />
                     <pattern match="EMSP 1501-2501" />
