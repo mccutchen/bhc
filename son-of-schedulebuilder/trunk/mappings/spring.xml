@@ -1325,7 +1325,8 @@
             </topic>
 
             <topic name="Composition">
-                <pattern match="MUSI 1386-2200" />                <!-- Linda 2011-01-25  -->                
+                <pattern match="MUSI 1386-2200" />                <!-- Linda 2011-01-25  -->
+                <pattern match="MUSI 1386-2001" />
                 <pattern match="MUSI 1386-2300" />
             </topic>
             <topic name="Recital">
