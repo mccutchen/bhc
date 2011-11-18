@@ -127,6 +127,7 @@
           <pattern match="ITCC 1401-2501" />  <!-- added 2010-04-06 bill  -->
           <pattern match="ITCC 1404-2426" />
           <pattern match="ITCC 1401-2401" />
+          <pattern match="ITCC 1401-2402" />
           <pattern match="ITCC 1404-2401" />
         </topic>
         <topic name="Information Security and Lan Courses">
