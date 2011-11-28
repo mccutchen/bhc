@@ -499,6 +499,7 @@
               <pattern match="BCIS 1405-2424" />
               <pattern match="BCIS 1405-2425" />
               <pattern match="BCIS 1405-2426" /> <!-- RI 2010-12-17 -->
+              <pattern match="BCIS 1405-2760" />
             </topic>
             <topic name="Programming">
                 <pattern match="BCIS 1431-2501" />
@@ -851,6 +852,7 @@
                 <pattern match="ARTS 1301-2008" />
                 <pattern match="ARTS 1301-2009" />
                 <pattern match="ARTS 1301-2010" />
+                <pattern match="ARTS 1301-2012" />
                 <pattern match="ARTS 1301-2502" />
                 <pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2250" />
