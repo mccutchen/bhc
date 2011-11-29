@@ -1077,7 +1077,9 @@
           <topic name="Body Conditioning">
                 <pattern match="DANC 1141-2001" />
                 <pattern match="DANC 1142-2001" />
-            </topic>
+                <pattern match="DANC 1141-2002" />
+                <pattern match="DANC 1142-2002" />
+          </topic>
             <topic name="Dance Practicum">
                 <pattern match="DANC 1351-2235" />
                 <pattern match="DANC 1351-2701" />
