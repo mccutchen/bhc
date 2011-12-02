@@ -1321,14 +1321,18 @@
                 <pattern match="MUSI 1308-2300" />
                 <pattern match="MUSI 1309-2300" />
             </topic>
+
+            <topic name="Fundamentals of Music">
+                <pattern match="MUSI 1301-2200" />
+                <pattern match="MUSI 1302-2200" />
+            </topic>
+
             <topic name="Foundation of Music">
                 <pattern match="MUSI 1304-2001" />
                 <pattern match="MUSI 1304-2002" />
                 <pattern match="MUSI 1304-2003" />
                 <pattern match="MUSI 1300-2300" />
                 <pattern match="MUSI 1304-2300" />
-                <pattern match="MUSI 1301-2200" />
-                <pattern match="MUSI 1302-2200" />
             </topic>
 
             <topic name="Composition">
