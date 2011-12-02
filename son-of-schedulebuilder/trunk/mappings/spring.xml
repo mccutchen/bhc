@@ -1327,7 +1327,7 @@
                 <pattern match="MUSI 1302-2200" />
             </topic>
 
-            <topic name="Foundation of Music">
+            <topic name="Foundations of Music">
                 <pattern match="MUSI 1304-2001" />
                 <pattern match="MUSI 1304-2002" />
                 <pattern match="MUSI 1304-2003" />
