@@ -22,8 +22,8 @@ class Summer12(Summer):
     input = ('data/2012-summer/bh2012s1.txt', 'data/2012-summer/bh2012s2.txt')
     terms = {
         'Summer I/May Term': (date(2012, 5, 11), date(2012, 6, 5), 'May 11-June 5'),
-        'Summer I':  (date(2012, 6, 6), date(2012, 7, 7), 'June 6-July 7'),
-        'Summer II':  (date(2012, 7, 11), date(2012, 8, 11), 'July 11-Aug. 11'),
+        'Summer I':  (date(2012, 6, 6), date(2012, 7, 3), 'June 6-July 3'),
+        'Summer II':  (date(2012, 7, 9), date(2012, 8, 9), 'July 9-Aug. 9'),
     }
     saxon_params = {'schedule-title': 'Summer 2012 Credit'}
 
