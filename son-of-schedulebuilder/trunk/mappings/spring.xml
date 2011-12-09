@@ -242,9 +242,11 @@
                 <pattern match="ITNW 1408-2426" />
             </topic>
             <topic name="Unix">
-                <pattern match="ITSC 2437-2501" />
+                <pattern match="ITSC 2437-2401" />
+                <pattern match="ITSC 2437-2501" />               
                 <pattern match="ITSC 1407-2501" />
-                <pattern match="ITSC 1442-2501" />            
+                <pattern match="ITSC 1442-2401" />
+                <pattern match="ITSC 1442-2501" />
             </topic>
             <topic name="Cisco Academy">
                 <pattern match="ITCC 1401-2426" />            
@@ -614,9 +616,11 @@
             		<pattern match="EMSP 1501-2201" />
             		<pattern match="EMSP 1501-2202" />
             		<pattern match="EMSP 1501-2203" />
+                    <pattern match="EMSP 1160-2015" />
                     <pattern match="EMSP 1160-2210" />
                     <pattern match="EMSP 1160-2215" />
                     <pattern match="EMSP 1160-2216" />
+                    <pattern match="EMSP 1160-2516" />
                     <pattern match="EMSP 2260-2231" />
                     <pattern match="EMSP 2261-2230" />
                     <pattern match="EMSP 2463-2229" />
@@ -1336,6 +1340,7 @@
                 <pattern match="MUSI 1304-2001" />
                 <pattern match="MUSI 1304-2002" />
                 <pattern match="MUSI 1304-2003" />
+                <pattern match="MUSI 1304-2004" />
                 <pattern match="MUSI 1300-2300" />
                 <pattern match="MUSI 1304-2300" />
             </topic>
