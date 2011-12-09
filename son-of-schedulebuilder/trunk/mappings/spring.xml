@@ -883,6 +883,7 @@
                 <pattern match="ARTS 2313-2001" /> <!-- added by RI 2010-08-20 -->
                 <pattern match="ARTS 2314-2001" /> <!-- added by RI 2010-08-20 -->
                 <pattern match="ARTS 2313-2200" />                <!-- ri 2011-01-21 -->
+                <pattern match="ARTS 2314-2200" />
                 <pattern match="ARTS 2313-2501" />
                 <pattern match="ARTS 2314-2501" />
             </topic>
@@ -1039,6 +1040,10 @@
                 <pattern match="ARTS 2317-2201" />
                 <pattern match="ARTS 2311-2201" />
                 <pattern match="ARTS 2312-2201" />
+                <pattern match="ARTS 2366-2200" />
+                <pattern match="ARTS 2367-2200" />
+                <pattern match="ARTS 2311-2202" />
+                <pattern match="ARTS 2312-2202" />
             </topic>
         </subject>
         
