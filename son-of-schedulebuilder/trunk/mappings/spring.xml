@@ -1570,6 +1570,8 @@
                     a priority of 2 -->
                 <pattern match="ESOL 0034-2020" priority="2" />
                 <pattern match="ESOL 0034-2021" priority="2" />
+                <pattern match="ESOL 0034-2660" priority="2" />
+				
             </topic>
             <topic name="Reading Level One">
                 <pattern match="ESOL 0041" />
