@@ -856,6 +856,7 @@
                 <pattern match="ARTS 1301-2008" />
                 <pattern match="ARTS 1301-2009" />
                 <pattern match="ARTS 1301-2010" />
+                <pattern match="ARTS 1301-2011" />				
                 <pattern match="ARTS 1301-2012" />
                 <pattern match="ARTS 1301-2013" />                
                 <pattern match="ARTS 1301-2502" />
