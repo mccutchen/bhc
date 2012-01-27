@@ -422,6 +422,8 @@
             <pattern match="COSC 1301-2404" />
             <pattern match="COSC 1301-2405" />
             <pattern match="COSC 1301-2406" />
+            <pattern match="COSC 1301-2407" />		
+            <pattern match="COSC 1301-2408" />						
             <pattern match="COSC 1401-2401" />
             <pattern match="COSC 1401-2402" />
             <pattern match="COSC 1401-2403" />
@@ -968,6 +970,7 @@
                 <pattern match="ARTS 2312-2250" />
                 <pattern match="ARTS 1316-2251" />
                 <pattern match="ARTS 1317-2251" />
+                <pattern match="ARTS 1317-2700" />				
                 <pattern match="ARTS 2311-2253" />
                 <pattern match="ARTS 2312-2253" />
             </topic>
@@ -1033,6 +1036,7 @@
                 <pattern match="ARTS 2327-2501" />
                 <pattern match="ARTS 2311-2501" />
                 <pattern match="ARTS 2312-2501" />
+                <pattern match="ARTS 2311-2701" />
             </topic>        
             <topic name="December Winter Flex Term Printmaking Workshop">
                 <pattern match="ARTS 2333-2200" />
@@ -1161,7 +1165,9 @@
                 <pattern match="DANC 1342-2002" />
                 <pattern match="DANC 2341-2001" />
                 <pattern match="DANC 2342-2001" />
-                <pattern match="DANC 1341-2201" />                <!-- ri 2011-01-24 -->
+                <pattern match="DANC 1341-2201" />               
+                <pattern match="DANC 1341-2202" />               
+                <pattern match="DANC 1341-2203" />               				
                 <pattern match="DANC 1341-2501" />
                 <pattern match="DANC 1342-2502" />
                 <pattern match="DANC 1342-2501" />
@@ -1183,7 +1189,9 @@
                 <pattern match="DANC 2245-2001" />
                 <pattern match="DANC 2246-2001" />
                 <pattern match="DANC 1245-2002" /><!-- Added 12/3 - no BCSA instruction -->
+                <pattern match="DANC 1245-2201" />
                 <pattern match="DANC 1245-2501" />
+                <pattern match="DANC 1245-2701" />				
                 <pattern match="DANC 1246-2501" />
                 <pattern match="DANC 2245-2501" />
                 <pattern match="DANC 2246-2501" />
