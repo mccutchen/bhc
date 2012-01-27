@@ -99,12 +99,18 @@
           <pattern match="INEW 2318-2745" />        
           <pattern match="INEW 2334-2745" />
           <pattern match="ITSE 1407-2745" />
+          <pattern match="ITSE 1402-2489" />		  
           <pattern match="ITSE 2318-2745" />
           <pattern match="ITSE 1430-2501" />
           <pattern match="ITSE 2417-2502" />
           <pattern match="ITSE 1407-2426" />
+          <pattern match="ITSE 1407-2401" />		  
+          <pattern match="INEW 2438-2501" />
           <pattern match="INEW 2438-2502" />
+		  
           <pattern match="ITSE 2453-2501" />
+          <pattern match="ITSE 2459-2501" />
+		  
        </topic>
 
         <topic name="CIT CORE">
@@ -125,20 +131,36 @@
           <pattern match="ITMT 1402-2426" />
           <pattern match="ITMT 1470-2426" />
           <pattern match="ITNW 1408-2426" />
+          <pattern match="ITNW 1492-2501" />
+		  
         </topic>
 
         <topic name="Web Development and E-commerce">
           <pattern match="ITSE 1301-2001" />
           <pattern match="IMED 1416-2427" />
-          <pattern match="ITSE 1303-2426" />
-          <pattern match="ITSE 1346-2426" />
+          <pattern match="ITSE 1303-2401" />
+          <pattern match="ITSE 1303-2426" />		  
+          <pattern match="ITSE 1346-2401" />
+          <pattern match="ITSE 1346-2426" />		  
         </topic>
 
+
         <topic name="Application Software">
+          <pattern match="ITSC 1401-2300" />		
+          <pattern match="ITSC 1409-2401" />
+          <pattern match="ITSC 1409-2402" />
           <pattern match="ITSC 1409-2426" />
-          <pattern match="ITSW 1401-2426" />
+          <pattern match="ITSW 1401-2401" />
+          <pattern match="ITSW 1401-2402" />
+          <pattern match="ITSW 1401-2426" />		  
+          <pattern match="ITSW 1404-2401" />          
+          <pattern match="ITSW 1404-2402" />          		  
           <pattern match="ITSW 1404-2426" />          
+          <pattern match="ITSW 1407-2401" />
+          <pattern match="ITSW 1407-2402" />
           <pattern match="ITSW 1407-2427" />
+          <pattern match="ITSW 1410-2401" />
+          <pattern match="ITSW 1410-2402" />		  
           <pattern match="ITSW 1410-2426" />
           <pattern match="POFI 2440-2426" />
         </topic>
@@ -157,7 +179,15 @@
           
           <pattern match="COSC 1300-2489" />
           <pattern match="COSC 1300-2490" />
-          <pattern match="COSC 1401-2491" />
+          <pattern match="COSC 1401-2491" />		  
+          <pattern match="COSC 1401-2010" />
+          <pattern match="COSC 1401-2301" />
+          <pattern match="COSC 1401-2305" />
+          <pattern match="COSC 1401-2401" />
+          <pattern match="COSC 1401-2402" />
+          <pattern match="COSC 1401-2403" />
+          <pattern match="COSC 1401-2405" />
+          <pattern match="COSC 1401-2492" />
           <pattern match="COSC 1300-2301" />
           <pattern match="COSC 1300-2001" />
           <pattern match="COSC 1401-2001" />
@@ -169,6 +199,17 @@
           <pattern match="COSC 1300-2300" />
           <pattern match="COSC 1300-2001" />
           <pattern match="COSC 1301-2001" />
+          <pattern match="COSC 1301-2010" />
+          <pattern match="COSC 1301-2245" />
+          <pattern match="COSC 1301-2300" />
+          <pattern match="COSC 1301-2301" />
+          <pattern match="COSC 1301-2305" />
+          <pattern match="COSC 1301-2401" />
+          <pattern match="COSC 1301-2402" />
+          <pattern match="COSC 1301-2403" />		  
+          <pattern match="COSC 1301-2405" />
+          <pattern match="COSC 1301-2489" />
+          <pattern match="COSC 1301-2510" />
           <pattern match="COSC 1401-2501" />
           <pattern match="COSC 1300-2428" />
           <pattern match="COSC 1300-2429" />
@@ -179,6 +220,10 @@
           <pattern match="COSC 1300-2309" />
           <pattern match="COSC 1301-2309" />
           <pattern match="COSC 1401-2309" />
+          <pattern match="COSC 1415-2401" />
+          <pattern match="COSC 1436-2401" />
+          <pattern match="COSC 1436-2489" />
+          <pattern match="COSC 2436-2501" />		  
         </topic>
 
        <topic name="Programming">
@@ -202,6 +247,15 @@
         <topic name="Business Computer Applications">
           <pattern match="BCIS 1405-2491" />
           <pattern match="BCIS 1405-2001" />
+		  
+          <pattern match="BCIS 1405-2010" />
+          <pattern match="BCIS 1405-2301" />
+          <pattern match="BCIS 1405-2305" />
+          <pattern match="BCIS 1405-2401" />
+          <pattern match="BCIS 1405-2402" />
+          <pattern match="BCIS 1405-2403" />
+          <pattern match="BCIS 1405-2405" />
+          <pattern match="BCIS 1405-2492" />		  
           <pattern match="BCIS 1405-2426" />
           <pattern match="BCIS 1405-2427" />
           <pattern match="BCIS 1405-2501" />
@@ -282,7 +336,8 @@
             <topic name="Computer Graphics Workshop">                <!-- Jill 20110110 -->
                 <pattern match="ARTS 2313-2225" />
                 <pattern match="ARTS 2314-2225" />
-                <pattern match="ARTS 2311-2206" />                <!-- jill 2011-01-18  -->
+                <pattern match="ARTS 2311-2206" />              
+                <pattern match="ARTS 2311-2701" />              				
                 <pattern match="ARTS 2312-2200" />
             </topic>
             <topic name="Art and Computers">
@@ -301,7 +356,9 @@
 
             <topic name="Art Metals">
                 <pattern match="ARTS 2341-2501" />
+                <pattern match="ARTS 2341-2701" />				
                 <pattern match="ARTS 2342-2501" />
+                <pattern match="ARTS 2342-2701" />
                 <pattern match="ARTS 2311-2501" />
                 <pattern match="ARTS 2312-2501" />
                 <pattern match="ARTS 2341-2001" />
@@ -727,6 +784,8 @@
             	<pattern match="RADR 1202" />
             	<pattern match="RADR 1250" />
                 <pattern match="RADR 2266" />
+                <pattern match="RADR 2270" />
+                <pattern match="RADR 2375" />
             </topic>
 
             <topic name="Computed Tomography">
