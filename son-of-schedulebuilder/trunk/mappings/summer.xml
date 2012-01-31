@@ -336,8 +336,11 @@
             <topic name="Computer Graphics Workshop">                <!-- Jill 20110110 -->
                 <pattern match="ARTS 2313-2225" />
                 <pattern match="ARTS 2314-2225" />
-                <pattern match="ARTS 2311-2206" />              
+				<pattern match="ARTS 2311-2201" />              
+                <pattern match="ARTS 2311-2206" />              				
+                <pattern match="ARTS 2312-2201" />              
                 <pattern match="ARTS 2311-2701" />              				
+                <pattern match="ARTS 2312-2701" />              				
                 <pattern match="ARTS 2312-2200" />
             </topic>
             <topic name="Art and Computers">
@@ -823,6 +826,7 @@
 		 		<subtopic name="Emt-basic Class #62">
 		 			<pattern match="EMSP 1501-2210" />
                     <pattern match="EMSP 1501-2212" />
+		 			<pattern match="EMSP 1501-2217" />
                     <pattern match="EMSP 1501-2262" />                    <!-- Nancy 2011-01-31  -->
 		 			<pattern match="EMSP 1501-2201" />
 		 			<pattern match="EMSP 1501-2202" />
