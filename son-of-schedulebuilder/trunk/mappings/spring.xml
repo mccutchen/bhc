@@ -1221,6 +1221,8 @@
                 <pattern match="DRAM 2366-2004" />
                 <pattern match="DRAM 2366-2420" />
                 <pattern match="DRAM 2366-2421" />
+                <pattern match="DRAM 2366-2422" />
+				
             </topic>
             <topic name="Stagecraft">
                 <pattern match="DRAM 1330-2001" />
