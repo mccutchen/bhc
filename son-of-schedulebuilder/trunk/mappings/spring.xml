@@ -623,7 +623,8 @@
                     <pattern match="EMSP 1160-2215" />
                     <pattern match="EMSP 1160-2216" />
                     <pattern match="EMSP 1160-2516" />
-                    <pattern match="EMSP 2260-2231" />
+                    <pattern match="EMSP 2260-2201" />
+                    <pattern match="EMSP 2260-2231" />					
                     <pattern match="EMSP 2261-2230" />
                     <pattern match="EMSP 2463-2229" />
                 </subtopic>
@@ -1544,6 +1545,7 @@
                     <pattern match="MUAP 2229-2004" />                <!-- added RI 7/9/10 -->
                     <pattern match="MUAP 2233-2001" />
                 	<pattern match="MUAP 2237-2001" />
+                	<pattern match="MUAP 2237-2200" />
                     <pattern match="MUAP 2241-2001" />
                     <pattern match="MUAP 2245-2001" />
                     <pattern match="MUAP 2249-2001" />                <!-- added RI 7/9/10 -->
