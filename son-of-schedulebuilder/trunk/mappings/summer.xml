@@ -348,13 +348,14 @@
                 <pattern match="ARTS 2314-2001" />
             </topic>
 
-
             <topic name="3D Design and Sculpture">                <!-- jill 2010-01-25  -->
                 <pattern match="ARTS 1312-2705" />
                 <pattern match="ARTS 2326-2705" />
                 <pattern match="ARTS 2327-2705" />
                 <pattern match="ARTS 2311-2705" />
                 <pattern match="ARTS 2312-2705" />
+                <pattern match="ARTS 2311-2203" />
+                <pattern match="ARTS 2312-2203" />
             </topic>
 
             <topic name="Art Metals">
@@ -556,7 +557,8 @@
               <pattern match="DANC 1248-2702" />              <!-- Added by SS 6/24/10 w/no input from BCSA -->
           </topic>
           <topic name="Aerial Dance">
-              <pattern match="DANC 1113-2701" />              <!-- Jill 2011-01-25  -->
+              <pattern match="DANC 1113-2701" />              
+              <pattern match="DANC 1103-2701" />              
           </topic>
 
           <topic name="Hip Hop">
@@ -608,6 +610,7 @@
       <subject name="Music">
         <topic name="Music Appreciation">
           <pattern match="MUSI 1304-2200" />  <!--  added ri 2010-05-21  -->
+          <pattern match="MUSI 1304-2001" />
           <pattern match="MUSI 1306-2001" />
           <pattern match="MUSI 1306-2002" />
           <pattern match="MUSI 1306-2200" />  <!--  added ri 2010-05-21  -->
