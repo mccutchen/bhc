@@ -823,6 +823,14 @@
 		    <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven college Multicultural Center office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement. NOTE: If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. REQUIRED:  Current CPR AHA Healthcare Provider or equivalent certification.</comments>
 
 		 	<topic name="Emergency Medical Services, Basic">
+                <subtopic name="EMT-Class #67, A Shift">
+                    <pattern match="EMSP 1501-2217" />
+            		<pattern match="EMSP 1501-2201" />
+            		<pattern match="EMSP 1501-2202" />
+            		<pattern match="EMSP 1501-2203" />
+                    <pattern match="EMSP 1160-2217" />
+                </subtopic>
+
 		 		<subtopic name="Emt-basic Class #62">
 		 			<pattern match="EMSP 1501-2210" />
                     <pattern match="EMSP 1501-2212" />
@@ -915,6 +923,31 @@
                     <pattern match="EMSP 2444-2201" />
                     <pattern match="EMSP 2444-2202" />
                     <pattern match="EMSP 2444-2203" />
+                </subtopic>
+
+                <subtopic name="Paramedic Class #30, C Shift">
+                    <pattern match="EMSP 2143-2230" />
+					<pattern match="EMSP 2143-2201" />
+                    <pattern match="EMSP 2463-2230" /> 
+				</subtopic>
+				
+                <subtopic name="Paramedic Class #31">
+					<pattern match="EMSP 2434-2731" />
+					<pattern match="EMSP 1355-2731" />
+					<pattern match="EMSP 2261-2231" />
+					<pattern match="EMSP 2430-2731" />
+                </subtopic>
+				
+                <subtopic name="Paramedic Class #32, B Shift">
+					<pattern match="EMSP 2444-2232" /> 
+					<pattern match="EMSP 2444-2201" />
+					<pattern match="EMSP 2444-2202" />
+					<pattern match="EMSP 2444-2203" /> 
+					<pattern match="EMSP 2260-2232" /> 
+					<pattern match="EMSP 2434-2232" /> 
+					<pattern match="EMSP 2434-2201" />
+                    <pattern match="EMSP 2434-2202" />
+					<pattern match="EMSP 2434-2203" /> 
                 </subtopic>
 
                 <subtopic name="RN to Paramedic Class #2">
