@@ -886,6 +886,8 @@
         <vita id="0005139" last-name="Anderson" first-name="Garry"/>
         <vita id="0015310" last-name="Anderson" first-name="Thomas"/>
         <vita id="0013349" last-name="Ansiaux" first-name="Roberta"/>
+        <vita id="0017828" last-name="Anthamatten" first-name="Dustin"/>
+        <vita id="0006601" last-name="Arceneaux" first-name="Janice"/>
         <vita id="0012480" last-name="Archie" first-name="Pshawn"/>
         <vita id="0016713" last-name="Armenta" first-name="Victor"/>
         <vita id="0014357" last-name="Armstrong" first-name="Sherna"/>
@@ -908,7 +910,8 @@
 		<vita id="0006519" last-name="Barger" first-name="Jana"/>
         <vita id="0011521" last-name="Barlow" first-name="Nancy"/>
         <vita id="0016852" last-name="Barnes" first-name="Kimberly"/>
-        <vita id="0011341" last-name="Barnette" first-name="Millard"/>
+        <vita id="0017505" last-name="Barnett" first-name="Lajana"/>		
+        <vita id="0011341" last-name="Barnette" first-name="Millard"/>		
         <vita id="0005369" last-name="Baxter" first-name="Gerald"/>
         <vita id="0002665" last-name="Baze" first-name="Christopher"/>
         <vita id="0017627" last-name="Beasley" first-name="Lindsay"/>
@@ -965,6 +968,7 @@
         <vita id="0007654" last-name="Castro" first-name="Johnny"/>
         <vita id="0006684" last-name="Cates" first-name="Jason"/>
         <vita id="0002341" last-name="Cauthen" first-name="Charles"/>
+        <vita id="0017812" last-name="Cecil" first-name="Preston"/>
         <vita id="0001580" last-name="Chadwick" first-name="Bonnie"/>
         <vita id="0016495" last-name="Chamberlin" first-name="Mallory"/>
         <vita id="0005827" last-name="Chandler" first-name="Helen"/>
@@ -1132,6 +1136,7 @@
         <vita id="0013813" last-name="Harvey" first-name="Sally"/>
         <vita id="0007468" last-name="Hatch" first-name="John"/>
         <vita id="0008828" last-name="Hathaway" first-name="Kirt"/>
+        <vita id="0006689" last-name="Hausback" first-name="Jason"/>
         <vita id="0016682" last-name="Hawkins" first-name="Joel"/>
         <vita id="0000217" last-name="Hayaud-Din" first-name="Ahad"/>
         <vita id="0009462" last-name="Haynes" first-name="Linda"/>
@@ -1222,6 +1227,7 @@
         <vita id="0013233" last-name="Lanier" first-name="Robert"/>
         <vita id="0017630" last-name="Lara" first-name="Mark"/>
         <vita id="0014829" last-name="Lee" first-name="Stuart"/>
+        <vita id="0017835" last-name="Lee" first-name="Woojin"/>
         <vita id="0012958" last-name="Lewis" first-name="Richard"/>
         <vita id="0017387" last-name="Li" first-name="Yan"/>
         <vita id="0016839" last-name="Lineros" first-name="Jose"/>
@@ -1343,6 +1349,7 @@
         <vita id="0005470" last-name="Norcross" first-name="Glenda"/>
         <vita id="0014688" last-name="Nutt" first-name="Stephen"/>
         <vita id="0017598" last-name="Nzia" first-name="Hilbert"/>
+        <vita id="0017791" last-name="O'Brien" first-name="Jamye"/>
         <vita id="0016661" last-name="O'Connor" first-name="Kathleen"/>
         <vita id="0017593" last-name="O'Driscoll" first-name="Caroline"/>
         <vita id="0013591" last-name="Obenhaus" first-name="Rose"/>
@@ -1382,11 +1389,13 @@
         <vita id="0012764" last-name="Personett" first-name="Rebecca"/>
         <vita id="0001955" last-name="Pezzimenti" first-name="Carlo"/>
         <vita id="0013598" last-name="Piersanti" first-name="Rosella"/>
+        <vita id="0007551" last-name="Pharr" first-name="John"/>
         <vita id="0001518" last-name="Philip" first-name="Binu"/>
         <vita id="0013284" last-name="Phillips" first-name="Robert"/>
         <vita id="0016447" last-name="Pilov" first-name="Zdravka Hristov"/>
         <vita id="0010356" last-name="Pitts" first-name="Mark"/>
         <vita id="0000177" last-name="Plasterr" first-name="Adele"/>
+        <vita id="0014904" last-name="Pochop" first-name="Susan"/>
         <vita id="0005448" last-name="Polite" first-name="Giraud"/>
         <vita id="0008639" last-name="Polk" first-name="Kent"/>
         <vita id="0016635" last-name="Ponciano" first-name="Michelle"/>
@@ -1397,6 +1406,7 @@
         <vita id="0005260" last-name="Price" first-name="Gene"/>
         <vita id="0002411" last-name="Purdy" first-name="Charles"/>
         <vita id="0006552" last-name="Quetin" first-name="Jane"/>
+        <vita id="0017809" last-name="Quirarte" first-name="Mary"/>
         <vita id="0004149" last-name="Ralli-Lalangas" first-name="Donna"/>
         <vita id="0000581" last-name="Rangel" first-name="Amy"/>
         <vita id="0011641" last-name="Rangnekar" first-name="Nehal"/>
@@ -1406,6 +1416,7 @@
         <vita id="0016610" last-name="Regalado" first-name="Lesley"/>
         <vita id="0009861" last-name="Regan" first-name="Lynn"/>
         <vita id="0014927" last-name="Reinke" first-name="Susan"/>
+        <vita id="0011751" last-name="Rendon" first-name="Norma"/>
         <vita id="0003118" last-name="Reyes" first-name="Czarina"/>
         <vita id="0001589" last-name="Riddle" first-name="Bonnie"/>
         <vita id="0010078" last-name="Riley" first-name="Margaret"/>
@@ -1532,6 +1543,7 @@
         <vita id="0010750" last-name="Topper" first-name="Matson"/>
         <vita id="0004759" last-name="Tosten" first-name="Erik"/>
         <vita id="0016582" last-name="Totusek" first-name="Patricia"/>
+        <vita id="0017797" last-name="Tran" first-name="Khoa"/>
         <vita id="0012569" last-name="Trimmer" first-name="Ralph"/>
         <vita id="0005759" last-name="Trythall" first-name="Harry"/>
         <vita id="0005528" last-name="Turner" first-name="Glynda"/>
@@ -1604,6 +1616,7 @@
         <vita id="0013949" last-name="Wyche" first-name="Sandy"/>
         <vita id="0016347" last-name="Yao" first-name="Xifan"/>
         <vita id="0017120" last-name="Yarbrough" first-name="Jonathan"/>
+        <vita id="0017758" last-name="Yi" first-name="Seung"/>
         <vita id="0011675" last-name="Yosten" first-name="Nicholas"/>
         <vita id="0011944" last-name="Youngblood" first-name="Pamela"/>
         <vita id="0016639" last-name="Youngblood" first-name="Thomas"/>
