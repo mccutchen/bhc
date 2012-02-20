@@ -429,6 +429,8 @@
                 <pattern match="ARTS 1317-2001" />
                 <pattern match="ARTS 2311-2003" />
                 <pattern match="ARTS 2312-2003" />
+                <pattern match="ARTS 2311-2004" />
+                <pattern match="ARTS 2312-2004" />
                 <pattern match="ARTS 1316-2002" />
                 <pattern match="ARTS 1317-2002" />
                 <pattern match="ARTS 2311-2006" />
@@ -476,6 +478,8 @@
             </topic>
 
             <topic name="Photography Workshop">
+                <pattern match="ARTS 2356-2001" />
+                <pattern match="ARTS 2357-2001" />
                 <pattern match="ARTS 2356-2225" />
                 <pattern match="ARTS 2357-2225" />
                 <pattern match="ARTS 2311-2201" />
