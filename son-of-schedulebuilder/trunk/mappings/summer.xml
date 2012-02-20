@@ -175,7 +175,7 @@
       </subject>
 
       <subject name="Computer Science">
-        <topic name="Computer Literacy">
+        <topic name="Introduction to Computing">
           
           <pattern match="COSC 1300-2489" />
           <pattern match="COSC 1300-2490" />
