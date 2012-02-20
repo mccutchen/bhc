@@ -273,13 +273,18 @@
           <comments>Note: The following courses lead to the Marketable Skills Achievement Award and build a foundation of entry-level medical office skills.</comments>
           <subtopic name="Computer Fundamentals">
             <pattern match="POFI 1104-2426" />
+            <pattern match="POFI 1104-2401" />			
           </subtopic>
           <subtopic name="Keyboarding, Beginning">
             <pattern match="POFT 1127-2301" />
+            <pattern match="POFT 1127-2402" />
             <pattern match="POFT 1127-2427" />
           </subtopic>
-          <subtopic name="Medical Terminology">
+          <subtopic name="Medical Terminology">		  
+            <pattern match="MDCA 1313-2300" />
             <pattern match="MDCA 1313-2251" />
+            <pattern match="MDCA 1313-2350" />
+            <pattern match="MDCA 1313-2351" />              <!-- Pat 2011-02-11  -->
             <pattern match="MDCA 1313-2426" />
             <pattern match="MDCA 1313-2427" />              <!-- Pat 2011-02-11  -->
             <pattern match="MDCA 1313-2700" />              <!-- Pat 2011-02-11  -->
@@ -292,7 +297,10 @@
           <comments>Note: The following courses lead to the Medical Front Office Assistant Certificate.</comments>
           <subtopic name="Business English">
             <pattern match="POFT 1301-2301" />
-            <pattern match="POFT 1301-2427" />
+            <pattern match="POFT 1301-2401" />			
+            <pattern match="POFT 1301-2427" />			
+            <pattern match="POFM 1280-2350" />
+			
           </subtopic>
         </topic>
       </subject>
