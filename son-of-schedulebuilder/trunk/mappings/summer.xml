@@ -94,6 +94,10 @@
             <pattern match="ITSC 1401-2501" />
         </topic>
 
+        <topic name="CIT CORE">
+        <pattern match="ITSE 1429-2426" />        
+        <pattern match="ITSE 1429-2501" />
+        </topic>
 
         <topic name="Programming">
           <pattern match="INEW 2318-2745" />        
@@ -113,10 +117,6 @@
 		  
        </topic>
 
-        <topic name="CIT CORE">
-        <pattern match="ITSE 1429-2426" />        
-        <pattern match="ITSE 1429-2501" />
-        </topic>
 
 
         <topic name="Cisco Academy">
@@ -142,6 +142,8 @@
           <pattern match="ITSE 1303-2426" />		  
           <pattern match="ITSE 1346-2401" />
           <pattern match="ITSE 1346-2426" />		  
+          <pattern match="IMED 1416-2330" />
+          <pattern match="IMED 1416-2401" />
         </topic>
 
 
@@ -220,10 +222,6 @@
           <pattern match="COSC 1401-2428" />
           <pattern match="COSC 1401-2429" />
           <pattern match="COSC 1401-2309" />
-          <pattern match="COSC 1415-2401" />
-          <pattern match="COSC 1436-2401" />
-          <pattern match="COSC 1436-2489" />
-          <pattern match="COSC 2436-2501" />		  
         </topic>
 
        <topic name="Programming">
@@ -236,8 +234,12 @@
           <pattern match="COSC 1437-2502" />
           <pattern match="COSC 1415-2426" />
           <pattern match="COSC 1436-2426" />
+          <pattern match="COSC 1436-2489" />
           <pattern match="COSC 2430-2501" />
+          <pattern match="COSC 2436-2501" />		  
           <pattern match="COSC 2436-2502" />
+          <pattern match="COSC 1415-2401" />
+          <pattern match="COSC 1436-2401" />
           </topic>
     	</subject>
 
