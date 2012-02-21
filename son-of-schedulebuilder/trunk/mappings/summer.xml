@@ -371,6 +371,9 @@
                 <pattern match="ARTS 2312-2501" />
                 <pattern match="ARTS 2341-2001" />
                 <pattern match="ARTS 2342-2001" />
+                <pattern match="ARTS 2341-2701" />
+                <pattern match="ARTS 2342-2701" />
+                <pattern match="ARTS 2311-2701" />
             </topic>
 
             <topic name="Art Metals Workshop">
@@ -415,9 +418,6 @@
                 <pattern match="ARTS 2311-2227" />
                 <pattern match="ARTS 2312-2227" />
                 <pattern match="ARTS 2311-2200" />
-                <pattern match="ARTS 2341-2701" />
-                <pattern match="ARTS 2342-2701" />
-                <pattern match="ARTS 2311-2701" />
                 <pattern match="ARTS 2312-2701" />
             </topic>
 
@@ -452,10 +452,13 @@
             </topic>
 
             <topic name="Painting Workshop">
+                <pattern match="ARTS 2316-2001" />
+                <pattern match="ARTS 2317-2001" />
+                <pattern match="ARTS 2311-2002" />
+                <pattern match="ARTS 2312-2230" />
                 <pattern match="ARTS 2316-2230" />
                 <pattern match="ARTS 2317-2230" />
                 <pattern match="ARTS 2311-2230" />
-                <pattern match="ARTS 2312-2230" />
             </topic>
 
             <topic name="Painting">
@@ -465,14 +468,8 @@
                 <pattern match="ARTS 2312-2231" />                <!-- jill 2011-01-25  -->
                 <pattern match="ARTS 2316-2200" />
                 <pattern match="ARTS 2317-2200" />
-
-                <pattern match="ARTS 2312-2205" />
-                <pattern match="ARTS 2316-2001" />
-                <pattern match="ARTS 2317-2001" />
-                <pattern match="ARTS 2311-2002" />
+                <pattern match="ARTS 2312-2205" />				
                 <pattern match="ARTS 2312-2002" />
-                <pattern match="ARTS 2316-2001" />
-                <pattern match="ARTS 2317-2001" />
                 <pattern match="ARTS 2311-2007" />
                 <pattern match="ARTS 2312-2007" />
             </topic>
