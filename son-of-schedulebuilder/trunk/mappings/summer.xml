@@ -316,6 +316,7 @@
             <topic name="Art Appreciation">
                 <pattern match="ARTS 1301-2700" />
                 <pattern match="ARTS 1301-2001" />
+                <pattern match="ARTS 1301-2002" />	
                 <pattern match="ARTS 1301-2501" /> <!-- jill 20110110 -->
                 <pattern match="ARTS 1301-2502" />
                 <pattern match="ARTS 1301-2420" />
@@ -324,6 +325,7 @@
                 <pattern match="ARTS 1301-2423" />
                 <pattern match="ARTS 1301-2004" />
                 <pattern match="ARTS 1301-2005" />
+                <pattern match="ARTS 1301-2201" />								
                 <pattern match="ARTS 1301-2503" />
                 <pattern match="ARTS 1301-2424" />
                 <pattern match="ARTS 1301-2425" />
@@ -374,6 +376,8 @@
                 <pattern match="ARTS 2341-2701" />
                 <pattern match="ARTS 2342-2701" />
                 <pattern match="ARTS 2311-2701" />
+                <pattern match="ARTS 2311-2901" />
+                <pattern match="ARTS 2312-2901" />
             </topic>
 
             <topic name="Art Metals Workshop">
@@ -418,6 +422,7 @@
                 <pattern match="ARTS 2311-2227" />
                 <pattern match="ARTS 2312-2227" />
                 <pattern match="ARTS 2311-2200" />
+                <pattern match="ARTS 2312-2200" />				
                 <pattern match="ARTS 2312-2701" />
             </topic>
 
@@ -425,9 +430,6 @@
                 <pattern match="ARTS 1316-2701" />
                 <pattern match="ARTS 1317-2701" />
                 <pattern match="ARTS 2312-2704" />
-                <pattern match="ARTS 1316-2001" />
-                <pattern match="ARTS 1317-2001" />
-                <pattern match="ARTS 2311-2003" />
                 <pattern match="ARTS 2312-2003" />
                 <pattern match="ARTS 2311-2004" />
                 <pattern match="ARTS 2312-2004" />
