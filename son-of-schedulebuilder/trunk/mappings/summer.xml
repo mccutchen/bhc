@@ -636,6 +636,10 @@
           <pattern match="MUSI 1117-2200" />
           <pattern match="MUSI 2117-2201" />
         </topic>
+        <topic name="Fundamentals of Music">
+			<pattern match="MUSI 1301-2200" />
+			<pattern match="MUSI 1302-2200" />
+        </topic>
         <topic name="Composition">
           <pattern match="MUSI 1386-2200" />
         </topic>
