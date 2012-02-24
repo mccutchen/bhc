@@ -160,6 +160,8 @@
           <pattern match="ITSW 1404-2426" />          
           <pattern match="ITSW 1407-2401" />
           <pattern match="ITSW 1407-2402" />
+          <pattern match="ITSW 1407-2403" />
+          <pattern match="ITSW 1407-2404" />
           <pattern match="ITSW 1407-2427" />
           <pattern match="ITSW 1410-2401" />
           <pattern match="ITSW 1410-2402" />		  
