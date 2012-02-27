@@ -275,8 +275,8 @@
 
         <!-- added 03/26/2010 by SS - note changed 04-26-2010 Aly's intruction
              -->
-        <subject name="Learning Frameworks">
-            <comments>NOTE: Learning Frameworks is a required pre-Core course for many new college students. Please see your academic advisor for details.</comments>
+        <subject name="Learning Framework">
+            <comments>NOTE: Learning Framework is a required pre-Core course for many new college students. Please see your academic advisor for details.</comments>
             <!-- Does designating this as priority 1 pull it out of Education
                  and put it under Learning Frameworks instead? -->
             <pattern match="EDUC 1300" priority="1" unsorted="true" />
@@ -550,8 +550,8 @@
             <pattern match="HLS" priority="0" unsorted="true" />
             <pattern match="WECM" priority="0" unsorted="true" />
             <!-- Added per MD 2011-10-24 to assign Learning Frameworks classes to
-                 Health and Human Services.  -->
-            <pattern match="EDUC 1300" unsorted="true" />
+                 Health and Human Services. 
+            <pattern match="EDUC 1300" unsorted="true" /> -->
         </division>
         <division name="Mathematics and Science">
             <pattern match="SCMT" priority="0" unsorted="true" />
@@ -703,8 +703,9 @@
         <subject name="Photography" email="bhcPhotography@dcccd.edu" />
         <subject name="Speech" email="bhcSpeech@dcccd.edu" />
 
+
         <!-- Health and Human Services Division -->
-        <subject name="Child Development" ext="4144" room="E142"
+        <subject name="Child Development" ext="4136" room="E143"
                  email="bhcChildDevelop@dcccd.edu" />
         <subject name="Education" ext="4144" room="E142" />
         <subject name="Emergency Medical Services" ext="7879" room="X1082"
@@ -713,6 +714,12 @@
                  email="bhcNursing@dcccd.edu" />
         <subject name="Radiologic Sciences" ext="4918" room="X3036"
                  email="bhcRadTech@dcccd.edu" />
+        <!-- Social Science -->
+        <!-- Added 03/26/2010 by SS -->
+        <subject name="Learning Framework" ext="4144" room="E142"
+                 email="bhcFramework@dcccd.edu" />
+
+
 
         <!-- Mathematics and Science Division -->
         <subject name="Astronomy" email="bhcScience@dcccd.edu" />
@@ -735,10 +742,6 @@
         <subject name="Humanities" email="bhcHumanities@dcccd.edu" />
         <subject name="Music" email="bhcMusic@dcccd.edu" />
 
-        <!-- Social Science -->
-        <!-- Added 03/26/2010 by SS -->
-        <subject name="Learning Frameworks" room="K240"
-                 email="bhcFrameworks@dcccd.edu" />
     </mapping>
 
 
