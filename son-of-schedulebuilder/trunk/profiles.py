@@ -28,12 +28,12 @@ class Summer12(Summer):
     saxon_params = {'schedule-title': 'Summer 2012 Credit'}
 
 # ===================================================================
-# Fall 2011 profiles
+# Fall 2012 profiles
 # ===================================================================
-class Fall11(Fall):
-    input = 'data/2011-fall/BH2011FA.TXT'
+class Fall12(Fall):
+    input = 'data/2012-fall/BH2012FA.TXT'
     terms = {
-        'Fall': (date(2011, 8, 29), date(2011, 12, 15), 'Aug. 29-Dec. 15'),
+        'Fall': (date(2012, 8, 27), date(2012, 12, 13), 'Aug. 27-Dec. 13'),
     }
 
 
