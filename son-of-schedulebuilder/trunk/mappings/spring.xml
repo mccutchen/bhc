@@ -936,6 +936,7 @@
                 <pattern match="ARTS 1311-2002" />
                 <pattern match="ARTS 2311-2014" />
                 <pattern match="ARTS 1312-2001" />
+                <pattern match="ARTS 1312-2251" />				
                 <pattern match="ARTS 1312-2501" />
                 <pattern match="ARTS 1311-2250" />
                 <pattern match="ARTS 2311-2255" />
