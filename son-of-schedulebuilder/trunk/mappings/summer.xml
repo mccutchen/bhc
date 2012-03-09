@@ -495,6 +495,8 @@
                 <pattern match="ARTS 2312-2226" />
                 <pattern match="ARTS 2333-2226" />
                 <pattern match="ARTS 2334-2226" />
+                <pattern match="ARTS 2311-2228" />  <!-- ellen 3/9/2012  -->
+                <pattern match="ARTS 2312-2228" />  <!-- ellen 3/9/2012  -->
             </topic>
 
 
