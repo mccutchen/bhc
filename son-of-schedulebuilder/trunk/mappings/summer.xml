@@ -107,6 +107,7 @@
           <pattern match="ITSE 2318-2745" />
           <pattern match="ITSE 1430-2501" />
           <pattern match="ITSE 2417-2502" />
+          <pattern match="ITSE 2410-2501" />		  
           <pattern match="ITSE 1407-2426" />
           <pattern match="ITSE 1407-2401" />		  
           <pattern match="INEW 2438-2501" />
@@ -131,8 +132,8 @@
           <pattern match="ITMT 1402-2426" />
           <pattern match="ITMT 1470-2426" />
           <pattern match="ITNW 1408-2426" />
-          <pattern match="ITNW 1492-2501" />
-		  
+          <pattern match="ITNW 1413-2501" />          
+		  <pattern match="ITNW 1492-2501" />
         </topic>
 
         <topic name="Web Development and E-commerce">
