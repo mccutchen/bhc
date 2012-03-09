@@ -432,6 +432,18 @@
                 <pattern match="ARTS 2312-2235" />                <!-- jill 2011-01-25  -->
             </topic>
 
+            <topic name="Drawing Workshop">
+                <pattern match="ARTS 1316-2225" />
+                <pattern match="ARTS 1317-2225" />
+                <pattern match="ARTS 2311-2210" />
+                <pattern match="ARTS 2312-2210" />
+                <pattern match="ARTS 2311-2200" />
+                <pattern match="ARTS 2312-2200" />				
+                <pattern match="ARTS 2312-2701" />
+                <pattern match="ARTS 2311-2227" />
+                <pattern match="ARTS 2312-2227" />
+            </topic>
+
             <topic name="Figure Drawing">                <!-- jill 2010-01-25  -->
                 <pattern match="ARTS 2323-2704" />
                 <pattern match="ARTS 2324-2704" />
@@ -446,10 +458,8 @@
                 <pattern match="ARTS 2312-2007" />
                 <pattern match="ARTS 2311-2002" />
                 <pattern match="ARTS 2312-2002" />
-                <pattern match="ARTS 2312-2230" />
                 <pattern match="ARTS 2316-2230" />
                 <pattern match="ARTS 2317-2230" />
-                <pattern match="ARTS 2311-2230" />
                 <pattern match="ARTS 2316-2231" />               
                 <pattern match="ARTS 2317-2231" />                
                 <pattern match="ARTS 2311-2231" />               
@@ -464,6 +474,8 @@
                 <pattern match="ARTS 2357-2001" />
                 <pattern match="ARTS 2356-2225" />
                 <pattern match="ARTS 2357-2225" />
+                <pattern match="ARTS 2311-2230" />
+                <pattern match="ARTS 2312-2230" />
                 <pattern match="ARTS 2311-2201" />
                 <pattern match="ARTS 2312-2201" />
           </topic>
@@ -475,25 +487,15 @@
                 <pattern match="ARTS 2312-2703" />
             </topic>
 
+
             <topic name="Printmaking Workshop">
-                <pattern match="ARTS 1316-2225" />
-                <pattern match="ARTS 1317-2225" />
                 <pattern match="ARTS 2333-2225" />
                 <pattern match="ARTS 2334-2225" />
                 <pattern match="ARTS 2311-2226" />
                 <pattern match="ARTS 2312-2226" />
                 <pattern match="ARTS 2333-2226" />
                 <pattern match="ARTS 2334-2226" />
-                <pattern match="ARTS 2311-2227" />
-                <pattern match="ARTS 2312-2227" />
-                <pattern match="ARTS 2311-2210" />
-                <pattern match="ARTS 2312-2210" />
-                <pattern match="ARTS 2311-2200" />
-                <pattern match="ARTS 2312-2200" />				
-                <pattern match="ARTS 2312-2701" />
             </topic>
-
-
 
 
           <topic name="Sculpture Workshop">
