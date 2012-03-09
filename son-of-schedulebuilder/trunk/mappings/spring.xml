@@ -1098,8 +1098,10 @@
           </topic>
             <topic name="Dance Practicum">
                 <pattern match="DANC 1351-2235" />
+                <pattern match="DANC 1351-2237" />
                 <pattern match="DANC 1352-2236" />
-                <pattern match="DANC 2352-2236" />				
+                <pattern match="DANC 2352-2236" />		
+                <pattern match="DANC 2352-2237" />								
                 <pattern match="DANC 1351-2701" />
                 <pattern match="DANC 1351-2702" />
                 <pattern match="DANC 1351-2703" />
