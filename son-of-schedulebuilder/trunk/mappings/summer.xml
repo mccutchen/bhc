@@ -345,7 +345,7 @@
                 <pattern match="ARTS 1303-2427" />  <!-- jill 20110110 -->              
           </topic>
 
-            <topic name="Art History Workshop">                <!-- jill 2011-01-20  -->
+            <topic name="Art History">                <!-- jill 2011-01-20  -->
                 <pattern match="ARTS 1303-2201" />
             </topic>
             <topic name="Computer Graphics Workshop">                <!-- Jill 20110110 -->
