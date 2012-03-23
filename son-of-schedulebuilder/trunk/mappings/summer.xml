@@ -112,8 +112,7 @@
           <pattern match="ITSE 1407-2426" />
           <pattern match="ITSE 1407-2401" />		  
           <pattern match="INEW 2438-2501" />
-          <pattern match="INEW 2438-2502" />
-		  
+          <pattern match="INEW 2438-2502" />		  
           <pattern match="ITSE 2453-2501" />
           <pattern match="ITSE 2459-2501" />
 		  
