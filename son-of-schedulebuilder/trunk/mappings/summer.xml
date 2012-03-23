@@ -91,7 +91,8 @@
 
         <topic name="Introduction to Computing">
             <comments>NOTE:  ITSC 1401 is a technical/occupational course required for certain certificate and associate degree plans.  It will not meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirements, and is not for transfer to a four-year school.</comments>
-            <pattern match="ITSC 1401-2501" />
+		    <pattern match="ITSC 1401-2300" />		
+		    <pattern match="ITSC 1401-2501" />
         </topic>
 
         <topic name="CIT CORE">
@@ -149,7 +150,6 @@
 
 
         <topic name="Application Software">
-          <pattern match="ITSC 1401-2300" />		
           <pattern match="ITSC 1409-2401" />
           <pattern match="ITSC 1409-2402" />
           <pattern match="ITSC 1409-2426" />
