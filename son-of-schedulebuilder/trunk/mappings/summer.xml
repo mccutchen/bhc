@@ -399,6 +399,8 @@
                 <pattern match="ARTS 2347-2004" />
                 <pattern match="ARTS 2311-2008" />
                 <pattern match="ARTS 2312-2008" />
+                <pattern match="ARTS 2311-2231" />               
+                <pattern match="ARTS 2312-2231" />               
                 <pattern match="ARTS 2346-2225" />
                 <pattern match="ARTS 2347-2225" />
                 <pattern match="ARTS 2346-2229" />
@@ -460,8 +462,6 @@
                 <pattern match="ARTS 2317-2230" />
                 <pattern match="ARTS 2316-2231" />               
                 <pattern match="ARTS 2317-2231" />                
-                <pattern match="ARTS 2311-2231" />               
-                <pattern match="ARTS 2312-2231" />               
                 <pattern match="ARTS 2316-2200" />
                 <pattern match="ARTS 2317-2200" />
                 <pattern match="ARTS 2312-2205" />				
