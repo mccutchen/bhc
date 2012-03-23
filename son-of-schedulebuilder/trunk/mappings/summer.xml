@@ -340,9 +340,9 @@
                 <pattern match="ARTS 1304-2002" />
                 <pattern match="ARTS 1303-2002" />
                 <pattern match="ARTS 1304-2001" />
-                <pattern match="ARTS 1304-2420" />
                 <pattern match="ARTS 1303-2426" />  <!-- jill 20110110 -->
                 <pattern match="ARTS 1303-2427" />  <!-- jill 20110110 -->              
+                <pattern match="ARTS 1304-2420" />
           </topic>
 
             <topic name="Art History">                <!-- jill 2011-01-20  -->
