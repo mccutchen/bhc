@@ -642,6 +642,7 @@
           <pattern match="MUSI 1386-2200" />
         </topic>
         <topic name="Digital">
+          <pattern match="MUSI 1390-2200" />
           <pattern match="MUSI 1390-2700" />
         </topic>
 
