@@ -494,13 +494,16 @@
           <pattern match="EMSP 1355-2232" />
           <pattern match="EMSP 1355-2201" />
           <pattern match="EMSP 2430-2232" />
+          <pattern match="EMSP 2430-2001" />		  
           <pattern match="EMSP 2430-2201" />		  
           <pattern match="EMSP 2338-2232" />
           <pattern match="EMSP 2338-2201" />
+          <pattern match="EMSP 2261-2231" />
           <pattern match="EMSP 2261-2232" />
         </subtopic> 
-        
+
         <subtopic name="Paramedic Class #33, C Shift">
+          <pattern match="EMSP 1438-2223" />
           <pattern match="EMSP 1438-2233" />
           <pattern match="EMSP 1438-2201" />		  
           <pattern match="EMSP 1356-2233" />          
@@ -524,6 +527,7 @@
         </subtopic>
         <subtopic name="Mass Disaster Response, A Shift">
             <pattern match="EMSP 1391-2212" />			
+            <pattern match="EMSP 1391-2214" />			
 		</subtopic>
 			</topic>
         </subject>
