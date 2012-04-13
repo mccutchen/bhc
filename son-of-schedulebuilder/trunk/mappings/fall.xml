@@ -864,16 +864,27 @@ COSC 1401-2401
           <pattern match="DANC 1101-2700" />		  
           <pattern match="DANC 1102-2001" />
           <pattern match="DANC 1103-2001" />
-        </topic>          
 
+          <pattern match="DANC 1102-2501" />
+          <pattern match="DANC 1103-2501" />
+        </topic>          
 
           <topic name="Tap">
           <pattern match="DANC 1110-2001" />
           <pattern match="DANC 1111-2001" />
           <pattern match="DANC 2110-2001" />
-          <pattern match="DANC 2111-2001" />
+          <pattern match="DANC 2111-2001" />		  
+
+          <pattern match="DANC 2110-2050" />
+          <pattern match="DANC 2111-2050" />		  
+          <pattern match="DANC 2212-2050" />
+          <pattern match="DANC 2213-2050" />		  
+
+          <pattern match="DANC 1110-2050" />
+          <pattern match="DANC 1111-2050" />		  
           <pattern match="DANC 1110-2202" />
           </topic>
+
           <topic name="Hip Hop">
           <pattern match="DANC 1222-2001" />
           <pattern match="DANC 1222-2002" />	  
@@ -915,6 +926,8 @@ COSC 1401-2401
           <pattern match="DANC 2342-2001" />
           <pattern match="DANC 1341-2501" />
           <pattern match="DANC 1342-2501" />
+          <pattern match="DANC 1342-2502" />
+		  		  
           <pattern match="DANC 2341-2501" />
           <pattern match="DANC 2342-2501" />
           <pattern match="DANC 2341-2202" />
