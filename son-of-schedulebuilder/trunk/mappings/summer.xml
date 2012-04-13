@@ -571,12 +571,20 @@
               <pattern match="DANC 2222-2701" />
               <pattern match="DANC 2223-2701" />
           </topic>
+
+          <topic name="Social Dance">  <!-- added RI 2012-04-13  Dance dept has no staff  -->
+              <pattern match="DANC 2212-2050" />              
+              <pattern match="DANC 2213-2050" />              
+          </topic>
+
           <topic name="Summer Dance Intensive">
               <pattern match="DANC 2389-2201" />              <!-- Jill 2011-01-12 -->
           </topic>
           <pattern match="DANC 1306-2201" />
           <pattern match="DANC 2112-2201" />
           <pattern match="DANC 2112-2202" />
+
+
 
 
 
