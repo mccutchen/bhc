@@ -786,6 +786,8 @@ COSC 1401-2401
           <pattern match="ARTS 2327-2001" />
           <pattern match="ARTS 2311-2001" />
           <pattern match="ARTS 2312-2001" />
+          <pattern match="ARTS 2311-2514" />
+          <pattern match="ARTS 2312-2515" />		  
           <pattern match="ARTS 2326-2002" />
           <pattern match="ARTS 2327-2002" />
           <pattern match="ARTS 2311-2021" />
@@ -796,7 +798,6 @@ COSC 1401-2401
           <pattern match="ARTS 2312-2511" />
         </topic>
       </subject>
-
 
         <subject name="Cultural Studies">            <!-- added Jill 2011-05-04 -->
             <pattern match="CUST 2370-2001" />
@@ -821,6 +822,8 @@ COSC 1401-2401
         </comments>
         <topic name="Dance Appreciation">
           <pattern match="DANC 2303-2001" />
+          <pattern match="DANC 2303-2002" />
+		  
           <pattern match="DANC 2303-2501" />
           <pattern match="DANC 2304-2421" />
           <pattern match="DANC 2304-2422" />  <!-- added per Jill 2010-08-26 -->
@@ -829,9 +832,15 @@ COSC 1401-2401
           <pattern match="DANC 1141-2001" />
           <pattern match="DANC 1141-2202" />            <!-- Added RI 2010-08-27 -->
           <pattern match="DANC 1142-2001" />
+		  
+          <pattern match="DANC 1141-2092" />
+          <pattern match="DANC 1142-2092" />
+		  
         </topic>
         <topic name="Dance Practicum">
+          <pattern match="DANC 1351-2200" />
           <pattern match="DANC 1351-2235" />
+
           <pattern match="DANC 1351-2702" />
           <pattern match="DANC 1351-2703" />
           <pattern match="DANC 1352-2702" />
@@ -852,8 +861,11 @@ COSC 1401-2401
         <topic name="Aerial Dance">
           <pattern match="DANC 1101-2001" />
           <pattern match="DANC 1101-2501" />
-          <pattern match="DANC 1101-2700" />
+          <pattern match="DANC 1101-2700" />		  
+          <pattern match="DANC 1102-2001" />
+          <pattern match="DANC 1103-2001" />
         </topic>          
+
 
           <topic name="Tap">
           <pattern match="DANC 1110-2001" />
@@ -891,6 +903,8 @@ COSC 1401-2401
 
         <topic name="Ballet">
           <pattern match="DANC 1341-2001" />
+          <pattern match="DANC 1341-2002" />
+		  
           <pattern match="DANC 1341-2200" />
           <pattern match="DANC 1341-2701" />
           <pattern match="DANC 1342-2701" />
@@ -1021,6 +1035,7 @@ COSC 1401-2401
         <topic name="Music Theory">
           <pattern match="MUSI 1311-2001" />          
           <pattern match="MUSI 1311-2002" /> <!-- Added per Linda 2010-08-13 -->
+          <pattern match="MUSI 1311-2200" />          		  
           <pattern match="MUSI 1312-2001" />
           <pattern match="MUSI 1312-2200" />          
           <pattern match="MUSI 2311-2001" />
