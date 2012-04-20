@@ -628,6 +628,7 @@ COSC 1401-2401
           <pattern match="ARTS 1303-2421" />
           <pattern match="ARTS 1303-2422" />
           <pattern match="ARTS 1304-2420" />
+          <pattern match="ARTS 2375-2001" />
         </topic>
 
         <topic name="Art and Computers">
@@ -640,9 +641,10 @@ COSC 1401-2401
           <pattern match="ARTS 2312-2010" />
           <pattern match="ARTS 2313-2501" />
           <pattern match="ARTS 2314-2501" />
-            <!-- <pattern match="ARTS 2311-2251" /> -->
-            <!-- <pattern match="ARTS 2311-2504" /> -->
-            <!-- <pattern match="ARTS 2312-2251" /> -->
+          <pattern match="ARTS 2311-2254" />          
+		  <pattern match="ARTS 2313-2250" />
+          <pattern match="ARTS 2314-2250" />
+
             <!-- <pattern match="ARTS 2312-2510" /> -->
             <!-- <pattern match="ARTS 2316-2250" /> -->
             <!-- <pattern match="ARTS 2316-2501" />  -->
@@ -667,6 +669,7 @@ COSC 1401-2401
           <pattern match="ARTS 2311-2011" />
           <pattern match="ARTS 2312-2009" />
           <pattern match="ARTS 2347-2003" />
+          <pattern match="ARTS 2347-2004" />		  
           <pattern match="ARTS 2311-2018" />
           <pattern match="ARTS 2312-2018" />
           <pattern match="ARTS 2346-2501" />
