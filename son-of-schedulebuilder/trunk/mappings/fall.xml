@@ -1037,7 +1037,10 @@ COSC 1401-2401
           <pattern match="MUSI 1306-2200" />
           <pattern match="MUSI 1306-2501" />
           <pattern match="MUSI 1306-2502" />
-          <pattern match="MUSI 1306-2700" />
+          <pattern match="MUSI 1306-2700" />		  
+          <pattern match="MUSI 1306-2401" />
+          <pattern match="MUSI 1306-2402" />
+          <pattern match="MUSI 1306-2420" />
           <pattern match="MUSI 1306-2425" />
           <pattern match="MUSI 1306-2426" />
           <pattern match="MUSI 1306-2427" />
@@ -1046,8 +1049,9 @@ COSC 1401-2401
           <pattern match="MUSI 1306-2430" />
           <pattern match="MUSI 1306-2431" />
           <pattern match="MUSI 1306-2432" /> <!-- added 2010-04-06 jill -->
-
-        </topic>        
+          <pattern match="MUSI 1306-2440" />
+          <pattern match="MUSI 1306-2446" />
+       </topic>        
         <topic name="Music Theory">
           <pattern match="MUSI 1311-2001" />          
           <pattern match="MUSI 1311-2002" /> <!-- Added per Linda 2010-08-13 -->
