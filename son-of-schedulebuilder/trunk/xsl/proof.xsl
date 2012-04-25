@@ -494,7 +494,7 @@
                     <br />
 
                     <!-- email address -->
-                    <xsl:text>E-MAIL:  </xsl:text><xsl:value-of select="$email" />
+                    <xsl:text>EMAIL:  </xsl:text><xsl:value-of select="$email" />
                 </xsl:when>
 
                 <!-- otherwise (we're probably in a special-section), just try to print the division name -->
