@@ -351,7 +351,7 @@ COSC 1401-2401
             ======================================================================== -->
       <subject name="Management Program">
         <comments>
-          NOTE: Complete two courses one night per week. Be mentored by full-time business faculty. Class format includes small-group discussions and networking with other employed professionals. Students taking management program courses at Brookhaven College for the first time must be advised by their faculty member before they register. Call Mary Lou Avera at 972-860-4179, e-mail her at MaryLou@dcccd.edu or visit www.BrookhavenCollege.edu/management.</comments>
+          NOTE: Complete two courses one night per week. Be mentored by full-time business faculty. Class format includes small-group discussions and networking with other employed professionals. Students taking management program courses at Brookhaven College for the first time must be advised by their faculty member before they register. Call Mary Lou Avera at 972-860-4179, email her at MaryLou@dcccd.edu or visit www.BrookhavenCollege.edu/management.</comments>
         <pattern match="BMGT 2303-2501" />
         <pattern match="BMGT 2383-2501" />
 
@@ -397,7 +397,7 @@ COSC 1401-2401
                 </subtopic>              
             </topic>
             <topic name="Medical Front Office Assistant Certificate - Second Semester">
-                <comments>Note: To enroll in the second semester, you must:1) have successfully completed the courses above with a minimum final grade of C in each course and 2) attend one of the following information sessions: April 27, 6:45-7:45 p.m.; June 29, 6:45-7:45 p.m.; July 20, 10:45-11:45 a.m. or 6:45-7:45 p.m.; Aug. 17, 10:45-11:45 a.m. or 6:45-7:45 p.m. in Bldg. M, Room M122.</comments>
+                <comments>Note: To enroll in the second semester, you must: 1) have successfully completed the courses above with a minimum final grade of C in each course and 2) attend one of the following information sessions: April 27, 6:45-7:45 p.m.; June 29, 6:45-7:45 p.m.; July 20, 10:45-11:45 a.m. or 6:45-7:45 p.m.; Aug. 17, 10:45-11:45 a.m. or 6:45-7:45 p.m. in Bldg. M, Room M122.</comments>
                 <subtopic name="Medical Coding Basics">
                     <pattern match="POFM 1300-2501" />
                     <pattern match="POFM 1300-2001" />
