@@ -232,7 +232,7 @@
         </topic>        
       </subject>
 
-COSC 1401-2401
+
       <subject name="Computer Science">
         <topic name="Introduction to Computing">
           <pattern match="COSC 1301-2001" />
@@ -260,6 +260,7 @@ COSC 1401-2401
           <pattern match="COSC 1401-2403" />
           <pattern match="COSC 1401-2404" />
           <pattern match="COSC 1401-2405" />
+          <pattern match="COSC 1401-2406" />
 
           <pattern match="COSC 1301-2501" />
           <pattern match="COSC 1301-2502" />
