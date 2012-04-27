@@ -682,16 +682,17 @@
         <topic name="Ceramics">
           <pattern match="ARTS 2346-2001" />
           <pattern match="ARTS 2347-2002" />
+          <pattern match="ARTS 2347-2003" />
+          <pattern match="ARTS 2311-2018" />
           <pattern match="ARTS 2311-2011" />
+          <pattern match="ARTS 2312-2018" />
+		  
           <pattern match="ARTS 2312-2009" />
 		  
           <pattern match="ARTS 2311-2023" />
           <pattern match="ARTS 2312-2023" />
 		  
-          <pattern match="ARTS 2347-2003" />
           <pattern match="ARTS 2347-2004" />		  
-          <pattern match="ARTS 2311-2018" />
-          <pattern match="ARTS 2312-2018" />
           <pattern match="ARTS 2346-2501" />
           <pattern match="ARTS 2347-2501" />
           <pattern match="ARTS 2311-2506" />
