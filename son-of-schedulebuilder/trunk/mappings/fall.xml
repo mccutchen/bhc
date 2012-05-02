@@ -378,6 +378,8 @@
                 <subtopic name="Medical Terminology">
                     <pattern match="MDCA 1313-2001" />
                     <pattern match="MDCA 1313-2250" />
+                    <pattern match="MDCA 1313-2350" />
+                    <pattern match="MDCA 1313-2351" />					
                     <pattern match="MDCA 1313-2426" />
                     <pattern match="MDCA 1313-2427" />
                     <pattern match="MDCA 1313-2401" />
