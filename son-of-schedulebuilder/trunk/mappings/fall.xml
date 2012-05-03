@@ -1037,6 +1037,10 @@
           </subtopic>
         </topic>
       </subject>
+        <topic name="Voice and Articulation">
+          <pattern match="DRAM 2336-2001" />
+        </topic>
+
 
         <!-- Jill 2011-03-30  -->
         <subject name="Humanities">
