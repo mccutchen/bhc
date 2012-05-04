@@ -858,9 +858,13 @@
           <pattern match="DANC 2303-2002" />
 		  
           <pattern match="DANC 2303-2501" />
+          <pattern match="DANC 2304-2400" />		  
           <pattern match="DANC 2304-2421" />
           <pattern match="DANC 2304-2422" />  <!-- added per Jill 2010-08-26 -->
+          <pattern match="DANC 2304-2430" />
         </topic>
+		
+		
         <topic name="Body Conditioning">
           <pattern match="DANC 1141-2001" />
           <pattern match="DANC 1141-2202" />            <!-- Added RI 2010-08-27 -->
