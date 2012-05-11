@@ -164,6 +164,7 @@
           <pattern match="ITSW 1404-2202" />
 		  
           <pattern match="ITSW 1407-2001" />
+          <pattern match="ITSW 1407-2002" />		  
           <pattern match="ITSW 1407-2201" />
           <pattern match="ITSW 1407-2202" />
 		  
@@ -218,6 +219,8 @@
           <pattern match="ITSW 1404-2442" />
           <pattern match="ITSW 1407-2401" />
           <pattern match="ITSW 1407-2402" />
+          <pattern match="ITSW 1407-2403" />
+          <pattern match="ITSW 1407-2404" />
           <pattern match="ITSW 1407-2441" />
           <pattern match="ITSW 1407-2442" />
           <pattern match="ITSW 1410-2401" />
@@ -231,7 +234,6 @@
 	
         </topic>        
       </subject>
-
 
       <subject name="Computer Science">
         <topic name="Introduction to Computing">
