@@ -345,6 +345,7 @@
                 <pattern match="ARTS 1304-2002" />
                 <pattern match="ARTS 1303-2002" />
                 <pattern match="ARTS 1304-2001" />
+                <pattern match="ARTS 1303-2421" />				
                 <pattern match="ARTS 1303-2426" />  <!-- jill 20110110 -->
                 <pattern match="ARTS 1303-2427" />  <!-- jill 20110110 -->              
                 <pattern match="ARTS 1304-2420" />
