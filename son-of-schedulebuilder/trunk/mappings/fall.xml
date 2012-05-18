@@ -1105,6 +1105,7 @@
         <topic name="Musicianship">
           <pattern match="MUSI 1116-2001" />          <!-- Added per Linda 2010-08-13 -->
           <pattern match="MUSI 1116-2002" />
+          <pattern match="MUSI 1116-2200" />
           <pattern match="MUSI 1117-2001" />
           <pattern match="MUSI 1117-2200" /> <!-- Added per linda 2010-08-02 -->
           <pattern match="MUSI 2116-2001" />
@@ -1120,7 +1121,11 @@
           <pattern match="MUSI 1300-2200" />
           <pattern match="MUSI 1300-2300" />          
           <pattern match="MUSI 1304-2300" />
+          <pattern match="MUSI 1301-2200" />
+          <pattern match="MUSI 1301-2300" />          
+          <pattern match="MUSI 1302-2300" />
         </topic>
+		
         <topic name="Composition">
           <pattern match="MUSI 1386-2200" />
           <pattern match="MUSI 1386-2300" />
