@@ -216,6 +216,9 @@
             <pattern match="GERM" priority="0" unsorted="true" />
         </subject>
         <subject name="Government">
+            <comments>
+If you have not completed any government courses, you should take GOVT 2305 and GOVT 2306.  If you have already completed either GOVT 2301 or GOVT 2302, please consult with an advisor to discuss your options for completing the Government degree and Core requirements.   
+			</comments>
             <pattern match="GOVT" priority="0" unsorted="true" />
         </subject>
         <subject name="Greek - Unsorted">
