@@ -366,7 +366,9 @@
             ======================================================================== -->
         <subject name="Medical Office Management / Administration">
             <topic name="Medical Front Office Assistant Marketable Skills Achievement Award - First Semester">
-                <comments>Note: Before you enroll, you must attend one of the following information sessions: April 27, 5:30-6:30 p.m.; June 29, 5:30-6:30 p.m.; July 20, 9-10 a.m. or 5:30-6:30 p.m.; Aug. 17, 9-10 a.m. or 5:30-6:30 p.m. in Bldg. M, Room M122.</comments>
+                <comments>Note: Before you enroll, you must attend one of the following information sessions: July 24, 9:30-10:30 a.m. or 5:30-6:30 p.m.; August 14, 9:30-10:30 a.m. or 5:30-6:30 p.m.<br />
+After enrollment, new students must attend one of the following orientations: August 20, 9:30-11 a.m. or 5:30-7 p.m.; August 24, 9:30-11 a.m. or 5:30-7 p.m. 
+</comments>
                 <subtopic name="Computer Basics">
                     <pattern match="POFI 1104-2201" />
                     <pattern match="POFI 1104-2701" />
