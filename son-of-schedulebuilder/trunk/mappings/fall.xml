@@ -29,6 +29,151 @@
           <pattern match="ITSC 1291-2205" />
           <pattern match="ITSC 1291-2250" />
         </topic>
+		
+            <topic name="Computer Basics">
+                <pattern match="POFI 1301-2001" />
+                <pattern match="POFI 1301-2401" />
+                <pattern match="POFI 1301-2441" />                           
+            </topic>
+            <topic name="Integ Software Office 2010">
+                <pattern match="POFI 1341-2001" />
+                <pattern match="POFI 1341-2201" />
+                <pattern match="POFI 1341-2202" />
+                <pattern match="POFI 1341-2501" />
+                <pattern match="POFI 1341-2701" />
+                <pattern match="POFI 1341-2702" />
+                <pattern match="POFI 1341-2401" />
+                <pattern match="POFI 1341-2402" />
+                <pattern match="POFI 1341-2441" />
+                <pattern match="POFI 1341-2442" />
+            </topic>
+            <topic name="Excel 2010">
+                <pattern match="POFI 1349-2001" />
+                <pattern match="POFI 1349-2201" />
+                <pattern match="POFI 1349-2202" />
+                <pattern match="POFI 1349-2501" />
+                <pattern match="POFI 1349-2701" />
+                <pattern match="POFI 1349-2702" />
+                <pattern match="POFI 1349-2401" />
+                <pattern match="POFI 1349-2402" />
+                <pattern match="POFI 1349-2441" />
+                <pattern match="POFI 1349-2442" />
+            </topic>
+            <topic name="Access 2010">
+                <pattern match="ITSW 1407-2002" />
+                <pattern match="ITSW 1407-2201" />
+                <pattern match="ITSW 1407-2202" />
+                <pattern match="ITSW 1407-2501" />
+                <pattern match="ITSW 1407-2702" />
+                <pattern match="ITSW 1407-2401" />
+                <pattern match="ITSW 1407-2402" />
+                <pattern match="ITSW 1407-2441" />
+                <pattern match="ITSW 1407-2442" />
+            </topic>
+            <topic name="Word 2010">
+                <pattern match="POFI 2301-2001" />
+                <pattern match="POFI 2301-2201" />
+                <pattern match="POFI 2301-2202" />
+                <pattern match="POFI 2301-2501" />
+                <pattern match="POFI 2301-2701" />
+                <pattern match="POFI 2301-2702" />
+                <pattern match="POFI 2301-2401" />
+                <pattern match="POFI 2301-2402" />
+                <pattern match="POFI 2301-2441" />
+                <pattern match="POFI 2301-2442" />
+            </topic>
+
+            <topic name="Advanced Word 2010">
+                <pattern match="POFI 2340-2001" />
+                <pattern match="POFI 2340-2501" />
+                <pattern match="POFI 2340-2401" />
+                <pattern match="POFI 2340-2402" />
+            </topic>
+
+            <topic name="Publisher 2010">
+                <pattern match="POFI 2331-2401" />
+                <pattern match="POFI 2331-2402" />
+                <pattern match="POFI 2331-2442" />
+            </topic>
+
+            <topic name="Introduction to Keyboarding">
+                <pattern match="POFT 1127-2201" />
+                <pattern match="POFT 1127-2202" />
+                <pattern match="POFT 1127-2203" />
+                <pattern match="POFT 1127-2701" />
+                <pattern match="POFT 1127-2702" />
+                <pattern match="POFT 1127-2421" />
+                <pattern match="POFT 1127-2441" />
+            </topic>
+
+            <topic name="Business English">
+                <pattern match="POFT 1301-2001" />
+                <pattern match="POFT 1301-2002" />
+                <pattern match="POFT 1301-2401" />
+                <pattern match="POFT 1301-2441" />
+            </topic>
+
+            <topic name="Admin Office Procedures">
+                <pattern match="POFT 1309-2401" />
+                <pattern match="POFT 1309-2441" />
+            </topic>
+
+            <topic name="Records & Information Mgmt.">
+                <pattern match="POFT 1319-2401" />
+                <pattern match="POFT 1319-2441" />
+            </topic>
+
+            <topic name="Business Math">
+                <pattern match="POFT 1321-2501" />
+                <pattern match="POFT 1321-2401" />
+            </topic>
+
+            <topic name="Bus Math and Machine Applic">
+                <pattern match="POFT 1325-2001" />
+                <pattern match="POFT 1325-2201" />
+                <pattern match="POFT 1325-2501" />
+                <pattern match="POFT 1325-2701" />
+                <pattern match="POFT 1325-2401" />
+                <pattern match="POFT 1325-2441" />
+            </topic>
+			
+            <topic name="PowerPoint 2010">
+                <pattern match="POFT 1328-2001" />
+                <pattern match="POFT 1328-2201" />
+                <pattern match="POFT 1328-2202" />
+                <pattern match="POFT 1328-2501" />
+                <pattern match="POFT 1328-2701" />
+                <pattern match="POFT 1328-2702" />
+                <pattern match="POFT 1328-2401" />
+                <pattern match="POFT 1328-2402" />
+                <pattern match="POFT 1328-2441" />
+                <pattern match="POFT 1328-2442" />
+            </topic>
+
+            <topic name="Keyboarding/Document Formatting">
+                <pattern match="POFT 1329-2001" />
+                <pattern match="POFT 1329-2201" />
+                <pattern match="POFT 1329-2501" />
+                <pattern match="POFT 1329-2701" />
+                <pattern match="POFT 1329-2401" />
+                <pattern match="POFT 1329-2402" />
+                <pattern match="POFT 1329-2421" />
+                <pattern match="POFT 1329-2422" />
+            </topic>
+
+            <topic name="Co-Op Ed-Gen Office Clerical">
+                <pattern match="POFT 1382-2401" />
+            </topic>
+
+            <topic name="Speed and Accuracy Building">
+                <pattern match="POFT 2203-2501" />
+                <pattern match="POFT 2203-2421" />
+                <pattern match="POFT 2203-2422" />
+            </topic>
+
+            <topic name="Bus. Correspondence and Communic">
+                <pattern match="POFT 2312-2401" />
+            </topic>
       </subject>
 
 
