@@ -118,7 +118,7 @@
                 <pattern match="POFT 1309-2441" />
             </topic>
 
-            <topic name="Records & Information Mgmt.">
+            <topic name="Records and Information Mgmt.">
                 <pattern match="POFT 1319-2401" />
                 <pattern match="POFT 1319-2441" />
             </topic>
