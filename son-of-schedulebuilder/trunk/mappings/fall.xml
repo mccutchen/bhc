@@ -1264,6 +1264,11 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="MUSI 1308-2300" />
           <pattern match="MUSI 1309-2300" />
         </topic>
+        <topic name="Fundamentals of Music">
+           <pattern match="MUSI 1301-2200" />
+           <pattern match="MUSI 1302-2200" />
+        </topic>
+		
         <topic name="Foundation of Music">
           <pattern match="MUSI 1300-2200" />
           <pattern match="MUSI 1300-2300" />          
@@ -1283,6 +1288,7 @@ After enrollment, new students must attend one of the following orientations: Au
         </topic>
         <topic name="Digital">
           <pattern match="MUSI 1390-2001" />
+          <pattern match="MUSI 1390-2002" />
           <pattern match="MUSI 1391-2501" />
         </topic>
         <topic name="Piano for Music Majors">
@@ -1309,11 +1315,13 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="MUSI 1192-2001" />
           <pattern match="MUSI 1192-2002" />
           <pattern match="MUSI 1193-2001" />                      
+          <pattern match="MUSI 1193-2003" />                      
           <pattern match="MUSI 1192-2200" />
           <pattern match="MUSI 1193-2200" />
         </topic>
         <topic name="Voice">
           <pattern match="MUSI 1183-2001" />
+          <pattern match="MUSI 1183-2002" />
           <pattern match="MUSI 1183-2501" />
           <pattern match="MUSI 1183-2502" />
         </topic>
@@ -1329,9 +1337,6 @@ After enrollment, new students must attend one of the following orientations: Au
             <pattern match="MUEN 2141-2700" />
             <pattern match="MUEN 2141-2701" />
           </subtopic>
-
-
-
           <subtopic name="Vivace Vocal Ensemble">
             <pattern match="MUEN 1153-2200" />
           </subtopic>
@@ -1370,6 +1375,9 @@ After enrollment, new students must attend one of the following orientations: Au
             <pattern match="MUEN 2123-2200" />
             <pattern match="MUEN 2123-2700" />            
           </subtopic>
+          <subtopic name="Opera">
+            <pattern match="MUEN 1151-2500" />
+          </subtopic>
         </topic>
 
 
@@ -1393,6 +1401,7 @@ After enrollment, new students must attend one of the following orientations: Au
             <pattern match="MUAP 1121-2001" />
             <pattern match="MUAP 1121-2002" />
             <pattern match="MUAP 1125-2001" />
+            <pattern match="MUAP 1125-2002" />			
             <pattern match="MUAP 1129-2001" />
             <pattern match="MUAP 1129-2002" />
             <pattern match="MUAP 1129-2003" />            
@@ -1416,7 +1425,6 @@ After enrollment, new students must attend one of the following orientations: Au
             <pattern match="MUAP 1181-2003" />
           </subtopic> 
               
-
           <subtopic name="Intermediate">
             <comments>NOTE:  These courses are private lesson courses, by audition only.  Students must audition in advance. An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level. Please call the Music Office at 972-860-4563 for more information.</comments>
             <pattern match="MUAP 2201-2001" />
@@ -1427,10 +1435,15 @@ After enrollment, new students must attend one of the following orientations: Au
             <pattern match="MUAP 2217-2001" />
             <pattern match="MUAP 2229-2001" /> 
             <pattern match="MUAP 2229-2002" /> 
+            <pattern match="MUAP 2229-2003" /> 
+            <pattern match="MUAP 2229-2011" /> 
             <pattern match="MUAP 2233-2001" />
             <pattern match="MUAP 2237-2001" />
+            <pattern match="MUAP 2241-2001" />
             <pattern match="MUAP 2245-2001" />
+            <pattern match="MUAP 2245-2007" />
             <pattern match="MUAP 2253-2001" />
+            <pattern match="MUAP 2257-2001" />
             <pattern match="MUAP 2261-2001" />
             <pattern match="MUAP 2261-2002" />
             <pattern match="MUAP 2269-2001" /> 
