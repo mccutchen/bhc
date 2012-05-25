@@ -183,6 +183,8 @@
 
       <subject name="Computer Information Technology"> <!-- SS Note 6/24/10: These are courses I've never seen before and I have no idea where they should go, so I'm sticking them here. -->
         <topic name="Skills Enhancements Courses">
+          <comments>NOTE: These Skills Enhancement courses are designed for students who have not passed one or more sections of the Accuplacer CSP exam.
+		</comments>
           <pattern match="ITSC 1171-2401" />
           <pattern match="ITSC 1171-2402" />
           <pattern match="ITSC 1171-2403" />
@@ -190,7 +192,8 @@
         </topic>
 
         <topic name="Introduction to Computing">
-          <comments>NOTE: ITSC 1401 is a Technical/Occupational course required for certain Certificate and Associate Degree plans. It will not meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirement, and is not for transfer to a four-year school.</comments>
+          <comments>NOTE: ITSC 1401 is a Technical/Occupational course required for certain Certificate and Associate Degree plans. It is not for transfer to a 4-year school.	
+		</comments>
           <pattern match="ITSC 1401-2021" />
           <pattern match="ITSC 1401-2521" />
 		  
@@ -210,6 +213,8 @@
         </topic>
 
         <topic name="Open Source Software Courses">
+          <comments>NOTE: For more information, call 972-860-4329 or e-mail bhcCITWeb@dcccd.edu
+		</comments>
           <pattern match="ITSE 1303-2002" />
           <pattern match="ITSE 1346-2002" />
           <pattern match="ITSE 1406-2002" />
@@ -256,7 +261,7 @@
           <pattern match="ITMT 1402-2401" />
           <pattern match="ITMT 1402-2402" />
         </topic>
-        <topic name="Unix Courses">
+        <topic name="Unix/Linux Courses">
           <pattern match="ITSC 1407-2501" />
           <pattern match="ITSC 1416-2501" />
         </topic>
@@ -265,16 +270,16 @@
           <pattern match="ITCC 1404-2401" />
         </topic>
 
-        <topic name="Information Security and Lan Courses">
+        <topic name="Information Security Courses">
           <pattern match="ITSY 1400-2401" />
           <pattern match="ITSY 1442-2401" />
           <pattern match="ITSY 2400-2401" />
           <pattern match="ITSY 2401-2401" />
         </topic>
 
-        <topic name="Web Development and E-commerce Courses">
+        <topic name="Web Design and Development Courses">
           <pattern match="IMED 1416-2001" />
-          <pattern match="IMED 1416-2002" />
+     <!--     <pattern match="IMED 1416-2002" />   -->
           <pattern match="ITSE 1303-2001" />
           <pattern match="ITSE 1346-2001" />
           <pattern match="ITSE 1406-2001" />
@@ -394,7 +399,21 @@
           <pattern match="COSC 1301-2010" />
           <pattern match="COSC 1301-2011" />
           <pattern match="COSC 1301-2012" />
-		  
+          <pattern match="COSC 1301-2300" />
+          <pattern match="COSC 1301-2401" />
+          <pattern match="COSC 1301-2402" />
+          <pattern match="COSC 1301-2403" />
+          <pattern match="COSC 1301-2404" />
+          <pattern match="COSC 1301-2405" />
+          <pattern match="COSC 1301-2406" />
+          <pattern match="COSC 1301-2501" />
+          <pattern match="COSC 1301-2502" />
+          <pattern match="COSC 1301-2503" />
+          <pattern match="COSC 1301-2504" />
+          <pattern match="COSC 1301-2505" />          
+          <pattern match="COSC 1301-2250" />          
+
+
           <pattern match="COSC 1401-2011" />
           <pattern match="COSC 1401-2012" />
           <pattern match="COSC 1401-2013" />
@@ -402,32 +421,15 @@
           <pattern match="COSC 1401-2015" />
           <pattern match="COSC 1401-2016" />
           <pattern match="COSC 1401-2017" />                      
+          <pattern match="COSC 1401-2300" />
           <pattern match="COSC 1401-2401" />
           <pattern match="COSC 1401-2402" />
           <pattern match="COSC 1401-2403" />
           <pattern match="COSC 1401-2404" />
           <pattern match="COSC 1401-2405" />
           <pattern match="COSC 1401-2406" />
-
-          <pattern match="COSC 1301-2501" />
-          <pattern match="COSC 1301-2502" />
-          <pattern match="COSC 1301-2503" />
-          <pattern match="COSC 1301-2504" />
-          <pattern match="COSC 1301-2505" />          
           <pattern match="COSC 1401-2511" />
           <pattern match="COSC 1401-2512" />
-
-          <pattern match="COSC 1301-2250" />          
-
-          <pattern match="COSC 1301-2300" />
-          <pattern match="COSC 1401-2300" />
-
-          <pattern match="COSC 1301-2401" />
-          <pattern match="COSC 1301-2402" />
-          <pattern match="COSC 1301-2403" />
-          <pattern match="COSC 1301-2404" />
-          <pattern match="COSC 1301-2405" />
-          <pattern match="COSC 1301-2406" />
         </topic>
         <topic name="Programming Courses">
           <pattern match="COSC 1309-2001" />
