@@ -1265,7 +1265,6 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="MUSI 1309-2300" />
         </topic>
         <topic name="Fundamentals of Music">
-           <pattern match="MUSI 1301-2200" />
            <pattern match="MUSI 1302-2200" />
         </topic>
 		
