@@ -1476,9 +1476,7 @@
             </topic>
             <topic name="Music-private Lessons">
                 <subtopic name="Beginning">
-                    <comments>
-                        Note:  Since enrollment in a music ensemble is required for all students who are accepted into private lesson courses, students may be required to audition in advance to be placed at the correct level.  An accompanist fee may be required. Please call the Music Office at 972-860-4563 for more information.
-                    </comments>
+            <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance to be placed at the correct level. An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
 					<pattern match="MUAP 1101-2001" />
 					<pattern match="MUAP 1101-2002" />
 					<pattern match="MUAP 1105-2001" />
@@ -1528,7 +1526,7 @@
                 </subtopic>              
    
                 <subtopic name="Intermediate">
-                    <comments>Note:  These courses are private lesson courses, by audition only.  Students must audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4563 for more information.</comments>
+                    <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4563 for more information.</comments>
 					<pattern match="MUAP 2201-2001" />
 					<pattern match="MUAP 2201-2002" />
 					<pattern match="MUAP 2205-2001" />
