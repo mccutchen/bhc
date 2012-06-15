@@ -221,6 +221,7 @@
           <pattern match="COSC 1401-2402" />
           <pattern match="COSC 1401-2403" />
           <pattern match="COSC 1401-2405" />
+          <pattern match="COSC 1401-2406" />
           <pattern match="COSC 1401-2492" />
           <pattern match="COSC 1401-2001" />
           <pattern match="COSC 1401-2426" />
@@ -746,6 +747,7 @@
             <pattern match="MUAP 1157-2200" />
             <pattern match="MUAP 1161-2200" />
             <pattern match="MUAP 1161-2201" />
+            <pattern match="MUAP 1161-2202" />
             <pattern match="MUAP 1169-2200" />
             <pattern match="MUAP 1169-2202" />
             <pattern match="MUAP 1169-2203" />
