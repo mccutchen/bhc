@@ -265,6 +265,7 @@
           <pattern match="BCIS 1405-2402" />
           <pattern match="BCIS 1405-2403" />
           <pattern match="BCIS 1405-2405" />
+          <pattern match="BCIS 1405-2406" />		  
           <pattern match="BCIS 1405-2492" />		  
           <pattern match="BCIS 1405-2426" />
           <pattern match="BCIS 1405-2427" />
