@@ -38,12 +38,12 @@ class Fall12(Fall):
 
 
 # ===================================================================
-# Spring 2012 profiles
+# Spring 2013 profiles
 # ===================================================================
-class Spring12(Spring):
-    input = 'data/2012-spring/BH2012SP.TXT'
+class Spring13(Spring):
+    input = 'data/2013-spring/BH2013SP.TXT'
     terms = {
-        'Spring': (date(2012, 1, 17), date(2012, 5, 10), 'Jan. 17-May 10'),
+        'Spring': (date(2013, 1, 17), date(2013, 5, 10), 'Jan. 17-May 10'),
     }
    
 # ===================================================================
