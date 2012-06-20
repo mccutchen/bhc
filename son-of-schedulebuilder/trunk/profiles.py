@@ -43,7 +43,7 @@ class Fall12(Fall):
 class Spring13(Spring):
     input = 'data/2013-spring/BH2013SP.TXT'
     terms = {
-        'Spring': (date(2013, 1, 17), date(2013, 5, 10), 'Jan. 17-May 10'),
+        'Spring': (date(2013, 1, 22), date(2013, 5, 16), 'Jan. 22-May 16'),
     }
    
 # ===================================================================
