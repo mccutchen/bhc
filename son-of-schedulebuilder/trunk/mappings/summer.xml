@@ -508,6 +508,7 @@
 
           <topic name="Sculpture Workshop">
                 <pattern match="ARTS 2326-2225" />
+                <pattern match="ARTS 2326-2226" />
                 <pattern match="ARTS 2327-2225" />               
                 <pattern match="ARTS 2311-2229" />
                 <pattern match="ARTS 2312-2229" />
