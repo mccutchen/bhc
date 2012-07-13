@@ -162,8 +162,53 @@
 			
 			
                 <pattern match="ITSW 1401-23001" />
+                <pattern match="ITSW 1401-23201" />
                 <pattern match="ITSW 1401-23202" />
 
+
+                <pattern match="ITSW 1401-23401" />
+                <pattern match="ITSW 1401-23402" />
+                <pattern match="ITSW 1401-23420" />
+                <pattern match="ITSW 1401-23421" />
+                <pattern match="ITSW 1401-23422" />
+                <pattern match="ITSW 1401-23423" />
+                <pattern match="ITSW 1401-23501" />
+                <pattern match="ITSW 1401-23701" />
+                <pattern match="ITSW 1401-23702" />
+                <pattern match="ITSW 1404-23001" />
+                <pattern match="ITSW 1404-23202" />
+                <pattern match="ITSW 1404-23401" />
+                <pattern match="ITSW 1404-23402" />
+                <pattern match="ITSW 1404-23440" />
+                <pattern match="ITSW 1404-23441" />
+                <pattern match="ITSW 1404-23442" />
+                <pattern match="ITSW 1404-23443" />
+                <pattern match="ITSW 1404-23501" />
+                <pattern match="ITSW 1404-23702" />							
+                <pattern match="ITSW 1407-23001" />
+                <pattern match="ITSW 1407-23201" />
+                <pattern match="ITSW 1407-23202" />
+                <pattern match="ITSW 1407-23401" />
+                <pattern match="ITSW 1407-23402" />
+                <pattern match="ITSW 1407-23441" />
+                <pattern match="ITSW 1407-23442" />
+                <pattern match="ITSW 1407-23443" />
+                <pattern match="ITSW 1407-23444" />
+                <pattern match="ITSW 1407-23501" />
+                <pattern match="ITSW 1407-23701" />
+                <pattern match="ITSW 1407-23702" />				
+                <pattern match="ITSW 1410-23001" />
+                <pattern match="ITSW 1410-23201" />
+                <pattern match="ITSW 1410-23202" />
+                <pattern match="ITSW 1410-23401" />
+                <pattern match="ITSW 1410-23402" />
+                <pattern match="ITSW 1410-23440" />
+                <pattern match="ITSW 1410-23441" />
+                <pattern match="ITSW 1410-23442" />
+                <pattern match="ITSW 1410-23443" />
+                <pattern match="ITSW 1410-23501" />
+                <pattern match="ITSW 1410-23701" />
+                <pattern match="ITSW 1410-23702" />
 
             </topic>
         </subject>
