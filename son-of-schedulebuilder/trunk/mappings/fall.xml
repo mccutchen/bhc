@@ -751,11 +751,6 @@ After enrollment, new students must attend one of the following orientations: Au
              ======================================================================== -->
       <!-- Added 2010-03-24  -->
       <subject name="Art">
-        <topic name="Problems In Contemporary Art">
-          <pattern match="ARTS 1170-2001" />        
-          <pattern match="ARTS 1170-2200" />        
-          <pattern match="ARTS 1170-2201" />
-        </topic>
 		
         <topic name="Art Appreciation">
           <pattern match="ARTS 1301-2001" />
@@ -789,6 +784,11 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="ARTS 1303-2422" />
           <pattern match="ARTS 1304-2420" />
           <pattern match="ARTS 2375-2001" />
+        </topic>
+        <topic name="Problems In Contemporary Art">
+          <pattern match="ARTS 1170-2001" />        
+          <pattern match="ARTS 1170-2200" />        
+          <pattern match="ARTS 1170-2201" />
         </topic>
 
         <topic name="Art and Computers">

@@ -446,8 +446,8 @@
                 <pattern match="ARTS 1303-2002" />
             </topic>
             <topic name="Problems In Contemporary Art">
-                <pattern match="ARTS 1170-2201" />
-                <pattern match="ARTS 1170-2200" />
+                <pattern match="ARTS 1170-23200" />
+
             </topic>
             
             <topic name="Art and Computers">
