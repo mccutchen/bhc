@@ -510,12 +510,12 @@
       <subject name="Dance">
             <comments>Note:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
             <topic name="Dance Appreciation">
-                <pattern match="DANC 2303-2001" />
+                <pattern match="DANC 2303-23001" />
                 <pattern match="DANC 2303-2501" />
             </topic>          
           <topic name="Body Conditioning">
-                <pattern match="DANC 1141-2001" />
-                <pattern match="DANC 1142-2002" />
+                <pattern match="DANC 1141-23001" />
+                <pattern match="DANC 1142-23001" />
           </topic>
             <topic name="Dance Practicum">
                 <pattern match="DANC 1351-2235" />
@@ -526,36 +526,68 @@
                 <pattern match="DANC 1305-2201" /> <!-- ri 11-02-25 -->
           </topic>
           <topic name="Aerial Dance">
-                <pattern match="DANC 1113-2001" />
-                <pattern match="DANC 1101-2001" />
-                <pattern match="DANC 1102-2001" />
+                <pattern match="DANC 1101-23001" />
+                <pattern match="DANC 1101-23501" />		
+                <pattern match="DANC 1102-23001" />
+                <pattern match="DANC 1102-23501" />
+
           </topic>
           <topic name="Tap">
-                <pattern match="DANC 1110-2001" />
-                <pattern match="DANC 1111-2001" />
+                <pattern match="DANC 1110-23001" />
+                <pattern match="DANC 1111-23001" />
+                <pattern match="DANC 2110-23001" />
+                <pattern match="DANC 2111-23001" />
+                <pattern match="DANC 2304-23422" />
+				
+				
+				
           </topic>
 
 
           <topic name="Hip Hop">
-                <pattern match="DANC 1222-2001" />
-                <pattern match="DANC 1223-2501" />
-                <pattern match="DANC 2222-2501" />
+                <pattern match="DANC 1222-23001" />
+                <pattern match="DANC 1222-23002" />
+                <pattern match="DANC 1222-23501" />
+                <pattern match="DANC 1223-23001" />
+                <pattern match="DANC 1223-23002" />
+                <pattern match="DANC 1223-23501" />
+                <pattern match="DANC 2222-23501" />				
             </topic>
             <topic name="Jazz">
                 <pattern match="DANC 1247-2001" />
                 <pattern match="DANC 1248-2001" />
             </topic>
             <topic name="Ballet">
-                <pattern match="DANC 1341-2001" />
-                <pattern match="DANC 1342-2001" />
+                <pattern match="DANC 1341-23001" />
+                <pattern match="DANC 1341-23501" />
+                <pattern match="DANC 1342-23001" />
+                <pattern match="DANC 1342-23002" />
+                <pattern match="DANC 1342-23501" />
+                <pattern match="DANC 1342-23502" />
+				
+                <pattern match="DANC 2141-23001" />
+                <pattern match="DANC 2142-23250" />
+				
+                <pattern match="DANC 2341-23001" />
+                <pattern match="DANC 2341-23501" />
+                <pattern match="DANC 2342-23001" />
+                <pattern match="DANC 2342-23002" />
+				
             </topic>
             <topic name="Ballet Technique">
                 <pattern match="DANC 2141-2001" />
                 <pattern match="DANC 2142-2250" />
             </topic>
             <topic name="Modern Dance">
-                <pattern match="DANC 2245-2501" />
-                <pattern match="DANC 2246-2501" />
+                <pattern match="DANC 1245-23001" />
+                <pattern match="DANC 1245-23501" />
+                <pattern match="DANC 1246-23001" />
+                <pattern match="DANC 1246-23002" />
+                <pattern match="DANC 1246-23501" />
+                <pattern match="DANC 2245-23001" />
+                <pattern match="DANC 2245-23501" />
+                <pattern match="DANC 2246-23001" />
+                <pattern match="DANC 2246-23501" />
             </topic>
 
           <!-- Senior Adult classes  -->
@@ -568,7 +600,9 @@
         
         <subject name="Drama">
             <topic name="Introduction to Theatre">
-                <pattern match="DRAM 1310-2001" />
+                <pattern match="DRAM 1310-23001" />
+
+
                 <pattern match="DRAM 1310-2002" />
                 <pattern match="DRAM 1310-2501" />
             </topic>
@@ -612,26 +646,39 @@
                 <pattern match="MUSI 1263-2001" /> <!-- added 20100812 -->
             </topic>
             <topic name="Music Appreciation">
-                <pattern match="MUSI 1306-2433" />
-	            <pattern match="MUSI 1306-2435" />
+                <pattern match="MUSI 1306-23001" />
+                <pattern match="MUSI 1306-23002" />
+                <pattern match="MUSI 1306-23003" />
+                <pattern match="MUSI 1306-23004" />
+                <pattern match="MUSI 1306-23005" />				
+                <pattern match="MUSI 1306-23427" />
+                <pattern match="MUSI 1306-23428" />
+                <pattern match="MUSI 1306-23429" />
+                <pattern match="MUSI 1306-23432" />
+				
+                <pattern match="MUSI 1306-23501" />
+                <pattern match="MUSI 1306-23700" />
+
             </topic>
             <topic name="Music Theory">
-                <pattern match="MUSI 1311-2001" />
-                <pattern match="MUSI 1312-2001" />
-                <pattern match="MUSI 2311-2001" />
+                <pattern match="MUSI 1311-23200" />
+                <pattern match="MUSI 1312-23001" />
+                <pattern match="MUSI 2311-23200" />
+                <pattern match="MUSI 2312-23200" />
             </topic>
           <topic name="Musicianship">
                 <pattern match="MUSI 1116-2201" />				
                 <pattern match="MUSI 1117-2001" />
             </topic>
             <topic name="Music Literature">
-                <pattern match="MUSI 1308-2300" />
-                <pattern match="MUSI 1309-2300" />
+                <pattern match="MUSI 1308-23300" />
+                <pattern match="MUSI 1309-23300" />
             </topic>
 
             <topic name="Fundamentals of Music">
-                <pattern match="MUSI 1301-2200" />
-                <pattern match="MUSI 1302-2200" />
+                <pattern match="MUSI 1301-23300" />
+                <pattern match="MUSI 1302-23300" />
+                <pattern match="MUSI 1304-23200" />
             </topic>
 
             <topic name="Foundations of Music">
@@ -696,8 +743,8 @@
 					<pattern match="MUEN 1135-2250" />
                 </subtopic>
                 <subtopic name="Keyboard Ensemble">
-					<pattern match="MUEN 1131-2001" />
-					<pattern match="MUEN 1131-2002" />
+					<pattern match="MUEN 1131-23001" />
+					<pattern match="MUEN 1131-23002" />
 				</subtopic>
               
                 <subtopic name="Percussion Ensemble - African Drumming">
@@ -705,20 +752,23 @@
                     <pattern match="MUEN 1135-2201" />
                 </subtopic>				
                 <subtopic name="String Ensemble">
-					<pattern match="MUEN 1136-2001" />
+					<pattern match="MUEN 1136-23001" />
+					
 					<pattern match="MUEN 1136-2201" />  
 	            </subtopic>
                 <subtopic name="Vocal Jazz / Lab Band">
-					<pattern match="MUEN 1151-2001" />
-                    <pattern match="MUEN 2123-2501" />
-					<pattern match="MUEN 2123-2502" />
+					<pattern match="MUEN 1151-23200" />					
+                    <pattern match="MUEN 2123-23003" />
+					<pattern match="MUEN 2123-23200" />
+					<pattern match="MUEN 2123-23201" />
+					<pattern match="MUEN 2123-23502" />
 	            </subtopic>
             </topic>
             <topic name="Music-private Lessons">
                 <subtopic name="Beginning">
             <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance to be placed at the correct level. An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
-					<pattern match="MUAP 1101-2001" />
-					<pattern match="MUAP 1101-2002" />
+					<pattern match="MUAP 1101-23001" />
+					<pattern match="MUAP 1101-23002" />
                  </subtopic>              
    
                 <subtopic name="Intermediate">
