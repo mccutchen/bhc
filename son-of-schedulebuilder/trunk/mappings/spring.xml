@@ -572,7 +572,7 @@
                 <pattern match="DANC 2341-23501" />
                 <pattern match="DANC 2342-23001" />
                 <pattern match="DANC 2342-23002" />
-				
+                <pattern match="DANC 2342-23501" />
             </topic>
             <topic name="Ballet Technique">
                 <pattern match="DANC 2141-2001" />
