@@ -1114,8 +1114,10 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="DANC 1342-2701" />
           <pattern match="DANC 1342-2001" />
           <pattern match="DANC 1342-2002" />
+          <pattern match="DANC 1342-2003" />
           <pattern match="DANC 1342-2202" />
           <pattern match="DANC 2341-2001" />
+          <pattern match="DANC 2341-2002" />		  
           <pattern match="DANC 2342-2001" />
           <pattern match="DANC 1341-2501" />
           <pattern match="DANC 1342-2501" />
