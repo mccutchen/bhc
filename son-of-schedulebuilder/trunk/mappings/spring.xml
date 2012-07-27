@@ -129,22 +129,46 @@
                 <pattern match="IMED 2351-2501" />
             </topic>
             <topic name="Programming">
+                <pattern match="INEW 1440-23001" />
+                <pattern match="INEW 1440-23401" />
+
+                <pattern match="INEW 2430-23350" />
+                <pattern match="INEW 2434-23501" />
+                <pattern match="INEW 2438-23501" />
+
                 <pattern match="ITSE 2417-2001" />
-                <pattern match="INEW 2438-2501" />
             </topic>
 
 
           <topic name="Microsoft Academy">
                 <comments>Note: Brookhaven College is a Microsoft IT Academy and offers courses and curricula preparing students to pass Microsoft certification exams and to fulfill the requirements for a Networking Administration and Support AAS as a Microsoft Certified IT Professional (MCITP) Server Administrator and a MCITP Enterprise Administrator.</comments>
+                <pattern match="ITMT 1402-23350" />
+                <pattern match="ITMT 1402-23401" />
+                <pattern match="ITMT 1402-23700" />
+                <pattern match="ITMT 2401-23700" />
+                <pattern match="ITMT 2422-23401" />
+                <pattern match="ITMT 2422-23700" />
+                <pattern match="ITMT 2451-23700" />
+
+                <pattern match="ITNW 1380-23300" />
+                <pattern match="ITNW 1408-23350" />
+                <pattern match="ITNW 1408-23401" />
+                <pattern match="ITNW 1408-23700" />
+                <pattern match="ITNW 1425-23401" />
+                <pattern match="ITNW 1425-23501" />
+
                 <pattern match="ITMC 2437-2501" />
+				
                 <pattern match="ITMT 1345-2501" />
-                <pattern match="ITNW 1408-2426" />
             </topic>
             <topic name="Unix">
                 <pattern match="ITSC 2437-2401" />
                 <pattern match="ITSC 2437-2501" />               
             </topic>
             <topic name="Cisco Academy">
+                <pattern match="ITCC 2408-23401" />            
+                <pattern match="ITCC 2410-32401" />            
+
                 <pattern match="ITCC 1401-2426" />            
                 <pattern match="ITCC 1401-2700" />
             </topic>          
@@ -215,8 +239,24 @@
 
         <subject name="Computer Science">
           <topic name="Introduction to Computing">
-            <pattern match="COSC 1301-2001" />
-            <pattern match="COSC 1401-2300" />
+            <pattern match="COSC 1301-23001" />
+            <pattern match="COSC 1301-23002" />
+            <pattern match="COSC 1301-23003" />
+            <pattern match="COSC 1301-23004" />
+            <pattern match="COSC 1301-23005" />
+            <pattern match="COSC 1301-23006" />
+            <pattern match="COSC 1301-23007" />
+            <pattern match="COSC 1301-23008" />
+            <pattern match="COSC 1301-23009" />
+            <pattern match="COSC 1301-23010" />
+			
+            <pattern match="COSC 1301-23250" />
+            <pattern match="COSC 1301-23300" />
+            <pattern match="COSC 1301-23501" />
+            <pattern match="COSC 1301-23502" />
+			
+            <pattern match="COSC 1401-23001" />
+            <pattern match="COSC 1401-23501" />
           </topic>
          <topic name="Programming">
             <pattern match="COSC 1415-2001" />			  	
@@ -336,17 +376,30 @@
             </topic>
             <topic name="Emergency Medical Services,  Paramedic">
                 <subtopic name="Paramedic Class #29, B Shift">
-					<pattern match="EMSP 2338-2226" /> 
-					<pattern match="EMSP 2338-2203" /> 
+					<pattern match="EMSP 1355-23201" /> 
+					<pattern match="EMSP 1355-23233" /> 
+					<pattern match="EMSP 2261-23233" /> 
+
+					<pattern match="EMSP 2338-23201" /> 
+					<pattern match="EMSP 2338-23233" /> 
                 </subtopic>
                 <subtopic name="Paramedic Class #30, C Shift">
-					<pattern match="EMSP 2434-2227" />
+					<pattern match="EMSP 2434-23201" />
+					<pattern match="EMSP 2434-23233" />
+					
                     <pattern match="EMSP 2338-2202" />
 				</subtopic>
                 <subtopic name="Paramedic Class #31">
+					<pattern match="EMSP 2430-23201" /> 
+					<pattern match="EMSP 2430-23233" /> 
+
+					<pattern match="EMSP 2430-2731" />
+
+
 					<pattern match="EMSP 1438-2232" />
                     <pattern match="EMSP 1438-2728" />
                     <pattern match="EMSP 1438-2731" />
+					
                 </subtopic>
                 <subtopic name="Paramedic Class #32, B Shift">
 					<pattern match="EMSP 1438-2229" /> 
@@ -362,8 +415,8 @@
                 </subtopic>
 
                 <subtopic name="Mass Disaster Response, A Shift">
-            		<pattern match="EMSP 1391-2211" />
-                    <pattern match="EMSP 1391-2213" />
+            		<pattern match="EMSP 1391-23201" />
+                    <pattern match="EMSP 1391-23215" />
                 </subtopic>
             </topic>
         </subject>
@@ -380,24 +433,73 @@
             <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
             <topic name="none">
                 <comments>NOTE: The following courses are available to anyone interested in the Nursing Program. Acceptance into the program is not required. For more information, call 972-860-4754.</comments>
-                <pattern match="RNSG 1108-2001" />
-                <pattern match="RNSG 1108-2002" />                
+				<pattern match="HPRS 1203-23001" />
+                <pattern match="RNSG 1108-23001" />
+				
+                <pattern match="RNSG 1211-23001" />                
+                <pattern match="RNSG 1301-23001" />                
             </topic>
             <topic name="First Semester Program Students">
                 <comments>NOTE: The following courses are for students in the first semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
-                <pattern match="RNSG 1413-2001" />
-                <pattern match="RNSG 1105-2001" />
+                <pattern match="RNSG 1413-23001" />
+                <pattern match="RNSG 1105-23001" />
+                <pattern match="RNSG 1105-23002" />
+                <pattern match="RNSG 1105-23003" />
+                <pattern match="RNSG 1105-23004" />
+
+				<pattern match="RNSG 1462-23261" />
+				<pattern match="RNSG 1462-23262" />
+				<pattern match="RNSG 1462-23263" />
+				<pattern match="RNSG 1462-23264" />
             </topic>
             <topic name="Second Semester Program Students">
                 <comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
-                <pattern match="RNSG 1441-2001" /> 
-                <pattern match="RNSG 1441-2201" />
-                <pattern match="RNSG 2213-2201" />
+                <pattern match="RNSG 1144-23001" /> 
+                <pattern match="RNSG 1144-23002" /> 
+                <pattern match="RNSG 1144-23003" /> 
+                <pattern match="RNSG 1144-23004" /> 
+                <pattern match="RNSG 1144-23005" /> 
+                <pattern match="RNSG 1144-23006" /> 
+                <pattern match="RNSG 2213-23201" />
+
+                <pattern match="RNSG 1441-23201" />
+                <pattern match="RNSG 1443-23001" />
+                <pattern match="RNSG 1443-23201" />
             </topic>
+			<topic name="Third Semester Program Students">
+				<comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is MANDATORY.</comments>
+				<pattern match="RNSG 1160-23261" />
+				<pattern match="RNSG 1160-23262" />
+				<pattern match="RNSG 1160-23263" />
+				<pattern match="RNSG 1160-23264" />
+				<pattern match="RNSG 1160-23265" />
+				<pattern match="RNSG 1160-23266" />
+
+				<pattern match="RNSG 2462-23261" />
+				<pattern match="RNSG 2462-23262" />
+				<pattern match="RNSG 2462-23263" />
+				<pattern match="RNSG 2462-23264" />
+				<pattern match="RNSG 2462-23265" />
+				<pattern match="RNSG 2462-23266" />
+
+				<pattern match="RNSG 2201" />
+				<pattern match="RNSG 2208" />
+				<pattern match="RNSG 2213" />
+				<pattern match="RNSG 2160" />
+				<pattern match="RNSG 2161" />
+			</topic>
+			
             <topic name="Fourth Semester Program Students">
                 <comments>NOTE: The following courses are for students in the fourth semester of the Nursing program. Acceptance into this program is REQUIRED.</comments>
+				<pattern match="RNSG 2560-23261" />
+				<pattern match="RNSG 2560-23262" />
+				<pattern match="RNSG 2560-23263" />
+				<pattern match="RNSG 2560-23264" />
+				<pattern match="RNSG 2560-23265" />
+				<pattern match="RNSG 2560-23266" />
+
+    
                 <pattern match="RNSG 1443-2001" />
-                <pattern match="RNSG 2560-2261" />
                 <pattern match="RNSG 2560-2262" />
             </topic>		
         </subject>
@@ -451,8 +553,8 @@
             </topic>
             
             <topic name="Art and Computers">
-                <pattern match="ARTS 1372-2001" /> 
-                <pattern match="ARTS 2314-2501" />
+                <pattern match="ARTS 2348-23001" /> 
+                <pattern match="ARTS 2349-23001" />
             </topic>
             
             <topic name="Art Metals">
@@ -464,7 +566,7 @@
                 <pattern match="ARTS 2347-2001" />
             </topic>
             <topic name="Design">
-                <pattern match="ARTS 1311-2001" />
+                <pattern match="ARTS 1312-23501" />
                 <pattern match="ARTS 2311-2019" />
             </topic>
             <topic name="Drawing">
@@ -485,8 +587,10 @@
                 <pattern match="ARTS 2312-2506" />
             </topic>
             <topic name="Sculpture">
-                <pattern match="ARTS 2326-2001" />
-                <pattern match="ARTS 2327-2001" />
+                <pattern match="ARTS 2311-23501" />
+                <pattern match="ARTS 2312-23501" />				
+                <pattern match="ARTS 2326-23501" />
+                <pattern match="ARTS 2327-23501" />
             </topic>        
             <topic name="December Winter Flex Term Printmaking Workshop">
                 <pattern match="ARTS 2333-2200" />
@@ -518,7 +622,7 @@
                 <pattern match="DANC 1142-23001" />
           </topic>
             <topic name="Dance Practicum">
-                <pattern match="DANC 1351-2235" />
+                <pattern match="DANC 1351-23235" />
                 <pattern match="DANC 2352-2704" />
             </topic>
           <topic name="Repertoire">
@@ -554,8 +658,10 @@
                 <pattern match="DANC 2222-23501" />				
             </topic>
             <topic name="Jazz">
-                <pattern match="DANC 1247-2001" />
-                <pattern match="DANC 1248-2001" />
+                <pattern match="DANC 1247-23001" />
+                <pattern match="DANC 1247-23501" />
+                <pattern match="DANC 1248-23001" />
+                <pattern match="DANC 1248-23501" />
             </topic>
             <topic name="Ballet">
                 <pattern match="DANC 1341-23001" />
@@ -589,6 +695,10 @@
                 <pattern match="DANC 2246-23001" />
                 <pattern match="DANC 2246-23501" />
             </topic>
+          <topic name="Social Dance">  
+              <pattern match="DANC 2212-23001" />              
+              <pattern match="DANC 2213-23001" />              
+          </topic>
 
           <!-- Senior Adult classes  -->
           <topic name="Students 50+ Dance Classes">
@@ -601,30 +711,45 @@
         <subject name="Drama">
             <topic name="Introduction to Theatre">
                 <pattern match="DRAM 1310-23001" />
+                <pattern match="DRAM 1310-23002" />
 
-
-                <pattern match="DRAM 1310-2002" />
                 <pattern match="DRAM 1310-2501" />
             </topic>
             <topic name="Film Appreciation">
-                <pattern match="DRAM 2366-2001" />
-                <pattern match="DRAM 2366-2002" />
-                <pattern match="DRAM 2366-2003" />
+                <pattern match="DRAM 2366-23001" />
+                <pattern match="DRAM 2366-23002" />
+                <pattern match="DRAM 2366-23420" />
+                <pattern match="DRAM 2366-23421" />
             </topic>
             <topic name="Stagecraft">
-                <pattern match="DRAM 1330-2001" />
-                <pattern match="DRAM 2331-2001" />
+                <pattern match="DRAM 1330-23001" />
+                <pattern match="DRAM 2331-23001" />
             </topic>
+        <topic name="Voice and Articulation">
+          <pattern match="DRAM 2336-23001" />
+        </topic>
+			
             <topic name="Acting">
-                <pattern match="DRAM 1351-2001" />
-                <pattern match="DRAM 1351-2002" />
+                <pattern match="DRAM 1351-23001" />
+                <pattern match="DRAM 1351-23002" />
+                <pattern match="DRAM 1351-23501" />
+                <pattern match="DRAM 1352-23001" />
+                <pattern match="DRAM 1352-23002" />
+                <pattern match="DRAM 1352-23501" />
+                <pattern match="DRAM 2351-23001" />
+                <pattern match="DRAM 2351-23002" />
+                <pattern match="DRAM 2351-23501" />
+                <pattern match="DRAM 2352-23001" />
+                <pattern match="DRAM 2352-23002" />
+                <pattern match="DRAM 2352-23501" />
             </topic>
             <topic name="Rehearsal">
-                <subtopic name="First Play, Spring 2011">
-                	<pattern match="DRAM 1221-2735" />
+                <subtopic name="First Play, Spring 2013">
+                	<pattern match="DRAM 1221-23735" />
+                	<pattern match="DRAM 1221-23736" />
                     
                 </subtopic>
-                <subtopic name="Second Play, Spring 2011">
+                <subtopic name="Second Play, Spring 2013">
                 	<pattern match="DRAM 1221-2736" />
                   <pattern match="DRAM 1221-2738" />
                 </subtopic>
@@ -667,8 +792,9 @@
                 <pattern match="MUSI 2312-23200" />
             </topic>
           <topic name="Musicianship">
-                <pattern match="MUSI 1116-2201" />				
-                <pattern match="MUSI 1117-2001" />
+                <pattern match="MUSI 1116-23200" />				
+                <pattern match="MUSI 1117-23001" />
+                <pattern match="MUSI 2117-23200" />
             </topic>
             <topic name="Music Literature">
                 <pattern match="MUSI 1308-23300" />
@@ -691,50 +817,69 @@
                 <pattern match="MUSI 1386-2300" />
             </topic>
             <topic name="Recital">
-                <pattern match="MUSI 9176-2001" />
-                <pattern match="MUSI 9176-2002" />
+                <pattern match="MUSI 9176-23001" />
+                <pattern match="MUSI 9176-23002" />
             </topic>
             <topic name="Digital">
-                <pattern match="MUSI 1390-2001" />
+                <pattern match="MUSI 1390-23001" />
+                <pattern match="MUSI 1391-23501" />
             </topic>
             <topic name="Piano for Music Majors">
-		        <pattern match="MUSI 1181-2002" />
-                <pattern match="MUSI 1181-2200" />
+		        <pattern match="MUSI 1181-23001" />
+		        <pattern match="MUSI 1181-23002" />
+                <pattern match="MUSI 1181-23200" />
+		        <pattern match="MUSI 1181-23501" />
+		        <pattern match="MUSI 1181-23502" />
+		        <pattern match="MUSI 1182-23002" />
+                <pattern match="MUSI 1182-23200" />
+		        <pattern match="MUSI 1182-23501" />
+		        <pattern match="MUSI 1182-23503" />
+
+		        <pattern match="MUSI 2181-23001" />
+		        <pattern match="MUSI 2182-23001" />
             </topic>
              <topic name="Piano for Non Music Majors">
-              	<pattern match="MUSI 1181-2006" />
-		        <pattern match="MUSI 1182-2006" />
+              	<pattern match="MUSI 1181-23006" />
+		        <pattern match="MUSI 1182-23006" />
               </topic>
               <topic name="JAZZ/ROCK">
                 <pattern match="MUSI 1263-2001" />
                 <pattern match="MUSI 1310-2001" />
               </topic>
           <topic name="Guitar">
-                <pattern match="MUSI 1192-2001" />
-                <pattern match="MUSI 1192-2002" />
+                <pattern match="MUSI 1192-23001" />
+                <pattern match="MUSI 1192-23002" />
+                <pattern match="MUSI 1192-23003" />
+                <pattern match="MUSI 1193-23001" />
             </topic>
             <topic name="Voice">
-                <pattern match="MUSI 1183-2001" />
-                <pattern match="MUSI 1183-2002" />
+                <pattern match="MUSI 1183-23001" />
+                <pattern match="MUSI 1183-23002" />
+                <pattern match="MUSI 1183-23701" />
             </topic>
             <topic name="Music Ensembles">
                 <subtopic name="Brookhaven Choral Society">
-                	<pattern match="MUEN 2141-2501" />
+                	<pattern match="MUEN 2141-23501" />
                 </subtopic>
                 <subtopic name="Windsong Vocal Ensemble">
-					<pattern match="MUEN 1153-2250" />
+					<pattern match="MUEN 1153-23250" />
                 </subtopic>
                  <subtopic name="Chamber Ensemble">
-		             <pattern match="MUEN 1152-2501" />
-                     <pattern match="MUEN 1152-2502" />
+		             <pattern match="MUEN 1152-23501" />
+                     <pattern match="MUEN 1152-23700" />
+                     <pattern match="MUEN 1152-23750" />
    				</subtopic>
               <subtopic name="Mariachi Band Ensemble">
                 </subtopic>                
                 <subtopic name="Flute Ensemble">
-					<pattern match="MUEN 1132-2001" />
+					<pattern match="MUEN 1132-23001" />
                 </subtopic>
                 <subtopic name="Guitar Ensemble">
-					<pattern match="MUEN 1134-2001" />
+					<pattern match="MUEN 1134-23001" />
+					<pattern match="MUEN 1134-23200" />
+					<pattern match="MUEN 1134-23501" />
+					<pattern match="MUEN 1134-23700" />
+					
  					<pattern match="MUEN 1134-2700" />
 	            </subtopic>
               
@@ -748,8 +893,8 @@
 				</subtopic>
               
                 <subtopic name="Percussion Ensemble - African Drumming">
-   					<pattern match="MUEN 1135-2200" />
-                    <pattern match="MUEN 1135-2201" />
+   					<pattern match="MUEN 1135-23250" />
+                    <pattern match="MUEN 1135-23500" />
                 </subtopic>				
                 <subtopic name="String Ensemble">
 					<pattern match="MUEN 1136-23001" />
@@ -757,18 +902,28 @@
 					<pattern match="MUEN 1136-2201" />  
 	            </subtopic>
                 <subtopic name="Vocal Jazz / Lab Band">
-					<pattern match="MUEN 1151-23200" />					
+					<pattern match="MUEN 1151-23001" />	
+					<pattern match="MUEN 1151-23200" />	
+									
                     <pattern match="MUEN 2123-23003" />
 					<pattern match="MUEN 2123-23200" />
 					<pattern match="MUEN 2123-23201" />
 					<pattern match="MUEN 2123-23502" />
 	            </subtopic>
+	          <subtopic name="Opera">
+    	        <pattern match="MUEN 1151-23500" />
+        	  </subtopic>
+				
             </topic>
             <topic name="Music-private Lessons">
                 <subtopic name="Beginning">
             <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance to be placed at the correct level. An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
 					<pattern match="MUAP 1101-23001" />
 					<pattern match="MUAP 1101-23002" />
+					<pattern match="MUAP 1105-23001" />
+					<pattern match="MUAP 1105-23002" />
+					<pattern match="MUAP 1109-23001" />
+					<pattern match="MUAP 1109-23002" />
                  </subtopic>              
    
                 <subtopic name="Intermediate">
