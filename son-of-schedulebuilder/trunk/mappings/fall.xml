@@ -1448,9 +1448,13 @@ After enrollment, new students must attend one of the following orientations: Au
             <pattern match="MUAP 1169-2001" />
             <pattern match="MUAP 1169-2002" />
             <pattern match="MUAP 1169-2003" />
+            <pattern match="MUAP 1177-2001" />			
+			
             <pattern match="MUAP 1181-2001" />
             <pattern match="MUAP 1181-2002" />
             <pattern match="MUAP 1181-2003" />
+            <pattern match="MUAP 1181-2004" />
+            <pattern match="MUAP 2281-2004" />
           </subtopic> 
               
           <subtopic name="Intermediate">
