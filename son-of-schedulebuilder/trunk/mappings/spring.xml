@@ -252,15 +252,28 @@
 			
             <pattern match="COSC 1301-23250" />
             <pattern match="COSC 1301-23300" />
+            <pattern match="COSC 1301-23401" />
+            <pattern match="COSC 1301-23402" />
+            <pattern match="COSC 1301-23403" />
+            <pattern match="COSC 1301-23404" />
+            <pattern match="COSC 1301-23405" />
+            <pattern match="COSC 1301-23406" />
+
             <pattern match="COSC 1301-23501" />
             <pattern match="COSC 1301-23502" />
 			
             <pattern match="COSC 1401-23001" />
+            <pattern match="COSC 1401-23300" />
+            <pattern match="COSC 1401-23401" />
+            <pattern match="COSC 1401-23402" />
+            <pattern match="COSC 1401-23403" />
             <pattern match="COSC 1401-23501" />
           </topic>
          <topic name="Programming">
-            <pattern match="COSC 1415-2001" />			  	
-            <pattern match="COSC 1415-2002" />
+            <pattern match="COSC 1415-23001" />			  	
+            <pattern match="COSC 1415-23002" />
+            <pattern match="COSC 1415-23401" />			  	
+            <pattern match="COSC 1415-23501" />
          </topic>
         </subject>
              
@@ -268,17 +281,25 @@
             <comments>Note: BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs. </comments>
 
             <topic name="Business Computer Applications">
-              <pattern match="BCIS 1405-2011" />
-              <pattern match="BCIS 1405-2012" />
+              <pattern match="BCIS 1405-23001" />
+              <pattern match="BCIS 1405-23002" />
+              <pattern match="BCIS 1405-23003" />
+              <pattern match="BCIS 1405-23004" />
+              <pattern match="BCIS 1405-23300" />
+              <pattern match="BCIS 1405-23401" />
+              <pattern match="BCIS 1405-23402" />
+              <pattern match="BCIS 1405-23403" />
+              <pattern match="BCIS 1405-23404" />
+              <pattern match="BCIS 1405-23501" />
             </topic>
+
+		
             <topic name="Programming">
-                <pattern match="BCIS 1431-2501" />
-                <pattern match="BCIS 1431-2401" />
-                <pattern match="BCIS 1431-2426" />
+                <pattern match="BCIS 1431-23001" />
+                <pattern match="BCIS 1431-23401" />
             </topic>
             <topic name="General Electives">
-                <pattern match="BCIS 2390-2426" />
-                <pattern match="BCIS 2390-2401" />
+                <pattern match="BCIS 2390-23401" />
             </topic>
         </subject>
       <!-- END Spring 2011 CIT (Bill Hammerschlag)  Updated Spring 2011 -->
@@ -365,8 +386,14 @@
             </comments>
             <topic name="Emergency Medical Services, Basic">
                 <subtopic name="EMT-Class #65, A Shift">
-                    <pattern match="EMSP 1501-2215" />
-                    <pattern match="EMSP 1501-2210" />
+                    <pattern match="EMSP 1501-23201" />
+                    <pattern match="EMSP 1501-23202" />
+                    <pattern match="EMSP 1501-23203" />
+                    <pattern match="EMSP 1501-23220" />
+                    <pattern match="EMSP 1501-23501" />
+                    <pattern match="EMSP 1501-23502" />
+                    <pattern match="EMSP 1501-23503" />
+                    <pattern match="EMSP 1501-23521" />
                 </subtopic>
 
                 <subtopic name="EMT-Class #66">
@@ -513,6 +540,8 @@
             <topic name="">
                 <comments>NOTE: The following courses are available to anyone interested in the Radiologic Sciences Program. Acceptance into the program is NOT REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
                 <pattern match="RADR 1201" />
+				
+                <pattern match="RADR 1202-23201" />
             </topic>
             <topic name="First Semester Program Students">
             	<comments>NOTE:  The following courses are for students in the first semester of the Radiologic Sciences Program.  Acceptance into this program is REQUIRED.  For more information call Christi Carter at 972-860-4285.</comments>
@@ -526,15 +555,38 @@
                 <pattern match="RADR 1266" />
                 <pattern match="RADR 1267" />
             </topic>
+			
+			<topic name="Sixth Semester Program Students">
+                <comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
+                <pattern match="RADR 2267" />
+                <pattern match="RADR 1250" />
+                <pattern match="RADR 2235" />
+                <pattern match="RADR 1291" />
+				
+                <pattern match="RADR 2233-23001" />
+                <pattern match="RADR 2233-23002" />
+            </topic>
+
+            <topic name="Computed Tomography">
+                <pattern match="CTMT" unsorted="true" />
+                <pattern match="RADR 2240-23401" />
+            </topic>
+
             <topic name="Vascular Interventional Technology">
-                <pattern match="RADR 2372-2501" />
-                <pattern match="RADR 2374-2270" />
+                <pattern match="RADR 2372-23501" />
+                <pattern match="RADR 2373-23501" />
+
+                <pattern match="RADR 2374-23261" />
+                <pattern match="RADR 2374-23262" />
+                <pattern match="RADR 2374-23263" />
+                <pattern match="RADR 2374-23264" />
+                <pattern match="RADR 2374-23265" />
+                <pattern match="RADR 2374-23266" />
+                <pattern match="RADR 2374-23267" />
+                <pattern match="RADR 2374-23268" />
+                <pattern match="RADR 2374-23269" />
             </topic>
         </subject>
-        
-        
-        
-
         
         <!-- School of the Arts (Jill Williams) -->
             ========================================================================
@@ -924,7 +976,49 @@
 					<pattern match="MUAP 1105-23002" />
 					<pattern match="MUAP 1109-23001" />
 					<pattern match="MUAP 1109-23002" />
+
+					<pattern match="MUAP 1115-23001" />
+					<pattern match="MUAP 1117-23001" />
+					<pattern match="MUAP 1117-23002" />
+					<pattern match="MUAP 1117-23003" />
+					<pattern match="MUAP 1121-23001" />
+					<pattern match="MUAP 1121-23002" />
+					<pattern match="MUAP 1125-23001" />
+					<pattern match="MUAP 1125-23002" />
+					<pattern match="MUAP 1129-23001" />
+					<pattern match="MUAP 1129-23002" />
+					<pattern match="MUAP 1129-23003" />
+					<pattern match="MUAP 1129-23004" />					
+					<pattern match="MUAP 1133-23001" />
+					<pattern match="MUAP 1133-23002" />
+					<pattern match="MUAP 1137-23001" />
+					<pattern match="MUAP 1137-23002" />
+					<pattern match="MUAP 1137-23003" />					
+					<pattern match="MUAP 1141-23001" />
+					<pattern match="MUAP 1141-23002" />
+					<pattern match="MUAP 1145-23001" />
+					<pattern match="MUAP 1145-23002" />
+					<pattern match="MUAP 1149-23001" />
+					<pattern match="MUAP 1153-23001" />
+					<pattern match="MUAP 1153-23002" />
+					<pattern match="MUAP 1157-23001" />
+					<pattern match="MUAP 1157-23002" />
+					<pattern match="MUAP 1161-23001" />
+					<pattern match="MUAP 1161-23002" />
+					<pattern match="MUAP 1169-23001" />
+					<pattern match="MUAP 1169-23002" />
+					<pattern match="MUAP 1169-23003" />
+					<pattern match="MUAP 1181-23001" />
+					<pattern match="MUAP 1181-23002" />
+					<pattern match="MUAP 1181-23003" />
+					<pattern match="MUAP 1181-23004" />					
+					<pattern match="MUAP 2201-23001" />
+					<pattern match="MUAP 2205-23001" />
+					<pattern match="MUAP 2209-23001" />
+					<pattern match="MUAP 2217-23001" />
+					<pattern match="MUAP 2217-23002" />
                  </subtopic>              
+   
    
                 <subtopic name="Intermediate">
                     <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4563 for more information.</comments>
