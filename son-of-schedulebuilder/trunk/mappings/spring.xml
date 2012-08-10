@@ -433,8 +433,9 @@
 					<pattern match="EMSP 1438-2201" />
                 </subtopic>
                 <subtopic name="RN To Paramedic Class #2">
-                    <pattern match="EMSP 2553-2202" />
-                    <pattern match="EMSP 2237-2202" />
+                    <pattern match="EMSP 2237-23205" />
+                    <pattern match="EMSP 2463-23205" />
+                    <pattern match="EMSP 2553-23205" />
                 </subtopic>
 
                 <subtopic name="Clinical - Emergency Medical Technology/Technician">                    <pattern match="EMSP 1160-2283" />
@@ -1024,10 +1025,16 @@
                     <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4563 for more information.</comments>
 					<pattern match="MUAP 2201-2001" />
 					<pattern match="MUAP 2201-2002" />
-       <pattern match="MUAP 2233-2001" />
-                	<pattern match="MUAP 2237-2001" />
                 	<pattern match="MUAP 2237-2200" />
                     <pattern match="MUAP 2241-2001" />
+
+					<pattern match="MUAP 2229-23002" />
+					<pattern match="MUAP 2229-23003" />
+					<pattern match="MUAP 2229-23004" />
+      				<pattern match="MUAP 2233-23001" />
+                	<pattern match="MUAP 2237-23001" />
+					
+					
                  </subtopic>
             </topic>
             <topic name="Senior Adult Music Classes">
