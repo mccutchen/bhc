@@ -168,9 +168,8 @@
                 <pattern match="ITMT 1345-2501" />
             </topic>
             <topic name="Unix">
-                <pattern match="ITSC 2437-2501" />               
-
                 <pattern match="ITSC 1442-23501" />
+                <pattern match="ITSC 2437-23501" />               
             </topic>			
             <topic name="Cisco Academy">
                 <pattern match="ITCC 2408-23401" />            
