@@ -102,19 +102,25 @@
             </topic>
             <topic name="Introduction to Computing">
                 <comments>NOTE: ITSC 1401 is a Technical/Occupational course required for certain certificate and associate degree plans. It is not for transfer to a four-year school.</comments>
-                <pattern match="ITSC 1401-2021" />
-                <pattern match="ITSC 1401-2401" />
+                <pattern match="ITSC 1401-23300" />
+                <pattern match="ITSC 1401-23401" />
+                <pattern match="ITSC 1401-23501" />
             </topic>
             <topic name="Computing Skills Enhancement">
                 <comments>NOTE: These courses are designed for students who have not passed one or more sections of the Accuplacer CSP exam. Students enrolling in self-paced skills courses are required to attend orientation in Bldg. K, Room K103, during regular hours the first week of class.</comments>
-                <pattern match="ITSC 1171-2201" />
-                <pattern match="ITSC 1171-2202" />
-                <pattern match="ITSC 1171-2203" />
+                <pattern match="ITSC 1171-23401" />
+                <pattern match="ITSC 1171-23402" />
+                <pattern match="ITSC 1171-23403" />
+                <pattern match="ITSC 1171-23404" />
             </topic>
+			
             <topic name="Cit Core">
-                <pattern match="ITSC 1405-2001" />
-                <pattern match="ITSC 1425-2001" />		
+                <pattern match="ITSC 1405-23350" />
+                <pattern match="ITSC 1405-23401" />
+                <pattern match="ITSC 1425-23350" />		
+                <pattern match="ITSC 1425-23401" />		
             </topic>
+			
             <topic name="Cit General Electives">
                 <pattern match="ITSC 2439-2401" />
                 <pattern match="ITSE 1350-2401" />
@@ -162,9 +168,10 @@
                 <pattern match="ITMT 1345-2501" />
             </topic>
             <topic name="Unix">
-                <pattern match="ITSC 2437-2401" />
                 <pattern match="ITSC 2437-2501" />               
-            </topic>
+
+                <pattern match="ITSC 1442-23501" />
+            </topic>			
             <topic name="Cisco Academy">
                 <pattern match="ITCC 2408-23401" />            
                 <pattern match="ITCC 2410-32401" />            
@@ -270,10 +277,24 @@
             <pattern match="COSC 1401-23501" />
           </topic>
          <topic name="Programming">
+            <pattern match="COSC 1309-23401" />	
+            <pattern match="COSC 1309-23501" />		 
             <pattern match="COSC 1415-23001" />			  	
             <pattern match="COSC 1415-23002" />
             <pattern match="COSC 1415-23401" />			  	
             <pattern match="COSC 1415-23501" />
+            <pattern match="COSC 1430-23001" />			  	
+            <pattern match="COSC 1430-23501" />
+            <pattern match="COSC 1436-23001" />			  	
+            <pattern match="COSC 1436-23002" />			  	
+            <pattern match="COSC 1436-23401" />			  	
+            <pattern match="COSC 1436-23501" />			  	
+            <pattern match="COSC 1437-23001" />			  	
+            <pattern match="COSC 1437-23501" />			  	
+            <pattern match="COSC 1437-23502" />			  	
+            <pattern match="COSC 2425-23501" />			  	
+            <pattern match="COSC 2430-23501" />			  	
+            <pattern match="COSC 2436-23501" />			  	
          </topic>
         </subject>
              
