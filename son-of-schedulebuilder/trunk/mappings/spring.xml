@@ -828,7 +828,8 @@
                 <pattern match="MUSI 1306-23002" />
                 <pattern match="MUSI 1306-23003" />
                 <pattern match="MUSI 1306-23004" />
-                <pattern match="MUSI 1306-23005" />				
+                <pattern match="MUSI 1306-23005" />	
+                <pattern match="MUSI 1306-23007" />								
                 <pattern match="MUSI 1306-23427" />
                 <pattern match="MUSI 1306-23428" />
                 <pattern match="MUSI 1306-23429" />
@@ -951,8 +952,8 @@
                 </subtopic>				
                 <subtopic name="String Ensemble">
 					<pattern match="MUEN 1136-23001" />
-					
-					<pattern match="MUEN 1136-2201" />  
+					<pattern match="MUEN 1136-23200" />  
+					<pattern match="MUEN 1136-23201" />
 	            </subtopic>
                 <subtopic name="Vocal Jazz / Lab Band">
 					<pattern match="MUEN 1151-23001" />	
@@ -1018,23 +1019,33 @@
 					<pattern match="MUAP 2209-23001" />
 					<pattern match="MUAP 2217-23001" />
 					<pattern match="MUAP 2217-23002" />
+					<pattern match="MUAP 2217-23003" />
                  </subtopic>              
    
    
                 <subtopic name="Intermediate">
                     <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance.  An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level.  Please call the Music Office at 972-860-4563 for more information.</comments>
 					<pattern match="MUAP 2201-2001" />
-					<pattern match="MUAP 2201-2002" />
-                	<pattern match="MUAP 2237-2200" />
-                    <pattern match="MUAP 2241-2001" />
 
+					<pattern match="MUAP 2225-23001" />
 					<pattern match="MUAP 2229-23002" />
 					<pattern match="MUAP 2229-23003" />
 					<pattern match="MUAP 2229-23004" />
       				<pattern match="MUAP 2233-23001" />
                 	<pattern match="MUAP 2237-23001" />
+                    <pattern match="MUAP 2241-23001" />
 					
-					
+                    <pattern match="MUAP 2245-23001" />
+                    <pattern match="MUAP 2249-23001" />
+                    <pattern match="MUAP 2253-23001" />
+                    <pattern match="MUAP 2257-23001" />
+                    <pattern match="MUAP 2261-23001" />
+                    <pattern match="MUAP 2269-23001" />
+                    <pattern match="MUAP 2269-23002" />
+					<pattern match="MUAP 2281-23001" />
+					<pattern match="MUAP 2281-23002" />
+					<pattern match="MUAP 2281-23003" />
+					<pattern match="MUAP 2281-23004" />					
                  </subtopic>
             </topic>
             <topic name="Senior Adult Music Classes">
