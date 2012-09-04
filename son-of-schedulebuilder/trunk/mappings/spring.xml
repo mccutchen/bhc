@@ -437,16 +437,20 @@
                     <pattern match="EMSP 2338-2202" />
 				</subtopic>
                 <subtopic name="Paramedic Class #31">
+					<pattern match="EMSP 1356-23701" />
+					<pattern match="EMSP 1356-23734" />				
+					<pattern match="EMSP 1438-23201" />
+					<pattern match="EMSP 1438-23235" />
+					<pattern match="EMSP 1438-23701" />
+					<pattern match="EMSP 1438-23734" />
+					<pattern match="EMSP 2143-23201" /> 
+					<pattern match="EMSP 2143-23232" /> 
+
 					<pattern match="EMSP 2430-23201" /> 
-					<pattern match="EMSP 2430-23233" /> 
-
-					<pattern match="EMSP 2430-2731" />
-
-
-					<pattern match="EMSP 1438-2232" />
-                    <pattern match="EMSP 1438-2728" />
-                    <pattern match="EMSP 1438-2731" />
-					
+					<pattern match="EMSP 2430-23233" />
+					<pattern match="EMSP 2444-23701" /> 
+					<pattern match="EMSP 2444-23734" /> 
+					 
                 </subtopic>
                 <subtopic name="Paramedic Class #32, B Shift">
 					<pattern match="EMSP 1438-2229" /> 
@@ -454,12 +458,16 @@
                 </subtopic>
                 <subtopic name="RN To Paramedic Class #2">
                     <pattern match="EMSP 2237-23205" />
+                    <pattern match="EMSP 2463-23204" />
                     <pattern match="EMSP 2463-23205" />
+                    <pattern match="EMSP 2463-23232" />
+					
                     <pattern match="EMSP 2553-23205" />
                 </subtopic>
 
-                <subtopic name="Clinical - Emergency Medical Technology/Technician">                    <pattern match="EMSP 1160-2283" />
-                    <pattern match="EMSP 1160-2284" />
+                <subtopic name="Clinical - Emergency Medical Technology/Technician">    
+					<pattern match="EMSP 1160-23220" />
+
                 </subtopic>
 
                 <subtopic name="Mass Disaster Response, A Shift">
@@ -613,31 +621,87 @@
             ========================================================================
         <subject name="Art">
             <topic name="Art Appreciation">
-                <pattern match="ARTS 1301-2001" />
-                <pattern match="ARTS 1301-2002" />
+                <pattern match="ARTS 1301-23001" />
+                <pattern match="ARTS 1301-23002" />
+                <pattern match="ARTS 1301-23003" />
+                <pattern match="ARTS 1301-23004" />
+                <pattern match="ARTS 1301-23005" />
+                <pattern match="ARTS 1301-23006" />
+                <pattern match="ARTS 1301-23007" />
+                <pattern match="ARTS 1301-23008" />
+                <pattern match="ARTS 1301-23009" />
+                <pattern match="ARTS 1301-23010" />
+                <pattern match="ARTS 1301-23250" />
+                <pattern match="ARTS 1301-23420" />
+                <pattern match="ARTS 1301-23421" />
+                <pattern match="ARTS 1301-23422" />
+                <pattern match="ARTS 1301-23423" />
             </topic>
+			
             <topic name="Art History">
-                <pattern match="ARTS 1303-2001" />
-                <pattern match="ARTS 1303-2002" />
+                <pattern match="ARTS 1303-23002" />
+                <pattern match="ARTS 1303-23420" />
+                <pattern match="ARTS 1303-23421" />
+                <pattern match="ARTS 1304-23001" />
+                <pattern match="ARTS 1304-23002" />
+                <pattern match="ARTS 1304-23420" />
+                <pattern match="ARTS 1304-23501" />
+                <pattern match="ARTS 2375-23001" />
             </topic>
+
             <topic name="Problems In Contemporary Art">
                 <pattern match="ARTS 1170-23200" />
 
             </topic>
             
             <topic name="Art and Computers">
-                <pattern match="ARTS 2348-23001" /> 
+                <pattern match="ARTS 2313-23001" /> 
+                <pattern match="ARTS 2313-23200" /> 
+                <pattern match="ARTS 2314-23001" /> 
+                <pattern match="ARTS 2348-23001" />
                 <pattern match="ARTS 2349-23001" />
+							
             </topic>
             
             <topic name="Art Metals">
-                <pattern match="ARTS 2341-2001" />
-                <pattern match="ARTS 2342-2001" />
+                <pattern match="ARTS 2311-23510" />
+                <pattern match="ARTS 2312-23509" />
+                <pattern match="ARTS 2341-23001" />
+                <pattern match="ARTS 2341-23501" />
+                <pattern match="ARTS 2342-23001" />
+                <pattern match="ARTS 2342-23501" />
             </topic>
+			
+
+			
             <topic name="Ceramics">
-                <pattern match="ARTS 2346-2001" />
-                <pattern match="ARTS 2347-2001" />
+                <pattern match="ARTS 2311-23013" />
+                <pattern match="ARTS 2311-23020" />
+                <pattern match="ARTS 2311-23021" />
+                <pattern match="ARTS 2311-23025" />
+                <pattern match="ARTS 2311-23506" />
+                <pattern match="ARTS 2311-23509" />
+
+                <pattern match="ARTS 2312-23016" />
+                <pattern match="ARTS 2312-23021" />
+                <pattern match="ARTS 2312-23507" />
+                <pattern match="ARTS 2312-23508" />
+
+                <pattern match="ARTS 2311-2001" />
+                <pattern match="ARTS 2311-2001" />
+                <pattern match="ARTS 2311-2001" />
+                <pattern match="ARTS 2311-2001" />
+
+                <pattern match="ARTS 2346-23001" />
+                <pattern match="ARTS 2347-23001" />
+                <pattern match="ARTS 2347-23003" />
+                <pattern match="ARTS 2346-23501" />
+                <pattern match="ARTS 2346-23502" />
+                <pattern match="ARTS 2347-23501" />
+                <pattern match="ARTS 2347-23502" />
             </topic>
+			
+
             <topic name="Design">
                 <pattern match="ARTS 1312-23501" />
                 <pattern match="ARTS 2311-2019" />
