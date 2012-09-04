@@ -664,6 +664,7 @@
             </topic>
             
             <topic name="Art Metals">
+                <pattern match="ARTS 2311-23013" />
                 <pattern match="ARTS 2311-23510" />
                 <pattern match="ARTS 2312-23509" />
                 <pattern match="ARTS 2341-23001" />
@@ -675,7 +676,6 @@
 
 			
             <topic name="Ceramics">
-                <pattern match="ARTS 2311-23013" />
                 <pattern match="ARTS 2311-23020" />
                 <pattern match="ARTS 2311-23021" />
                 <pattern match="ARTS 2311-23025" />
