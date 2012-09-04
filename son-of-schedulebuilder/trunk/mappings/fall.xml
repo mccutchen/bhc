@@ -333,6 +333,8 @@
           <pattern match="ITSW 1401-2702" />
 		  
           <pattern match="ITSW 1404-2501" />
+          <pattern match="ITSW 1404-2502" />
+		  
           <pattern match="ITSW 1404-2701" />
           <pattern match="ITSW 1407-2501" />
           <pattern match="ITSW 1407-2701" />
@@ -399,6 +401,9 @@
           <pattern match="COSC 1301-2010" />
           <pattern match="COSC 1301-2011" />
           <pattern match="COSC 1301-2012" />
+          <pattern match="COSC 1301-2201" />          
+          <pattern match="COSC 1301-2202" />          
+
           <pattern match="COSC 1301-2300" />
           <pattern match="COSC 1301-2401" />
           <pattern match="COSC 1301-2402" />
@@ -784,6 +789,8 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="ARTS 1303-2422" />
           <pattern match="ARTS 1304-2420" />
           <pattern match="ARTS 2375-2001" />
+          <pattern match="ARTS 2375-2002" />
+		  
         </topic>
         <topic name="Problems In Contemporary Art">
           <pattern match="ARTS 1170-2001" />        
@@ -793,6 +800,7 @@ After enrollment, new students must attend one of the following orientations: Au
 
         <topic name="Art and Computers">
           <pattern match="ARTS 2313-2001" />
+          <pattern match="ARTS 2313-2201" />
           <pattern match="ARTS 2314-2001" />
           <pattern match="ARTS 2348-2001" />
           <pattern match="ARTS 2349-2001" />
@@ -1072,6 +1080,7 @@ After enrollment, new students must attend one of the following orientations: Au
 
           <pattern match="DANC 1110-2050" />
           <pattern match="DANC 1111-2050" />		  
+          <pattern match="DANC 1110-2201" />
           <pattern match="DANC 1110-2202" />
           </topic>
 
@@ -1093,13 +1102,16 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="DANC 1247-2002" />		  
           <pattern match="DANC 1248-2001" />
           <pattern match="DANC 1248-2002" />
+          <pattern match="DANC 1247-2202" />
+          <pattern match="DANC 1248-2202" />
           <pattern match="DANC 1247-2501" />           
           <pattern match="DANC 1247-2502" />
           <pattern match="DANC 1248-2501" />
           <pattern match="DANC 1248-2502" />		  
           <pattern match="DANC 2247-2501" />
+          <pattern match="DANC 2247-2502" />		  
           <pattern match="DANC 2248-2501" />
-          <pattern match="DANC 1248-2202" />
+          <pattern match="DANC 2248-2502" />
           <pattern match="DANC 1247-2702" />
           <pattern match="DANC 1248-2702" />
           <pattern match="DANC 1248-2703" />
@@ -1110,6 +1122,7 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="DANC 1341-2002" />
 		  
           <pattern match="DANC 1341-2200" />
+          <pattern match="DANC 1341-2205" />
           <pattern match="DANC 1341-2701" />
           <pattern match="DANC 1342-2701" />
           <pattern match="DANC 1342-2001" />
@@ -1172,10 +1185,13 @@ After enrollment, new students must attend one of the following orientations: Au
 
         <topic name="Stagecraft">
           <pattern match="DRAM 1330-2001" />
+          <pattern match="DRAM 1330-2002" />
           <pattern match="DRAM 2331-2001" />
+          <pattern match="DRAM 2331-2002" />
         </topic>
         <topic name="Voice and Articulation">
           <pattern match="DRAM 2336-2001" />
+          <pattern match="DRAM 2336-2002" />
         </topic>
         <topic name="Acting">
           <pattern match="DRAM 1351-2001" />
@@ -1353,7 +1369,9 @@ After enrollment, new students must attend one of the following orientations: Au
             <pattern match="MUEN 1152-2001" />
             <pattern match="MUEN 1152-2002" />
             <pattern match="MUEN 1152-2003" />			
+            <pattern match="MUEN 1152-2004" />			
             <pattern match="MUEN 1152-2750" />
+            <pattern match="MUEN 1152-2751" />
           </subtopic>
           <subtopic name="Flute Ensemble">
             <pattern match="MUEN 1132-2001" />
@@ -1410,6 +1428,7 @@ After enrollment, new students must attend one of the following orientations: Au
             <pattern match="MUAP 1117-2001" />
             <pattern match="MUAP 1117-2002" />
             <pattern match="MUAP 1117-2003" />
+            <pattern match="MUAP 1117-2004" />
 			
             <pattern match="MUAP 1121-2001" />
             <pattern match="MUAP 1121-2002" />
