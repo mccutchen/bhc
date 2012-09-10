@@ -673,7 +673,8 @@
                 <pattern match="ARTS 2342-23501" />
             </topic>
 			
-
+ARTS 2346-23250    #803527    Unsorted subject: "Art - Unsorted"
+ARTS 2347-23250    #803531    Unsorted subject: "Art - Unsorted"
 			
             <topic name="Ceramics">
                 <pattern match="ARTS 2311-23020" />
@@ -681,34 +682,53 @@
                 <pattern match="ARTS 2311-23025" />
                 <pattern match="ARTS 2311-23506" />
                 <pattern match="ARTS 2311-23509" />
-
                 <pattern match="ARTS 2312-23016" />
                 <pattern match="ARTS 2312-23021" />
                 <pattern match="ARTS 2312-23507" />
                 <pattern match="ARTS 2312-23508" />
-
-                <pattern match="ARTS 2311-2001" />
-                <pattern match="ARTS 2311-2001" />
-                <pattern match="ARTS 2311-2001" />
-                <pattern match="ARTS 2311-2001" />
-
                 <pattern match="ARTS 2346-23001" />
                 <pattern match="ARTS 2347-23001" />
                 <pattern match="ARTS 2347-23003" />
+                <pattern match="ARTS 2346-23250" />
+                <pattern match="ARTS 2347-23250" />				
                 <pattern match="ARTS 2346-23501" />
                 <pattern match="ARTS 2346-23502" />
                 <pattern match="ARTS 2347-23501" />
                 <pattern match="ARTS 2347-23502" />
             </topic>
 			
-
             <topic name="Design">
+ 
+                <pattern match="ARTS 1311-23001" />
+                <pattern match="ARTS 1311-23002" />
+                <pattern match="ARTS 1311-23250" />
+                <pattern match="ARTS 1312-23001" />
                 <pattern match="ARTS 1312-23501" />
-                <pattern match="ARTS 2311-2019" />
+                <pattern match="ARTS 2311-23002" />
+                <pattern match="ARTS 2311-23008" />
+                <pattern match="ARTS 2311-23010" />
+                <pattern match="ARTS 2311-23014" />
+                <pattern match="ARTS 2311-23019" />
+                <pattern match="ARTS 2311-23252" />
+                <pattern match="ARTS 2311-23502" />
+				
+                <pattern match="ARTS 2312-23002" />
+                <pattern match="ARTS 2312-23018" />
+                <pattern match="ARTS 2312-23502" />
             </topic>
+			
             <topic name="Drawing">
-                <pattern match="ARTS 1316-2001" />
-                <pattern match="ARTS 1316-2003" />
+                <pattern match="ARTS 1316-23001" />
+                <pattern match="ARTS 1316-23002" />
+                <pattern match="ARTS 1316-23003" />
+                <pattern match="ARTS 1316-23501" />
+                <pattern match="ARTS 1317-23001" />
+                <pattern match="ARTS 1317-23002" />
+                <pattern match="ARTS 1317-23003" />
+                <pattern match="ARTS 1317-23501" />
+
+                <pattern match="ARTS 2323-23001" />
+                <pattern match="ARTS 2324-23001" />
             </topic>
             <topic name="Painting">
                 <pattern match="ARTS 2316-2001" />
