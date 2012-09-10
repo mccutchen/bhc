@@ -1014,6 +1014,10 @@ After enrollment, new students must attend one of the following orientations: Au
         <comments>
           <p>NOTE: For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For courses above the beginning level, placement counseling with the Dance Department is required. </p>
         </comments>
+		
+        <topic name="Composition">
+          <pattern match="DANC 1101-2701" />
+        </topic>
         <topic name="Dance Appreciation">
           <pattern match="DANC 2303-2001" />
           <pattern match="DANC 2303-2002" />
