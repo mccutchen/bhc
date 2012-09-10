@@ -673,9 +673,6 @@
                 <pattern match="ARTS 2342-23501" />
             </topic>
 			
-ARTS 2346-23250    #803527    Unsorted subject: "Art - Unsorted"
-ARTS 2347-23250    #803531    Unsorted subject: "Art - Unsorted"
-			
             <topic name="Ceramics">
                 <pattern match="ARTS 2311-23020" />
                 <pattern match="ARTS 2311-23021" />
