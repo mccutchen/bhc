@@ -445,12 +445,12 @@
 					<pattern match="EMSP 1438-23734" />
 					<pattern match="EMSP 2143-23201" /> 
 					<pattern match="EMSP 2143-23232" /> 
+					<pattern match="EMSP 2260-23234" /> 
 
 					<pattern match="EMSP 2430-23201" /> 
 					<pattern match="EMSP 2430-23233" />
 					<pattern match="EMSP 2444-23701" /> 
 					<pattern match="EMSP 2444-23734" /> 
-					 
                 </subtopic>
                 <subtopic name="Paramedic Class #32, B Shift">
 					<pattern match="EMSP 1438-2229" /> 
@@ -631,13 +631,15 @@
                 <pattern match="ARTS 1301-23008" />
                 <pattern match="ARTS 1301-23009" />
                 <pattern match="ARTS 1301-23010" />
+                <pattern match="ARTS 1301-23080" />
+				
                 <pattern match="ARTS 1301-23250" />
                 <pattern match="ARTS 1301-23420" />
                 <pattern match="ARTS 1301-23421" />
                 <pattern match="ARTS 1301-23422" />
                 <pattern match="ARTS 1301-23423" />
             </topic>
-			
+
             <topic name="Art History">
                 <pattern match="ARTS 1303-23002" />
                 <pattern match="ARTS 1303-23420" />
@@ -677,6 +679,9 @@
                 <pattern match="ARTS 2311-23020" />
                 <pattern match="ARTS 2311-23021" />
                 <pattern match="ARTS 2311-23025" />
+                <pattern match="ARTS 2311-23200" />
+                <pattern match="ARTS 2312-23200" />
+				
                 <pattern match="ARTS 2311-23506" />
                 <pattern match="ARTS 2311-23509" />
                 <pattern match="ARTS 2312-23016" />
@@ -684,6 +689,8 @@
                 <pattern match="ARTS 2312-23507" />
                 <pattern match="ARTS 2312-23508" />
                 <pattern match="ARTS 2346-23001" />
+                <pattern match="ARTS 2346-23200" />
+				
                 <pattern match="ARTS 2347-23001" />
                 <pattern match="ARTS 2347-23003" />
                 <pattern match="ARTS 2346-23250" />
@@ -693,59 +700,146 @@
                 <pattern match="ARTS 2347-23501" />
                 <pattern match="ARTS 2347-23502" />
             </topic>
-			
+
+
             <topic name="Design">
  
                 <pattern match="ARTS 1311-23001" />
                 <pattern match="ARTS 1311-23002" />
-                <pattern match="ARTS 1311-23250" />
                 <pattern match="ARTS 1312-23001" />
+                <pattern match="ARTS 1311-23250" />
+                <pattern match="ARTS 1312-23251" />
                 <pattern match="ARTS 1312-23501" />
                 <pattern match="ARTS 2311-23002" />
+                <pattern match="ARTS 2311-23004" />
+                <pattern match="ARTS 2311-23006" />				
                 <pattern match="ARTS 2311-23008" />
                 <pattern match="ARTS 2311-23010" />
                 <pattern match="ARTS 2311-23014" />
-                <pattern match="ARTS 2311-23019" />
+                <pattern match="ARTS 2311-23019" />				
+                <pattern match="ARTS 2311-23250" />
+                <pattern match="ARTS 2312-23250" />
+
                 <pattern match="ARTS 2311-23252" />
                 <pattern match="ARTS 2311-23502" />
-				
+                <pattern match="ARTS 2311-23512" />		
                 <pattern match="ARTS 2312-23002" />
+                <pattern match="ARTS 2312-23005" />
+
+                <pattern match="ARTS 2312-23010" />
+                <pattern match="ARTS 2312-23012" />
                 <pattern match="ARTS 2312-23018" />
                 <pattern match="ARTS 2312-23502" />
+                <pattern match="ARTS 2312-23512" />
             </topic>
-			
+
             <topic name="Drawing">
                 <pattern match="ARTS 1316-23001" />
                 <pattern match="ARTS 1316-23002" />
                 <pattern match="ARTS 1316-23003" />
-                <pattern match="ARTS 1316-23501" />
                 <pattern match="ARTS 1317-23001" />
                 <pattern match="ARTS 1317-23002" />
                 <pattern match="ARTS 1317-23003" />
+                <pattern match="ARTS 1316-23250" />
+                <pattern match="ARTS 1317-23250" />
+                <pattern match="ARTS 1316-23501" />
                 <pattern match="ARTS 1317-23501" />
-
                 <pattern match="ARTS 2323-23001" />
                 <pattern match="ARTS 2324-23001" />
+                <pattern match="ARTS 2323-23506" />
+                <pattern match="ARTS 2324-23506" />
             </topic>
+
+
+			
+			
             <topic name="Painting">
-                <pattern match="ARTS 2316-2001" />
-                <pattern match="ARTS 2317-2001" />
+                <pattern match="ARTS 2311-22201" />
+                <pattern match="ARTS 2311-22202" />
+                <pattern match="ARTS 2312-22201" />
+                <pattern match="ARTS 2312-22202" />
+                <pattern match="ARTS 2311-23007" />
+                <pattern match="ARTS 2312-23006" />
+                <pattern match="ARTS 2311-23016" />
+                <pattern match="ARTS 2311-23017" />
+                <pattern match="ARTS 2312-23015" />
+                <pattern match="ARTS 2312-23017" />
+
+                <pattern match="ARTS 2311-23018" />
+                <pattern match="ARTS 2311-23251" />
+                <pattern match="ARTS 2312-23251" />
+                <pattern match="ARTS 2311-23504" />
+                <pattern match="ARTS 2312-23505" />
+
+                <pattern match="ARTS 2316-22201" />
+                <pattern match="ARTS 2316-23001" />
+                <pattern match="ARTS 2316-23002" />
+                <pattern match="ARTS 2316-23003" />
+                <pattern match="ARTS 2316-23004" />
+                <pattern match="ARTS 2316-23250" />
+                <pattern match="ARTS 2316-23501" />
+
+                <pattern match="ARTS 2317-22201" />
+                <pattern match="ARTS 2317-23001" />
+                <pattern match="ARTS 2317-23002" />
+                <pattern match="ARTS 2317-23003" />
+                <pattern match="ARTS 2317-23004" />
+                <pattern match="ARTS 2317-23250" />
+                <pattern match="ARTS 2317-23501" />
+
+                <pattern match="ARTS 2366-22202" />
+                <pattern match="ARTS 2366-23001" />
+                <pattern match="ARTS 2367-22202" />
+                <pattern match="ARTS 2367-23001" />
+
+
             </topic>
+	
             <topic name="Photography">
-                <pattern match="ARTS 2356-2001" />
-                <pattern match="ARTS 2357-2001" />
+                <pattern match="ARTS 2311-23003" />
+                <pattern match="ARTS 2312-23004" />
+                <pattern match="ARTS 2311-23513" />
+
+                <pattern match="ARTS 2356-23001" />
+                <pattern match="ARTS 2356-23501" />
+                <pattern match="ARTS 2357-23001" />
+                <pattern match="ARTS 2357-23501" />
+
                 <pattern match="ARTS 2311-2003" />
             </topic>
+
+
             <topic name="Printmaking">
-                <pattern match="ARTS 2333-2001" />
+                <pattern match="ARTS 2311-22200" />
+                <pattern match="ARTS 2312-22200" />
+                <pattern match="ARTS 2311-23009" />
+                <pattern match="ARTS 2312-23007" />
+                <pattern match="ARTS 2311-23505" />
+                <pattern match="ARTS 2312-23506" />
+
+                <pattern match="ARTS 2333-22200" />
+                <pattern match="ARTS 2333-23001" />
+                <pattern match="ARTS 2333-23501" />
+                <pattern match="ARTS 2334-22200" />
+                <pattern match="ARTS 2334-23001" />
+                <pattern match="ARTS 2334-23501" />
+
                 <pattern match="ARTS 2312-2506" />
             </topic>
+
+
             <topic name="Sculpture">
+                <pattern match="ARTS 2311-23001" />
+                <pattern match="ARTS 2312-23001" />
+
                 <pattern match="ARTS 2311-23501" />
                 <pattern match="ARTS 2312-23501" />				
+                <pattern match="ARTS 2326-23001" />
+                <pattern match="ARTS 2327-23001" />
                 <pattern match="ARTS 2326-23501" />
                 <pattern match="ARTS 2327-23501" />
-            </topic>        
+            </topic>     
+			
             <topic name="December Winter Flex Term Printmaking Workshop">
                 <pattern match="ARTS 2333-2200" />
                 <pattern match="ARTS 2334-2200" />
@@ -931,6 +1025,9 @@
                 <pattern match="MUSI 1306-23004" />
                 <pattern match="MUSI 1306-23005" />	
                 <pattern match="MUSI 1306-23007" />								
+                <pattern match="MUSI 1306-23008" />								
+                <pattern match="MUSI 1306-23300" />								
+                <pattern match="MUSI 1306-23301" />								
                 <pattern match="MUSI 1306-23427" />
                 <pattern match="MUSI 1306-23428" />
                 <pattern match="MUSI 1306-23429" />
@@ -938,6 +1035,7 @@
 				
                 <pattern match="MUSI 1306-23501" />
                 <pattern match="MUSI 1306-23700" />
+
 
             </topic>
             <topic name="Music Theory">
@@ -949,6 +1047,7 @@
           <topic name="Musicianship">
                 <pattern match="MUSI 1116-23200" />				
                 <pattern match="MUSI 1117-23001" />
+                <pattern match="MUSI 2116-23200" />
                 <pattern match="MUSI 2117-23200" />
             </topic>
             <topic name="Music Literature">
@@ -977,6 +1076,7 @@
             </topic>
             <topic name="Digital">
                 <pattern match="MUSI 1390-23001" />
+                <pattern match="MUSI 1390-23002" />
                 <pattern match="MUSI 1391-23501" />
             </topic>
             <topic name="Piano for Music Majors">
@@ -1018,6 +1118,7 @@
                 </subtopic>
                 <subtopic name="Windsong Vocal Ensemble">
 					<pattern match="MUEN 1153-23250" />
+					<pattern match="MUEN 1153-23252" />
                 </subtopic>
                  <subtopic name="Chamber Ensemble">
 		             <pattern match="MUEN 1152-23501" />
