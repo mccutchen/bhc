@@ -666,6 +666,7 @@
             </topic>
             
             <topic name="Art Metals">
+                <pattern match="ARTS 2312-23008" />
                 <pattern match="ARTS 2311-23013" />
                 <pattern match="ARTS 2311-23510" />
                 <pattern match="ARTS 2312-23509" />
@@ -674,7 +675,8 @@
                 <pattern match="ARTS 2342-23001" />
                 <pattern match="ARTS 2342-23501" />
             </topic>
-			
+
+
             <topic name="Ceramics">
                 <pattern match="ARTS 2311-23020" />
                 <pattern match="ARTS 2311-23021" />
@@ -863,8 +865,11 @@
             <comments>Note:  For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For dance courses above the beginning level, placement counseling with the Dance Department is required.</comments>
             <topic name="Dance Appreciation">
                 <pattern match="DANC 2303-23001" />
-                <pattern match="DANC 2303-2501" />
-            </topic>          
+                <pattern match="DANC 2303-23002" />
+                <pattern match="DANC 2303-23201" />
+            </topic>    
+		
+			      
           <topic name="Body Conditioning">
                 <pattern match="DANC 1141-23001" />
                 <pattern match="DANC 1142-23001" />
@@ -889,9 +894,12 @@
                 <pattern match="DANC 1111-23001" />
                 <pattern match="DANC 2110-23001" />
                 <pattern match="DANC 2111-23001" />
+                <pattern match="DANC 1110-23052" />
+                <pattern match="DANC 1111-23052" />
+                <pattern match="DANC 2110-23052" />
+                <pattern match="DANC 2111-23052" />
                 <pattern match="DANC 2304-23422" />
-				
-				
+			
 				
           </topic>
 
@@ -910,7 +918,11 @@
                 <pattern match="DANC 1247-23501" />
                 <pattern match="DANC 1248-23001" />
                 <pattern match="DANC 1248-23501" />
+                <pattern match="DANC 2247-23502" />
+                <pattern match="DANC 2248-23502" />
             </topic>
+			
+			
             <topic name="Ballet">
                 <pattern match="DANC 1341-23001" />
                 <pattern match="DANC 1341-23501" />
@@ -946,7 +958,10 @@
           <topic name="Social Dance">  
               <pattern match="DANC 2212-23001" />              
               <pattern match="DANC 2213-23001" />              
+              <pattern match="DANC 2212-23051" />              
+              <pattern match="DANC 2213-23051" />              
           </topic>
+
 
           <!-- Senior Adult classes  -->
           <topic name="Students 50+ Dance Classes">
