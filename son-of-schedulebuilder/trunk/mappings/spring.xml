@@ -1040,7 +1040,10 @@
                 <pattern match="MUSI 1306-23004" />
                 <pattern match="MUSI 1306-23005" />	
                 <pattern match="MUSI 1306-23007" />								
-                <pattern match="MUSI 1306-23008" />								
+                <pattern match="MUSI 1306-23008" />		
+                <pattern match="MUSI 1306-23009" />		
+                <pattern match="MUSI 1306-23010" />		
+										
                 <pattern match="MUSI 1306-23300" />								
                 <pattern match="MUSI 1306-23301" />								
                 <pattern match="MUSI 1306-23427" />
@@ -1049,6 +1052,7 @@
                 <pattern match="MUSI 1306-23432" />
 				
                 <pattern match="MUSI 1306-23501" />
+                <pattern match="MUSI 1306-23508" />
                 <pattern match="MUSI 1306-23700" />
 
 
