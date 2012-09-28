@@ -1042,11 +1042,14 @@ After enrollment, new students must attend one of the following orientations: Au
         <topic name="Dance Practicum">
           <pattern match="DANC 1351-2200" />
           <pattern match="DANC 1351-2235" />
+          <pattern match="DANC 1352-2200" />
 
           <pattern match="DANC 1351-2702" />
           <pattern match="DANC 1351-2703" />
           <pattern match="DANC 1352-2702" />
-          <pattern match="DANC 1352-2703" />
+          <pattern match="DANC 1352-2703" />		  
+          <pattern match="DANC 2351-2200" />
+          <pattern match="DANC 2352-2200" />
           <pattern match="DANC 2351-2236" />
           <pattern match="DANC 2351-2237" />
           <pattern match="DANC 2351-2702" />
@@ -1055,6 +1058,7 @@ After enrollment, new students must attend one of the following orientations: Au
           <pattern match="DANC 2352-2703" />
           <pattern match="DANC 2352-2704" />
         </topic>
+
 
         <topic name="Improvisation">
           <pattern match="DANC 1113-2501" />
