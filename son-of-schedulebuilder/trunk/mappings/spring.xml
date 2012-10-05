@@ -653,6 +653,7 @@
 
             <topic name="Problems In Contemporary Art">
                 <pattern match="ARTS 1170-23200" />
+                <pattern match="ARTS 1170-23201" />
 
             </topic>
             
@@ -867,8 +868,8 @@
                 <pattern match="DANC 2303-23001" />
                 <pattern match="DANC 2303-23002" />
                 <pattern match="DANC 2303-23201" />
+                <pattern match="DANC 2303-23420" />
             </topic>    
-		
 			      
           <topic name="Body Conditioning">
                 <pattern match="DANC 1141-23001" />
@@ -887,6 +888,8 @@
                 <pattern match="DANC 1101-23501" />		
                 <pattern match="DANC 1102-23001" />
                 <pattern match="DANC 1102-23501" />
+                <pattern match="DANC 1103-23001" />
+                <pattern match="DANC 1103-23501" />		
 
           </topic>
           <topic name="Tap">
@@ -912,13 +915,19 @@
                 <pattern match="DANC 1223-23002" />
                 <pattern match="DANC 1223-23501" />
                 <pattern match="DANC 2222-23501" />				
+                <pattern match="DANC 2223-23002" />				
             </topic>
+
             <topic name="Jazz">
                 <pattern match="DANC 1247-23001" />
                 <pattern match="DANC 1247-23501" />
                 <pattern match="DANC 1248-23001" />
                 <pattern match="DANC 1248-23501" />
+                <pattern match="DANC 2247-23001" />
+                <pattern match="DANC 2247-23501" />
                 <pattern match="DANC 2247-23502" />
+                <pattern match="DANC 2248-23001" />
+                <pattern match="DANC 2248-23501" />
                 <pattern match="DANC 2248-23502" />
             </topic>
 			
@@ -1141,9 +1150,12 @@
                 </subtopic>
                  <subtopic name="Chamber Ensemble">
 		             <pattern match="MUEN 1152-23501" />
+		             <pattern match="MUEN 1152-23502" />
                      <pattern match="MUEN 1152-23700" />
+                     <pattern match="MUEN 1152-23701" />
                      <pattern match="MUEN 1152-23750" />
    				</subtopic>
+								
               <subtopic name="Mariachi Band Ensemble">
                 </subtopic>                
                 <subtopic name="Flute Ensemble">
