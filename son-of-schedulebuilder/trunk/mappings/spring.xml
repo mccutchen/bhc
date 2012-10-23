@@ -119,21 +119,30 @@
                 <pattern match="ITSC 1405-23401" />
                 <pattern match="ITSC 1425-23350" />		
                 <pattern match="ITSC 1425-23401" />		
+
+                <pattern match="ITSE 1429-23401" />		
+                <pattern match="ITSE 1429-23501" />		
             </topic>
 			
             <topic name="Cit General Electives">
-                <pattern match="ITSC 2439-2401" />
+                <pattern match="ITSC 2439-23401" />
                 <pattern match="ITSE 1350-2401" />
             </topic>          
             <topic name="Open Source Software">
                 <pattern match="ITNW 2454-2501" />           
                 <pattern match="ITSE 1416-2501" />           
+				
+	            <pattern match="ITSE 1303-23401" />
+	            <pattern match="ITSE 1303-23402" />
+	            <pattern match="ITSE 1303-23501" />
+	            <pattern match="ITSE 1303-23502" />
             </topic>
 
             <topic name="Game, Media and Mobile Programming">
                 <pattern match="ITSE 1301-2003" />
                 <pattern match="IMED 2351-2501" />
             </topic>
+			
             <topic name="Programming">
                 <pattern match="INEW 1440-23001" />
                 <pattern match="INEW 1440-23401" />
@@ -142,7 +151,24 @@
                 <pattern match="INEW 2434-23501" />
                 <pattern match="INEW 2438-23501" />
 
-                <pattern match="ITSE 2417-2001" />
+                <pattern match="ITSE 1407-23001" />
+                <pattern match="ITSE 1407-23002" />
+                <pattern match="ITSE 1407-23401" />
+                <pattern match="ITSE 1407-23501" />
+                <pattern match="ITSE 1430-23501" />
+			
+                <pattern match="ITSE 1432-23001" />
+                <pattern match="ITSE 1432-23401" />
+                <pattern match="ITSE 2310-23503" />
+                <pattern match="ITSE 2404-23401" />
+				
+                <pattern match="ITSE 2417-23001" />
+                <pattern match="ITSE 2417-23502" />
+                <pattern match="ITSE 2434-23401" />
+			
+                <pattern match="ITSE 2437-23501" />
+                <pattern match="ITSE 2438-23401" />
+                <pattern match="ITSE 2453-23501" />
             </topic>
 
 
@@ -180,21 +206,52 @@
             </topic>          
             <topic name="Information Security">
                 <pattern match="ITSY 1442-2426" />
-                <pattern match="ITSY 2459-2401" />
+                <pattern match="ITSY 2441-23401" />
+                <pattern match="ITSY 2442-23401" />
+                <pattern match="ITSY 2459-23401" />
             </topic>        
+			
+
+			
             <topic name="Web Development and E-commerce">
                 <comments>Note: For more information about Web and E-Commerce Courses, call 972-860-4329 or email bhcCITWeb@dcccd.edu.</comments>
                 <pattern match="IMED 2449-2001" />
                 <pattern match="IMED 2449-2350" />                
+
+	            <pattern match="ITSE 1411-23001" />
+	            <pattern match="ITSE 1411-23401" />
+      
+	            <pattern match="ITSE 1301-23001" />
+                <pattern match="ITSE 1301-23401" />
+
+	            <pattern match="ITSE 1346-23401" />
+	            <pattern match="ITSE 1346-23402" />
+	            <pattern match="ITSE 1346-23501" />
+	            <pattern match="ITSE 1346-23502" />
+	            <pattern match="ITSE 1350-23401" />
+
+	            <pattern match="ITSE 1406-23401" />
+	            <pattern match="ITSE 1406-23402" />
+	            <pattern match="ITSE 1406-23501" />
+	            <pattern match="ITSE 1406-23502" />
             </topic>
 
+
+
             <topic name="Application Software">
-			
-			
+	            <pattern match="ITSC 1409-23001" />
+	            <pattern match="ITSC 1409-23202" />
+	            <pattern match="ITSC 1409-23401" />
+	            <pattern match="ITSC 1409-23402" />
+	            <pattern match="ITSC 1409-23441" />
+	            <pattern match="ITSC 1409-23442" />
+	            <pattern match="ITSC 1409-23501" />
+	            <pattern match="ITSC 1409-23701" />
+	            <pattern match="ITSC 1409-23001" />		
+		
                 <pattern match="ITSW 1401-23001" />
                 <pattern match="ITSW 1401-23201" />
                 <pattern match="ITSW 1401-23202" />
-
 
                 <pattern match="ITSW 1401-23401" />
                 <pattern match="ITSW 1401-23402" />
@@ -206,6 +263,7 @@
                 <pattern match="ITSW 1401-23701" />
                 <pattern match="ITSW 1401-23702" />
                 <pattern match="ITSW 1404-23001" />
+                <pattern match="ITSW 1404-23201" />
                 <pattern match="ITSW 1404-23202" />
                 <pattern match="ITSW 1404-23401" />
                 <pattern match="ITSW 1404-23402" />
@@ -214,6 +272,7 @@
                 <pattern match="ITSW 1404-23442" />
                 <pattern match="ITSW 1404-23443" />
                 <pattern match="ITSW 1404-23501" />
+                <pattern match="ITSW 1404-23701" />							
                 <pattern match="ITSW 1404-23702" />							
                 <pattern match="ITSW 1407-23001" />
                 <pattern match="ITSW 1407-23201" />
@@ -238,8 +297,9 @@
                 <pattern match="ITSW 1410-23443" />
                 <pattern match="ITSW 1410-23501" />
                 <pattern match="ITSW 1410-23701" />
-                <pattern match="ITSW 1410-23702" />
+                <pattern match="ITSW 1410-23702" />		
 
+	            <pattern match="ITSC 2439-23401" />
             </topic>
         </subject>
 
@@ -255,6 +315,14 @@
             <pattern match="COSC 1301-23008" />
             <pattern match="COSC 1301-23009" />
             <pattern match="COSC 1301-23010" />
+
+
+            <pattern match="COSC 1301-23011" />
+            <pattern match="COSC 1301-23012" />
+            <pattern match="COSC 1301-23014" />
+            <pattern match="COSC 1301-23015" />
+            <pattern match="COSC 1301-23016" />
+            <pattern match="COSC 1301-23018" />
 			
             <pattern match="COSC 1301-23250" />
             <pattern match="COSC 1301-23300" />
@@ -267,8 +335,10 @@
 
             <pattern match="COSC 1301-23501" />
             <pattern match="COSC 1301-23502" />
+            <pattern match="COSC 1301-23503" />
 			
             <pattern match="COSC 1401-23001" />
+            <pattern match="COSC 1401-23002" />
             <pattern match="COSC 1401-23300" />
             <pattern match="COSC 1401-23401" />
             <pattern match="COSC 1401-23402" />
@@ -291,6 +361,7 @@
             <pattern match="COSC 1437-23001" />			  	
             <pattern match="COSC 1437-23501" />			  	
             <pattern match="COSC 1437-23502" />			  	
+            <pattern match="COSC 1437-23503" />			  	
             <pattern match="COSC 2425-23501" />			  	
             <pattern match="COSC 2430-23501" />			  	
             <pattern match="COSC 2436-23501" />			  	
@@ -305,6 +376,8 @@
               <pattern match="BCIS 1405-23002" />
               <pattern match="BCIS 1405-23003" />
               <pattern match="BCIS 1405-23004" />
+              <pattern match="BCIS 1405-23005" />
+              <pattern match="BCIS 1405-23006" />
               <pattern match="BCIS 1405-23300" />
               <pattern match="BCIS 1405-23401" />
               <pattern match="BCIS 1405-23402" />
@@ -467,6 +540,7 @@
 
                 <subtopic name="Clinical - Emergency Medical Technology/Technician">    
 					<pattern match="EMSP 1160-23220" />
+					<pattern match="EMSP 1160-23221" />
 
                 </subtopic>
 
@@ -631,6 +705,7 @@
                 <pattern match="ARTS 1301-23008" />
                 <pattern match="ARTS 1301-23009" />
                 <pattern match="ARTS 1301-23010" />
+                <pattern match="ARTS 1301-23011" />
                 <pattern match="ARTS 1301-23080" />
 				
                 <pattern match="ARTS 1301-23250" />
@@ -684,7 +759,7 @@
                 <pattern match="ARTS 2311-23025" />
                 <pattern match="ARTS 2311-23200" />
                 <pattern match="ARTS 2312-23200" />
-				
+                <pattern match="ARTS 2312-23252" />
                 <pattern match="ARTS 2311-23506" />
                 <pattern match="ARTS 2311-23509" />
                 <pattern match="ARTS 2312-23016" />
@@ -761,7 +836,9 @@
                 <pattern match="ARTS 2311-22202" />
                 <pattern match="ARTS 2312-22201" />
                 <pattern match="ARTS 2312-22202" />
+                <pattern match="ARTS 2312-22203" />
                 <pattern match="ARTS 2311-23007" />
+                <pattern match="ARTS 2312-23003" />
                 <pattern match="ARTS 2312-23006" />
                 <pattern match="ARTS 2311-23016" />
                 <pattern match="ARTS 2311-23017" />
@@ -802,6 +879,7 @@
                 <pattern match="ARTS 2311-23003" />
                 <pattern match="ARTS 2312-23004" />
                 <pattern match="ARTS 2311-23513" />
+                <pattern match="ARTS 2312-23513" />
 
                 <pattern match="ARTS 2356-23001" />
                 <pattern match="ARTS 2356-23501" />
@@ -1195,7 +1273,9 @@
                     <pattern match="MUEN 2123-23003" />
 					<pattern match="MUEN 2123-23200" />
 					<pattern match="MUEN 2123-23201" />
+					<pattern match="MUEN 2123-23202" />
 					<pattern match="MUEN 2123-23502" />
+					<pattern match="MUEN 1151-23701" />	
 	            </subtopic>
 	          <subtopic name="Opera">
     	        <pattern match="MUEN 1151-23500" />
@@ -1247,6 +1327,7 @@
 					<pattern match="MUAP 1181-23002" />
 					<pattern match="MUAP 1181-23003" />
 					<pattern match="MUAP 1181-23004" />					
+					<pattern match="MUAP 1181-23005" />					
 					<pattern match="MUAP 2201-23001" />
 					<pattern match="MUAP 2205-23001" />
 					<pattern match="MUAP 2209-23001" />

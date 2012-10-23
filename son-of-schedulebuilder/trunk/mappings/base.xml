@@ -509,6 +509,10 @@ If you have not completed any government courses, you should take GOVT 2305 and 
                 <comments>NOTE: Biology 2401 and 2402 are anatomy and physiology courses for biology majors and for students wanting a transferable anatomy and physiology course, such as, Bachelor of Science, Nursing; physical therapy and kinesiology students. Please see the online Catalog for prerequisite information. Students in BIOL 1407, 2401, 2402 and SCIT 1407 and 1408 will be required to purchase their own dissection kit from the campus bookstore or some other source.</comments>
                 <pattern match="BIOL 240[12]" unsorted="true" />
             </topic>
+            <topic name="Environmental Biology">
+                <pattern match="BIOL 2406" unsorted="true" />
+            </topic>
+
             <topic name="Genetics">
                 <!-- commented out per Evonne Clark 9/22/09
 
