@@ -32,7 +32,7 @@
         </subject>
         <subject name="Art - Unsorted">
             <pattern match="ARTS" priority="0" unsorted="true" />
-        </subject>
+        </subject>  
         <subject name="Astronomy - Physical Science - Physics - Unsorted">
             <pattern match="PHYS" priority="0" unsorted="true" />
         </subject>
