@@ -139,6 +139,7 @@
         <subject name="Developmental Mathematics">
         	<comments></comments>
             <pattern match="DMAT" priority="0" unsorted="true" />
+            <pattern match="NCDM" priority="0" unsorted="true" />
         </subject>
         <subject name="Developmental Reading">
             <pattern match="DREA" priority="0" unsorted="true" />
