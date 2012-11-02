@@ -943,10 +943,11 @@
             <topic name="Dance Appreciation">
                 <pattern match="DANC 2303-23001" />
                 <pattern match="DANC 2303-23002" />
+                <pattern match="DANC 2303-23003" />
                 <pattern match="DANC 2303-23201" />
                 <pattern match="DANC 2303-23420" />
             </topic>    
-			      
+
           <topic name="Body Conditioning">
                 <pattern match="DANC 1141-23001" />
                 <pattern match="DANC 1142-23001" />
