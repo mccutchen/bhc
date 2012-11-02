@@ -506,7 +506,7 @@
             ======================================================================== -->
       <subject name="Management Program">
         <comments>
-         </comments>
+          </comments>
         <pattern match="BMGT 2303-2501" />
         <pattern match="BMGT 2383-2501" />
 
@@ -600,7 +600,7 @@
         ======================================================================== -->
 		<subject name="Emergency Medical Services">
             <comments>
-                <p>
+                
             </comments>
 			<topic name="Emergency Medical Services, Basic">
         <subtopic name="Emt-basic Class #68, A Shift">
