@@ -11,7 +11,7 @@
     <mapping type="subject">
         <!-- Keep sorting NUTR courses correctly in Fall 2009 -->
         <subject name="Nutrition">
-            <comments>NOTE:  The designation for NUTR 1322 has been changed to BIOL 1322.  Course content remains the same.</comments>
+            <comments></comments>
             <pattern match="NUTR" priority="0" unsorted="true" />
         </subject>
 
@@ -183,7 +183,7 @@
 
       <subject name="Computer Information Technology"> <!-- SS Note 6/24/10: These are courses I've never seen before and I have no idea where they should go, so I'm sticking them here. -->
         <topic name="Skills Enhancements Courses">
-          <comments>NOTE: These Skills Enhancement courses are designed for students who have not passed one or more sections of the Accuplacer CSP exam.
+          <comments>
 		</comments>
           <pattern match="ITSC 1171-2401" />
           <pattern match="ITSC 1171-2402" />
@@ -192,7 +192,7 @@
         </topic>
 
         <topic name="Introduction to Computing">
-          <comments>NOTE: ITSC 1401 is a Technical/Occupational course required for certain Certificate and Associate Degree plans. It is not for transfer to a 4-year school.	
+          <comments>	
 		</comments>
           <pattern match="ITSC 1401-2021" />
           <pattern match="ITSC 1401-2521" />
@@ -213,7 +213,7 @@
         </topic>
 
         <topic name="Open Source Software Courses">
-          <comments>NOTE: For more information, call 972-860-4329 or e-mail bhcCITWeb@dcccd.edu
+          <comments>
 		</comments>
           <pattern match="ITSE 1303-2002" />
           <pattern match="ITSE 1346-2002" />
@@ -253,7 +253,7 @@
         </topic>
         <topic name="Microsoft Academy Courses">
           <comments>
-            NOTE: Brookhaven College is a Microsoft IT Academy and offers courses and curricula preparing students to take and pass Microsoft certification exams and to fulfill the requirements for a Networking Administration and Support AAS as a Microsoft Certified IT Professional (MCITP) Server Administrator and a MCITP Enterprise Administrator.</comments>
+            </comments>
           <pattern match="ITMT 1402-2701" />
           <pattern match="ITMT 1402-2501" />
           <pattern match="ITMT 2401-2701" />
@@ -459,7 +459,7 @@
 
 
      <subject name="Computer Studies - Business Computer Information Systems">
-        <comments>BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
+        <comments></comments>
         <topic name="Business Computer Applications Courses">
           <pattern match="BCIS 1405-2011" />
           <pattern match="BCIS 1405-2012" />
@@ -506,7 +506,7 @@
             ======================================================================== -->
       <subject name="Management Program">
         <comments>
-          NOTE: Complete two courses one night per week. Be mentored by full-time business faculty. Class format includes small-group discussions and networking with other employed professionals. Students taking management program courses at Brookhaven College for the first time must be advised by their faculty member before they register. Call Mary Lou Avera at 972-860-4179, email her at MaryLou@dcccd.edu or visit www.BrookhavenCollege.edu/management.</comments>
+         </comments>
         <pattern match="BMGT 2303-2501" />
         <pattern match="BMGT 2383-2501" />
 
@@ -518,8 +518,7 @@
             ======================================================================== -->
         <subject name="Medical Office Management / Administration">
             <topic name="Medical Front Office Assistant Marketable Skills Achievement Award - First Semester">
-                <comments>Note: Before you enroll, you must attend one of the following information sessions: July 24, 9:30-10:30 a.m. or 5:30-6:30 p.m.; August 14, 9:30-10:30 a.m. or 5:30-6:30 p.m. 
-After enrollment, new students must attend one of the following orientations: August 20, 9:30-11 a.m. or 5:30-7 p.m.; August 24, 9:30-11 a.m. or 5:30-7 p.m. 
+                <comments>
 </comments>
                 <subtopic name="Computer Basics">
                     <pattern match="POFI 1104-2201" />
@@ -556,7 +555,7 @@ After enrollment, new students must attend one of the following orientations: Au
                 </subtopic>              
             </topic>
             <topic name="Medical Front Office Assistant Certificate - Second Semester">
-                <comments>Note: To enroll in any course shown in the schedule below, you must have approval from the program coordinator. If you haven't already enrolled, call 972-860-4163 to schedule an appointment on one of the following days: July 24 or August 14.</comments>
+                <comments></comments>
                 <subtopic name="Medical Coding Basics">
                     <pattern match="POFM 1300-2501" />
                     <pattern match="POFM 1300-2001" />
@@ -578,7 +577,7 @@ After enrollment, new students must attend one of the following orientations: Au
                     <pattern match="POFM 1370-2501" />
                 </subtopic>
                 <subtopic name="Medical Front Office Co-Op Work Experience">
-                    <comments>Students must be able to meet on four required meeting dates: Aug. 28, Sept. 25, Oct. 30 and Dec. 4.</comments>
+                    <comments></comments>
                     <pattern match="POFM 1280-2250" />
                 </subtopic>
             </topic>
@@ -588,7 +587,7 @@ After enrollment, new students must attend one of the following orientations: Au
      
         
     	<subject name="Journalism">
-    		<comments>NOTE: Journalism 1307 surveys the field of mass communications. Journalism 2311 is a reporting course. Students may enroll in Journalism 2311 without having taken Journalism 1307. Room B212 is the student newspaper office.</comments>
+    		<comments></comments>
     		<pattern match="JOUR" priority="0" unsorted="true" />
     	</subject>
     	
@@ -601,9 +600,7 @@ After enrollment, new students must attend one of the following orientations: Au
         ======================================================================== -->
 		<subject name="Emergency Medical Services">
             <comments>
-                <p>NOTES: Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/.  Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences.  International students are advised to contact the Brookhaven College Multicultural Center, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning  this requirement.</p>
-                <p>If financial aid or veterans benefits are paying for your courses, you must enroll for all courses at the beginning of the term. </p>
-            	<p>All EMS courses require CPR certification for infant, child and adult.  This is the Healthcare Provider level by the American Heart Association or Professional Rescuer by the American Red Cross.  Students can register for the EMS course without having a current CPR card, but must be CPR certified by the mandatory orientation day.</p>
+                <p>
             </comments>
 			<topic name="Emergency Medical Services, Basic">
         <subtopic name="Emt-basic Class #68, A Shift">
@@ -670,23 +667,23 @@ After enrollment, new students must attend one of the following orientations: Au
             Nursing (Monica Wenthold and Ann Cortez)
         ======================================================================== -->
 		<subject name="Nursing">
-            <comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center Office, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+            <comments></comments>
 			<topic name="none">
-				<comments>NOTE: The following courses are available to anyone interested in the Nursing program. Acceptance into the program is NOT REQUIRED. For more information call 972-860-4754.</comments>
+				<comments></comments>
 				<pattern match="RNSG 1108" />
 				<pattern match="HPRS 1203" />
 				<pattern match="RNSG 1211" />
 				<pattern match="RNSG 1301" />
 			</topic>
 			<topic name="First Semester Program Students">
-				<comments>NOTE: The following courses are for students in the first semester of the Nursing program. Acceptance into this program is MANDATORY.</comments>
+				<comments></comments>
 				<pattern match="RNSG 1413" />
 				<pattern match="RNSG 1105" />
 				<pattern match="RNSG 1462" />
 				<pattern match="RNSG 1144" /><!-- added 11/12/09 - guessed at placement so it's probably wrong -->
 			</topic>
 			<topic name="Third Semester Program Students">
-				<comments>NOTE: The following courses are for students in the third semester of the Nursing program. Acceptance into this program is MANDATORY.</comments>
+				<comments></comments>
 				<pattern match="RNSG 2201" />
 				<pattern match="RNSG 2208" />
 				<pattern match="RNSG 2213" />
@@ -695,7 +692,7 @@ After enrollment, new students must attend one of the following orientations: Au
 				<pattern match="RNSG 2161" />
 			</topic>
 			<topic name="Fourth Semester Program Students">
-				<comments>NOTE: The following courses are for students in the fourth semester of the Nursing program. Acceptance into this program is MANDATORY.</comments>
+				<comments></comments>
 				<pattern match="RNSG 1443" />
 				<pattern match="RNSG 2560" />
 			</topic>
@@ -707,12 +704,12 @@ After enrollment, new students must attend one of the following orientations: Au
              Radiologic Sciences (Christi Carter and Monica Wenthold)
              ======================================================================== -->
         <subject name="Radiologic Sciences">
-			<comments>Clinical opportunities are not available for any student without a U.S. Social Security number, http://www.ssa.gov/ssnumber/. Potential applicants should obtain a Social Security number before applying to Brookhaven College's health programs in Emergency Medical Services, Nursing and Radiologic Sciences. International students are advised to contact the Brookhaven College Multicultural Center, Room S136, bhcMulticulturalCenter@dcccd.edu, 972-860-4192, concerning this requirement.</comments>
+			<comments></comments>
             <topic name="none">
                 <pattern match="RADR 1201"/>
             </topic>
             <topic name="Third Semester Program Students">
-                <comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
+                <comments></comments>
                 <pattern match="RADR 1166" />
                 <pattern match="RADR 2305" />
                 <pattern match="RADR 2331" />
@@ -720,7 +717,7 @@ After enrollment, new students must attend one of the following orientations: Au
                 <pattern match="RADR 2213" />
 			</topic>
 			<topic name="Sixth Semester Program Students">
-                <comments>NOTE:  These courses are restricted to students who have been accepted into the Radiologic Sciences Program.  For more information call Christi Carter at 972-860-4285.</comments>
+                <comments></comments>
                 <pattern match="RADR 2267" />
                 <pattern match="RADR 1250" />
                 <pattern match="RADR 2235" />
@@ -1014,7 +1011,7 @@ After enrollment, new students must attend one of the following orientations: Au
         <!-- Added 2010-03-25  -->
       <subject name="Dance">
         <comments>
-          <p>NOTE: For more information regarding dance courses, please call the Dance Department at 972-860-4122.  For courses above the beginning level, placement counseling with the Dance Department is required. </p>
+          
         </comments>
 		
         <topic name="Composition">
@@ -1425,7 +1422,7 @@ After enrollment, new students must attend one of the following orientations: Au
 
           <topic name="Music - Private Lessons">
           <subtopic name="Beginning">
-            <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance to be placed at the correct level. An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
+            <comments></comments>
             <pattern match="MUAP 1101-2001" />
             <pattern match="MUAP 1101-2002" />
             <pattern match="MUAP 1105-2001" />
@@ -1487,7 +1484,7 @@ After enrollment, new students must attend one of the following orientations: Au
           </subtopic> 
               
           <subtopic name="Intermediate">
-            <comments>NOTE: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance. An accompanist fee may be required.  Enrollment in core music major courses, including Theory, Musicianship, Piano Class and Recital (MUSI 9176) is MANDATORY for all students who are accepted into private lessons at this level. Please call the Music Office at 972-860-4563 for more information.</comments>
+            <comments></comments>
             <pattern match="MUAP 2201-2001" />
             <pattern match="MUAP 2205-2001" />
             <pattern match="MUAP 2205-2200" />
