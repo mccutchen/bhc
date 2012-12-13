@@ -90,7 +90,7 @@ class CCEFormatter(Formatter):
 
     @excepting(TypeError, None)
     def format_term(self, data):
-        if (not re.search('[12][0-9]{3}(FA|S1|S2|SP)', data) ):
+        if (not re.search('[12][0-9]{3}(FA|SU|S1|S2|SP)', data) ):
             return ' ';
         
         d = u'%s' % data[4:].strip().upper();
