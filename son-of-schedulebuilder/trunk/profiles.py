@@ -16,14 +16,14 @@ from baseprofiles import Spring, Summer, Fall, PROFILES, validate_profile
 
 
 # ===================================================================
-# Summer 2012 profile
+# Summer 2013 profile
 # ===================================================================
-class Summer12(Summer):
-    input = ('data/2012-summer/bh2012s1.txt', 'data/2012-summer/bh2012s2.txt')
+class Summer13(Summer):
+    input = ('data/2013-summer/bh2013s1.txt', 'data/2013-summer/bh2013s2.txt')
     terms = {
-        'Summer I/May Term': (date(2012, 5, 11), date(2012, 6, 5), 'May 11-June 5'),
-        'Summer I':  (date(2012, 6, 6), date(2012, 7, 3), 'June 6-July 3'),
-        'Summer II':  (date(2012, 7, 9), date(2012, 8, 9), 'July 9-Aug. 9'),
+        'Summer I/May Term': (date(2013, 5, 11), date(2013, 6, 5), 'May 11-June 5'),
+        'Summer I':  (date(2013, 6, 5), date(2013, 7, 3), 'June 5-July 3'),
+        'Summer II':  (date(2013, 7, 9), date(2013, 8, 8), 'July 9-Aug. 8'),
     }
     saxon_params = {'schedule-title': 'Summer 2012 Credit'}
 
