@@ -23,7 +23,7 @@ class Summer13(Summer):
     terms = {
         'Summer':  (date(2013, 5, 11), date(2013, 8, 8), 'May 11-Aug. 8'),
     }
-    saxon_params = {'schedule-title': 'Summer 2013 Credit'}
+
 
 # ===================================================================
 # Fall 2012 profiles
