@@ -314,6 +314,7 @@
             <xsl:choose>
                 <xsl:when test="ancestor::term/@name = 'Fall'">FA</xsl:when>
                 <xsl:when test="ancestor::term/@name = 'Spring'">SP</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Summer'">SU</xsl:when>
                 <xsl:when test="ancestor::term/@name = 'Summer I/May Term'">S1</xsl:when>
                 <xsl:when test="ancestor::term/@name = 'Summer I'">S1</xsl:when>
                 <xsl:when test="ancestor::term/@name = 'Summer II'">S2</xsl:when>
