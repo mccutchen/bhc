@@ -161,6 +161,8 @@
                 <pattern match="ITSE 1432-23401" />
                 <pattern match="ITSE 2310-23503" />
                 <pattern match="ITSE 2404-23401" />
+                <pattern match="ITSE 2404-23501" />
+                <pattern match="ITSE 2404-23502" />
 				
                 <pattern match="ITSE 2417-23001" />
                 <pattern match="ITSE 2417-23502" />
@@ -168,6 +170,9 @@
 			
                 <pattern match="ITSE 2437-23501" />
                 <pattern match="ITSE 2438-23401" />
+                <pattern match="ITSE 2438-23501" />
+                <pattern match="ITSE 2438-23502" />
+				
                 <pattern match="ITSE 2453-23501" />
             </topic>
 
@@ -200,6 +205,7 @@
             <topic name="Cisco Academy">
                 <pattern match="ITCC 2408-23401" />            
                 <pattern match="ITCC 2410-32401" />            
+                <pattern match="ITCC 2410-23401" />            
 
                 <pattern match="ITCC 1401-2426" />            
                 <pattern match="ITCC 1401-2700" />
@@ -539,11 +545,13 @@
                 <subtopic name="Clinical - Emergency Medical Technology/Technician">    
 					<pattern match="EMSP 1160-23220" />
 					<pattern match="EMSP 1160-23221" />
+					<pattern match="EMSP 1160-23222" />
 
                 </subtopic>
 
                 <subtopic name="Mass Disaster Response, A Shift">
-            		<pattern match="EMSP 1391-23201" />
+            		<pattern match="EMSP 1391-23201" />					
+                    <pattern match="EMSP 1391-23214" />
                     <pattern match="EMSP 1391-23215" />
                 </subtopic>
             </topic>
@@ -563,6 +571,7 @@
                 <comments></comments>
 				<pattern match="HPRS 1203-23001" />
                 <pattern match="RNSG 1108-23001" />
+                <pattern match="RNSG 1108-27001" />
 				
                 <pattern match="RNSG 1211-23001" />                
                 <pattern match="RNSG 1301-23001" />                
@@ -641,6 +650,7 @@
             <topic name="">
                 <comments></comments>
                 <pattern match="RADR 1201" />
+                <pattern match="RADR 1367" />
 				
                 <pattern match="RADR 1202-23201" />
             </topic>
@@ -707,6 +717,7 @@
                 <pattern match="ARTS 1301-23080" />
 				
                 <pattern match="ARTS 1301-23250" />
+                <pattern match="ARTS 1301-23280" />				
                 <pattern match="ARTS 1301-23420" />
                 <pattern match="ARTS 1301-23421" />
                 <pattern match="ARTS 1301-23422" />
@@ -727,6 +738,7 @@
             <topic name="Problems In Contemporary Art">
                 <pattern match="ARTS 1170-23200" />
                 <pattern match="ARTS 1170-23201" />
+                <pattern match="ARTS 1170-23202" />
 
             </topic>
             
@@ -766,6 +778,7 @@
                 <pattern match="ARTS 2312-23508" />
                 <pattern match="ARTS 2346-23001" />
                 <pattern match="ARTS 2346-23200" />
+                <pattern match="ARTS 2347-23200" />
 				
                 <pattern match="ARTS 2347-23001" />
                 <pattern match="ARTS 2347-23003" />
@@ -994,7 +1007,9 @@
                 <pattern match="DANC 1223-23002" />
                 <pattern match="DANC 1223-23501" />
                 <pattern match="DANC 2222-23501" />				
-                <pattern match="DANC 2223-23002" />				
+                <pattern match="DANC 2223-23002" />		
+                <pattern match="DANC 2223-23501" />		
+						
             </topic>
 
             <topic name="Jazz">
@@ -1020,9 +1035,11 @@
                 <pattern match="DANC 1342-23502" />
 				
                 <pattern match="DANC 2141-23001" />
+                <pattern match="DANC 2141-23201" />				
                 <pattern match="DANC 2142-23250" />
 				
                 <pattern match="DANC 2341-23001" />
+                <pattern match="DANC 2341-23201" />				
                 <pattern match="DANC 2341-23501" />
                 <pattern match="DANC 2342-23001" />
                 <pattern match="DANC 2342-23002" />
@@ -1095,11 +1112,12 @@
                 <pattern match="DRAM 2352-23501" />
             </topic>
             <topic name="Rehearsal">
-                <subtopic name="First Play, Spring 2013">
-                	<pattern match="DRAM 1221-23735" />
-                	<pattern match="DRAM 1221-23736" />
+                 
+               	<pattern match="DRAM 1220-23001" />
+               	<pattern match="DRAM 1221-23735" />
+               	<pattern match="DRAM 1221-23736" />
                     
-                </subtopic>
+                
                 <subtopic name="Second Play, Spring 2013">
                 	<pattern match="DRAM 1221-2736" />
                   <pattern match="DRAM 1221-2738" />
@@ -1232,6 +1250,7 @@
 		             <pattern match="MUEN 1152-23502" />
                      <pattern match="MUEN 1152-23700" />
                      <pattern match="MUEN 1152-23701" />
+                     <pattern match="MUEN 1152-23702" />
                      <pattern match="MUEN 1152-23750" />
    				</subtopic>
 								
@@ -1293,10 +1312,13 @@
 					<pattern match="MUAP 1109-23001" />
 					<pattern match="MUAP 1109-23002" />
 
+					<pattern match="MUAP 1113-23001" />
 					<pattern match="MUAP 1115-23001" />
 					<pattern match="MUAP 1117-23001" />
 					<pattern match="MUAP 1117-23002" />
 					<pattern match="MUAP 1117-23003" />
+					<pattern match="MUAP 1117-23004" />
+					
 					<pattern match="MUAP 1121-23001" />
 					<pattern match="MUAP 1121-23002" />
 					<pattern match="MUAP 1125-23001" />
@@ -1310,11 +1332,13 @@
 					<pattern match="MUAP 1137-23001" />
 					<pattern match="MUAP 1137-23002" />
 					<pattern match="MUAP 1137-23003" />					
+					<pattern match="MUAP 1137-23004" />					
 					<pattern match="MUAP 1141-23001" />
 					<pattern match="MUAP 1141-23002" />
 					<pattern match="MUAP 1145-23001" />
 					<pattern match="MUAP 1145-23002" />
 					<pattern match="MUAP 1149-23001" />
+					<pattern match="MUAP 1149-23002" />
 					<pattern match="MUAP 1153-23001" />
 					<pattern match="MUAP 1153-23002" />
 					<pattern match="MUAP 1157-23001" />
@@ -1332,9 +1356,11 @@
 					<pattern match="MUAP 2201-23001" />
 					<pattern match="MUAP 2205-23001" />
 					<pattern match="MUAP 2209-23001" />
+					<pattern match="MUAP 2209-23002" />
 					<pattern match="MUAP 2217-23001" />
 					<pattern match="MUAP 2217-23002" />
 					<pattern match="MUAP 2217-23003" />
+					<pattern match="MUAP 2261-23002" />
                  </subtopic>              
    
    
