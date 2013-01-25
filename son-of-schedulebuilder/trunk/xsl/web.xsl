@@ -343,6 +343,7 @@
             <xsl:choose>
                 <xsl:when test="ancestor::term/@name = 'Fall'">FA</xsl:when>
                 <xsl:when test="ancestor::term/@name = 'Spring'">SP</xsl:when>
+                <xsl:when test="ancestor::term/@name = 'Summer'">SU</xsl:when>
                 <xsl:when test="ancestor::term/@name = 'Summer I/May Term'">S1</xsl:when>
                 <xsl:when test="ancestor::term/@name = 'Summer I'">S1</xsl:when>
                 <xsl:when test="ancestor::term/@name = 'Summer II'">S2</xsl:when>
@@ -543,6 +544,9 @@
         <p>
             If you don't find the class you're looking for in this term, try
             <xsl:choose>
+            <xsl:when test="ancestor::term/@name = 'Summer'">
+                <a href="../summer/">Summer</a>.
+            </xsl:when>
             <xsl:when test="ancestor::term/@name = 'Summer I/May Term'">
                 <a href="../summer_i/">Summer I</a> or <a href="../summer_ii/">Summer II</a>.
             </xsl:when>
