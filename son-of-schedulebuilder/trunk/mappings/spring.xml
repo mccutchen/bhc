@@ -748,6 +748,8 @@
                 <pattern match="ARTS 2314-23001" /> 
                 <pattern match="ARTS 2348-23001" />
                 <pattern match="ARTS 2349-23001" />
+                <pattern match="ARTS 2348-23200" />
+                <pattern match="ARTS 2349-23200" />
 							
             </topic>
             
@@ -1023,6 +1025,7 @@
                 <pattern match="DANC 2248-23001" />
                 <pattern match="DANC 2248-23501" />
                 <pattern match="DANC 2248-23502" />
+                <pattern match="DANC 2248-23701" />
             </topic>
 			
 			
@@ -1044,6 +1047,7 @@
                 <pattern match="DANC 2342-23001" />
                 <pattern match="DANC 2342-23002" />
                 <pattern match="DANC 2342-23501" />
+                <pattern match="DANC 2342-23702" />
             </topic>
             <topic name="Ballet Technique">
                 <pattern match="DANC 2141-2001" />
@@ -1065,6 +1069,7 @@
               <pattern match="DANC 2213-23001" />              
               <pattern match="DANC 2212-23051" />              
               <pattern match="DANC 2213-23051" />              
+              <pattern match="DANC 2213-23201" />              
           </topic>
 
 
@@ -1149,6 +1154,7 @@
                 <pattern match="MUSI 1306-23008" />		
                 <pattern match="MUSI 1306-23009" />		
                 <pattern match="MUSI 1306-23010" />		
+                <pattern match="MUSI 1306-23202" />
 										
                 <pattern match="MUSI 1306-23300" />								
                 <pattern match="MUSI 1306-23301" />								
