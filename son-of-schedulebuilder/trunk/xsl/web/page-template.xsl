@@ -82,8 +82,10 @@
 
         <xsl:variable name="parent-names" select="if ($multiple-terms) then (for $parent in (ancestor::element() except (ancestor::schedule, ancestor::division)) return $parent) else (for $parent in (ancestor::element() except (ancestor::schedule, ancestor::division, ancestor::term)) return $parent)" />
 
+<!--  2013-01-28  V. Very Ugly Hack - Since I cannot figure out the python, I MANUALLY insert the Term - HardCoded - into the breadcrumb. This has to be done for each semester. Yiked! - I know. spring, fall, summer -->
+
         <xsl:variable name="schedule-root">
-            <xsl:value-of select="if ($parent-names) then string-join(for $x in $parent-names return '../', '') else '../'" />
+            <xsl:value-of select="if ($parent-names) then string-join(for $x in $parent-names return '../spring', '') else '../spring'" />
         </xsl:variable>
 
         <div id="breadcrumbs">
