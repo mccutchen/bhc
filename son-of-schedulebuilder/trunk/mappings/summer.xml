@@ -96,11 +96,15 @@
 
         <topic name="Introduction to Computing">
             <comments>NOTE:  ITSC 1401 is a technical/occupational course required for certain certificate and associate degree plans.  It will not meet the Core Curriculum and/or Associate in Arts or Associate in Sciences requirements, and is not for transfer to a four-year school.</comments>
-		    <pattern match="ITSC 1401-2300" />		
+		    <pattern match="ITSC 1401-25300" />		
 		    <pattern match="ITSC 1401-2501" />
         </topic>
 
         <topic name="CIT CORE">
+        <pattern match="ITSC 1405-25400" />        
+        <pattern match="ITSC 1425-26400" />        
+
+
         <pattern match="ITSE 1429-2426" />        
         <pattern match="ITSE 1429-2501" />
         </topic>
@@ -109,17 +113,24 @@
           <pattern match="INEW 2318-2745" />        
           <pattern match="INEW 2334-2745" />
           <pattern match="ITSE 1407-2745" />
-          <pattern match="ITSE 1402-2489" />		  
+
+
+          <pattern match="ITSE 1402-24489" />	
+          <pattern match="ITSE 1407-24745" />
+          <pattern match="ITSE 1407-25400" />		  
+          <pattern match="ITSE 1430-25700" />
+          <pattern match="ITSE 2417-25500" />
+          <pattern match="ITSE 2405-25700" />
+          <pattern match="ITSE 2459-25700" />
+		  
+		  	  
           <pattern match="ITSE 2318-2745" />
-          <pattern match="ITSE 1430-2501" />
           <pattern match="ITSE 2410-2501" />		  
-          <pattern match="ITSE 2417-2502" />
-          <pattern match="ITSE 1407-2426" />
-          <pattern match="ITSE 1407-2401" />		  
-          <pattern match="INEW 2438-2501" />
+
+          <pattern match="INEW 2438-26500" />
+		  
           <pattern match="INEW 2438-2502" />		  
           <pattern match="ITSE 2453-2501" />
-          <pattern match="ITSE 2459-2501" />
 		  
        </topic>
 
@@ -131,9 +142,16 @@
         </topic>
 
         <topic name="Microsoft Academy">
-          <pattern match="ITMT 1402-2501" />
           <pattern match="ITMT 1470-2501" />
-          <pattern match="ITNW 1408-2501" />
+
+
+          <pattern match="ITMT 1402-25001" />
+          <pattern match="ITMT 1473-25001" />
+
+          <pattern match="ITNW 1408-25001" />
+          <pattern match="ITNW 1425-25400" />
+
+
           <pattern match="ITMT 1402-2426" />
           <pattern match="ITMT 1470-2426" />
           <pattern match="ITNW 1408-2426" />
@@ -144,10 +162,12 @@
         <topic name="Web Development and E-commerce">
           <pattern match="ITSE 1301-2001" />
           <pattern match="IMED 1416-2427" />
-          <pattern match="ITSE 1303-2401" />
-          <pattern match="ITSE 1303-2426" />		  
-          <pattern match="ITSE 1346-2401" />
-          <pattern match="ITSE 1346-2426" />		  
+		  
+          <pattern match="ITSE 1303-25400" />
+          <pattern match="ITSE 1303-25700" />		 		   
+          <pattern match="ITSE 1346-25400" />
+          <pattern match="ITSE 1346-25700" />	
+		  	  
           <pattern match="IMED 1416-2330" />
           <pattern match="IMED 1416-2401" />
         </topic>
@@ -195,26 +215,29 @@
           <pattern match="COSC 1300-2427" />
           <pattern match="COSC 1300-2300" />
           <pattern match="COSC 1300-2001" />
-          <pattern match="COSC 1301-2001" />
-          <pattern match="COSC 1301-2010" />
-          <pattern match="COSC 1301-2245" />
-          <pattern match="COSC 1301-2300" />
-          <pattern match="COSC 1301-2301" />
-          <pattern match="COSC 1301-2305" />
-          <pattern match="COSC 1301-2401" />
-          <pattern match="COSC 1301-2402" />
-          <pattern match="COSC 1301-2403" />		  
-          <pattern match="COSC 1301-2405" />
-          <pattern match="COSC 1301-2489" />
-          <pattern match="COSC 1301-2510" />
+
+		  
+          <pattern match="COSC 1301-24245" />
+          <pattern match="COSC 1301-24300" />
+          <pattern match="COSC 1301-24489" />		  
+          <pattern match="COSC 1301-25001" />
+          <pattern match="COSC 1301-25300" />
+          <pattern match="COSC 1301-25400" />
+          <pattern match="COSC 1301-25401" />
+          <pattern match="COSC 1301-25500" />
+          <pattern match="COSC 1301-26001" />		  
+          <pattern match="COSC 1301-26300" />
+          <pattern match="COSC 1301-26400" />
+          <pattern match="COSC 1301-26500" />
+          <pattern match="COSC 1401-25400" />		  
+          <pattern match="COSC 1401-26400" />
+
           <pattern match="COSC 1300-2428" />
           <pattern match="COSC 1300-2429" />
           <pattern match="COSC 1301-2428" />
           <pattern match="COSC 1301-2429" />
           <pattern match="COSC 1300-2309" />
           <pattern match="COSC 1301-2309" />
-          <pattern match="COSC 1401-2491" />		  
-          <pattern match="COSC 1401-2010" />
           <pattern match="COSC 1401-2301" />
           <pattern match="COSC 1401-2305" />
           <pattern match="COSC 1401-2401" />
@@ -234,20 +257,20 @@
 
        <topic name="Programming">
           <pattern match="COSC 1415-24745" />
+          <pattern match="COSC 1415-25400" />
+          <pattern match="COSC 1430-25700" />
+          <pattern match="COSC 1436-24489" />
+          <pattern match="COSC 1436-24745" />
+          <pattern match="COSC 1436-25400" />
+          <pattern match="COSC 1437-25500" />
+          <pattern match="COSC 1437-25700" />
+          <pattern match="COSC 2436-26500" />		  
 
-
-
-          <pattern match="COSC 1436-2745" />
+		  
           <pattern match="COSC 1309-2426" />
           <pattern match="COSC 1309-2501" />          
-          <pattern match="COSC 1430-2501" />
-          <pattern match="COSC 1437-2501" />
-          <pattern match="COSC 1437-2502" />
           <pattern match="COSC 1415-2426" />
-          <pattern match="COSC 1436-2426" />
-          <pattern match="COSC 1436-2489" />
           <pattern match="COSC 2430-2501" />
-          <pattern match="COSC 2436-2501" />		  
           <pattern match="COSC 2436-2502" />
           <pattern match="COSC 1415-2401" />
           <pattern match="COSC 1436-2401" />
@@ -258,14 +281,15 @@
         <comments>NOTE:  BCIS courses are for those students wishing to take transferable courses in CIS/CIT. BCIS courses may be substituted for comparable courses in CIT degree programs.</comments>
 
         <topic name="Business Computer Applications">
-          <pattern match="BCIS 1405-2491" />
-          <pattern match="BCIS 1405-2001" />
+          <pattern match="BCIS 1405-24489" />
+          <pattern match="BCIS 1405-25001" />
+          <pattern match="BCIS 1405-25400" />
+          <pattern match="BCIS 1405-25401" />
+          <pattern match="BCIS 1405-26001" />
+          <pattern match="BCIS 1405-26401" />
+          <pattern match="BCIS 1405-26402" />
 		  
-          <pattern match="BCIS 1405-2010" />
-          <pattern match="BCIS 1405-2301" />
-          <pattern match="BCIS 1405-2305" />
-          <pattern match="BCIS 1405-2401" />
-          <pattern match="BCIS 1405-2402" />
+		  
           <pattern match="BCIS 1405-2403" />
           <pattern match="BCIS 1405-2405" />
           <pattern match="BCIS 1405-2406" />		  
@@ -279,8 +303,7 @@
         </topic>
       </subject>
 
-
-        <!-- 2011 Medical Front Office (Sharon Burton)
+     <!-- 2011 Medical Front Office (Sharon Burton)
             ======================================================================== -->
       <subject name="Medical Office Management / Administration">
         <topic name="Medical Front Office Assistant - First Semester">
@@ -530,11 +553,15 @@
 
       <subject name="Dance">
         <topic name="Composition">
-          <pattern match="DANC 1101-2201" />
+          <pattern match="DANC 1101-25001" />
+          <pattern match="DANC 1102-25601" />
+          <pattern match="DANC 1103-25701" />
         </topic>
+		
         <topic name="Dance Appreciation">
           <pattern match="DANC 2303-2001" />
-          <pattern match="DANC 2304-2421" />            <!-- Jill 2011-01-27  -->
+		  
+          <pattern match="DANC 2304-25421" />
         </topic>
 
 
@@ -549,25 +576,28 @@
 
         <topic name="Ballet">
           <pattern match="DANC 1341-2202" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
-          <pattern match="DANC 1342-2201" />
-          <pattern match="DANC 1342-2202" />  <!--  added per Linda 2010-06-09  -->
-          <pattern match="DANC 2341-2201" />
-          <pattern match="DANC 2342-2201" />
+
+          <pattern match="DANC 1342-25201" />
+          <pattern match="DANC 1342-25701" />  		  
+          <pattern match="DANC 2341-25201" />
+          <pattern match="DANC 2341-25701" />
+          <pattern match="DANC 2342-25201" />
+          <pattern match="DANC 2342-25701" />
+		  
           <pattern match="DANC 1341-2701" />
           <pattern match="DANC 1342-2701" />
-          <pattern match="DANC 2341-2701" />
-          <pattern match="DANC 2342-2701" />
           <pattern match="DANC 2301-2201" />
           <pattern match="DANC 2301-2701" />          
           <pattern match="DANC 2301-2710" />          
         </topic>
 
           <topic name="Jazz">
-              <pattern match="DANC 1247-2701" />
-              <pattern match="DANC 1248-2701" />
+              <pattern match="DANC 1247-25701" />
+              <pattern match="DANC 1248-25701" />
+			  
               <pattern match="DANC 1248-2702" />              <!-- Added by SS 6/24/10 w/no input from BCSA -->
-              <pattern match="DANC 2247-2701" />
-              <pattern match="DANC 2248-2701" />
+              <pattern match="DANC 2247-25701" />
+              <pattern match="DANC 2248-25701" />
 			  
           </topic>
           <topic name="Aerial Dance">
@@ -578,18 +608,21 @@
           </topic>
 
           <topic name="Hip Hop">
-              <pattern match="DANC 1222-2201" />
-              <pattern match="DANC 1223-2201" />
+              <pattern match="DANC 1222-25701" />
+              <pattern match="DANC 1223-25701" />
+			  
               <pattern match="DANC 1222-2701" />
               <pattern match="DANC 1222-2702" />              <!--  added per Linda 2010-06-24  -->
               <pattern match="DANC 1223-2701" />
-              <pattern match="DANC 2222-2701" />
-              <pattern match="DANC 2223-2701" />
+			  
+			  
+              <pattern match="DANC 2222-25701" />
+              <pattern match="DANC 2223-25701" />
           </topic>
 
           <topic name="Social Dance">  <!-- added RI 2012-04-13  Dance dept has no staff  -->
-              <pattern match="DANC 2212-2050" />              
-              <pattern match="DANC 2213-2050" />              
+              <pattern match="DANC 2212-25050" />              
+              <pattern match="DANC 2213-25050" />              
           </topic>
 
           <topic name="Summer Dance Intensive">
@@ -621,7 +654,8 @@
           <pattern match="DRAM 2366-2421" />
         </topic>
         <topic name="Theater Practicum">
-          <pattern match="DRAM 1120-2737" />
+          <pattern match="DRAM 1120-25737" />
+		  
           <pattern match="DRAM 1120-2738" />
           <pattern match="DRAM 1120-2739" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
           <pattern match="DRAM 1120-2740" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
@@ -730,12 +764,13 @@
         <topic name="Music-private Lessons">
           <subtopic name="Beginning">
             <comments>Note: Ensemble participation is mandatory to take MUAP lessons. These courses are private lesson courses, by audition only.  Students may need to audition in advance to be placed at the correct level. An accompanist fee may be required.  Enrollment in a music ensemble is required for all students who are accepted into private lesson courses.  Please call the Music Office at 972-860-4563 for more information.</comments>
-            <pattern match="MUAP 1101-2200" />
-            <pattern match="MUAP 1105-2200" />
-            <pattern match="MUAP 1109-2200" />
+            <pattern match="MUAP 1101-25200" />
+			<pattern match="MUAP 1105-25200" />            
+			<pattern match="MUAP 1109-25200" />
+            <pattern match="MUAP 1113-25200" />            
+			
             <pattern match="MUAP 1109-2201" />
             <pattern match="MUAP 1109-2202" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
-            <pattern match="MUAP 1113-2200" />            
             <pattern match="MUAP 1115-2200" />
             <pattern match="MUAP 1117-2200" />	
             <pattern match="MUAP 1117-2201" />						
@@ -773,41 +808,46 @@
       <topic name="none">
 				<comments>NOTE: The following courses are available to anyone interested in the Nursing Program.  Acceptance into the program is NOT required. For more information call 972-860-4754.</comments>
 				<pattern match="RNSG 1108-2201" />
-				<pattern match="HPRS 1203-2201" />
                 <pattern match="RNSG 1211-2201" />
-                <pattern match="RNSG 1301-2201" />
+				
+				<pattern match="HPRS 1203-25001" />
+                <pattern match="RNSG 1301-25001" />
+                <pattern match="RNSG 1311-25001" />
       </topic>
 
       <topic name="Second Semester Program Students">
-				<pattern match="RNSG 1441-2201" />
-				<pattern match="RNSG 1144-2201" />
-				<pattern match="RNSG 1144-2202" />
-				<pattern match="RNSG 1144-2203" />
-                <pattern match="RNSG 1144-2204" />
-                <pattern match="RNSG 2462-2601" />
-                <pattern match="RNSG 2462-2602" />
-                <pattern match="RNSG 2462-2603" />
-                <pattern match="RNSG 2462-2604" />
+
+
+				<pattern match="RNSG 1144-25201" />
+				<pattern match="RNSG 1144-25202" />
+				<pattern match="RNSG 1144-25203" />
+                <pattern match="RNSG 1144-25204" />
+				<pattern match="RNSG 1441-25201" />
+                <pattern match="RNSG 2462-25261" />
+                <pattern match="RNSG 2462-25262" />
+                <pattern match="RNSG 2462-25263" />
+                <pattern match="RNSG 2462-25264" />
       </topic>			
 
       <topic name="Third Semester Program Students">
-				<pattern match="RNSG 2201-2201" />
-				<pattern match="RNSG 2160-2601" />
-				<pattern match="RNSG 2160-2602" />
-				<pattern match="RNSG 2160-2603" />
-                <pattern match="RNSG 2160-2604" />
-                <pattern match="RNSG 2160-2605" />
-                <pattern match="RNSG 2160-2606" />
-                <pattern match="RNSG 2208-2201" />
-                <pattern match="RNSG 2161-2601" />
-                <pattern match="RNSG 2161-2602" />
-                <pattern match="RNSG 2161-2603" />
-                <pattern match="RNSG 2161-2604" />
-                <pattern match="RNSG 2161-2605" />
-                <pattern match="RNSG 2161-2606" />
+				
+				<pattern match="RNSG 2160-25261" />
+				<pattern match="RNSG 2160-25262" />
+				<pattern match="RNSG 2160-25263" />
+                <pattern match="RNSG 2160-25264" />
+                <pattern match="RNSG 2160-25265" />
+                <pattern match="RNSG 2160-25266" />
+                <pattern match="RNSG 2161-24263" />
+                <pattern match="RNSG 2161-24264" />
+                <pattern match="RNSG 2161-24265" />
+                <pattern match="RNSG 2161-24266" />
+                <pattern match="RNSG 2161-25261" />
+                <pattern match="RNSG 2161-25262" />
+
+				<pattern match="RNSG 2201-25201" />
+                <pattern match="RNSG 2208-25201" />
       </topic>
 		</subject>
-
 
       <!--=======================================================================
     		Health and Human Services - Radiologic Sciences (Monica Wenthold and Christi Carter)
@@ -896,10 +936,13 @@
 		 		<subtopic name="Paramedic Class #29, B shift">
 		 			<pattern match="EMSP 2338-2226" />
 		 			<pattern match="EMSP 2338-2203" />
-                    <pattern match="EMSP 2143-2226" />
-                    <pattern match="EMSP 2143-2227" />                    <!-- Nancy 2011-01-31  -->              
+					
+                    <pattern match="EMSP 2143-25233" />
+                    <pattern match="EMSP 2463-25263" />
+                    
+					<pattern match="EMSP 2143-2227" />                    <!-- Nancy 2011-01-31  -->              
                     <pattern match="EMSP 2143-2201" />
-                    <pattern match="EMSP 2463-2726" />
+					
                 </subtopic>
 		 		<subtopic name="Paramedic Class #29, B shift">
                     <pattern match="EMSP 2434-2227" />
