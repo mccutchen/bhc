@@ -756,6 +756,7 @@
             <topic name="Art Metals">
                 <pattern match="ARTS 2312-23008" />
                 <pattern match="ARTS 2311-23013" />
+                <pattern match="ARTS 2311-23210" />
                 <pattern match="ARTS 2311-23510" />
                 <pattern match="ARTS 2312-23509" />
                 <pattern match="ARTS 2341-23001" />
@@ -763,7 +764,6 @@
                 <pattern match="ARTS 2342-23001" />
                 <pattern match="ARTS 2342-23501" />
             </topic>
-
 
             <topic name="Ceramics">
                 <pattern match="ARTS 2311-23020" />
@@ -971,8 +971,11 @@
           </topic>
             <topic name="Dance Practicum">
                 <pattern match="DANC 1351-23235" />
-                <pattern match="DANC 2352-2704" />
+                <pattern match="DANC 1352-23235" />
+                <pattern match="DANC 2351-23235" />
+                <pattern match="DANC 2352-23235" />
             </topic>
+						
           <topic name="Repertoire">
                 <pattern match="DANC 1305-2200" /> <!-- Jill 10-09-02 -->
                 <pattern match="DANC 1305-2201" /> <!-- ri 11-02-25 -->
