@@ -963,6 +963,7 @@
                 <pattern match="DANC 2303-23201" />
                 <pattern match="DANC 2303-23401" />
                 <pattern match="DANC 2303-23420" />
+                <pattern match="DANC 2304-23430" />
             </topic>    
 
           <topic name="Body Conditioning">
