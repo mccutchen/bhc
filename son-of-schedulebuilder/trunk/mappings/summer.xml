@@ -446,25 +446,27 @@
             </topic>
 
             <topic name="Design">
-                <pattern match="ARTS 1311-2001" />                <!-- jill 2011-01-27 -->
+                <pattern match="ARTS 1311-25001" />               
+				
                 <pattern match="ARTS 1312-2001" />
             </topic>
 
             <topic name="Drawing">
-                <pattern match="ARTS 1316-2701" />
-                <pattern match="ARTS 1317-2701" />
-                <pattern match="ARTS 2312-2704" />
-                <pattern match="ARTS 2312-2003" />
-                <pattern match="ARTS 2311-2004" />
+                <pattern match="ARTS 1312-25705" />
+                <pattern match="ARTS 1316-25001" />
+                <pattern match="ARTS 1316-25701" />
+                <pattern match="ARTS 1317-24235" />
+                <pattern match="ARTS 1317-25001" />
+				
+				
                 <pattern match="ARTS 2312-2004" />
                 <pattern match="ARTS 1316-2002" />
                 <pattern match="ARTS 1317-2002" />
                 <pattern match="ARTS 2311-2006" />
                 <pattern match="ARTS 2312-2006" />
-                <pattern match="ARTS 1317-2235" />                <!-- jill 2011-01-25  -->
-                <pattern match="ARTS 2311-2235" />                <!-- jill 2011-01-25  -->
-                <pattern match="ARTS 2312-2235" />                <!-- jill 2011-01-25  -->
             </topic>
+
+
 
             <topic name="Drawing Workshop">
                 <pattern match="ARTS 1316-2225" />
@@ -650,20 +652,20 @@
 
       <subject name="Drama">
         <topic name="Film Appreciation">
-          <pattern match="DRAM 2366-2420" />
+          <pattern match="DRAM 2366-25001" />
+		  
           <pattern match="DRAM 2366-2421" />
         </topic>
         <topic name="Theater Practicum">
           <pattern match="DRAM 1120-25737" />
+          <pattern match="DRAM 1220-25737" />
 		  
           <pattern match="DRAM 1120-2738" />
-          <pattern match="DRAM 1120-2739" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
-          <pattern match="DRAM 1120-2740" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
           <pattern match="DRAM 1220-2737" />
           <pattern match="DRAM 1220-2738" />
-          <pattern match="DRAM 1220-2739" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->
-          <pattern match="DRAM 1220-2740" /> <!-- Added by SS 6/24/10 w/no input from BCSA -->        </topic>
+		  </topic>
       </subject>
+
 
       <subject name="Music">
         <topic name="Music Appreciation">
