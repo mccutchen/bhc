@@ -174,16 +174,19 @@
 
 
         <topic name="Application Software">
-          <pattern match="ITSC 1409-2401" />
-          <pattern match="ITSC 1409-2402" />
-          <pattern match="ITSC 1409-2426" />
-          <pattern match="ITSW 1401-2401" />
-          <pattern match="ITSW 1401-2402" />
-          <pattern match="ITSW 1401-2426" />		  
-          <pattern match="ITSW 1404-2401" />          
-          <pattern match="ITSW 1404-2402" />          		  
-          <pattern match="ITSW 1404-2426" />          
-          <pattern match="ITSW 1407-2401" />
+          <pattern match="ITSW 1401-25401" />
+          <pattern match="ITSW 1401-25402" />
+          <pattern match="ITSW 1404-25401" />
+          <pattern match="ITSW 1404-25402" />
+          <pattern match="ITSW 1407-25401" />
+          <pattern match="ITSW 1407-25402" />		  
+          <pattern match="ITSW 1410-25401" />          
+          <pattern match="ITSW 1410-25402" />     		       		  
+          <pattern match="ITSC 1409-25401" />          
+          <pattern match="ITSC 1409-25402" />
+		  
+
+
           <pattern match="ITSW 1407-2402" />
           <pattern match="ITSW 1407-2403" />
           <pattern match="ITSW 1407-2404" />
@@ -193,6 +196,7 @@
           <pattern match="ITSW 1410-2426" />
           <pattern match="POFI 2440-2426" />
         </topic>
+
 
      <!-- ??2011 Senior Adult classes that will be yanked before this subject is processed -->
         <topic name="Students 50+ Computer Classes">
@@ -349,15 +353,16 @@
 		
         <subject name="Art">
             <topic name="Art Appreciation">
-                <pattern match="ARTS 1301-2700" />
-                <pattern match="ARTS 1301-2001" />
-                <pattern match="ARTS 1301-2002" />	
-                <pattern match="ARTS 1301-2501" /> <!-- jill 20110110 -->
-                <pattern match="ARTS 1301-2502" />
-                <pattern match="ARTS 1301-2420" />
-                <pattern match="ARTS 1301-2421" />
-                <pattern match="ARTS 1301-2422" />
-                <pattern match="ARTS 1301-2423" />
+                <pattern match="ARTS 1301-24201" />
+                <pattern match="ARTS 1301-24420" />
+                <pattern match="ARTS 1301-24421" />
+                <pattern match="ARTS 1301-25001" />	
+                <pattern match="ARTS 1301-25002" /> 
+                <pattern match="ARTS 1301-25423" />
+                <pattern match="ARTS 1301-26422" />
+                <pattern match="ARTS 1301-26424" />
+                <pattern match="ARTS 1301-26426" />
+				
                 <pattern match="ARTS 1301-2004" />
                 <pattern match="ARTS 1301-2005" />
                 <pattern match="ARTS 1301-2201" />								
@@ -369,17 +374,17 @@
             </topic>
 
             <topic name="Art History">
-                <pattern match="ARTS 1303-2001" />
-                <pattern match="ARTS 1304-2002" />
-                <pattern match="ARTS 1303-2002" />
-                <pattern match="ARTS 1304-2001" />
-                <pattern match="ARTS 1303-2421" />				
-                <pattern match="ARTS 1303-2426" />  <!-- jill 20110110 -->
-                <pattern match="ARTS 1303-2427" />  <!-- jill 20110110 -->              
-                <pattern match="ARTS 1304-2420" />
+                <pattern match="ARTS 1303-25001" />
+                <pattern match="ARTS 1303-25421" />
+                <pattern match="ARTS 1303-25426" />
+                <pattern match="ARTS 1303-26427" />
+                <pattern match="ARTS 1304-25420" />				
+                <pattern match="ARTS 1304-26421" />  
+
           </topic>
 
-            <topic name="Art History">                <!-- jill 2011-01-20  -->
+
+            <topic name="Art History">               
                 <pattern match="ARTS 1303-2201" />
             </topic>
             <topic name="Computer Graphics Workshop">                <!-- Jill 20110110 -->
@@ -404,8 +409,9 @@
             </topic>
 
             <topic name="Art Metals">
-                <pattern match="ARTS 2341-2501" />			
-                <pattern match="ARTS 2342-2501" />
+                <pattern match="ARTS 2311-25225" />			
+                <pattern match="ARTS 2312-25225" />
+				
                 <pattern match="ARTS 2311-2501" />
                 <pattern match="ARTS 2312-2501" />
                 <pattern match="ARTS 2341-2001" />
@@ -425,11 +431,13 @@
             </topic>
 
             <topic name="Ceramics">
-                <pattern match="ARTS 2311-2001" />
-                <pattern match="ARTS 2312-2001" />
-                <pattern match="ARTS 2346-2001" />
-                <pattern match="ARTS 2347-2001" />
-                <pattern match="ARTS 2346-2004" />
+                <pattern match="ARTS 2311-24231" />
+                <pattern match="ARTS 2312-24231" />
+                <pattern match="ARTS 2312-25201" />
+                <pattern match="ARTS 2311-24702" />
+                <pattern match="ARTS 2312-25702" />
+				
+				
                 <pattern match="ARTS 2347-2004" />
                 <pattern match="ARTS 2311-2008" />
                 <pattern match="ARTS 2312-2008" />
@@ -445,6 +453,13 @@
                 <pattern match="ARTS 2312-2702" />
             </topic>
 
+            <topic name="Ceramics Workshop">
+                <pattern match="ARTS 2311-25001" />
+				
+                <pattern match="ARTS 2342-2225" />
+                <pattern match="ARTS 2311-2225" />
+            </topic>
+
             <topic name="Design">
                 <pattern match="ARTS 1311-25001" />               
 				
@@ -457,16 +472,19 @@
                 <pattern match="ARTS 1316-25701" />
                 <pattern match="ARTS 1317-24235" />
                 <pattern match="ARTS 1317-25001" />
-				
+                <pattern match="ARTS 1317-25701" />				
+                <pattern match="ARTS 2311-24235" />
+                <pattern match="ARTS 2311-25003" />
+                <pattern match="ARTS 2311-25227" />
+                <pattern match="ARTS 2312-24235" />
+                <pattern match="ARTS 2312-25227" />
+                <pattern match="ARTS 2311-25701" />
 				
                 <pattern match="ARTS 2312-2004" />
                 <pattern match="ARTS 1316-2002" />
-                <pattern match="ARTS 1317-2002" />
                 <pattern match="ARTS 2311-2006" />
                 <pattern match="ARTS 2312-2006" />
             </topic>
-
-
 
             <topic name="Drawing Workshop">
                 <pattern match="ARTS 1316-2225" />
@@ -488,7 +506,9 @@
             </topic>
 
             <topic name="Painting">
-                <pattern match="ARTS 2316-2001" />
+                <pattern match="ARTS 2311-25002" />
+				
+				
                 <pattern match="ARTS 2317-2001" />
                 <pattern match="ARTS 2311-2007" />
                 <pattern match="ARTS 2312-2007" />
@@ -503,9 +523,10 @@
                 <pattern match="ARTS 2312-2205" />				
             </topic>
 
-            <topic name="Photography Workshop">
-                <pattern match="ARTS 2356-2001" />
-                <pattern match="ARTS 2357-2001" />
+            <topic name="Photography">
+                <pattern match="ARTS 2311-25004" />
+                <pattern match="ARTS 2312-25004" />
+				
                 <pattern match="ARTS 2356-2225" />
                 <pattern match="ARTS 2357-2225" />
                 <pattern match="ARTS 2311-2230" />
@@ -515,12 +536,12 @@
           </topic>
 
             <topic name="Printmaking">
-                <pattern match="ARTS 2333-2701" />
-                <pattern match="ARTS 2334-2701" />
-                <pattern match="ARTS 2311-2703" />
+                <pattern match="ARTS 2311-24226" />
+                <pattern match="ARTS 2312-24226" />
+                <pattern match="ARTS 2311-25703" />
+				
                 <pattern match="ARTS 2312-2703" />
             </topic>
-
 
             <topic name="Printmaking Workshop">
                 <pattern match="ARTS 2333-2225" />
@@ -544,7 +565,8 @@
             </topic>
 
           <topic name="Sculpture">
-            <pattern match="ARTS 2326-2001" />
+            <pattern match="ARTS 2311-25705" />
+			
             <pattern match="ARTS 2327-2001" />
             <pattern match="ARTS 2311-2005" />
             <pattern match="ARTS 2312-2005" />
@@ -603,9 +625,10 @@
 			  
           </topic>
           <topic name="Aerial Dance">
-              <pattern match="DANC 1101-2701" />              
-              <pattern match="DANC 1102-2701" />              
-              <pattern match="DANC 1103-2701" />              
+              <pattern match="DANC 1101-25201" />              
+              <pattern match="DANC 1102-25201" />              
+              <pattern match="DANC 1103-25201" /> 
+			               
               <pattern match="DANC 1113-2701" />              
           </topic>
 
@@ -669,16 +692,14 @@
 
       <subject name="Music">
         <topic name="Music Appreciation">
-          <pattern match="MUSI 1304-2200" />  <!--  added ri 2010-05-21  -->
-          <pattern match="MUSI 1304-2001" />
-          <pattern match="MUSI 1306-2001" />
-          <pattern match="MUSI 1306-2002" />
-          <pattern match="MUSI 1306-2200" />  <!--  added ri 2010-05-21  -->
-          <pattern match="MUSI 1306-2500" />
+          <pattern match="MUSI 1304-24429" />
+          <pattern match="MUSI 1306-25428" />
+          <pattern match="MUSI 1306-25432" />	  
+          <pattern match="MUSI 1306-24429" />
+		  
           <pattern match="MUSI 1306-2426" />
           <pattern match="MUSI 1306-2427" />
           <pattern match="MUSI 1306-2428" />
-          <pattern match="MUSI 1306-2429" />  <!-- Jill 20110110 -->
           <pattern match="MUSI 1306-2003" />
           <pattern match="MUSI 1306-2004" />
           <pattern match="MUSI 1306-2431" />
