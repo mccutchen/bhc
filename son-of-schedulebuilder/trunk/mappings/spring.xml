@@ -975,6 +975,7 @@
                 <pattern match="DANC 1352-23235" />
                 <pattern match="DANC 2351-23235" />
                 <pattern match="DANC 2352-23235" />
+                <pattern match="DANC 2352-23236" />
             </topic>
 						
           <topic name="Repertoire">
