@@ -26,12 +26,12 @@ class Summer13(Summer):
 
 
 # ===================================================================
-# Fall 2012 profiles
+# Fall 2013 profiles
 # ===================================================================
-class Fall12(Fall):
-    input = 'data/2012-fall/BH2012FA.TXT'
+class Fall13(Fall):
+    input = 'data/2013-fall/BH2013FA.TXT'
     terms = {
-        'Fall': (date(2012, 8, 27), date(2012, 12, 13), 'Aug. 27-Dec. 13'),
+        'Fall': (date(2013, 8, 27), date(2013, 12, 13), 'Aug. 27-Dec. 13'),
     }
 
 
