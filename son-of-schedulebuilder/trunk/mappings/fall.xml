@@ -185,28 +185,44 @@
         <topic name="Skills Enhancements Courses">
           <comments>
 		</comments>
-          <pattern match="ITSC 1171-2401" />
-          <pattern match="ITSC 1171-2402" />
-          <pattern match="ITSC 1171-2403" />
-          <pattern match="ITSC 1171-2404" />                                  
+                <pattern match="ITSC 1171-21401" />
+                <pattern match="ITSC 1171-21402" />
+                <pattern match="ITSC 1171-21403" />
+                <pattern match="ITSC 1171-21404" />
         </topic>
 
         <topic name="Introduction to Computing">
           <comments>	
 		</comments>
-          <pattern match="ITSC 1401-2021" />
-          <pattern match="ITSC 1401-2521" />
+          <pattern match="ITSC 1401-21001" />
+          <pattern match="ITSC 1401-21300" />
+          <pattern match="ITSC 1401-21521" />
 		  
-          <pattern match="ITSC 1401-2401" />
-          <pattern match="ITSC 1401-2300" />
+          <pattern match="ITSC 1401-21401" />
         </topic>
 
         <topic name="Cit Core Courses">
-          <pattern match="ITNW 1425-2001" />
+          <pattern match="ITNW 1425-21001" />
+
+          <pattern match="ITNW 1408-21350" />
+          <pattern match="ITNW 1408-21401" />
+          <pattern match="ITNW 1408-21701" />
+          <pattern match="ITNW 1425-21401" />
+          <pattern match="ITNW 1425-21701" />
+          <pattern match="ITNW 2454-21501" />
+
+
+
           <pattern match="ITSE 1429-2001" />
-          <pattern match="ITSE 1429-2002" />          
-          <pattern match="ITSC 1405-2501" />
-          <pattern match="ITSC 1425-2501" />
+          <pattern match="ITSE 1429-2002" /> 
+		           
+          <pattern match="ITSC 1405-21401" />
+          <pattern match="ITSC 1405-21501" />
+          <pattern match="ITSC 1407-21501" />
+          <pattern match="ITSC 1425-21501" />
+		  <pattern match="ITSC 1442-21501" />
+
+
           <pattern match="ITNW 1425-2401" />
           <pattern match="ITSC 1405-2401" />
           <pattern match="ITSE 1429-2401" />
@@ -254,6 +270,11 @@
         <topic name="Microsoft Academy Courses">
           <comments>
             </comments>
+          <pattern match="ITMT 1403-21501" />
+          <pattern match="ITMT 1473-21350" />
+          <pattern match="ITMT 1473-21401" />
+
+
           <pattern match="ITMT 1402-2701" />
           <pattern match="ITMT 1402-2501" />
           <pattern match="ITMT 2401-2701" />
@@ -266,37 +287,54 @@
           <pattern match="ITSC 1416-2501" />
         </topic>
         <topic name="Cisco Academy Courses">
-          <pattern match="ITCC 1401-2401" />
-          <pattern match="ITCC 1404-2401" />
+          <pattern match="ITCC 1401-21401" />
+          <pattern match="ITCC 1404-21401" />
         </topic>
 
         <topic name="Information Security Courses">
-          <pattern match="ITSY 1400-2401" />
-          <pattern match="ITSY 1442-2401" />
-          <pattern match="ITSY 2400-2401" />
-          <pattern match="ITSY 2401-2401" />
+          <pattern match="ITSY 1400-21401" />
+          <pattern match="ITSY 1442-21401" />
+          <pattern match="ITSY 2400-21401" />
+          <pattern match="ITSY 2401-21401" />
         </topic>
 
         <topic name="Web Design and Development Courses">
           <pattern match="IMED 1416-2001" />
-     <!--     <pattern match="IMED 1416-2002" />   -->
-          <pattern match="ITSE 1303-2001" />
-          <pattern match="ITSE 1346-2001" />
-          <pattern match="ITSE 1406-2001" />
-          <pattern match="IMED 2449-2501" />
-          <pattern match="INEW 1440-2501" />
+
+          <pattern match="ITSE 1301-21001" />
+          <pattern match="ITSE 1303-21001" />
+          <pattern match="ITSE 1346-21001" />
+          <pattern match="ITSE 1406-21001" />
+          <pattern match="ITSE 1407-21001" />
+          <pattern match="ITSE 1407-21002" />
+          <pattern match="ITSE 1429-21001" />
+		  
+          <pattern match="ITSE 1350-21501" />
+          <pattern match="ITSE 1407-21501" />
+          <pattern match="ITSE 1411-21501" />
+          <pattern match="ITSE 1430-21501" />
+          <pattern match="ITSE 2404-21501" />
+          <pattern match="ITSE 2417-21501" />
+          <pattern match="ITSE 2434-21501" />
+          <pattern match="ITSE 2434-21502" />
+          <pattern match="ITSE 2438-21501" />
+
+          <pattern match="ITSE 1301-21401" />
+          <pattern match="ITSE 1303-21401" />
+          <pattern match="ITSE 1346-21401" />
+          <pattern match="ITSE 1406-21401" />
+          <pattern match="ITSE 1407-21401" />
+          <pattern match="ITSE 1411-21401" />
+          <pattern match="ITSE 1429-21401" />
+          <pattern match="ITSE 1432-21401" />
+
+
+          <pattern match="INEW 1440-21501" />
           <pattern match="ITNW 2454-2501" />
-          <pattern match="ITSE 1301-2501" />
-          <pattern match="ITSE 1411-2501" />
           <pattern match="IMED 1416-2401" />
           <pattern match="IMED 2449-2401" />
           <pattern match="INEW 1440-2401" />
           <pattern match="ITNW 2454-2401" />
-          <pattern match="ITSE 1301-2401" />
-          <pattern match="ITSE 1303-2401" />
-          <pattern match="ITSE 1346-2401" />
-          <pattern match="ITSE 1406-2401" />
-          <pattern match="ITSE 1411-2401" />
         </topic>
 
         <topic name="Application Software Courses">
@@ -389,7 +427,7 @@
 
       <subject name="Computer Science">
         <topic name="Introduction to Computing">
-          <pattern match="COSC 1301-2001" />
+          <pattern match="COSC 1301-21001" />
           <pattern match="COSC 1301-2002" />
           <pattern match="COSC 1301-2003" />
           <pattern match="COSC 1301-2004" /> 
@@ -437,23 +475,23 @@
           <pattern match="COSC 1401-2512" />
         </topic>
         <topic name="Programming Courses">
-          <pattern match="COSC 1309-2001" />
-          <pattern match="COSC 1309-2002" />          
-          <pattern match="COSC 1415-2001" />
-          <pattern match="COSC 1415-2002" />
-          <pattern match="COSC 1436-2001" />
-          <pattern match="COSC 1436-2002" />
-          <pattern match="COSC 1415-2501" />
-          <pattern match="COSC 1415-2502" />
-          <pattern match="COSC 1430-2501" />
-          <pattern match="COSC 1436-2501" />
-          <pattern match="COSC 1436-2502" />
-          <pattern match="COSC 1437-2501" />
-          <pattern match="COSC 1437-2502" />
-          <pattern match="COSC 2436-2502" />
-          <pattern match="COSC 1309-2401" />
-          <pattern match="COSC 1415-2401" />
-          <pattern match="COSC 1436-2401" />
+          <pattern match="COSC 1309-21001" />
+          <pattern match="COSC 1309-21002" />          
+          <pattern match="COSC 1415-21001" />
+          <pattern match="COSC 1415-21002" />
+          <pattern match="COSC 1436-21001" />
+          <pattern match="COSC 1436-21002" />
+          <pattern match="COSC 1415-21501" />
+          <pattern match="COSC 1415-21502" />
+          <pattern match="COSC 1430-21501" />
+          <pattern match="COSC 1436-21501" />
+          <pattern match="COSC 1436-21502" />
+          <pattern match="COSC 1437-21501" />
+          <pattern match="COSC 1437-21502" />
+          <pattern match="COSC 2436-21502" />
+          <pattern match="COSC 1309-21401" />
+          <pattern match="COSC 1415-21401" />
+          <pattern match="COSC 1436-21401" />
         </topic>
       </subject>
 
@@ -461,25 +499,26 @@
      <subject name="Computer Studies - Business Computer Information Systems">
         <comments></comments>
         <topic name="Business Computer Applications Courses">
-          <pattern match="BCIS 1405-2011" />
-          <pattern match="BCIS 1405-2012" />
-          <pattern match="BCIS 1405-2013" />
-          <pattern match="BCIS 1405-2014" />
-          <pattern match="BCIS 1405-2015" />
-          <pattern match="BCIS 1405-2016" />
-          <pattern match="BCIS 1405-2017" />
+          <pattern match="BCIS 1405-21001" />
+          <pattern match="BCIS 1405-21002" />
+          <pattern match="BCIS 1405-21003" />
+          <pattern match="BCIS 1405-21004" />
+          <pattern match="BCIS 1405-21005" />
+          <pattern match="BCIS 1405-21006" />
+          <pattern match="BCIS 1405-21007" />
+          <pattern match="BCIS 1405-21701" />
+          <pattern match="BCIS 1405-21300" />
 
-          <pattern match="BCIS 1405-2511" />
-          <pattern match="BCIS 1405-2512" />
+          <pattern match="BCIS 1405-21511" />
+          <pattern match="BCIS 1405-21512" />
 
-          <pattern match="BCIS 1405-2300" />
 
-          <pattern match="BCIS 1405-2401" />
-          <pattern match="BCIS 1405-2402" />
-          <pattern match="BCIS 1405-2403" />
-          <pattern match="BCIS 1405-2404" />
-          <pattern match="BCIS 1405-2405" />
-          <pattern match="BCIS 1405-2406" />
+          <pattern match="BCIS 1405-21401" />
+          <pattern match="BCIS 1405-21402" />
+          <pattern match="BCIS 1405-21403" />
+          <pattern match="BCIS 1405-21404" />
+          <pattern match="BCIS 1405-21405" />
+          <pattern match="BCIS 1405-21406" />
         </topic>
         
        <topic name="Programming Courses">
@@ -757,44 +796,48 @@
       <subject name="Art">
 		
         <topic name="Art Appreciation">
-          <pattern match="ARTS 1301-2001" />
-          <pattern match="ARTS 1301-2002" />
-          <pattern match="ARTS 1301-2003" />
-          <pattern match="ARTS 1301-2004" />
-          <pattern match="ARTS 1301-2005" />
-          <pattern match="ARTS 1301-2006" />
-          <pattern match="ARTS 1301-2007" />
-          <pattern match="ARTS 1301-2008" />		  
-          <pattern match="ARTS 1301-2009" />
-          <pattern match="ARTS 1301-2200" />
-          <pattern match="ARTS 1311-2200" />
-          <pattern match="ARTS 1312-2200" />
-          <pattern match="ARTS 1301-2501" />
-          <pattern match="ARTS 1301-2502" />
-          <pattern match="ARTS 1301-2250" />
-          <pattern match="ARTS 1301-2420" />
-          <pattern match="ARTS 1301-2421" />
-          <pattern match="ARTS 1301-2422" />
-          <pattern match="ARTS 1301-2423" />
+          <pattern match="ARTS 1301-21001" />
+          <pattern match="ARTS 1301-21002" />
+          <pattern match="ARTS 1301-21003" />
+          <pattern match="ARTS 1301-21004" />
+          <pattern match="ARTS 1301-21005" />
+          <pattern match="ARTS 1301-21006" />
+          <pattern match="ARTS 1301-21007" />
+          <pattern match="ARTS 1301-21008" />		  
+          <pattern match="ARTS 1301-21009" />
+          <pattern match="ARTS 1301-21080" />
+
+
+
+          <pattern match="ARTS 1301-21200" />
+          <pattern match="ARTS 1311-21200" />
+          <pattern match="ARTS 1312-21200" />
+          <pattern match="ARTS 1301-21501" />
+          <pattern match="ARTS 1301-21502" />
+          <pattern match="ARTS 1301-21250" />
+          <pattern match="ARTS 1301-21420" />
+          <pattern match="ARTS 1301-21421" />
+          <pattern match="ARTS 1301-21422" />
+          <pattern match="ARTS 1301-21423" />
         </topic>
 
         <topic name="Art History">
-          <pattern match="ARTS 1303-2001" />
-          <pattern match="ARTS 1303-2002" />
-          <pattern match="ARTS 1304-2001" />
-          <pattern match="ARTS 1303-2501" />
-          <pattern match="ARTS 1303-2420" />
-          <pattern match="ARTS 1303-2421" />
-          <pattern match="ARTS 1303-2422" />
-          <pattern match="ARTS 1304-2420" />
-          <pattern match="ARTS 2375-2001" />
-          <pattern match="ARTS 2375-2002" />
+          <pattern match="ARTS 1303-21001" />
+          <pattern match="ARTS 1303-21002" />
+          <pattern match="ARTS 1304-21001" />
+          <pattern match="ARTS 1303-21501" />
+          <pattern match="ARTS 1303-21420" />
+          <pattern match="ARTS 1303-21421" />
+          <pattern match="ARTS 1303-21422" />
+          <pattern match="ARTS 1304-21420" />
+          <pattern match="ARTS 2375-21001" />
+          <pattern match="ARTS 2375-21002" />
 		  
         </topic>
         <topic name="Problems In Contemporary Art">
-          <pattern match="ARTS 1170-2001" />        
-          <pattern match="ARTS 1170-2200" />        
-          <pattern match="ARTS 1170-2201" />
+          <pattern match="ARTS 1170-21001" />        
+          <pattern match="ARTS 1170-21200" />        
+          <pattern match="ARTS 1170-21201" />
         </topic>
 
         <topic name="Art and Computers">
@@ -947,7 +990,6 @@
           <pattern match="ARTS 2312-2203" />
           <pattern match="ARTS 2312-2251" />
         </topic>
-
           
           
         <topic name="Photography">
@@ -1018,11 +1060,11 @@
           <pattern match="DANC 1101-2701" />
         </topic>
         <topic name="Dance Appreciation">
-          <pattern match="DANC 2303-2001" />
-          <pattern match="DANC 2303-2002" />
+          <pattern match="DANC 2303-21001" />
+          <pattern match="DANC 2303-21002" />
 		  
-          <pattern match="DANC 2303-2501" />
-          <pattern match="DANC 2304-2400" />		  
+          <pattern match="DANC 2303-21420" />
+          <pattern match="DANC 2304-21400" />		  
           <pattern match="DANC 2304-2421" />
           <pattern match="DANC 2304-2422" />  <!-- added per Jill 2010-08-26 -->
           <pattern match="DANC 2304-2430" />
@@ -1030,15 +1072,17 @@
 		
 		
         <topic name="Body Conditioning">
-          <pattern match="DANC 1141-2001" />
-          <pattern match="DANC 1141-2202" />            <!-- Added RI 2010-08-27 -->
-          <pattern match="DANC 1142-2001" />
+          <pattern match="DANC 1141-21001" />
+          <pattern match="DANC 1141-21892" />
+          <pattern match="DANC 1142-21001" />
 		  
           <pattern match="DANC 1141-2092" />
           <pattern match="DANC 1142-2092" />
 		  
         </topic>
         <topic name="Dance Practicum">
+          <pattern match="DANC 1351-21001" />
+		  
           <pattern match="DANC 1351-2200" />
           <pattern match="DANC 1351-2235" />
           <pattern match="DANC 1352-2200" />
@@ -1064,7 +1108,10 @@
         </topic>
 
         <topic name="Aerial Dance">
-          <pattern match="DANC 1101-2001" />
+          <pattern match="DANC 1101-21001" />
+          <pattern match="DANC 1102-21001" />
+          <pattern match="DANC 1103-21001" />
+
           <pattern match="DANC 1101-2501" />
           <pattern match="DANC 1101-2700" />		  
           <pattern match="DANC 1102-2001" />
@@ -1075,10 +1122,11 @@
         </topic>          
 
           <topic name="Tap">
-          <pattern match="DANC 1110-2001" />
-          <pattern match="DANC 1111-2001" />
-          <pattern match="DANC 2110-2001" />
-          <pattern match="DANC 2111-2001" />		  
+          <pattern match="DANC 1110-21001" />
+          <pattern match="DANC 2110-21001" />
+          <pattern match="DANC 1111-21001" />
+          <pattern match="DANC 2111-21001" />
+
 
           <pattern match="DANC 2110-2050" />
           <pattern match="DANC 2111-2050" />		  
@@ -1092,41 +1140,45 @@
           </topic>
 
           <topic name="Hip Hop">
-          <pattern match="DANC 1222-2001" />
-          <pattern match="DANC 1222-2002" />	  
-          <pattern match="DANC 1223-2002" />
-          <pattern match="DANC 1223-2001" /> 		  
-          <pattern match="DANC 2222-2001" />
-          <pattern match="DANC 2223-2001" />
-          <pattern match="DANC 1222-2202" />  <!-- add per linda 2010-08-31 -->
+          <pattern match="DANC 1222-21001" />
+          <pattern match="DANC 1222-21002" />	  
+          <pattern match="DANC 1223-21002" />
+          <pattern match="DANC 1223-21001" /> 		  
+          <pattern match="DANC 2222-21001" />
+          <pattern match="DANC 2223-21001" />
+          <pattern match="DANC 1222-21202" />  <!-- add per linda 2010-08-31 -->
           <pattern match="DANC 1222-2203" />  <!-- add per linda 2010-08-31 -->
-          <pattern match="DANC 1222-2501" />
-          <pattern match="DANC 1223-2501" />
+          <pattern match="DANC 1222-21501" />
+          <pattern match="DANC 1223-21501" />
+          <pattern match="DANC 2222-21501" />
+          <pattern match="DANC 2223-21501" />
         </topic>
 
         <topic name="Jazz">
-          <pattern match="DANC 1247-2001" />
+          <pattern match="DANC 1247-21001" />
           <pattern match="DANC 1247-2002" />		  
-          <pattern match="DANC 1248-2001" />
+          <pattern match="DANC 2247-21001" />
+          <pattern match="DANC 1248-21001" />
+          <pattern match="DANC 2248-21001" />
           <pattern match="DANC 1248-2002" />
           <pattern match="DANC 1247-2202" />
           <pattern match="DANC 1248-2202" />
-          <pattern match="DANC 1247-2501" />           
-          <pattern match="DANC 1247-2502" />
-          <pattern match="DANC 1248-2501" />
-          <pattern match="DANC 1248-2502" />		  
-          <pattern match="DANC 2247-2501" />
-          <pattern match="DANC 2247-2502" />		  
-          <pattern match="DANC 2248-2501" />
-          <pattern match="DANC 2248-2502" />
+          <pattern match="DANC 1247-21501" />           
+          <pattern match="DANC 1247-21502" />
+          <pattern match="DANC 1248-21501" />
+          <pattern match="DANC 1248-21502" />		  
+          <pattern match="DANC 2247-21501" />
+          <pattern match="DANC 2247-21502" />		  
+          <pattern match="DANC 2248-21501" />
+          <pattern match="DANC 2248-21502" />
           <pattern match="DANC 1247-2702" />
           <pattern match="DANC 1248-2702" />
           <pattern match="DANC 1248-2703" />
         </topic>
 
         <topic name="Ballet">
-          <pattern match="DANC 1341-2001" />
-          <pattern match="DANC 1341-2002" />
+          <pattern match="DANC 1341-21001" />
+          <pattern match="DANC 1342-21001" />
 		  
           <pattern match="DANC 1341-2200" />
           <pattern match="DANC 1341-2205" />
@@ -1136,15 +1188,15 @@
           <pattern match="DANC 1342-2002" />
           <pattern match="DANC 1342-2003" />
           <pattern match="DANC 1342-2202" />
-          <pattern match="DANC 2341-2001" />
+          <pattern match="DANC 2341-21001" />
           <pattern match="DANC 2341-2002" />		  
-          <pattern match="DANC 2342-2001" />
-          <pattern match="DANC 1341-2501" />
-          <pattern match="DANC 1342-2501" />
-          <pattern match="DANC 1342-2502" />
+          <pattern match="DANC 2342-21001" />
+          <pattern match="DANC 1341-21501" />
+          <pattern match="DANC 1342-21501" />
+          <pattern match="DANC 1342-21502" />
 		  		  
-          <pattern match="DANC 2341-2501" />
-          <pattern match="DANC 2342-2501" />
+          <pattern match="DANC 2341-21501" />
+          <pattern match="DANC 2342-21501" />
           <pattern match="DANC 2341-2202" />
           <pattern match="DANC 2341-2701" />
           <pattern match="DANC 2342-2701" />
@@ -1152,27 +1204,30 @@
         </topic>
 
         <topic name="Ballet Technique">
-          <pattern match="DANC 2141-2001" />
-          <pattern match="DANC 2141-2202" />  <!-- per linda 2010-09-07 -->
-          <pattern match="DANC 2142-2250" />
-          <pattern match="DANC 2142-2251" />    <!-- per Linda 2010-09-09 -->      
+          <pattern match="DANC 2141-21001" />
+          <pattern match="DANC 2141-21202" />  <!-- per linda 2010-09-07 -->
+          <pattern match="DANC 2142-21255" />
+          <pattern match="DANC 2142-21251" />    <!-- per Linda 2010-09-09 -->      
         </topic>
 
         <topic name="Contemporary/Modern Dance">
-          <pattern match="DANC 1245-2001" />
-          <pattern match="DANC 1245-2002" /> <!-- per linda 2010-08-17 -->
-          <pattern match="DANC 1246-2001" />
-          <pattern match="DANC 2245-2001" />
-          <pattern match="DANC 2246-2001" />
+          <pattern match="DANC 1245-21001" />
+          <pattern match="DANC 1245-21002" /> <!-- per linda 2010-08-17 -->
+          <pattern match="DANC 1246-21001" />
+          <pattern match="DANC 2245-21001" />
+          <pattern match="DANC 2246-21001" />
           <pattern match="DANC 1245-2202" />            <!-- add per linda 2010-08-31 -->
-          <pattern match="DANC 1245-2501" />
+          <pattern match="DANC 1245-21501" />
           <pattern match="DANC 1246-2201" />
-          <pattern match="DANC 1246-2501" />
-          <pattern match="DANC 2245-2501" />
-          <pattern match="DANC 2246-2501" />
+          <pattern match="DANC 1246-21501" />
+          <pattern match="DANC 2245-21501" />
+          <pattern match="DANC 2246-21501" />
           <pattern match="DANC 1245-2702" />          
         </topic>
       </subject>
+
+
+
 
       <!-- Added 2010-03-25  -->
       <subject name="Drama">
@@ -1216,10 +1271,11 @@
         </topic>
 
         <topic name="Rehearsal">
-          <subtopic name="First Play, Fall 2012">
-            <pattern match="DRAM 1221-2735" />
+          <subtopic name="First Play, Fall 2013">
+            <pattern match="DRAM 1221-21735" />
+
+
             <pattern match="DRAM 1221-2736" />
-            <pattern match="DRAM 1221-2737" />      <!-- per Jill 2010-09-24  -->
             <pattern match="DRAM 1221-2738" />
             <pattern match="DRAM 1221-2740" />            
           </subtopic>
