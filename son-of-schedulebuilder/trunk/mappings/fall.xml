@@ -441,8 +441,14 @@
           <pattern match="COSC 1301-21012" />
           <pattern match="COSC 1301-21201" />          
           <pattern match="COSC 1301-21202" />          
+          <pattern match="COSC 1301-21203" />          
+          <pattern match="COSC 1301-21204" />          
 
           <pattern match="COSC 1301-21300" />
+          <pattern match="COSC 1301-21350" />
+          <pattern match="COSC 1301-21351" />
+
+
           <pattern match="COSC 1301-21401" />
           <pattern match="COSC 1301-21402" />
           <pattern match="COSC 1301-21403" />
@@ -457,6 +463,7 @@
           <pattern match="COSC 1301-21250" />          
 
 
+          <pattern match="COSC 1401-21001" />
           <pattern match="COSC 1401-21011" />
           <pattern match="COSC 1401-21012" />
           <pattern match="COSC 1401-21013" />
@@ -471,6 +478,7 @@
           <pattern match="COSC 1401-21404" />
           <pattern match="COSC 1401-21405" />
           <pattern match="COSC 1401-21406" />
+          <pattern match="COSC 1401-21501" />
           <pattern match="COSC 1401-21511" />
           <pattern match="COSC 1401-21512" />
         </topic>
@@ -524,6 +532,7 @@
        <topic name="Programming Courses">
           <pattern match="BCIS 1431-21501" />
           <pattern match="BCIS 2431-21501" />
+          <pattern match="BCIS 2431-21502" />
           <pattern match="BCIS 1431-21401" />          
           <pattern match="BCIS 2431-21401" />
         </topic>
@@ -746,6 +755,8 @@
 			<comments></comments>
             <topic name="none">
                 <pattern match="RADR 1201"/>
+                <pattern match="RADR 2367"/>
+
             </topic>
             <topic name="Third Semester Program Students">
                 <comments></comments>
@@ -762,6 +773,8 @@
                 <pattern match="RADR 2235" />
                 <pattern match="RADR 1291" />
                 <pattern match="RADR 2233" />
+                <pattern match="RADR 2205" />
+                <pattern match="RADR 2240" />
             </topic>
 
             <topic name="Computed Tomography">
