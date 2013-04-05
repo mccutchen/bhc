@@ -22,157 +22,157 @@
       <subject name="Business Office Systems and Support">
        <!-- Senior Adult classes - Mapped to BOSS per Aly 2010-04-12 -->
         <topic name="Students 50+ Computer Classes">
-          <pattern match="ITSC 1291-2201" />
-          <pattern match="ITSC 1291-2202" />
-          <pattern match="ITSC 1291-2203" />
-          <pattern match="ITSC 1291-2204" />
-          <pattern match="ITSC 1291-2205" />
-          <pattern match="ITSC 1291-2250" />
+          <pattern match="ITSC 1291-21201" />
+          <pattern match="ITSC 1291-21202" />
+          <pattern match="ITSC 1291-21203" />
+          <pattern match="ITSC 1291-21204" />
+          <pattern match="ITSC 1291-21205" />
+          <pattern match="ITSC 1291-21250" />
         </topic>
 		
             <topic name="Computer Basics">
-                <pattern match="POFI 1301-2001" />
-                <pattern match="POFI 1301-2401" />
-                <pattern match="POFI 1301-2441" />                           
+                <pattern match="POFI 1301-21001" />
+                <pattern match="POFI 1301-21401" />
+                <pattern match="POFI 1301-21441" />                           
             </topic>
             <topic name="Integ Software Office 2010">
-                <pattern match="POFI 1341-2001" />
-                <pattern match="POFI 1341-2201" />
-                <pattern match="POFI 1341-2202" />
-                <pattern match="POFI 1341-2501" />
-                <pattern match="POFI 1341-2701" />
-                <pattern match="POFI 1341-2702" />
-                <pattern match="POFI 1341-2401" />
-                <pattern match="POFI 1341-2402" />
-                <pattern match="POFI 1341-2441" />
-                <pattern match="POFI 1341-2442" />
+                <pattern match="POFI 1341-21001" />
+                <pattern match="POFI 1341-21201" />
+                <pattern match="POFI 1341-21202" />
+                <pattern match="POFI 1341-21501" />
+                <pattern match="POFI 1341-21701" />
+                <pattern match="POFI 1341-21702" />
+                <pattern match="POFI 1341-21401" />
+                <pattern match="POFI 1341-21402" />
+                <pattern match="POFI 1341-21441" />
+                <pattern match="POFI 1341-21442" />
             </topic>
             <topic name="Excel 2010">
-                <pattern match="POFI 1349-2001" />
-                <pattern match="POFI 1349-2201" />
-                <pattern match="POFI 1349-2202" />
-                <pattern match="POFI 1349-2501" />
-                <pattern match="POFI 1349-2701" />
-                <pattern match="POFI 1349-2702" />
-                <pattern match="POFI 1349-2401" />
-                <pattern match="POFI 1349-2402" />
-                <pattern match="POFI 1349-2441" />
-                <pattern match="POFI 1349-2442" />
+                <pattern match="POFI 1349-21001" />
+                <pattern match="POFI 1349-21201" />
+                <pattern match="POFI 1349-21202" />
+                <pattern match="POFI 1349-21501" />
+                <pattern match="POFI 1349-21701" />
+                <pattern match="POFI 1349-21702" />
+                <pattern match="POFI 1349-21401" />
+                <pattern match="POFI 1349-21402" />
+                <pattern match="POFI 1349-21441" />
+                <pattern match="POFI 1349-21442" />
             </topic>
             <topic name="Access 2010">
-                <pattern match="ITSW 1407-2002" />
-                <pattern match="ITSW 1407-2201" />
-                <pattern match="ITSW 1407-2202" />
-                <pattern match="ITSW 1407-2501" />
-                <pattern match="ITSW 1407-2702" />
-                <pattern match="ITSW 1407-2401" />
-                <pattern match="ITSW 1407-2402" />
-                <pattern match="ITSW 1407-2441" />
-                <pattern match="ITSW 1407-2442" />
+                <pattern match="ITSW 1407-21002" />
+                <pattern match="ITSW 1407-21201" />
+                <pattern match="ITSW 1407-21202" />
+                <pattern match="ITSW 1407-21501" />
+                <pattern match="ITSW 1407-21702" />
+                <pattern match="ITSW 1407-21401" />
+                <pattern match="ITSW 1407-21402" />
+                <pattern match="ITSW 1407-21441" />
+                <pattern match="ITSW 1407-21442" />
             </topic>
             <topic name="Word 2010">
-                <pattern match="POFI 2301-2001" />
-                <pattern match="POFI 2301-2201" />
-                <pattern match="POFI 2301-2202" />
-                <pattern match="POFI 2301-2501" />
-                <pattern match="POFI 2301-2701" />
-                <pattern match="POFI 2301-2702" />
-                <pattern match="POFI 2301-2401" />
-                <pattern match="POFI 2301-2402" />
-                <pattern match="POFI 2301-2441" />
-                <pattern match="POFI 2301-2442" />
+                <pattern match="POFI 2301-21001" />
+                <pattern match="POFI 2301-21201" />
+                <pattern match="POFI 2301-21202" />
+                <pattern match="POFI 2301-21501" />
+                <pattern match="POFI 2301-21701" />
+                <pattern match="POFI 2301-21702" />
+                <pattern match="POFI 2301-21401" />
+                <pattern match="POFI 2301-21402" />
+                <pattern match="POFI 2301-21441" />
+                <pattern match="POFI 2301-21442" />
             </topic>
 
             <topic name="Advanced Word 2010">
-                <pattern match="POFI 2340-2001" />
-                <pattern match="POFI 2340-2501" />
-                <pattern match="POFI 2340-2401" />
-                <pattern match="POFI 2340-2402" />
+                <pattern match="POFI 2340-21001" />
+                <pattern match="POFI 2340-21501" />
+                <pattern match="POFI 2340-21401" />
+                <pattern match="POFI 2340-21402" />
             </topic>
 
             <topic name="Publisher 2010">
-                <pattern match="POFI 2331-2401" />
-                <pattern match="POFI 2331-2402" />
-                <pattern match="POFI 2331-2442" />
+                <pattern match="POFI 2331-21401" />
+                <pattern match="POFI 2331-21402" />
+                <pattern match="POFI 2331-21442" />
             </topic>
 
             <topic name="Introduction to Keyboarding">
-                <pattern match="POFT 1127-2201" />
-                <pattern match="POFT 1127-2202" />
-                <pattern match="POFT 1127-2203" />
-                <pattern match="POFT 1127-2701" />
-                <pattern match="POFT 1127-2702" />
-                <pattern match="POFT 1127-2421" />
-                <pattern match="POFT 1127-2441" />
+                <pattern match="POFT 1127-21201" />
+                <pattern match="POFT 1127-21202" />
+                <pattern match="POFT 1127-21203" />
+                <pattern match="POFT 1127-21701" />
+                <pattern match="POFT 1127-21702" />
+                <pattern match="POFT 1127-21421" />
+                <pattern match="POFT 1127-21441" />
             </topic>
 
             <topic name="Business English">
-                <pattern match="POFT 1301-2001" />
-                <pattern match="POFT 1301-2002" />
-                <pattern match="POFT 1301-2401" />
-                <pattern match="POFT 1301-2441" />
+                <pattern match="POFT 1301-21001" />
+                <pattern match="POFT 1301-21002" />
+                <pattern match="POFT 1301-21401" />
+                <pattern match="POFT 1301-21441" />
             </topic>
 
             <topic name="Admin Office Procedures">
-                <pattern match="POFT 1309-2401" />
-                <pattern match="POFT 1309-2441" />
+                <pattern match="POFT 1309-21401" />
+                <pattern match="POFT 1309-21441" />
             </topic>
 
             <topic name="Records and Information Mgmt.">
-                <pattern match="POFT 1319-2401" />
-                <pattern match="POFT 1319-2441" />
+                <pattern match="POFT 1319-21401" />
+                <pattern match="POFT 1319-21441" />
             </topic>
 
             <topic name="Business Math">
-                <pattern match="POFT 1321-2501" />
-                <pattern match="POFT 1321-2401" />
+                <pattern match="POFT 1321-21501" />
+                <pattern match="POFT 1321-21401" />
             </topic>
 
             <topic name="Bus Math and Machine Applic">
-                <pattern match="POFT 1325-2001" />
-                <pattern match="POFT 1325-2201" />
-                <pattern match="POFT 1325-2501" />
-                <pattern match="POFT 1325-2701" />
-                <pattern match="POFT 1325-2401" />
-                <pattern match="POFT 1325-2441" />
+                <pattern match="POFT 1325-21001" />
+                <pattern match="POFT 1325-21201" />
+                <pattern match="POFT 1325-21501" />
+                <pattern match="POFT 1325-21701" />
+                <pattern match="POFT 1325-21401" />
+                <pattern match="POFT 1325-21441" />
             </topic>
 			
             <topic name="PowerPoint 2010">
-                <pattern match="POFT 1328-2001" />
-                <pattern match="POFT 1328-2201" />
-                <pattern match="POFT 1328-2202" />
-                <pattern match="POFT 1328-2501" />
-                <pattern match="POFT 1328-2701" />
-                <pattern match="POFT 1328-2702" />
-                <pattern match="POFT 1328-2401" />
-                <pattern match="POFT 1328-2402" />
-                <pattern match="POFT 1328-2441" />
-                <pattern match="POFT 1328-2442" />
+                <pattern match="POFT 1328-21001" />
+                <pattern match="POFT 1328-21201" />
+                <pattern match="POFT 1328-21202" />
+                <pattern match="POFT 1328-21501" />
+                <pattern match="POFT 1328-21701" />
+                <pattern match="POFT 1328-21702" />
+                <pattern match="POFT 1328-21401" />
+                <pattern match="POFT 1328-21402" />
+                <pattern match="POFT 1328-21441" />
+                <pattern match="POFT 1328-21442" />
             </topic>
 
             <topic name="Keyboarding/Document Formatting">
-                <pattern match="POFT 1329-2001" />
-                <pattern match="POFT 1329-2201" />
-                <pattern match="POFT 1329-2501" />
-                <pattern match="POFT 1329-2701" />
-                <pattern match="POFT 1329-2401" />
-                <pattern match="POFT 1329-2402" />
-                <pattern match="POFT 1329-2421" />
-                <pattern match="POFT 1329-2422" />
+                <pattern match="POFT 1329-21001" />
+                <pattern match="POFT 1329-21201" />
+                <pattern match="POFT 1329-21501" />
+                <pattern match="POFT 1329-21701" />
+                <pattern match="POFT 1329-21401" />
+                <pattern match="POFT 1329-21402" />
+                <pattern match="POFT 1329-21421" />
+                <pattern match="POFT 1329-21422" />
             </topic>
 
             <topic name="Co-Op Ed-Gen Office Clerical">
-                <pattern match="POFT 1382-2401" />
+                <pattern match="POFT 1382-21401" />
             </topic>
 
             <topic name="Speed and Accuracy Building">
-                <pattern match="POFT 2203-2501" />
-                <pattern match="POFT 2203-2421" />
-                <pattern match="POFT 2203-2422" />
+                <pattern match="POFT 2203-21501" />
+                <pattern match="POFT 2203-21421" />
+                <pattern match="POFT 2203-21422" />
             </topic>
 
             <topic name="Bus. Correspondence and Communic">
-                <pattern match="POFT 2312-2401" />
+                <pattern match="POFT 2312-21401" />
             </topic>
       </subject>
 
@@ -213,8 +213,8 @@
 
 
 
-          <pattern match="ITSE 1429-2001" />
-          <pattern match="ITSE 1429-2002" /> 
+          <pattern match="ITSE 1429-21001" />
+          <pattern match="ITSE 1429-21002" /> 
 		           
           <pattern match="ITSC 1405-21401" />
           <pattern match="ITSC 1405-21501" />
@@ -223,49 +223,49 @@
 		  <pattern match="ITSC 1442-21501" />
 
 
-          <pattern match="ITNW 1425-2401" />
-          <pattern match="ITSC 1405-2401" />
-          <pattern match="ITSE 1429-2401" />
+          <pattern match="ITNW 1425-21401" />
+          <pattern match="ITSC 1405-21401" />
+          <pattern match="ITSE 1429-21401" />
         </topic>
 
         <topic name="Open Source Software Courses">
           <comments>
 		</comments>
-          <pattern match="ITSE 1303-2002" />
-          <pattern match="ITSE 1346-2002" />
-          <pattern match="ITSE 1406-2002" />
-          <pattern match="IMED 2449-2502" />
-          <pattern match="ITNW 2454-2502" />
-          <pattern match="IMED 2449-2402" />
-          <pattern match="ITNW 2454-2402" />
-          <pattern match="ITSE 1303-2402" />
-          <pattern match="ITSE 1346-2402" />
-          <pattern match="ITSE 1406-2402" />
+          <pattern match="ITSE 1303-21002" />
+          <pattern match="ITSE 1346-21002" />
+          <pattern match="ITSE 1406-21002" />
+          <pattern match="IMED 2449-21502" />
+          <pattern match="ITNW 2454-21502" />
+          <pattern match="IMED 2449-21402" />
+          <pattern match="ITNW 2454-21402" />
+          <pattern match="ITSE 1303-21402" />
+          <pattern match="ITSE 1346-21402" />
+          <pattern match="ITSE 1406-21402" />
         </topic>
 
         <topic name="Game, Mobile and Media Programming Courses">
-          <pattern match="GAME 1443-2501" />
-          <pattern match="IMED 1491-2502" />
-          <pattern match="ITSE 2459-2502" />
+          <pattern match="GAME 1443-21501" />
+          <pattern match="IMED 1491-21502" />
+          <pattern match="ITSE 2459-21502" />
 
         </topic>
         <topic name="Programming Courses">
-          <pattern match="ITSE 1407-2001" />
-          <pattern match="ITSE 1407-2002" />
+          <pattern match="ITSE 1407-21001" />
+          <pattern match="ITSE 1407-21002" />
 
-          <pattern match="ITSE 1407-2501" />
-          <pattern match="ITSE 1430-2501" />
-          <pattern match="ITSE 1432-2501" />
-          <pattern match="ITSE 2404-2501" />
-          <pattern match="ITSE 2417-2502" />
-          <pattern match="ITSE 2434-2501" />
-          <pattern match="ITSE 2438-2501" />
+          <pattern match="ITSE 1407-21501" />
+          <pattern match="ITSE 1430-21501" />
+          <pattern match="ITSE 1432-21501" />
+          <pattern match="ITSE 2404-21501" />
+          <pattern match="ITSE 2417-21502" />
+          <pattern match="ITSE 2434-21501" />
+          <pattern match="ITSE 2438-21501" />
 		  
-          <pattern match="ITSE 1407-2401" />
-          <pattern match="ITSE 1432-2401" />
-          <pattern match="ITSE 2434-2401" />
-          <pattern match="ITSE 2404-2401" />
-          <pattern match="ITSE 2438-2401" />
+          <pattern match="ITSE 1407-21401" />
+          <pattern match="ITSE 1432-21401" />
+          <pattern match="ITSE 2434-21401" />
+          <pattern match="ITSE 2404-21401" />
+          <pattern match="ITSE 2438-21401" />
         </topic>
         <topic name="Microsoft Academy Courses">
           <comments>
@@ -275,16 +275,16 @@
           <pattern match="ITMT 1473-21401" />
 
 
-          <pattern match="ITMT 1402-2701" />
-          <pattern match="ITMT 1402-2501" />
-          <pattern match="ITMT 2401-2701" />
-          <pattern match="ITMT 2402-2701" />
-          <pattern match="ITMT 1402-2401" />
-          <pattern match="ITMT 1402-2402" />
+          <pattern match="ITMT 1402-21701" />
+          <pattern match="ITMT 1402-21501" />
+          <pattern match="ITMT 2401-21701" />
+          <pattern match="ITMT 2402-21701" />
+          <pattern match="ITMT 1402-21401" />
+          <pattern match="ITMT 1402-21402" />
         </topic>
         <topic name="Unix/Linux Courses">
-          <pattern match="ITSC 1407-2501" />
-          <pattern match="ITSC 1416-2501" />
+          <pattern match="ITSC 1407-21501" />
+          <pattern match="ITSC 1416-21501" />
         </topic>
         <topic name="Cisco Academy Courses">
           <pattern match="ITCC 1401-21401" />
@@ -330,97 +330,97 @@
 
 
           <pattern match="INEW 1440-21501" />
-          <pattern match="ITNW 2454-2501" />
-          <pattern match="IMED 1416-2401" />
-          <pattern match="IMED 2449-2401" />
-          <pattern match="INEW 1440-2401" />
-          <pattern match="ITNW 2454-2401" />
+          <pattern match="ITNW 2454-21501" />
+          <pattern match="IMED 1416-21401" />
+          <pattern match="IMED 2449-21401" />
+          <pattern match="INEW 1440-21401" />
+          <pattern match="ITNW 2454-21401" />
         </topic>
 
         <topic name="Application Software Courses">
-          <pattern match="ITSC 1409-2001" />
-          <pattern match="ITSC 1409-2002" />
-          <pattern match="ITSC 1409-2201" />
-          <pattern match="ITSC 1409-2202" />
-          <pattern match="ITSW 1401-2001" />
-          <pattern match="ITSW 1401-2002" />
-          <pattern match="ITSW 1401-2201" />
-          <pattern match="ITSW 1401-2202" />
-          <pattern match="ITSW 1401-2203" />
-          <pattern match="ITSW 1404-2001" />
-          <pattern match="ITSW 1404-2201" />
-          <pattern match="ITSW 1404-2202" />
+          <pattern match="ITSC 1409-21001" />
+          <pattern match="ITSC 1409-21002" />
+          <pattern match="ITSC 1409-21201" />
+          <pattern match="ITSC 1409-21202" />
+          <pattern match="ITSW 1401-21001" />
+          <pattern match="ITSW 1401-21002" />
+          <pattern match="ITSW 1401-21201" />
+          <pattern match="ITSW 1401-21202" />
+          <pattern match="ITSW 1401-21203" />
+          <pattern match="ITSW 1404-21001" />
+          <pattern match="ITSW 1404-21201" />
+          <pattern match="ITSW 1404-21202" />
 		  
-          <pattern match="ITSW 1407-2001" />
-          <pattern match="ITSW 1407-2002" />		  
-          <pattern match="ITSW 1407-2201" />
-          <pattern match="ITSW 1407-2202" />
+          <pattern match="ITSW 1407-21001" />
+          <pattern match="ITSW 1407-21002" />		  
+          <pattern match="ITSW 1407-21201" />
+          <pattern match="ITSW 1407-21202" />
 		  
-          <pattern match="ITSW 1410-2001" />
-          <pattern match="ITSW 1410-2201" />
-          <pattern match="ITSW 1410-2202" />
+          <pattern match="ITSW 1410-21001" />
+          <pattern match="ITSW 1410-21201" />
+          <pattern match="ITSW 1410-21202" />
 		  
-          <pattern match="POFI 2440-2001" />
-          <pattern match="POFI 2440-2201" />
-          <pattern match="POFI 2440-2202" />
-          <pattern match="ITSC 1409-2501" />
-          <pattern match="ITSC 1409-2701" />
-          <pattern match="ITSC 1409-2702" />		  
-          <pattern match="ITSW 1401-2501" />
-          <pattern match="ITSW 1401-2701" />
-          <pattern match="ITSW 1401-2702" />
+          <pattern match="POFI 2440-21001" />
+          <pattern match="POFI 2440-21201" />
+          <pattern match="POFI 2440-21202" />
+          <pattern match="ITSC 1409-21501" />
+          <pattern match="ITSC 1409-21701" />
+          <pattern match="ITSC 1409-21702" />		  
+          <pattern match="ITSW 1401-21501" />
+          <pattern match="ITSW 1401-21701" />
+          <pattern match="ITSW 1401-21702" />
 		  
-          <pattern match="ITSW 1404-2501" />
-          <pattern match="ITSW 1404-2502" />
+          <pattern match="ITSW 1404-21501" />
+          <pattern match="ITSW 1404-21502" />
 		  
-          <pattern match="ITSW 1404-2701" />
-          <pattern match="ITSW 1407-2501" />
-          <pattern match="ITSW 1407-2701" />
-          <pattern match="ITSW 1407-2702" />
+          <pattern match="ITSW 1404-21701" />
+          <pattern match="ITSW 1407-21501" />
+          <pattern match="ITSW 1407-21701" />
+          <pattern match="ITSW 1407-21702" />
 		  
-          <pattern match="ITSC 1409-2426" />
-          <pattern match="ITSC 1415-2426" />
-          <pattern match="ITSW 1401-2426" />
-          <pattern match="ITSW 1401-2427" />
-          <pattern match="ITSW 1401-2428" />
-          <pattern match="ITSW 1404-2426" />
-          <pattern match="ITSW 1407-2426" />
-          <pattern match="ITSW 1410-2426" />
-          <pattern match="ITSW 1407-2701" />
-          <pattern match="ITSW 1410-2501" />
-          <pattern match="ITSW 1410-2701" />
-          <pattern match="ITSW 1410-2702" />
+          <pattern match="ITSC 1409-21426" />
+          <pattern match="ITSC 1415-21426" />
+          <pattern match="ITSW 1401-21426" />
+          <pattern match="ITSW 1401-21427" />
+          <pattern match="ITSW 1401-21428" />
+          <pattern match="ITSW 1404-21426" />
+          <pattern match="ITSW 1407-21426" />
+          <pattern match="ITSW 1410-21426" />
+          <pattern match="ITSW 1407-21701" />
+          <pattern match="ITSW 1410-21501" />
+          <pattern match="ITSW 1410-21701" />
+          <pattern match="ITSW 1410-21702" />
 		  
-          <pattern match="POFI 2440-2501" />
-          <pattern match="POFI 2440-2701" />
-          <pattern match="ITSC 1409-2401" />
-          <pattern match="ITSC 1409-2402" />
-          <pattern match="ITSC 1409-2441" />
-          <pattern match="ITSC 1409-2442" />
-          <pattern match="ITSW 1401-2401" />
-          <pattern match="ITSW 1401-2402" />
-          <pattern match="ITSW 1401-2421" />
-          <pattern match="ITSW 1401-2422" />
-          <pattern match="ITSW 1401-2441" />
-          <pattern match="ITSW 1401-2442" />
-          <pattern match="ITSW 1404-2401" />
-          <pattern match="ITSW 1404-2402" />
-          <pattern match="ITSW 1404-2441" />
-          <pattern match="ITSW 1404-2442" />
-          <pattern match="ITSW 1407-2401" />
-          <pattern match="ITSW 1407-2402" />
-          <pattern match="ITSW 1407-2403" />
-          <pattern match="ITSW 1407-2404" />
-          <pattern match="ITSW 1407-2441" />
-          <pattern match="ITSW 1407-2442" />
-          <pattern match="ITSW 1410-2401" />
-          <pattern match="ITSW 1410-2402" />
-          <pattern match="ITSW 1410-2441" />
-          <pattern match="ITSW 1410-2442" />
-          <pattern match="POFI 2440-2401" />
-          <pattern match="POFI 2440-2402" />
-          <pattern match="POFI 2440-2441" />
-          <pattern match="POFI 2440-2442" />
+          <pattern match="POFI 2440-21501" />
+          <pattern match="POFI 2440-21701" />
+          <pattern match="ITSC 1409-21401" />
+          <pattern match="ITSC 1409-21402" />
+          <pattern match="ITSC 1409-21441" />
+          <pattern match="ITSC 1409-21442" />
+          <pattern match="ITSW 1401-21401" />
+          <pattern match="ITSW 1401-21402" />
+          <pattern match="ITSW 1401-21421" />
+          <pattern match="ITSW 1401-21422" />
+          <pattern match="ITSW 1401-21441" />
+          <pattern match="ITSW 1401-21442" />
+          <pattern match="ITSW 1404-21401" />
+          <pattern match="ITSW 1404-21402" />
+          <pattern match="ITSW 1404-21441" />
+          <pattern match="ITSW 1404-21442" />
+          <pattern match="ITSW 1407-21401" />
+          <pattern match="ITSW 1407-21402" />
+          <pattern match="ITSW 1407-21403" />
+          <pattern match="ITSW 1407-21404" />
+          <pattern match="ITSW 1407-21441" />
+          <pattern match="ITSW 1407-21442" />
+          <pattern match="ITSW 1410-21401" />
+          <pattern match="ITSW 1410-21402" />
+          <pattern match="ITSW 1410-21441" />
+          <pattern match="ITSW 1410-21442" />
+          <pattern match="POFI 2440-21401" />
+          <pattern match="POFI 2440-21402" />
+          <pattern match="POFI 2440-21441" />
+          <pattern match="POFI 2440-21442" />
 	
         </topic>        
       </subject>
@@ -428,51 +428,51 @@
       <subject name="Computer Science">
         <topic name="Introduction to Computing">
           <pattern match="COSC 1301-21001" />
-          <pattern match="COSC 1301-2002" />
-          <pattern match="COSC 1301-2003" />
-          <pattern match="COSC 1301-2004" /> 
-          <pattern match="COSC 1301-2005" />
-          <pattern match="COSC 1301-2006" />         
-          <pattern match="COSC 1301-2007" />
-          <pattern match="COSC 1301-2008" /> 
-          <pattern match="COSC 1301-2009" /> 
-          <pattern match="COSC 1301-2010" />
-          <pattern match="COSC 1301-2011" />
-          <pattern match="COSC 1301-2012" />
-          <pattern match="COSC 1301-2201" />          
-          <pattern match="COSC 1301-2202" />          
+          <pattern match="COSC 1301-21002" />
+          <pattern match="COSC 1301-21003" />
+          <pattern match="COSC 1301-21004" /> 
+          <pattern match="COSC 1301-21005" />
+          <pattern match="COSC 1301-21006" />         
+          <pattern match="COSC 1301-21007" />
+          <pattern match="COSC 1301-21008" /> 
+          <pattern match="COSC 1301-21009" /> 
+          <pattern match="COSC 1301-21010" />
+          <pattern match="COSC 1301-21011" />
+          <pattern match="COSC 1301-21012" />
+          <pattern match="COSC 1301-21201" />          
+          <pattern match="COSC 1301-21202" />          
 
-          <pattern match="COSC 1301-2300" />
-          <pattern match="COSC 1301-2401" />
-          <pattern match="COSC 1301-2402" />
-          <pattern match="COSC 1301-2403" />
-          <pattern match="COSC 1301-2404" />
-          <pattern match="COSC 1301-2405" />
-          <pattern match="COSC 1301-2406" />
-          <pattern match="COSC 1301-2501" />
-          <pattern match="COSC 1301-2502" />
-          <pattern match="COSC 1301-2503" />
-          <pattern match="COSC 1301-2504" />
-          <pattern match="COSC 1301-2505" />          
-          <pattern match="COSC 1301-2250" />          
+          <pattern match="COSC 1301-21300" />
+          <pattern match="COSC 1301-21401" />
+          <pattern match="COSC 1301-21402" />
+          <pattern match="COSC 1301-21403" />
+          <pattern match="COSC 1301-21404" />
+          <pattern match="COSC 1301-21405" />
+          <pattern match="COSC 1301-21406" />
+          <pattern match="COSC 1301-21501" />
+          <pattern match="COSC 1301-21502" />
+          <pattern match="COSC 1301-21503" />
+          <pattern match="COSC 1301-21504" />
+          <pattern match="COSC 1301-21505" />          
+          <pattern match="COSC 1301-21250" />          
 
 
-          <pattern match="COSC 1401-2011" />
-          <pattern match="COSC 1401-2012" />
-          <pattern match="COSC 1401-2013" />
-          <pattern match="COSC 1401-2014" />
-          <pattern match="COSC 1401-2015" />
-          <pattern match="COSC 1401-2016" />
-          <pattern match="COSC 1401-2017" />                      
-          <pattern match="COSC 1401-2300" />
-          <pattern match="COSC 1401-2401" />
-          <pattern match="COSC 1401-2402" />
-          <pattern match="COSC 1401-2403" />
-          <pattern match="COSC 1401-2404" />
-          <pattern match="COSC 1401-2405" />
-          <pattern match="COSC 1401-2406" />
-          <pattern match="COSC 1401-2511" />
-          <pattern match="COSC 1401-2512" />
+          <pattern match="COSC 1401-21011" />
+          <pattern match="COSC 1401-21012" />
+          <pattern match="COSC 1401-21013" />
+          <pattern match="COSC 1401-21014" />
+          <pattern match="COSC 1401-21015" />
+          <pattern match="COSC 1401-21016" />
+          <pattern match="COSC 1401-21017" />                      
+          <pattern match="COSC 1401-21300" />
+          <pattern match="COSC 1401-21401" />
+          <pattern match="COSC 1401-21402" />
+          <pattern match="COSC 1401-21403" />
+          <pattern match="COSC 1401-21404" />
+          <pattern match="COSC 1401-21405" />
+          <pattern match="COSC 1401-21406" />
+          <pattern match="COSC 1401-21511" />
+          <pattern match="COSC 1401-21512" />
         </topic>
         <topic name="Programming Courses">
           <pattern match="COSC 1309-21001" />
@@ -522,10 +522,10 @@
         </topic>
         
        <topic name="Programming Courses">
-          <pattern match="BCIS 1431-2501" />
-          <pattern match="BCIS 2431-2501" />
-          <pattern match="BCIS 1431-2401" />          
-          <pattern match="BCIS 2431-2401" />
+          <pattern match="BCIS 1431-21501" />
+          <pattern match="BCIS 2431-21501" />
+          <pattern match="BCIS 1431-21401" />          
+          <pattern match="BCIS 2431-21401" />
         </topic>
       </subject>
 
@@ -536,7 +536,7 @@
     	<!-- note: put a priority of 2, since these need to have a higher priority than the CIT mappings
     		in order to pull them in here -->
         <subject name="Visual Communications">
-            <pattern match="ITSE 1301-2427" priority="2" />
+            <pattern match="ITSE 1301-21427" priority="2" />
         </subject>
         
 
@@ -546,11 +546,11 @@
       <subject name="Management Program">
         <comments>
           </comments>
-        <pattern match="BMGT 2303-2501" />
-        <pattern match="BMGT 2383-2501" />
+        <pattern match="BMGT 2303-21501" />
+        <pattern match="BMGT 2383-21501" />
 
-          <pattern match="HRPO 2301-2501" />          <!-- added 2011-04-07 fall 2011 syllabi -->
-          <pattern match="BMGT 1383-2501" />          <!-- added 2011-04-07 fall 2011 syllabi -->
+          <pattern match="HRPO 2301-21501" />          <!-- added 2011-04-07 fall 2011 syllabi -->
+          <pattern match="BMGT 1383-21501" />          <!-- added 2011-04-07 fall 2011 syllabi -->
       </subject>
 
       <!-- Medical Front Office (Sharon Burton)
@@ -560,64 +560,64 @@
                 <comments>
 </comments>
                 <subtopic name="Computer Basics">
-                    <pattern match="POFI 1104-2201" />
-                    <pattern match="POFI 1104-2701" />
-                    <pattern match="POFI 1104-2426" />
+                    <pattern match="POFI 1104-21201" />
+                    <pattern match="POFI 1104-21701" />
+                    <pattern match="POFI 1104-21426" />
                 </subtopic>
                 <subtopic name="Keyboarding, Beginning">
-                    <pattern match="POFT 1127-2201" />
-                    <pattern match="POFT 1127-2702" />
-                    <pattern match="POFT 1127-2427" />
+                    <pattern match="POFT 1127-21201" />
+                    <pattern match="POFT 1127-21702" />
+                    <pattern match="POFT 1127-21427" />
                 </subtopic>
                 <subtopic name="Medical Terminology">
-                    <pattern match="MDCA 1313-2001" />
-                    <pattern match="MDCA 1313-2250" />
-                    <pattern match="MDCA 1313-2350" />
-                    <pattern match="MDCA 1313-2351" />					
-                    <pattern match="MDCA 1313-2426" />
-                    <pattern match="MDCA 1313-2427" />
-                    <pattern match="MDCA 1313-2401" />
-                    <pattern match="MDCA 1313-2402" />
-                    <pattern match="MDCA 1313-2441" />
+                    <pattern match="MDCA 1313-21001" />
+                    <pattern match="MDCA 1313-21250" />
+                    <pattern match="MDCA 1313-21350" />
+                    <pattern match="MDCA 1313-21351" />					
+                    <pattern match="MDCA 1313-21426" />
+                    <pattern match="MDCA 1313-21427" />
+                    <pattern match="MDCA 1313-21401" />
+                    <pattern match="MDCA 1313-21402" />
+                    <pattern match="MDCA 1313-21441" />
                 </subtopic>                
                 <subtopic name="Medical Office Procedures">
-                    <pattern match="POFM 1309-2001" />
-                    <pattern match="POFM 1309-2501" />
+                    <pattern match="POFM 1309-21001" />
+                    <pattern match="POFM 1309-21501" />
                 </subtopic>              
                 <subtopic name="Medical Software Applications, Medisoft">
-                    <pattern match="POFM 1302-2001" />
-                    <pattern match="POFM 1302-2501" />
+                    <pattern match="POFM 1302-21001" />
+                    <pattern match="POFM 1302-21501" />
                 </subtopic>              
                 <subtopic name="Special Topics - Medical Office Simulation">
-                    <pattern match="POFM 1191-2201" />
-                    <pattern match="POFM 1191-2701" />
+                    <pattern match="POFM 1191-21201" />
+                    <pattern match="POFM 1191-21701" />
                 </subtopic>              
             </topic>
             <topic name="Medical Front Office Assistant Certificate - Second Semester">
                 <comments></comments>
                 <subtopic name="Medical Coding Basics">
-                    <pattern match="POFM 1300-2501" />
-                    <pattern match="POFM 1300-2001" />
-                    <pattern match="POFM 1327-2001" />
-                    <pattern match="POFM 1370-2001" />
+                    <pattern match="POFM 1300-21501" />
+                    <pattern match="POFM 1300-21001" />
+                    <pattern match="POFM 1327-21001" />
+                    <pattern match="POFM 1370-21001" />
                 </subtopic>
                 <subtopic name="Medical Insurance">
-                    <pattern match="POFM 1327-2501" />
+                    <pattern match="POFM 1327-21501" />
                 </subtopic>
                 <subtopic name="Business English">
-                    <pattern match="POFT 1301-2301" />
-                    <pattern match="POFT 1301-2781" />
-                    <pattern match="POFT 1301-2427" />
-                    <pattern match="POFT 1301-2502" />
-                    <pattern match="POFT 1301-2402" />
-                    <pattern match="POFT 1302-2402" />                    
+                    <pattern match="POFT 1301-21301" />
+                    <pattern match="POFT 1301-21781" />
+                    <pattern match="POFT 1301-21427" />
+                    <pattern match="POFT 1301-21502" />
+                    <pattern match="POFT 1301-21402" />
+                    <pattern match="POFT 1302-21402" />                    
                 </subtopic>
                 <subtopic name="Medical Health Records">
-                    <pattern match="POFM 1370-2501" />
+                    <pattern match="POFM 1370-21501" />
                 </subtopic>
                 <subtopic name="Medical Front Office Co-Op Work Experience">
                     <comments></comments>
-                    <pattern match="POFM 1280-2250" />
+                    <pattern match="POFM 1280-21250" />
                 </subtopic>
             </topic>
         </subject>
@@ -643,60 +643,60 @@
             </comments>
 			<topic name="Emergency Medical Services, Basic">
         <subtopic name="Emt-basic Class #68, A Shift">
-          <pattern match="EMSP 1501-2218" />
-          <pattern match="EMSP 1501-2201" />
-          <pattern match="EMSP 1160-2218" />
+          <pattern match="EMSP 1501-21218" />
+          <pattern match="EMSP 1501-21201" />
+          <pattern match="EMSP 1160-21218" />
         </subtopic>
         <subtopic name="Emt-basic Class #69">
-          <pattern match="EMSP 1501-2719" />
-          <pattern match="EMSP 1501-2701" />
-          <pattern match="EMSP 1501-2702" />
-          <pattern match="EMSP 1501-2703" />
-          <pattern match="EMSP 1160-2219" />
+          <pattern match="EMSP 1501-21719" />
+          <pattern match="EMSP 1501-21701" />
+          <pattern match="EMSP 1501-21702" />
+          <pattern match="EMSP 1501-21703" />
+          <pattern match="EMSP 1160-21219" />
         </subtopic>
       </topic>
 
       <topic name="Emergency Medical Services, Paramedic">
         <subtopic name="Paramedic Class #32, B Shift">
-          <pattern match="EMSP 1355-2232" />
-          <pattern match="EMSP 1355-2201" />
-          <pattern match="EMSP 2430-2232" />
-          <pattern match="EMSP 2430-2001" />		  
-          <pattern match="EMSP 2430-2201" />		  
-          <pattern match="EMSP 2338-2232" />
-          <pattern match="EMSP 2338-2201" />
-          <pattern match="EMSP 2261-2231" />
-          <pattern match="EMSP 2261-2232" />
-          <pattern match="EMSP 2463-2201" />
+          <pattern match="EMSP 1355-21232" />
+          <pattern match="EMSP 1355-21201" />
+          <pattern match="EMSP 2430-21232" />
+          <pattern match="EMSP 2430-21001" />		  
+          <pattern match="EMSP 2430-21201" />		  
+          <pattern match="EMSP 2338-21232" />
+          <pattern match="EMSP 2338-21201" />
+          <pattern match="EMSP 2261-21231" />
+          <pattern match="EMSP 2261-21232" />
+          <pattern match="EMSP 2463-21201" />
 		  
         </subtopic> 
 
         <subtopic name="Paramedic Class #33, C Shift">
-          <pattern match="EMSP 1438-2223" />
-          <pattern match="EMSP 1438-2233" />
-          <pattern match="EMSP 1438-2201" />		  
-          <pattern match="EMSP 1356-2233" />          
-          <pattern match="EMSP 1356-2201" />		  
-          <pattern match="EMSP 2444-2233" />                    
-          <pattern match="EMSP 2444-2201" />
-          <pattern match="EMSP 2260-2233" />
+          <pattern match="EMSP 1438-21223" />
+          <pattern match="EMSP 1438-21233" />
+          <pattern match="EMSP 1438-21201" />		  
+          <pattern match="EMSP 1356-21233" />          
+          <pattern match="EMSP 1356-21201" />		  
+          <pattern match="EMSP 2444-21233" />                    
+          <pattern match="EMSP 2444-21201" />
+          <pattern match="EMSP 2260-21233" />
         </subtopic>
 
 
         <subtopic name="Paramedic Class #31">
-          <pattern match="EMSP 2338-2731" />
-          <pattern match="EMSP 2143-2731" />
-          <pattern match="EMSP 2463-2231" />
+          <pattern match="EMSP 2338-21731" />
+          <pattern match="EMSP 2143-21731" />
+          <pattern match="EMSP 2463-21231" />
        </subtopic>
 
         <subtopic name="RN to Paramedic Class #4">
-          <pattern match="EMSP 2553-2204" />
-          <pattern match="EMSP 2237-2204" />
-          <pattern match="EMSP 2463-2204" />
+          <pattern match="EMSP 2553-21204" />
+          <pattern match="EMSP 2237-21204" />
+          <pattern match="EMSP 2463-21204" />
         </subtopic>
         <subtopic name="Mass Disaster Response, A Shift">
-            <pattern match="EMSP 1391-2212" />			
-            <pattern match="EMSP 1391-2214" />			
+            <pattern match="EMSP 1391-21212" />			
+            <pattern match="EMSP 1391-21214" />			
 		</subtopic>
 			</topic>
         </subject>
@@ -766,24 +766,24 @@
 
             <topic name="Computed Tomography">
                 <pattern match="CTMT" unsorted="true" />
-                <pattern match="RADR 2240-2400" />
+                <pattern match="RADR 2240-21400" />
 
                 
             </topic>
 
             <topic name="Vascular Interventional Technology">
-                <pattern match="RADR 2170-2261" />
-                <pattern match="RADR 2170-2262" />
-                <pattern match="RADR 2170-2263" />
-                <pattern match="RADR 2170-2264" />
-                <pattern match="RADR 2170-2265" />
-                <pattern match="RADR 2170-2266" />
-                <pattern match="RADR 2170-2267" />
-                <pattern match="RADR 2170-2268" />
-                <pattern match="RADR 2170-2269" />
-                <pattern match="RADR 2170-2270" />
-                <pattern match="RADR 2370-2501" />
-                <pattern match="RADR 2371-2501" />
+                <pattern match="RADR 2170-21261" />
+                <pattern match="RADR 2170-21262" />
+                <pattern match="RADR 2170-21263" />
+                <pattern match="RADR 2170-21264" />
+                <pattern match="RADR 2170-21265" />
+                <pattern match="RADR 2170-21266" />
+                <pattern match="RADR 2170-21267" />
+                <pattern match="RADR 2170-21268" />
+                <pattern match="RADR 2170-21269" />
+                <pattern match="RADR 2170-21270" />
+                <pattern match="RADR 2370-21501" />
+                <pattern match="RADR 2371-21501" />
             </topic>
 
         </subject>
@@ -841,28 +841,23 @@
         </topic>
 
         <topic name="Art and Computers">
-          <pattern match="ARTS 2313-2001" />
-          <pattern match="ARTS 2313-2201" />
-          <pattern match="ARTS 2314-2001" />
-          <pattern match="ARTS 2348-2001" />
-          <pattern match="ARTS 2349-2001" />
-          <pattern match="ARTS 2348-2201" />          
-          <pattern match="ARTS 2311-2010" />
-          <pattern match="ARTS 2312-2010" />
-          <pattern match="ARTS 2311-2024" />
-          <pattern match="ARTS 2311-2255" />
-          <pattern match="ARTS 2312-2200" />
-          <pattern match="ARTS 2313-2501" />
-          <pattern match="ARTS 2314-2501" />
-          <pattern match="ARTS 2311-2254" />          
-		  <pattern match="ARTS 2313-2250" />
-          <pattern match="ARTS 2314-2250" />
+          <pattern match="ARTS 2313-21001" />
+          <pattern match="ARTS 2313-21201" />
+          <pattern match="ARTS 2314-21001" />
+          <pattern match="ARTS 2348-21001" />
+          <pattern match="ARTS 2349-21001" />
+          <pattern match="ARTS 2348-21201" />          
+          <pattern match="ARTS 2311-21010" />
+          <pattern match="ARTS 2312-21010" />
+          <pattern match="ARTS 2311-21024" />
+          <pattern match="ARTS 2311-21255" />
+          <pattern match="ARTS 2312-21200" />
+          <pattern match="ARTS 2313-21501" />
+          <pattern match="ARTS 2314-21501" />
+          <pattern match="ARTS 2311-21254" />          
+		  <pattern match="ARTS 2313-21250" />
+          <pattern match="ARTS 2314-21250" />
 
-            <!-- <pattern match="ARTS 2312-2510" /> -->
-            <!-- <pattern match="ARTS 2316-2250" /> -->
-            <!-- <pattern match="ARTS 2316-2501" />  -->
-            <!-- <pattern match="ARTS 2317-2250" />  -->
-            <!-- <pattern match="ARTS 2317-2501" />  -->
         </topic>
 
 
@@ -873,181 +868,181 @@
 
 
         <topic name="Art Metals">
-          <pattern match="ARTS 2341-2001" />
-          <pattern match="ARTS 2342-2003" />
-          <pattern match="ARTS 2311-2019" />
-          <pattern match="ARTS 2312-2008" />
-          <pattern match="ARTS 2341-2501" />
-          <pattern match="ARTS 2342-2501" />
-          <pattern match="ARTS 2311-2510" />
-          <pattern match="ARTS 2312-2512" />
+          <pattern match="ARTS 2341-21001" />
+          <pattern match="ARTS 2342-21003" />
+          <pattern match="ARTS 2311-21019" />
+          <pattern match="ARTS 2312-21008" />
+          <pattern match="ARTS 2341-21501" />
+          <pattern match="ARTS 2342-21501" />
+          <pattern match="ARTS 2311-21510" />
+          <pattern match="ARTS 2312-21512" />
         </topic>
 
         <topic name="Ceramics">
-          <pattern match="ARTS 2346-2001" />		  
-          <pattern match="ARTS 2347-2001" />
-          <pattern match="ARTS 2347-2002" />
-          <pattern match="ARTS 2347-2003" />
-          <pattern match="ARTS 2311-2018" />
-          <pattern match="ARTS 2311-2011" />
-          <pattern match="ARTS 2312-2018" />
+          <pattern match="ARTS 2346-21001" />		  
+          <pattern match="ARTS 2347-21001" />
+          <pattern match="ARTS 2347-21002" />
+          <pattern match="ARTS 2347-21003" />
+          <pattern match="ARTS 2311-21018" />
+          <pattern match="ARTS 2311-21011" />
+          <pattern match="ARTS 2312-21018" />
 		  
-          <pattern match="ARTS 2312-2009" />
+          <pattern match="ARTS 2312-21009" />
 		  
-          <pattern match="ARTS 2311-2023" />
-          <pattern match="ARTS 2312-2023" />
+          <pattern match="ARTS 2311-21023" />
+          <pattern match="ARTS 2312-21023" />
 		  
-          <pattern match="ARTS 2347-2004" />		  
-          <pattern match="ARTS 2346-2501" />
-          <pattern match="ARTS 2347-2501" />
-          <pattern match="ARTS 2311-2506" />
-          <pattern match="ARTS 2312-2505" />
-          <pattern match="ARTS 2346-2502" />
-          <pattern match="ARTS 2347-2502" />
-          <pattern match="ARTS 2311-2509" />
-          <pattern match="ARTS 2312-2509" />
-          <pattern match="ARTS 2346-2250" />
-          <pattern match="ARTS 2347-2250" />
-          <pattern match="ARTS 2311-2252" />
-          <pattern match="ARTS 2312-2252" />
-          <pattern match="ARTS 2312-2254" />
-          <pattern match="ARTS 2312-2201" />
+          <pattern match="ARTS 2347-21004" />		  
+          <pattern match="ARTS 2346-21501" />
+          <pattern match="ARTS 2347-21501" />
+          <pattern match="ARTS 2311-21506" />
+          <pattern match="ARTS 2312-21505" />
+          <pattern match="ARTS 2346-21502" />
+          <pattern match="ARTS 2347-21502" />
+          <pattern match="ARTS 2311-21509" />
+          <pattern match="ARTS 2312-21509" />
+          <pattern match="ARTS 2346-21250" />
+          <pattern match="ARTS 2347-21250" />
+          <pattern match="ARTS 2311-21252" />
+          <pattern match="ARTS 2312-21252" />
+          <pattern match="ARTS 2312-21254" />
+          <pattern match="ARTS 2312-21201" />
         </topic>
 
 
         <topic name="Design">
-          <pattern match="ARTS 1311-2001" />
-          <pattern match="ARTS 1311-2002" />
-          <pattern match="ARTS 1312-2001" />
-          <pattern match="ARTS 1312-2501" />
-          <pattern match="ARTS 1311-2250" />
-          <pattern match="ARTS 1312-2250" />
+          <pattern match="ARTS 1311-21001" />
+          <pattern match="ARTS 1311-21002" />
+          <pattern match="ARTS 1312-21001" />
+          <pattern match="ARTS 1312-21501" />
+          <pattern match="ARTS 1311-21250" />
+          <pattern match="ARTS 1312-21250" />
         </topic>
           
           
         <topic name="Drawing">
-          <pattern match="ARTS 1316-2001" />
-          <pattern match="ARTS 1316-2002" />
-          <pattern match="ARTS 1316-2003" />
-          <pattern match="ARTS 1317-2002" />
-          <pattern match="ARTS 2311-2020" />
-          <pattern match="ARTS 2312-2022" />
-          <pattern match="ARTS 1317-2001" />
-          <pattern match="ARTS 2311-2002" />
-          <pattern match="ARTS 2312-2020" />
-          <pattern match="ARTS 2323-2001" />
-          <pattern match="ARTS 2324-2001" />
-          <pattern match="ARTS 2311-2008" />
-          <pattern match="ARTS 2312-2021" />
-          <pattern match="ARTS 2312-2202" />
+          <pattern match="ARTS 1316-21001" />
+          <pattern match="ARTS 1316-21002" />
+          <pattern match="ARTS 1316-21003" />
+          <pattern match="ARTS 1317-21002" />
+          <pattern match="ARTS 2311-21020" />
+          <pattern match="ARTS 2312-21022" />
+          <pattern match="ARTS 1317-21001" />
+          <pattern match="ARTS 2311-21002" />
+          <pattern match="ARTS 2312-21020" />
+          <pattern match="ARTS 2323-21001" />
+          <pattern match="ARTS 2324-21001" />
+          <pattern match="ARTS 2311-21008" />
+          <pattern match="ARTS 2312-21021" />
+          <pattern match="ARTS 2312-21202" />
 
-          <pattern match="ARTS 1316-2501" />
-          <pattern match="ARTS 1317-2501" />
-          <pattern match="ARTS 2311-2512" />
-          <pattern match="ARTS 2312-2514" />
-          <pattern match="ARTS 2323-2501" />
-          <pattern match="ARTS 2324-2501" />
-          <pattern match="ARTS 2311-2508" />
-          <pattern match="ARTS 2312-2502" />
-          <pattern match="ARTS 1316-2250" />
-          <pattern match="ARTS 1317-2250" />
-          <pattern match="ARTS 2311-2250" />
-          <pattern match="ARTS 2312-2250" />
-          <pattern match="ARTS 1316-2251" />
-          <pattern match="ARTS 1317-2251" />
-          <pattern match="ARTS 2311-2253" />
-          <pattern match="ARTS 2312-2253" />
+          <pattern match="ARTS 1316-21501" />
+          <pattern match="ARTS 1317-21501" />
+          <pattern match="ARTS 2311-21512" />
+          <pattern match="ARTS 2312-21514" />
+          <pattern match="ARTS 2323-21501" />
+          <pattern match="ARTS 2324-21501" />
+          <pattern match="ARTS 2311-21508" />
+          <pattern match="ARTS 2312-21502" />
+          <pattern match="ARTS 1316-21250" />
+          <pattern match="ARTS 1317-21250" />
+          <pattern match="ARTS 2311-21250" />
+          <pattern match="ARTS 2312-21250" />
+          <pattern match="ARTS 1316-21251" />
+          <pattern match="ARTS 1317-21251" />
+          <pattern match="ARTS 2311-21253" />
+          <pattern match="ARTS 2312-21253" />
         </topic>
         
 		
         <topic name="Painting">
-          <pattern match="ARTS 2316-2001" />
-          <pattern match="ARTS 2317-2001" />
-          <pattern match="ARTS 2311-2013" />
-          <pattern match="ARTS 2316-2002" />
-          <pattern match="ARTS 2317-2002" />
-          <pattern match="ARTS 2311-2015" />
-          <pattern match="ARTS 2312-2015" />
-          <pattern match="ARTS 2316-2003" />
-          <pattern match="ARTS 2317-2003" />
-          <pattern match="ARTS 2311-2012" />
-          <pattern match="ARTS 2312-2005" />
-          <pattern match="ARTS 2316-2004" />
-          <pattern match="ARTS 2317-2004" />
-          <pattern match="ARTS 2311-2007" />
-          <pattern match="ARTS 2312-2017" />
-          <pattern match="ARTS 2366-2001" />
-          <pattern match="ARTS 2367-2001" />
-          <pattern match="ARTS 2311-2016" />
-          <pattern match="ARTS 2312-2016" />
-          <pattern match="ARTS 2316-2501" />
-          <pattern match="ARTS 2317-2501" />
-          <pattern match="ARTS 2311-2504" />
-          <pattern match="ARTS 2312-2510" />
-          <pattern match="ARTS 2316-2250" />
-          <pattern match="ARTS 2317-2250" />
-          <pattern match="ARTS 2311-2251" />
-          <pattern match="ARTS 2312-2203" />
-          <pattern match="ARTS 2312-2251" />
+          <pattern match="ARTS 2316-21001" />
+          <pattern match="ARTS 2317-21001" />
+          <pattern match="ARTS 2311-21013" />
+          <pattern match="ARTS 2316-21002" />
+          <pattern match="ARTS 2317-21002" />
+          <pattern match="ARTS 2311-21015" />
+          <pattern match="ARTS 2312-21015" />
+          <pattern match="ARTS 2316-21003" />
+          <pattern match="ARTS 2317-21003" />
+          <pattern match="ARTS 2311-21012" />
+          <pattern match="ARTS 2312-21005" />
+          <pattern match="ARTS 2316-21004" />
+          <pattern match="ARTS 2317-21004" />
+          <pattern match="ARTS 2311-21007" />
+          <pattern match="ARTS 2312-21017" />
+          <pattern match="ARTS 2366-21001" />
+          <pattern match="ARTS 2367-21001" />
+          <pattern match="ARTS 2311-21016" />
+          <pattern match="ARTS 2312-21016" />
+          <pattern match="ARTS 2316-21501" />
+          <pattern match="ARTS 2317-21501" />
+          <pattern match="ARTS 2311-21504" />
+          <pattern match="ARTS 2312-21510" />
+          <pattern match="ARTS 2316-21250" />
+          <pattern match="ARTS 2317-21250" />
+          <pattern match="ARTS 2311-21251" />
+          <pattern match="ARTS 2312-21203" />
+          <pattern match="ARTS 2312-21251" />
         </topic>
           
           
         <topic name="Photography">
-          <pattern match="ARTS 2356-2001" />
-          <pattern match="ARTS 2357-2001" />
-          <pattern match="ARTS 2311-2003" />
-          <pattern match="ARTS 2312-2003" />
-          <pattern match="ARTS 2356-2501" />
-          <pattern match="ARTS 2357-2501" />
-          <pattern match="ARTS 2311-2507" />
-          <pattern match="ARTS 2312-2513" />
+          <pattern match="ARTS 2356-21001" />
+          <pattern match="ARTS 2357-21001" />
+          <pattern match="ARTS 2311-21003" />
+          <pattern match="ARTS 2312-21003" />
+          <pattern match="ARTS 2356-21501" />
+          <pattern match="ARTS 2357-21501" />
+          <pattern match="ARTS 2311-21507" />
+          <pattern match="ARTS 2312-21513" />
         </topic>
 
         <topic name="Printmaking">
-          <pattern match="ARTS 2333-2001" />
-          <pattern match="ARTS 2334-2001" />
-          <pattern match="ARTS 2311-2009" />
-          <pattern match="ARTS 2312-2006" />
-          <pattern match="ARTS 2333-2501" />
-          <pattern match="ARTS 2334-2501" />
-          <pattern match="ARTS 2311-2505" />
-          <pattern match="ARTS 2312-2504" />
-          <pattern match="ARTS 2333-2701" />
+          <pattern match="ARTS 2333-21001" />
+          <pattern match="ARTS 2334-21001" />
+          <pattern match="ARTS 2311-21009" />
+          <pattern match="ARTS 2312-21006" />
+          <pattern match="ARTS 2333-21501" />
+          <pattern match="ARTS 2334-21501" />
+          <pattern match="ARTS 2311-21505" />
+          <pattern match="ARTS 2312-21504" />
+          <pattern match="ARTS 2333-21701" />
 
         </topic>
 
         <topic name="Sculpture">
-          <pattern match="ARTS 2326-2001" />
-          <pattern match="ARTS 2327-2001" />
-          <pattern match="ARTS 2311-2001" />
-          <pattern match="ARTS 2312-2001" />
-          <pattern match="ARTS 2311-2514" />
-          <pattern match="ARTS 2312-2515" />		  
-          <pattern match="ARTS 2326-2002" />
-          <pattern match="ARTS 2327-2002" />
-          <pattern match="ARTS 2311-2021" />
-          <pattern match="ARTS 2312-2019" />
-          <pattern match="ARTS 2326-2501" />
-          <pattern match="ARTS 2327-2501" />
-          <pattern match="ARTS 2311-2511" />
-          <pattern match="ARTS 2312-2511" />
+          <pattern match="ARTS 2326-21001" />
+          <pattern match="ARTS 2327-21001" />
+          <pattern match="ARTS 2311-21001" />
+          <pattern match="ARTS 2312-21001" />
+          <pattern match="ARTS 2311-21514" />
+          <pattern match="ARTS 2312-21515" />		  
+          <pattern match="ARTS 2326-21002" />
+          <pattern match="ARTS 2327-21002" />
+          <pattern match="ARTS 2311-21021" />
+          <pattern match="ARTS 2312-21019" />
+          <pattern match="ARTS 2326-21501" />
+          <pattern match="ARTS 2327-21501" />
+          <pattern match="ARTS 2311-21511" />
+          <pattern match="ARTS 2312-21511" />
         </topic>
       </subject>
 
         <subject name="Cultural Studies">            <!-- added Jill 2011-05-04 -->
-            <pattern match="CUST 2370-2001" />
-            <pattern match="CUST 2370-2004" />
-            <pattern match="CUST 2370-2002" />
-            <pattern match="CUST 2370-2003" />
-            <pattern match="CUST 2370-2502" />
-            <pattern match="CUST 2370-2426" />
-            <pattern match="CUST 2370-2427" />
-            <pattern match="CUST 2370-2428" />
-            <pattern match="CUST 2370-2429" />
-            <pattern match="CUST 2370-2430" />
-            <pattern match="CUST 2370-2431" />
-            <pattern match="CUST 2370-2432" />
-            <pattern match="CUST 2370-2440" />
+            <pattern match="CUST 2370-21001" />
+            <pattern match="CUST 2370-21004" />
+            <pattern match="CUST 2370-21002" />
+            <pattern match="CUST 2370-21003" />
+            <pattern match="CUST 2370-21502" />
+            <pattern match="CUST 2370-21426" />
+            <pattern match="CUST 2370-21427" />
+            <pattern match="CUST 2370-21428" />
+            <pattern match="CUST 2370-21429" />
+            <pattern match="CUST 2370-21430" />
+            <pattern match="CUST 2370-21431" />
+            <pattern match="CUST 2370-21432" />
+            <pattern match="CUST 2370-21440" />
         </subject>
 
         <!-- Added 2010-03-25  -->
@@ -1057,7 +1052,7 @@
         </comments>
 		
         <topic name="Composition">
-          <pattern match="DANC 1101-2701" />
+          <pattern match="DANC 1101-21701" />
         </topic>
         <topic name="Dance Appreciation">
           <pattern match="DANC 2303-21001" />
@@ -1065,9 +1060,9 @@
 		  
           <pattern match="DANC 2303-21420" />
           <pattern match="DANC 2304-21400" />		  
-          <pattern match="DANC 2304-2421" />
-          <pattern match="DANC 2304-2422" />  <!-- added per Jill 2010-08-26 -->
-          <pattern match="DANC 2304-2430" />
+          <pattern match="DANC 2304-21421" />
+          <pattern match="DANC 2304-21422" />  <!-- added per Jill 2010-08-26 -->
+          <pattern match="DANC 2304-21430" />
         </topic>
 		
 		
@@ -1076,35 +1071,35 @@
           <pattern match="DANC 1141-21892" />
           <pattern match="DANC 1142-21001" />
 		  
-          <pattern match="DANC 1141-2092" />
-          <pattern match="DANC 1142-2092" />
+          <pattern match="DANC 1141-21092" />
+          <pattern match="DANC 1142-21092" />
 		  
         </topic>
         <topic name="Dance Practicum">
           <pattern match="DANC 1351-21001" />
 		  
-          <pattern match="DANC 1351-2200" />
-          <pattern match="DANC 1351-2235" />
-          <pattern match="DANC 1352-2200" />
+          <pattern match="DANC 1351-21200" />
+          <pattern match="DANC 1351-21235" />
+          <pattern match="DANC 1352-21200" />
 
-          <pattern match="DANC 1351-2702" />
-          <pattern match="DANC 1351-2703" />
-          <pattern match="DANC 1352-2702" />
-          <pattern match="DANC 1352-2703" />		  
-          <pattern match="DANC 2351-2200" />
-          <pattern match="DANC 2352-2200" />
-          <pattern match="DANC 2351-2236" />
-          <pattern match="DANC 2351-2237" />
-          <pattern match="DANC 2351-2702" />
-          <pattern match="DANC 2351-2703" />
-          <pattern match="DANC 2352-2702" />
-          <pattern match="DANC 2352-2703" />
-          <pattern match="DANC 2352-2704" />
+          <pattern match="DANC 1351-21702" />
+          <pattern match="DANC 1351-21703" />
+          <pattern match="DANC 1352-21702" />
+          <pattern match="DANC 1352-21703" />		  
+          <pattern match="DANC 2351-21200" />
+          <pattern match="DANC 2352-21200" />
+          <pattern match="DANC 2351-21236" />
+          <pattern match="DANC 2351-21237" />
+          <pattern match="DANC 2351-21702" />
+          <pattern match="DANC 2351-21703" />
+          <pattern match="DANC 2352-21702" />
+          <pattern match="DANC 2352-21703" />
+          <pattern match="DANC 2352-21704" />
         </topic>
 
 
         <topic name="Improvisation">
-          <pattern match="DANC 1113-2501" />
+          <pattern match="DANC 1113-21501" />
         </topic>
 
         <topic name="Aerial Dance">
@@ -1112,13 +1107,13 @@
           <pattern match="DANC 1102-21001" />
           <pattern match="DANC 1103-21001" />
 
-          <pattern match="DANC 1101-2501" />
-          <pattern match="DANC 1101-2700" />		  
-          <pattern match="DANC 1102-2001" />
-          <pattern match="DANC 1103-2001" />
+          <pattern match="DANC 1101-21501" />
+          <pattern match="DANC 1101-21700" />		  
+          <pattern match="DANC 1102-21001" />
+          <pattern match="DANC 1103-21001" />
 
-          <pattern match="DANC 1102-2501" />
-          <pattern match="DANC 1103-2501" />
+          <pattern match="DANC 1102-21501" />
+          <pattern match="DANC 1103-21501" />
         </topic>          
 
           <topic name="Tap">
@@ -1128,15 +1123,15 @@
           <pattern match="DANC 2111-21001" />
 
 
-          <pattern match="DANC 2110-2050" />
-          <pattern match="DANC 2111-2050" />		  
-          <pattern match="DANC 2212-2050" />
-          <pattern match="DANC 2213-2050" />		  
+          <pattern match="DANC 2110-21050" />
+          <pattern match="DANC 2111-21050" />		  
+          <pattern match="DANC 2212-21050" />
+          <pattern match="DANC 2213-21050" />		  
 
-          <pattern match="DANC 1110-2050" />
-          <pattern match="DANC 1111-2050" />		  
-          <pattern match="DANC 1110-2201" />
-          <pattern match="DANC 1110-2202" />
+          <pattern match="DANC 1110-21050" />
+          <pattern match="DANC 1111-21050" />		  
+          <pattern match="DANC 1110-21201" />
+          <pattern match="DANC 1110-21202" />
           </topic>
 
           <topic name="Hip Hop">
@@ -1147,7 +1142,7 @@
           <pattern match="DANC 2222-21001" />
           <pattern match="DANC 2223-21001" />
           <pattern match="DANC 1222-21202" />  <!-- add per linda 2010-08-31 -->
-          <pattern match="DANC 1222-2203" />  <!-- add per linda 2010-08-31 -->
+          <pattern match="DANC 1222-21203" />  <!-- add per linda 2010-08-31 -->
           <pattern match="DANC 1222-21501" />
           <pattern match="DANC 1223-21501" />
           <pattern match="DANC 2222-21501" />
@@ -1156,13 +1151,13 @@
 
         <topic name="Jazz">
           <pattern match="DANC 1247-21001" />
-          <pattern match="DANC 1247-2002" />		  
+          <pattern match="DANC 1247-21002" />		  
           <pattern match="DANC 2247-21001" />
           <pattern match="DANC 1248-21001" />
           <pattern match="DANC 2248-21001" />
-          <pattern match="DANC 1248-2002" />
-          <pattern match="DANC 1247-2202" />
-          <pattern match="DANC 1248-2202" />
+          <pattern match="DANC 1248-21002" />
+          <pattern match="DANC 1247-21202" />
+          <pattern match="DANC 1248-21202" />
           <pattern match="DANC 1247-21501" />           
           <pattern match="DANC 1247-21502" />
           <pattern match="DANC 1248-21501" />
@@ -1171,25 +1166,25 @@
           <pattern match="DANC 2247-21502" />		  
           <pattern match="DANC 2248-21501" />
           <pattern match="DANC 2248-21502" />
-          <pattern match="DANC 1247-2702" />
-          <pattern match="DANC 1248-2702" />
-          <pattern match="DANC 1248-2703" />
+          <pattern match="DANC 1247-21702" />
+          <pattern match="DANC 1248-21702" />
+          <pattern match="DANC 1248-21703" />
         </topic>
 
         <topic name="Ballet">
           <pattern match="DANC 1341-21001" />
           <pattern match="DANC 1342-21001" />
 		  
-          <pattern match="DANC 1341-2200" />
-          <pattern match="DANC 1341-2205" />
-          <pattern match="DANC 1341-2701" />
-          <pattern match="DANC 1342-2701" />
-          <pattern match="DANC 1342-2001" />
-          <pattern match="DANC 1342-2002" />
-          <pattern match="DANC 1342-2003" />
-          <pattern match="DANC 1342-2202" />
+          <pattern match="DANC 1341-21200" />
+          <pattern match="DANC 1341-21205" />
+          <pattern match="DANC 1341-21701" />
+          <pattern match="DANC 1342-21701" />
+          <pattern match="DANC 1342-21001" />
+          <pattern match="DANC 1342-21002" />
+          <pattern match="DANC 1342-21003" />
+          <pattern match="DANC 1342-21202" />
           <pattern match="DANC 2341-21001" />
-          <pattern match="DANC 2341-2002" />		  
+          <pattern match="DANC 2341-21002" />		  
           <pattern match="DANC 2342-21001" />
           <pattern match="DANC 1341-21501" />
           <pattern match="DANC 1342-21501" />
@@ -1198,9 +1193,9 @@
           <pattern match="DANC 2341-21501" />
           <pattern match="DANC 2342-21501" />
           <pattern match="DANC 2341-2202" />
-          <pattern match="DANC 2341-2701" />
-          <pattern match="DANC 2342-2701" />
-          <pattern match="DANC 2342-2202" />
+          <pattern match="DANC 2341-21701" />
+          <pattern match="DANC 2342-21701" />
+          <pattern match="DANC 2342-21202" />
         </topic>
 
         <topic name="Ballet Technique">
@@ -1216,13 +1211,13 @@
           <pattern match="DANC 1246-21001" />
           <pattern match="DANC 2245-21001" />
           <pattern match="DANC 2246-21001" />
-          <pattern match="DANC 1245-2202" />            <!-- add per linda 2010-08-31 -->
+          <pattern match="DANC 1245-21202" />            <!-- add per linda 2010-08-31 -->
           <pattern match="DANC 1245-21501" />
-          <pattern match="DANC 1246-2201" />
+          <pattern match="DANC 1246-21201" />
           <pattern match="DANC 1246-21501" />
           <pattern match="DANC 2245-21501" />
           <pattern match="DANC 2246-21501" />
-          <pattern match="DANC 1245-2702" />          
+          <pattern match="DANC 1245-21702" />          
         </topic>
       </subject>
 
@@ -1232,42 +1227,42 @@
       <!-- Added 2010-03-25  -->
       <subject name="Drama">
         <topic name="Introduction to Theatre">
-          <pattern match="DRAM 1310-2001" />
-          <pattern match="DRAM 1310-2002" />
-          <pattern match="DRAM 1310-2501" />
+          <pattern match="DRAM 1310-21001" />
+          <pattern match="DRAM 1310-21002" />
+          <pattern match="DRAM 1310-21501" />
         </topic>
         <topic name="Film Appreciation">
-          <pattern match="DRAM 2366-2001" />
-          <pattern match="DRAM 2366-2002" />
-          <pattern match="DRAM 2366-2003" />
-          <pattern match="DRAM 2366-2004" />
-          <pattern match="DRAM 2366-2420" />
-          <pattern match="DRAM 2366-2421" />
+          <pattern match="DRAM 2366-21001" />
+          <pattern match="DRAM 2366-21002" />
+          <pattern match="DRAM 2366-21003" />
+          <pattern match="DRAM 2366-21004" />
+          <pattern match="DRAM 2366-21420" />
+          <pattern match="DRAM 2366-21421" />
         </topic>
 
         <topic name="Stagecraft">
-          <pattern match="DRAM 1330-2001" />
-          <pattern match="DRAM 1330-2002" />
-          <pattern match="DRAM 2331-2001" />
-          <pattern match="DRAM 2331-2002" />
+          <pattern match="DRAM 1330-21001" />
+          <pattern match="DRAM 1330-21002" />
+          <pattern match="DRAM 2331-21001" />
+          <pattern match="DRAM 2331-21002" />
         </topic>
         <topic name="Voice and Articulation">
-          <pattern match="DRAM 2336-2001" />
-          <pattern match="DRAM 2336-2002" />
+          <pattern match="DRAM 2336-21001" />
+          <pattern match="DRAM 2336-21002" />
         </topic>
         <topic name="Acting">
-          <pattern match="DRAM 1351-2001" />
-          <pattern match="DRAM 1351-2002" />
-          <pattern match="DRAM 1352-2001" />
-          <pattern match="DRAM 1352-2002" />
-          <pattern match="DRAM 2351-2001" />
-          <pattern match="DRAM 2351-2002" />
-          <pattern match="DRAM 2352-2001" />
-          <pattern match="DRAM 2352-2002" />
-          <pattern match="DRAM 1351-2501" />
-          <pattern match="DRAM 1352-2501" />
-          <pattern match="DRAM 2351-2501" />
-          <pattern match="DRAM 2352-2501" />
+          <pattern match="DRAM 1351-21001" />
+          <pattern match="DRAM 1351-21002" />
+          <pattern match="DRAM 1352-21001" />
+          <pattern match="DRAM 1352-21002" />
+          <pattern match="DRAM 2351-21001" />
+          <pattern match="DRAM 2351-21002" />
+          <pattern match="DRAM 2352-21001" />
+          <pattern match="DRAM 2352-21002" />
+          <pattern match="DRAM 1351-21501" />
+          <pattern match="DRAM 1352-21501" />
+          <pattern match="DRAM 2351-21501" />
+          <pattern match="DRAM 2352-21501" />
         </topic>
 
         <topic name="Rehearsal">
@@ -1275,9 +1270,9 @@
             <pattern match="DRAM 1221-21735" />
 
 
-            <pattern match="DRAM 1221-2736" />
-            <pattern match="DRAM 1221-2738" />
-            <pattern match="DRAM 1221-2740" />            
+            <pattern match="DRAM 1221-21736" />
+            <pattern match="DRAM 1221-21738" />
+            <pattern match="DRAM 1221-21740" />            
           </subtopic>
         </topic>
       </subject>
@@ -1285,190 +1280,190 @@
 
         <!-- Jill 2011-03-30  -->
         <subject name="Humanities">
-            <pattern match="HUMA 1315-2400" />
-            <pattern match="HUMA 1302-2426" />
-            <pattern match="HUMA 1315-2422" />
-            <pattern match="HUMA 1315-2423" />
-            <pattern match="HUMA 1315-2424" />
-            <pattern match="HUMA 1315-2425" />
-            <pattern match="HUMA 1315-2426" />
-            <pattern match="HUMA 1315-2431" />
-            <pattern match="HUMA 1315-2427" />
-            <pattern match="HUMA 1315-2428" />
-            <pattern match="HUMA 1315-2429" />
-            <pattern match="HUMA 1315-2430" />
+            <pattern match="HUMA 1315-21400" />
+            <pattern match="HUMA 1302-21426" />
+            <pattern match="HUMA 1315-21422" />
+            <pattern match="HUMA 1315-21423" />
+            <pattern match="HUMA 1315-21424" />
+            <pattern match="HUMA 1315-21425" />
+            <pattern match="HUMA 1315-21426" />
+            <pattern match="HUMA 1315-21431" />
+            <pattern match="HUMA 1315-21427" />
+            <pattern match="HUMA 1315-21428" />
+            <pattern match="HUMA 1315-21429" />
+            <pattern match="HUMA 1315-21430" />
         </subject>
 
 
         <!--  added 2010-03-31 Jill -->
       <subject name="Music">
         <topic name="Music Appreciation">
-          <pattern match="MUSI 1306-2001" />
-          <pattern match="MUSI 1306-2002" />
-          <pattern match="MUSI 1306-2003" />
-          <pattern match="MUSI 1306-2004" />
-          <pattern match="MUSI 1306-2005" />
-          <pattern match="MUSI 1306-2006" />
-          <pattern match="MUSI 1306-2200" />
-          <pattern match="MUSI 1306-2501" />
-          <pattern match="MUSI 1306-2502" />
-          <pattern match="MUSI 1306-2700" />		  
-          <pattern match="MUSI 1306-2401" />
-          <pattern match="MUSI 1306-2402" />
-          <pattern match="MUSI 1306-2420" />
-          <pattern match="MUSI 1306-2425" />
-          <pattern match="MUSI 1306-2426" />
-          <pattern match="MUSI 1306-2427" />
-          <pattern match="MUSI 1306-2428" />
-          <pattern match="MUSI 1306-2429" />
-          <pattern match="MUSI 1306-2430" />
-          <pattern match="MUSI 1306-2431" />
-          <pattern match="MUSI 1306-2432" /> <!-- added 2010-04-06 jill -->
-          <pattern match="MUSI 1306-2440" />
-          <pattern match="MUSI 1306-2446" />
+          <pattern match="MUSI 1306-21001" />
+          <pattern match="MUSI 1306-21002" />
+          <pattern match="MUSI 1306-21003" />
+          <pattern match="MUSI 1306-21004" />
+          <pattern match="MUSI 1306-21005" />
+          <pattern match="MUSI 1306-21006" />
+          <pattern match="MUSI 1306-21200" />
+          <pattern match="MUSI 1306-21501" />
+          <pattern match="MUSI 1306-21502" />
+          <pattern match="MUSI 1306-21700" />		  
+          <pattern match="MUSI 1306-21401" />
+          <pattern match="MUSI 1306-21402" />
+          <pattern match="MUSI 1306-21420" />
+          <pattern match="MUSI 1306-21425" />
+          <pattern match="MUSI 1306-21426" />
+          <pattern match="MUSI 1306-21427" />
+          <pattern match="MUSI 1306-21428" />
+          <pattern match="MUSI 1306-21429" />
+          <pattern match="MUSI 1306-21430" />
+          <pattern match="MUSI 1306-21431" />
+          <pattern match="MUSI 1306-21432" /> <!-- added 2010-04-06 jill -->
+          <pattern match="MUSI 1306-21440" />
+          <pattern match="MUSI 1306-21446" />
        </topic>        
         <topic name="Music Theory">
-          <pattern match="MUSI 1311-2001" />          
-          <pattern match="MUSI 1311-2002" /> <!-- Added per Linda 2010-08-13 -->
-          <pattern match="MUSI 1311-2200" />          		  
-          <pattern match="MUSI 1312-2001" />
-          <pattern match="MUSI 1312-2200" />          
-          <pattern match="MUSI 2311-2001" />
-          <pattern match="MUSI 2311-2200" />
-          <pattern match="MUSI 2312-2300" />
+          <pattern match="MUSI 1311-21001" />          
+          <pattern match="MUSI 1311-21002" /> <!-- Added per Linda 2010-08-13 -->
+          <pattern match="MUSI 1311-21200" />          		  
+          <pattern match="MUSI 1312-21001" />
+          <pattern match="MUSI 1312-21200" />          
+          <pattern match="MUSI 2311-21001" />
+          <pattern match="MUSI 2311-21200" />
+          <pattern match="MUSI 2312-21300" />
         </topic>
         <topic name="Musicianship">
-          <pattern match="MUSI 1116-2001" />          <!-- Added per Linda 2010-08-13 -->
-          <pattern match="MUSI 1116-2002" />
-          <pattern match="MUSI 1116-2200" />
-          <pattern match="MUSI 1117-2001" />
-          <pattern match="MUSI 1117-2200" /> <!-- Added per linda 2010-08-02 -->
-          <pattern match="MUSI 2116-2001" />
-          <pattern match="MUSI 2116-2200" /> <!-- added ri 2010-08-27 -->
-          <pattern match="MUSI 2117-2300" />
+          <pattern match="MUSI 1116-21001" />          <!-- Added per Linda 2010-08-13 -->
+          <pattern match="MUSI 1116-21002" />
+          <pattern match="MUSI 1116-21200" />
+          <pattern match="MUSI 1117-21001" />
+          <pattern match="MUSI 1117-21200" /> <!-- Added per linda 2010-08-02 -->
+          <pattern match="MUSI 2116-21001" />
+          <pattern match="MUSI 2116-21200" /> <!-- added ri 2010-08-27 -->
+          <pattern match="MUSI 2117-21300" />
         </topic>
 
         <topic name="Music Literature">
-          <pattern match="MUSI 1308-2300" />
-          <pattern match="MUSI 1309-2300" />
+          <pattern match="MUSI 1308-21300" />
+          <pattern match="MUSI 1309-21300" />
         </topic>
         <topic name="Fundamentals of Music">
-           <pattern match="MUSI 1302-2200" />
+           <pattern match="MUSI 1302-21200" />
         </topic>
 		
         <topic name="Foundation of Music">
-          <pattern match="MUSI 1300-2200" />
-          <pattern match="MUSI 1300-2300" />          
-          <pattern match="MUSI 1304-2200" />
-          <pattern match="MUSI 1304-2300" />
-          <pattern match="MUSI 1301-2200" />
-          <pattern match="MUSI 1301-2300" />          
-          <pattern match="MUSI 1302-2300" />
+          <pattern match="MUSI 1300-21200" />
+          <pattern match="MUSI 1300-21300" />          
+          <pattern match="MUSI 1304-21200" />
+          <pattern match="MUSI 1304-21300" />
+          <pattern match="MUSI 1301-21200" />
+          <pattern match="MUSI 1301-21300" />          
+          <pattern match="MUSI 1302-21300" />
         </topic>
 
         <topic name="Composition">
-          <pattern match="MUSI 1386-2200" />
-          <pattern match="MUSI 1386-2300" />
+          <pattern match="MUSI 1386-21200" />
+          <pattern match="MUSI 1386-21300" />
         </topic>
         <topic name="Recital">
-          <pattern match="MUSI 9176-2001" />
-          <pattern match="MUSI 9176-2002" />
+          <pattern match="MUSI 9176-21001" />
+          <pattern match="MUSI 9176-21002" />
         </topic>
         <topic name="Digital">
-          <pattern match="MUSI 1390-2001" />
-          <pattern match="MUSI 1390-2002" />
-          <pattern match="MUSI 1391-2501" />
+          <pattern match="MUSI 1390-21001" />
+          <pattern match="MUSI 1390-21002" />
+          <pattern match="MUSI 1391-21501" />
         </topic>
         <topic name="Piano for Music Majors">
-          <pattern match="MUSI 1181-2002" />
-          <pattern match="MUSI 1181-2003" /> <!-- added per linda 2010-08-12 -->
-          <pattern match="MUSI 1182-2002" />
-          <pattern match="MUSI 2181-2001" />
-          <pattern match="MUSI 2182-2001" />
+          <pattern match="MUSI 1181-21002" />
+          <pattern match="MUSI 1181-21003" /> <!-- added per linda 2010-08-12 -->
+          <pattern match="MUSI 1182-21002" />
+          <pattern match="MUSI 2181-21001" />
+          <pattern match="MUSI 2182-21001" />
         </topic>
         <topic name="Piano for Non Music Majors">
-          <pattern match="MUSI 1181-2006" />
-          <pattern match="MUSI 1181-2007" />
-          <pattern match="MUSI 1181-2001" />
-          <pattern match="MUSI 1181-2501" />
-          <pattern match="MUSI 1182-2501" />
-          <pattern match="MUSI 1181-2502" />
-          <pattern match="MUSI 1181-2700" />
+          <pattern match="MUSI 1181-21006" />
+          <pattern match="MUSI 1181-21007" />
+          <pattern match="MUSI 1181-21001" />
+          <pattern match="MUSI 1181-21501" />
+          <pattern match="MUSI 1182-21501" />
+          <pattern match="MUSI 1181-21502" />
+          <pattern match="MUSI 1181-21700" />
         </topic>
         <topic name="Jazz/Rock">
-          <pattern match="MUSI 1263-2001" />
-          <pattern match="MUSI 1310-2001" />
+          <pattern match="MUSI 1263-21001" />
+          <pattern match="MUSI 1310-21001" />
         </topic>
         <topic name="Guitar">
-          <pattern match="MUSI 1192-2001" />
-          <pattern match="MUSI 1192-2002" />
-          <pattern match="MUSI 1193-2001" />                      
-          <pattern match="MUSI 1193-2003" />                      
-          <pattern match="MUSI 1192-2200" />
-          <pattern match="MUSI 1193-2200" />
+          <pattern match="MUSI 1192-21001" />
+          <pattern match="MUSI 1192-21002" />
+          <pattern match="MUSI 1193-21001" />                      
+          <pattern match="MUSI 1193-21003" />                      
+          <pattern match="MUSI 1192-21200" />
+          <pattern match="MUSI 1193-21200" />
         </topic>
         <topic name="Voice">
-          <pattern match="MUSI 1183-2001" />
-          <pattern match="MUSI 1183-2002" />
-          <pattern match="MUSI 1183-2501" />
-          <pattern match="MUSI 1183-2502" />
+          <pattern match="MUSI 1183-21001" />
+          <pattern match="MUSI 1183-21002" />
+          <pattern match="MUSI 1183-21501" />
+          <pattern match="MUSI 1183-21502" />
         </topic>
 
         
         
         <topic name="Music Ensembles">
           <subtopic name="African Drumming Ensemble">
-            <pattern match="MUEN 1135-2200" />
+            <pattern match="MUEN 1135-21200" />
           </subtopic>
           <subtopic name="Brookhaven Choral Society">
-            <pattern match="MUEN 2141-2501" />
-            <pattern match="MUEN 2141-2700" />
-            <pattern match="MUEN 2141-2701" />
+            <pattern match="MUEN 2141-21501" />
+            <pattern match="MUEN 2141-21700" />
+            <pattern match="MUEN 2141-21701" />
           </subtopic>
           <subtopic name="Vivace Vocal Ensemble">
-            <pattern match="MUEN 1153-2200" />
+            <pattern match="MUEN 1153-21200" />
           </subtopic>
           <subtopic name="Chamber Ensemble">
-            <pattern match="MUEN 1152-2001" />
-            <pattern match="MUEN 1152-2002" />
-            <pattern match="MUEN 1152-2003" />			
-            <pattern match="MUEN 1152-2004" />			
-            <pattern match="MUEN 1152-2750" />
-            <pattern match="MUEN 1152-2751" />
+            <pattern match="MUEN 1152-21001" />
+            <pattern match="MUEN 1152-21002" />
+            <pattern match="MUEN 1152-21003" />			
+            <pattern match="MUEN 1152-21004" />			
+            <pattern match="MUEN 1152-21750" />
+            <pattern match="MUEN 1152-21751" />
           </subtopic>
           <subtopic name="Flute Ensemble">
-            <pattern match="MUEN 1132-2001" />
+            <pattern match="MUEN 1132-21001" />
           </subtopic>
           <subtopic name="Guitar Ensemble">
-            <pattern match="MUEN 1134-2001" />
-            <pattern match="MUEN 1134-2200" />  <!-- Added per Linda 2010-08-24 -->
-            <pattern match="MUEN 1134-2700" />
+            <pattern match="MUEN 1134-21001" />
+            <pattern match="MUEN 1134-21200" />  <!-- Added per Linda 2010-08-24 -->
+            <pattern match="MUEN 1134-21700" />
           </subtopic>
           <subtopic name="Handbell Ensemble">
-            <pattern match="MUEN 1135-2501" />
-            <pattern match="MUEN 1135-2250" />
+            <pattern match="MUEN 1135-21501" />
+            <pattern match="MUEN 1135-21250" />
           </subtopic>
           <subtopic name="Keyboard Ensemble">
-            <pattern match="MUEN 1131-2001" />
-            <pattern match="MUEN 1131-2002" />
+            <pattern match="MUEN 1131-21001" />
+            <pattern match="MUEN 1131-21002" />
           </subtopic>
           <subtopic name="String Ensemble">
-            <pattern match="MUEN 1136-2001" />
-            <pattern match="MUEN 1136-2002" />
-            <pattern match="MUEN 1136-2200" />
-            <pattern match="MUEN 1136-2201" />
-            <pattern match="MUEN 1136-2202" />
+            <pattern match="MUEN 1136-21001" />
+            <pattern match="MUEN 1136-21002" />
+            <pattern match="MUEN 1136-21200" />
+            <pattern match="MUEN 1136-21201" />
+            <pattern match="MUEN 1136-21202" />
           </subtopic>
           <subtopic name="Vocal Jazz / Lab Band">
-            <pattern match="MUEN 1151-2001" />
-            <pattern match="MUEN 2123-2002" />  
-            <pattern match="MUEN 2123-2003" />
-            <pattern match="MUEN 2123-2200" />
-            <pattern match="MUEN 2123-2201" />			
-            <pattern match="MUEN 2123-2700" />            
+            <pattern match="MUEN 1151-21001" />
+            <pattern match="MUEN 2123-21002" />  
+            <pattern match="MUEN 2123-21003" />
+            <pattern match="MUEN 2123-21200" />
+            <pattern match="MUEN 2123-21201" />			
+            <pattern match="MUEN 2123-21700" />            
           </subtopic>
           <subtopic name="Opera">
-            <pattern match="MUEN 1151-2500" />
+            <pattern match="MUEN 1151-21500" />
           </subtopic>
         </topic>
 
@@ -1479,98 +1474,98 @@
           <topic name="Music - Private Lessons">
           <subtopic name="Beginning">
             <comments></comments>
-            <pattern match="MUAP 1101-2001" />
-            <pattern match="MUAP 1101-2002" />
-            <pattern match="MUAP 1105-2001" />
-            <pattern match="MUAP 1105-2002" />
-            <pattern match="MUAP 1109-2001" />
-            <pattern match="MUAP 1109-2002" />
-            <pattern match="MUAP 1109-2200" />
-            <pattern match="MUAP 1113-2001" />
-            <pattern match="MUAP 1115-2001" />
-            <pattern match="MUAP 1117-2001" />
-            <pattern match="MUAP 1117-2002" />
-            <pattern match="MUAP 1117-2003" />
-            <pattern match="MUAP 1117-2004" />
+            <pattern match="MUAP 1101-21001" />
+            <pattern match="MUAP 1101-21002" />
+            <pattern match="MUAP 1105-21001" />
+            <pattern match="MUAP 1105-21002" />
+            <pattern match="MUAP 1109-21001" />
+            <pattern match="MUAP 1109-21002" />
+            <pattern match="MUAP 1109-21200" />
+            <pattern match="MUAP 1113-21001" />
+            <pattern match="MUAP 1115-21001" />
+            <pattern match="MUAP 1117-21001" />
+            <pattern match="MUAP 1117-21002" />
+            <pattern match="MUAP 1117-21003" />
+            <pattern match="MUAP 1117-21004" />
 			
-            <pattern match="MUAP 1121-2001" />
-            <pattern match="MUAP 1121-2002" />
-            <pattern match="MUAP 1125-2001" />
-            <pattern match="MUAP 1125-2002" />	
-            <pattern match="MUAP 1125-2003" />	
+            <pattern match="MUAP 1121-21001" />
+            <pattern match="MUAP 1121-21002" />
+            <pattern match="MUAP 1125-21001" />
+            <pattern match="MUAP 1125-21002" />	
+            <pattern match="MUAP 1125-21003" />	
 					
-            <pattern match="MUAP 1129-2001" />
-            <pattern match="MUAP 1129-2002" />
-            <pattern match="MUAP 1129-2003" />   
-            <pattern match="MUAP 1129-2004" />   
+            <pattern match="MUAP 1129-21001" />
+            <pattern match="MUAP 1129-21002" />
+            <pattern match="MUAP 1129-21003" />   
+            <pattern match="MUAP 1129-21004" />   
 			         
-            <pattern match="MUAP 1133-2001" />
-            <pattern match="MUAP 1133-2002" />
-            <pattern match="MUAP 1137-2001" />
-            <pattern match="MUAP 1137-2002" />
-            <pattern match="MUAP 1137-2003" />
-            <pattern match="MUAP 1137-2004" />
+            <pattern match="MUAP 1133-21001" />
+            <pattern match="MUAP 1133-21002" />
+            <pattern match="MUAP 1137-21001" />
+            <pattern match="MUAP 1137-21002" />
+            <pattern match="MUAP 1137-21003" />
+            <pattern match="MUAP 1137-21004" />
 						
-            <pattern match="MUAP 1141-2001" />
-            <pattern match="MUAP 1141-2002" />
-            <pattern match="MUAP 1145-2001" />
-            <pattern match="MUAP 1145-2002" />
-            <pattern match="MUAP 1149-2001" />
-            <pattern match="MUAP 1149-2002" />
+            <pattern match="MUAP 1141-21001" />
+            <pattern match="MUAP 1141-21002" />
+            <pattern match="MUAP 1145-21001" />
+            <pattern match="MUAP 1145-21002" />
+            <pattern match="MUAP 1149-21001" />
+            <pattern match="MUAP 1149-21002" />
 			
-            <pattern match="MUAP 1153-2001" />
-            <pattern match="MUAP 1153-2002" />
+            <pattern match="MUAP 1153-21001" />
+            <pattern match="MUAP 1153-21002" />
 			
-            <pattern match="MUAP 1157-2001" />
-            <pattern match="MUAP 1157-2002" />
+            <pattern match="MUAP 1157-21001" />
+            <pattern match="MUAP 1157-21002" />
 
-            <pattern match="MUAP 1161-2001" /> 
-            <pattern match="MUAP 1161-2002" />
-            <pattern match="MUAP 1161-2003" />
-            <pattern match="MUAP 1169-2001" />
-            <pattern match="MUAP 1169-2002" />
-            <pattern match="MUAP 1169-2003" />
-            <pattern match="MUAP 1177-2001" />			
+            <pattern match="MUAP 1161-21001" /> 
+            <pattern match="MUAP 1161-21002" />
+            <pattern match="MUAP 1161-21003" />
+            <pattern match="MUAP 1169-21001" />
+            <pattern match="MUAP 1169-21002" />
+            <pattern match="MUAP 1169-21003" />
+            <pattern match="MUAP 1177-21001" />			
 			
-            <pattern match="MUAP 1181-2001" />
-            <pattern match="MUAP 1181-2002" />
-            <pattern match="MUAP 1181-2003" />
-            <pattern match="MUAP 1181-2004" />
-            <pattern match="MUAP 2281-2004" />
+            <pattern match="MUAP 1181-21001" />
+            <pattern match="MUAP 1181-21002" />
+            <pattern match="MUAP 1181-21003" />
+            <pattern match="MUAP 1181-21004" />
+            <pattern match="MUAP 2281-21004" />
           </subtopic> 
               
           <subtopic name="Intermediate">
             <comments></comments>
-            <pattern match="MUAP 2201-2001" />
-            <pattern match="MUAP 2205-2001" />
-            <pattern match="MUAP 2205-2200" />
-            <pattern match="MUAP 2209-2001" />
-            <pattern match="MUAP 2209-2002" />
-            <pattern match="MUAP 2217-2001" />
-            <pattern match="MUAP 2217-2002" />
-            <pattern match="MUAP 2221-2001" /> 
-            <pattern match="MUAP 2225-2001" /> 
-            <pattern match="MUAP 2229-2001" /> 
-            <pattern match="MUAP 2229-2002" /> 
-            <pattern match="MUAP 2229-2003" /> 
-            <pattern match="MUAP 2229-2011" /> 
-            <pattern match="MUAP 2233-2001" />
-            <pattern match="MUAP 2237-2001" />
-            <pattern match="MUAP 2241-2001" />
-            <pattern match="MUAP 2245-2001" />
-            <pattern match="MUAP 2245-2007" />
-            <pattern match="MUAP 2249-2001" />
+            <pattern match="MUAP 2201-21001" />
+            <pattern match="MUAP 2205-21001" />
+            <pattern match="MUAP 2205-21200" />
+            <pattern match="MUAP 2209-21001" />
+            <pattern match="MUAP 2209-21002" />
+            <pattern match="MUAP 2217-21001" />
+            <pattern match="MUAP 2217-21002" />
+            <pattern match="MUAP 2221-21001" /> 
+            <pattern match="MUAP 2225-21001" /> 
+            <pattern match="MUAP 2229-21001" /> 
+            <pattern match="MUAP 2229-21002" /> 
+            <pattern match="MUAP 2229-21003" /> 
+            <pattern match="MUAP 2229-21011" /> 
+            <pattern match="MUAP 2233-21001" />
+            <pattern match="MUAP 2237-21001" />
+            <pattern match="MUAP 2241-21001" />
+            <pattern match="MUAP 2245-21001" />
+            <pattern match="MUAP 2245-21007" />
+            <pattern match="MUAP 2249-21001" />
 
-            <pattern match="MUAP 2253-2001" />
-            <pattern match="MUAP 2257-2001" />
-            <pattern match="MUAP 2261-2001" />
-            <pattern match="MUAP 2261-2002" />
-            <pattern match="MUAP 2269-2001" /> 
-            <pattern match="MUAP 2269-2002" />
-            <pattern match="MUAP 2281-2001" />
-            <pattern match="MUAP 2281-2002" />
-            <pattern match="MUAP 2281-2003" />
-            <pattern match="MUAP 2281-2200" />
+            <pattern match="MUAP 2253-21001" />
+            <pattern match="MUAP 2257-21001" />
+            <pattern match="MUAP 2261-21001" />
+            <pattern match="MUAP 2261-21002" />
+            <pattern match="MUAP 2269-21001" /> 
+            <pattern match="MUAP 2269-21002" />
+            <pattern match="MUAP 2281-21001" />
+            <pattern match="MUAP 2281-21002" />
+            <pattern match="MUAP 2281-21003" />
+            <pattern match="MUAP 2281-21200" />
           </subtopic>
         </topic>
       </subject>
@@ -1582,11 +1577,11 @@
              ======================================================================== -->
 
         <subject name="Astronomy">
-            <pattern match="PHYS 1404-2001" />
-            <pattern match="PHYS 1404-2002" />
-            <pattern match="PHYS 1404-2401" />
-            <pattern match="PHYS 1404-2402" />
-            <pattern match="PHYS 1404-2501" />
+            <pattern match="PHYS 1404-21001" />
+            <pattern match="PHYS 1404-21002" />
+            <pattern match="PHYS 1404-21401" />
+            <pattern match="PHYS 1404-21402" />
+            <pattern match="PHYS 1404-21501" />
         </subject>
 
 
@@ -1615,8 +1610,8 @@
             <topic name="Accent Reduction">
                 <!-- this pattern needs to override the previous one, so it gets
                      a priority of 2 -->
-                <pattern match="ESOL 0034-2020" priority="2" />
-                <pattern match="ESOL 0034-2021" priority="2" />
+                <pattern match="ESOL 0034-21020" priority="2" />
+                <pattern match="ESOL 0034-21021" priority="2" />
             </topic>
 
             <topic name="Reading Level One">
