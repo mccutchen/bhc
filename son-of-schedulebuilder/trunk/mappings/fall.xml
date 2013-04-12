@@ -67,6 +67,7 @@
                 <pattern match="ITSW 1407-21702" />
                 <pattern match="ITSW 1407-21401" />
                 <pattern match="ITSW 1407-21402" />
+                <pattern match="ITSW 1407-21440" />
                 <pattern match="ITSW 1407-21441" />
                 <pattern match="ITSW 1407-21442" />
             </topic>
@@ -898,6 +899,9 @@
           <pattern match="ARTS 2347-21003" />
           <pattern match="ARTS 2311-21018" />
           <pattern match="ARTS 2311-21011" />
+          <pattern match="ARTS 2311-21202" />
+
+
           <pattern match="ARTS 2312-21018" />
 		  
           <pattern match="ARTS 2312-21009" />
@@ -958,6 +962,8 @@
           <pattern match="ARTS 2311-21508" />
           <pattern match="ARTS 2312-21502" />
           <pattern match="ARTS 1316-21250" />
+          <pattern match="ARTS 1316-21201" />
+		  
           <pattern match="ARTS 1317-21250" />
           <pattern match="ARTS 2311-21250" />
           <pattern match="ARTS 2312-21250" />
@@ -988,6 +994,7 @@
           <pattern match="ARTS 2367-21001" />
           <pattern match="ARTS 2311-21016" />
           <pattern match="ARTS 2312-21016" />
+          <pattern match="ARTS 2311-21203" />		  
           <pattern match="ARTS 2316-21501" />
           <pattern match="ARTS 2317-21501" />
           <pattern match="ARTS 2311-21504" />
