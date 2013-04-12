@@ -521,9 +521,9 @@
 					<pattern match="EMSP 1438-23701" />
 					<pattern match="EMSP 1438-23734" />
 					<pattern match="EMSP 2143-23201" /> 
+					<pattern match="EMSP 2143-23202" /> 
 					<pattern match="EMSP 2143-23232" /> 
 					<pattern match="EMSP 2260-23234" /> 
-
 					<pattern match="EMSP 2430-23201" /> 
 					<pattern match="EMSP 2430-23233" />
 					<pattern match="EMSP 2444-23701" /> 
@@ -535,10 +535,10 @@
                 </subtopic>
                 <subtopic name="RN To Paramedic Class #2">
                     <pattern match="EMSP 2237-23205" />
+                    <pattern match="EMSP 2463-23201" />
                     <pattern match="EMSP 2463-23204" />
                     <pattern match="EMSP 2463-23205" />
                     <pattern match="EMSP 2463-23232" />
-					
                     <pattern match="EMSP 2553-23205" />
                 </subtopic>
 
@@ -1126,8 +1126,7 @@
                	<pattern match="DRAM 1220-23001" />
                	<pattern match="DRAM 1221-23735" />
                	<pattern match="DRAM 1221-23736" />
-                    
-                
+               	<pattern match="DRAM 1221-23738" />
                 <subtopic name="Second Play, Spring 2013">
                 	<pattern match="DRAM 1221-2736" />
                   <pattern match="DRAM 1221-2738" />
