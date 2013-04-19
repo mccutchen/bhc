@@ -275,6 +275,9 @@
           <pattern match="ITMT 1473-21350" />
           <pattern match="ITMT 1473-21401" />
 
+          <pattern match="ITNW 1492-21401" />
+          <pattern match="ITNW 1492-21701" />
+
 
           <pattern match="ITMT 1402-21701" />
           <pattern match="ITMT 1402-21501" />
@@ -356,6 +359,8 @@
           <pattern match="ITSW 1407-21002" />		  
           <pattern match="ITSW 1407-21201" />
           <pattern match="ITSW 1407-21202" />
+          <pattern match="ITSW 1407-21203" />
+          <pattern match="ITSW 1407-21204" />
 		  
           <pattern match="ITSW 1410-21001" />
           <pattern match="ITSW 1410-21201" />
@@ -386,7 +391,9 @@
           <pattern match="ITSW 1401-21428" />
           <pattern match="ITSW 1404-21426" />
           <pattern match="ITSW 1407-21426" />
+          <pattern match="ITSW 1410-21404" />
           <pattern match="ITSW 1410-21426" />
+
           <pattern match="ITSW 1407-21701" />
           <pattern match="ITSW 1410-21501" />
           <pattern match="ITSW 1410-21701" />
@@ -396,18 +403,32 @@
           <pattern match="POFI 2440-21701" />
           <pattern match="ITSC 1409-21401" />
           <pattern match="ITSC 1409-21402" />
+          <pattern match="ITSC 1409-21403" />
+          <pattern match="ITSC 1409-21404" />
+		  
           <pattern match="ITSC 1409-21441" />
           <pattern match="ITSC 1409-21442" />
+          <pattern match="ITSC 1409-21443" />
           <pattern match="ITSW 1401-21401" />
           <pattern match="ITSW 1401-21402" />
           <pattern match="ITSW 1401-21421" />
           <pattern match="ITSW 1401-21422" />
           <pattern match="ITSW 1401-21441" />
           <pattern match="ITSW 1401-21442" />
+          <pattern match="ITSW 1401-21443" />
           <pattern match="ITSW 1404-21401" />
           <pattern match="ITSW 1404-21402" />
+          <pattern match="ITSW 1404-21403" />
+          <pattern match="ITSW 1404-21404" />		  
           <pattern match="ITSW 1404-21441" />
           <pattern match="ITSW 1404-21442" />
+          <pattern match="ITSW 1404-21443" />
+          <pattern match="ITSW 1404-21444" />
+          <pattern match="ITSW 1404-21445" />
+          <pattern match="ITSW 1404-21446" />
+          <pattern match="ITSW 1404-21447" />
+          <pattern match="ITSW 1404-21448" />
+
           <pattern match="ITSW 1407-21401" />
           <pattern match="ITSW 1407-21402" />
           <pattern match="ITSW 1407-21403" />
@@ -418,6 +439,13 @@
           <pattern match="ITSW 1410-21402" />
           <pattern match="ITSW 1410-21441" />
           <pattern match="ITSW 1410-21442" />
+          <pattern match="ITSW 1410-21443" />
+          <pattern match="ITSW 1410-21444" />
+          <pattern match="ITSW 1410-21445" />
+          <pattern match="ITSW 1410-21446" />
+          <pattern match="ITSW 1410-21447" />
+          <pattern match="ITSW 1410-21448" />
+
           <pattern match="POFI 2440-21401" />
           <pattern match="POFI 2440-21402" />
           <pattern match="POFI 2440-21441" />
@@ -669,6 +697,7 @@
       <topic name="Emergency Medical Services, Paramedic">
         <subtopic name="Paramedic Class #32, B Shift">
           <pattern match="EMSP 1355-21232" />
+          <pattern match="EMSP 1355-21235" />
           <pattern match="EMSP 1355-21201" />
           <pattern match="EMSP 2430-21232" />
           <pattern match="EMSP 2430-21001" />		  
@@ -870,6 +899,7 @@
           <pattern match="ARTS 2314-21501" />
           <pattern match="ARTS 2311-21254" />          
 		  <pattern match="ARTS 2313-21250" />
+		  <pattern match="ARTS 2313-21251" />
           <pattern match="ARTS 2314-21250" />
 
         </topic>
@@ -893,37 +923,38 @@
         </topic>
 
         <topic name="Ceramics">
-          <pattern match="ARTS 2346-21001" />		  
-          <pattern match="ARTS 2347-21001" />
-          <pattern match="ARTS 2347-21002" />
-          <pattern match="ARTS 2347-21003" />
           <pattern match="ARTS 2311-21018" />
           <pattern match="ARTS 2311-21011" />
           <pattern match="ARTS 2311-21202" />
-
-
           <pattern match="ARTS 2312-21018" />
-		  
-          <pattern match="ARTS 2312-21009" />
-		  
+          <pattern match="ARTS 2312-21009" />		  
           <pattern match="ARTS 2311-21023" />
           <pattern match="ARTS 2312-21023" />
-		  
-          <pattern match="ARTS 2347-21004" />		  
-          <pattern match="ARTS 2346-21501" />
-          <pattern match="ARTS 2347-21501" />
-          <pattern match="ARTS 2311-21506" />
-          <pattern match="ARTS 2312-21505" />
-          <pattern match="ARTS 2346-21502" />
-          <pattern match="ARTS 2347-21502" />
-          <pattern match="ARTS 2311-21509" />
-          <pattern match="ARTS 2312-21509" />
-          <pattern match="ARTS 2346-21250" />
-          <pattern match="ARTS 2347-21250" />
           <pattern match="ARTS 2311-21252" />
           <pattern match="ARTS 2312-21252" />
           <pattern match="ARTS 2312-21254" />
           <pattern match="ARTS 2312-21201" />
+          <pattern match="ARTS 2311-21506" />
+          <pattern match="ARTS 2312-21505" />
+          <pattern match="ARTS 2311-21509" />
+          <pattern match="ARTS 2312-21509" />
+          <pattern match="ARTS 2311-21701" />
+
+          <pattern match="ARTS 2346-21001" />		  
+          <pattern match="ARTS 2346-21002" />		  
+          <pattern match="ARTS 2347-21001" />
+          <pattern match="ARTS 2347-21002" />
+          <pattern match="ARTS 2347-21003" />
+          <pattern match="ARTS 2346-21201" />		  
+          <pattern match="ARTS 2347-21201" />		  
+		  
+          <pattern match="ARTS 2347-21004" />		  
+          <pattern match="ARTS 2346-21501" />
+          <pattern match="ARTS 2347-21501" />
+          <pattern match="ARTS 2346-21502" />
+          <pattern match="ARTS 2347-21502" />
+          <pattern match="ARTS 2346-21250" />
+          <pattern match="ARTS 2347-21250" />
         </topic>
 
 
@@ -995,6 +1026,8 @@
           <pattern match="ARTS 2311-21016" />
           <pattern match="ARTS 2312-21016" />
           <pattern match="ARTS 2311-21203" />		  
+          <pattern match="ARTS 2316-21201" />
+          <pattern match="ARTS 2316-21251" />
           <pattern match="ARTS 2316-21501" />
           <pattern match="ARTS 2317-21501" />
           <pattern match="ARTS 2311-21504" />
@@ -1032,20 +1065,23 @@
         </topic>
 
         <topic name="Sculpture">
-          <pattern match="ARTS 2326-21001" />
-          <pattern match="ARTS 2327-21001" />
           <pattern match="ARTS 2311-21001" />
           <pattern match="ARTS 2312-21001" />
           <pattern match="ARTS 2311-21514" />
           <pattern match="ARTS 2312-21515" />		  
-          <pattern match="ARTS 2326-21002" />
-          <pattern match="ARTS 2327-21002" />
           <pattern match="ARTS 2311-21021" />
           <pattern match="ARTS 2312-21019" />
-          <pattern match="ARTS 2326-21501" />
-          <pattern match="ARTS 2327-21501" />
           <pattern match="ARTS 2311-21511" />
           <pattern match="ARTS 2312-21511" />
+          <pattern match="ARTS 2326-21001" />
+          <pattern match="ARTS 2326-21002" />
+          <pattern match="ARTS 2327-21001" />
+          <pattern match="ARTS 2327-21002" />
+          <pattern match="ARTS 2326-21203" />
+          <pattern match="ARTS 2327-21200" />
+
+          <pattern match="ARTS 2326-21501" />
+          <pattern match="ARTS 2327-21501" />
         </topic>
       </subject>
 
@@ -1325,6 +1361,8 @@
           <pattern match="MUSI 1306-21005" />
           <pattern match="MUSI 1306-21006" />
           <pattern match="MUSI 1306-21200" />
+          <pattern match="MUSI 1306-21202" />
+          <pattern match="MUSI 1306-21281" />
           <pattern match="MUSI 1306-21501" />
           <pattern match="MUSI 1306-21502" />
           <pattern match="MUSI 1306-21700" />		  
@@ -1344,22 +1382,25 @@
        </topic>        
         <topic name="Music Theory">
           <pattern match="MUSI 1311-21001" />          
-          <pattern match="MUSI 1311-21002" /> <!-- Added per Linda 2010-08-13 -->
+          <pattern match="MUSI 1311-21002" /> 
           <pattern match="MUSI 1311-21200" />          		  
+          <pattern match="MUSI 1311-23001" />          
           <pattern match="MUSI 1312-21001" />
           <pattern match="MUSI 1312-21200" />          
           <pattern match="MUSI 2311-21001" />
           <pattern match="MUSI 2311-21200" />
+          <pattern match="MUSI 2312-21200" />
           <pattern match="MUSI 2312-21300" />
         </topic>
         <topic name="Musicianship">
-          <pattern match="MUSI 1116-21001" />          <!-- Added per Linda 2010-08-13 -->
+          <pattern match="MUSI 1116-21001" />         
           <pattern match="MUSI 1116-21002" />
           <pattern match="MUSI 1116-21200" />
           <pattern match="MUSI 1117-21001" />
-          <pattern match="MUSI 1117-21200" /> <!-- Added per linda 2010-08-02 -->
+          <pattern match="MUSI 1117-21200" /> 
           <pattern match="MUSI 2116-21001" />
-          <pattern match="MUSI 2116-21200" /> <!-- added ri 2010-08-27 -->
+          <pattern match="MUSI 2116-21200" /> 
+          <pattern match="MUSI 2117-21200" />
           <pattern match="MUSI 2117-21300" />
         </topic>
 
@@ -1382,6 +1423,7 @@
         </topic>
 
         <topic name="Composition">
+          <pattern match="MUSI 1386-21001" />
           <pattern match="MUSI 1386-21200" />
           <pattern match="MUSI 1386-21300" />
         </topic>
@@ -1396,8 +1438,9 @@
         </topic>
         <topic name="Piano for Music Majors">
           <pattern match="MUSI 1181-21002" />
-          <pattern match="MUSI 1181-21003" /> <!-- added per linda 2010-08-12 -->
+          <pattern match="MUSI 1181-21003" /> 
           <pattern match="MUSI 1182-21002" />
+          <pattern match="MUSI 1182-21006" />
           <pattern match="MUSI 2181-21001" />
           <pattern match="MUSI 2182-21001" />
         </topic>
@@ -1405,6 +1448,7 @@
           <pattern match="MUSI 1181-21006" />
           <pattern match="MUSI 1181-21007" />
           <pattern match="MUSI 1181-21001" />
+          <pattern match="MUSI 1181-21200" />
           <pattern match="MUSI 1181-21501" />
           <pattern match="MUSI 1182-21501" />
           <pattern match="MUSI 1181-21502" />
@@ -1427,6 +1471,7 @@
           <pattern match="MUSI 1183-21002" />
           <pattern match="MUSI 1183-21501" />
           <pattern match="MUSI 1183-21502" />
+          <pattern match="MUSI 1183-21701" />
         </topic>
 
         
@@ -1442,12 +1487,21 @@
           </subtopic>
           <subtopic name="Vivace Vocal Ensemble">
             <pattern match="MUEN 1153-21200" />
+            <pattern match="MUEN 1153-21250" />
+            <pattern match="MUEN 1153-21252" />
+			
           </subtopic>
           <subtopic name="Chamber Ensemble">
             <pattern match="MUEN 1152-21001" />
             <pattern match="MUEN 1152-21002" />
             <pattern match="MUEN 1152-21003" />			
             <pattern match="MUEN 1152-21004" />			
+            <pattern match="MUEN 1152-21501" />
+            <pattern match="MUEN 1152-21502" />
+            <pattern match="MUEN 1152-21700" />
+            <pattern match="MUEN 1152-21701" />
+            <pattern match="MUEN 1152-21702" />
+
             <pattern match="MUEN 1152-21750" />
             <pattern match="MUEN 1152-21751" />
           </subtopic>
@@ -1456,10 +1510,12 @@
           </subtopic>
           <subtopic name="Guitar Ensemble">
             <pattern match="MUEN 1134-21001" />
-            <pattern match="MUEN 1134-21200" />  <!-- Added per Linda 2010-08-24 -->
+            <pattern match="MUEN 1134-21501" />
+            <pattern match="MUEN 1134-21200" />  
             <pattern match="MUEN 1134-21700" />
           </subtopic>
           <subtopic name="Handbell Ensemble">
+            <pattern match="MUEN 1135-21500" />
             <pattern match="MUEN 1135-21501" />
             <pattern match="MUEN 1135-21250" />
           </subtopic>
@@ -1476,10 +1532,16 @@
           </subtopic>
           <subtopic name="Vocal Jazz / Lab Band">
             <pattern match="MUEN 1151-21001" />
+            <pattern match="MUEN 1151-21200" />
+            <pattern match="MUEN 1151-21701" />
+
+
+
             <pattern match="MUEN 2123-21002" />  
             <pattern match="MUEN 2123-21003" />
             <pattern match="MUEN 2123-21200" />
             <pattern match="MUEN 2123-21201" />			
+            <pattern match="MUEN 2123-21502" />  
             <pattern match="MUEN 2123-21700" />            
           </subtopic>
           <subtopic name="Opera">
@@ -1551,6 +1613,7 @@
             <pattern match="MUAP 1181-21002" />
             <pattern match="MUAP 1181-21003" />
             <pattern match="MUAP 1181-21004" />
+            <pattern match="MUAP 1181-21005" />
             <pattern match="MUAP 2281-21004" />
           </subtopic> 
               
