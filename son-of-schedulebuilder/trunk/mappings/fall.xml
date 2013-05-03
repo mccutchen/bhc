@@ -277,14 +277,13 @@
 
           <pattern match="ITNW 1492-21401" />
           <pattern match="ITNW 1492-21701" />
-
-
           <pattern match="ITMT 1402-21701" />
           <pattern match="ITMT 1402-21501" />
           <pattern match="ITMT 2401-21701" />
           <pattern match="ITMT 2402-21701" />
           <pattern match="ITMT 1402-21401" />
           <pattern match="ITMT 1402-21402" />
+          <pattern match="ITMT 2471-21701" />
         </topic>
         <topic name="Unix/Linux Courses">
           <pattern match="ITSC 1407-21501" />
@@ -413,6 +412,7 @@
           <pattern match="ITSW 1401-21402" />
           <pattern match="ITSW 1401-21421" />
           <pattern match="ITSW 1401-21422" />
+          <pattern match="ITSW 1401-21440" />
           <pattern match="ITSW 1401-21441" />
           <pattern match="ITSW 1401-21442" />
           <pattern match="ITSW 1401-21443" />
@@ -420,6 +420,7 @@
           <pattern match="ITSW 1404-21402" />
           <pattern match="ITSW 1404-21403" />
           <pattern match="ITSW 1404-21404" />		  
+          <pattern match="ITSW 1404-21440" />
           <pattern match="ITSW 1404-21441" />
           <pattern match="ITSW 1404-21442" />
           <pattern match="ITSW 1404-21443" />
@@ -428,6 +429,9 @@
           <pattern match="ITSW 1404-21446" />
           <pattern match="ITSW 1404-21447" />
           <pattern match="ITSW 1404-21448" />
+
+          <pattern match="ITSW 1404-21702" />
+          <pattern match="ITSW 1404-21710" />
 
           <pattern match="ITSW 1407-21401" />
           <pattern match="ITSW 1407-21402" />
@@ -683,7 +687,18 @@
         <subtopic name="Emt-basic Class #68, A Shift">
           <pattern match="EMSP 1501-21218" />
           <pattern match="EMSP 1501-21201" />
+
+          <pattern match="EMSP 1501-21223" />
+          <pattern match="EMSP 1501-21501" />
+          <pattern match="EMSP 1501-21502" />
+          <pattern match="EMSP 1501-21503" />
+          <pattern match="EMSP 1501-21524" />
+          <pattern match="EMSP 1160-21020" />
+          <pattern match="EMSP 1160-21024" />
           <pattern match="EMSP 1160-21218" />
+		  
+  
+		  
         </subtopic>
         <subtopic name="Emt-basic Class #69">
           <pattern match="EMSP 1501-21719" />
@@ -700,10 +715,15 @@
           <pattern match="EMSP 1355-21235" />
           <pattern match="EMSP 1355-21201" />
           <pattern match="EMSP 2430-21232" />
+          <pattern match="EMSP 2430-21235" />
+          <pattern match="EMSP 2430-21734" />
           <pattern match="EMSP 2430-21001" />		  
           <pattern match="EMSP 2430-21201" />		  
           <pattern match="EMSP 2338-21232" />
+          <pattern match="EMSP 2338-21235" />
           <pattern match="EMSP 2338-21201" />
+          <pattern match="EMSP 2338-21734" />
+          <pattern match="EMSP 2261-21035" />
           <pattern match="EMSP 2261-21231" />
           <pattern match="EMSP 2261-21232" />
           <pattern match="EMSP 2463-21201" />
@@ -713,11 +733,15 @@
         <subtopic name="Paramedic Class #33, C Shift">
           <pattern match="EMSP 1438-21223" />
           <pattern match="EMSP 1438-21233" />
+          <pattern match="EMSP 1438-21236" />		  
           <pattern match="EMSP 1438-21201" />		  
           <pattern match="EMSP 1356-21233" />          
+          <pattern match="EMSP 1356-21236" />          		  
           <pattern match="EMSP 1356-21201" />		  
           <pattern match="EMSP 2444-21233" />                    
+          <pattern match="EMSP 2444-21236" />                    
           <pattern match="EMSP 2444-21201" />
+          <pattern match="EMSP 2260-21036" />
           <pattern match="EMSP 2260-21233" />
         </subtopic>
 
@@ -725,17 +749,25 @@
         <subtopic name="Paramedic Class #31">
           <pattern match="EMSP 2338-21731" />
           <pattern match="EMSP 2143-21731" />
+          <pattern match="EMSP 2143-21734" />
+		  
+          <pattern match="EMSP 2463-21034" />
           <pattern match="EMSP 2463-21231" />
+
        </subtopic>
 
         <subtopic name="RN to Paramedic Class #4">
           <pattern match="EMSP 2553-21204" />
+          <pattern match="EMSP 2553-21205" />
           <pattern match="EMSP 2237-21204" />
+          <pattern match="EMSP 2237-21205" />
           <pattern match="EMSP 2463-21204" />
         </subtopic>
         <subtopic name="Mass Disaster Response, A Shift">
             <pattern match="EMSP 1391-21212" />			
-            <pattern match="EMSP 1391-21214" />			
+            <pattern match="EMSP 1391-21214" />		
+            <pattern match="EMSP 1391-21215" />		
+				
 		</subtopic>
 			</topic>
         </subject>
