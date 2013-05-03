@@ -295,6 +295,7 @@
                 <pattern match="ITSW 1410-23001" />
                 <pattern match="ITSW 1410-23201" />
                 <pattern match="ITSW 1410-23202" />
+                <pattern match="ITSW 1410-23203" />
                 <pattern match="ITSW 1410-23401" />
                 <pattern match="ITSW 1410-23402" />
                 <pattern match="ITSW 1410-23440" />
@@ -546,6 +547,7 @@
 					<pattern match="EMSP 1160-23220" />
 					<pattern match="EMSP 1160-23221" />
 					<pattern match="EMSP 1160-23222" />
+					<pattern match="EMSP 1160-23223" />
 
                 </subtopic>
 
