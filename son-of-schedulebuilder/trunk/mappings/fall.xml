@@ -440,7 +440,8 @@
           <pattern match="ITSW 1407-21441" />
           <pattern match="ITSW 1407-21442" />
           <pattern match="ITSW 1410-21401" />
-          <pattern match="ITSW 1410-21402" />
+          <pattern match="ITSW 1410-21402" />		  
+          <pattern match="ITSW 1410-21440" />
           <pattern match="ITSW 1410-21441" />
           <pattern match="ITSW 1410-21442" />
           <pattern match="ITSW 1410-21443" />
