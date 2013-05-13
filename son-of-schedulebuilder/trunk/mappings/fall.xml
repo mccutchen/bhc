@@ -1207,8 +1207,8 @@
 
           <topic name="Tap">
           <pattern match="DANC 1110-21001" />
-          <pattern match="DANC 2110-21001" />
           <pattern match="DANC 1111-21001" />
+          <pattern match="DANC 2110-21001" />
           <pattern match="DANC 2111-21001" />
 
 
