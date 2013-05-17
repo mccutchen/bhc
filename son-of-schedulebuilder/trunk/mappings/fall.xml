@@ -923,6 +923,7 @@
           <pattern match="ARTS 2348-21001" />
           <pattern match="ARTS 2349-21001" />
           <pattern match="ARTS 2348-21201" />          
+          <pattern match="ARTS 2349-21201" />          
           <pattern match="ARTS 2311-21010" />
           <pattern match="ARTS 2312-21010" />
           <pattern match="ARTS 2311-21024" />
