@@ -1,7 +1,7 @@
 import os
 
 # the path to the database
-database_path = 'H:\IAA\PI\Shared Folder\Employee Database and Org Charts\employees_db.mdb'
+database_path = 'employees_db.mdb'
 
 # the name of the table in the database
 database_tablename = 'BrookhavenEmployees'
