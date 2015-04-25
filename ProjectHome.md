@@ -1,0 +1,1 @@
+This is a repository of software used by Brookhaven College primarily to maintain their course schedules.
